@@ -1,6 +1,6 @@
 ---
-title: "Ortelius On-Prem Installation"
-linkTitle: "Ortelius On-Prem Installation"
+title: "On-Prem Installation"
+linkTitle: "On-Prem Installation"
 weight: 3
 description: >
   Installing Ortelius On-premise
@@ -22,16 +22,16 @@ Ortelius runs in a Docker Container with all required dependencies, such as Post
 
 See the [Docker Install Test](https://docs.docker.com/get-started/#test-docker-version) instructions
 
-## Installing Your DeployHub Pro Docker Image
+## Installing Your Ortelius Docker Image
 
-The DeployHub Pro Docker Image is found on the Redhat Quay Docker Registry. Follow the steps below to install the Ortelius into your Docker installation.
+The Ortelius Docker Image is found on the Redhat Quay Docker Registry. Follow the steps below to install the Ortelius into your Docker installation.
 
-**Step 1 - Pull DeployHub Pro from Redhat Quay Registry**
+**Step 1 - Pull Ortelius from Redhat Quay Registry**
 
 Run:
 
 ~~~bash
-docker pull quay.io/Ortelius/Ortelius-pro:v9.0.0
+docker pull quay.io/ortelius/ortelius:latest
 ~~~
 
 **Step 2 - Create a directory to persist the Postgres database**
@@ -39,7 +39,7 @@ docker pull quay.io/Ortelius/Ortelius-pro:v9.0.0
 Run:
 
 ~~~bash
-mkdir -p ~/Ortelius/data
+mkdir -p ~/ortelius/data
 ~~~
 
 **Step 3 - Find your image SHA**
@@ -47,13 +47,13 @@ mkdir -p ~/Ortelius/data
 Run:
 
 ~~~bash
-docker images | grep Ortelius-pro | grep v9.0.0
+docker images | grep ortelius | grep latest
 ~~~
 
 Find the image SHA from the third column in the output.
 
 ~~~bash
-quay.io/Ortelius/Ortelius-pro          v9.0.0          0114088b0b44        6 days ago          3.32GB
+quay.io/ortelius/ortelius          latest          0114088b0b44        6 days ago          3.32GB
 ~~~
 
 The SHA in the above example is 0114088b0b44.
@@ -63,7 +63,7 @@ The SHA in the above example is 0114088b0b44.
 Use the image SHA from Step 3 as the last parameter to the docker run.
 
 ~~~bash
-docker run -v ~/Ortelius/data:/var/lib/pgsql/data:Z -v ~/Ortelius/logs:/opt/Ortelius/logs:Z -p 7171:8080 -d –hostname docker_dh -v ~/.ssh:/keys:Z 0114088b0b44
+docker run -v ~/ortelius/data:/var/lib/pgsql/data:Z -v ~/ortelius/logs:/opt/ortelius/logs:Z -p 7171:8080 -d –hostname docker_dh -v ~/.ssh:/keys:Z 0114088b0b44
 ~~~
 
 **Step 5 - Access Ortelius from your browser**
