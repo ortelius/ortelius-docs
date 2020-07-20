@@ -18,7 +18,7 @@ User Object
 
 **Examples:**
 
-~~~
+~~~bash
 set me = me();
 
 echo "Hello ${me.name}";

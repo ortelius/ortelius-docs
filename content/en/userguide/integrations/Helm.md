@@ -17,6 +17,7 @@ Ortelius' deployment engine comes pre-installed with Helm.  For this reason you 
 ```
 
 For more information on starting the Ortelius Container see:
+
 - [SaaS Sign-up and Reverse Proxy](/userguide/installation-and-support/0-saas-and-reverse-proxy/)
 - [Ortelius On-Premise Installation](/userguide/installation-and-support/0-on-premise-installation-for-team/)
 - [DeployHub Pro On-Prem Installation](/userguide/installation-and-support/0-on-premise-installation-for-pro/)
@@ -43,7 +44,7 @@ Next, select your "Global," or highest level, _Domain_ and upload the _Procedure
 
 Once you have imported your WriteEnv2Toml.re and HelmUpgrade.re files as _Procedures_, you can define your _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 
-Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_. 
+Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_.
 
 Name the new _Action_ **HelmChart** (no spaces).
 

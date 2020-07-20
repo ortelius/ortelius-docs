@@ -17,10 +17,7 @@ This process involves the creation of custom _Procedures_ and a _Post Action_.  
 - [Customizing Actions](/userguide/first-steps/2-define-your-actions/)
 - [Procedures and Functions](/userguide/customizations/2-define-your-functions-and-procedures/)
 
-
-
 Once downloaded, you will need to Import them into Ortelius as the Procedures. To import these Procedures login to Ortelius and select the _Func/Procs_.  From the list view select  **Import** menu. Select your Domain, such as '_Global_ Domain' and upload the _Procedure_ into the Ortelius.
-
 
 **Step 1 - Download and Import the WebLogic scripts as _Procedures_**
 
@@ -44,7 +41,7 @@ Use the +Add option to create your new _Action_.  In the "Full Domain" field sel
 
 Name the new Action "WeblogicDeployAction" (no spaces).
 
-Now we are going to customize this _Action_. On the right hand side, you will see a list of _Functions_ and _Procedures_ you can choose from.  Navigate to your _Domain_ to find the WeblogicCredential.re and WeblogicDeploy.re imported _Procedures_.  Drag them onto the area under "Start". When you drag the WeblogicCredential.re and WeblogicDeploy.re  _Procedures_ onto the area under "Start" a pop-up dialog box will open for you to complete the following parameters. 
+Now we are going to customize this _Action_. On the right hand side, you will see a list of _Functions_ and _Procedures_ you can choose from.  Navigate to your _Domain_ to find the WeblogicCredential.re and WeblogicDeploy.re imported _Procedures_.  Drag them onto the area under "Start". When you drag the WeblogicCredential.re and WeblogicDeploy.re  _Procedures_ onto the area under "Start" a pop-up dialog box will open for you to complete the following parameters.
 
 The order should be _WeblogicCredential_, and then _WeblogicDeploy_.
 

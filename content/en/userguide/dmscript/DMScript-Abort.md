@@ -14,7 +14,7 @@ It can be caught with a try/catch block so you can break out of a block of code 
 
 **Example:**
 
-```
+```bash
 abort(msg: "Something went wrong");
 
 This will end the script with the message "Something went wrong".
@@ -38,7 +38,7 @@ echo "Error: $ex";
 }
 
 echo "Carry on";
-```
+```bash
 
 Result:
 

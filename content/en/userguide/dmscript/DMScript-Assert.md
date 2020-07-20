@@ -49,6 +49,6 @@ assert (obj1: $latest, obj2: $_Application_);
 abort(msg: "Can only deploy the latest version (${latest.name})");
 
 }
-```
+```bash
 
 If the _Application_ being deployed ($Application) is the same as the calculated latest version then the assertion check succeeds and the script exits without error, allowing the deployment to continue. If $Application differs from the calculated latest version then the assertion fails and an exception is thrown. The _try/catch block_ simply catches this error and issues a more "user friendly" error message.

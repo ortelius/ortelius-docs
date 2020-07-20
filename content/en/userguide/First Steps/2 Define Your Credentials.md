@@ -75,4 +75,3 @@ The Access Section allows _Users_ within designated _Groups_ to update the _Cred
 | **View** | Allows the _User_ to see the _Credential_. If the _User_ does not belong to a _Group_ in the View Access list, the _Credential_ will not appear in the List View. |
 | **Change** | Allows the _User_ to change the _Credential’s_ characteristics i.e. Name, Summary, etc. |
 | **Read** | Allows the _User_ to use the _Credential_ by assigning it to an object such as an _EndPoint_ or _Repository_. |
-

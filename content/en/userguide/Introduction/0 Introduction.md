@@ -8,7 +8,7 @@ description: >
 
 ## Why Use Ortelius
 
-Migrating to microservices breaks the way we assemble and configure software. With a microservice implementation, we no longer manage a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users. 
+Migrating to microservices breaks the way we assemble and configure software. With a microservice implementation, we no longer manage a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users.
 
 While microservices are a big improvement over monolithic practices, we still need a method of tracking the collection of services delivered to an end-user. Ortelius facilitates the move to microservices by giving you back your _Application_ but in a 'logical view.'
 
@@ -98,7 +98,7 @@ This agentless technology works for both cloud native and legacy architectures i
 
 **Ortelius**
 
-Our free version is based upon the [Ortelius](https://www.ortelius.io/) open source project. Ortelius can be used from the hosted site or installed on premise. It is a strategic and fully open source microservice management solution that integrates with common continuous delivery and DevOps tools. It supports unlimited endpoints, versions, deployments and users. Sign-up at [Ortelius.com](https://www.Ortelius.com/).
+Our free version is based upon the [Ortelius](https://www.ortelius.io/) open source project. Ortelius can be used from the hosted site or installed on premise. It is a strategic and fully open source microservice management solution that integrates with common continuous delivery and DevOps tools. It supports unlimited endpoints, versions, deployments and users. Sign-up at [Ortelius.com](https://www.deployhub.com/).
 
 **DeployHub Pro**
 

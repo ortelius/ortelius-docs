@@ -17,4 +17,4 @@ Ortelius sends messages to Slack based on certain events using _Notifiers_. Belo
 Assign your Slack _Notifier_ to an _Application_ or _Component_ from the Details section of the _Application_ or _Component_ Dashboard. For more information see:
 
 [Define Your _Component_](/userguide/publishing-components/2-define-components/).
-[Defining Your _Application_ Baseline ](/userguide/packaging-applications/2-defining-applications/).
+[Defining Your Application Baseline](/userguide/packaging-applications/2-defining-applications/).

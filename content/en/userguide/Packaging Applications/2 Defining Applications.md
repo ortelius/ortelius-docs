@@ -114,4 +114,3 @@ NOTE: At least one _Component_ must be connected to the "start point" or the dep
 ## How to Publish New _Application Versions_ Automatically via Continuous Delivery
 
 Configure a continuous delivery system to automatically update new _Application_ versions each time a new GitCommit triggers a new _Component_ to be consumed by your _Application_. Ortelius in the workflow performs this continuous versioning of new _Components_ and their consuming _Applications_.  For more information, see [Using Ortelius with CI/CD](/userguide/integrations/ci-cd_integrations/).
-

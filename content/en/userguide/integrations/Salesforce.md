@@ -7,6 +7,7 @@ description: >
 ---
 
 ## Using a _Custom Action_ for SalesForce Deployments
+
 If you are developing your _Applications_ using SaleForce, this integration will allow you to support SalesForce deployments. By creating this _Custom Action_ you can replace the Ortelius standard deployment processing engine and instead use a process designed specific to Salesforce including the mapping of Ortelius _Environments_ to different SalesForce regions such as testing, pre-production, production, where the class and package files can be deployed.
 
 The following directions allows you to create a _Custom Action_ using the pre-written Ortelius _Procedures_ to support a SaleForce deployment model.  Once you create your SalesForce _Custom Action_ you assign it to your SalesForce _Component_ which will override the Ortelius standard deployment engine.
@@ -18,7 +19,7 @@ You will need to create a SalesForce _Custom Action_ that will support your Sale
 - [Customizing Actions](/userguide/customizations/2-define-your-actions/)
 - [Procedures and Functions](/userguide/customizations/2-define-your-functions-and-procedures/)
 
-The following steps will take you through the process: 
+The following steps will take you through the process:
 
 **Step 1 - Create a SalesForce _Repository_**
 
@@ -47,9 +48,9 @@ Create a new _Endpoint_ using the following Detail values:
 
 - **_Environment_ Attributes**
 
-Using the Attributes section of the _Environment_ Dashboard, add the following Attributes. Use the +Add in the Attributes section to add a row to the Attributes table.  You must use Save to commit the row to the table. 
+Using the Attributes section of the _Environment_ Dashboard, add the following Attributes. Use the +Add in the Attributes section to add a row to the Attributes table.  You must use Save to commit the row to the table.
 
-| Variables | Value | 
+| Variables | Value |
 |--- | --- |
 | **SalesforceCredential**| Enter the name of the _Credential_ that contains the Salesforce Userid and Password created in step 2.|
 |**ServerURL** |Enter the Salesforce URL for the target deployment.|
@@ -78,7 +79,7 @@ Next, select your "Global," or highest level, _Domain_ and upload the _Procedure
 
 Once you have imported the SalesForce files as _Procedures_, you ready to define your _Custom Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 
-Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_. 
+Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_.
 
 Name the new Action "SalesForceAction" (no spaces).
 
@@ -97,7 +98,7 @@ When you drag your Ansible _Procedures_ onto the area under "Start" a pop-up dia
 | **Field** | Value | Description |
 | --- | --- | --- |
 | **Title** | Not Required | Name of the step in your deployment workflow.  |
-| **Summary** | Not Required | Enter a summary of this step. | 
+| **Summary** | Not Required | Enter a summary of this step. |
 | **Git Repo** | $GIT_URL| Git Repo containing your SalesForce Source Code.|
 | **Git Commit** | $GIT_COMMIT | The commit, tag or branch to checkout. |
 | **To Dir** | $GIT_DIR | The directory to checkout into.  Use "." for the default directory. |
@@ -122,7 +123,7 @@ At this point the _Custom Action_ is ready to be used by anyone with access (bas
 
 **Step 6 - Create Your SalesForce _Component_**
 
-Now that you have defined your SalesForce _Custom Action_ you are ready to create your SalesForce _Component_. Define your _Component_ to use a _Custom Action_ from the _Component_ Dashboard. See [Defining Components](/userguide/publishing-components/2-define-components/) for more details on creating your new _Component_. 
+Now that you have defined your SalesForce _Custom Action_ you are ready to create your SalesForce _Component_. Define your _Component_ to use a _Custom Action_ from the _Component_ Dashboard. See [Defining Components](/userguide/publishing-components/2-define-components/) for more details on creating your new _Component_.
 
 Update the _Custom Action_ Detail field by choosing the SalesForceAction provided in the _Custom Action_ dropdown list. You will have a single parameter to update:
 

@@ -78,7 +78,7 @@ The following fields are common to all _Components_:
 
 ### Container Specific Data Definition
 
-Helm is required for deploying Container _Components_. Ortelius interfaces with Helm to support a Kubernetes Cluster deployment. 
+Helm is required for deploying Container _Components_. Ortelius interfaces with Helm to support a Kubernetes Cluster deployment.
 
 Initially, you will need to create a _Custom Action_ for using Helm as your deployment engine. Once your _Custom Action_ has been created, it can be reused by all _Users_ as long as you define the _Custom Action_ to your "Global" Domain. Follow the steps at [Helm for Container Deployments](/userguide/integrations/helm/).
 

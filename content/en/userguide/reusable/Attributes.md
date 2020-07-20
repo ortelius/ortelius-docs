@@ -12,4 +12,4 @@ Key Value Pairs can be assigned at multiple levels, from the Global _Domain_ dow
 | **Endpoint** | Overrides the _Application_ Key Value Pairs during a deployment. |
 | **Component** | Overrides the  _Application_ Key Value Pairs during a deployed.
 
-Key Value Pairs can be given any Name and a Value. Use +Add to add Key Value Pairs to the table. Use Save to confirm.  Use the checkbox to Delete or Edit a Key Value Pair. 
+Key Value Pairs can be given any Name and a Value. Use +Add to add Key Value Pairs to the table. Use Save to confirm.  Use the checkbox to Delete or Edit a Key Value Pair.

@@ -11,13 +11,14 @@ description: >
 A Ortelius _Domain_ is how Ortelius organizes and shares data across teams.  You publish your microservices to a Catalog _Domain_, you package your _Application_ in a Project _Domain_ and you track your continuous delivery pipeline with a Life Cycle _Domain_. All Ortelius objects are assigned to a _Domain_.
 
 ### Domains and your Domain Driven Design
-A Domain Driven Design is critical for organizations moving from monolithic development to microservice development. In microservices, you must have a structured method for organizing microservices into "solution" spaces to facilitate reuse across siloed teams. Ortelius _Domains_ provides this organization. 
+
+A Domain Driven Design is critical for organizations moving from monolithic development to microservice development. In microservices, you must have a structured method for organizing microservices into "solution" spaces to facilitate reuse across siloed teams. Ortelius _Domains_ provides this organization.
 
 _Domains_ catalog and publish microservices and other reusable objects (web components, DB updates, etc.) making it easier to share these microservices and  _Components_ across siloed teams. Domains can be structured to closely resemble the patterns of your organization. They can represent functional areas such as 'security services' or departments, teams, geographical locations and software projects.
 
 ### Top Down Structure
 
-Everyone has a single high-level "Global" _Domain_.  All other _Domains_ are _Subdomains_. For SaaS _Users_, your sign-up form asked you for a "Company" and "Project."  These values were used to create your initial _Domains_.  If you are using a locally installed version (on-prem), your highest level _Domain_ will be "Global" and you will need to create your own _Domains_. 
+Everyone has a single high-level "Global" _Domain_.  All other _Domains_ are _Subdomains_. For SaaS _Users_, your sign-up form asked you for a "Company" and "Project."  These values were used to create your initial _Domains_.  If you are using a locally installed version (on-prem), your highest level _Domain_ will be "Global" and you will need to create your own _Domains_.
 
 A _Subdomain_ inherits all the access properties from its parent _Domain_. This inheritance continues down through all _Subdomains_.
 
@@ -31,15 +32,15 @@ There are four common ways to implement _Domains_:
 |**Project _Subdomains_**| Use a _Subdomain_ to represent your software _Application_ and its Life Cycle. A _Subdomain_ defined for an _Application_ may need a continuous delivery life cycle. This is defined by selecting "All _Subdomains_ are Life Cycles." This means that any _Subdomains_ cannot include any additional _Subdomains_ and will be used to represent stages of the _Pipeline_ with specific _Environments_ assigned. |
 |**Life Cycle _Subdomains_**| This is the lowest level of _Subdomain_.  It is available when the parent _Domain_ has "All _Subdomains_ are Life Cycles" selected.  These _Subdomains_ map to each stage in your continuous delivery pipeline. They often have specific _Environments_ and _Tasks_ assigned for interaction with your continuous delivery orchestration engine. Ortelius can be called by your continuous delivery Engine (Jenkins, Jenkins X, CircleCI, Google CloudBuild, GitLab or GitHub Actions, etc.) to perform the continuous configuration management of your microservices and _Applications_ across all lifecyle states. In addition, you can assign Move, Approve and Request Tasks to your Life Cycle _Subdomain_ to define a continuous delivery pipeline process within Ortelius that can interact with your pipeline process. |
 
-Below is an example of how the Online Store Company _Domains_ have been defined. For SaaS users, you can review this by inspecting the Online Store Company _Domain_. 
+Below is an example of how the Online Store Company _Domains_ have been defined. For SaaS users, you can review this by inspecting the Online Store Company _Domain_.
 
 ![Example of Domains, Applications, Components and Environments](/userguide/images/OnlineStore-Domains.jpg)
 
 ## Using the Domain Dashboard
 
-A full view of all _Domains_ is based upon your _User_ privileges. The view is displayed in a "Sunburst" map, starting at the highest level _Domain_ with the ability to drive down into the _Subdomains_, and _Subdomains_ after that. Clicking on a segment in the Sunburst map will take you to that _Domain_. Clicking on the center of the Sunburst will take you back up the _Domain_ structure. 
+A full view of all _Domains_ is based upon your _User_ privileges. The view is displayed in a "Sunburst" map, starting at the highest level _Domain_ with the ability to drive down into the _Subdomains_, and _Subdomains_ after that. Clicking on a segment in the Sunburst map will take you to that _Domain_. Clicking on the center of the Sunburst will take you back up the _Domain_ structure.
 
-When scrolling up or down the _Domain_ hierarchy using the Sunburst map, the detail information is re-displayed according to where you are in the map. Below are the details for a _Domain_. 
+When scrolling up or down the _Domain_ hierarchy using the Sunburst map, the detail information is re-displayed according to where you are in the map. Below are the details for a _Domain_.
 
 ### _Domain_ Details
 
@@ -60,7 +61,6 @@ When scrolling up or down the _Domain_ hierarchy using the Sunburst map, the det
 
  _Users_ within designated _Groups_ can update the _Domain_ in various ways. To add a _Group_ to one of the access lists, drag and drop the _Group_ from the Available _Groups_ list onto the desired access list. All _Users_ who belong to a _Group_ in one of the Access lists will be granted access to the _Domain_.  Access control for _Domains_ include:
 
-
 | Access | Description |
 | --- | --- |
 | **View** | Allows the _Group_ to see the _Domain_. |
@@ -69,4 +69,3 @@ When scrolling up or down the _Domain_ hierarchy using the Sunburst map, the det
 | **Write** | Allows the _Group_ to create _Subdomains_. |
 
 {{% include "userguide/reusable/Tasks.md" %}}
-

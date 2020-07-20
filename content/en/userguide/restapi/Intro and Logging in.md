@@ -5,7 +5,7 @@ weight: 5
 description: >
   Introduction and the Login API
 ---
-APIs can be used to extract and update Ortelius [Objects](/userguide/concepts/1-Ortelius-basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.  
+APIs can be used to extract and update Ortelius [Objects](/userguide/concepts/basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.  
 
 ## Object Accessibility
 
@@ -23,7 +23,7 @@ When specifying an Object by name you can always qualify the name by pre-pending
 
 **Example:**
 
-~~~
+~~~bash
     GLOBAL.USA.Development.demoenv
 
 This specifies that the "demoenv" Environment required can be found in the "Development" Subdomain of Domain "USA" which is a Subdomain of "GLOBAL".
@@ -45,7 +45,7 @@ To use the ID, just place it where you would normally place the object's name. T
 
   First, we need to login. This operation will return a session ID. We use cURL's --cookie-jar option to store this session ID in the file C:\temp\session.txt
 
-  ~~~
+~~~bash
     curl --data "user=omadmin&pass=ompassword" --cookie-jar c:\temp\session.txt http://mac:8080/dmadminweb/API/login
 ~~~
 
@@ -53,7 +53,7 @@ To use the ID, just place it where you would normally place the object's name. T
   
   For example, this will return a JSON array containing all the servers in our home and _Subdomains_ to which we have view access.
 
-  ~~~
+~~~bash
     curl --data "all=Y" --cookie c:\temp\session.txt http://mac:8080/dmadminweb/API/servers
 ~~~
 

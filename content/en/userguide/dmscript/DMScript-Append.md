@@ -47,7 +47,7 @@ set res = append('$2$DKA200:[FERDU01]', 'file.txt', 'vms');
 //res is $2$DKA200:[FERDU01]file.txt
 
 //
-```
+```bash
 
 See Also:
 

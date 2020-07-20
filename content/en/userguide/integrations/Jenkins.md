@@ -50,7 +50,7 @@ This example will create a new _Component Version_ for the _Application Version_
     }
 
     stage ('Build') {
-      def url="https://console.Ortelius.com"
+      def url="https://console.deployhub.com"
       def user="DHUSER"
       def pw="DHPASSWORD"
       def comp="GLOBAL.CSC589.chili.Development.bowl"

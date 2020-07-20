@@ -16,7 +16,7 @@ For releasing _Components_, an agentless architecture supports both a modern arc
 
 ## Reverse Proxy and SaaS
 
-As a SaaS customer, a 'one-way' reverse proxy is used on your side of the firewall. The proxy send requests for deployments every 60 seconds. 
+As a SaaS customer, a 'one-way' reverse proxy is used on your side of the firewall. The proxy send requests for deployments every 60 seconds.
 
 ![SaaS Architecture](/userguide/images/ReverseProxy.png)
 
@@ -26,7 +26,7 @@ Ortelius integrates with external deployment solutions such as Helm to perform t
 
 ## The Ortelius Engine for Monolithic Releases and Database Updates
 
-Our deployment engine manages monolithic deployments and database updates. It moves files and scripts from source _Repositories_ to a target _Environment_ which contains one or more _Endpoints_. This is performed via _Releases_ or _Applications_, which contain _Components_. _Components_ reference a _Repository_, whose files and scripts are placed into the _Dropzone_. Customized _Actions_  manipulate the files (edit, delete, etc.) within the _Dropzone_. This happens before being deployed in a predetermined order to every _Endpoint_ within the _Environment_. 
+Our deployment engine manages monolithic deployments and database updates. It moves files and scripts from source _Repositories_ to a target _Environment_ which contains one or more _Endpoints_. This is performed via _Releases_ or _Applications_, which contain _Components_. _Components_ reference a _Repository_, whose files and scripts are placed into the _Dropzone_. Customized _Actions_  manipulate the files (edit, delete, etc.) within the _Dropzone_. This happens before being deployed in a predetermined order to every _Endpoint_ within the _Environment_.
 
 Ortelius performs all deployments in an Agentless mode. No remote agents need be installed on the target _Endpoint_ to execute deployments.
 

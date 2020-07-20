@@ -185,7 +185,7 @@ _DMScript_ has knowledge of the Ortelius object model. Each object (_Endpoint_, 
 
 This knowledge of the object model allows _DMScript_ to use fairly sophisticated operations. For example if you have an _Application Version_ object:
 
-~~~
+~~~bash
 $app
 
 Then

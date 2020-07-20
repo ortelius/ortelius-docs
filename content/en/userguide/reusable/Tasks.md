@@ -39,7 +39,6 @@ Moves an _Application_ or _Release_ version from one Pipeline state (Life Cycle 
 |**Success _Notify Template_**| The _Notify Template_ emailed on a successful move. You need to define the _Notify Template_ from the Setup Menu.  See more on [_Notify Templates_](/userguide/customizations/2-notifier-templates/).  |
 |**Failure _Notify Template_**| The _Notify Template_ emailed on a failed move. You need to define the _Notify Template_ from the Setup Menu.  See more on [_Notify Templates_](/userguide/customizations/2-notifier-templates/).  |
 
-
 **Deploy Version to _Environment_**
 
 Deploys an _Application_ or _Release_ version to an _Environment_. Select the target _Environment_ via a drop-down list.
@@ -69,10 +68,9 @@ Runs a stand-alone _Action_. For example, if you need to interrupt a deployment 
 |**Success _Notify Template_**| The _Notify Template_ that will be emailed on a successful _Action_. You will need to define the _Notify Template_ from the Setup Menu.  See more on [_Notify Templates_](/userguide/customizations/2-notifier-templates/).  |
 |**Failure _Notify Template_**| The _Notify Template_ that will be emailed on a failed _Action_. You will need to define the _Notify Template_ from the Setup Menu.  See more on [_Notify Templates_](/userguide/customizations/2-notifier-templates/).  |
 
-
 **Approve Version for Move to Next Pipeline State**
 
-Approves the _Application_ or _Release_ version so that it can be moved to a specified state in the pipeline (Life Cycle _Subdomain_). This works in conjunction with the Move Version Task. When the Approve Task is defined, the Target _Domain_ has to be specified. When the Approve Task is executed, the selected _Application_ or _Release_ version can either be Approved or Rejected. Only when the an _Application_ or _Release_ version is "approved" can it be "Moved" or "Deployed". 
+Approves the _Application_ or _Release_ version so that it can be moved to a specified state in the pipeline (Life Cycle _Subdomain_). This works in conjunction with the Move Version Task. When the Approve Task is defined, the Target _Domain_ has to be specified. When the Approve Task is executed, the selected _Application_ or _Release_ version can either be Approved or Rejected. Only when the an _Application_ or _Release_ version is "approved" can it be "Moved" or "Deployed".
 
 Note: When an Approve Task has been defined for a _Domain_, it will force the use of the Approve Task before a "Move" or "Deploy" Task can be executed. If a "Move" or "Deploy" Task is attempted but has not been "Approved," an error will be displayed indicating that the Task must be Approved.
 
@@ -87,7 +85,6 @@ Note: When an Approve Task has been defined for a _Domain_, it will force the us
 |**Approval _Domains_**| The target _Domain_ that approval  is the subject of.   |
 |**Approval _Notify Template_**| The _Notify Template_ that will be emailed on approval. You will need to define the _Notify Template_ from the Setup Menu.  See more on [_Notify Templates_](/userguide/customizations/2-notifier-templates/).  |
 |**Rejected _Notify Template_**| The _Notify Template_ that will be emailed on rejection. You will need to define the _Notify Template_ from the Setup Menu.  See more on [_Notify Templates_](/userguide/customizations/2-notifier-templates/).  |
-
 
 **Request Calendar Entry for Deployment to an _Environment_**
 
@@ -122,7 +119,6 @@ Additional parameters can be added to a Task. These additional parameters will s
 
 - Label: This will appear on the Task's execution window whenever the Task is executed.
 
-- Variable: An Entry, Password, or Dropdown field appears to the right of the Label whenever a Task is executed, where values can be either entered or selected, depending on the Type. 
+- Variable: An Entry, Password, or Dropdown field appears to the right of the Label whenever a Task is executed, where values can be either entered or selected, depending on the Type.
 
 Use the Save to commit the change to the table. Use Edit to update a Task Parameter, or Delete to remove a Task Parameter.
-

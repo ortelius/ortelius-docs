@@ -54,7 +54,7 @@ attachment(name: "myfile.txt", body: $myfile);
 
 }
 
-```
+```bash
 
 **Example**
 
@@ -110,7 +110,7 @@ echo "\<;tr<\<;td<${cr.id}\<;/td<\<;td<${cr.name}\<;/td<\<;/tr<";
 echo "\<;/table<";
 
 }
-```
+```bash
 
 Email Received:
 ![Sample Email](/userguide/dmscript/Attachment.jpg)

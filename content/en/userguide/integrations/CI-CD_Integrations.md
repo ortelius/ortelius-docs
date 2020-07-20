@@ -9,7 +9,7 @@ description: >
 
 ## Ortelius' Continuous Delivery Integration
 
-The Ortelius continuous delivery integration is used to perform both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. It does this by gathering configuration data related to a build, creating new _Component Versions_ and _Application Versions_, and deploying independently deployable _Components_ into specified _Environments_. It also saves the "build" data as part of the configuration information and associates it to the _Component_ and _Application_. 
+The Ortelius continuous delivery integration is used to perform both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. It does this by gathering configuration data related to a build, creating new _Component Versions_ and _Application Versions_, and deploying independently deployable _Components_ into specified _Environments_. It also saves the "build" data as part of the configuration information and associates it to the _Component_ and _Application_.
 
 Ortelius' uses a standard CLI Container to integrate with continuous delivery solutions that execute workflows in containers. If the solution has a more traditional model, a plug-in is required. Following is a list CD tools that Ortelius has performed joint integrations and their corresponding documentation on how each should be implemented:
 
@@ -21,16 +21,15 @@ Ortelius' uses a standard CLI Container to integrate with continuous delivery so
 | **GitLab** | Ortelius CLI Container | [Ortelius CLI Docker Container](https://github.com/ortelius/compupdate) |
 | **TeamCity** | Ortelius CLI Container | [Ortelius CLI Docker Container](https://github.com/ortelius/compupdate) |
 
-
 ### Tracking Build Updates
 
-Ortelius' first hook into the continuous delivery process occurs after the build has been completed and the container has been pushed to a container registry. Ortelius can support any container registry. For more details, reference the above table for for each supported solution. 
+Ortelius' first hook into the continuous delivery process occurs after the build has been completed and the container has been pushed to a container registry. Ortelius can support any container registry. For more details, reference the above table for for each supported solution.
 
 ### Saved Build Data
 
 Build data is saved to the _Component Version_ and displayed on the _Component Version_ Dashboard. In some cases, Ortelius may need to save custom data. This can be done using the _Component_ Attributes and saved as a key/value pair. This custom data is then displayed as Attributes to the _Component Version_ in the Attributes Section.  
 
-The _Component_ Type determines what data is saved.  See [Defining Components](/userguide/publishing-components/2-define-components/) for a complete listing of the Detail data saved for each different _Component_ Type. 
+The _Component_ Type determines what data is saved.  See [Defining Components](/userguide/publishing-components/2-define-components/) for a complete listing of the Detail data saved for each different _Component_ Type.
 
 ### Continuous Configuration Management and Versioning
 
@@ -51,22 +50,22 @@ The following are the parts of the versioning schema:
 |**Version**| is the schematic version number or schematic + Git commit.  For example: v1.5.1.0 or v1.5.1-g3d55a2 |
 
 By default, Ortelius uses an advanced format for the versioning schema. It will automatically increment the version number based on last version found. The advanced format is used since Ortelius has the information from Git to provide a complete version schema.  The advanced formatting is:
-~~~
+
+~~~bash
  <base name>;<variant>;v<version>-g<git commit>
 ~~~
- 
+
 The version segment is broken down further into:
- 
- ~~~
+
+~~~bash
   v<schematic number>-<number of commits>
 ~~~  
 
 The number of commits provides an auto-increment of the last part of the schema number.  
 
-
 An example of the full name is:
 
-~~~
+~~~bash
  email-service;ssl-update;v1_5_1_145-g3d55a2
 ~~~
 
@@ -100,8 +99,8 @@ The Ortelius continuous delivery integration will automatically maintain the _Ap
 
 Ortelius uses the <base name>;<schematic version number>;<version number> as the default format for the versioning schema.   The formatting is:
 
-~~~
-<base name>;<variant>;<schematic version number>;<version number> if a Variant is used. 
+~~~bash
+<base name>;<variant>;<schematic version number>;<version number> if a Variant is used.
 ~~~
 
 Deploy will automatically increment the version number based on last version found. It will create a new _Application Version_ based on the last _Application Version_ and replace the old _Component Version_ with the new _Component Version_.  The new _Component Version_ will be added if an old verion was not found.
@@ -124,4 +123,4 @@ Ortelius will move the _Application_ from one Life Cycle _Subdomain_ to another 
 
 If you are using DeployHub Pro, you can incorporate Approvals into your process. Ortelius will perform an Approval of an _Application_ Move.  This _Approve_ feature is used to reflect an approval that was done in the CD Pipeline for an _Application's_ audit trail.  
 
-For documentation on incorporating Tasks, refer to your specific CD tool documentation as listed above. 
+For documentation on incorporating Tasks, refer to your specific CD tool documentation as listed above.

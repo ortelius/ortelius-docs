@@ -12,7 +12,7 @@ Ortelius supports the ability to run any Ansible Playbook you create.  It does t
 
 ### Ansible as Your Deployment Engine
 
-Ortelius allows you to override the default deployment engine with external deployment solutions such as Ansible. This is supported so you can use your own previously developed Ansbile deployment process instead of re-defining the process to the Ortelius deployment engine.  Or it may be the case that you are experienced with Ansible and choose to continue using it for new deployments. Ortelius uses an Ansible _Action_ that allows you to make a call to your Ansible process and turn over the deployment processing to Ansible. 
+Ortelius allows you to override the default deployment engine with external deployment solutions such as Ansible. This is supported so you can use your own previously developed Ansbile deployment process instead of re-defining the process to the Ortelius deployment engine.  Or it may be the case that you are experienced with Ansible and choose to continue using it for new deployments. Ortelius uses an Ansible _Action_ that allows you to make a call to your Ansible process and turn over the deployment processing to Ansible.
 
 ### How the Ansible _Actions_ Works
 
@@ -25,11 +25,11 @@ You will need to create an Ansible _Action_ that will use your Ansible Playbook.
 - [Customizing Actions](/userguide/first-steps/2-define-your-actions/)
 - [Procedures and Functions](/userguide/customizations/2-define-your-functions-and-procedures/)
 
-The following steps will take you through the process: 
+The following steps will take you through the process:
 
 **Step 1 - Download and Import the Ansible Playbooks as _Procedures_**
 
-Download the following 3 Ortelius _Procedures_ from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). These _Procedures_ will support the steps you need to run your own Ansbile Playbook. 
+Download the following 3 Ortelius _Procedures_ from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). These _Procedures_ will support the steps you need to run your own Ansbile Playbook.
 
 - **GitCheckout.re** - This _Procedure_ pulls the repo into the Ortelius _Dropzone_ and then checks out the commit, branch or tag specified.
 
@@ -47,7 +47,7 @@ Next, select your "Global," or highest level, _Domain_ and upload the _Procedure
 
 Once you have imported the Ansible files as _Procedures_, you ready to define your _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 
-Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_. 
+Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_.
 
 Name the new _Action_ **AnsiblePlaybook** (no spaces).
 
@@ -83,7 +83,7 @@ At this point the Action is ready to be used by anyone with access (based on Dom
 
 Now that you have defined your Ansible _Action_ you are ready to assign it to the _Components_. For using your Ansible Playbook to perform the deployment of the _Component_ you define it to the _Custom Action_ field at the _Component_ level.  If a _Custom Action_ is defined, Ortelius will call the _Custom Action_ instead of using its internal deployment engine. When you define your _Custom Action_ you will select "AnsiblePlaybook." You will be given a dialog box to input the needed variable values. Values are specific to the _Component._ Values will override those defined at the _Application_ or _Environment_ level. The values from Ortelius will be passed along to the Playbook at execution time. See [Defining Components](/userguide/publishing-components/2-define-components/) for more information.
 
-You can also use the AnsiblePlaybook Action to execute Pre and Post _Actions_. Using it in these fields will not override the standard deployment processing. 
+You can also use the AnsiblePlaybook Action to execute Pre and Post _Actions_. Using it in these fields will not override the standard deployment processing.
 
 **Step 5 - Set Your _Component_ Attributes_**
 
