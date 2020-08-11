@@ -14,6 +14,6 @@ This is not an officially supported Google product. This project is currently ma
 
 Once you've cloned the site repo, from the repo root folder, run:
 
-```
+```Shell
 hugo server
 ```
