@@ -38,7 +38,7 @@ _text\_replace_ takes two mandatory and one optional named parameter:
 | replace | The string which will replace all occurrences of the find string in the source file. Mandatory. |
 | line | Boolean (true/false). Optional - defaults to false. If present and set to true, sets _text\_replace_ into _line processing_ mode – each line of the file is read and processed individually. This is useful when using regular expressions to process beginning and ends of lines. |
 
-***Example:***
+### Example
 
  Assuming we have a file called "config.txt" which looks like this:
 
@@ -76,7 +76,7 @@ text\_replace(find: "\_MEMORY\_", replace: "$MEMORY");
 
 In this case, an implicit loop is performed for each _Endpoint_ in the current _Endpoint_ list. This pushes each _Endpoint_ in turn (along with its _Endpoint_ attributes STACK and MEMORY) onto the stack. The file is then modified and a copy taken for each _Endpoint_. During a subsequent deployment, the version of the file specific to each _Endpoint_ is deployed, so each _Endpoint_ gets its own copy of the file with STACK and MEMORY set appropriately.
 
-**Examples:**
+### Examples
 
 Add an extra line to the end of the file:
 
@@ -106,7 +106,7 @@ Restart: Yes
 MaxDisk: 20G
 ```
 
-**Examples:**
+### Examples
 
  Add an entry to the start of the file:
 
@@ -172,7 +172,7 @@ _set\_text_ takes two named parameters:
 | --- | --- |
 | value | The value of the text to add to the element(s). |
 
-**Examples:**
+### Examples
 
  Given an input file "servers.xml" that looks like this:
 
@@ -210,7 +210,8 @@ Result:
 
 NOTE: If the selected element(s) already have text, then that text is replaced by the _set\_text_ operation.
 
-**Examples:**
+### Examples
+
 ```bash
 Set text for _Endpoints_ of type "windows":
 
@@ -250,7 +251,7 @@ _add\_element_ takes three named parameters:
 | "inside" | The specified element is added inside the element identified by the xpath. |
 | element | The element to insert. Must be in XML syntax. |
 
-**Examples:**
+### Examples
 
  Given an input file "servers.xml" that looks like this:
 
@@ -300,7 +301,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Add a "_Component_" element to the second "server" element:
 
@@ -330,7 +331,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Add a "_Component_" element to each server of type "unix":
 
@@ -360,7 +361,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Add different _Component_ elements to _Endpoints_ of specific types:
 
@@ -398,7 +399,7 @@ Result:
 \</ Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
  Add a new "server" element:
 
@@ -428,7 +429,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
  Add a "_Component_" element to every _Endpoint_ apart from the first one.
 
@@ -462,7 +463,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Create an entry specific for each _Endpoint_ in the targeted _Environment_.
 
@@ -480,15 +481,15 @@ value: "\<server name='${server.name}'"
 }
 ```
 
-**Examples:**
+### Examples
 
 This example shows several techniques:
 
 1. The serverspecific flag performs an implicit loop through all the _Endpoints_ in the current _Endpoint_ list.
-2. A copy of the servers.xml file is taken for each _Endpoint._
-3. Each _Endpoint_-specific copy of the servers.xml file is modified to insert an element specific to that _Endpoint_ (in this case including its name and type taken from the $server object.
-4. Note the value string is made up of two concatenated strings.
-5. The value string is surrounded by double quotes in order that variable expansion (of the $server attributes name and type) can occur. To ensure the XML is syntactically correct, the values are surrounded by single quotes. This will not prevent variable expansion because the single quotes are effectively "escaped" by the surrounding double quotes (this is identical to the way Linux/Unix shells perform expansion). The XML parser will substitute double quotes.
+1. A copy of the servers.xml file is taken for each _Endpoint._
+1. Each _Endpoint_-specific copy of the servers.xml file is modified to insert an element specific to that _Endpoint_ (in this case including its name and type taken from the $server object.
+1. Note the value string is made up of two concatenated strings.
+1. The value string is surrounded by double quotes in order that variable expansion (of the $server attributes name and type) can occur. To ensure the XML is syntactically correct, the values are surrounded by single quotes. This will not prevent variable expansion because the single quotes are effectively "escaped" by the surrounding double quotes (this is identical to the way Linux/Unix shells perform expansion). The XML parser will substitute double quotes.
 
 ```bash
 Result:
@@ -535,7 +536,7 @@ _set\_attribute_ takes two named parameters:
 
 NOTE:The xpath must specify an attribute using @ syntax – see examples below.
 
-**Examples:**
+### Examples
 
 Given an input file "servers.xml" that looks like this:
 
@@ -573,7 +574,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Add a new attribute to every _Endpoint_ apart from the first one.
 
@@ -599,7 +600,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Add an attribute specific for each _Endpoint_:
 
@@ -643,7 +644,7 @@ _remove\_element_ takes a single named parameter:
 
 xpath An xpath descriptor indicating the elements(s) in the XML document to be removed.
 
-**Examples:**
+### Examples
 
 Given an input file "servers.xml" that looks like this:
 
@@ -677,7 +678,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Remove all Unix _Endpoints_:
 
@@ -699,7 +700,7 @@ Result:
 \</Ortelius\>
 ```
 
-**Examples:**
+### Examples
 
 Ensure each _Endpoint_ gets its own copy of the file with its own entry removed.
 

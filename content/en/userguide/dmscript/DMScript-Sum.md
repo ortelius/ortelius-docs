@@ -39,7 +39,7 @@ set array = { 'fred' =\> 1, 'jim' =\> 2, 'sheila' =\> 4 };
 In this case sumofarray will be 7 (1+2+4)
 ```
 
-2. Add up all the filesizes in a drop zone
+1. Add up all the filesizes in a drop zone
 
 ```bash
 set sqlfiles = ${_DropZone_.find('\*.sql')};

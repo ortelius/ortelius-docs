@@ -9,7 +9,7 @@ description: >
 Ortelius supports GitHub in the following ways.
 
 1. A binary Repository for retrieving artifacts to deploy such as binaries or scripts.
-2. GitHub Issue Tracking for **DeployHub Pro**. A bridge connects a GitHub issue with a Ortelius Change Request.
+1. GitHub Issue Tracking for **DeployHub Pro**. A bridge connects a GitHub issue with a Ortelius Change Request.
 
 ## GitHub as a Binary Repository
 
