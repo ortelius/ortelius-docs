@@ -36,7 +36,7 @@ This call disassociates a _User_ from a _Group_. Once a _User_ has been removed 
 | ---- | ----------- |
 | GET | /dmadminweb/API/unassign/user/{user_id}/{group_id} |
 
-##### Parameters
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |

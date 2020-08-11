@@ -181,7 +181,7 @@ The following properties can be accessed for a _Component_ object:
 
 Attributes such as _owner_ and _parent_ return _Objects_. These objects have their own attributes. So, for example, one can get the owner name of a _Component_ by writing:
 
-### Examples:
+### Examples
 
 ```bash
 set owner = ${_Component_.owner};
@@ -211,7 +211,7 @@ The following properties can be accessed for a _Component_ item object:
 | rollback | Boolean | Whether this _Component_ Item should be deployed during a roll back operation. |
 | properties | Array | An array of Strings representing the values for the Repository Attributes |
 
-### Example:
+### Example
 
 ```bash
 Iterate through the _Component_ items for a _Component_:
@@ -268,7 +268,7 @@ The following properties can be accessed for a _Credential Object_:
 
 You can use the _Credential Object_ to access external systems in a secure and controlled manner. The user executing the _DMScript_ must have read access to the _Credential_. However, having read access does not allow the username/password to be viewed or modified using the Web UI. (The username is only displayed for the _Credential_ owner, the username and password can only be changed if the User has update access to the _Credential_).
 
-### Example
+## Example
 
 ```bash
 set db2creds = getcredential("db2cred");
@@ -309,7 +309,7 @@ The following methods can be called on the _date object_:
 | to\_int(secs) | Integer | Returns an integer representing the date as the number of seconds since midnight on January 1st 1970 (epoch). The secs parameter is optional. If specified, the specified number of seconds is added to the date/time before the new value is returned. |
 | to\_char(fmt) | String | Formats the date into a string given by the passed fmt string. The fmt string should contain characters as specified below. |
 
-### Date Format Characters
+## Date Format Characters
 
 The to\_char() method returns a string which is identical to the passed fmt string with the exception of the special character sequences described below. Where these are present in the fmt string, they are replaced with the relevant _Component_ from the date/time as described below:
 

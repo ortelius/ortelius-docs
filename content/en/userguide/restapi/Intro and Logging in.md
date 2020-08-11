@@ -21,7 +21,7 @@ If a requested object does not have "read" permission then it cannot be accessed
 
 When specifying an Object by name you can always qualify the name by pre-pending it with the name of the _Domain_ in which it is contained. The name of the _Domain_ should be separated from the name of the object by a period.
 
-### Example:
+### Example
 
 ~~~bash
     GLOBAL.USA.Development.demoenv

@@ -59,7 +59,7 @@ _Endpoint_ can be associated with more than one _Environment_. Assigning an _End
 | ---- | ----------- |
 | GET | /dmadminweb/API/assign/server/{server_id}/{env_id} |
 
-##### Parameters
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
