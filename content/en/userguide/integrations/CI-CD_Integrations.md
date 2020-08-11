@@ -115,11 +115,11 @@ Once the versioning is completed, Ortelius is called to perform the deployment. 
 
 You can incorporate Ortelius' Life Cycle _Subdomain_ Tasks as follows:
 
-**Move**
+### Move
 
 Ortelius will move the _Application_ from one Life Cycle _Subdomain_ to another using the Ortelius _Move Task_.  This enables the _Application_ to move through the same pipeline steps that the CD process is using.
 
-**Approve**
+### Approve
 
 If you are using DeployHub Pro, you can incorporate Approvals into your process. Ortelius will perform an Approval of an _Application_ Move.  This _Approve_ feature is used to reflect an approval that was done in the CD Pipeline for an _Application's_ audit trail.
 

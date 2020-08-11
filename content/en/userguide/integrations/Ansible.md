@@ -27,7 +27,7 @@ You will need to create an Ansible _Action_ that will use your Ansible Playbook.
 
 The following steps will take you through the process:
 
-**Step 1 - Download and Import the Ansible Playbooks as _Procedures_**
+#### Step 1 - Download and Import the Ansible Playbooks as _Procedures_
 
 Download the following 3 Ortelius _Procedures_ from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). These _Procedures_ will support the steps you need to run your own Ansbile Playbook.
 
@@ -37,13 +37,13 @@ Download the following 3 Ortelius _Procedures_ from the [Ortelius Git Repo](http
 
 - **RunAnsiblePlayBook.re** - This Procedure executes the Playbook using variables file created by _WriteEnv2File_.
 
-**Step 2 - Create your _Procedures_**
+#### Step 2 - Create your _Procedures_
 
 Once downloaded, you will need to Import the scripts into Ortelius as _Procedures_. To import these _Procedures_ navigate to the _Func/Procs_ Menu option on the left hand side of the Ortelius Main Menu panel. This will take you to the _Functions and Procedures_ List View. From the _Functions and Procedures_ List View select the **Import** option. The Import will bring you to your operating system "file open" dialog box for selecting the GitCheckout.re, WriteEnv2File.re and RunAnsiblePlayBook.re files.
 
 Next, select your "Global," or highest level, _Domain_ and upload the _Procedure_ into Ortelius. If you select a lower level _Subdomain_ you will restrict access.  By defining it to your highest level _Domain_, all _Users_ will be able to see the _Procedures_. Once you have both imported, you are now ready to create your _Action_.
 
-**Step 3 - Create your Ansible _Action_ using your _Procedures_**
+#### Step 3 - Create your Ansible _Action_ using your _Procedures_
 
 Once you have imported the Ansible files as _Procedures_, you ready to define your _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 
@@ -55,7 +55,7 @@ Now we are going to customize this _Action_. On the right hand side, you will se
 
 When you drag your Ansible _Procedures_ onto the area under "Start" a pop-up dialog box will open for you to complete the following parameters:
 
-**GitCheckout Parameters**
+##### GitCheckout Parameters
 
 | **Field** | Value | Description |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ When you drag your Ansible _Procedures_ onto the area under "Start" a pop-up dia
 | **Git Commit** | $GIT_COMMIT | The commit, tag or branch to checkout |
 | **To Dir** | $GIT_DIR | The directory to checkout into.  Use "." for the default directory |
 
-**RunAnsiblePlaybook Parameters**
+##### RunAnsiblePlaybook Parameters
 
 | **Field** | Value | Description |
 | --- | --- | --- |
@@ -73,19 +73,19 @@ When you drag your Ansible _Procedures_ onto the area under "Start" a pop-up dia
 | **Summary** | Not Required | Enter a summary of this step. | |
 | **RspFile** | $RspFile | The results from the WriteEnv2Toml.re Procedure |
 
-**WriteEnv2File Parameters**
+##### WriteEnv2File Parameters
 
 No Parameter fields are required for _WriteEnv2File_.
 
 At this point the Action is ready to be used by anyone with access (based on Domain and security options). Each _Component_ that uses the _Action_ will need to define specific values. Because this new _Action_ is reusable, no _Component_ variables are defined at the _Action_ level.
 
-**Step 4 - Assign the AnsiblePlaybook Action to a _Component_**
+#### Step 4 - Assign the AnsiblePlaybook Action to a _Component_
 
 Now that you have defined your Ansible _Action_ you are ready to assign it to the _Components_. For using your Ansible Playbook to perform the deployment of the _Component_ you define it to the _Custom Action_ field at the _Component_ level.  If a _Custom Action_ is defined, Ortelius will call the _Custom Action_ instead of using its internal deployment engine. When you define your _Custom Action_ you will select "AnsiblePlaybook." You will be given a dialog box to input the needed variable values. Values are specific to the _Component._ Values will override those defined at the _Application_ or _Environment_ level. The values from Ortelius will be passed along to the Playbook at execution time. See [Defining Components](/userguide/publishing-components/2-define-components/) for more information.
 
 You can also use the AnsiblePlaybook Action to execute Pre and Post _Actions_. Using it in these fields will not override the standard deployment processing.
 
-**Step 5 - Set Your _Component_ Attributes_**
+#### Step 5 - Set Your _Component_ Attributes_
 
 The following variables must be added to the Attributes Section for all  _Components_ using the AnsiblePlaybook _Action_.  The Attributes section can be found on the _Component_ Dashboard.  Use the +Add option in this section to add a row for the variable. You must use Save to commit the row to the table:
 

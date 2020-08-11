@@ -10,7 +10,7 @@ Returns a host path converted to the standardized format using the optional syst
 
 stdpath is also a method that can be called on a _Endpoint_ object. In this case, the system type is taken from the _Endpoint_ itself.
 
-**Usage:**
+## Usage
 
 stdpath(path [,systemtype])
 
@@ -18,11 +18,11 @@ or
 
 _Server_.stdpath(path)
 
-**Returns:**
+## Returns
 
 String: The path converted to the format used by the specified systemtype.
 
-**Example**
+## Example
 
 ```bash
 set res = stdpath('/tmp/file.txt', 'unix');

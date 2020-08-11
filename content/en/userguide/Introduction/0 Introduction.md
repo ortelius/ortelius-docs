@@ -96,11 +96,11 @@ This agentless technology works for both cloud native and legacy architectures i
 
 ## Free Version with Optional Pro Upgrade
 
-**Ortelius**
+### Ortelius
 
 Our free version is based upon the [Ortelius](https://www.ortelius.io/) open source project. Ortelius can be used from the hosted site or installed on premise. It is a strategic and fully open source microservice management solution that integrates with common continuous delivery and DevOps tools. It supports unlimited endpoints, versions, deployments and users. Sign-up at [Ortelius.com](https://www.deployhub.com/).
 
-**DeployHub Pro**
+### DeployHub Pro
 
 For additional security features and support, DeployHub Pro includes extended Users and Group access controls as well as more granular _Domains_.
 

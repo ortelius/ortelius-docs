@@ -31,7 +31,7 @@ _Applications_ are a collection of _Components_.  _Components_ are deployed to _
 - [Build Your _Environments_](/userguide/first-steps/2-define-environments/)
 - [Define Your _Endpoints_](/userguide/first-steps/2-define-endpoints/)
 
-**Step 1 - Deploy the Hipster Store Application**
+### Step 1 - Deploy the Hipster Store Application
 
 To get started, [sign up for Ortelius](https://www.deployhub.com/free-team-sign-up/). Once you signed up, you will first deploy the Hipster Store _Application Base Version_ to the Hipster Store _Environment_.
 
@@ -76,7 +76,7 @@ For our tutorial, we will explore the Online Store Company _Subdomain_ and it's 
 
 Each of these _Subdomains_ have their own _Subdomains_.  Let's explore:
 
-**Step 1 - Explore a Catalog _Subdomain_**
+### Step 1 - Explore a Catalog _Subdomain_
 
 From the Ortelius home panel, select _Domains_ on the left hand side Main Menu. Click on the "Store Services" _Subdomain_ to see what it includes. You will see _Subdomains_ that provide services for the following "Solution Spaces":
 
@@ -88,17 +88,17 @@ From the Ortelius home panel, select _Domains_ on the left hand side Main Menu. 
 
 These Store Services _Subdomains_ organize _Components_ that can be reused by any other team for building out custom websites for our fictitious Online Store Company.  You can also explore the Purchase Processing _Subdomain_ to see how these solution spaces are organized. You can click on the center of the starburst map to navigate back up to higher level _Domains_.
 
-**Step 2 - Explore a Project _Subdomain_**
+### Step 2 - Explore a Project _Subdomain_
 
 Now lets take a look at our Hipster Store _Subdomain_.  The Hipster Store _Subdomain_ manages our Hipster Store _Application_.  It also has _Subdomains_, but these _Subdomains_ are refereed to as "Life Cycle _Subdomains_."  Life Cycle Subdomains are defined to contain _Environments_ where your _Application_ will be deployed. Life Cycle _Subdomains_ cannot have any child _Subdomains_.  It is the lowest level of _Subdomain_ allowed.
 
-**Step 3 - Explore the Online Store _Domain_ Details and Access**
+### Step 3 - Explore the Online Store _Domain_ Details and Access
 
 Return to the Online Store Company _Domain_ by clicking anywhere in the center of the sunburst map. Details about this _Domain_ is displayed to the right of the sunburst.  You will see that is belongs to the "Global" _Domain_, shown by the field labeled "Full Domain."  You will also see that it has the "All _Subdomains_ are Life Cycles" option set to "No" and a list of it's child _Subdomains_. There are other details as well. For a full description see [Building Your Domain Catalog](/userguide/first-steps/2-defining-domains/).
 
 The Access Control Section defines who can see this _Domain_ and it's child _Subdomains_. For this example, the "Everyone" _Group_ is defined to all Access.  The Everyone _Group_ is a default Ortelius _Group_ that includes all _Users_ and _Administrators_.  For more on _Users_ see [Managing Users](/userguide/customizations/2-users/).
 
-**Step 3 - Explore Tasks for the Online Store Company _Domain_**
+### Step 3 - Explore Tasks for the Online Store Company _Domain_
 
 You used the "Deploy Version to an Environment" Task when you deployed the Hipster Store. Tasks allow you to perform steps related to deployments and are only needed by your Project _Domains_. You can assign a Task at a higher _Domain_ level allowing any child _Domains_ to automatically inherit the Tasks. This inheritance simplifies managing Tasks by making some common to all of your _Subdomains_. However, this means that a Catalog _Domain_ may include Tasks that it cannot see.
 
@@ -108,7 +108,7 @@ You can assign Access to Tasks and customize them with Pre and Post _Actions_.  
 
 _Components_ are microservices, binaries, database SQL, files or any deployable artifact used by an _Application_.  _Components_ themselves are not deployed, they must be consumed by an _Application_ in order to be deployed to an _Environment_. With microservices, this may seem counter intuitive as microservices are independently deployable.  This is true and Ortelius takes this into account during a deployment of an _Application_. Ortelius deploys using incremental processing which means if a single  _Component_ of an _Application_ is updated, and the _Application_ is deployed, only the single _Component_ is moved.  Ortelius does incremental processing of deployable objects, but relates them to a logical _Application_.  If an _Application_ pushes a new version of a single microservice _Component_ to a cluster, it will move alone.  Subsequently, all dependent _Applications_ will have a new _Application Version_ created.
 
-**Step 1 - Review the Hipster Store _Components_**
+### Step 1 - Review the Hipster Store _Components_
 
 Choose the _Components_ Menu option on the left side of the Ortelius home panel. This will take you to a list view of all _Component Base Versions_ and _Component Versions_.  A _Component Base Version_ is the original _Component_. When the _Component_ is updated, a _Component Version_ is created.
 
@@ -118,11 +118,11 @@ Double click on the "cartservice;v1_2_2_9_gcadf581" _Component Version_ to explo
 
 _Environments_ are collections of one or more _Endpoints_ where _Applications_ are installed.
 
-**Step 1 - Review the Hipster Store _Environment_**
+### Step 1 - Review the Hipster Store _Environment_
 
 Select _Environments_ from the left hand side of the Ortelius main home panel. This will take you to a list of _Environments_. Double click on the "Hipster Store Cluster". From the Dashboard view you can see how the _Environment_ was setup.  You can also see all of the _Components_ installed on this cluster.
 
-**Step 2 - Review the Hipster Store Cluster _Endpoint_**
+### Step 2 - Review the Hipster Store Cluster _Endpoint_
 
 Select _Endpoints_ from the left hand side of the Ortelius main home panel.  This will take you to a list of _Endpoints_.  Double click on the "Hipster Store Cluster Helm Host" _Endpoint_.  This _Endpoint_ defines where Helm will execute to update the cluster. This _Endpoint_ has been configured to talk to the Hipster Store Cluster.  See [Helm for Container Deployments](/userguide/integrations/helm/) for creating your Helm configuration file.
 

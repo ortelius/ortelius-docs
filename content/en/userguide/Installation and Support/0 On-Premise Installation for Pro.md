@@ -26,7 +26,7 @@ See the [Docker Install Test](https://docs.docker.com/get-started/#test-docker-v
 
 The Ortelius Docker Image is found on the Redhat Quay Docker Registry. Follow the steps below to install the Ortelius into your Docker installation.
 
-**Step 1 - Pull Ortelius from Redhat Quay Registry**
+### Step 1 - Pull Ortelius from Redhat Quay Registry
 
 Run:
 
@@ -34,7 +34,7 @@ Run:
 docker pull quay.io/ortelius/ortelius:latest
 ~~~
 
-**Step 2 - Create a directory to persist the Postgres database**
+### Step 2 - Create a directory to persist the Postgres database
 
 Run:
 
@@ -42,7 +42,7 @@ Run:
 mkdir -p ~/ortelius/data
 ~~~
 
-**Step 3 - Find your image SHA**
+### Step 3 - Find your image SHA
 
 Run:
 
@@ -58,7 +58,7 @@ quay.io/ortelius/ortelius          latest          0114088b0b44        6 days ag
 
 The SHA in the above example is 0114088b0b44.
 
-**Step 4 - Start the container for Linux and OS/X**
+### Step 4 - Start the container for Linux and OS/X
 
 Use the image SHA from Step 3 as the last parameter to the docker run.
 
@@ -66,7 +66,7 @@ Use the image SHA from Step 3 as the last parameter to the docker run.
 docker run -v ~/ortelius/data:/var/lib/pgsql/data:Z -v ~/ortelius/logs:/opt/ortelius/logs:Z -p 7171:8080 -d –hostname docker_dh -v ~/.ssh:/keys:Z 0114088b0b44
 ~~~
 
-**Step 5 - Access Ortelius from your browser**
+### Step 5 - Access Ortelius from your browser
 
  Ortelius is accessible through the following url:
 

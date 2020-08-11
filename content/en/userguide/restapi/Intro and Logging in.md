@@ -21,7 +21,7 @@ If a requested object does not have "read" permission then it cannot be accessed
 
 When specifying an Object by name you can always qualify the name by pre-pending it with the name of the _Domain_ in which it is contained. The name of the _Domain_ should be separated from the name of the object by a period.
 
-**Example:**
+### Example:
 
 ~~~bash
     GLOBAL.USA.Development.demoenv
@@ -61,20 +61,20 @@ To use the ID, just place it where you would normally place the object's name. T
 
 When issuing calls to the API, the client application must either first issue a "login" call, specifying the username and password or must specify the username and password in each individual call to the API.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET |  /dmadminweb/API/login |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Value | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | user | query | User Id | Yes | string |
 | pass | query | Password for User | Yes | string |
 
-**Responses**
+### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |

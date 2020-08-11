@@ -60,7 +60,7 @@ The Dashboard view displays all information related to a specific _Function_ or 
 |**Type**| Displays the kind of the _Function_ or _Procedure_ created when added.|
 |**Display Name**| An alternative Name if required.  If not used defaults to the "Name".|
 
-**Additional Details for _Local_ Scripts**
+### Additional Details for _Local_ Scripts
 
 This type of _Function_ or _Procedure_ runs on the deployment engine and requires these additional details.
 
@@ -70,7 +70,7 @@ This type of _Function_ or _Procedure_ runs on the deployment engine and require
 |**Command Line Interpreter**| Your _Function_ or _Procedure_ will be written using a particular language such as Python.  This field in the fully qualified path and name of your interpreter.  Ortelius will need this to execute your process.|
 |**Result is Expr** | Result is Expression is used for return values for _Functions_ only. This will not be displayed for _Procedures_ as they do not return a value.  If this box is checked, the return value from the _Function_ is interpreted as DMScript.  For example, the "listservices" _Function_ which returns a list of services on a Windows _Endpoint_ returns the list into an array using this option. |
 
-**Additional Details for _Endpoint_ Scripts**
+### Additional Details for _Endpoint_ Scripts
 
 This type of _Function_ or _Procedure_ runs on the _Endpoint_ and requires these additional details.
 
@@ -102,7 +102,7 @@ When you create your _Function_ or _Procedure_ it will most likely need paramete
 - The Command Line Switches Section provides a table of parameter switches that can be used to construct the command line call.
 - The Command Line Section builds out what your command line call will look like using drog and drop of the Input Parameters and Switches.
 
-**Input Parameters Section**
+#### Input Parameters Section
 
 This section has two purposes. First to define the fields that will be presented on the Parameters Dialog box as a checkbox or entry field.  Secondly, it defines the parameters being passed to the command line by the _Function_ or _Procedure_.
 
@@ -118,17 +118,17 @@ A list of parameters can be made available for the user of your  _Function_ or _
 |**Required**|Indicates the argument is required for the Procedure/Function. Any parameter marked as being "Required" is highlighted and cannot be left blank.
 |**Pos**| This is used only when calling the _Function_ or _Procedure_ from DMScript. The Position orders the parameters when making the call in DMScript.
 
-**Command Line Switches**
+#### Command Line Switches
 
 The Section allows for the creation of "fixed" command line switches or other attributes that you wish to have present on the generated Command Line. These can be created by clicking on the plus +Add option to add a new switch. You must use Save to commit the new row to the table.  When you add Parameters and Switches, they are placed in a "pallet" above the Command Line Section. To remove or update an item, check the item and use Delete or Edit options.
 
 Each "Command Line Switch" can include variables which will be expanded when the Command Line is constructed and executed. These variables can be attributes stored against a Ortelius Object (such as _Endpoint, Environment, Application,_ or _Component_) or can be Global Variables.
 
-**Command Line**
+#### Command Line
 
 You can drag and drop the items from the "pallet" of Switches in the correct order on your Command Line. The result displays how the Command Line has been constructed.
 
-**DMScript in Database Editor**
+#### DMScript in Database Editor
 
 The embedded editor includes:
 

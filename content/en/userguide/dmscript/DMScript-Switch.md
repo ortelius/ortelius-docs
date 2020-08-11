@@ -8,7 +8,7 @@ description: >
 
 The _Switch/Case/Default_ condition expression is evaluated and compared to each case label in turn until a match is found. Subsequent labels will be executed until a break is executed. A default clause will always match. The case expressions do not need to be constants and can be of any type.
 
-**Examples**
+## Examples
 
 ```bash
 switch($response) {

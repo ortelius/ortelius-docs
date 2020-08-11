@@ -19,7 +19,7 @@ This process involves the creation of custom _Procedures_ and a _Post Action_.  
 
 Once downloaded, you will need to Import them into Ortelius as the Procedures. To import these Procedures login to Ortelius and select the _Func/Procs_.  From the list view select  **Import** menu. Select your Domain, such as '_Global_ Domain' and upload the _Procedure_ into the Ortelius.
 
-**Step 1 - Download and Import the WebLogic scripts as _Procedures_**
+### Step 1 - Download and Import the WebLogic scripts as _Procedures_
 
 Download the the most current Ortelius WebLogic Procedures from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). There will be two:
 
@@ -27,13 +27,13 @@ Download the the most current Ortelius WebLogic Procedures from the [Ortelius Gi
 
 - **WeblogicDeploy.re** - This Procedure executes Ant against a dynamically created build.xml file to upload the classes to Weblogic.
 
-**Step 2 - Create your WebLogic _Procedures_**
+### Step 2 - Create your WebLogic _Procedures_
 
 Once downloaded, you will need to Import the scripts into Ortelius as _Procedures_. To import these _Procedures_ navigate to the _Func/Procs_ Menu option on the left hand side of the Ortelius Main Menu panel. This will take you to the _Functions and Procedures_ List View. From the _Functions and Procedures_ List View select the **Import** option. The Import will bring you to your operating system "file open" dialog box for selecting the WeblogicCredential.re and WeblogicDeploy.re files.
 
 Next, select your "Global," or highest level, _Domain_ and upload the _Procedure_ into Ortelius. If you select a lower level _Subdomain_ you will restrict access.  By defining it to your highest level _Domain_, all _Users_ will be able to see the _Procedures_. Once you have both imported, you are now ready to create your _Action_.
 
-**Step 3 - Create your _Action_ for the WebLogic _Procedure_**
+### Step 3 - Create your _Action_ for the WebLogic _Procedure_
 
 Once you have imported your WeblogicCredential.re and WeblogicDeploy.re files as _Procedures_, you can define your WebLogic _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 
@@ -71,7 +71,7 @@ The _Action_ can now be placed into the _Post Action field_ of a _Component_ as 
 | **Library** | ${WeblogicLibrary} | identifies the deployment as a shared J2EE library or optional package |
 | **Source** | ${dep.files} | Archive to deploy |
 
-**Step 4 - Set Your _Action_ to your _Component_**
+### Step 4 - Set Your _Action_ to your _Component_
 
 Place the _Action_ within the _Component's Post Action_ field. When _Application_ deploys its artifacts to the Weblogic server, and the  _Post Action_ at the _Component_ level performs the installation into Weblogic Target.
 
@@ -80,7 +80,7 @@ For more information see:
 - [Customizing Actions](/userguide/first-steps/2-define-your-actions/)
 - [Procedures and Functions](/userguide/customizations/2-define-your-functions-and-procedures/)
 
-**Step 5 - Set Your _Component_ Attributes_**
+### Step 5 - Set Your _Component_ Attributes_
 
 The following variables must be added to the Attributes Section for all  _Components_ using the WeblogicDeployAction _Post Action_.  The Attributes section can be found on the _Component_ Dashboard.  Use the +Add option in this section to add a row for the variable. You must use Save to commit the row to the table:
 

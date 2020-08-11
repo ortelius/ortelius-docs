@@ -26,7 +26,7 @@ For more information on starting the Ortelius Container see:
 
 Helm is called as a Ortelius [_Custom Action_](/userguide/customizations/2-define-your-actions/). To use Helm, you will need to import two Helm files as Ortelius _Procedures_ and define them to your _Custom Action_. This Helm _Custom Action_ can then be assigned to your Container _Components_. See [_Procedures and Functions_](/userguide/customizations/2-define-your-functions-and-procedures/) and  [Customize Actions](/userguide/customizations/2-define-your-actions/) to learn more. The following steps will create your Helm _Custom Action_.
 
-**Step 1 - Download and Import the Helm scripts as _Procedures_**
+### Step 1 - Download and Import the Helm scripts as _Procedures_
 
 Download the the most current Ortelius Helm Procedures from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). There will be two:
 
@@ -34,13 +34,13 @@ Download the the most current Ortelius Helm Procedures from the [Ortelius Git Re
 
 - **HelmUpgrade.re** – This _Procedure_ performs a Helm upgrade/install of the Helm Chart.
 
-**Step 2 - Create your _Procedures_**
+### Step 2 - Create your _Procedures_
 
 Once downloaded, you will need to Import the scripts into Ortelius as _Procedures_. To import these _Procedures_ navigate to the _Func/Procs_ Menu option on the left hand side of the Ortelius Main Menu panel. This will take you to the _Functions and Procedures_ List View. From the _Functions and Procedures_ List View select the **Import** option. The Import will bring you to your operating system "file open" dialog box for selecting the WriteEnv2Toml.re and HelmUpgrade.re files.
 
 Next, select your "Global," or highest level, _Domain_ and upload the _Procedure_ into Ortelius. If you select a lower level _Subdomain_ you will restrict access.  By defining it to your highest level _Domain_, all _Users_ will be able to see the _Procedures_. Once you have both imported, you are now ready to create your _Action_.
 
-**Step 3 - Create your _Action_ for Your Helm _Procedures_**
+### Step 3 - Create your _Action_ for Your Helm _Procedures_
 
 Once you have imported your WriteEnv2Toml.re and HelmUpgrade.re files as _Procedures_, you can define your _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 

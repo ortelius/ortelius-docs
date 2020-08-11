@@ -8,20 +8,20 @@ description: >
 
 ## List Environments
 
-**Description**
+### Description
 
 This call returns an array of JSON objects representing each _Environment_ to
 which the logged-in _User_ has access.
 
 If the all parameter is not specified then only the _Environments_ associated with the _User's_ home _Domain_ are listed. If the all parameter is specified and is set to "y", for yes, then the result includes the _Environments_ included in any accessible _Subdomains_.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET | /dmadminweb/API/environments |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
@@ -34,13 +34,13 @@ If the all parameter is not specified then only the _Environments_ associated wi
 
 This call returns a JSON object representing the specified _Environment_.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET | /dmadminweb/API/environment/{identifier}
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |

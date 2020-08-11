@@ -17,7 +17,7 @@ The following steps will take you through the process.
 
 ## Creating Pre and Post _Actions_ for Starting/Stopping Tomcat
 
-**Step 1 - Download and Import the Tomcat Stop and Start scripts as _Procedures_**
+### Step 1 - Download and Import the Tomcat Stop and Start scripts as _Procedures_
 
 Download the the most current Ortelius Tomcat Procedures from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). There will be two:
 
@@ -25,13 +25,13 @@ Download the the most current Ortelius Tomcat Procedures from the [Ortelius Git 
 
 - **TomcatPostDeploy.re** – This _Procedure_ starts your Tomcat Server.
 
-**Step 2 - Create your Tomcat _Procedures_**
+### Step 2 - Create your Tomcat _Procedures_
 
 Once downloaded, you will need to Import the scripts into Ortelius as _Procedures_. To import these _Procedures_ navigate to the _Func/Procs_ Menu option on the left hand side of the Ortelius Main Menu panel. This will take you to the _Functions and Procedures_ List View. From the _Functions and Procedures_ List View select the **Import** option. The Import will bring you to your operating system "file open" dialog box for selecting the TomcatPreDeploy.re and TomcatPostDeploy.re files.
 
 Next, select your "Global," or highest level, _Domain_ and upload the _Procedure_ into Ortelius. If you select a lower level _Subdomain_ you will restrict access.  By defining it to your highest level _Domain_, all _Users_ will be able to see the _Procedures_. Once you have both imported, you are now ready to create your _Action_.
 
-**Step 3 - Create your _Action_ for the Tomcat _Procedures_**
+### Step 3 - Create your _Action_ for the Tomcat _Procedures_
 
 Once you have imported your TomcatPreDeploy.re and TomcatPostDeploy.re files as _Procedures_, you can define your _Actions_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel. You will be creating two _Actions_, one for your Tomcat stop step, and the other for the Tomcat start step. One will be called in the _Pre Action_ the other in the _PostAction_.
 
@@ -64,11 +64,11 @@ Follow the directions above, except name the new Action "TomcatStopAction" (no s
 
 At this point your new _Actions_ are ready to be used by anyone with access (based on Domain and security options). Each _Component_ that uses the these _Actions_ as Pre and Post steps to the deployment will need to define specific values.
 
-**Step 4 - Assign the TomcatStop and TomcatStart Action to an _Application_**
+### Step 4 - Assign the TomcatStop and TomcatStart Action to an _Application_
 
 Create your _Application_ and define your Pre and Post Tomcat _Actions_ using the _Application_ Dashboard. The _Applications_ _Pre-Action_ should be assigned the TomcatStopAction.  This will cause your Tomcat server to be stopped prior to the _Application_ files being deployed.  The _Application's_ _Post-Action_ should be assigned the TomcatStartAction which will start Tomcat after the deployment of your .ear/.war has been completed.  For more information see [Defining Your Application](/userguide/packaging-applications/2-defining-applications/).
 
-**Step 5 - Set Your _Application_ Attributes_**
+### Step 5 - Set Your _Application_ Attributes_
 
 The following variables must be added to the Attributes Section for your Application using the TomcatStopAction _Pre Action_ and TomcatStartAction _Post Action_.  The Attributes section can be found on the _Application_ Dashboard.  Use the +Add option in this section to add a row for the variable. You must use Save to commit the row to the table:
 

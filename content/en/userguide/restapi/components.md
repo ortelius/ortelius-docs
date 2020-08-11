@@ -11,13 +11,13 @@ description: >
 
 Retrieve specific _Component_ or _Component_ version. This call returns a JSON Object representing the specified _Component_. It is useful to determine the _Application_(s) which include the _Component_, whether the _Application_ is approved, which other _Components_ are used alongside the specified _Component_ and so on.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET |  dmadminweb/API/_Component_/{identifier} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Value | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
@@ -39,13 +39,13 @@ Retrieve specific _Component_ or _Component_ version. This call returns a JSON O
 
 This call creates a new _Component Version_. The new _Component_ inherits all the attributes of the predecessor _Component_ including its _Domain_.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET |  /dmadminweb/API/new/compver/{comp_id} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
@@ -60,13 +60,13 @@ This call associates a build number with a specified _Component_. It is typicall
 
 In order for this to work through the permission model, the associated "Create _Application_ Version" Task needs to be specified. This ensures that the invoking user has permission to create a new version of the _Application_ (since the permissions are checked against the named Task) and also the target _Domain_ (i.e. the domain in which the new _Application_ is created) is determined from the Task. Also, by specifying the Task to execute, any Pre and Post link _Actions_ are executed just as if the Task had been invoked via the Web UI.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET |  /dmadminweb/API/buildid/{comp_id}/{build_id} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Value | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |

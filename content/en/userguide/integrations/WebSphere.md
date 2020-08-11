@@ -46,7 +46,7 @@ The _Action_ can now be placed into the _Post Action field_ of a _Component_ as 
 | **UseAutoLink** | Checkbox | Select to use auto link |
 | **Tasks** | ${Tasks} | Admin tasks to perform |
 
-**Set Your _Component_ Attributes_**
+### Set Your _Component_ Attributes_
 
 The following variables must be added to the Attributes Section for all  _Components_ using the WebSphereDeployAction _Post Action_.  The Attributes section can be found on the _Component_ Dashboard.  Use the +Add option in this section to add a row for the variable. You must use Save to commit the row to the table:
 

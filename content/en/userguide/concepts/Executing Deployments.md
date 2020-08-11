@@ -18,11 +18,11 @@ Whenever a deployment has a problem, Ortelius can provide a fast and safe repair
 
 Ortelius uses either the default [_Action_](/userguide/customizations/2-define-your-actions/) or _Custom Actions_ (i.e., Helm, Ansible, external script) to handle the deployment processing of your _Application_ and _Components_.  For most deployments, no customization is required and is easily supported with the default _Actions_. When a _Custom Action_ is used, it relys on an external process to manage the deployment processing.
 
-**Executing Deployments with the Default _Actions_**
+#### Executing Deployments with the Default _Actions_
 
  When you execute a deployment, Ortelius will call a default _Action_ to push the _Component_ from the source location to the target _Endpoint_. You can customize the deployment process by writing your own _Actions_ that allow you to refine the way the deployment processing will occur. _Actions_ themselves contain [_Procedures_, _Functions,_](/userguide/customizations/2-define-your-functions-and-procedures/) and other _Actions_ which allow you to develop highly functioning and re-useable processes that can be shared across the _Domain_ to which they belong. For most users, no modifications to the default _Actions_ are required. For your microservice _Components_ you will use a _Custom Action_ that calls your Helm chart.
 
-**Executing Deployments with _Custom Actions_**
+#### Executing Deployments with _Custom Actions_
 
 _Custom Actions_ allow you to execute existing one-off deployment scripts and can support an easy transition to using Ortelius. You can choose to bypass Ortelius' default _Actions_ using a pre-defined our newly created [_Custom Action_](/userguide/customizations/2-define-your-actions/). This can be used to call other tools such as Helm, Ansible or a homegrown deploy script that does the heavy lifting of managing deployment logic. To use a _Custom Action_ you will [define your _Component_](/userguide/publishing-components/2-define-components/#viewing-and-editing-_components_-with-the-dashboard) with the _Custom Action_ that will take over the normal deployment processing. When a _Custom Action_ is designated within an _Application_ or _Component_, any default Pre or Post _Action_ is ignored and not executed during the deployment. If a _Custom Action_ is used, it can use one or more Ortelius _Procedures_, _Functions_, and _Actions_, in a predetermined order.
 

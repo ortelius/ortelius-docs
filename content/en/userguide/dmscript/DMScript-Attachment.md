@@ -19,7 +19,7 @@ _attachment_ takes a number of named parameters:
 
 _attachment_ can optionally open a code block. If body is not specified then the content of the attachment is taken from the output created by this code block.
 
-**Example**
+## Example
 
 ```bash
  Checkout a file and include it as an attachment in an email:
