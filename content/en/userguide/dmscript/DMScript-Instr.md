@@ -3,7 +3,7 @@ title: "Instr"
 linkTitle: "Instr"
 weight: 74
 description: >
-  Search a string looking for the first instance of the specified string. 
+  Search a string looking for the first instance of the specified string.
 ---
 
 instr searches a string looking for the first instance of the specified search string. If the search string is located in the source string, then its starting position is returned. The first character in a string is position 0. If the search string cannot be found within the source string, instr returns -1.

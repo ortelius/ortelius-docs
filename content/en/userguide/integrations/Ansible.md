@@ -51,7 +51,7 @@ Use the +Add option to create a new _Action_ for you _Procedure_. In the "Full D
 
 Name the new _Action_ **AnsiblePlaybook** (no spaces).
 
-Now we are going to customize this _Action_. On the right hand side, you will see a list of _Functions_ and _Procedures_ you can choose from.  Navigate to your _Domain_ to find the GitCheckout.re, WriteEnv2File.re and RunAnsiblePlayBook.re imported _Procedures_.  Drag them onto the area under "Start". The order should be _GitCheckout_, _WriteEnv2File_, _RunAnsiblePlaybook_.  
+Now we are going to customize this _Action_. On the right hand side, you will see a list of _Functions_ and _Procedures_ you can choose from.  Navigate to your _Domain_ to find the GitCheckout.re, WriteEnv2File.re and RunAnsiblePlayBook.re imported _Procedures_.  Drag them onto the area under "Start". The order should be _GitCheckout_, _WriteEnv2File_, _RunAnsiblePlaybook_.
 
 When you drag your Ansible _Procedures_ onto the area under "Start" a pop-up dialog box will open for you to complete the following parameters:
 

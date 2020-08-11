@@ -8,7 +8,7 @@ description: >
 
 ## The Ortelius Deployment Engine and Incremental Processing
 
-Ortelius uses a deployment engine to perform the push of deployments across your [_Environments_](/userguide/first-steps/2-define-environments/).  For SaaS users, your reverse proxy is your deployment engine.  For on premise installations, your deployment engine is installed as part of your Ortelius installation. The deployment engine is called when a deployment is initiated. The job of the deployment engine is to do the decision making about what [_Components_](/userguide/publishing-components/intro-to-components/) need to be released, and what processing logic is required.  Deployment processing is based on the deployment configuration of the _Component_. Ortelius deploys _Applications_ which are a collection of _Components_, on an increment basis. If a _Component_ is already running in an _Environment_, it is not re-released. This is how Ortelius independently deploys microservices, and handles roll forward or rollback logic.  Ortelius uses a backend version control engine to achieve incremental deployments, forward or backward.  
+Ortelius uses a deployment engine to perform the push of deployments across your [_Environments_](/userguide/first-steps/2-define-environments/).  For SaaS users, your reverse proxy is your deployment engine.  For on premise installations, your deployment engine is installed as part of your Ortelius installation. The deployment engine is called when a deployment is initiated. The job of the deployment engine is to do the decision making about what [_Components_](/userguide/publishing-components/intro-to-components/) need to be released, and what processing logic is required.  Deployment processing is based on the deployment configuration of the _Component_. Ortelius deploys _Applications_ which are a collection of _Components_, on an increment basis. If a _Component_ is already running in an _Environment_, it is not re-released. This is how Ortelius independently deploys microservices, and handles roll forward or rollback logic.  Ortelius uses a backend version control engine to achieve incremental deployments, forward or backward.
 
 ### Roll Forward or Rollback
 
@@ -55,7 +55,7 @@ Ortelius uses a built-in deployment pipeline for tracking an _Application's_ jou
 
 Ortelius tracks an _Application's_ configuration including where it is in the Life Cycle in terms of _Environments_.  An _Environment_ is assigned to a Life Cycle _Subdomain_. Therefore, Ortelius can track where a _Component_ or _Application_ is in the Life Cycle based on where it has been installed. Each Life Cycle _Subdomain_ can contain multiple _Environments_. Regardless of what _Environment_ an _Application_ is running in, Ortelius can still track where it is in the Life Cycle process based on the Life Cycle _Subdomain_. This is the core function of Life Cycle _Subdomains_.
 
-A Life Cycle _Subdomain_ is the lowest level _Domain_.  You can not create a _Subdomain_ off of a Life Cycle _Subdomain_.  
+A Life Cycle _Subdomain_ is the lowest level _Domain_.  You can not create a _Subdomain_ off of a Life Cycle _Subdomain_.
 
 ### Using a Life Cycle Subdomain
 
@@ -65,7 +65,7 @@ When you create a Life Cycle _Subdomain_, you provide a means to include Life Cy
 
 You can force the progression of your Life Cycle process by adding a "Move" Task to the Life Cycle _Subdomain_.  At the "Move" Task level, you define what Life Cycle _Subdomain_ will be the next state (the "move to _Domain_). This is how Ortelius clearly defines the order of how an _Application_ should progress through the Life Cycle, i.e. first development, then test, and finally production. A "Move" Task does not perform a deployment, it just stages the _Application_ for a deployment into the _Environments_ associated with that Life Cycle _Subdomain_.
 
-To deploy an _Application_ into an _Environment_ make sure that the Deploy Task is assigned to the _Domain_.  The Deploy Task is the default Task for all newly created _Domains_.  
+To deploy an _Application_ into an _Environment_ make sure that the Deploy Task is assigned to the _Domain_.  The Deploy Task is the default Task for all newly created _Domains_.
 
 ### Your Life Cycle _Subdomains_ and your Continuous Delivery Engine
 

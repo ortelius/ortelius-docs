@@ -1,7 +1,7 @@
 ---
 title: "Set Statement"
 linkTitle: "Set Statement"
-weight: 96    
+weight: 96
 description: >
   Assign a variable or array element to a value.
 ---

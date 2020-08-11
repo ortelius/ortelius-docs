@@ -3,7 +3,7 @@ title: "Random"
 linkTitle: "Random"
 weight: 88
 description: >
-  Generate a random number. 
+  Generate a random number.
 ---
 
 Returns a random number between 0 and the specified limit.

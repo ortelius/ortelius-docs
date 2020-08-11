@@ -3,7 +3,7 @@ title: "Modifying the Default User Groups"
 linkTitle: "Modifying the Default User Groups"
 weight: 90
 description: >
-  Modifying the default User and Administrator Groups 
+  Modifying the default User and Administrator Groups
 ---
 
 ## Intro to _Groups_
@@ -14,7 +14,7 @@ Ortelius has three default Groups - Administrators, Everyone and Users.  Access 
 
 You will find _Groups_ under the Setup menu.  Selecting _Groups_ will take you to a list of displaying the Administration _Group_ and _User_ Group.
 
-From the _Groups_ List View, double click on the _Group_ which you would like to view to see all Details.  
+From the _Groups_ List View, double click on the _Group_ which you would like to view to see all Details.
 
 ## Using the _Group_ Dashboard for Viewing and Editing
 

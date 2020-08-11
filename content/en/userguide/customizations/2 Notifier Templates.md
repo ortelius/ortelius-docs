@@ -32,7 +32,7 @@ The _Notifier Templates_ List View has the following Tabs.
 | Add | Allows you to Add a new _Notifier Template_. |
 | Delete | Deletes the selected item. |
 
-From the _Notifier Template_ List View, double click on the _Notifier Template_ which you would like to view to see all Details.  
+From the _Notifier Template_ List View, double click on the _Notifier Template_ which you would like to view to see all Details.
 
 ## Using the _Notifiers_ Dashboard for Viewing and Editing
 

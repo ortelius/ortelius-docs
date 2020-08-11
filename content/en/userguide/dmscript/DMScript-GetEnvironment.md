@@ -3,7 +3,7 @@ title: "Get Environment"
 linkTitle: "Get Environment"
 weight: 68
 description: >
-  Get an Environment object based on the Environment Name. 
+  Get an Environment object based on the Environment Name.
 ---
 
 get_Environment_ takes an _Environment_ Name and returns the matching _Environment Object_.

@@ -1,6 +1,6 @@
 ## Hipchat Details
 
-Ortelius allows you to send notifications using _Notifiers_ via HipChat Groups, Topics, or Room features. Notifications are defined to _Components_ and _Applications_ and inform the recipient(s) of the _Component_ or _Applications_ deployment's success or failure. To define your _Notifier_ see [Using Notifiers for Messaging](/userguide/customizations/2-define-notifiers/).  
+Ortelius allows you to send notifications using _Notifiers_ via HipChat Groups, Topics, or Room features. Notifications are defined to _Components_ and _Applications_ and inform the recipient(s) of the _Component_ or _Applications_ deployment's success or failure. To define your _Notifier_ see [Using Notifiers for Messaging](/userguide/customizations/2-define-notifiers/).
 
 | Field | Description |
 | --- | --- |

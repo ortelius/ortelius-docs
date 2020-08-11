@@ -13,7 +13,7 @@ Ortelius supports GitHub in the following ways.
 
 ## GitHub as a Binary Repository
 
-You can configure Ortelius to call out to a Git Repo to pull deployable artifacts (binaries, scripts, etc.) as part of your deployment.  The process will check out your deployable artifacts based on commit, branch or tag specified. You will need to configure Ortelius with a file system Ortelius _Repository_ that will pull the files need fro the deployment.  You will also need to create a "Git Checkout" _Procedure_ and _Action_.  
+You can configure Ortelius to call out to a Git Repo to pull deployable artifacts (binaries, scripts, etc.) as part of your deployment.  The process will check out your deployable artifacts based on commit, branch or tag specified. You will need to configure Ortelius with a file system Ortelius _Repository_ that will pull the files need fro the deployment.  You will also need to create a "Git Checkout" _Procedure_ and _Action_.
 
 **Step 1 - Create a Ortelius File System _Repository_**
 

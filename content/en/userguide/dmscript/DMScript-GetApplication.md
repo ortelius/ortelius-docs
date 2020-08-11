@@ -3,7 +3,7 @@ title: "Get Application"
 linkTitle: "Get Application"
 weight: 65
 description: >
-  Get the Application object based on Application Name. 
+  Get the Application object based on Application Name.
 ---
 
 get_Application_ takes an _Application_ Name and returns the matching _Application Object_.

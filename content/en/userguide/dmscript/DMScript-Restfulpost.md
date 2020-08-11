@@ -3,7 +3,7 @@ title: "RESTful Post"
 linkTitle: "RESTful Post"
 weight: 93
 description: >
-  Pass data to an external RESTFul API. 
+  Pass data to an external RESTFul API.
 ---
 
 

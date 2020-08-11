@@ -19,4 +19,4 @@ Integrations can be created using:
 - [_Data Sources_](/userguide/profeatures/2-data-sources/) for connecting to outside data such as Change Request systems like Jira, Git or Bugzilla.
 - [_APIs_](/userguide/restapi/) for creating continuous delivery plug-ins for continuous configuration management.
 
-{{% include "userguide/reusable/ListofActions.md" %}}  
+{{% include "userguide/reusable/ListofActions.md" %}}

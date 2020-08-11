@@ -1,5 +1,5 @@
 ---
- 
+
 title:  "Key Concepts"
 linkTitle: "Key Concepts"
 weight: 10

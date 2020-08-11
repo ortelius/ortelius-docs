@@ -27,7 +27,7 @@ Ortelius' first hook into the continuous delivery process occurs after the build
 
 ### Saved Build Data
 
-Build data is saved to the _Component Version_ and displayed on the _Component Version_ Dashboard. In some cases, Ortelius may need to save custom data. This can be done using the _Component_ Attributes and saved as a key/value pair. This custom data is then displayed as Attributes to the _Component Version_ in the Attributes Section.  
+Build data is saved to the _Component Version_ and displayed on the _Component Version_ Dashboard. In some cases, Ortelius may need to save custom data. This can be done using the _Component_ Attributes and saved as a key/value pair. This custom data is then displayed as Attributes to the _Component Version_ in the Attributes Section.
 
 The _Component_ Type determines what data is saved.  See [Defining Components](/userguide/publishing-components/2-define-components/) for a complete listing of the Detail data saved for each different _Component_ Type.
 
@@ -35,11 +35,11 @@ The _Component_ Type determines what data is saved.  See [Defining Components](/
 
 Continuous configuration management and versioning is the process of creating new _Application Versions_ based on the detection of build updates. When an update is detected, Ortelius becomes aware of a new _Component Version_ in the continuous delivery workflow. This tells Ortelius that a new _Component Version_ is available, triggering Ortelius to update the dependency relationship maps of all the consuming _Applications_, therefore creating new _Application Versions_.
 
-This continuous configuration step is particularly important in a microservice implementation.  Every time a new microservice is pushed across the pipeline, it impacts the configuration of the "logical" _Application_ that consumes it.  A new microservice _Component_ creates a new _Application Version_.  This is how Ortelius presents the _Application Version_ Dashboard data showing the relationship and difference maps for each cluster to which the microservice _Component_ is deployed.  
+This continuous configuration step is particularly important in a microservice implementation.  Every time a new microservice is pushed across the pipeline, it impacts the configuration of the "logical" _Application_ that consumes it.  A new microservice _Component_ creates a new _Application Version_.  This is how Ortelius presents the _Application Version_ Dashboard data showing the relationship and difference maps for each cluster to which the microservice _Component_ is deployed.
 
 ### _Component_ Versioning Schema
 
-Ortelius versions _Components_ differently than it does new _Application Versions_.  _Components_ are tied to Git commits, _Applications_ are not.  
+Ortelius versions _Components_ differently than it does new _Application Versions_.  _Components_ are tied to Git commits, _Applications_ are not.
 
 The following are the parts of the versioning schema:
 
@@ -59,9 +59,9 @@ The version segment is broken down further into:
 
 ~~~bash
   v<schematic number>-<number of commits>
-~~~  
+~~~
 
-The number of commits provides an auto-increment of the last part of the schema number.  
+The number of commits provides an auto-increment of the last part of the schema number.
 
 An example of the full name is:
 
@@ -113,7 +113,7 @@ Once the versioning is completed, Ortelius is called to perform the deployment. 
 
 ## Life Cycle Tasks and Continuous Delivery Workflows
 
-You can incorporate Ortelius' Life Cycle _Subdomain_ Tasks as follows:  
+You can incorporate Ortelius' Life Cycle _Subdomain_ Tasks as follows:
 
 **Move**
 
@@ -121,6 +121,6 @@ Ortelius will move the _Application_ from one Life Cycle _Subdomain_ to another 
 
 **Approve**
 
-If you are using DeployHub Pro, you can incorporate Approvals into your process. Ortelius will perform an Approval of an _Application_ Move.  This _Approve_ feature is used to reflect an approval that was done in the CD Pipeline for an _Application's_ audit trail.  
+If you are using DeployHub Pro, you can incorporate Approvals into your process. Ortelius will perform an Approval of an _Application_ Move.  This _Approve_ feature is used to reflect an approval that was done in the CD Pipeline for an _Application's_ audit trail.
 
 For documentation on incorporating Tasks, refer to your specific CD tool documentation as listed above.

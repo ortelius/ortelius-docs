@@ -1,7 +1,7 @@
 ---
 title: "Hipster Store Tutorial"
 linkTitle: "Hipster Store Tutorial"
-weight: 3 
+weight: 3
 description: >
   The Hipster Store Test Drive.
 ---
@@ -41,7 +41,7 @@ To get started, [sign up for Ortelius](https://www.deployhub.com/free-team-sign-
 
 This process will deploy the _Application_ to the cluster.  Once the deployment completes and shows "success" in the results colum, double click on the "Hipster Store; July 4th Sale" to view the Dashboard.  Take a look at:
 
-- The Dependency Map - this shows all of the _Component Versions_ the "Hipste Store;July 4th Sale" consumes.  
+- The Dependency Map - this shows all of the _Component Versions_ the "Hipste Store;July 4th Sale" consumes.
 - Log History - a list of deployment logs for this version of the Hipster Store.
 - Deployed Environments for _Components_ - shows everything that was deployed for the cluster selected in the drop down box. For this base version, you deployed all _Components_.
 - Select the "Package Component" tab at the top of the Dashboard. This will take you to a blueprint designer. This designer is how you define your _Application Base Version_. The blueprint show which _Components_ are being consumed by this _Base Version_.  Notice on the right hand side there is a _Component Selector_.  If you navigate through the tree view, you will see _Domains_ where _Components_ like microservices have been published.  The Hipster Store reuses microservices from the "Purchase Processing" and "Store Service" as well as the "Front End" service from its own Hipster Store _Domain_.
@@ -55,7 +55,7 @@ Now lets do a second deployment by selecting a new version of the Hipster Store:
 Once the deployment completes and shows "success" in the results colum, double click on the "Hipster Store; July 4th Sale;1_2_9_1" to view the Dashboard.  Take a look at:
 
 - Log History - a list of deployment logs for this version of the Hipster Store. A new log will be available.
-- Deployed Environments for _Components_ - This will show that only two microservices were deployed -  new Facebook _Component_ and a new version of the Currency Service _Component_.  Ortelius used its versioning engine to determine which _Components_ were already deployed to the cluster and only updated what changed.  
+- Deployed Environments for _Components_ - This will show that only two microservices were deployed -  new Facebook _Component_ and a new version of the Currency Service _Component_.  Ortelius used its versioning engine to determine which _Components_ were already deployed to the cluster and only updated what changed.
 
 ## Learn about Domains
 
@@ -67,7 +67,7 @@ _Domains_ are not folders. They serve as a method for creating fully qualified n
 <li>Your Company Name - Your Company Domain Level</li>
 <ul><li>Your Project Name - A Subdomain of your Company Domain. This Domain can be defined with "Life Cycle Subdomains for managing a deployable software application using a Pipeline, or it can be used as a Catalog Domain for publishing Components such as microservices.</li></ul></ul></ul>
 
-For our tutorial, we will explore the Online Store Company _Subdomain_ and it's child _Subdomains_. Click on the Sunburst Online Store Company Segment to view the child _Subdomains_.  
+For our tutorial, we will explore the Online Store Company _Subdomain_ and it's child _Subdomains_. Click on the Sunburst Online Store Company Segment to view the child _Subdomains_.
 
 - Hipster Store - A Project _Subdomain_ where our _Application_ lives.
 - Purchase Processing - A Catalog _Subdomain_ where microservices and other _Components_ live that handles the purchase processing services for the entire fictitious Online Store Company.
@@ -96,7 +96,7 @@ Now lets take a look at our Hipster Store _Subdomain_.  The Hipster Store _Subdo
 
 Return to the Online Store Company _Domain_ by clicking anywhere in the center of the sunburst map. Details about this _Domain_ is displayed to the right of the sunburst.  You will see that is belongs to the "Global" _Domain_, shown by the field labeled "Full Domain."  You will also see that it has the "All _Subdomains_ are Life Cycles" option set to "No" and a list of it's child _Subdomains_. There are other details as well. For a full description see [Building Your Domain Catalog](/userguide/first-steps/2-defining-domains/).
 
-The Access Control Section defines who can see this _Domain_ and it's child _Subdomains_. For this example, the "Everyone" _Group_ is defined to all Access.  The Everyone _Group_ is a default Ortelius _Group_ that includes all _Users_ and _Administrators_.  For more on _Users_ see [Managing Users](/userguide/customizations/2-users/).  
+The Access Control Section defines who can see this _Domain_ and it's child _Subdomains_. For this example, the "Everyone" _Group_ is defined to all Access.  The Everyone _Group_ is a default Ortelius _Group_ that includes all _Users_ and _Administrators_.  For more on _Users_ see [Managing Users](/userguide/customizations/2-users/).
 
 **Step 3 - Explore Tasks for the Online Store Company _Domain_**
 
@@ -110,13 +110,13 @@ _Components_ are microservices, binaries, database SQL, files or any deployable 
 
 **Step 1 - Review the Hipster Store _Components_**
 
-Choose the _Components_ Menu option on the left side of the Ortelius home panel. This will take you to a list view of all _Component Base Versions_ and _Component Versions_.  A _Component Base Version_ is the original _Component_. When the _Component_ is updated, a _Component Version_ is created.  
+Choose the _Components_ Menu option on the left side of the Ortelius home panel. This will take you to a list view of all _Component Base Versions_ and _Component Versions_.  A _Component Base Version_ is the original _Component_. When the _Component_ is updated, a _Component Version_ is created.
 
 Double click on the "cartservice;v1_2_2_9_gcadf581" _Component Version_ to explore the _Component_.  You will be taken to the Dashboard view. You will see in the "Full Domain" field of the Details Section to what _Domain_ the _Component_ belongs.  You will see all _Applications_ that have a dependency on this version of the _Component_, and in the "Deployed Environments for _Component_" you will see all _Environments_ where the _Component_ has been deployed.
 
 ## Learn about _Environment_ and _Endpoints_
 
-_Environments_ are collections of one or more _Endpoints_ where _Applications_ are installed.  
+_Environments_ are collections of one or more _Endpoints_ where _Applications_ are installed.
 
 **Step 1 - Review the Hipster Store _Environment_**
 

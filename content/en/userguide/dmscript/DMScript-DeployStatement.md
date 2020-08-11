@@ -3,7 +3,7 @@ title: "Deploy Statement"
 linkTitle: "Deploy Statement"
 weight: 43
 description: >
-  Check out and transfer files to and Endpoint. 
+  Check out and transfer files to and Endpoint.
 ---
 
 _Deploy_ checkouts and transfers files to the target _Endpoint_(s). The operation of deploy differs depending on what is currently on the stack.

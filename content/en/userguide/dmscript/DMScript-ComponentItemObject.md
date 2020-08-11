@@ -3,7 +3,7 @@ title: "Component Item Object"
 linkTitle: "Component Item Object"
 weight: 29
 description: >
-  Get an array of Component Items for the Component. 
+  Get an array of Component Items for the Component.
 ---
 
 

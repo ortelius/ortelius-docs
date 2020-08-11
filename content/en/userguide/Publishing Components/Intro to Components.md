@@ -3,7 +3,7 @@ title: "Intro to  Components"
 linkTitle: "Intro to Components"
 weight: 1
 description: >
-  
+
 ---
 ## Intro to _Components_
 

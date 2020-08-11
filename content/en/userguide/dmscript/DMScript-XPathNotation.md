@@ -3,7 +3,7 @@ title: "Xpath Notation"
 linkTitle: "Xpath Notation"
 weight: 126
 description: >
- Identify the elements to change in an XML document.  
+ Identify the elements to change in an XML document.
 ---
 
 _Xpath notation_ supports subset of xpath notation to identify the elements to change in an XML document. The following restrictions apply:

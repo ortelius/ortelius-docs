@@ -3,7 +3,7 @@ title: "CompLoop"
 linkTitle: "CompLoop"
 weight: 28
 description: >
-  Creats a Component Loop through all Components of an Application. 
+  Creats a Component Loop through all Components of an Application.
 ---
 
 

@@ -3,7 +3,7 @@ title: "Switch/Case/Default"
 linkTitle: "Switch/Case/Default"
 weight: 104
 description: >
-  Evaluate a conditional expression and compare for a match. 
+  Evaluate a conditional expression and compare for a match.
 ---
 
 The _Switch/Case/Default_ condition expression is evaluated and compared to each case label in turn until a match is found. Subsequent labels will be executed until a break is executed. A default clause will always match. The case expressions do not need to be constants and can be of any type.

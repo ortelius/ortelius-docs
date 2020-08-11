@@ -3,7 +3,7 @@ title: "Notify"
 linkTitle: "Notify"
 weight: 82
 description: >
-  Send a message using a Notifier object. 
+  Send a message using a Notifier object.
 ---
 
 _notify_ uses a Ortelius _Notifier_ to send a message (email or SMS) to a group of recipients. Using _notify_, a script has far finer control over the content of the message than that normally provided with notification templates. _notify_ can generate the body of the text with _DMScript_ and – when sending emails – the email can also include zero, one, or more attachments. The attachments themselves can also be generated from scripts. For example, you could checkout a file from a repository, modify it in some way (if required) and include it in an attachment in an email.

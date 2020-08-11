@@ -3,7 +3,7 @@ title: "Iterate"
 linkTitle: "Iterate"
 weight: 75
 description: >
-  Loop through a list of Objects. 
+  Loop through a list of Objects.
 ---
 
 

@@ -37,7 +37,7 @@ The _Notifiers_ List View has the following Tabs.
 | Add | Allows you to Add a new _Notifier_ of a particular type. |
 | Delete | Deletes the selected item. |
 
-From the _Notifier_ List View, double click on the _Notifier_ which you would like to view to see all Details.  
+From the _Notifier_ List View, double click on the _Notifier_ which you would like to view to see all Details.
 
 ## Using the _Notifiers_ Dashboard for Viewing and Editing
 

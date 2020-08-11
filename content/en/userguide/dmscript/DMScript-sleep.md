@@ -1,7 +1,7 @@
 ---
 title: "Sleep"
 linkTitle: "Sleep"
-weight: 97   
+weight: 97
 description: >
   Pause a DMScript execution.
 ---

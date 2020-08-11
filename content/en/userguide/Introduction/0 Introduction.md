@@ -55,7 +55,7 @@ Our core features are critical to a successful implementation of microservices.
 
 - Once you begin sharing microservices, you need to track who is using the microservice.  **Dependency maps** show you the 'logical' view of your application and which microservices, or _Components_, it consumes. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
 
-- **A backend relational database versions your microservice**. A change to any of the microservice attributes (container repository SHA, Helm Chart, etc.) initiates a new version of the microservice and a new version of the _Applications_ that consumes it. Tracking these updates gives you uncompromised visibility of your _Application_ and microservice usage.  
+- **A backend relational database versions your microservice**. A change to any of the microservice attributes (container repository SHA, Helm Chart, etc.) initiates a new version of the microservice and a new version of the _Applications_ that consumes it. Tracking these updates gives you uncompromised visibility of your _Application_ and microservice usage.
 
 - Ortelius **independently deploys microservices** and records critical release information about the end target locations. This provides DevOps and Site Reliability Engineers the ability to make data-driven decisions when something goes wrong.
 
@@ -76,7 +76,7 @@ Ortelius supports continuous configuration versioning of:
 
 ## Agentless Delivery
 
-  Unlike others, Ortelius' engine for pushing _Components_ to your _Endpoints_ (Clusters, Cloud, etc.) uses an agentless architecture. The deployment engine supports mixed environments from monolithic systems to microservices and is particularly useful for database updates. No _Endpoint_ agents are required.  
+  Unlike others, Ortelius' engine for pushing _Components_ to your _Endpoints_ (Clusters, Cloud, etc.) uses an agentless architecture. The deployment engine supports mixed environments from monolithic systems to microservices and is particularly useful for database updates. No _Endpoint_ agents are required.
 
 This agentless technology works for both cloud native and legacy architectures including:
 

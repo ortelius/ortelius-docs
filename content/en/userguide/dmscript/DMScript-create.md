@@ -3,7 +3,7 @@ title: "Create and Read"
 linkTitle: "Create and Read"
 weight: 32
 description: >
-  Create or Read a new file in the DropZone. 
+  Create or Read a new file in the DropZone.
 ---
 
 

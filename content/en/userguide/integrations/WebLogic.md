@@ -35,7 +35,7 @@ Next, select your "Global," or highest level, _Domain_ and upload the _Procedure
 
 **Step 3 - Create your _Action_ for the WebLogic _Procedure_**
 
-Once you have imported your WeblogicCredential.re and WeblogicDeploy.re files as _Procedures_, you can define your WebLogic _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.  
+Once you have imported your WeblogicCredential.re and WeblogicDeploy.re files as _Procedures_, you can define your WebLogic _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel.
 
 Use the +Add option to create your new _Action_.  In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_.
 

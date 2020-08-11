@@ -3,7 +3,7 @@ title: "SaaS Sign-up and Reverse Proxy"
 linkTitle: "SaaS Sign-up and Reverse Proxy"
 weight: 1
 description: >
-  How to Sign up 
+  How to Sign up
 ---
 ## SaaS Sign-up Process and the Reverse Proxy
 
@@ -19,7 +19,7 @@ Login using the UserID and Password you used when you signed up for Ortelius.
 
 ## Take a Test Drive of the Online Store Company -  Hipster Store Tutorial
 
-The Hipster Store Tutorial is provided to give you a review of _Domains_, _Components_, and _Applications_ and will help you understand Ortelius basic concepts. See [Hipster Store Tutorial](/userguide/introduction/0-hipster-store-tutorial/) for more information.  
+The Hipster Store Tutorial is provided to give you a review of _Domains_, _Components_, and _Applications_ and will help you understand Ortelius basic concepts. See [Hipster Store Tutorial](/userguide/introduction/0-hipster-store-tutorial/) for more information.
 
 ## Installing the Reverse Proxy for Managing Deployments
 

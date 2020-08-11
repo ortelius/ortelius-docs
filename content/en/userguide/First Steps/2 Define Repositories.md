@@ -3,7 +3,7 @@ title: "Connect Your Repositories"
 linkTitle: "Connect Your Repositories"
 weight: 5
 description: >
-  How to Connect _Repositories_ to retrieve artifacts. 
+  How to Connect _Repositories_ to retrieve artifacts.
 ---
 
 ## Intro to Repositories
@@ -12,12 +12,12 @@ A _Repository_ is used by a _Component_. A _Repository_ acts as a source locatio
 
 ## Container Repositories
 
-You do not need to define a _Repository_ if you only deploy containers. Containers are managed in "registries" which are handled differently than source code and file repositories. If you use a Container registry, Ortelius references this from within your Container _Component_ definition.  When you define your _Component_ as a "Container" _Component_ Type, you will enter the following container details:  
+You do not need to define a _Repository_ if you only deploy containers. Containers are managed in "registries" which are handled differently than source code and file repositories. If you use a Container registry, Ortelius references this from within your Container _Component_ definition.  When you define your _Component_ as a "Container" _Component_ Type, you will enter the following container details:
 
 - container registry
 - container image
 - container digest
-- container tag  
+- container tag
 
 ## Use the Repository List View for Adding and Deleting
 
@@ -90,7 +90,7 @@ GitHub is also supported.  See [GitHub](/userguide/integrations/github/).
 | --- | --- |
 | **Filepath**|  The fully qualified directory name to the files that will need to be deployed. These files must be on a file system that the Ortelius deployment engine has access to. |
 | **Filepath Encrypted** | Select the box to indicate the Filepath name should be hidden in the database.|
-| **Filepath Override** | Select the box if the Filepath can be replaced at the _Component_ definition. |  
+| **Filepath Override** | Select the box if the Filepath can be replaced at the _Component_ definition. |
 |**Pattern** | This defines the file types you want to pull from the _Repository_, such as \*.exe, \*.dll, \*.war. |
 |**Pattern Encrypted** | Select the box to indicate the Pattern should be hidden in the database.|
 |**Pattern Override** |Select the box if the Pattern can be replaced at the _Component_ definition.|

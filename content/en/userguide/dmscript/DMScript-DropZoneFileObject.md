@@ -3,7 +3,7 @@ title: "DropZone File Object"
 linkTitle: "DropZone File Object"
 weight: 47
 description: >
- Get the DropZone File Object. 
+ Get the DropZone File Object.
 ---
 
 The _DropZone File Object_ represents a file in the _DropZone_. It can be retrieved from the _DropZone_ object via the files property or the find method. Both of these calls return an array of _DropZone File Objects_, keyed on the filename. You can also call dir() on a _DropZone File Object_ that represents a zipfile to get an array of _DropZone File Objects_ representing the zipfile content.

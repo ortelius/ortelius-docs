@@ -3,7 +3,7 @@ title: "Get Credentials"
 linkTitle: "Get Credentials"
 weight: 67
 description: >
-  Get a Credential object based on the Credential Name. 
+  Get a Credential object based on the Credential Name.
 ---
 
 

@@ -3,7 +3,7 @@ title: "Echo"
 linkTitle: "Echo"
 weight: 50
 description: >
- Echo an expression. 
+ Echo an expression.
 ---
 
 The _Echo_ command simply echoes the expression that follows to the output. If the _DMScript_ is being run as part of a deployment then the output from the echo is included in the deployment log.

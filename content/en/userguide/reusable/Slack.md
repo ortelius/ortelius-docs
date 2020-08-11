@@ -1,6 +1,6 @@
 ## Slack Details
 
-Ortelius sends messages to Slack based on certain events using _Notifiers_. Below are the Slack details used when called by _Notifiers_.  To define your _Notifier_ see [Using Notifiers for Messaging](/userguide/customizations/2-define-notifiers/).  
+Ortelius sends messages to Slack based on certain events using _Notifiers_. Below are the Slack details used when called by _Notifiers_.  To define your _Notifier_ see [Using Notifiers for Messaging](/userguide/customizations/2-define-notifiers/).
 
 | Field | Description |
 | --- | --- |

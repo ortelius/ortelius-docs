@@ -3,7 +3,7 @@ title: "Now"
 linkTitle: "Now"
 weight: 83
 description: >
-  Get the current data and time. 
+  Get the current data and time.
 ---
 
 Returns a Date object representing the current date and time. Note, the current date and time is taken from that of the executing deployment engine, not of the _Endpoint_ running the web interface.

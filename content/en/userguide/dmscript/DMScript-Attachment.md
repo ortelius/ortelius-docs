@@ -14,7 +14,7 @@ _attachment_ takes a number of named parameters:
 |**Parameter**| **Description** |
 | --- | --- |
  | name | The name of the attachment. The attachment will appear with this name in the received email.|
- | body | Optional - The message.|  
+ | body | Optional - The message.|
  | A stream | The content of the stream creates the content of the attachment.|
 
 _attachment_ can optionally open a code block. If body is not specified then the content of the attachment is taken from the output created by this code block.

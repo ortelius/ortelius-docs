@@ -3,7 +3,7 @@ title: "Zip Get"
 linkTitle: "Zip Get"
 weight: 130
 description: >
- Get a file or group of files from a zip archive for the current DropZone.  
+ Get a file or group of files from a zip archive for the current DropZone.
 ---
 
 _zipget_ extracts a file from the specified zipfile and places it into the current _DropZone_. Unless it is subsequently removed, the file will be deployed to the appropriate _Endpoint_(s) in any subsequent transfer operation. WAR, JAR and EAR files are simply ZIP files with a different extension. You can thus use _zipget_ (and _zipadd_ and _zipdel_) with WAR, JAR and EAR files as well as with ZIP archives. This provides a powerful way of manipulating WAR, JAR and EAR files in the _DropZone_ before onward deployment to the target _Endpoints_.

@@ -3,7 +3,7 @@ title: "Get User"
 linkTitle: "Get User"
 weight: 71
 description: >
-  Gets a User object based on a User Name. 
+  Gets a User object based on a User Name.
 ---
 
 Note: A call to the Function _me_ returns a _User_ object representing the current logged in user.

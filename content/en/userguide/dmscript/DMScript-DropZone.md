@@ -3,7 +3,7 @@ title: "DropZone Physicl Path"
 linkTitle: "DropZone Physical Path"
 weight: 46
 description: >
- Get the DropZone physical path. 
+ Get the DropZone physical path.
 ---
 
 Returns the physical path to the named _DropZone_ on the deployment engine _Endpoint_. This is useful if an external script is going to be called which processes files in the _DropZone_.

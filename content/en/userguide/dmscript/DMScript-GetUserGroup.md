@@ -3,7 +3,7 @@ title: "Get UserGroup"
 linkTitle: "Get UserGroup"
 weight: 72
 description: >
-  Gets a UserGroup object based on a UserGroup Name. 
+  Gets a UserGroup object based on a UserGroup Name.
 ---
 
 getusergroup takes a UserGroup Name and returns the matching _UserGroup Object_.

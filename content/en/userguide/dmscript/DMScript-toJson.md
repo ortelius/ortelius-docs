@@ -3,7 +3,7 @@ title: "To Json"
 linkTitle: "To Json"
 weight: 106
 description: >
-  Get a String representing the contents of the array in JSON notation. 
+  Get a String representing the contents of the array in JSON notation.
 ---
 
 

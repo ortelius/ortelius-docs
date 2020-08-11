@@ -3,7 +3,7 @@ title: "Sum"
 linkTitle: "Sum"
 weight: 103
 description: >
-  Interate through each arry element. 
+  Interate through each arry element.
 ---
 
 _sum_ operates on an array, iterating through each array element. The specified expression is passed to the totalizer and each value is added before the result is returned.

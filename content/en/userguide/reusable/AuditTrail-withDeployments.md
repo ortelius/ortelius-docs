@@ -15,6 +15,6 @@ You can also Subscribe or Comment to an Audit Entry.
 
 - Subscribe: Allows you to receive information about the selected deployment.
 
-- Comment: Click on 'Comment' to add information. There is a field above the list labeled "Say something about this Application" that can have comments placed into it, and files can be attached to the comment as well. Entering text into this field activates the Add Message button. Click to save the comment as a line in the list.  
+- Comment: Click on 'Comment' to add information. There is a field above the list labeled "Say something about this Application" that can have comments placed into it, and files can be attached to the comment as well. Entering text into this field activates the Add Message button. Click to save the comment as a line in the list.
 
 - Add Files to Comments: Click on the paperclip icon to add a file to the message.  Once done, click on the "Add Message" button. These attachments can later be retrieved by clicking on the paperclip icon which then displays the name of the file within a list. Choose the file to download it into the your default Download directory on your local computer.

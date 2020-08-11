@@ -3,7 +3,7 @@ title: "Delete"
 linkTitle: "Delete"
 weight: 42
 description: >
-  Remove a file or a directory from the DropZone. 
+  Remove a file or a directory from the DropZone.
 ---
 
 

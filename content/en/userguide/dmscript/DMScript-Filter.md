@@ -3,7 +3,7 @@ title: "Filter"
 linkTitle: "Filter"
 weight: 60
 description: >
-  Get a subset of an array. 
+  Get a subset of an array.
 ---
 
 _filter_ operates on an array. It returns a new array which contains a subset of the array containing just those entries whose keys match the given regular expression.

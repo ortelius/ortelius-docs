@@ -12,7 +12,7 @@ A Ortelius deployment can point to one or more _Repositories_ which contain the 
 
 ## New Action for the WebSphere
 
-Once you have imported your _Procedures_, you can define your _Action_. Change to the _Actions_ list view and select "Add" menu.  
+Once you have imported your _Procedures_, you can define your _Action_. Change to the _Actions_ list view and select "Add" menu.
 
 Name the new Action "WebSphereDeployAction" (no spaces).
 

@@ -63,7 +63,7 @@ The following fields are common to all _Components_:
 | **Full Domain** | The fully qualified path of the _Domain_ that the _Component_ is to be associated, showing all parent _Domains_. |
 | **Name** | The name of the _Component._ |
 | **Owner Type** | Owned by a User or Group. |
-| **Owner** | The owner of the _Component_, whose default value is the creator of the _Component_.  
+| **Owner** | The owner of the _Component_, whose default value is the creator of the _Component_.
 | **Summary** | A short text field with a description of the _Component_. |
 | **Created** | The date and time that the _Component_ was created. |
 | **Modified** | The date and time of the last change. |
@@ -151,7 +151,7 @@ Below is how the full file deployment path is formatted:
 
 ### _Component_ Dependency Map
 
-The Dependency Map provides a graphical view of all _Applications_ that is consuming this _Component_. This will remain empty until your  _Component_ is used by an an _Application_.  
+The Dependency Map provides a graphical view of all _Applications_ that is consuming this _Component_. This will remain empty until your  _Component_ is used by an an _Application_.
 
 ### _Endpoints_
 

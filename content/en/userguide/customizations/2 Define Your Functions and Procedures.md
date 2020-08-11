@@ -11,7 +11,7 @@ _Functions_ and _Procedures_ are the steps that make up an _Action_. If you have
 
 _Functions_ and _Procedures_ are used by _Actions_ to define custom installation logic of a _Component_ or perform any type of Pre or Post Action. Using _Actions_, _Functions_ and _Procedures_ allows you to be as creative as needed to meet the unique needs of your implementation.
 
-The difference between _Functions_ and _Procedures_ is a _Procedure_ execute a process but does not return a value. A _Function_ returns a value. DeployHub Provides a Dashboard for customizing your _Functions_ and _Procedures_ including the creation of Parameters, and a Parameters Dialog box that is displayed at the _Action_ level. The Parameters Dialog Box enables other _Users_ to utilize your custom process, with an easy way to understand what Parameter options are available. In this way, you are able to create custom _Functions_ and _Procedures_ and share them across teams.  The associated Parameters Dialog Box simplifies the use of your custom process.  
+The difference between _Functions_ and _Procedures_ is a _Procedure_ execute a process but does not return a value. A _Function_ returns a value. DeployHub Provides a Dashboard for customizing your _Functions_ and _Procedures_ including the creation of Parameters, and a Parameters Dialog box that is displayed at the _Action_ level. The Parameters Dialog Box enables other _Users_ to utilize your custom process, with an easy way to understand what Parameter options are available. In this way, you are able to create custom _Functions_ and _Procedures_ and share them across teams.  The associated Parameters Dialog Box simplifies the use of your custom process.
 
 _Functions_ and _Procedures_ can be:
 
@@ -112,11 +112,11 @@ A list of parameters can be made available for the user of your  _Function_ or _
 |---|---|
 |**Name** | The name of the input parameter. It can only have the characters A-Z, 0-8, and "_". |
 |**Type**| This defines if the input parameter can be entered as text, or as a checkbox. This field will be displayed on the dialog box used to edit the values for the Procedure or Function on the _Action_ blueprint designer.|
-|**Format**| This field defines what your Parameters Dialog Box will look like. <ul><li>Entry Field - Using the "entry" option will allow your user to enter the required value and not worry about any flags that are needed for the command line.  In this field you will enter the flags that should be used for the command line. The end user will enter the value that they require and it will be pre-pended with the flag defined on this screen. The result will be used for the command line call. For example, if you enter -f in this field and then your user enters "filename" as a value, the resulting parameter passed to the command line will be "–f filename". </li><li>If your type is set to "checkbox," this will give the user the option to select the value or not for the command line call. In this case, you are defining the value and flags and simply giving the user the option to use them or not.</li></ul> |  
+|**Format**| This field defines what your Parameters Dialog Box will look like. <ul><li>Entry Field - Using the "entry" option will allow your user to enter the required value and not worry about any flags that are needed for the command line.  In this field you will enter the flags that should be used for the command line. The end user will enter the value that they require and it will be pre-pended with the flag defined on this screen. The result will be used for the command line call. For example, if you enter -f in this field and then your user enters "filename" as a value, the resulting parameter passed to the command line will be "–f filename". </li><li>If your type is set to "checkbox," this will give the user the option to select the value or not for the command line call. In this case, you are defining the value and flags and simply giving the user the option to use them or not.</li></ul> |
 |**Missing**|This field provides a default if the above Format value is null. Like the Format value, it uses Entry and Checkbox types. <ul><li>Using the "entry" option will provide a default value for when the Format is not entered. </li><li>If your type is set to "checkbox," this will provide a value when the Format checkbox is not selected by the user. </li></ul>
 |**Padding**| This field is used for positional command line parameters where you need to provide quote, space, quote (" ") for a positional parameter that is not entered by the user. This prevents the command line from throwing and error.
 |**Required**|Indicates the argument is required for the Procedure/Function. Any parameter marked as being "Required" is highlighted and cannot be left blank.
-|**Pos**| This is used only when calling the _Function_ or _Procedure_ from DMScript. The Position orders the parameters when making the call in DMScript.  
+|**Pos**| This is used only when calling the _Function_ or _Procedure_ from DMScript. The Position orders the parameters when making the call in DMScript.
 
 **Command Line Switches**
 
@@ -126,7 +126,7 @@ Each "Command Line Switch" can include variables which will be expanded when the
 
 **Command Line**
 
-You can drag and drop the items from the "pallet" of Switches in the correct order on your Command Line. The result displays how the Command Line has been constructed.  
+You can drag and drop the items from the "pallet" of Switches in the correct order on your Command Line. The result displays how the Command Line has been constructed.
 
 **DMScript in Database Editor**
 

@@ -3,7 +3,7 @@ title: "Conditionals"
 linkTitle: "Conditionals"
 weight: 31
 description: >
-  Use Conditional Expressions to evaluate true or false. 
+  Use Conditional Expressions to evaluate true or false.
 ---
 
 Use the _Conditional Expressions_ "if" and "else" as a general expression evaluator to see if it equates to true (non-zero) or false (zero). If the expression equates to true, then the block associated with the "if" is executed. If the expression equates to false, then the block associated with the "else" is executed. The "else" part of the expression is optional.

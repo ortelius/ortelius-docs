@@ -3,7 +3,7 @@ title: "base64encode"
 linkTitle: "base64encode"
 weight: 18
 description: >
-  Perform operations on a stream of data. 
+  Perform operations on a stream of data.
 ---
 
 

@@ -3,7 +3,7 @@ title: "Environment Calendar API"
 linkTitle: "Environment Calendar API"
 weight: 27
 description: >
-  Get an _Environments_ Calendar Event. 
+  Get an _Environments_ Calendar Event.
 ---
 
 Retrieves a calendar event for an _Environment_. This call returns a JSON object representing the events in the _Environment_ calendar. Events can be filtered based on the _Environment_ to which the calendar belongs, the _Application_ associated with the event, a date/time range or a combination of all of these.

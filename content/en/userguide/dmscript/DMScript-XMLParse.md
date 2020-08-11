@@ -3,7 +3,7 @@ title: "XML Parse"
 linkTitle: "While Loops"
 weight: 124
 description: >
- Parse an XML String. 
+ Parse an XML String.
 ---
 
 _xmlparse_ operates on a String. If the string contains valid XML data, then this is converted into a _DMScript_ array. The following rules are applied:
