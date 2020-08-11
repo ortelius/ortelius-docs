@@ -35,7 +35,8 @@ Next, select your "Global," or highest level, _Domain_ and upload the _Procedure
 
 Once you have imported your TomcatPreDeploy.re and TomcatPostDeploy.re files as _Procedures_, you can define your _Actions_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius Main Menu panel. You will be creating two _Actions_, one for your Tomcat stop step, and the other for the Tomcat start step. One will be called in the _Pre Action_ the other in the _PostAction_.
 
-- Create the TomcatStopAction
+#### Create the TomcatStopAction
+
 Use the +Add option to create your first new _Action_.  In the "Full Domain" field select your "Global" _Domain_. If you select a lower level _Subdomain_ you will restrict access to this _Custom Action_.  By defining it to your highest level _Domain_, all _Users_ will be able to execute the process regardless of their _SubDomain_.
 
 Name the new Action "TomcatStopAction" (no spaces).
@@ -50,7 +51,7 @@ Now we are going to customize this _Action_. On the right hand side, you will se
 | **Tomcat Root** | $TOMCAT_ROOT | Tomcat web root |
 | **Application Name** | $APPLICATION_NAME | Application name (based on the .war or .ear) |
 
-- Create the TomcatStartAction
+#### Create the TomcatStartAction
 
 Follow the directions above, except name the new Action "TomcatStopAction" (no spaces). Again on the right hand side of the _Action_ Dashboard, you will see a list of _Functions_ and _Procedures_ you can choose from.  Navigate to your _Domain_ to find the TomcatPostDeploy.re imported _Procedure_.  Drag it onto the area under "Start". When you drag the TomcatPostDeploy.re _Procedure_ onto the area under "Start" a pop-up dialog box will open for you to complete the following parameters:
 

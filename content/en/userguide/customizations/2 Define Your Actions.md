@@ -112,6 +112,7 @@ The Parameter Dialog Box displays the options defined when the _Function_ or _Pr
 - View Details - opens the Parameter Dialog Box
 - Got to the Procedure - takes you to the Dashboard of the _Function_ or _Procedure_. Your work will be saved automatically before navigating to the _Functions_ and _Procedures_ Dashboard.
 - Delete this Activity - deletes the _Function_ or _Procedure_ from the blueprint designer.
+
 An editor box opens automatically to set any input values required. If the dropped item is a _Function,_ then an additional _Result_ field is presented. This needs to be the name of a _Variable_ that receives the result of the _Function_.
 
 You can connect items in any order you require. To do this, left-click and hold down the button on one of the output anchors, then drag the resulting line onto another input anchor. This connects the items together and determines the order for processing the steps. The lines connecting items can be deleted by right clicking on the connector line and selecting "Delete this Connector".
