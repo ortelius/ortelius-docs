@@ -49,10 +49,6 @@ This information is collected when you define your _Component_ to the Ortelius c
 
 When you first define your _Component_ Ortelius tracks it as the _Component Base Version_. Subsequent updates to that _Component_ creates a new _Component Version_ which represent the updates over time. A _Component Base Version_ is always the first one created, and it acts as a model for subsequent _Component Versions_. Otherwise they are identical types of objects.
 
-Ortelius uses a simple versioning number schema starting at 1 and incrementing over time, for example:
-
-```
- Myapp;1, Myapp;2.
-```
+Ortelius uses a simple versioning number schema starting at 1 and incrementing over time, for example: ` Myapp;1, Myapp;2. ` .
 
 You can use your CI/CD process to include variance in your versioning number (base name, variant, version).  See [Component Versioning Schema](/userguide/integrations/ci-cd_integrations/#_component_-versioning-schema).
