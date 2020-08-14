@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ortelius-docs.name" . }}
+spec:
+  selector:
+    app: {{ include "ortelius-docs.name" . }}
+    tier: backend
+  ports:
+    - name: hugo
+      protocol: TCP
+      port: 80
+      targetPort: 1313
+  type: LoadBalancer
