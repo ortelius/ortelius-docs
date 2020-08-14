@@ -3,7 +3,7 @@ title: "DropZone Object"
 linkTitle: "DropZone Object"
 weight: 48
 description: >
- Get the DropZone Object. 
+ Get the DropZone Object.
 ---
 
 The _DropZone Object_ represents a _DropZone_. A _DropZone_ is an area on disk on the Ortelius Server where deployment artefacts are stored and manipulated before onward transmission to the target _Endpoint_(s). A _DropZone_ is placed onto the stack during a using _DropZone_ statement – all operations within this block have access to this _DropZone_ via the _DropZone Object_. A _DropZone Object_ is also present on the stack during pre and post action processing for a _Component_. In this case, the content of the _DropZone_ are the files checked out from the repository for the associated _Component_ Items.

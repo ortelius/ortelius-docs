@@ -3,7 +3,7 @@ title: "RESTful Get"
 linkTitle: "RESTful Get"
 weight: 92
 description: >
-  Retrieve data from an external RESTful API. 
+  Retrieve data from an external RESTful API.
 ---
 
 _restful\_get_ is used to make GET calls to RESTful based APIs. It takes a single mandatory parameter: the URL to which the message should be sent. There are three optional parameters:

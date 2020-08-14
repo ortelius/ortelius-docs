@@ -3,7 +3,7 @@ title: "Try Catch Finally"
 linkTitle: "Try Catch Finally"
 weight: 110
 description: >
-  Execute a catch. 
+  Execute a catch.
 ---
 
 A _try/catch/finally_ block with optional finally. Exceptions are not typed, so you can only have one catch. The _finallyblock_ is executed however the block finished - either normally or after the catch has been executed. Abort can be caught.

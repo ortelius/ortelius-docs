@@ -3,7 +3,7 @@ title: "Domain Object"
 linkTitle: "Domain Object"
 weight: 45
 description: >
-  Get a Domain Object. 
+  Get a Domain Object.
 ---
 
 The _Domain_ object represents a domain in _DMScript_. Domain objects can be retrieved from other objects (such as _Endpoints_, _Environments_, _Applications_ etc). The calling user's home domain can be retrieved via ${me.domain}

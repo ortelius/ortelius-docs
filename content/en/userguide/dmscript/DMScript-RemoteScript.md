@@ -3,7 +3,7 @@ title: "Remote Script"
 linkTitle: "Remote Script"
 weight: 90
 description: >
-  Execute a script on each remote Endpoint. 
+  Execute a script on each remote Endpoint.
 ---
 
 

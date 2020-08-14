@@ -6,7 +6,7 @@ description: >
   Using the CircleCI Orb with Ortelius.
 ---
 
-Ortelius integrates with CircleCI to support continuous configuration management and continuous deployments built into your CircleCI pipeline. In particular, Ortelius integrates with CircleCI to enrich the CI/CD pipeline around microservices.  
+Ortelius integrates with CircleCI to support continuous configuration management and continuous deployments built into your CircleCI pipeline. In particular, Ortelius integrates with CircleCI to enrich the CI/CD pipeline around microservices.
 
 Critical to the process is the ability to perform configuration management, versioning and tracking of microservices across clusters and teams.  Ortelius' CircleCI Orb includes the ability to perform automated version and dependency management of microservices tracking application and microservice relationships, their versions and their deployment meta data.
 

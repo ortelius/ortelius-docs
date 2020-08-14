@@ -3,7 +3,7 @@ title: "Me"
 linkTitle: "Me"
 weight: 80
 description: >
-  Get the User Object based on the logged in User. 
+  Get the User Object based on the logged in User.
 ---
 
 me returns a _User Object_ representing the current logged in user.

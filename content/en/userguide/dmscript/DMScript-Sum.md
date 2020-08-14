@@ -3,7 +3,7 @@ title: "Sum"
 linkTitle: "Sum"
 weight: 103
 description: >
-  Interate through each arry element. 
+  Interate through each arry element.
 ---
 
 _sum_ operates on an array, iterating through each array element. The specified expression is passed to the totalizer and each value is added before the result is returned.
@@ -39,7 +39,7 @@ set array = { 'fred' =\> 1, 'jim' =\> 2, 'sheila' =\> 4 };
 In this case sumofarray will be 7 (1+2+4)
 ```
 
-2. Add up all the filesizes in a drop zone
+1. Add up all the filesizes in a drop zone
 
 ```bash
 set sqlfiles = ${_DropZone_.find('\*.sql')};

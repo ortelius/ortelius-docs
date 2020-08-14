@@ -17,7 +17,7 @@ description: >
 
 When viewing a _Calendar_ by Month, Week, or Day you can click on a place within a selected day and drag the mouse pointer down in order to select the time span for the event. A light blue area appears, covering the selected time. Right click on this area and select "_Create New Event_." A pop-up window appears with buttons that are used to set the selected time period to one of the three types listed above.
 
-**Availability Field**
+### Availability Field
 
 The "Availability" field controls access to the _Environments._ You either close or open the Calendar for deployment events.
 
@@ -25,15 +25,15 @@ The "Availability" field controls access to the _Environments._ You either close
 
 - _Always UnAvailable Unless Allowed by Calendar_ – Selecting this option **closes** the Calendar for deployments. To open a period for deployment, you would add an "Available" Event for a specified period.
 
-**AutoDeploy**
+### AutoDeploy
 
 **DeployHub Pro** allows for a scheduled deployment using the _Environment's Calendar_, which is referred to as an "_AutoDeploy_." If _AutoDeploy_ is selected, a drop-down list allows the selection of an _Application_ or _Release_ to be deployed beginning at the designated Start Time. Not only does the _Calendar_ automatically run the deployment at the designated Start Time, it also keeps any other deployments from taking place in the designated Environment during that time period.
 
-**Reserved**
+### Reserved
 
 If Reserved is selected, only the _Application_ or _Release_ that is selected via the drop-down list can be deployed to the _Environment_ between the Start Time and End Time. No other deployments can take place in the _Environment_ during this period. After a Reserved event has been created, a Task within a _Domain_ in the tree structure can be used to run the deployment using a Deploy Task.
 
-**Unavailable**
+### Unavailable
 
 If Unavailable is selected, no deployments can take place in the _Environment_ between the Start Time and End Time. This can be used to block out time to perform administrative duties such as backups, restores, etc.
 

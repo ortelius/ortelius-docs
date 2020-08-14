@@ -3,7 +3,7 @@ title: "Directory Name"
 linkTitle: "Directory Name"
 weight: 44
 description: >
-  Get the directory name from a full directory path. 
+  Get the directory name from a full directory path.
 ---
 
 Returns the directory part of a full directory path, calculating the directory part of the string according to the optional systemtype parameter **.** If the systemtype is not specified then the system type is taken from the _Endpoint_ currently on the stack. If no _Endpoint_ is on the stack, an exception is thrown.

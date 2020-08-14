@@ -3,7 +3,7 @@ title: "Flatten"
 linkTitle: "Flatten"
 weight: 62
 description: >
-  Get a string representing all values in an array. 
+  Get a string representing all values in an array.
 ---
 
 _flatten_ operates on an array. It returns a string representing all the values within the array. If any of the array values are other arrays these are also flattened recursively until the entire array is represented by a single string. During this process all of the keys are lost, so the output order of Lists can be determined, but the order of Arrays cannot. It is generally more useful with Lists than Arrays.

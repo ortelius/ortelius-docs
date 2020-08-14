@@ -10,13 +10,13 @@ description: >
 
 This call creates a new credential. All of the attributes of the new _Credential_ are set through parameters to the API. If "_Domain_" is not specified then the _Environment_ is created in the logged in _User's_ home _Domain_.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET | /dmadminweb/API/new/credential/{cred_id} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
@@ -35,13 +35,13 @@ This call creates a new credential. All of the attributes of the new _Credential
 
 This call modifies an existing _Credential_. The attributes of the _Credential_ are modified through parameters to the API.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET | /dmadminweb/API/new/credential/{cred_id} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
@@ -60,13 +60,13 @@ This call modifies an existing _Credential_. The attributes of the _Credential_ 
 
 This call deletes a _Credential_.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET | /dmadminweb/API/del/credential/{cred_id} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |

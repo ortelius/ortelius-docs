@@ -3,7 +3,7 @@ title: "Octal"
 linkTitle: "Octal"
 weight: 84
 description: >
-  Convert any value into an octal representation. 
+  Convert any value into an octal representation.
 ---
 
 octal converts any value that can be converted into an integer (boolean, integer, a string containing only numeric characters or a date) into an octal representation. An optional base parameter specifies the base to be used when converting the string. If no base parameter is given, base defaults to 10.

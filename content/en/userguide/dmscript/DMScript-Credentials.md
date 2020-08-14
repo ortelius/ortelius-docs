@@ -3,7 +3,7 @@ title: "Credentials"
 linkTitle: "Credentials"
 weight: 33
 description: >
-  Get Credentials. 
+  Get Credentials.
 ---
 
 
@@ -34,7 +34,7 @@ The following properties can be accessed for a credential object:
 
 You can use the credential object to access external systems in a secure and controlled manner. The user executing the _DMScript_ must have read access to the Credential. However, having read access does not allow the username/password to be viewed or modified using the Web UI. (The username is only displayed for the Credential owner, the username and password can only be changed if the User has update access to the Credential).
 
-**Example**
+## Example
 
 ```bash
 set db2creds = getcredential("db2cred");

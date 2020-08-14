@@ -3,7 +3,7 @@ title: "Zip Delete"
 linkTitle: "Zip Delete"
 weight: 128
 description: >
- Delete a file or group of files from a zip archive for the current DropZone.  
+ Delete a file or group of files from a zip archive for the current DropZone.
 ---
 
 _zipdel_ removes files from the specified zipfile. WAR, JAR and EAR files are simply ZIP files with a different extension. You can thus use _zipdel_ (and _zipadd_ and _zipget_) with WAR, JAR and EAR files as well as with ZIP archives. This provides a powerful way of manipulating WAR, JAR and EAR files in the _DropZone_ before onward deployment to the target _Endpoints_.

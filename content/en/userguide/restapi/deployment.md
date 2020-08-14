@@ -14,13 +14,13 @@ In order for API deployments to work through the permission model, there has to 
 
 Note - Any additional parameters are created as Global Variables accessible with a url_prefix. For example, if you passed "myparam=123" as a parameter in the "deploy" api call, it would be available as $url_myparam.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET | /dmadminweb/API/deploy/{app_id}/{env_id} |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |

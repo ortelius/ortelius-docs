@@ -28,6 +28,7 @@ Search  depends on additional output content type of JSON in config.toml
 To search additional fields defined in front matter, you must add it in 2 places.
 
 ### Edit layouts/_default/index.JSON
+
 This exposes the values in /index.json
 i.e. add `category`
 \```
@@ -40,6 +41,7 @@ i.e. add `category`
 \```
 
 ### Edit fuse.js options to Search
+
 `static/js/search.js`
 \```
 keys: [

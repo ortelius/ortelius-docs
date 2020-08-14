@@ -16,7 +16,7 @@ In addition, a _Custom Action_ can replace the usual Ortelius deployment engine 
 
 _Actions_ are used to customize Ortelius around deployments, and _Tasks_.  For most users, no configuration of _Actions_ is required.  However, if you want to use your own deployment scripts, then you will need to use a _Custom Action_.  This section will get you started on creating your own _Actions._
 
-Ortelius comes with a set of reusable Built-in _Actions_. An _Action_ includes a set of _Functions_ and/or _Procedures_ which are executed in sequence to provide the logic of a _Component's_ deployment. _Actions_ can also be used as Pre or Post deployment steps to an _Application_ or _Release_.  
+Ortelius comes with a set of reusable Built-in _Actions_. An _Action_ includes a set of _Functions_ and/or _Procedures_ which are executed in sequence to provide the logic of a _Component's_ deployment. _Actions_ can also be used as Pre or Post deployment steps to an _Application_ or _Release_.
 
 _Actions_ depend on _Procedures_ and _Functions_ to do the work.  If you want to create a new _Custom Action_, you will need to define the _Procedures_ and _Functions_ that the _Action_ will use before you create the _Action_. Alternatively, you can use the Built-in _Actions_,  _Procedures_, and _Functions_, that ship with Ortelius for defining the Steps of your new _Action_.  For most user, the Built-in _Actions_ will be sufficient for working with standard environments like Docker Containers.
 
@@ -101,7 +101,7 @@ NOTE: **Ortelius** has only two Groups, _Administrators_ and _Users_. If you nee
 
 The logic of an _Action_ is defined using a graphical drag and drop blueprint designer. A tree view on the right shows all the _Functions_ and _Procedures_ organized by categories that can be include in the _Action's_ logic. You can use the built-in activities for defining the logical steps of the _Action_ or you can create new _Procedures_ or _Functions_ and have them available as activities to use. See [_Functions_ and _Procedures_](/userguide/customizations/2-define-your-functions-and-procedures/) for more information.
 
-The blueprint designer contains all activities that make up the _Actions_ logical processing steps, linked together in the order they are to be executed. Each step in the process has anchors where connections can be made. When you drag a item onto the designer, a blue input anchor is displayed at the top of the items "box." You will see a green anchor at the bottom representing output. In this way you can create connections between the processes.  
+The blueprint designer contains all activities that make up the _Actions_ logical processing steps, linked together in the order they are to be executed. Each step in the process has anchors where connections can be made. When you drag a item onto the designer, a blue input anchor is displayed at the top of the items "box." You will see a green anchor at the bottom representing output. In this way you can create connections between the processes.
 
 Click on one of the Categories in the list to see the available _Functions_ or _Procedures_. Expand a Category and then select the desired Activity to drag and drop it into the _Action_ blueprint area. It appears as a box containing the name of the _Function_ or _Procedure_. It automatically links to the nearest "box" with a output anchor.
 
@@ -112,6 +112,7 @@ The Parameter Dialog Box displays the options defined when the _Function_ or _Pr
 - View Details - opens the Parameter Dialog Box
 - Got to the Procedure - takes you to the Dashboard of the _Function_ or _Procedure_. Your work will be saved automatically before navigating to the _Functions_ and _Procedures_ Dashboard.
 - Delete this Activity - deletes the _Function_ or _Procedure_ from the blueprint designer.
+
 An editor box opens automatically to set any input values required. If the dropped item is a _Function,_ then an additional _Result_ field is presented. This needs to be the name of a _Variable_ that receives the result of the _Function_.
 
 You can connect items in any order you require. To do this, left-click and hold down the button on one of the output anchors, then drag the resulting line onto another input anchor. This connects the items together and determines the order for processing the steps. The lines connecting items can be deleted by right clicking on the connector line and selecting "Delete this Connector".

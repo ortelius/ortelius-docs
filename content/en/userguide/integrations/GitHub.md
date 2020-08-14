@@ -9,19 +9,19 @@ description: >
 Ortelius supports GitHub in the following ways.
 
 1. A binary Repository for retrieving artifacts to deploy such as binaries or scripts.
-2. GitHub Issue Tracking for **DeployHub Pro**. A bridge connects a GitHub issue with a Ortelius Change Request.
+1. GitHub Issue Tracking for **DeployHub Pro**. A bridge connects a GitHub issue with a Ortelius Change Request.
 
 ## GitHub as a Binary Repository
 
-You can configure Ortelius to call out to a Git Repo to pull deployable artifacts (binaries, scripts, etc.) as part of your deployment.  The process will check out your deployable artifacts based on commit, branch or tag specified. You will need to configure Ortelius with a file system Ortelius _Repository_ that will pull the files need fro the deployment.  You will also need to create a "Git Checkout" _Procedure_ and _Action_.  
+You can configure Ortelius to call out to a Git Repo to pull deployable artifacts (binaries, scripts, etc.) as part of your deployment.  The process will check out your deployable artifacts based on commit, branch or tag specified. You will need to configure Ortelius with a file system Ortelius _Repository_ that will pull the files need fro the deployment.  You will also need to create a "Git Checkout" _Procedure_ and _Action_.
 
-**Step 1 - Create a Ortelius File System _Repository_**
+### Step 1 - Create a Ortelius File System _Repository_
 
 Ortelius can use GitHub as a binary repository for retrieving deployable objects as part of the deployment process.  To do this you will first need to define GitHub as a connected _Repository_ Object from within Ortelius. This connection will be used by as part of the deployment process using a _Procedure_ and a _Action_. For information on setting up File System as a binary repository see [Connect Your Repositories](/userguide/first-steps/2-define-repositories/).
 
 Once you have completed this step, you are ready to create a new _Procedure_ that performs the check out from the GitHub repository.
 
-**Step 2 - Create your GitHub Checkout _Procedure_ for your _Action_**
+### Step 2 - Create your GitHub Checkout _Procedure_ for your _Action_
 
 _Procedures_ are called by _Actions_ to execute deployment logic. A pre-defined Ortelius _Procedure__ is available from the [Ortelius Git Repo](https://github.com/ortelius/ortelius/blob/master/procedures/). This where you will find the most current version of this _Procedure_. For more information on creating _Procedures see [Functions and Procedures](/userguide/customizations/2-define-your-functions-and-procedures/).
 
@@ -29,7 +29,7 @@ From the Ortelius Git Repo, pull the file named **GitCheckout.re**
 
 Once downloaded, you will need to Import it into Ortelius from the Func/Procs List View. Navigate to the List View by selecting the Func/Procs menu option on the left hand side of the Ortelius main panel. From the Func/Procs List view select the **Import** option. The Import will bring you to your operating system "file open" dialog box for selecting the GitCheckout.re file.  Next, select your _Domain_ and upload the _Procedure_ into the Ortelius. You are now ready to create your _Action_.
 
-**Step 3 - Create your _Action_ for the GitHub Checkout _Procedure_**
+### Step 3 - Create your _Action_ for the GitHub Checkout _Procedure_
 
 Once you have imported your GitCheckout.re _Procedure_, you can define your _Action_. Navigate to the _Actions_ list view from the _Actions_ menu option on the left hand side of the Ortelius main panel. Use the +Add option to create a new _Action_ for you _Procedure_. Name the new _Action_ **GitCheckAction** (no spaces). See [Customize Your Actions](/userguide/customizations/2-define-your-actions/) for more information on creating _Actions_.
 
@@ -48,11 +48,11 @@ _GitCheckout_ Parameters
 At this point the _Action_ is ready to be used by anyone with access (based on _Domain_ and _Group_ options).
 Note: Because this _Action_ is reusable, no _Component_ variables are defined. This is performed at the _Component_ level.
 
-**Step 4 - Assign the GitCheckoutAction to your _Component_ to be deployed**
+### Step 4 - Assign the GitCheckoutAction to your _Component_ to be deployed
 
 For each _Component_ you will need to define the variable values for $GIT_URL, $GIT_COMMIT and $GIT_DIR that the GitCheckoutAction will use at the_Component_ level. The values will be passed to the GitCheckoutAction at deploy time. See [Defining _Components_](/userguide/publishing-components/2-define-components/) for more information.
 
-**Step 5 - Set Your _Component_ Attributes_**
+### Step 5 - Set Your _Component_ Attributes_
 
 The following variables must be added to the Attributes Section for all  _Components_ using the GitCheckoutAction _Pre Action_.  The Attributes section can be found on the _Component_ Dashboard.  Use the +Add option in this section to add a row for the variable. You must use Save to commit the row to the table:
 

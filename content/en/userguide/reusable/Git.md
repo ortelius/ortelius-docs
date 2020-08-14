@@ -15,7 +15,7 @@ You can pull files from a Git Repository to be used by your _Components_.  The f
 |**To Dir Override** |Select the box if the To Dir can be replaced at the _Component_ definition.|
 | **Filepath**|  The fully qualified directory name to the files that will need to be deployed. These files must be on a file system that the Ortelius deployment engine has access to. |
 | **Filepath Encrypted** | Select the box to indicate the Filepath name should be hidden in the database.|
-| **Filepath Override** | Select the box if the Filepath can be replaced at the _Component_ definition. |  
+| **Filepath Override** | Select the box if the Filepath can be replaced at the _Component_ definition. |
 |**Pattern** | This defines the file types you want to pull from the _Repository_, such as \*.exe, \*.dll, \*.war. |
 |**Pattern Encrypted** | Select the box to indicate the Pattern should be hidden in the database.|
 |**Pattern Override** |Select the box if the Pattern can be replaced at the _Component_ definition.|

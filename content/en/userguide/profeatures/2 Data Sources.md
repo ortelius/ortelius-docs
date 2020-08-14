@@ -21,7 +21,7 @@ The _Data Sources_ List View has the following Tabs.
 | Add | Allows you to Add a new _Data Sources_ of the following types: <ul><li>Jira</li><li>Bugzilla</li><li>GitHub Issues</li><li>LDAP</li><li>Active Directory</li></ul>|
 | Delete | Deletes the selected item. |
 
-From the _Data Source_ List View, double click on the _Data Source_ which you would like to view to see all Details.  
+From the _Data Source_ List View, double click on the _Data Source_ which you would like to view to see all Details.
 
 ## Using the _Data Sources_ Dashboard for Viewing and Editing
 
@@ -58,7 +58,7 @@ This _Data Source_ allows you to connect to GitHub to retrieve GitHub issues ass
 |**Poll Interval Override**|Select the box if the Poll Interval can be changed.|
 |**Organization**| The full URL to the Git [Organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations). |
 |**Organization Encrypted**| Select the box to indicate the Organization name should be hidden in the database.|
-|**Organization Override**| Select the box if the Organization can be changed. |  
+|**Organization Override**| Select the box if the Organization can be changed. |
 |**Repository**| The name of the [Git Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories) underneath the Git Organization. |
 |**Repository Encrypted**| Select the box to indicate the Git Repository should be hidden in the database.|
 |**Repository Override**|Select the box if the Git Repository can be changed.|
@@ -77,7 +77,7 @@ This _Data Source_ allows you to connect to Jira to retrieve Jira issues associa
 |**Poll Interval Override**|Select the box if the Poll Interval can be changed.|
 |**Project Key**| The [The Jira Project Key](https://support.atlassian.com/jira-software-cloud/docs/what-is-a-jira-software-project/) within the Jira Server. |
 |**Project Key Encrypted**| Select the box to indicate the Project name should be hidden in the database.|
-|**Project Key Override**| Select the box if the Project can be changed. |  
+|**Project Key Override**| Select the box if the Project can be changed. |
 |**Server**| The fully qualified URL to the Jira Server so Ortelius can get access. |
 |**Server Encrypted**| Select the box to indicate the Jira Server should be hidden in the database.|
 |**Server Override**|Select the box if the Jira Server can be changed.|
@@ -96,7 +96,7 @@ This _Data Source_ allows you to connect to Bugzilla to retrieve Bugzilla issues
 |**Poll Interval Override** |Select the box if the Poll Interval can be changed.|
 |**Product**| The full URL to the [Bugzilla Product](https://bugzilla.readthedocs.io/en/latest/administering/categorization.html). |
 |**Product Encrypted** | Select the box to indicate the Product name should be hidden in the database.|
-|**Product Override** | Select the box if the Product can be changed. |  
+|**Product Override** | Select the box if the Product can be changed. |
 |**Server** | The fully qualified URL to the Bugzilla Server so Ortelius can get access. |
 |**Server Encrypted** | Select the box to indicate the Server should be hidden in the database.|
 |**Server Override** |Select the box if the Server can be changed.|

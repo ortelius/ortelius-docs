@@ -85,7 +85,7 @@ echo "len is $len"; // echoes len is 11
 
 When a _Function_ relates to an object, this will be indicated.
 
-### Define a Function
+## Define a Function
 
 A _Function_ can be defined simply by using the keyword _Function_ followed by the _Function_ name, its parameters and the code that makes up the _Procedure_ in braces.
 
@@ -103,7 +103,7 @@ return "$arg1 $arg2";
 
 When adding _Functions_ via the Ortelius Web User Interface, the "_Function_" header is implied. The argument names are taken from the Arguments tab. There is no need to use the syntax outlined here. However, you can use this in an external _DMScript_ file (one stored in a repository) and call it from other _Procedures_ or _Functions_ stored in the same file.
 
-### Call a Function
+## Call a Function
 
 _Functions_ can be called as a simple statement. For example, using the testfunc_Function_ which we defined previously:
 
@@ -153,7 +153,7 @@ echo **"** myarg2[1] = $myarg2[1]";
 
 **NOTE:** When adding _Procedures_ via the Ortelius Web User Interface, the "action" header is implied. There is no need to use the syntax outlined here. However, you can use this in an external _DMScript_ file (one stored in a repository) and call it from other _Procedures_ or _Functions_ stored in the same file.
 
-### Call a Procedure
+## Call a Procedure
 
 _Procedures_ can be called as a simple statement. A new scope is pushed for the called _Procedure_ and populated with the parameters, which are essentially name value pairs. e.g.
 

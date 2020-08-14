@@ -54,7 +54,7 @@ This example will create a new _Component Version_ for the _Application Version_
       def user="DHUSER"
       def pw="DHPASSWORD"
       def comp="GLOBAL.CSC589.chili.Development.bowl"
-      def application="GLOBAL.CSC589.chili.Development.ChiliUptimeApp"  
+      def application="GLOBAL.CSC589.chili.Development.ChiliUptimeApp"
       def appver = "1"
       def version = "0.1.0-109"
       def imagename = "chili-bowl"

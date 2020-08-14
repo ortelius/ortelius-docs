@@ -3,7 +3,7 @@ title: "Setting up Ortelius"
 linkTitle: "Setting up Ortelius"
 weight: 1
 description: >
-  What you need to get started.  
+  What you need to get started.
 ---
 Start by defining the following:
 

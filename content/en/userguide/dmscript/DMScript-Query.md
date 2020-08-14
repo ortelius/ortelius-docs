@@ -1,9 +1,9 @@
 ---
 title: "Query"
 linkTitle: "Query"
-weight: 87  
+weight: 87
 description: >
-   Run a query against a Data Source Object. 
+   Run a query against a Data Source Object.
 ---
 
 

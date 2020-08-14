@@ -3,7 +3,7 @@ title: "SetAtt"
 linkTitle: "SetAtt"
 weight: 95
 description: >
-  Assings or replaces attributes for a specified object. 
+  Assings or replaces attributes for a specified object.
 ---
 
 _Setatt_ assigns or replaces Key Value Pairs for a specified object. Key Value Pairs are held against _Applications_, _Components_, _Environments_, _Endpoints_, and _Repositories_. _setatt_ allows new values to be stored against such objects or for existing values to be replaced.

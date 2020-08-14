@@ -3,7 +3,7 @@ title: "Break/Continue"
 linkTitle: "Break/Continue"
 weight: 24
 description: >
-  Break out of a loop or restart a loop. 
+  Break out of a loop or restart a loop.
 ---
 
 

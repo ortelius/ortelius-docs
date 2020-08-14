@@ -1,6 +1,6 @@
 ## Using a LDAP or Active Directory _Data Source_ for Single Sign-on
 
-Ortelius allows you to use LDAP or Active Directory to manage your _User_ logins.  Create an LDAP _Data Source_ to access an LDAP database and use the information stored to gain access to Ortelius. It also populates the _Users_ General tab with Real Name and Email, which it gets from the LDAP database. When you define a _User_, you associate the LDAP authentication method. At login, Ortelius checks the User's authentication method to determine if LDAP or Active Directory should be used.  
+Ortelius allows you to use LDAP or Active Directory to manage your _User_ logins.  Create an LDAP _Data Source_ to access an LDAP database and use the information stored to gain access to Ortelius. It also populates the _Users_ General tab with Real Name and Email, which it gets from the LDAP database. When you define a _User_, you associate the LDAP authentication method. At login, Ortelius checks the User's authentication method to determine if LDAP or Active Directory should be used.
 
 ### Creating a LDAP or Active Directory _Data Source_
 

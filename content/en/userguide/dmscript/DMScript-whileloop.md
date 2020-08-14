@@ -3,7 +3,7 @@ title: "While Loops"
 linkTitle: "While Loops"
 weight: 122
 description: >
- Repeatedly execute a condition. 
+ Repeatedly execute a condition.
 ---
 
 

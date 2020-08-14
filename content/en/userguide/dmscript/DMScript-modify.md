@@ -3,7 +3,7 @@ title: "Modify"
 linkTitle: "Modify"
 weight: 81
 description: >
-  Change a file in the DropZone. 
+  Change a file in the DropZone.
 ---
 
 _Modify_ changes a file in the _DropZone_. _modify_ is used to make changes to either flat files or XML files before they're deployed to the target _Endpoints_. Changes can be made that are specific to individual _Endpoints_ within the _Endpoint_ list. In this case, each _Endpoint_ receives its own copy of the modified file.

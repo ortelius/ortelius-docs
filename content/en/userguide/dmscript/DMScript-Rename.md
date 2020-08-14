@@ -3,7 +3,7 @@ title: "Rename"
 linkTitle: "Rename"
 weight: 91
 description: >
-  Change a file name in the DropZone. 
+  Change a file name in the DropZone.
 ---
 
 

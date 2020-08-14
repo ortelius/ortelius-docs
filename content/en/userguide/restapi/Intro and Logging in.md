@@ -5,7 +5,7 @@ weight: 5
 description: >
   Introduction and the Login API
 ---
-APIs can be used to extract and update Ortelius [Objects](/userguide/concepts/basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.  
+APIs can be used to extract and update Ortelius [Objects](/userguide/concepts/basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.
 
 ## Object Accessibility
 
@@ -21,7 +21,7 @@ If a requested object does not have "read" permission then it cannot be accessed
 
 When specifying an Object by name you can always qualify the name by pre-pending it with the name of the _Domain_ in which it is contained. The name of the _Domain_ should be separated from the name of the object by a period.
 
-**Example:**
+### Example
 
 ~~~bash
     GLOBAL.USA.Development.demoenv
@@ -50,7 +50,7 @@ To use the ID, just place it where you would normally place the object's name. T
 ~~~
 
   If the username/password combination is correct, the user is logged in and the success indication is returned. Now we can call any of the other API interfaces by specifying the same file in which we stored the session ID returned from the login call.
-  
+
   For example, this will return a JSON array containing all the servers in our home and _Subdomains_ to which we have view access.
 
 ~~~bash
@@ -61,20 +61,20 @@ To use the ID, just place it where you would normally place the object's name. T
 
 When issuing calls to the API, the client application must either first issue a "login" call, specifying the username and password or must specify the username and password in each individual call to the API.
 
-**REST Api Endpoint**
+### REST Api Endpoint
 
 | HTTP Verb | URL |
 | ---- | ----------- |
 | GET |  /dmadminweb/API/login |
 
-**Parameters**
+### Parameters
 
 | Name | Located in | Value | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | user | query | User Id | Yes | string |
 | pass | query | Password for User | Yes | string |
 
-**Responses**
+### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |

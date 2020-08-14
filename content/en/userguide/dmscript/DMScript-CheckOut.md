@@ -3,7 +3,7 @@ title: "Check Out"
 linkTitle: "Check Out"
 weight: 27
 description: >
-  Get files from a specified repository. 
+  Get files from a specified repository.
 ---
 
 _checkout_ takes files from the specified repository and places them into the current _DropZone_. _checkout_ only places the files into the _DropZone_. This allows the files to be processed, manipulated, renamed, or removed before the files in the _DropZone_ are transferred to the target _Endpoint_.

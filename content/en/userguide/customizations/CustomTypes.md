@@ -3,12 +3,12 @@ title: "Custom Types"
 linkTitle: "Custom Types"
 weight: 90
 description: >
-  Adding Custom Types for _Endpoints_. 
+  Adding Custom Types for _Endpoints_.
 ---
 
 ## Intro to _Custom Types_
 
-_Custom Types_ or found on the _Endpoint_ Dashboard and the _Component_ Dashboard and are used to map a _Component_ to its appropriate _Endpoint_.  For example, a default _Endpoint Type_ is "Application Server."  This maps to a _Component_ defined as an "Application Server."   This mapping allows _Endpoints_ in an _Environment_ to be dynamically assigned _Components_ based the _Endpoint Type_.  
+_Custom Types_ or found on the _Endpoint_ Dashboard and the _Component_ Dashboard and are used to map a _Component_ to its appropriate _Endpoint_.  For example, a default _Endpoint Type_ is "Application Server."  This maps to a _Component_ defined as an "Application Server."   This mapping allows _Endpoints_ in an _Environment_ to be dynamically assigned _Components_ based the _Endpoint Type_.
 
 _Components_ map to a single _Endpoint_, but an _Endpoint_ can map to multiple types of _Components_. For example, your _Endpoint_ could serve as both your Application Server and Database Server.
 
@@ -26,7 +26,7 @@ The _Custom Type_ List View has the following Tabs.
 |**Add** | Allows you to Add a new _Custom Type_. |
 |**Delete** | Deletes the selected item. |
 
-From the _Custom Type_ List View, double click on the _Custom Type_ which you would like to view to see all Details.  
+From the _Custom Type_ List View, double click on the _Custom Type_ which you would like to view to see all Details.
 
 ## Using the _Custom Type_ Dashboard for Viewing and Editing
 

@@ -3,7 +3,7 @@ title: "Change Request"
 linkTitle: "Change Request"
 weight: 26
 description: >
-  Get a Change Request (issue). 
+  Get a Change Request (issue).
 ---
 
 The _Change Request_ object represents a change request record associated with either a _Component_ or an _Application_. Arrays of _Change Request_ objects are returned by accessing the requests property of an _Application_ or _Component_ object or the requests() method of an _Application_.

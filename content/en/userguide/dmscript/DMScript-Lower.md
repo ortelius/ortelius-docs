@@ -3,7 +3,7 @@ title: "Lower"
 linkTitle: "Lower"
 weight: 77
 description: >
-  Convert to lowercase. 
+  Convert to lowercase.
 ---
 
 lower returns a lowercase version of the passed string.

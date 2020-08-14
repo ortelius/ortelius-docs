@@ -3,7 +3,7 @@ title: "Increment or Decrement"
 linkTitle: "Increment or Decrement"
 weight: 73
 description: >
-  Increment or decrement by 1. 
+  Increment or decrement by 1.
 ---
 
 _Incr/Decr_ is shorthand notation for increment by 1 and decrement by 1.

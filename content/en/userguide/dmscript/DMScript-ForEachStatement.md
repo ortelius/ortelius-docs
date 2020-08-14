@@ -3,7 +3,7 @@ title: "For Each Statement"
 linkTitle: "For Each Statement"
 weight: 64
 description: >
-  Use a generic iterator for string tokenization. 
+  Use a generic iterator for string tokenization.
 ---
 
 _foreach_ is a generic iterator for string tokenization, array/list member access and stream manipulation. Braces are mandatory. _break_ and _continue_ may be used – break to terminate the loop (as previously described) and continue to restart the loop from the beginning with the next value.

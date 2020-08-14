@@ -8,7 +8,7 @@ description: >
 
 ## Using the _Application_ List View for Adding or Deleting
 
-Use the _Application_ List View accessible from the left hand _Application_ menu option. This will take you to a list of all _Application Base Versions_ and _Application Versions_ to which you have access. There is a row for every _Environment_ to which the _Application Base Version_ or _Application Version_ has been deployed.  For this reason, there will be multiple entries for the same _Application_ if it has been deployed to multiple _Environments_.  
+Use the _Application_ List View accessible from the left hand _Application_ menu option. This will take you to a list of all _Application Base Versions_ and _Application Versions_ to which you have access. There is a row for every _Environment_ to which the _Application Base Version_ or _Application Version_ has been deployed.  For this reason, there will be multiple entries for the same _Application_ if it has been deployed to multiple _Environments_.
 
 The list view is organized on the following columns:
 
@@ -59,7 +59,7 @@ The Dashboard view displays all information related to a specific _Application B
 |**Owner** | Name of User or Group. |
 |**Summary** | Description of the _Application_. |
 |**Created** | The date the _Application_ was added. |
-|**Modified** | The date the _Application_ was updated. |  
+|**Modified** | The date the _Application_ was updated. |
 |**Change Request DataSource** | DeployHub Pro Option - Establishes the Change Request system for the _Application_. A Change Request Data Source must be pre-defined for this field to be used. |
 |**Pre-Action**| An action executed prior to the deployment.|
 |**Post-Action**| An action executed at the completion of deployment.|

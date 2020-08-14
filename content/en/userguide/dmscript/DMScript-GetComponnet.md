@@ -3,7 +3,7 @@ title: "Get Components"
 linkTitle: "Get Components"
 weight: 66
 description: >
-  Get a Component object based on the Component Name. 
+  Get a Component object based on the Component Name.
 ---
 
 

@@ -15,7 +15,7 @@ parallel {
  }
 ```
 
-**Example**
+## Example
 
 In this example, action1 and action2 are executed simultaneously.
 

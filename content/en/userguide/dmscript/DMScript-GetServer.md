@@ -3,7 +3,7 @@ title: "Get Server"
 linkTitle: "Get Server"
 weight: 70
 description: >
-  Gets an Endpoint object based on an Endpoint Name. 
+  Gets an Endpoint object based on an Endpoint Name.
 ---
 
 ### Getserver
