@@ -11,7 +11,7 @@ service:
   type: ClusterIP
   port: 80
 
-DockerRepo: "quay.io/Ortelius/dh-docs"
+DockerRepo: "quay.io/ortelius/ortelius-docs"
 DockerTag: "latest"
 
 ingress:
