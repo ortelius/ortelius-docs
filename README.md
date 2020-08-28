@@ -17,3 +17,7 @@ Once you've cloned the site repo, from the repo root folder, run:
 ```Shell
 hugo server
 ```
+
+## Installation and Support guide
+
+[Installation and Support](https://docs.deployhub.com/userguide/installation-and-support/)
