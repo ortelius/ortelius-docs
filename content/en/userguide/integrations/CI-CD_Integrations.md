@@ -7,11 +7,11 @@ description: >
 ---
 
 
-## Ortelius' Continuous Delivery Integration
+## Ortelius' Continuous Delivery And Integration
 
-The Ortelius continuous delivery integration is used to perform both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. It does this by gathering configuration data related to a build, creating new _Component Versions_ and _Application Versions_, and deploying independently deployable _Components_ into specified _Environments_. It also saves the "build" data as part of the configuration information and associates it to the _Component_ and _Application_.
+The Ortelius continuous delivery and integration performs both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. The program gathers configuration data related to a build, creates new _Component Versions_ and _Application Versions_, and deploys independent _Components_ into specified _Environments_. "Build" data is saved as configuration information and then associated to the _Component_ and _Application_.
 
-Ortelius' uses a standard CLI Container to integrate with continuous delivery solutions that execute workflows in containers. If the solution has a more traditional model, a plug-in is required. Following is a list CD tools that Ortelius has performed joint integrations and their corresponding documentation on how each should be implemented:
+Ortelius' uses a standard CLI Container to integrate continuous delivery solutions and execute workflows in containers. If the solution has a more traditional model, a plug-in may be required. The below list contains the CD tools Ortelius has successfully integrated with and their corresponding documentation on how each should be implemented:
 
 | CI Tool | Ortelius Plugin | Reference Document |
 |---|---|---|
@@ -23,17 +23,17 @@ Ortelius' uses a standard CLI Container to integrate with continuous delivery so
 
 ### Tracking Build Updates
 
-Ortelius' first hook into the continuous delivery process occurs after the build has been completed and the container has been pushed to a container registry. Ortelius can support any container registry. For more details, reference the above table for for each supported solution.
+Ortelius' first hook into the continuous delivery process occurs after a complete build and when the container pushes to a container registry. Ortelius can support any container registry. For more details, reference the above table for for each supported solution.
 
 ### Saved Build Data
 
-Build data is saved to the _Component Version_ and displayed on the _Component Version_ Dashboard. In some cases, Ortelius may need to save custom data. This can be done using the _Component_ Attributes and saved as a key/value pair. This custom data is then displayed as Attributes to the _Component Version_ in the Attributes Section.
+Build data is saved to the _Component Version_ and displayed on the _Component Version_ Dashboard. In some cases, Ortelius may need to save custom data. This can be done using the _Component_ Attributes and saved as a key/value pair. Custom data displays in the Attributes Section as Attributes to the _Component Version_ .
 
 The _Component_ Type determines what data is saved.  See [Defining Components](/userguide/publishing-components/2-define-components/) for a complete listing of the Detail data saved for each different _Component_ Type.
 
 ### Continuous Configuration Management and Versioning
 
-Continuous configuration management and versioning is the process of creating new _Application Versions_ based on the detection of build updates. When an update is detected, Ortelius becomes aware of a new _Component Version_ in the continuous delivery workflow. This tells Ortelius that a new _Component Version_ is available, triggering Ortelius to update the dependency relationship maps of all the consuming _Applications_, therefore creating new _Application Versions_.
+The continuous configuration management and versioning process creates new _Application Versions_ based on build update detection. When an update is detected, Ortelius identifies a new _Component Version_ in the continuous delivery workflow and triggers a dependency relationship map update for all consuming _Applications_ which creates new _Application Versions_.
 
 This continuous configuration step is particularly important in a microservice implementation.  Every time a new microservice is pushed across the pipeline, it impacts the configuration of the "logical" _Application_ that consumes it.  A new microservice _Component_ creates a new _Application Version_.  This is how Ortelius presents the _Application Version_ Dashboard data showing the relationship and difference maps for each cluster to which the microservice _Component_ is deployed.
 
@@ -87,7 +87,7 @@ Note: The Variant is optional.  That part of the _Component_ name will be left o
 
 ### _Application_ Versioning Schema
 
-The Ortelius continuous delivery integration will automatically maintain the _Application Version_ if the _Application_ Name and a starting version identifer are provided. If the _Application_ Name and version identifier are passed to Ortelius a new _Application Version_ will be created using the previous version identifier as a starting point. An _Application Base_ version must exist in order for Ortelius to automatically create a new _Application Version_ when a new _Component Version_ is created. The base version gives Ortelius the starting point to perform automatic _Application_ versioning.
+The Ortelius continuous delivery integration will automatically maintain the _Application Version_ if the _Application_ Name and a starting version identifer are provided. When provided, a new _Application Version_ will be created using the previous version identifier as a starting point. An _Application Base_ version must exist in for Ortelius to automatically create a new _Application Version_ when a new _Component Version_ is created. The base version gives Ortelius the starting point to perform automatic _Application_ versioning.
 
  Ortelius uses a similar naming convention for _Application Versions_ as it does for _Component Versions_:
 
@@ -97,7 +97,7 @@ The Ortelius continuous delivery integration will automatically maintain the _Ap
 |**Variant** | A high level place holder for that versions are created within. The Variant can be aligned with a feature or branch. For example: 50percent-sale.  Variant is not required.|
 |**Version**| The schematic version number. For example, 1_2_10.|
 
-Ortelius uses the <base name>;<schematic version number>;<version number> as the default format for the versioning schema.   The formatting is:
+Ortelius uses the base name; schematic version number ; version number as the default format for the versioning schema.   The formatting is:
 
 ~~~bash
 <base name>;<variant>;<schematic version number>;<version number> if a Variant is used.
