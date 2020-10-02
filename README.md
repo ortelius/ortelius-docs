@@ -20,4 +20,4 @@ hugo server
 
 ## Installation and Support guide
 
-[Installation and Support](https://docs.deployhub.com/userguide/installation-and-support/)
+[Installation and Support](http://docs.ortelius.io/userguide/installation-and-support/)
