@@ -45,7 +45,7 @@ istioctl install --set profile=demo
 
 ### Installation of Add-Ons / Integrations
 
-As of version 1.7.x, the installation for Istio does not come with the ability to install add-ons such as Kiali, Prometheus, Grafana, and Jaeger.  For this example, we will be installing the aforementioned add-ons using the guidance found on the Istio [integrations page](https://istio.io/latest/docs/ops/integrations/).  Following is a snippet that contains the installation commands for each add-on.  This will use the default settings for each add-on, which in most cases will serve all of your needs.
+As of version 1.7.x, the installation for Istio via `istioctl` does not come with the ability to install add-ons such as Kiali, Prometheus, Grafana, and Jaeger.  For this example, we will be installing the aforementioned add-ons using the guidance found on the Istio [integrations page](https://istio.io/latest/docs/ops/integrations/).  Following is a snippet that contains the installation commands for each add-on.  This will use the default settings for each add-on, which in most cases will serve all of your needs.
 
 ``` shell
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/samples/addons/kiali.yaml
@@ -53,6 +53,14 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/sampl
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/samples/addons/grafana.yaml
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/samples/addons/jaeger.yaml
 ```
+
+To open a port-forwarded instance of these add-ons, use `istioctl dashboard` to instantiate a new browser tab.  For example, if you wished to open a new tab and load the Kiali interface, you would type 
+
+``` shell
+istioctl dashboard kiali
+``` 
+
+in the shell of your choice.
 
 ### Using the Istio ingress
 
@@ -63,4 +71,4 @@ The `Gateway` is an object that listens for TCP/UDP requests coming in with a sp
 
 ### Using `cert-manager`
 
-Certificate manegement can be a bit complicated.  With the use of utilities such as `cert-manager`, you can use a central cluster resource to manage and issue SSL certificates for ingress points using [Let's Encrypt](https://letsencrypt.org/).  If you have requirements that specify an alternative method for procuring, storing, and using SSL certificates, please use that method for including SSL certificates in your cluster.  If using `cert-manager` is acceptable for your cluster, you can reference the instructions on the [Istio website](https://istio.io/latest/docs/ops/integrations/certmanager/).
+Certificate manegement can be a bit complicated.  With the use of utilities such as `cert-manager`, you can use a central cluster resource to manage and issue SSL certificates for ingress points using [Let's Encrypt](https://letsencrypt.org/).  If you have requirements that specify an alternative method for procuring, storing, and using SSL certificates using a dedicated certificate authority (CA), please use that method for including SSL certificates in your cluster.  If using `cert-manager` is acceptable for your cluster, you can reference the instructions on the [Istio website](https://istio.io/latest/docs/ops/integrations/certmanager/) for provisioning `cert-manager` in your cluster.
