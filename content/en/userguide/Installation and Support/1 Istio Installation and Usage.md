@@ -64,11 +64,68 @@ in the shell of your choice.
 
 ### Using the Istio ingress
 
-Gateways and Virtual Services are placed in the namespace that relates to the application being run.  The decision to put them in the namespace versus having them all in the `istio-system` namespace is one that you are welcome to make.  For the purposes of this use case, however, we will be containing Gateways and Virtual Services within the relevant namespace for the application.
-The `Gateway` is an object that listens for TCP/UDP requests coming in with a specific host header, and routes those requests to related `VirtualService` objects to serve up a target application.  You may also use a `PeerAuthentication` object to restrict the communications between services within a namespace and require them to all use mTLS.  Using these objects in conjunction with the Istio `ingressgateway`, you will be able to route HTTP, HTTPS, and other Layer 4 requests to services within your cluster.  Using these objects enables mTLS to flow from the ingress to the individual services being exposed.
+Gateways and Virtual Services are placed in the namespace that relates to the application being run.  The decision to put them in the namespace versus having them all in the `istio-system` namespace is one that you are welcome to make.  For the purposes of this use case, however, we will be containing [Gateways](https://istio.io/latest/docs/reference/config/networking/gateway/) and [Virtual Services](https://istio.io/latest/docs/reference/config/networking/virtual-service/) within the relevant namespace for the application.
+The `Gateway` is an object that listens for TCP/UDP requests coming in with a specific host header, and routes those requests to related `VirtualService` objects to serve up a target application.  You may also use a `PeerAuthentication` object to restrict the communications between services within a namespace and require them to all use mTLS.  Using these objects in conjunction with the Istio `ingressgateway`, you will be able to route HTTP, HTTPS, and other Layer 4 requests to services within your cluster.  Using these objects enables mTLS to flow from the ingress to the individual services being exposed as well as between services within the same namespace.
 
-<img src="http://yuml.me/diagram/plain/activity/(start)-HTTPS>[Request]-[TLS]>(Istio ingressgateway)-[TLS]>(Gateway)-[TLS]>(VirtualService)-[mTLS]>(Exposed Service)-[pods]>(end)" >
+<img src="http://yuml.me/diagram/plain/activity/(start)-HTTPS>[Request]-[TLS]>(Istio ingressgateway)-[mTLS]>(Gateway)-[mTLS]>(VirtualService)-[mTLS]>(Exposed Service)-[pods]>(end)" >
+
+To use the `ingressgateway` to route traffic to an exposed Ortelius service within the `ortelius` namespace, a Gateway and VirtualService would be created to allow that traffic to hit that service. This example assumes that HTTPS would be used and a certificate would be loaded allowing for secure traffic to access the site.  The secret could be stored in the `istio-system` namespace or the `ortelius` namespace, and the secret name is listed as `ortelius-istio`.
+
+```yaml
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: ortelius-gateway
+  namespace: ortelius
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: ortelius-istio
+    hosts:
+    - "ortelius.example.net"
+  - hosts:
+        - ortelius.example.net
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ortelius
+  namespace: ortelius
+spec:
+  hosts:
+  - "ortelius.example.net"
+  gateways:
+  - ortelius-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    - uri:
+        prefix: /dmadminweb
+    route:
+    - destination:
+        port:
+          number: 7171
+        host: ortelius-web
+```
+
+There are more complex configurations that allow you to redirect HTTP traffic to HTTPS as well as perform additional mappings based on the URI prefix.  In this case, a simple example is shown to provide context on how to set up the Istio networking components.
 
 ### Using `cert-manager`
 
+[TBD]
 Certificate manegement can be a bit complicated.  With the use of utilities such as `cert-manager`, you can use a central cluster resource to manage and issue SSL certificates for ingress points using [Let's Encrypt](https://letsencrypt.org/).  If you have requirements that specify an alternative method for procuring, storing, and using SSL certificates using a dedicated certificate authority (CA), please use that method for including SSL certificates in your cluster.  If using `cert-manager` is acceptable for your cluster, you can reference the instructions on the [Istio website](https://istio.io/latest/docs/ops/integrations/certmanager/) for provisioning `cert-manager` in your cluster.
