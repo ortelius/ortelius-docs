@@ -16,12 +16,8 @@ just a few small guidelines you need to follow.
 Contributions to this project must be accompanied by a Contributor License
 Agreement. You (or your employer) retain the copyright to your contribution;
 this simply gives us permission to use and redistribute your contributions as
-part of the project. Head over to [cdfoundation/cla]<https://github.com/cdfoundation/cla> to see
-your current agreements on file or to sign a new one.
-
-You generally only need to submit a CLA once, so if you've already submitted one
-(even if it was for a different project), you probably don't need to do it
-again.
+part of the project. Please fill out the [Ortelius Individual CLA](./OrteliusIndividualCLA.pdf) or the [Ortelius Corporate CLA](./OrteliusCorporateCLA.pdf)
+and email the signed document to cla@ortelius.io.
 
 ## Code reviews
 
