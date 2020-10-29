@@ -8,9 +8,26 @@ description: >
 
 Helm is called to replace the Ortelius default processing engine for performing container deployments. When Ortelius executes the release process, it will call the Helm Chart you have defined as your _Custom Action_ at the _Component_ level.  Ortelius includes the version of the Helm chart as part of its overall configuration data.
 
+## Helm and Key Value Pairs
+
+In order to support a consistent Helm deployment across Cluster _Endpoints_ and _Environments_ (Dev, Test, Prod) Key value pair substitution is performed. When a Helm chart is used, Ortelius will pull your Helm Chart in the .tgz format from either a public or private Chart Museum. It then expands it out into a separate directory location where Helm is executed. This location is defined by the Ortelius Endpoint which you define (see "Connecting a Ortelius _Endpoint_ to your Kubernetes Cluster through Helm" below). 
+
+Ortelius will then create an override values file which contains all the specific key value pairs defined at the _Endpoint_, _Environment_, _Component_ or _Application_ in this order of precedence. For example, if the same key value pairs are defined at the _Endpoints_ as well as the _Application_, the _Endpoint_ key values are used. 
+
+The override values file passes the Key value definitions Helm 'upgrade' command.  This process allows a single Helm chart to be reused across all deployments, supporting the needed key value pairs for each deployment.
+
+If you would like to create a hermetic Helm Chart stored in the Ortelius database, use the following key value:
+~~~
+helmcapture=Y
+~~~
+
+This must be defined at any level, i.e., _Endpoint_, _Environment_, _Component_ or _Application_.
+
 ## Connecting a Ortelius _Endpoint_ to your Kubernetes Cluster through Helm
 
-Ortelius' deployment engine comes pre-installed with Helm.  For this reason you should use the deployment engine as the "localhost" _Endpoint_ for your deployments.  This Helm install on the "localhost" _Endpoint_ needs to know how to connect to your Kubernetes Cluster.  Mount your ".kube/config" file to the Ortelius deployment engine Docker container to provide the connection.  The additional parameter to the docker run command for the Ortelius container exposes the Kubernetes config file to the Helm install in Ortelius.  The following is an example of the additional parameter:
+Ortelius' deployment engine comes pre-installed with Helm.  For this reason you should use the deployment engine as the "localhost" _Endpoint_ for your deployments.  This Helm install on the "localhost" _Endpoint_ needs to know how to connect to your Kubernetes Cluster.
+
+ Mount your ".kube/config" file to the Ortelius deployment engine Docker container to provide the connection.  The additional parameter to the docker run command for the Ortelius container exposes the Kubernetes config file to the Helm install in Ortelius.  The following is an example of the additional parameter:
 
 ```bash
 -v ~/.kube:/home/omreleng/.kube:Z
@@ -64,6 +81,42 @@ When you drag the HelmUpgrade _Procedure_ onto the area under "Start" a pop-up d
 
 At this point the Action is ready to be used by anyone with access (based on Domain and security options). Each _Component_ that uses the _Action_ will need to define specific values. Because this new _Action_ is reusable, no _Component_ variables are defined at the _Action_ level.
 
-## Assign the HelmChart Action to a Component
+## Assign the Helm Chart Action to a Component
 
 Create your new _Component_ from the _Component_ Dashboard. See [Defining _Components_](/userguide/publishing-components/2-define-components/).  For each container _Component_ you will need to define the variable values. Values are specified when you create a new container _Component._ Values will override those defined at the _Application_ or _Environment_ level. The values from Ortelius will be passed along to Helm's values.yml file at execution time. For more information on defining your container _Component_ see [Container Specific Data Definition](/userguide/publishing-components/2-define-components/#container-specific-data-definition).
+
+## Storing and Retrieving a Hermetic Helm Chart
+
+In order to create an 'airtight' Helm deployment, Ortelius takes the generated Helm overrides file created during a Helm deployment and executes the Helm template command to find the container images that were referenced. All container image digests are captured and stored in the Ortelius database along with the Helm Chart and all key values used in a specific deployment.  To turn on this option, the following key value pair must be defined at  any level, i.e., _Endpoint_, _Environment_, _Component_ or _Application_.
+~~~
+helmcapture=Y
+~~~
+
+
+Once stored in the Ortelius database, you can retrieve the hermetic Helm Chart, key value pairs and all container digests to repeat the exact deployment utilizing Helm manually. 
+
+### Retrieving and Running the Helm Chart Manually
+
+To re-execute a Helm deployment manually, you will retrieve all captured data in a zip file (Helm Chart, all container digest, and key values ). To retrieve the data and generate a zip file, execute the following curl command if using the SaaS:
+
+~~~
+curl "https://console.deployhub.com/dmadminweb/API/helm/<DeploymentNumber>?format=zip"-o Helmchart.zip
+
+where:
+Deployment Number is the Number of the Deployment displayed in the Ortelius dashboard for the Application.
+
+Helmchart.zip is the name of the zip file you want to create.
+~~~
+
+If you are using an on premise version use the following command:
+~~~
+
+curl "http://<myortelius>/dmadminweb/API/helm/<DeploymentNumber>?format=zip"-o Helmchart.zip
+
+where:
+myortelius is your on premise Ortelius Server.
+
+Deployment Number is the Number of the Deployment displayed in the Ortelius dashboard for the Application.
+
+Helmchart.zip is the name of the zip file you want to create.
+~~~
