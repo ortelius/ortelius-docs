@@ -63,7 +63,7 @@ The SHA in the above example is 0114088b0b44.
 Use the image SHA from Step 3 as the last parameter to the docker run.
 
 ~~~bash
-docker run -v ~/ortelius/data:/var/lib/pgsql/data:Z -v ~/ortelius/logs:/opt/ortelius/logs:Z -p 7171:8080 -d –hostname docker_dh -v ~/.ssh:/keys:Z 0114088b0b44
+docker run -v ~/ortelius/data:/var/lib/pgsql/data:Z -v ~/ortelius/logs:/opt/ortelius/logs:Z -p 7171:8080 -d –hostname quay.io/ortelius/ortelius -v ~/.ssh:/keys:Z 0114088b0b44
 ~~~
 
 ### Step 5 - Access Ortelius from your browser
