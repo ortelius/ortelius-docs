@@ -18,7 +18,7 @@ steps:
     env: 
       - 'COMPONENT_GITURL=git@github.com:ortelius/ortelius-docs.git'
       - 'COMPONENT_VERSION=9.0.0'
-      - 'COMPONENT_DOCKERREPO=quay.io/ortelius/docs'
+      - 'COMPONENT_DOCKERREPO=quay.io/ortelius/ortelius-docs'
       - 'BLDDATE=`date`'
       - 'IMAGE_TAG="$BRANCH_NAME-v$$COMPONENT_VERSION.$$(git rev-list --count $BRANCH_NAME)-g$SHORT_SHA"'
 
