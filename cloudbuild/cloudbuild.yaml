@@ -4,9 +4,9 @@ steps:
     entrypoint: 'bash'
     args: ['-c', 'ls -A1 | xargs rm -rf;git clone $$COMPONENT_GITURL .;git checkout --track -b $BRANCH_NAME origin/$BRANCH_NAME;env | sed "s/^/export /" >> /workspace/cloudbuild.sh']
     env: 
-      - 'COMPONENT_GITURL=https://github.com/ortelius/ortelius-doc'
+      - 'COMPONENT_GITURL=git@github.com:ortelius/ortelius-docs.git'
       - 'COMPONENT_VERSION=9.0.0'
-      - 'COMPONENT_DOCKERREPO=quay.io/ortelius/ortelius-doc'
+      - 'COMPONENT_DOCKERREPO=quay.io/ortelius/docs'
       - 'BLDDATE=`date`'
       - 'IMAGE_TAG="$BRANCH_NAME-v$$COMPONENT_VERSION.$$(git rev-list --count $BRANCH_NAME)-g$SHORT_SHA"'
 
