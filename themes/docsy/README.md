@@ -43,7 +43,7 @@ Docsy has its own user guide (using Docsy, of course!) with lots more informatio
 
 ```
 git clone --recurse-submodules --depth 1 https://github.com/google/docsy.git
-cd docsy/userguide/
+cd docsy/guides/userguide/
 hugo server --themesDir ../..
 ```
 

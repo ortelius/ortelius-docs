@@ -1,0 +1,47 @@
+---
+title: "Things You Should Know"
+linkTitle: "Things You Should Know"
+weight: 2
+description: >
+  Things You Should Know
+---
+
+## Getting Started
+
+Before submitting code to Ortelius, there are a few things you should know. From completing a contributor license agreement to understanding the different levels of participation, the below information will help you get started.
+
+### Sign the CLA
+
+If you would like to contribute code, documentation content, blogs or graphics you will need to complete the Linux Foundation Ortelius individual Contributor Agreement(CLA).  [Download](OrteliusIndividualCLA.pdf) and sign the agreement and email it to [cla@ortelius.io](mailto:cla@ortelius.io).
+
+If your organization would like to become a contributing organization, please have the appropriate individual complete the [Ortelius Corporate Contributor License Agreement](OrteliusCorporateCLA.pdf). We welcome organizations of any size to be part of solving the microservice puzzle and encourage you to get your organization involved. Please email the completed agreement to [cla@ortelius.io](mailto:cla@ortelius.io).
+
+### Read the Code of Conduct
+
+Just as all open source communities, Ortelius has a 'Code of Conduct.' Please make sure to read and observe the [Code of Conduct and Community Values](https://ortelius.io/guidelines/#community-code-of-conduct).
+
+
+### Learn the Community Expectations and Roles
+
+Ortelius is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.  Our contributors fit into 3 basic categories: Casual, Regular and Core.
+
+**User Contributors:** Adopting Ortelius, finding bugs, opening tickets, helping others, creating blogs, and providing feedback are the main tasks of User Contributors. Users Contributors are the heartbeat of the Ortelius Community.  Your involvement at this level drives the Ortelius road map.
+
+**Member Contributors**
+Working on support tickets is one of the main jobs of the Member Contributor. Member contributors want to contribute further to the project and will assign themselves support tickets and begin to review pull request. In addition, sharing use cases, providing feedback for potential feature enhancements, and social networking about Ortelius are a few ways the Member Contributor can participate.  Member Contributors are an important group of individuals as they become are most vocal 'User' group. Member Contributors should plan on attending the General Community Meetings at least every other month to keep up to date with the progress of Ortelius.
+
+**Reviewer Contributors:**
+Reviewing the Member Contributor pull request, attending meetings on a monthly to bi-monthly basis, stepping up to help with working group tasks, and fixing issues best describe the activities that can qualify you as Reviewer Contributor. Reviewer Contributors complete a large part of the work that needs to be done to keep the Ortelius project relevant to the broader IT community. Your participation at this level is key to the success of the project. Many of our founding contributors jumped to this level as the Open Source Community began to form. They have become the backbone of Ortelius.
+
+**Approvers Contributors:**
+Approvers Contributors are individuals that have developed a level of expertise and provide a final approval of pull request.  In addition they develop product enhancements, create documentation, develope on-line videos and tutorial content. 
+
+**Chair Contributors**
+Providing additional project management support, distribute issues to beginners, manage meetings and recordings are the jobs performed by Chair Contributors. Chair Contributors need to commit to attending most meetings and helping new Contributors be successful. 
+
+You are encouraged to participate at all levels. You can move up the ladder as your personal time allows. 
+
+## Understand Submittal Reviews
+
+All submissions, from code to content will require a review. Where possible GitHub pull requests will be used for this purpose. Consult [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
+information on using pull requests. As the project matures, more use of GitHub pull request will be leveraged including website updates, blogs and videos. 
