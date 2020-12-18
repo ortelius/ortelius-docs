@@ -1,0 +1,66 @@
+---
+title: "CD Engines"
+linkTitle: "CD Engines"
+weight: 34
+description: >
+  How to Integrate with CD Engines for automated configuration management
+---
+
+## Intro to CD Engines
+
+A Ortelius CD Engine maps to your continuous delivery orchestration solution.
+
+## Use the _CD Engine_ List View to Add or Delete
+
+The _CD Engine_ menu option is on the left of the main panel. Select the _CD Engine_ menu to be taken to a list of all _CD Engines_ to which you have access. Use the Search bar, represented by a funnel icon, to reorder _CD Engines_ based on Name or _Domain_.
+
+The _CD Engine_ List View has the following Tabs:
+
+| Tab | Description |
+| --- | --- |
+|**Refresh** | Refreshes the browser. |
+| **Add** | Allows you to Add a new _CD Engine_, by selecting a type. |
+| **Delete** | Deletes the selected item. |
+
+Double click on an item to be taken to the _Dashboard_ view.
+
+## Use the _CD Engine_ Dashboard to View or Edit
+
+The Dashboard view displays all information related to a specific _CD Engine_ based on the type you selected. Below are the Details common to all _CD Engines_:
+
+| Field | Description |
+| --- | --- |
+| **Full Domain Name** | The fully qualified name of the _Domain_ to which the _CD Engine_ was defined. |
+| **Name** | The Name of the _CD Engine_. |
+| **Type** | The _CD Engine_ Type chosen when you performed the Add. |
+| **Owner Type** | User or Group. |
+| **Owner** | Name of the Owner. |
+| **Summary** | A description of the _CD Engine_.|
+| **Created** | Auto-generated date when the _CD Engine_ was added.|
+| **Modified**| Auto-generated date when the _CD Engine_ was updated.|
+| **Credential**| The _Credential_ used to access the _CD Engine_ if required. |
+
+### Access
+
+The Access Section allows _Users_ within designated _Groups_ to update the _CD Engine_. To add a _Group_ to one of the access lists, drag and drop the _Group_ from the Available Groups list onto desired access list. All _Users_ who belong to a _Group_ in one of the Access lists will be granted access to the _CD Engine_ in the following ways:
+
+| Access | Description |
+| --- | --- |
+|**View**| This allows any _User_ that belongs to any _Group_ in this list to see the selected _CD Engine_ in the List View. |
+|**Change**| This allows any _User_ that belongs to any _Group_ in this list to make changes to the _CD Engine_. |
+|**Available Groups**|This list contains all the Groups within the Ortelius installation. Dragging and dropping back and forth between this list and the other two lists allows or prevents access to viewing and changing the selected _CD Engine_.
+
+NOTE: **Ortelius** has only two Groups, _Administrators_ and _Users_. If you need more granularity in your UserGroups, you will need to upgrade to **DeployHub Pro.**
+
+### Jenkins CD Engine Details
+
+| Field | Description |
+| --- | --- |
+| **Jenkins Match URL** | End Point URL: The URL where the Build Engine is located. |
+| **Jenkins Match Encrypted** | Hides the Jenkins URL in the Ortelius database. |
+| **Jenkins Match Override** | The Jenkins URL can be changed.|
+| **Server URL**| Only needed if Jenkins is returning a different URL.|
+| **Server URL Encrypted** | Server URL is hidden in the Ortelius database. |
+| **Server URL Override** | Server URL can be changed.|
+
+For more information on the Jenkins Integration see [Jenkins](/guides/userguide/integrations/jenkins/)
