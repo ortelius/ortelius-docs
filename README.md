@@ -35,4 +35,4 @@ hugo server
 
 ## Installation and Support guide
 
-[Installation and Support](http://docs.ortelius.io/userguide/installation-and-support/)
+[Installation and Support](http://docs.ortelius.io/guides/userguide/installation-and-support/)
