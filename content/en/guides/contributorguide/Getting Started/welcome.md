@@ -5,7 +5,7 @@ weight: 1
 description: >
   Thank you for your interest in the Ortelius project - we need you!
 ---
-![Ortelius Logo](/guides/userguide/images/Otelius-transparent.jpg)
+![Ortelius Logo](/otelius-transparent.jpg)
 
 ## Welcome to the Ortelius Project
 

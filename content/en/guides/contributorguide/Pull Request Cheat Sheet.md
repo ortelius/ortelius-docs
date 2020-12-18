@@ -1,13 +1,12 @@
 ---
 title: "Pull Request (PR) Cheat Sheet"
-linkTitle: "PR Cheat Sheet"
+linkTitle: "Pull Request Cheat Sheet"
 weight: 10
 description: >
   Pull Request (PR) Cheat Sheet.
 ---
 
 # Pull Request (PR) Cheat Sheet
-
 
 Patches for fixes, features, and improvements are accepted through pull requests. Here are some tips for contributing:
 
@@ -23,32 +22,30 @@ Patches for fixes, features, and improvements are accepted through pull requests
 
 **Important:** For any **breaking changes** that require a major version bump, add `BREAKING CHANGE` somewhere in the commit title or message.
 
-
 ## Terms
 
-- Upstream = this would be an Ortelius repository [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs)
-- Fork = your copy of the upstream repo
-- Downstream = this would be your repository that is forked from an Ortelius repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs)
-- Pull Request (PR) = changes to be merged from one repo to another repo
-- Commit = change to the repo
-- Squash = combining multiple commits into one
-- Branch = series of commits
-- Fetch = sync a repo with another
-- Local Repo = a repo on your computer
-- Remote Repo = a repo on GitHub
-- Rebase = rewrite commit history
-- Clone = create a local copy of a repo
-- Push = send your changes to GitHub
-- Pull = get changes from GitHub into your local repo
+- Upstream - this would be an Ortelius repository [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs)
+- Fork - your copy of the upstream repo
+- Downstream - this would be your repository that is forked from an Ortelius repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs)
+- Pull Request (PR) - changes to be merged from one repo to another repo
+- Commit - change to the repo
+- Squash - combining multiple commits into one
+- Branch - series of commits
+- Fetch - sync a repo with another
+- Local Repo - a repo on your computer
+- Remote Repo - a repo on GitHub
+- Rebase - rewrite commit history
+- Clone - create a local copy of a repo
+- Push - send your changes to GitHub
+- Pull - get changes from GitHub into your local repo
 
-## Scenario
+## Example Scenario
 
 We want to update the User Guide that is in the [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs) repo.
 
-## Steps
+### Steps
 
 1) Fork the Ortelius repo
-   
    In GitHub click on the Fork button for the repo you want to make a copy of, i.e. [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The fork will be created under
    your userid as [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs).
 

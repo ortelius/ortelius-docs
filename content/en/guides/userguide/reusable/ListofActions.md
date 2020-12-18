@@ -94,5 +94,5 @@ The integration work may already be done with our Built-in _Actions_. Some Built
 | [Helm](/guides/userguide/integrations/helm/) | Uses Helm to deploy Containers. |
 | [SalesForce](/guides/userguide/integrations/salesforce/) | Deploys _Applications_ to SalesForce.   |
 | [Tomcat](/guides/userguide/integrations/tomcat/) | Deploys to a Tomcat environment.   |
-| [WebLogic](guides/userguide/integrations/weblogic/) | Deploys to a WebLogic Environment. |
+| [WebLogic](/guides/userguide/integrations/weblogic/) | Deploys to a WebLogic Environment. |
 | [WebSphere](/guides/userguide/integrations/websphere/) | Deploys to a WebSphere Environment.  |

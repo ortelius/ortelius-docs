@@ -1,22 +1,25 @@
 ---
-title: "How To"
-linkTitle: "How To"
+title: "How To Tips"
+linkTitle: "How To Tips"
 weight: 10
 description: >
-  How to opening an issue, make documentation changes, make coding changes, create videos, and project management.
+  Tips on opening an issue, making documentation changes, submit coding changes, create videos, and help in project management.
 ---
 
 ## Opening an Issue
 
-GitHub Issues are used to track all bugs, enhancement requests, and todos.  Ortelius is spread across many repositories so the [ortelius/ortelius](https://github.com/ortelius/ortelius) repo is used for all issues.  Issues should have a link, using markdown `[]()` link format, to the true repository in which the bug, enhancement, or todos is needed to be made.  
+GitHub Issues are used to track all bugs, enhancement requests, and "todos."  Ortelius is spread across many repositories so the [ortelius/ortelius](https://github.com/ortelius/ortelius) repo is used for all issues.  Issues should have a link, using markdown `[]()` link format, to the true repository in which the bug, enhancement, or "todos" needs to be made.  
 
 Please be detailed in your description of the issue.  Not everything needs to go in the summary line.  Feel free to use the description area to provide additional details.
 
 ## Making documentation changes
 
-Documentation is stored in [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The documentation is served up by a [hugo/docsy](https://www.docsy.dev/docs/getting-started/) server.  You can run this server locally to view your changes before committing to Github.  
+Documentation is stored in [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The documentation is served up by a [hugo/docsy](https://www.docsy.dev/docs/getting-started/) server.  You can run this server locally to view your changes before committing to Github. 
 
-### Steps
+The documentation is managed in two Guides - a [User Guide and a Contributor Guide.](http://docs.ortelius.io/guides/)
+
+### Setup for Documenation updates
+
 1. [Install hugo](https://www.docsy.dev/docs/getting-started/) locally.  If you are on Windows make sure to install the extended packages as well. 
 2. Fork the [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs) to your GitHub account.
 3. Clone the new repo to your computer.
@@ -29,7 +32,7 @@ Note: Visual Studio is only a preview and will not render all markdown updates s
 
 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) can be used for the basic page layout.  CSS has been applied to the Docsy theme template in order to tweak the final page rendering.  
 
-8. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pr-cheat-sheet)
+8. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pr-cheat-sheet/)
 
 ## Making coding changes
 
@@ -51,7 +54,7 @@ A Postgres database needs to be installed for Ortelius to persist its data.  Ort
 5. The monolithic code can be run and debug natively in Eclipse since a Tomcat Server using a connection to your local Postgres database.
 
    The microservice code can be run and debugged natively in your editor. It will need to connect to the database over OBDC.
-6. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pr-cheat-sheet)
+6. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pr-cheat-sheet/)
 
 ## Creating Videos
 
@@ -78,3 +81,7 @@ Triage Dashboard [#181](https://github.com/ortelius/ortelius/issues/181) will be
 ### GitHub Labels and Tags
 
 GitHub issues will be label to help filter and navigate issues.
+
+## Release Numbering
+
+Releases ending in ”.0” are major releases and this is where all new features land. Releases ending in another integer, like “0.X.1” and “0.X.2” are dot releases, and these are only going to contain bugfixes. Typically we don’t do dot releases for minor bugfixes (reserving these for larger items), but may occasionally decide to cut dot releases containing a large number of smaller fixes if it’s still a fairly long time before the next release comes out.

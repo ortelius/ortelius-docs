@@ -70,6 +70,6 @@ For more information see [Tracking Jira, Bugzilla and GitHub Issue](/guides/user
 
 Additional information:
 
-- [Managing _Data Sources_](guides/userguide/customizations/2-data-sources/)
-- [Connect Your _Repositories_](guides/userguide/first-steps/2-define-repositories/)
+- [Managing _Data Sources_](/guides/userguide/customizations/2-data-sources/)
+- [Connect Your _Repositories_](/guides/userguide/first-steps/2-define-repositories/)
 - [Defining _Components_](/guides/userguide/publishing-components/2-define-components/)
