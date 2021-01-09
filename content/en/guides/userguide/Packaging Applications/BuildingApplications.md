@@ -20,7 +20,7 @@ For instance, your Application Base Version may be called MyApp;1, subsequent ve
 
 ## Applications and their Components
 
-_Applications_ are defined by the _Components_ they consume. As with _Applications_, _Components_ have versions. If a new _Component_ is made available, Ortelius can be called by a continuous delivery tool to automatically create a new _Application Version_ each time a new build is detected.  For more information on this topic, see the [CD Engine Chapter](/guides/userguide/pipeline/2-define-your-build-engines/).
+_Applications_ are defined by the _Components_ they consume. As with _Applications_, _Components_ have versions. If a new _Component_ is made available, Ortelius can be called by a continuous delivery tool to automatically create a new _Application Version_ each time a new build is detected.  For more information on this topic, see the [CD Engine Chapter](/guides/userguide/integrations/ci-cd_integrations/).
 
 When a new _Application Version_ is created from either an _Application Base Version_ or another _Application Version_, it inherits all previous _Components_ and Attributes from its predecessor. You can create a new _Application Version_ from any previous version.
 
