@@ -10,7 +10,7 @@ on:
 jobs:
   closeIssueOnPrMergeTrigger:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Closes issues related to a merged pull request.
