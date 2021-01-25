@@ -58,7 +58,7 @@ A Postgres database needs to be installed for Ortelius to persist its data.  Ort
 
 ## Creating Videos
 
-Videos are hosted on the [Ortelius Youtube Channel](https://www.youtube.com/channel/UCw2LfF0mqkaXdvqfVnIPWmw).  Please contact on of the [chairs] to get access to upload to the channel.
+Videos are hosted on the [Ortelius Youtube Channel](https://www.youtube.com/channel/UCw2LfF0mqkaXdvqfVnIPWmw).  Please contact one of the [chairs](https://docs.ortelius.io/guides/contributorguide/community-membership/#chair) to get access to upload to the channel.
 
 Camtasia for Windows or HitFilm Express for OS/X can be used to edit the videos.  Training videos should be edited to remove any stumbles or pauses.  
 
