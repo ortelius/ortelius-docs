@@ -76,7 +76,7 @@ Your Ortelius DNS name is the server where you installed Ortelius.
 http://<Ortelius DNS name>:7171/dmadminweb/Home
 ```
 
-As the first user to use the new install, you will be prompted to setup the administrator user id and password.
+To log in please use userId: admin and password: admin.
 
 ## The Hipster Store Tutorial
 
