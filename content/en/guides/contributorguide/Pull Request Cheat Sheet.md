@@ -68,7 +68,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
    ```
    git add .
-   git commit -m "changed some files
+   git commit -m "changed some files"
    ```
 
    Do this as many time that you want.
