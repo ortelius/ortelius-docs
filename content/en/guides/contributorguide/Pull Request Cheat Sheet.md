@@ -53,12 +53,12 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
    From a command prompt, `cd /home/steve/repos`
 
-   Run `git clone https://github.com/sbtaylor15/ortelius-docs.git` this will create `/home/steve/reports/ortelius-docs`
+   Run `git clone https://github.com/sbtaylor15/ortelius-docs.git` this will create `/home/steve/repos/ortelius-docs`
 
 3) Make a branch for your work
 
    ```
-   cd /home/steve/reports/ortelius-docs
+   cd /home/steve/repos/ortelius-docs
    git checkout -b maintenance
    ``` 
 
