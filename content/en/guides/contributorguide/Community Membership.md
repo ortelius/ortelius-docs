@@ -28,7 +28,7 @@ Once you feel ready, ask another member if they would be willing to be a sponsor
 
 The best people to ask are those who have reviewed your pull requests in the past. When you request membership, make sure to ask for the `ortelius` organization.
 
-If you aren't sure if you are ready, or need help finding sponsors, reach out to the current [chairs](https://ortelius.io/become-a-contributor).
+If you aren't sure if you are ready, or need help finding sponsors, reach out to the current [chairs](https://ortelius.io/contributor).
 
 ## Reviewer
 
