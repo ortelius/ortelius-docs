@@ -117,6 +117,11 @@ A Container _Component_ has the following optional attributes:
 | **Build URL**| The URL to the _Build Engine_. |
 |**Build Date**| The timestamp from when the last build job was run.|
 | **Repository** |  Choose the Repository that contains your _Application_ binaries, files, etc. This list box is populated based on the _Repositories_ pre-defined in your initial setup. Based on the _Repository_ you select, you may be provided override or append fields if they were made available. For a list of the _Repositories_  See [Connecting Your Repositories](/guides/userguide/first-steps/2-define-repositories/#using-the-repository-dashboard-for-viewing-and-editing) for more information.<ul><li>Filepath Override: Enter a filepath that will override the default filepath defined at the _Repository_ level.</li><li>Pattern Override: Enter a pattern that will override the default pattern defined at the _Repostory_ level.  Patterns are file types you want to pull from the _Repository_, such as \*.exe, \*.dll, \*.war. </li><li>Recursive Override: Select the box in order to override the default recursive behavior defined at the _Repository_ level. This will turn recursion on or off depending on the setting at the _Repository_ level. </li><li>Version Override: Overrides the default template of your versioning pattern defined at the _Repository_ level. </li></ul> |
+|**FailureTemplate**| The name of the Failure Notification Template to use on a deployment failure. |
+|**SuccessTemplate**| The name of the Success Notification Template to use on a deployment succes. |
+|**CustomAction**| The name of the custom action to execute for the deployment. This will override the Post Action and Pre Actions. |
+|**PreAction**| The name of the Pre Action to execute at the very beginning of the deployment. |
+|**PostAction**| The name of the Pre Action to execute at the very end of the deployment. |
 
 ### Database Specific Data Definition
 
