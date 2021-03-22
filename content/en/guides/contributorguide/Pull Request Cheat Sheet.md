@@ -129,31 +129,33 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    ```
    git checkout master
    git fetch upstream
-   git merge upstream/master
+   git rebase upstream/master
    ```
 
 10) Merge your change with the upstream changes
 
     ```
-    git merge maintenance
+    git rebase master
     ```
 
-    You may get a merge conflict if you and someone else changed the same file at the 
+    You may get a rebase conflict if you and someone else changed the same file at the 
     same time.  Use an editor like VS Code to pick and choose which conflicting lines
     are the right ones.
 
     ```
     git add .
-    git commit -m "merged conflict with upstream"
+    git commit -m "rebased conflict with upstream"
     ```
 
-11) Push your merged changes to GitHub
+11) Push your rebased changes to GitHub
 
     ```
-    git push
+    git push -f
     ```
 
 12) Create your PR.
 
     In GitHub, go to the upstream repo and do a new pull request.  Choose compare across
     forks.  Select your fork and master branch.
+	
+13) After the PR has been merged you need to do steps 9 - 11 in order to bring your repo in sync with upstream since it has new commits.
