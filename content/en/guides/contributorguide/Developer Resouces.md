@@ -20,6 +20,9 @@ Any of the following Markdown editors can be used:
     - Docsy - Etienne Dldc
     - Go - Go Team at Google
     - Python - Microsoft
+- [PostgreSQL](https://www.postgresql.org/download/) - list of different distrubitions of PostgreSQL tool
+    - This is complete package which include PostgreSQL Server, pgAdmin 4, Stack Builder and Command Line Tools
+- [pgAdmin](https://www.postgresql.org/ftp/pgadmin/pgadmin4/) - here you can find list of different versions of pgAdmin tool
 
 ### Testing Environment
 
