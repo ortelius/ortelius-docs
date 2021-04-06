@@ -8,6 +8,8 @@ description: >
 
 # Pull Request (PR) Cheat Sheet
 
+## Savoir-vivre of pull requests
+
 Patches for fixes, features, and improvements are accepted through pull requests. Here are some tips for contributing:
 
 * Add Git Commit Signing to your local git install and to GitHub.  Here are the [config instructions](https://blog.petehouston.com/sign-git-commits/).
@@ -16,34 +18,33 @@ Patches for fixes, features, and improvements are accepted through pull requests
 * Squash changes into a single commit per feature/fix. 
  Typical steps to do that are:
     - git rebase -i HEAD~3 (the number depends on the number of commits you are squashing)
-    - git push -u origin master --force (master might not be the branch you are pushing to so make sure to change to the 
- branch)
+    - git push -u origin master --force (master might not be the branch you are pushing to so make sure to change to the branch)
 * Whenever possible, tag your pull request with appropriate Github labels and issue numbers.
 
 **Important:** For any **breaking changes** that require a major version bump, add `BREAKING CHANGE` somewhere in the commit title or message.
 
 ## Terms
 
-- Upstream - this would be an Ortelius repository [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs)
-- Fork - your copy of the upstream repo
-- Downstream - this would be your repository that is forked from an Ortelius repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs)
-- Pull Request (PR) - changes to be merged from one repo to another repo
-- Commit - change to the repo
-- Squash - combining multiple commits into one
-- Branch - series of commits
-- Fetch - sync a repo with another
-- Local Repo - a repo on your computer
-- Remote Repo - a repo on GitHub
-- Rebase - rewrite commit history
-- Clone - create a local copy of a repo
-- Push - send your changes to GitHub
-- Pull - get changes from GitHub into your local repo
+- Branch - series of commits
+- Clone - create a local copy of a repo
+- Commit - change to the repo
+- Downstream - this would be your repository that is forked from an Ortelius repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs)
+- Fetch - sync a repo with another
+- Fork - your copy of the upstream repo
+- Local Repo - a repo on your computer
+- Pull - get changes from GitHub into your local repo
+- Pull Request (PR) - changes to be merged from one repo to another repo
+- Push - send your changes to GitHub
+- Rebase - rewrite commit history
+- Remote Repo - a repo on GitHub
+- Squash - combining multiple commits into one
+- Upstream - this would be an Ortelius repository [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs)
 
-## Example Scenario
+## Working scenarios
 
 We want to update the User Guide that is in the [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs) repo.
 
-### Steps
+### First pull request
 
 1) Fork the Ortelius repo
    In GitHub click on the Fork button for the repo you want to make a copy of, i.e. [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The fork will be created under
@@ -55,34 +56,36 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
    Run `git clone https://github.com/sbtaylor15/ortelius-docs.git` this will create `/home/steve/repos/ortelius-docs`
 
-3) Make a branch for your work
+3) Tell your local repo about the upstream and downstream repos (this only needs to be done once)
+   
+   By this tep you will create `upstream` and `downstream` local variables which contain address of source and your forked repos. You can use them as parameters of `git` key word.
+
+   ```
+   git remote add upstream https://github.com/ortelius/ortelius-docs.git
+   git remote add downstream  https://github.com/Javailabe/ortelius-docs.git
+   ```
+   `upstream` holds `https://github.com/ortelius/ortelius-docs.git`
+
+   `downstream` holds `https://github.com/Javailabe/ortelius-docs.git` (that is forked repo of Javailabe user)
+
+4) Make a branch for your work
 
    ```
    cd /home/steve/repos/ortelius-docs
    git checkout -b maintenance
    ``` 
+   `maintenance` will be your branch name
 
-4) Make some changes
+5) Make some changes
 
    Update the files and commit the changes back to your local branch
 
    ```
    git add .
-   git commit -m "changed some files
+   git commit -m "changed some files"
    ```
 
    Do this as many time that you want.
-
-5) Backup your changes to GitHub
-
-   We can backup changes to GitHub at anytime without effecting anyone else.
-
-   ```
-   git push
-   ```
-
-   You may get a message about the changes not getting tracked.  Just copy git command
-   displayed in the message and run it.  That will fix the error. Only needs to be done once.
 
 6) Squash before merge
 
@@ -110,52 +113,49 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
    If you run `git log --oneline` you should see that there is only one new commit.
 
-7) Update GitHub with your local changes
+7) Update GitHub forked repo with your local changes
 
-    ```
-    git push --force
-    ```
-
-    This syncs GitHub with your local branch.  Basically, you are overriding GitHub.
-
-8) Tell your local repo about the upstream repo (this only needs to be done once)
+   We can backup changes to GitHub at anytime without effecting anyone else.
 
    ```
-   git remote add upstream https://github.com/ortelius/ortelius-docs.git
+   git push downstream
    ```
 
-9) Update your local fork with upstream changes
+   This syncs forked GitHub repo with your local branch.  Basically, you are overriding GitHub.
 
-   ```
-   git checkout master
-   git fetch upstream
-   git rebase upstream/master
-   ```
-
-10) Merge your change with the upstream changes
-
-    ```
-    git rebase master
-    ```
-
-    You may get a rebase conflict if you and someone else changed the same file at the 
-    same time.  Use an editor like VS Code to pick and choose which conflicting lines
-    are the right ones.
-
-    ```
-    git add .
-    git commit -m "rebased conflict with upstream"
-    ```
-
-11) Push your rebased changes to GitHub
-
-    ```
-    git push -f
-    ```
-
-12) Create your PR.
+8) Create your Pull Request
 
     In GitHub, go to the upstream repo and do a new pull request.  Choose compare across
     forks.  Select your fork and master branch.
 	
-13) After the PR has been merged you need to do steps 9 - 11 in order to bring your repo in sync with upstream since it has new commits.
+9) After the PR has been merged you need to bring your repo in sync with upstream since it has new commits
+
+      ```
+      git checkout master
+      git fetch upstream
+      git rebase upstream/master
+      ```
+
+### Daily regime
+
+1) Sync your local repo
+
+      ```
+      git pull upstream
+      git push downstream
+      ```
+      This will download the latest version of the upstream to your local repo and after push it will update (override) your forked GitHub repo
+
+2) Make changes
+   
+   a) in case of multiple small commits it might be necessary to squash them all
+
+3) Update GitHub forked repo with your local changes
+
+      ```
+      git push downstream
+      ```
+
+4) Create your Pull Request
+
+5) After PR merging, sync your repos (step 1)
