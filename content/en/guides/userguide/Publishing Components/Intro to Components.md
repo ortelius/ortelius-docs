@@ -35,7 +35,7 @@ If you want your microservice _Component_ to be shared across your teams, publis
 
 Ortelius uses a backend versioning engine to track your _Components_. Versioning tracks _Component_ attributes including low level information that is needed for other teams to reuse your _Component_ including:
 
-- GiHub, Bugzilla, Jire Change Request (DeployHub Pro Feature)
+- GiHub, Bugzilla, Jira Change Request (DeployHub Pro Feature)
 - Gitrepo
 - Git commit (Branch and Tag)
 - CD Build / Workflow Number
