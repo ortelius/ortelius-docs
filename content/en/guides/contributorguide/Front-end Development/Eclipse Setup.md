@@ -12,29 +12,29 @@ Ortelius' front-end runs as a Tomcat application with servlets and jsp pages ser
 
 Postgres 9.x is used to persist the data.  Postgres will need to be pre-installed prior to setting up Eclipse Workspace.  The Postgres connection string will be set on Environment Tab for your Run and Debug Configuration for Tomcat.  Ortelius will create the necessary schema and tables if they do not exist in the database.  The default Ortelius userid and password are admin and admin.  
 
-![Eclipse Version](/eclipse-version.png)
+![Eclipse Version](/static/eclipse-version.png)
 
 ### Tomcat Server
 
 Tomcat 7 is used to run Ortelius.  You will need to download and configure a Tomcat 7 server for your Eclipse install.  
 
-![Eclipse Tomcat Server](/tomcat7.png)
+![Eclipse Tomcat Server](/static/tomcat7.png)
 
 ### Running and Debugging Ortelius
 
 Setup a run and debug configuration for Tomcat.  
 
-![Server Tab](/server-tab.png)
+![Server Tab](/static/server-tab.png)
 
-![Arguments Tab](/args-tab.png)
+![Arguments Tab](/static/args-tab.png)
 
-![Classpath Tab](/classpath-tab.png)
+![Classpath Tab](/static/classpath-tab.png)
 
-![Source Tab](/src-tab.png)
+![Source Tab](/static/src-tab.png)
 
-![Environment Tab](/env-tab.png)
+![Environment Tab](/static/env-tab.png)
 
-![Common Tab](/common-tab.png)
+![Common Tab](/static/common-tab.png)
 
 ### Accessing the Ortelius UI in the browser
 
