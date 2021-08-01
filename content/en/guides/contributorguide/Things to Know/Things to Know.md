@@ -12,7 +12,7 @@ Before submitting code to Ortelius, there are a few things you should know. From
 
 ### Sign the CLA
 
-If you would like to contribute code, documentation content, blogs or graphics you will need to complete the [Linux Foundation Ortelius Individual Easy Contributor License Agreement(EasyCLA)](https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor) 
+If you would like to contribute code, documentation content, blogs or graphics you will need to complete the [Linux Foundation Ortelius Individual Easy Contributor License Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor) 
 
 If your organization would like to become a contributing organization, please have the appropriate individual complete the [Linux Foundation Ortelius Corporate Easy Contributor License Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/corporate-contributor). We welcome organizations of any size to be part of solving the microservice puzzle and encourage you to get your organization involved.
 
