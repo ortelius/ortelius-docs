@@ -87,7 +87,7 @@ This agentless technology works for both cloud native and legacy architectures i
 - Windows 2008, Windows 2012
 - Solaris, HP-UX, AIX, Linux
 - Microsoft Azure
-- Ubantu, Redhat, SuSe, Debina
+- Ubuntu, Redhat, SuSe, Debian
 - Tandem, Stratus, IBM iSeries, OpenVMS, Unisys, IBM 4690
 - z/OS
 - Jetty, Tomcat, WebSphere
