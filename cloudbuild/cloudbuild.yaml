@@ -20,7 +20,7 @@ steps:
       - 'COMPONENT_NAME=GLOBAL.ortelius.saas.userguide'
       - 'COMPONENT_GITURL=git@github.com:ortelius/ortelius-docs.git'
       - 'COMPONENT_VARIANT=$BRANCH_NAME'
-      - 'COMPONENT_VERSION=9.0.0'
+      - 'COMPONENT_VERSION=10.0.0'
       - 'COMPONENT_VERSION_COMMIT="v$$COMPONENT_VERSION.$$(git rev-list --count $BRANCH_NAME)-g$SHORT_SHA"'
       - 'COMPONENT_DOCKERREPO=quay.io/ortelius/ortelius-docs'
       - 'COMPONENT_CUSTOMACTION=GLOBAL.HelmChart'
