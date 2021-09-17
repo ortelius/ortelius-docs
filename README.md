@@ -36,3 +36,5 @@ hugo server
 ## Installation and Support guide
 
 [Installation and Support](http://docs.ortelius.io/guides/userguide/installation-and-support/)
+
+AG: Change to sign CLA
