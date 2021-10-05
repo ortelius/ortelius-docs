@@ -49,4 +49,4 @@ The first _Application_ is moved onto the stack. Any Pre-Action for the _Applica
 
 The following diagram shows how the deployment process works:
 
-![Deployment Process](/guides/userguide/images/ProcessFlow.jpg)
+![Deployment Process](/guides/userguide/images/Ortelius_Processing_Logic.png)
