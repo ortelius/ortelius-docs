@@ -176,10 +176,10 @@ Give your users more information about your Container, Application File or Datab
 
 ### Upload Readme via the Command Line
 
- You can also use the Command Line Interface (CLI) to automatically update the readme. This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your readme file via the pipeline.
+You can also use the Command Line Interface (CLI) to automatically update the readme. This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your readme file via the pipeline.
 
  ~~~bash
- --compattr readme:<filename> 
+  --compattr readme:<filename> 
   ~~~
   
 ## Associate API Definitions to Your Component
@@ -193,7 +193,6 @@ You can automate the update of your API Definitions using the Command Line Inter
  ~~~bash
  --compattr swagger:<filename> 
   ~~~
-
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
