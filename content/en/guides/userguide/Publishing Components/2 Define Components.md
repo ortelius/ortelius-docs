@@ -194,6 +194,23 @@ You can automate the update of your API Definitions using the Command Line Inter
  --compattr swagger:<filename> 
   ~~~
 
+## Associate CVE Issues to Your Component
+
+There are open source and proprietary tools to scan Docker images and source code for common vulnerabilities and exposures (CVE) with a light weight Bill of Material.Ortelius supports [Python Safety](https://pyup.io/safety/) and [CycloneDX](https://cyclonedx.org/).
+ 
+Each version of your Docker image may have different CVE reporting. Ortelius does not scan your Docker images, it instead consolidates the scanned reports from Safety or CycloneDX. You can add these external tools during the Docker build process and produce a report that can be imported into Ortelius associating a report for every version of your image. Use the 'Upload' option to select the file which was produced by Safety or CycloneDX.
+
+### Upload CVE Issues via the Command Line
+
+You can automate the update of your CVE Issues using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your API Definitions file.
+
+~~~bash
+ --deppkg <type>@<filename> 
+  
+Type can be either 'safety' or 'cyclonedx'.    
+~~~
+
+
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
 ### Access
