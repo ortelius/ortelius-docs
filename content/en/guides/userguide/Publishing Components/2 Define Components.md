@@ -210,6 +210,22 @@ You can automate the update of your CVE Issues using the Command Line Interface 
 Type can be either 'safety' or 'cyclonedx'.    
 ~~~
 
+## Associating License Consumption to Your Component
+
+There are open source and proprietary tools to scan Docker
+images and source code for all licenses being consumed. Ortelius supports [Python Safety](https://pyup.io/safety/) and  [CycloneDX](https://cyclonedx.org/).  
+
+Each version of your Docker image may have different License Consumption report. Ortelius does not scan your Docker images, it instead consolidates the scanned reports from Safety or CycloneDX. You can use these external tools during the Docker build process and produce a report that can be imported into Ortelius associating a report for every version of your image. Use the 'Upload' option to select the file which was produced by Safety or CycloneDX.
+
+### Upload License Consumption via the Command Line
+
+You can automate the update of your License Consumption information using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your License file.
+
+ ~~~bash
+ --deppkg <type>@<filename> 
+  
+Type can be either 'safety' or 'cyclonedx'.    
+~~~
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
