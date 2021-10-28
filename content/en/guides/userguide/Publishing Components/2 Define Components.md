@@ -181,6 +181,18 @@ Give your users more information about your Container, Application File or Datab
  ~~~bash
  --compattr readme:<filename> 
   ~~~
+  
+## Associate API Definitions to Your Component
+
+Publish your API definitions to provide further information about your restful APIs and the parameters needed. Ortelius takes your .json or .yaml file and renders it using [Swagger](https://swagger.io/). Use the 'Upload' option to associate your .json or .yaml file to that specific _Component Version_. 
+
+### Upload API Definition via the Command Line
+
+You can automate the update of your API Definitions using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process and keeping the information accurate. As you update your API, the new version information should also be updated.  Use the following command line syntax to automate the update of your API Definitions file via your pipeline.
+
+ ~~~bash
+ --compattr swagger:<filename> 
+  ~~~
 
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
