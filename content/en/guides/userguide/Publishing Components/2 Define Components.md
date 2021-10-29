@@ -227,6 +227,18 @@ You can automate the update of your License Consumption information using the Co
 Type can be either 'safety' or 'cyclonedx'.    
 ~~~
 
+## License
+
+Report the license associated with your code base for your _Component_. Use the 'Upload' option to import your License file into Ortelius. The file must be in a text format.
+
+### Upload License via the Command Line
+
+You can automate the update of your License information using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your License file.
+
+~~~bash
+ --compattr License:<filename> 
+~~~
+
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
 ### Access
