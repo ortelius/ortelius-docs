@@ -11,7 +11,7 @@ _Functions_ and _Procedures_ are the steps that make up an _Action_. If you have
 
 _Functions_ and _Procedures_ are used by _Actions_ to define custom installation logic of a _Component_ or perform any type of Pre or Post Action. Using _Actions_, _Functions_ and _Procedures_ allows you to be as creative as needed to meet the unique needs of your implementation.
 
-The difference between _Functions_ and _Procedures_ is a _Procedure_ execute a process but does not return a value. A _Function_ returns a value. DeployHub Provides a Dashboard for customizing your _Functions_ and _Procedures_ including the creation of Parameters, and a Parameters Dialog box that is displayed at the _Action_ level. The Parameters Dialog Box enables other _Users_ to utilize your custom process, with an easy way to understand what Parameter options are available. In this way, you are able to create custom _Functions_ and _Procedures_ and share them across teams.  The associated Parameters Dialog Box simplifies the use of your custom process.
+The difference between _Functions_ and _Procedures_ is a _Procedure_ execute a process but does not return a value. A _Function_ returns a value. Ortelius Provides a Dashboard for customizing your _Functions_ and _Procedures_ including the creation of Parameters, and a Parameters Dialog box that is displayed at the _Action_ level. The Parameters Dialog Box enables other _Users_ to utilize your custom process, with an easy way to understand what Parameter options are available. In this way, you are able to create custom _Functions_ and _Procedures_ and share them across teams.  The associated Parameters Dialog Box simplifies the use of your custom process.
 
 _Functions_ and _Procedures_ can be:
 
@@ -98,9 +98,9 @@ The Access Section allows _Users_ within designated _Groups_ to update the _Func
 
 When you create your _Function_ or _Procedure_ it will most likely need parameters. This section allows you to define the format of the parameters and display them in the _Action_ blueprint designer. When your _Function_ or _Procedure_ is added to the _Action_ blueprint designer, a Parameter Dialog Box will be automatically displayed prompting the user to enter the required values. A right mouse click on the same will open the Parameter Dialog Box. The Input Parameters, Command Line Switches and the Command Line Section work together to define how the command line call will be formatted.  You will establish how your user will enter parameter values when they use your custom _Function_ or _Procedure_ through the use of the Parameter Dialog Box. For _Functions_ and _Procedures_ that are of the Type "DM Script in Database", you will not see Command Line Switches Section or a Command Line Section. Instead you will be provided with an embedded editor for creating the DMScript that will be saved in the Database.
 
-- The Input Parameters Section defines how the dialog box is layed out and how the flags will be passed to the command line.
+- The Input Parameters Section defines how the dialog box is laid out and how the flags will be passed to the command line.
 - The Command Line Switches Section provides a table of parameter switches that can be used to construct the command line call.
-- The Command Line Section builds out what your command line call will look like using drog and drop of the Input Parameters and Switches.
+- The Command Line Section builds out what your command line call will look like using drag and drop of the Input Parameters and Switches.
 
 #### Input Parameters Section
 

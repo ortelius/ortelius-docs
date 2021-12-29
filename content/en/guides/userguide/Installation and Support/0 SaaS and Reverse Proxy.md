@@ -7,11 +7,11 @@ description: >
 ---
 ## SaaS Sign-up Process and the Reverse Proxy
 
-When you [signed up to use Ortelius SaaS](https://www.deployhub.com/register-for-team/), you were asked for basic information. Your UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
+When you [sign up to use the hosted version of Ortelius](https://www.deployhub.com/register-for-team/), you are asked for basic information. Your UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
 
 **Note:**  If another user signs up with the same Company name, they will be informed that they must contact the Administrator for access to the Ortelius account. The Administrator is the first person who signed up to Ortelius with that Company name.
 
- Ortelius is accessible through the following url:
+Once you sign-up, Ortelius is accessible through the following url:
 
 [https://console.deployhub.com/dmadminweb/Home](https://console.deployhub.com/dmadminweb/Home)
 
@@ -26,7 +26,7 @@ The Hipster Store Tutorial is provided to give you a review of _Domains_, _Compo
 To start deploying your _Applications_ and _Components_, you will first need to install a Reverse Proxy inside your firewall. This contacts Ortelius in our SaaS environment to receive deployment requests.  The Reverse Proxy is required for deploying into your environment.
 
 ~~~bash
-Note: You do not need to install a Reverse Proxy in order to deploy the Hipster Store Application in the Hipster Store Tutorial. This deployment is done in the Ortelius Google Cloud environment.
+Note: You don't need to install a Reverse Proxy in order to deploy the Hipster Store Application in the Hipster Store Tutorial. This deployment is done in the Ortelius Google Cloud environment.
 ~~~
 
 A Reverse Proxy queries the Ortelius SaaS every minute to determine if a deployment is needed. For SaaS users, it provides a security layer, preventing you from opening a port to the outside world. It uses standard HTTPS requests to communicate to the Ortelius SaaS on the Google GKE environment. Nothing from the external Google side of the firewall is pushed to the local Ortelius Reverse Proxy.

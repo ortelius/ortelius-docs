@@ -1,8 +1,8 @@
 ---
-title: "Hipchat"
-linkTitle: "Hipchat"
+title: "HipChat"
+linkTitle: "HipChat"
 weight: 66
 description: >
-  Integrating Hipchat with Ortelius Notifiers.
+  Integrating HipChat with Ortelius Notifiers.
 ---
 {{% include "/guides/userguide/reusable/Hipchat.md/" %}}

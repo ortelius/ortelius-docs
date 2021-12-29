@@ -99,7 +99,7 @@ The Access Section allows _Users_ within designated _Groups_ to update the _Noti
 | **Change** | This allows a _User_ who belongs to any _UserGroup_ in the list to change the attributes of the _Notifier_. |
 | **Send** | Allows _Users_ to send an email. |
 
-NOTE: **Ortelius** has only two Groups, _Administrators_ and _Users_. If you need more granularity in your UserGroups, you will need to upgrade to **DeployHub Pro.**
+NOTE: **Ortelius** has only two Groups, _Administrators_ and _Users_. 
 
 ## Notifier Templates
 
