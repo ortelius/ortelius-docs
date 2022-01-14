@@ -8,7 +8,9 @@ description: >
 
 ## Why Use Ortelius
 
-Ortelius is an open source, unified catalog for managing and sharing microservices. Migrating to microservice architecture breaks the way we assemble and configure software. With a microservice implementation, we no longer manage a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users.
+Ortelius is an open source, unified catalog for managing and sharing microservices. Ortelius centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers.
+
+ Migrating to microservice architecture breaks the way we assemble and configure software. With a microservice implementation, we no longer manage a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users.
 
 While microservices are a big improvement over monolithic practices, we still need a method of tracking the collection of services delivered to an end-user. Ortelius facilitates the move to microservices by giving you back your _Application_ but in a 'logical view.'
 
