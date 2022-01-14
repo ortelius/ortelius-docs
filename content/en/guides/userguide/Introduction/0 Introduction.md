@@ -8,7 +8,9 @@ description: >
 
 ## Why Use Ortelius
 
-Migrating to microservices breaks the way we assemble and configure software. With a microservice implementation, we no longer manage a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users.
+Ortelius is an open source, unified catalog for managing and sharing microservices. Ortelius centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers.
+
+ Migrating to microservice architecture breaks the way we assemble and configure software. With a microservice implementation, we no longer manage a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users.
 
 While microservices are a big improvement over monolithic practices, we still need a method of tracking the collection of services delivered to an end-user. Ortelius facilitates the move to microservices by giving you back your _Application_ but in a 'logical view.'
 
@@ -24,7 +26,6 @@ If you have not moved to a microservice architecture, Ortelius can help you visu
 
 Ortelius versions both microservices (_Components_) and 'logical' _Applications_.  When versioning _Components_, it tracks changes to their critical metadata needed for deployments including:
 
-- GitHub, Jira Change Request (DeployHub Pro)
 - Git repo
 - Git Commit (Tag and branch)
 - CI/CD Build Number
@@ -47,30 +48,32 @@ This level of information can also be viewed from the _Component_ level showing 
 
 Ortelius supports working in a hybrid environment, for both microservices and monolithic applications. In fact, you will be able to decompose a monolithic application, as you break it down into _Components_ - which is the beginning of a microservice journey.
 
-## Key Features
-
 Our core features are critical to a successful implementation of microservices.
 
 - First and most important is the **Domain structure for cataloging and sharing microservices**. This feature organizes your microservice in a method to facilitate reuse and sharing across development teams.
 
 - Once you begin sharing microservices, you need to track who is using the microservice.  **Dependency maps** show you the 'logical' view of your application and which microservices, or _Components_, it consumes. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
 
-- **A backend relational database versions your microservice**. A change to any of the microservice attributes (container repository SHA, Helm Chart, etc.) initiates a new version of the microservice and a new version of the _Applications_ that consumes it. Tracking these updates gives you uncompromised visibility of your _Application_ and microservice usage.
+- Knowing your **Blast Radius** before you ever deploy is one way to predict your microservice's impact. Ortelius provides this data in clear maps of dependent applications and services. 
+
+- **A backend relational database versions your microservice**. A change to any of the microservice attributes (container repository SHA, Helm Chart, etc.) initiates a new version of the microservice and a new version of the _Applications_ that consumes it. Tracking these updates gives you the critical visibility needed to understand your microservice usage.  
 
 - Ortelius **independently deploys microservices** and records critical release information about the end target locations. This provides DevOps and Site Reliability Engineers the ability to make data-driven decisions when something goes wrong.
 
-- Ortelius integrates into your CD pipeline to continuously version your microservice configurations just prior to release at any state (Dev,Test, Prod). Your existing CI/CD solution can be enhanced to support independent microservice releases without a major re-tooling.
+- Ortelius improves **incident repsonse** by making it easy to find the owner of microservice or common component, and contact them through PagerDuty, HipChat, Discord, Slack, email or phone.
+
+- Ortelius **integrates into your CD pipeline** to continuously version your microservice configurations just prior to release at any state (Dev,Test, Prod). Your existing CI/CD solution can be enhanced to support independent microservice releases without a major re-tooling.
 
 ## The Secret Sauce
 
-Ortelius is the only configuration management and deployment solution with a built-in version control engine. Ortelius supports incremental releases as well as canary or blue/green deployments with fast rollbacks, roll forward, or version jumps. Our backend version control database is designed specifically for tracking independently deployed _Components_. Every software release configuration is based upon a collection of _Components_ and their critical deployment attributes. A _Component_ is a microservice, executable, database update or configuration, and is part of a complete software _Application_. _Components_ change over time creating _Component Versions_ and therefore _Application Versions_.
+Ortelius is the only microservice catalog tool with a built-in version control engine. Ortelius supports incremental releases as well as canary or blue/green deployments with fast rollbacks, roll forward, or version jumps. Our backend version control database is designed specifically for tracking independently deployed _Components_. Every software release configuration is based upon a collection of _Components_ and their critical deployment attributes. A _Component_ is a microservice, executable, database update or configuration, and is part of a complete software _Application_. _Components_ change over time creating _Component Versions_ and therefore _Application Versions_.
 
 Ortelius supports continuous configuration versioning of:
 
 - microservices
 - web components
 - database updates
-- environment variables
+- environment variables, Key Value Pairs
 - application binaries
 - infrastructure components
 
@@ -91,23 +94,6 @@ This agentless technology works for both cloud native and legacy architectures i
 - Tandem, Stratus, IBM iSeries, OpenVMS, Unisys, IBM 4690
 - z/OS
 - Jetty, Tomcat, WebSphere
-- Microsoft IIS, Microsoft SQL Server, Oracle, Sybase
+- Microsoft IIS, Microsoft SQL Server, Oracle
 - Request Routers and Appliances
 
-## Free Version with Optional Pro Upgrade
-
-### Ortelius
-
-Our free version is based upon the [Ortelius](https://www.ortelius.io/) open source project. Ortelius can be used from the hosted site or installed on premise. It is a strategic and fully open source microservice management solution that integrates with common continuous delivery and DevOps tools. It supports unlimited endpoints, versions, deployments and users. Sign-up at [Ortelius.com](https://www.deployhub.com/).
-
-### DeployHub Pro
-
-For additional security features and support, DeployHub Pro includes extended Users and Group access controls as well as more granular _Domains_.
-
-Unique to DeployHub Pro are "Divisional Domains." These _Domains_ allow you to expand and model your environments based on your organizational top-down structure. It also gives you the ability to restrict microservice read/write access to only certain Groups of Users.
-
-DeployHub Pro also provides integration to tools such as Bugzilla, GitHub Issues and Jira for tracking your complete value stream from change request to final endpoint. It also includes 'smart' calendars for scheduling deployments.
-
-## Ortelius Open Source Project
-
-Ortelius is based on the Ortelius Open Source Project. Learn more at [Ortelius.io](http://www.ortelius.io/).

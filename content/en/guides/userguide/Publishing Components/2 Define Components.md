@@ -60,42 +60,44 @@ The following fields are common to all _Components_:
 
 | Field | Description |
 | --- | --- |
+| **Service Owner** | The owner of the _Component_, whose default value is the creator of the _Component_.  |
+| **Service Owner Email** | The email of the owner. Important for knowing who to contact in the case of an anomaly. |
+| **PagerDuty Business Service URL** | Enter the address to the PagerDuty page that is associated to the business service for this _Component_.|
+| **PagerDuty Service URL** | Enter the address to the PagerDuty page that is associated to the _Component_ itself.|
+| **Slack Channel** | Enter what Slack Channel that can be used to report issues about this _Component_.|
+| **Discord Channel** | Enter the Discord Invite Link you would like your consumers to use for this _Component_.|
+| **HipChat Channel** | Enter the HipChat Channel that can be used to report issues about this _Component_.|
 | **Full Domain** | The fully qualified path of the _Domain_ that the _Component_ is to be associated, showing all parent _Domains_. |
 | **Name** | The name of the _Component._ |
-| **Owner Type** | Owned by a User or Group. |
-| **Owner** | The owner of the _Component_, whose default value is the creator of the _Component_.
-| **Summary** | A short text field with a description of the _Component_. |
-| **Created** | The date and time that the _Component_ was created. |
-| **Modified** | The date and time of the last change. |
-| **Object**| Displays _Component_ for the Base Version or _Component Version_.|
-| **Type**| The kind of Component created, i..e. Container, Application File, or Database.|
-|**Endpoint Type** | Used to map the _Component_ to _Endpoints_ within an _Environment_ at deployment.  This allows Ortelius to map the _Component_ to the correct _Endpoint_ when moving across different environments.  You can add your own _Endpoint_ Types from the Customize Types menu or select from the default options.|
+| **Description** | A short text field with a description of the _Component_. |
+| **Component Type**| The kind of Component created, i..e. Container, Application File, or Database.|
+|**Endpoint Type** | Used to map the _Component_ to _Endpoints_ within an _Environment_ at deployment.  This allows DeployHub to map the _Component_ to the correct _Endpoint_ when moving across different environments.  You can add your own _Endpoint_ Types from the Customize Types menu or select from the default options.|
 | **Change Request Data Source** | This _Data Source_ is assigned to the _Component_ for tracking Change Request. A Change Request Data Source must be pre-defined for this field to be used. |
-| **Category** | Assigning a Category to an Object allows lists of Objects based on Categories to be used throughout Ortelius. Add a new Category in the entry field or use an existing Category displayed in the drop down. Categories are most commonly associated with _Actions_, _Functions_ and _Procedures_. Pre-defined Categories include: <li>Build - _Actions_, _Functions_ and _Procedures_ for calling ANT (SalesForce integration).</li><li>Database - _Actions_, _Functions_ and _Procedures_ for database updates.</li><li>Deploy- _Actions_, _Functions_ and _Procedures_ for Deployments.</li><li>Dropzone- _Actions_, _Functions_ and _Procedures_ for interacting with the Dropzone.</li><li>File Logic- _Actions_, _Functions_ and _Procedures_ related to File manipulation.</li><li>Flow Logic- _Actions_, _Functions_ and _Procedures_ for if then else in DMScript.</li><li>Loops- _Actions_, _Functions_ and _Procedures_ for file looping.</li><li>General-Non-categorized Objects (default).</li><li>WebLogic- _Actions_, _Functions_ and _Procedures_ for deploying to WebLogic.</li><li>WebSphere- _Actions_, _Functions_ and _Procedures_ for deploying to WebSphere.</li><li>Windows- _Actions, Functions_ and _Procedures_ used for Windows deployments.</li>   |
+| **Category** | Assigning a Category to an Object allows lists of Objects based on Categories to be used throughout DeployHub. Add a new Category in the entry field or use an existing Category displayed in the drop down. Categories are most commonly associated with _Actions_, _Functions_ and _Procedures_. Pre-defined Categories include: <li>Build - _Actions_, _Functions_ and _Procedures_ for calling ANT (SalesForce integration).</li><li>Database - _Actions_, _Functions_ and _Procedures_ for database updates.</li><li>Deploy- _Actions_, _Functions_ and _Procedures_ for Deployments.</li><li>Dropzone- _Actions_, _Functions_ and _Procedures_ for interacting with the Dropzone.</li><li>File Logic- _Actions_, _Functions_ and _Procedures_ related to File manipulation.</li><li>Flow Logic- _Actions_, _Functions_ and _Procedures_ for if then else in DMScript.</li><li>Loops- _Actions_, _Functions_ and _Procedures_ for file looping.</li><li>General-Non-categorized Objects (default).</li><li>WebLogic- _Actions_, _Functions_ and _Procedures_ for deploying to WebLogic.</li><li>WebSphere- _Actions_, _Functions_ and _Procedures_ for deploying to WebSphere.</li><li>Windows- _Actions, Functions_ and _Procedures_ used for Windows deployments.</li>   |
 | **Always Deploy** | The _Component_ is deployed to the associated _Endpoints_ in the _Target Environment_ regardless if the _Component_ is already present on the _Endpoints_. This is useful for monolithic applications where you want to copy over a binary for example.|
 |**Deploy Sequentially** | Normally when a _Component_ in an _Application_ is deployed to several _Endpoints_ in an _Environment_, it is deployed to each _Endpoint_ at the same time (in parallel). The "Deploy Sequentially" option changes this behavior to force the _Component_ to deploy to each _Endpoint_ in turn, sequentially. |
 | **Custom Action** | An _Action_ that replaces the usual Deployment Engine processing. Custom _Actions_ can be used to call Ansible, Helm or other external deployment tools.|
 
-### Container Type Specific Data Definition
+### Container Specific Data Definition
 
-Helm is required for deploying Container _Components_. Ortelius interfaces with Helm to support a Kubernetes Cluster deployment.
+Helm is the default for deploying Container _Components_. DeployHub interfaces with Helm to support a Kubernetes Cluster deployment. Initially, you will need to create a _Custom Action_ for using Helm as your deployment engine. Once your [_Custom Action_](/guides/userguide//customizations/2-define-your-actions/) has been created, it can be reused by all _Users_ as long as you define the _Custom Action_ to your "Global" Domain. Follow the steps at [Helm for Container Deployments](/guides/userguide/integrations/helm/).
 
-Initially, you will need to create a _Custom Action_ for using Helm as your deployment engine. Once your _Custom Action_ has been created, it can be reused by all _Users_ as long as you define the _Custom Action_ to your "Global" Domain. Follow the steps at [Helm for Container Deployments](/guides/userguide/integrations/helm/).
+Note: You can also create your own _Custom Action_ if you would like to use another deployment engine. 
 
 A Container _Component_ has the following optional attributes:
 
 | **Field**| **Description** |
 | --- | --- |
+|**Build Date**| The timestamp from when the last build job was run.|
 | **Build ID** | The internal identifier for the _Build Engine_. |
 |**Build URL**| The URL to the _Build Engine_. |
-|**Build Date**| The timestamp from when the last build job was run.|
-|**Helm Chart** | The Helm Chart used to deploy the _Component_. |
-|**Helm Chart Version** | The Helm Chart Version from the Helm Repository. |
-|**Helm Chart Namespace** | The sub-division of the Kubernetes cluster where your _Component_ Container should run. |
-|**Operator**| The RedHat Operator used to deploy your _Component_ container.|
 |**Container Registry**| The Container registry where the Container is stored. |
 |**Container Digest**| The SHA number of the Container image. |
-|**Container Tag**| The tag that was assigned to the Container image. ||
+|**Container Tag**| The tag that was assigned to the Container image. |
+|**Helm Chart** | The Helm Chart used to deploy the _Component_. |
+|**Helm Chart Namespace** | The sub-division of the Kubernetes cluster where your _Component_ Container should run. |
+|**Helm Chart Repo URL** | Enter the URL to where the chart is located, for example:  Bitnami, ArtifactHub, etc. |
+|**Helm Chart Version** | The Helm Chart Version from the Helm Repository. |
 |**Git Commit**| The Git SHA number. Populated when integrated into Continuous Delivery Pipelines.|
 |**Git Repo**| The Git Repository that triggered the build.Populated when integrated into Continuous Delivery Pipelines.|
 |**Git Tag**| The last tag for the Git Repository. Populated when integrated into Continuous Delivery Pipelines.|

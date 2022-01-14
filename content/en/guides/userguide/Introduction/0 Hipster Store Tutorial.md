@@ -8,9 +8,9 @@ description: >
 
 ## Log in and Take a Test Drive
 
-When you [signed up to use Ortelius SaaS](https://www.deployhub.com/register-for-team/?), you were asked for basic information. Your UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
+A free hosted version of Ortelius can be found at [https://www.deployhub.com/microservice-dashboard/]https://www.deployhub.com/microservice-dashboard/). When you sign-up, you will be asked for basic information, UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
 
- Ortelius is accessible through the following url:
+Ortelius is accessible through the following url:
 
 [https://console.deployhub.com/dmadminweb/Home](https://console.deployhub.com/dmadminweb/Home)
 
@@ -33,7 +33,7 @@ _Applications_ are a collection of _Components_.  _Components_ are deployed to _
 
 ### Step 1 - Deploy the Hipster Store Application
 
-To get started, [sign up for Ortelius](https://www.deployhub.com/free-team-sign-up/). Once you signed up, you will first deploy the Hipster Store _Application Base Version_ to the Hipster Store _Environment_.
+To get started, [sign up for Ortelius](https://www.deployhub.com/microservice-dashboard/). Once you signed up, you will first deploy the Hipster Store _Application Base Version_ to the Hipster Store _Environment_.
 
 - Select the _Application_ Menu option from the left side of the Ortelius Home panel. This will bring you to a List View.
 - Checkbox the "Hipster Store;July 4th Sale." This is the Hipster Store _Application Base Version_ and it has not been previously deployed.

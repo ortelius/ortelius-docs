@@ -24,7 +24,7 @@ _Domains_ are core to Ortelius' management of microservices.  _Domains_ are hier
 - DropZone File
 - Notifiers
 - User
-- UserGroup (DeployHub Pro Object)
+- UserGroup (Admin or User)
 
 These Objects can be referenced using Ortelius APIs or custom DMSCripts.
 
@@ -49,7 +49,6 @@ An _Application_ has the following properties:
 | owner | _User_ or _Group_ that owns it. |
 | parent | The Base _Application_.|
 | predecessor |Predecessor _Application Version_. |
-| _Release_ | Defines the _Application_ Object with more than one _Application_. |
 | _Applications_ | Multiple _Applications_ used to create a _Release_.|
 | _Components_ | The objects that the _Application_ consumes. |
 | approvals | Allows a control point for progressing a change within the pipeline process. |
@@ -59,24 +58,6 @@ An _Application_ has the following properties:
 | ctime | The date/time it was created. |
 | mtime |  The date/time it was last modified. |
 | KV Configurations |  Key Value Pairs for managing associative arrays. |
-
-### _Release_ Object
-
-A [_Release_](/guides/userguide/profeatures/5-application-releases/) is only available in **DeployHub Pro**. A _Release_ is a collection of _Applications_ that must be deployed together, sometimes referred to as a 'Release Train.'
-
-## _Change Request_ Object
-
-The [_Change Request_](/guides/userguide/profeatures/5-change-requests/) Object represents a change request record associated with either a _Component_ or an _Application_. A _Change Request_ is a DeployHub Pro feature.
-
-The _Change Request_ object has the following properties:
-
-| Property | Description|
-| --- | --- |
-| id | The _Change Request_ id. |
-| name | The _Change Request_ description. |
-| status  | The _Change Request_ status. |
-| api\_url | A URL which, if passed to restful\_get, will return an array containing the full details of the _Change Request_ from the external change tracking system. Useful for getting more information than the id / description / status combination which is stored in Ortelius. |
-| html\_url | A URL which will direct a browser to the page describing the change request in the external change tracking system. |
 
 ## _Component_ Object
 
@@ -304,7 +285,7 @@ The _User_ Object represents a User in Ortelius. It has the following properties
 
 ## _Group_ Object
 
-The _Group_ Object represents a collection of _Users_ with the same _Domain_ and security access. (This is a DeployHub Pro Feature.)
+You can have two _Groups_ which users can be assigned: Users and Administrators.
 
 The _Group_ Object has the following properties:
 

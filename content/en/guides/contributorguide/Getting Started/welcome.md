@@ -3,17 +3,21 @@ title: "Welcome"
 linkTitle: "Welcome"
 weight: 1
 description: >
-  Thank you for your interest in the Ortelius project - we need you!
+  Thank you for your interest in the Ortelius project!
 ---
 ![Ortelius Logo](/otelius-transparent.jpg)
 
 ## Welcome to the Ortelius Project
 
-Have you ever wanted to contribute to the coolest cloud technology? Well here is your chance. The Ortelius Open Source Project's mission is to simplify the adoption of modern architecture through a world-class microservice management platform driven by a supportive and diverse global open source community.
+Have you ever wanted to contribute to the coolest cloud technology? Well here is your chance. The Ortelius Open Source Project's mission is to simplify the adoption of modern architecture through a world-class microservice management platform driven by a supportive and diverse global open source community. Watch this video on how to get started.
+
+<div style="width:30%">
+{{< youtube Y4kR6ipipxA >}}
+</div> 
 
 ### What is Ortelius?
 
-Ortelius is a microservice management platform that visualizes ‘logical’ application versions in a microservice architecture. From packaging to deployment, Ortelius maps microservice configurations with their relationships to the application that use them.  The microservice configurations are versioned and tracked across all clusters so you always know before you go.
+Ortelius is a microservice catalog that centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers. 
 
 Ortelius is managed by the [Continuous Delivery Foundation](https://cd.foundation) a specialty foundation under the Linux Foundation.
 
