@@ -3,7 +3,7 @@ name: Release Charts
 on:
   push:
     branches:
-      - deploy
+      - main
     paths:
       - 'chart/**/Chart.yaml'
 
