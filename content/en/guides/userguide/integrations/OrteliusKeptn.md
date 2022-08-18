@@ -1,5 +1,10 @@
-
-# Ortelius Keptn Event Diagram
+---
+title: "Ortelius Keptn Events"
+linkTitle: "Ortelius Keptn Events"
+weight: 64
+description: >
+  Ortelius Keptn Event Diagram.
+---
 
 ```mermaid
 %%{init: { 'sequence': {'showSequenceNumbers': true } } }%%
