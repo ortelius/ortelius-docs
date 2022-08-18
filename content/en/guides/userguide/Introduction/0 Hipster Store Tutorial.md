@@ -8,7 +8,7 @@ description: >
 
 ## Log in and Take a Test Drive
 
-A free hosted version of Ortelius can be found at [https://www.deployhub.com/microservice-dashboard/]https://www.deployhub.com/microservice-dashboard/). When you sign-up, you will be asked for basic information, UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
+A free hosted version of Ortelius can be found at [https://www.deployhub.com/microservice-dashboard/](https://www.deployhub.com/microservice-dashboard/). When you sign-up, you will be asked for basic information, UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
 
 Ortelius is accessible through the following url:
 
