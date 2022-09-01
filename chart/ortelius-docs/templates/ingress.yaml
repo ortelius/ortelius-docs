@@ -25,14 +25,14 @@ spec:
         paths:
         {{- if lt .Capabilities.KubeVersion.Minor "19" }}
         - backend:
-            serviceName: ortelius-docs
+            serviceName: {{ include "ortelius-docs.name" . }}
             servicePort: {{ .Values.service.port }}
         {{- else }}
         - path: {{ .Values.ingress.path }}
           pathType: {{ .Values.ingress.pathType }}
           backend:
             service:
-              name: ortelius-docs
+              name: {{ include "ortelius-docs.name" . }}
               port:
                 number: {{ .Values.service.port }}
         {{- end -}}
@@ -41,14 +41,14 @@ spec:
         paths:
         {{- if lt .Capabilities.KubeVersion.Minor "19" }}
         - backend:
-            serviceName: ortelius-docs
+            serviceName: {{ include "ortelius-docs.name" . }}
             servicePort: {{ .Values.service.port }}
         {{- else }}
         - path: {{ .Values.ingress.path }}
           pathType: {{ .Values.ingress.pathType }}
           backend:
             service:
-              name: ortelius-docs
+              name: {{ include "ortelius-docs.name" . }}
               port:
                 number: {{ .Values.service.port }}
         {{- end -}}
