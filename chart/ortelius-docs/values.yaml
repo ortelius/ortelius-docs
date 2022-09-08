@@ -10,6 +10,8 @@ fullnameOverride: ""
 service:
   type: ClusterIP
   port: 80
+  serviceMonitor:
+    enabled: false
 
 DockerRepo: "quay.io/ortelius/ortelius-docs"
 DockerTag: "latest"
