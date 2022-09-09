@@ -4,6 +4,10 @@ kind: ServiceMonitor
 metadata:
   name: {{ include "ortelius-docs.name" . }}
   namespace: {{ .Release.Namespace }}
+  labels:
+  {{- range $key, $val := .Values.keptnLabels }}
+    {{ $key }}: {{ $val | quote }}
+  {{- end }}
 spec:
   endpoints:
   - interval: 30s
