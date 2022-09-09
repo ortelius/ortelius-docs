@@ -41,4 +41,12 @@ entries:
     urls:
     - https://github.com/ortelius/ortelius-docs/releases/download/ortelius-docs-10.0.1/ortelius-docs-10.0.1.tgz
     version: 10.0.1
-generated: "2022-09-09T12:16:41.002401274Z"
+  - apiVersion: v1
+    created: "2022-09-09T13:01:42.693700482Z"
+    description: A Helm chart for Kubernetes
+    digest: f5b095d30d06055fdfaf1da5048e330473eea4d51cabf3a409931ebd7d157506
+    name: ortelius-docs
+    urls:
+    - https://github.com/ortelius/ortelius-docs/releases/download/ortelius-docs-0.0.1/ortelius-docs-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-09-09T13:01:42.694000683Z"
