@@ -2,7 +2,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "ortelius-docs.name" . }}
+  name: {{-  $service := printf "%s-%s-%s" .Values.keptnLabels.keptnService .Values.keptnLabels.keptnProject .Values.keptnLabels.keptnStage -}}
   namespace: {{ .Release.Namespace }}
   labels:
   {{- range $key, $val := .Values.keptnLabels }}
