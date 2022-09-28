@@ -1,3 +1,11 @@
+---
+title: "Fine dining with Abraham Ortelius"
+linkTitle: "Fine dining with Abraham Ortelius"
+weight: 4
+description: >
+  We begin our local environment construction here
+---
+
 # Fine dining with Abraham Ortelius
 ## Canapes
 ### Windows 10

@@ -1,3 +1,11 @@
+---
+title: "Adventure with Abraham Ortelius"
+linkTitle: "Adventure with Abraham Ortelius"
+weight: 3
+description: >
+  The journey begins here
+---
+
 # --- Adventure with Abraham Ortelius ---
 
 ## Motivation:

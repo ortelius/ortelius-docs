@@ -1,3 +1,11 @@
+---
+title: "Kind"
+linkTitle: "Kind"
+weight: 5
+description: >
+  Kind configuration and setup
+---
+
 ### [Kind.sigs.k8s.io](https://kind.sigs.k8s.io/)
 - Kind allows you to use Docker to run K8s nodes as containers
 - Install [here](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
