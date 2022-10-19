@@ -9,23 +9,120 @@ description: >
 
 ## Ortelius' Continuous Delivery And Integration
 
-The Ortelius continuous delivery and integration performs both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. The program gathers configuration data related to a build, creates new _Component Versions_ and _Application Versions_, and deploys independent _Components_ into specified _Environments_. "Build" data is saved as configuration information and then associated to the _Component_ and _Application_.
+The Ortelius continuous delivery and integration performs both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. The program gathers configuration data related to a build, creates new _Component Versions_ and _Application Versions_, and deploys independent _Components_ into specified _Environments_. "Build" data is saved as configuration information and then associated to the _Component_ and _Application_.  Ortelius' uses a standard CLI to integrate into CI/CD Tools.
 
-Ortelius' uses a standard CLI Container to integrate continuous delivery solutions and execute workflows in containers. If the solution has a more traditional model, a plug-in may be required. The below list contains the CD tools Ortelius has successfully integrated with and their corresponding documentation on how each should be implemented:
+### Using Ortelius CLI with CI/CD Tools
 
-| CI Tool | Ortelius Plugin | Reference Document |
-|---|---|---|
-| **Jenkins** | Ortelius Groovy Library | [Jenkins CI Plug-in](https://github.com/jenkinsci/Ortelius-plugin) |
-| **CircleCI** | Ortelius CircleCI Orb | [Ortelius Orb](https://circleci.com/orbs/registry/orb/Ortelius/Ortelius-orb)|
-| **Google CloudBuild** | Ortelius CLI Container | [Ortelius CLI Docker Container](https://github.com/ortelius/compupdate) |
-| **GitLab** | Ortelius CLI Container | [Ortelius CLI Docker Container](https://github.com/ortelius/compupdate) |
-| **TeamCity** | Ortelius CLI Container | [Ortelius CLI Docker Container](https://github.com/ortelius/compupdate) |
+Below are the steps needed to capture Service Catalog data from your CI/CD Tool.  These steps can be run outside of your CI/CD Tool to manually simulate your Pipeline process.
 
-### Tracking Build Updates
+#### TL;DR;
 
-Ortelius' first hook into the continuous delivery process occurs after a complete build and when the container pushes to a container registry. Ortelius can support any container registry. For more details, reference the above table for for each supported solution.
+[Jenkinsfile Example](/Jenkinsfile)
 
-### Saved Build Data
+#### Steps
+
+##### Install Ortelius CLI
+
+[Install Python 3.8](https://www.python.org/downloads/)
+`pip install deployhub`
+
+[CLI GitHub Repo](https://github.com/ortelius/compupdate) with [additional documentation](https://github.com/ortelius/compupdate/blob/main/doc/dh.md).
+
+##### Setup a repo to work with
+
+`git clone https://github.com/dstar55/docker-hello-world-spring-boot`
+
+##### Add Ortelius Config File
+
+Create a component.toml in the root of your repo. 
+
+_**Note:** This is done once per repo._
+
+```toml
+# Define Component Name, Variant and Version
+Name = "GLOBAL.${DHORG}.${DHPROJECT}.hello-world"
+Variant = "${GIT_BRANCH}"
+Version = "v1.0.0.${BUILD_NUM}-g${SHORT_SHA}"
+
+# Export the derived IMAGE_TAG to the CI/CD Tool
+[Export]
+     IMAGE_TAG = "${Variant}-${Version}"
+
+# Key/Values to associate to the Component Version
+[Attributes]
+    DockerBuildDate = "${BLDDATE}"
+    DockerRepo = "${DOCKERREPO}"
+    DockerSha = "${DIGEST}"
+    DockerTag = "${IMAGE_TAG}"
+```
+
+##### Setup Environment Variables
+
+These variable normally come from you CI tools such as Jenkins, but we need to set them up manually to simulate a CI Tool. 
+
+_**Note:**_ These variables can be set at the beginning of your Pipeline or at the Global Environment Variable Setting for your CI/CD tool.
+
+```bash
+export DHUSER=<myuserid>
+export DHPASS=<mypassword>
+export DHORG=<myorg>
+export DHPROJECT=<myproject>
+export DOCKERREPO=quay.io/ortelius/hello-world
+export DHURL=https://console.deployhub.com
+export BUILD_URL=http://jenkins.myproject.org
+export BUILD_NUM=101
+```
+
+##### Gather data from Git
+
+Run the `dh envscript` which runs git commands to grab data about your repo and persist that data into a shell script as environment variables.  `source` the shell script in subsequent steps to expose the git data.  This process is how you pass data between steps in most CI/CD tools.
+
+_**Note:**_ This is done after your have cloned your repo in your Pipeline.
+
+```bash
+cd docker-hello-world-spring-boot
+dh envscript --envvars component.toml --envvars_sh dhenv.sh
+```
+
+##### Perform a docker build and push
+
+```bash
+source dhenv.sh
+docker build --tag $DOCKERREPO:$IMAGE_TAG .
+docker push $DOCKERREPO:$IMAGE_TAG
+
+# This line determines the docker digest for the image
+echo export DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' $DOCKERREPO:$IMAGE_TAG | cut -d: -f2 | cut -c-12) >> dhenv.sh
+```
+
+_**Note:**_ IMAGE_TAG environment variable is created when running `dh envscript` in the previous step.
+
+##### Create an SBOM of image using Syft
+
+```bash
+source dhenv.sh
+# install Syft
+curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b $PWD
+
+# create the SBOM
+./syft packages $DOCKERREPO:$IMAGE_TAG --scope all-layers -o cyclonedx-json > cyclonedx.json
+
+# display the SBOM
+cat cyclonedx.json
+```
+
+##### Create your component in Ortelius/DeployHub Team SaaS
+
+```bash
+source dhenv.sh
+dh updatecomp --rsp component.toml --deppkg "cyclonedx@cyclonedx.json"
+```
+
+##### Verify New Component
+
+Login to https://console/deployhub.com and navigate to the _Components_ List, then double click on the _Component_ and verify the details that were captured by the CLI.
+
+#### Saved Build Data
 
 Build data is saved to the _Component Version_ and displayed on the _Component Version_ Dashboard. In some cases, Ortelius may need to save custom data. This can be done using the _Component_ Attributes and saved as a key/value pair. Custom data displays in the Attributes Section as Attributes to the _Component Version_ .
 
