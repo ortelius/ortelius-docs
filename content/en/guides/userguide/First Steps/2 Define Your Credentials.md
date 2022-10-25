@@ -1,7 +1,7 @@
 ---
 title: "Create Your Credentials"
 linkTitle: "Create Your Credentials"
-weight: 3
+weight: 4
 description: >
   How to Add _Credentials_ to Access _Repositories_ and Deployment _Endpoints_.
 ---

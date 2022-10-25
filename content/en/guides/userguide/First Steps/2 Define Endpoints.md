@@ -1,7 +1,7 @@
 ---
 title: "Define Your Endpoints"
 linkTitle: "Define Your Endpoints"
-weight: 7
+weight: 6
 description: >
   How to Define Endpoints for Environments
 ---

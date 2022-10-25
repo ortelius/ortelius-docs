@@ -7,9 +7,13 @@ description: >
 ---
 
 
-## Ortelius' Continuous Delivery And Integration
+## Ortelius' Pipeline Automation
 
-The Ortelius continuous delivery and integration performs both continuous configuration management and continuous deployments across clusters, clouds and physical data centers. The program gathers configuration data related to a build, creates new _Component Versions_ and _Application Versions_, and deploys independent _Components_ into specified _Environments_. "Build" data is saved as configuration information and then associated to the _Component_ and _Application_.  Ortelius' uses a standard CLI to integrate into CI/CD Tools.
+Ortelius must be automated via your pipeline process to continuously gather supply chain and deployment metadata. The Ortelius' CLI gathers supply chain data based on a single pipeline workflow at the build and deploy step. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to. 
+
+To prime the process, Ortelius needs a .toml file that contains data that cannot be derived from the pipeline workflow. Non-derived data must be added to the .toml file to begin the process and refers to each objects Git Repository. You will need one Component .toml file for each object. An object can be a a Container, DB object or file (.jar file, Lamda Function, Apex, etc.). Objects are referred to as 'Components' in Ortelius. 
+
+ creates new _Component Versions_ and _Application Versions_, and deploys independent _Components_ into specified _Environments_. "Build" data is saved as configuration information and then associated to the _Component_ and _Application_.  Ortelius' uses a standard CLI to integrate into CI/CD Tools.
 
 ### Using Ortelius CLI with CI/CD Tools
 
@@ -24,15 +28,16 @@ Below are the steps needed to capture Service Catalog data from your CI/CD Tool.
 ##### Install Ortelius CLI
 
 [Install Python 3.8](https://www.python.org/downloads/)
+
 `pip install deployhub`
 
 [CLI GitHub Repo](https://github.com/ortelius/compupdate) with [additional documentation](https://github.com/ortelius/compupdate/blob/main/doc/dh.md).
 
-##### Setup a repo to work with
+##### 1. Setup a repo to work with
 
 `git clone https://github.com/dstar55/docker-hello-world-spring-boot`
 
-##### Add Ortelius Config File
+##### 2. Add Ortelius Config File
 
 Create a component.toml in the root of your repo. 
 
@@ -56,7 +61,7 @@ Version = "v1.0.0.${BUILD_NUM}-g${SHORT_SHA}"
     DockerTag = "${IMAGE_TAG}"
 ```
 
-##### Setup Environment Variables
+##### 3. Setup Environment Variables
 
 These variable normally come from you CI tools such as Jenkins, but we need to set them up manually to simulate a CI Tool. 
 
@@ -73,7 +78,7 @@ export BUILD_URL=http://jenkins.myproject.org
 export BUILD_NUM=101
 ```
 
-##### Gather data from Git
+##### 4. Gather data from Git
 
 Run the `dh envscript` which runs git commands to grab data about your repo and persist that data into a shell script as environment variables.  `source` the shell script in subsequent steps to expose the git data.  This process is how you pass data between steps in most CI/CD tools.
 
@@ -84,7 +89,7 @@ cd docker-hello-world-spring-boot
 dh envscript --envvars component.toml --envvars_sh dhenv.sh
 ```
 
-##### Perform a docker build and push
+##### 5. Perform a docker build and push
 
 ```bash
 source dhenv.sh
@@ -97,7 +102,7 @@ echo export DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' $DOCKERR
 
 _**Note:**_ IMAGE_TAG environment variable is created when running `dh envscript` in the previous step.
 
-##### Create an SBOM of image using Syft
+##### 6. Create an SBOM of image using Syft
 
 ```bash
 source dhenv.sh
@@ -111,7 +116,7 @@ curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -
 cat cyclonedx.json
 ```
 
-##### Create your component in Ortelius/DeployHub Team SaaS
+##### 7. Create your component in Ortelius/DeployHub Team SaaS
 
 ```bash
 source dhenv.sh

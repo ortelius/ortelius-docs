@@ -1,7 +1,7 @@
 ---
 title: "Building Your Domain Catalog"
 linkTitle: "Building your Domain Catalog"
-weight: 2
+weight: 3
 description: >
   How to Create and Manage _Domains_
 ---

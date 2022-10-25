@@ -1,6 +1,6 @@
 ---
-title: "Ortelius 101"
-linkTitle: "Ortelius 101"
+title: "Overview of Ortelius Objects and Concepts"
+linkTitle: "Overview of Ortelius Objects and Concepts"
 weight: 2
 description: >
   Understanding Core Objects and Concepts.
@@ -8,7 +8,7 @@ description: >
 
 ## Introduction
 
-Ortelius' core Objects are _Domains_, _Applications_, _Components_, _Environments_ and _Endpoints_. These Objects catalog, track, and version independently deployable objects, maps their relationships, and releases them to clusters, cloud, or physical data centers.
+Ortelius' core objects are _Domains_, _Applications_, and _Components_. _Components_ are the the objects that are cataloged,   versioned and mapped across software supply chain. _Environments_ and _Endpoints_ are used to track releases to your clusters, cloud, or physical data centers and are referenced during your pipeline deployments for inventory control.
 
 _Domains_ are core to Ortelius' management of microservices.  _Domains_ are hierarchical and pass inheritance from parent to siblings. For this reason, _Components_ can be shared across the _Subdomains_. The hierarchical structure of _Domains_ provides a high-level of control and management over how microservices are shared and reused.
 
