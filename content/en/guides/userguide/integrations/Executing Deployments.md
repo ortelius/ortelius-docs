@@ -1,10 +1,13 @@
 ---
-title: "Executing Deployments"
-linkTitle: "Executing Deployments"
+title: "Ortelius Deployments"
+linkTitle: "Oretlius Deployments"
 weight: 6
 description: >
   Deploying _Applications_ and _Components_.
 ---
+
+## Need a Deployment Engine? 
+Ortelius can perform the deployments of your _Components_ and _Applications_ if you do not already have a method for release automation. 
 
 ## The Ortelius Deployment Engine and Incremental Processing
 

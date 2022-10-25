@@ -1,7 +1,7 @@
 ---
 title: "Build Your Environments"
 linkTitle: "Build Your Environments"
-weight: 9
+weight: 7
 description: >
   How to Add Environments for Deployments
 ---

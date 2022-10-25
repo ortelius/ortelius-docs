@@ -1,6 +1,6 @@
 ---
-title: "On-Prem Installation"
-linkTitle: "On-Prem Installation"
+title: "Installing Ortelius"
+linkTitle: "Installing Ortelius"
 weight: 3
 description: >
   Installing Ortelius On-premise
@@ -78,6 +78,3 @@ http://<Ortelius DNS name>:7171/dmadminweb/Home
 
 To log in please use userId: admin and password: admin.
 
-## The Hipster Store Tutorial
-
-The Hipster Store Tutorial is not available in the on-premise installation.  If you would like to go through the Hipster Store Tutorial, you should [sign up](/guides/userguide/installation-and-support/0-saas-and-reverse-proxy/) for the SaaS environment. This example gives you a review of _Domains_, _Components_, and _Applications_ and will help you understand Ortelius basic concepts.
