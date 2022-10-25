@@ -1,7 +1,7 @@
 ---
 title: "SVN as a Repository"
 linkTitle: "SVN"
-weight: 72
+weight: 73
 description: >
   Integrating SVN as a Ortelius Repository.
 ---
