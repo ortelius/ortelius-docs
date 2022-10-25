@@ -1,7 +1,7 @@
 ---
 title: "Discord Support"
 linkTitle: "Discord Support"
-weight: 4
+weight: 5
 description: >
   Discord Technical Support
 ---
