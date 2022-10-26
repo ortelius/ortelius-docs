@@ -15,7 +15,7 @@ Retrieve specific _Component_ or _Component_ version. This call returns a JSON O
 
 | HTTP Verb | URL |
 | ---- | ----------- |
-| GET |  dmadminweb/API/_Component_/{identifier} |
+| GET |  dmadminweb/API/component/{identifier} |
 
 ### Parameters
 
