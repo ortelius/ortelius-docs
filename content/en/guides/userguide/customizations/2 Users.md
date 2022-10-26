@@ -54,9 +54,8 @@ The following details are common to all _Users_:
 | **Password**| Password selected by the _User_ (encrypted in the database).|
 | **Account Locked**| Locks the User out of the system. |
 | **Force Change Password**| Forces the User to change their password on initial sign-in.|
-| **Created** | Auto generated date when the _Notifier_ was added.|
-| **Modified**| Auto generated date when the _Notifier_ was updated.|
-| **Credential**| The _Credential_ used to access the _Notifier_ if required. |
+| **Created** | Auto generated date when the _User_ was added.|
+| **Modified**| Auto generated date when the _User_ was updated.|
 | **Last Login** | Displays the last time the User logged in. |
 
 ## Group Membership

@@ -60,12 +60,6 @@ The Dashboard view displays all information related to a specific _Application B
 |**Summary** | Description of the _Application_. |
 |**Created** | The date the _Application_ was added. |
 |**Modified** | The date the _Application_ was updated. |
-|**Change Request DataSource** | DeployHub Pro Option - Establishes the Change Request system for the _Application_. A Change Request Data Source must be pre-defined for this field to be used. |
-|**Pre-Action**| An action executed prior to the deployment.|
-|**Post-Action**| An action executed at the completion of deployment.|
-|**Custom Action** | Overrides any Pre or Post Actions, such as calling an external solutions such as Helm.|
-|**Successful Deployment Template** | Used for success notifications. |
-|**Failed Deployment Template**| Used for failure notifications.|
 
 ### _Application_ Dependency Map
 
@@ -101,7 +95,6 @@ The Difference Graph shows what changed in the last deployment between the previ
 
 The Trends graph shows the success or failure rates overtime as well at the time required for the last 10 deployments. If an _Application_ deployment takes longer than previous deployments, there is an issue with the deployment logic.
 
-{{% include "guides/userguide/reusable/ChangeRequest.md" %}}
 
 ## Package Components Tab
 

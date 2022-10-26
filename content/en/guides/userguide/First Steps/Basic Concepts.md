@@ -16,13 +16,7 @@ _Domains_ are core to Ortelius' management of microservices.  _Domains_ are hier
 
  Other _Objects_ include:
 
-- Change Request
-- Credentials
-- Data Sources
 - Date
-- DropZone
-- DropZone File
-- Notifiers
 - User
 - UserGroup (Admin or User)
 
@@ -99,7 +93,7 @@ There is a many-to-many relationship between _Applications_ and _Components._ An
 
 ### _Component_ and _Application_ Versioning
 
-A backend versioning engine tracks all software deployment configurations. This is done within an _Application_. An _Application_ consists of one or more _Components_. Versioning tracks all changes in both your _Application_ and _Component_ attributes. This includes all low level information such as the _Action_ used to perform the installation, environment variables, and database schemas.
+A backend versioning engine tracks all software deployment configurations. This is done within an _Application_. An _Application_ consists of one or more _Components_. Versioning tracks all changes in both your _Application_ and _Component_ attributes.
 
 When you first define your _Application_, you create an _Application Base Version_. Over time, as you update your code and deliver new features, each change to the _Application_ creates a new _Application Version_.  _Application Versions_ package all your _Components_ in your entire software product. Like _Application Versions_, there is an initial _Component Base Version_ and subsequent _Component Versions,_ which represent any updates . An _Application Base Version_ or _Component Base Version_ is always the first one created, and it acts as a model for subsequent _Application_ or _Component Versions_. Otherwise they are identical types of objects.
 
@@ -109,32 +103,6 @@ Ortelius uses a simple versioning number schema starting at 1 and incrementing o
 
 You can use your CI/CD process to include variance in your versioning number (base name, variant, version).  See [Component Versioning Schema](/guides/userguide/integrations/ci-cd_integrations/#_component_-versioning-schema).
 
-## _Credential_ Object
-
-The [_Credential_ Object](/guides/userguide/first-steps/2-define-your-credentials/) contains the logon and password needed to access _EndPoints_ and external repositories like Git or Quay.
-
-The _Credential_ Object has the following properties:
-
-| Property | Description |
-| --- | --- |
-| id | A unique identifier for the _Credential_ as used in the database. |
-| name | The name of the  _Credential_. |
-| summary |  Description. |
-| fqdomain |  Fully qualified _Domain_ name that the _Credential_ is associated with. |
-| domain |  _Domain_ in which the _Credential_ is associated. |
-| owner |  _User_ or _Group_ that owns the _Credential_. |
-| username | Decrypted username. |
-| password | Decrypted password. |
-| b64auth |  A string representing the decrypted username and password together, with a : separator and then base64 encoded. Used for Basic Authorization for web-based APIs. |
-| creator | The _User_ or _Group_ who created this _Credential_. |
-| modifier | The _User_ or _Group_ who last modified this _Credential_. |
-| ctime | The date/time the _Credential_ was created. |
-| mtime | The date/time the _Credential_ was last modified. |
-| Type  | _Credential_ use. |
-
-## _Data Source_ Objects
-
- The [_Data Source_](/guides/userguide/customizations/2-data-sources/) object  communicates with various sources of information such as databases, HTTP servers, FTP servers, etc., and can be used to connect to other DevOps tools as needed.
 
 ## _Date_ Object
 
@@ -178,31 +146,7 @@ The following properties can be accessed on the _Domain_ object:
 | mtime | _Date_ Object representing the date/time it was last modified. |
 | owner | _User_ or _Group_ Objects that owns it. |
 
-## _Dropzone_ Object
 
-The _DropZone_ Object represents a local area where deployment artifacts are  manipulated before sent to the target _Endpoints_. A _DropZone_ Object is also present on the stack during Pre and Post _Action_ processing for a _Component_. For example, the content of the _DropZone_ are the files checked out from the repository for the associated _Component_.
-
-A _DropZone_ Object has the following properties:
-
-| Property | Description |
-| --- | --- |
-| name | _DropZone_ name. |
-| path | The full path of where the _DropZone_ is located. Useful for passing to external scripts that may need to manipulate files in the _DropZone_. |
-| files | An Array of _DropZone Objects_, each one of which represents a file in the _DropZone_. The array is keyed by the full path name of the file. |
-
-### _DropZone_ File Object
-
-The _DropZone File_ Object represents a file in the _DropZone_.
-
-The _DropZone File_ Object has the following properties:
-
-| Property | Description |
-| --- | --- |
-| dzpath | The relative path of the file in the _DropZone_. |
-| repopath | The relative path of the file as located in the repository (this path is relative to the base directory of the repository). |
-| size | The size of the file in bytes. |
-| ctime | The creation time of the file. |
-| mtime | The modified time of the file. |
 
 ## _Environment_ Object
 
@@ -250,17 +194,12 @@ The _Endpoint_ object has the following properties:
 | hostname | Hostname (if set) or name otherwise. |
 | basedir | Base Directory for Deployments. |
 | type | _Endpoint_ Type, ie: cluster, windows, cloud, etc. |
-| credential | The logon and password used to access this _Endpoint_.|
 | _Components_ | The _Components_ currently installed on it. |
 | creator |  The _User_ or _Group_ who created it. |
 | modifier | The _User_ or _Group_ who last modified it. |
 | ctime | The date/time it was created. |
 | mtime | The date/time it was last modified. |
 | Key Value Configurations | Key Value Pairs for managing associative arrays. |
-
-## _Notifier_ Objects
-
-A [_Notifier_](/guides/userguide/customizations/2-define-notifiers/) is sent after a successful or failed deployment attempt. If these features are activated, they are also sent when deployed files have been changed, a Request Task has been used, or when an _Endpoint_ is down,  Ortelius can use SMTP (Simple Mail Transfer Protocol), Slack and HipChat for this purpose.
 
 ## _User_ Object
 

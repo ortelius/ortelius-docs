@@ -6,7 +6,6 @@
 | autoping | string | Is a Boolean representing if "Auto Ping" is set for the _Endpoint_. | No |
 | basedir | string | Is the base directory for the _Endpoint_. | No |
 | comptypes | [ [comptype](/restapi/models/#comptype) ] |  | No |
-| credential | string | Is the name of the _Credential_ used to connect to the _Endpoint_. | No |
 | domain | string | Is the _Endpoint's_ fully qualified _Domain_. | No |
 | environments | [ [environment](/restapi/models/#environment) ] |  | No |
 | hostname | string | Is the hostname of the _Endpoint_. | No |
