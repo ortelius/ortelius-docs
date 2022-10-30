@@ -9,17 +9,17 @@ description: >
 
 ### Maven build and containerize java application
 
-**Before Starting** 
+**Before Starting**
 
  - I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use Linux environment as we will be going to use lot of command line stuff later.
 
-**Software needed :**  
-Java   
-Maven  
-VS Code  
-Linux in WSL2 
+**Software needed :**
+Java
+Maven
+VS Code
+Linux in WSL2
 
-**Maven build** 
+**Maven build**
 
 In the previous step, we run our application normally. Now its time to do the maven build (using mvnw) and then make its docker container and try to run the application from inside of our container.
 
@@ -32,21 +32,28 @@ In wsl2, mvnw is still not working sometimes due to windows issue, so run this -
 
     sudo apt install dos2unix
     dos2unix mvnw
-    
+
 Now your mvnw will works properly.
 
-This command will create a target folder with a jar file. In this example, the name of jar file will be - 
+This command will create a target folder with a jar file. In this example, the name of jar file will be -
 `spring-petclinic-2.7.0-SNAPSHOT.jar`
 
 **Dockerfile**
 
 In the root of the folder create a file named as Dockerfile and copy the below content in it.
 ```
+# Choose your Java image
 FROM  openjdk:8-jdk-alpine
+
+# Create volume for the Java jar build process
 VOLUME  /tmp
+
+# Copy the jar to the container
 COPY  target/*.jar  app.jar
+
+# Set your command to start the Java application
 ENTRYPOINT  ["java","-jar","/app.jar"]
-  ```  
+  ```
 
 **Build an image**
 
@@ -62,4 +69,3 @@ docker run -p 8080:8080 myorg/myapp
 ```
 It will take some time and this will be showing in your terminal, and your application is started now.
 Now go to `localhost:8080` and check your application running from inside a container.
-
