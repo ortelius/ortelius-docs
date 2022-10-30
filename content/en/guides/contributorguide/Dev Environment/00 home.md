@@ -86,7 +86,7 @@ description: >
 - [Argo CD](https://argo-cd.readthedocs.io/en/stable/user-guide/parameters/)
 - [ArangoDB](https://www.arangodb.com/)
 - Backend
-- Blast radius
+- [Blast radius](https://www.deployhub.com/know-your-microservice-blast-radius/)
 - Block Chain
 - Containers
 - Continous Integration
@@ -101,18 +101,22 @@ description: >
 - [IaC](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac)
 - Imperative
 - [IPFS (Interplanetary File System)](https://docs.ipfs.tech/concepts/what-is-ipfs/#decentralization)
+- [Java](https://dev.java/)
+- [Kubernetes](https://kubernetes.io/docs/home/)
 - [Keptn.sh](https://keptn.sh/)
-- Markdown
+- [Markdown](https://www.markdownguide.org/)
 - [Machine Learning](https://www.expert.ai/blog/machine-learning-definition/)
 - Microservices
-- [NFTs]()
-- Opensource
+- [NFTs](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)
+- [Opensource](https://opensource.com/resources/what-open-source)
 - Package Manager
 - Parameterisation
-- PODs
+- [PostgreSQL](https://www.postgresql.org/)
+- [React](https://reactjs.org/)
 - [Terraform](https://www.terraform.io/)
 - [Web3]()
 - [XRPL](https://xrpl.org/)
+- [XRPL Learning Portal](https://learn.xrpl.org)
 
 ## Learning platforms
 - [Udemy.com](https://udemy.com)
