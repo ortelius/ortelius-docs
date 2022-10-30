@@ -128,3 +128,5 @@ description: >
 - [Itsfoss.com](https://itsfoss.com/)
 - [Linuxhandbook.com](https://linuxhandbook.com/)
 - [CompTIA Linux on Udemy](https://www.udemy.com/share/1076RM3@wyBekn7-PidnmF_CeNvkQeJjSzd9_9rNkxjrWFaI2hA7e6fQJEnkmWbazI66eyHT/)
+- [Bash](https://ss64.com/links/bash.html)
+- [Bash Bible](https://github.com/dylanaraps/pure-bash-bible)
