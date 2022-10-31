@@ -96,12 +96,14 @@ description: >
 - Event driven
 - [Filecoin](https://filecoin.io/)
 - Frontend
+- [GitLab](https://about.gitlab.com/)
 - [GitOps](https://about.gitlab.com/topics/gitops/)
 - [Helm.sh](https://helm.sh/)
 - [IaC](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac)
 - Imperative
 - [IPFS (Interplanetary File System)](https://docs.ipfs.tech/concepts/what-is-ipfs/#decentralization)
 - [Java](https://dev.java/)
+- [Jenkins](https://www.jenkins.io/)
 - [Kubernetes](https://kubernetes.io/docs/home/)
 - [Keptn.sh](https://keptn.sh/)
 - [Markdown](https://www.markdownguide.org/)
