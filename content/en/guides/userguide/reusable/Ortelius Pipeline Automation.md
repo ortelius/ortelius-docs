@@ -81,8 +81,8 @@ Version = "v1.0.0.${BUILD_NUM}-g${SHORT_SHA}"
     DockerSha = "${DIGEST}"
     DockerTag = "${IMAGE_TAG}"
     SlackChannel = "OrteliusSlack"
-    ServiceOwner= "Jane Coder"
-    ServiceOwnerEmail = "JC@ortelius.io"
+    ServiceOwner= "${DHUSER}"
+    ServiceOwnerEmail = "Stella@ortelius.io"
 
 ```
 
