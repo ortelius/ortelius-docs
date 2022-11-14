@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: {{ include "ortelius-docs.name" . }}
-          image: "{{ .Values.DockerRepo }}:{{ .Values.DockerTag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: Always
           ports:
             - containerPort: 80    
