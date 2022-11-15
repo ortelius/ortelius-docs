@@ -9,10 +9,10 @@ ENV HUGO_ENV=production
 COPY . .
 
 # install node_modules, will be cached unless package.json has changed
-RUN npm install postcss-cli; \
-  npm ci; \
-  apk add --update hugo git; \
-  /usr/bin/hugo
+RUN npm install postcss-cli
+RUN npm ci
+RUN apk add --update hugo git
+RUN /usr/bin/hugo
 
 FROM wernight/alpine-nginx-pagespeed
 
