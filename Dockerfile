@@ -9,7 +9,8 @@ ENV HUGO_ENV=production
 COPY . .
 
 # install node_modules, will be cached unless package.json has changed
-RUN npm ci; \
+RUN npm install postcss-cli; \
+  npm ci; \
   apk add --update hugo git; \
   /usr/bin/hugo
 
