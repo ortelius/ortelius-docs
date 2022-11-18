@@ -28,6 +28,3 @@ When a new _Application Version_ is created from either an _Application Base Ver
 
 _Tasks_ allow you to act upon _Applications_. They are defined at the _Domain_ level and are available to all of the _Applications_ within the Domain as default _Tasks_.  _Tasks_ can also be called via your continuous delivery pipeline.  Common _Tasks_ integrated into continuous delivery are _Move Version_, _Approve_ and _Deploy_. All _Tasks_ are managed at the _Domain_ level. For more information on Tasks and _Domains_ see [Deployment Task](/guides/userguide/first-steps/2-defining-domains/#deployment-tasks).
 
-## Applications and Iterative Deployments
-
- Whenever an _Application_ is deployed, Ortelius determines the deployment status of each _Component_ contained within the _Application_.  It compares it to _Components_ on the associated _Endpoint_.  This delta processing performs iterative deployments accurately when there is a change or is set to _Always Deploy_.

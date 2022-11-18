@@ -71,14 +71,9 @@ The following fields are common to all _Components_:
 | **Name** | The name of the _Component._ |
 | **Description** | A short text field with a description of the _Component_. |
 | **Component Type**| The kind of Component created, i..e. Container, Application File, or Database.|
-|**Endpoint Type** | Used to map the _Component_ to _Endpoints_ within an _Environment_ at deployment.  This allows DeployHub to map the _Component_ to the correct _Endpoint_ when moving across different environments.  You can add your own _Endpoint_ Types from the Customize Types menu or select from the default options.|
-| **Category** | Assigning a Category to an Object allows lists of Objects based on Categories to be used throughout DeployHub. Add a new Category in the entry field or use an existing Category displayed in the drop down.  |
+|**Endpoint Type** | Used to map the _Component_ to _Endpoints_ within an _Environment_ at deployment.  This allows Ortelius to map the _Component_ to the correct _Endpoint_ when moving across different environments.  You can add your own _Endpoint_ Types from the Customize Types menu or select from the default options.|
+| **Category** | Assigning a Category to an Object allows lists of Objects based on Categories to be used throughout Ortelius. Add a new Category in the entry field or use an existing Category displayed in the drop down.  |
 
-### Container Specific Data Definition
-
-Helm is the default for deploying Container _Components_. DeployHub interfaces with Helm to support a Kubernetes Cluster deployment. Initially, you will need to create a _Custom Action_ for using Helm as your deployment engine. Once your [_Custom Action_](/guides/userguide//customizations/2-define-your-actions/) has been created, it can be reused by all _Users_ as long as you define the _Custom Action_ to your "Global" Domain. Follow the steps at [Helm for Container Deployments](/guides/userguide/integrations/helm/).
-
-Note: You can also create your own _Custom Action_ if you would like to use another deployment engine. 
 
 A Container _Component_ has the following optional attributes:
 
