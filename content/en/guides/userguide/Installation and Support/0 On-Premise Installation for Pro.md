@@ -34,7 +34,7 @@ You can create your own Administrator UserID and remove the default userid and p
 
 ## Next Steps
 
-Once you have completed your installation, you can take the next step and complete a [Proof of Concept](/guides/userguide/Itegrations/CI-CD_Integrations).
+Once you have completed your installation, you can take the next step and complete a [Proof of Concept](/guides/userguide/integrations/ci-cd_integrations/).
 
 
 
