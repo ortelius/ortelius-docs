@@ -6,75 +6,36 @@ description: >
   Installing Ortelius On-premise
 ---
 
-## On Premise Installation Prerequisites
+## On Premise Installation Using the Ortelius Helm Chart
 
-Ortelius runs in a Docker Container with all required dependencies, such as Postgresql.  Docker is the only prerequisite for your on premise installation of Ortelius.  If you do not have Docker, below are steps for building a Docker environment.
+Ortelius can be installed into your own cloud environment, or onto a hosted cloud environment.  Ortelius uses Helm to manage and perform the installation. The process includes the installation of multiple containers. 
 
-### Docker Installation Guides
+### Step 1 - Download and Run Helm
+The Ortelius on-premise Helm chart and instructions can be found at [ArtifactHub](https://artifacthub.io/packages/helm/ortelius/ortelius). This is the location for the most up to date instructions for downloading and running the Ortelius Helm chart.    (https://artifacthub.io/packages/helm/ortelius/ortelius)
 
-- [Docker for CentOS](https://docs.docker.com/engine/install/centos/)
-- [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-- [Docker for Fedora](https://docs.docker.com/engine/install/fedora/)
-- [Docker for RedHat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html-single/getting_started_with_containers/index)
-- [Docker for OS/X](https://docs.docker.com/docker-for-mac/install/)
+### Step 2 - Access Ortelius from your browser
 
-### Test your Docker Install
+Run the following command to find your IP address for the Ortelius URL.
 
-See the [Docker Install Test](https://docs.docker.com/get-started/#test-docker-version) instructions
-
-## Installing Your Ortelius Docker Image
-
-The Ortelius Docker Image is found on the Redhat Quay Docker Registry. Follow the steps below to install the Ortelius into your Docker installation.
-
-### Step 1 - Pull Ortelius from Redhat Quay Registry
-
-Run:
-
-~~~bash
-docker pull quay.io/ortelius/ortelius:latest
-~~~
-
-### Step 2 - Create a directory to persist the Postgres database
-
-Run:
-
-~~~bash
-mkdir -p ~/ortelius/data
-~~~
-
-### Step 3 - Find your image SHA
-
-Run:
-
-~~~bash
-docker images | grep ortelius | grep latest
-~~~
-
-Find the image SHA from the third column in the output.
-
-~~~bash
-quay.io/ortelius/ortelius          latest          0114088b0b44        6 days ago          3.32GB
-~~~
-
-The SHA in the above example is 0114088b0b44.
-
-### Step 4 - Start the container for Linux and OS/X
-
-Use the image SHA from Step 3 as the last parameter to the docker run.
-
-~~~bash
-docker run -v ~/.ssh:/keys:Z -v ~/ortelius/data:/var/lib/pgsql/data:Z -v ~/ortelius/logs:/opt/ortelius/logs:Z -p 7171:8080 -d --hostname docker_dhpro 0114088b0b44
-~~~
-
-### Step 5 - Access Ortelius from your browser
-
- Ortelius is accessible through the following url:
-
-Your Ortelius DNS name is the server where you installed Ortelius.
-
-```bash
-http://<Ortelius DNS name>:7171/dmadminweb/Home
 ```
+kubectl get svc -n ortelius ms.nginx 
+```
+This will display the external IP address you need to run the URL.
 
-To log in please use userId: admin and password: admin.
+### Step 3 - Access the Ortelius URL and Login
+Access the URL from the following address:
+```
+http://<External IP Address from above step>/dmadminweb/Home
+```
+To log in please use userId: admin and password: admin. 
+
+**Note:**
+You can create your own Administrator UserID and remove the default userid and password.
+
+## Next Steps
+
+Once you have completed your installation, you can take the next step and complete a [Proof of Concept](/guides/userguide/Itegrations/CI-CD_Integrations).
+
+
+
 

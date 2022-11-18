@@ -8,7 +8,7 @@ description: >
 
 ## Introduction
 
-Ortelius' core objects are _Domains_, _Applications_, and _Components_. _Components_ are the the objects that are cataloged,   versioned and mapped across software supply chain. _Environments_ and _Endpoints_ are used to track releases to your clusters, cloud, or physical data centers and are referenced during your pipeline deployments for inventory control.
+Ortelius' core objects are _Domains_, _Applications_, and _Components_. _Components_ are the the objects that are cataloged, versioned and mapped across software supply chain. _Environments_ and _Endpoints_ are used to track releases to your clusters, cloud, or physical data centers and are referenced during your pipeline deployments for inventory control.
 
 _Domains_ are core to Ortelius' management of microservices.  _Domains_ are hierarchical and pass inheritance from parent to siblings. For this reason, _Components_ can be shared across the _Subdomains_. The hierarchical structure of _Domains_ provides a high-level of control and management over how microservices are shared and reused.
 
@@ -20,7 +20,7 @@ _Domains_ are core to Ortelius' management of microservices.  _Domains_ are hier
 - User
 - UserGroup (Admin or User)
 
-These Objects can be referenced using Ortelius APIs or custom DMSCripts.
+These Objects can be referenced using Ortelius APIs.
 
 Following is a description of each Object and their attributes.
 
@@ -119,9 +119,7 @@ The _Date_ has the following properties:
 
 The [_Domain_ Object](/guides/userguide/customizations/2-define-your-functions-and-procedures/) represents the highest order of organization for managing _Applications_, _Components_ and _Environments_. _Domains_ are hierarchical and can have _Subdomains_. _Subdomains_ inherit the parents properties, _Tasks_ and access.
 
-Your microservices, a type of _Component_, are cataloged based on _Domains_ and _Subdomains_ which you define. _Domains_ catalog microservices that solve the same 'problem sets.' In a similar way, _Applications_ are assigned to their own _Domain_. _Environments_ and _Endpoints_ are associated to _Domains_ that are managing _Applications_.
-
-The highest level _Domain_ is your _Global Domain_. With the SaaS version, your _Global Domain_ name is defined based on your Company. With the on-premise installation, you will see a _Domain_ called _Global_.
+Your microservices, a type of _Component_, are cataloged based on _Domains_ and _Subdomains_ which you define. _Domains_ catalog microservices that solve the same 'problem sets.' In a similar way, _Applications_ are assigned to their own _Domain_. _Environments_ and _Endpoints_ are associated to _Domains_ that are managing _Applications_. The highest level _Domain_ is your _Global Domain_.
 
 _Domains_ also include _Tasks_. _Tasks_ include Move, Approve, Version and Deploy. _Tasks_ can be called by external solutions via APIs for integration into your Continuous Delivery Pipeline. _Tasks_ are associated to any _Domain_ and can be defined as _Pre_ or _Post_.  _Tasks_ are normally defined to _Life Cycle Subdomains_ and support continuous configuration management in your continuous delivery process.
 

@@ -1,6 +1,11 @@
-## Ortelius' Pipeline Automation
+## Ortelius' Pipeline Automation POC
 
-In order to continuously gather pipeline intelligence, Ortelius must become part of your pipeline. Ortelius integrates into your CI/CD process using the Ortelius Command Line (CLI). The Ortelius CLI gathers supply chain data based on a single pipeline workflow at the build and deploy steps. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to. 
+In order to continuously gather pipeline intelligence, Ortelius must become part of your pipeline. Ortelius integrates into your CI/CD process using the Ortelius Command Line (CLI). The Ortelius CLI gathers supply chain data based on a single pipeline workflow at the build and deploy steps. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to.
+
+[Download the complete Ortelius POC Document](/Ortelius-General-Poc.pdf)
+
+### Install the Ortelius CLI
+Install the Ortelius CLI to complete your POC. Install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions.  
 
 ### Ortelius Data Gathering using .toml
 
@@ -29,10 +34,10 @@ The following variables should be set at the beginning of your Pipeline.
 Example
 
 ```bash
-export DHURL=https://deployhub.example.com
+export DHURL=https://console.ortelius.com
 export DHUSER=Stella99
 export DHPASS=chasinghorses
-export DOCKERREPO=quay.io/DeployHub/hello-world
+export DOCKERREPO=quay.io/ortelius/hello-world
 export IMAGE_TAG=1.0.0
 ```
 
@@ -86,8 +91,6 @@ Version = "v1.0.0.${BUILD_NUM}-g${SHORT_SHA}"
 
 ```
 
->Note: For SaaS users, you will have a second high-level qualifier that was created as part of your sign-up. This secibd high-level qualifier must be used as the start of your Application Name and Component Name.  For example: _GLOBAL.Santa Fe Software.Online Store_.
-
 #### Step 3 - Add a step in your pipeline to run Syft if you are not generating SBOMS (Optional)
 DeployHub can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to DeployHub is step 4 below. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data. 
 
@@ -134,27 +137,32 @@ Without SBOM
 dh updatecomp --rsp component.toml 
 ```
 
-## Results
+## Expected Results
+Bring up your Ortelius URL and login using the DHUSER and DHPASS from Step 1 above. 
 
 ### Application to Component Dependencies
+Select Your Application from the ‘Application View.’ It should show you one Component as a dependency.
 
 <img src='/ApplicationComponentDepVersions.png'  />
-<div style="margin-left:20%"><b>1 - The Hello World Application shows one Dependency.</b></div>
+<div style="margin-left:20%"></div>
 
 ### Application Level SBOM and CVE
+Review the Application SBOM and vulnerabilities. Note: CVE Results may vary depending on the time of the scan. 
 
 <img src='/ApplicationSBOMandCVE.png'  />
-<div style="margin-left:20%"><b>2 - The HelloWorld Application Level SBOM and CVE results.</b><br><b><i>Note: CVE Results may vary depending on the time of the scan.</i></b></div>
+<div style="margin-left:20%"><br></div>
 
 ### Component Ownership
+Go to the ‘Component View’. You should see your Component Ownership and Detail, including its SBOM and vulnerabilities. 
 
 <img src='/Componetownership.png'  />
-<div style="margin-left:20%"><b>3 - Component Ownership and Detail</b></div>
+<div style="margin-left:20%"></div>
 
 ### Supply Chain “Package” Search
+Go to the ‘Application View.’ Select ‘Package Search’ from the high-level menu. Enter a package name such as ‘spring’ to identify all locations where the package is used. 
 
 <img src='/packagesearch.png'  />
-<div style="margin-left:20%"><b>4 - Package Search</b></div>
+<div style="margin-left:20%"></div>
 <br>
 <img src='/PackageSerachResults.png'  />
-<div style="margin-left:20%"><b>4 - Package Search Results</b></div>
+<div style="margin-left:20%"></div>
