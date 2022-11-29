@@ -8,6 +8,8 @@ metadata:
   {{- range $key, $val := .Values.keptnLabels }}
     {{ $key }}: {{ $val | quote }}
   {{- end }}
+  annotations:
+    backstage.io/kubernetes-id: ortelius-docs
 spec:
   endpoints:
   - interval: 30s
