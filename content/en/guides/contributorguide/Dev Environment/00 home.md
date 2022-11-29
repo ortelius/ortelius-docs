@@ -3,7 +3,7 @@ title: "Adventure with Abraham Ortelius"
 linkTitle: "Adventure with Abraham Ortelius"
 weight: 3
 description: >
-  The journey begins here
+  The journey begins here.
 ---
 
 # --- Adventure with Abraham Ortelius ---
@@ -17,7 +17,7 @@ description: >
 - Abraham Ortelius was a DevOps Engineer and Microservices pioneer by containerising the world through cartography
 - Please help us improve the cartography
 
-## Organisations
+## Organizations
 - [CNCF](https://www.cncf.io/)
 - [CNCF Cloud Native Landscape](https://landscape.cncf.io/)
 - [Ortelius](https://ortelius.io/)
@@ -25,7 +25,7 @@ description: >
 
 ### What are we learning?
 - To build applications with [build tools](https://www.plutora.com/ci-cd-tools/software-build-tools) such as `Maven` or `Gradle`
-- Containerisation with [Docker](https://www.docker.com/) or [Podman](https://podman.io/)
+- Containerization with [Docker](https://www.docker.com/) or [Podman](https://podman.io/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Kubernetes](https://kubernetes.io/)
 - [Build pipelines](https://opensource.com/article/19/4/devops-pipeline)

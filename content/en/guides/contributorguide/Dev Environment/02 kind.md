@@ -3,7 +3,7 @@ title: "Kind"
 linkTitle: "Kind"
 weight: 5
 description: >
-  Kind configuration and setup
+  Kind configuration and setup.
 ---
 
 ### [Kind.sigs.k8s.io](https://kind.sigs.k8s.io/)
@@ -25,7 +25,7 @@ description: >
 - K8s is a production grade container orchestrater
 - K8s is the conductor of the orchestra where the conductor is K8s and the orchestra is the containers within PODs
 - PODS are cuddly safe worlds to hold containers (so cute)
-- Get familar with the basic commands
+- Get familiar with the basic commands
 
 ## Requirements
 - Docker installed & running

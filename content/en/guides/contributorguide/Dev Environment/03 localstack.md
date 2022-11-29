@@ -3,7 +3,7 @@ title: "Localstack"
 linkTitle: "Localstack"
 weight: 5
 description: >
-  Localstack allows you to run AWS cloud locally
+  Localstack allows you to run AWS cloud locally.
 ---
 
 ## [AWS Localstack](https://localstack.cloud/) The AWS Cloud on your local machine `OPTIONAL`
