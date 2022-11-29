@@ -1,5 +1,5 @@
 ---
-title: "Ortelius Application Challenges Guide"
+title: "Required Tools for Contributing to Ortelius"
 linkTitle: "Ortelius Contributor Guide"
 weight: 2
 description: >
