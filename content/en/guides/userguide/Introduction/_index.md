@@ -9,7 +9,7 @@ description: >
 
 Ortelius is an open source, supply chain evidence catalog for publishing, versioning and sharing microservices and other _Components_ such as DB objects and file objects. Ortelius centralizes everything you need to know about a component-driven architecture including _Component level_ ownership, SBOMs, vulnerabilities, dependency relationships, key values, deployment metadata, consuming applications and versions. Ortelius harvests information from the DevOps pipeline centralizing supply chain data across tools and teams. 
 
-![Supply Chain Catalog](/supplychaincatalog.png/)
+![Supply Chain Catalog](static/supplychaincatalog.png/)
 
 
 Ortelius visualizes ‘logical’ application versions in a cloud-native architecture providing a clear view of the software supply chain and their consumers. With this _Component_ level information, Ortelius can easily aggregate metadata up to the 'logical' application producing application level SBOMs, CVEs, audit reports, deployment inventory and status. 
