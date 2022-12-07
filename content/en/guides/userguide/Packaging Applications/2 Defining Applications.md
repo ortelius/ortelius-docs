@@ -61,9 +61,22 @@ The Dashboard view displays all information related to a specific _Application B
 |**Created** | The date the _Application_ was added. |
 |**Modified** | The date the _Application_ was updated. |
 
-### _Application_ Dependency Map
+### _Application_ Dependencies
 
-The Dependency Map provides a graphical view of all your _Package Components_. This will remain empty until you assign _Components_ to your _Application_. Do this by using the _Package Components_ tab at the top of your _Application_ Dashboard.
+The Dependency list shows all of your _Package Components_. This will remain empty until you assign _Components_ to your _Application_. You can manually assign _Package Components_ by using the _Package Components_ tab at the top of your _Application_ Dashboard. Alternatively, the recommended method is to automate the collection of this data via a [CI/CD Command Line Interface (CLI)](/guides/userguide/integrations/ci-cd_integrations/).
+
+### Vulnerabilities
+
+Your _Application's_ vulnerabilities are derived by aggregating all of your _Package Component's_ vulnerabilities to the 'logical' _Application_ level. Vulnerabilities are displayed based on each _Component's_ SBOM. This data is automatically populated when one or more of your _Package Components_ have an SBOM that produced vulnerability data. 
+
+>Note - This list may be incomplete if one or more of your _Package Components_ do not have an associated SBOM that can be used to gather vulnerability data. 
+
+### SBOM
+
+Your _Application's_ SBOM is derived by aggregating all of your _Package Component's_ SBOMs to the 'logical' _Application_ level.  
+
+>Note - This list may be incomplete if one or more of your _Package Components_ do not have an associated SBOM.
+
 
 ### Log History
 
@@ -71,13 +84,17 @@ _Applications_ can be deployed many times, to the same or different locations (_
 
 {{% include "guides/userguide/reusable/Attributes.md" %}}
 
-### Assigned Environments
+### Trends
 
-Each _Application Base Version_ is assigned the _Environments_ to which they will be deployed. _Application Versions_ inherit the _Environments_ from the _Application Base Version_. By using the "+Add this Application to an Environment to enable Deployments" option, you can add _Environments_ where the _Application_ is to be deployed. You can assign the _Application_ to as many _Environments_ as needed.  The Detail field will contain a link to the deployment Log for the last _Environment_ where the _Application_ was deployed.
+The Trends graph shows the success or failure rates overtime as well at the time required for the last 10 deployments. If an _Application_ deployment takes longer than previous deployments, there is an issue with the deployment logic.
+
+### Deployed Environments
+
+When you record deployments via the Ortelius CLI, you can capture deployment data showing which _Application Versions_ have been deployed an _Environment_.
 
 ### Last Deployment Difference Based on Environment
 
-The Difference Graph shows what changed in the last deployment between the previous deployment. For the _Application Base Version_ all _Components_ will be shown.  Subsequent deployments will only show  changes.
+When tracking versions, the Difference Graph shows what changed in the last deployment between the previous deployment. 
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
@@ -90,10 +107,6 @@ The Difference Graph shows what changed in the last deployment between the previ
 | **View** | Any _User_ in any _Group_ within this list can see the selected _Component_ in the List View. |
 | **Change** | Any _User_ in any _Group_ within this list can make changes to the _Component_. |
 | **Deploy** | Any _User_ in any _Group_ within this list can deploy the _Application_.  Restrictions are based on the Access defined at the _Environment_ level. |
-
-### Trends
-
-The Trends graph shows the success or failure rates overtime as well at the time required for the last 10 deployments. If an _Application_ deployment takes longer than previous deployments, there is an issue with the deployment logic.
 
 
 ## Package Components Tab

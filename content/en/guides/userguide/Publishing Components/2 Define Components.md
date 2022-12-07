@@ -62,6 +62,7 @@ The following fields are common to all _Components_:
 | --- | --- |
 | **Service Owner** | The owner of the _Component_, whose default value is the creator of the _Component_.  |
 | **Service Owner Email** | The email of the owner. Important for knowing who to contact in the case of an anomaly. |
+| **Service Owner Phone** | The phone number of the owner. |
 | **PagerDuty Business Service URL** | Enter the address to the PagerDuty page that is associated to the business service for this _Component_.|
 | **PagerDuty Service URL** | Enter the address to the PagerDuty page that is associated to the _Component_ itself.|
 | **Slack Channel** | Enter what Slack Channel that can be used to report issues about this _Component_.|
@@ -118,26 +119,6 @@ Database _Components_ are used for making database updates such as table changes
 | **Rollback Target Directory** | The directory under the Base Directory where the Rollback file will be deployed, or final "Target" Directory. See [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted. |
 | **Rollback Repository** | Choose the Repository that contains your Roll Forward SQL. This list box is populated based on the _Repositories_ pre-defined in your initial setup. Based on the _Repository_ you select, you may be provided override or append fields if they were made available. For more information on _Repositories_ see [Connecting Your Repositories](/guides/userguide/first-steps/2-define-repositories/#using-the-repository-dashboard-for-viewing-and-editing).<ul><li>Filepath Override: Enter a filepath that will override the default filepath defined at the _Repository_ level.</li><li>Pattern Override: Enter a pattern that will override the default pattern defined at the _Repository_ level.  Patterns are file types you want to pull from the _Repository_, such as \*.exe, \*.dll, \*.war. </li><li>Recursive Override: Select the box in order to override the default recursive behavior defined at the _Repository_ level. This will turn recursion on or off depending on the setting at the _Repository_ level. </li><li>Version Override: Overrides the default template of your versioning pattern defined at the _Repository_ level. </li></ul> |
 
-### Formatting of the Deployment Directory with Base and Target Directories for Database and Application File Deployments
-
-You must define the directory where your _Component_ file is going to be deployed on your _Endpoint_.  This is the purpose of your _Component_ Base and Target Directories. The Base Directory is the high level directory, the Target Directory is the lower level, or final "Target" directory.  _Endpoints_ may be managed by a System Administrator who may want to force the use of a particular Base Directory on the _Endpoint_.  If so, this directory can be set at the _Endpoint_ Base Directory and override the _Component_ level Base Directory.  When a deployment occurs, the process will check to see if the _Endpoint_ has a Base Directory defined, and will replace the _Component_ Base Directory with the _Endpoint_ Base Directory to create the full path for the deployment.
-
-Below is how the full file deployment path is formatted:
-
-| Component Base Directory Value| Component Target Directory Value | Endpoint Base Directory Value| Result |
-|---|---|---|---|
-| Has Value | Null | Null | The files will be placed in the _Component_ Base Directory. |
-| Null | Has Value | Null | The files will be placed in the _Component_ Target Directory. |
-| Null | Null | Has Value | The files will be placed in the _Endpoint_ Base Directory. |
-| Null | Has Value | Has Value | The files will be placed in the Endpoint Base Directory + Component Target Directory. |
-| Has Value | Null | Has Value | The files will be placed in the _Endpoint_ Base Directory. |
-| Has Value | Has Value | Null | The files will be placed in the Component Base Directory + Component Target Directory. |
-| Has Value | Has Value |Has Value| Endpoint Base Directory + Component Target Directory. |
-| Null | Null | Null | Deployment will fail. |
-
-## _Component_ Dependency Map
-
-The Dependency Map provides a graphical view of all _Applications_ that is consuming this _Component_. This will remain empty until your  _Component_ is used by an an _Application_.
 
 ## _Endpoints_
 
@@ -153,74 +134,31 @@ A map showing all _Environments_ where the _Component_ is deployed.
 
 This section shows a list of all _Applications_ that are consuming this _Component_.
 
-## Associate a Readme to Your Component
+## Component Readme 
 
-Give your users more information about your Container, Application File or Database Component. You can upload an external readme file to provide any information that you need to convey to your potential consumers. Use the 'Upload' option to select a file. It must be in text format.
+Give your users more information about your Container, Application File or Database Component. You can upload an external readme file to provide any information that you need to convey to your potential consumers. Use the 'Upload' option to select a file. It must be in text format. You can also automate the upload - see below.
 
-### Upload Readme via the Command Line
-
-You can also use the Command Line Interface (CLI) to automatically update the readme. This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your readme file via the pipeline.
-
- ~~~bash
-  --compattr readme:<filename> 
-  ~~~
-  
-## Associate API Definitions to Your Component
-
-Publish your API definitions to provide further information about your restful APIs and the parameters needed. Ortelius takes your .json or .yaml file and renders it using [Swagger](https://swagger.io/). Use the 'Upload' option to associate your .json or .yaml file to that specific _Component Version_. 
-
-### Upload API Definition via the Command Line
-
-You can automate the update of your API Definitions using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process and keeping the information accurate. As you update your API, the new version information should also be updated.  Use the following command line syntax to automate the update of your API Definitions file via your pipeline.
-
- ~~~bash
- --compattr swagger:<filename> 
-  ~~~
-
-## Associate CVE Issues to Your Component
-
-There are open source and proprietary tools to scan Docker images and source code for common vulnerabilities and exposures (CVE) with a light weight Bill of Material.Ortelius supports [Python Safety](https://pyup.io/safety/) and [CycloneDX](https://cyclonedx.org/).
  
-Each version of your Docker image may have different CVE reporting. Ortelius does not scan your Docker images, it instead consolidates the scanned reports from Safety or CycloneDX. You can add these external tools during the Docker build process and produce a report that can be imported into Ortelius associating a report for every version of your image. Use the 'Upload' option to select the file which was produced by Safety or CycloneDX.
+## Component Swagger
 
-### Upload CVE Issues via the Command Line
+Publish your Swagger API definitions to provide further information about your restful APIs and the parameters needed. Ortelius takes your .json or .yaml file and renders it using [Swagger](https://swagger.io/). Use the 'Upload' option to associate your .json or .yaml file to that specific _Component Version_. You can also automate the upload - see below.
 
-You can automate the update of your CVE Issues using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your API Definitions file.
+## Component SBOM
 
-~~~bash
- --deppkg <type>@<filename> 
-  
-Type can be either 'safety' or 'cyclonedx'.    
-~~~
+Publish your Component's SBOM to show packages and licenses your Component is consuming. SBOMs are required for populating the CVEs. 
 
-## Associating License Consumption to Your Component
+## Component Vulnerabilities  
 
-There are open source and proprietary tools to scan Docker
-images and source code for all licenses being consumed. Ortelius supports [Python Safety](https://pyup.io/safety/) and  [CycloneDX](https://cyclonedx.org/).  
+Component vulnerabilities are based on your SBOM. Every thirty minutes, Ortelius updates the Component vulnerabilities based on OSV.Dev. For more information refer to [OSV.Dev section](/guides/userguide/integrations/osvdev/) of this documentation. 
 
-Each version of your Docker image may have different License Consumption report. Ortelius does not scan your Docker images, it instead consolidates the scanned reports from Safety or CycloneDX. You can use these external tools during the Docker build process and produce a report that can be imported into Ortelius associating a report for every version of your image. Use the 'Upload' option to select the file which was produced by Safety or CycloneDX.
-
-### Upload License Consumption via the Command Line
-
-You can automate the update of your License Consumption information using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your License file.
-
- ~~~bash
- --deppkg <type>@<filename> 
-  
-Type can be either 'safety' or 'cyclonedx'.    
-~~~
-
-## License
+## Component License
 
 Report the license associated with your code base for your _Component_. Use the 'Upload' option to import your License file into Ortelius. The file must be in a text format.
+ 
 
-### Upload License via the Command Line
+## Automate the Readme, SBOM, License, and Swagger Upload via Your Pipeline. 
 
-You can automate the update of your License information using the Command Line Interface (CLI). This is useful for integrating into your CI/CD process. Use the following command line syntax to automate the update of your License file.
-
-~~~bash
- --compattr License:<filename> 
-~~~
+You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI integration document](https://docs.ortelius.io/guides/userguide/integrations/ci-cd_integrations/). 
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
@@ -240,3 +178,7 @@ Create _Component Versions_ that are patterned after the _Component Base Version
 ## Publish New _Component Versions_ automatically via Continuous Delivery
 
 Configure a continuous delivery system to automatically update new _Component Versions_ each time a new GitCommit triggers the workflow process.  Add Ortelius to the workflow to perform the continuous versioning of new _Components_ and their consuming _Applications_.  For more information, see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).
+
+## _Component_ Dependency Map
+
+The Dependency Map provides a graphical view of all _Applications_ that is consuming this _Component_. This will remain empty until your  _Component_ is used by an an _Application_.
