@@ -47,6 +47,8 @@ Let’s clone the sample application that we’ll be using in this module to our
    sudo apt install npm
    ```    
    This command will also install the nodejs.
+  - In your project directory, run `npm install`. It will install all the
+   dependencies from `package.json` file.
  - Now go to your project directory and run `npm start`. It will start
    your application in `localhost:3000`
 ![react Tab](/react_app.png)
