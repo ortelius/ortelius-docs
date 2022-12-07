@@ -1,7 +1,7 @@
 ---
-title: "Passing Your SBOMs to Ortelius"
-linkTitle: "Passing Your SBOMs to Ortelius"
-weight: 71
+title: "SBOMs and Ortelius"
+linkTitle: "SBOMs and Ortelius"
+weight: 307
 description: >
   Passing Your SBOMs to Ortelius
 ---

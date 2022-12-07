@@ -1,7 +1,7 @@
 ---
 title: "CircleCI Deployment Orb"
 linkTitle: "CircleCI Deployment Orb"
-weight: 58
+weight: 301
 description: >
   Using the CircleCI Orb with Ortelius.
 ---
@@ -20,7 +20,7 @@ The Ortelius CircleCI Orb calls Ortelius to perform:
 | **microservice_version_update_job** |  Automatically increments the version number of a microservice and the application prior to deployment.  Tracks dependency relationships between microservices and applications to create dependency maps.|
 | **deploy_job**| Deploys an application version to a specified environment. CircleCI will pass the application version name and environment to Ortelius.|
 | **envscript_job**| Generates a script that captures additional information from CircleCI, Git and Environment TOML file.  This script is used in subsequent steps for adding additional information to Ortelius. |
-| **approve_job** | Supported for DeployHub Pro users. Allows CircleCI to call Ortelius' approval process to approve an application version to be moved to the next stage of the pipeline.  The approval occurs as the UserID is passed from CircleCI to Ortelius. Depending on your Ortelius configuration, you may need to call the ApproveJob. This would happen if an approval gate is defined in Ortelius.  CircleCI will pass the application version and the 'Move' task to Ortelius.|
+
 
 You do not need to use the 'approve_job 'or 'move_job' functions. The use of these jobs is determined by how you define your CircleCI pipeline.  If you are using Approvals in CircleC, the approve_job records the approval information as part of the microservice deployment meta.  A 'Move' process tracks where the microservice and application versions are in the pipeline.  You would generally perform a 'Move' and then a 'Deploy.'  Using the microservice_version_update_job is recommended before the deploy_job.  This allows Ortelius to perform your versioning, configuration management, dependency mapping and comparisons.  The deploy_job calls on Ortelius' back in release engine to move the objects to endpoints (clusters for example.)
 
