@@ -2,7 +2,9 @@
 
 In order to continuously gather pipeline intelligence, Ortelius must become part of your pipeline. Ortelius integrates into your CI/CD process using the Ortelius Command Line (CLI). The Ortelius CLI gathers supply chain data based on a single pipeline workflow at the build and deploy steps. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to.
 
-[Download the complete Ortelius POC Document](/Ortelius-General-Poc.pdf)
+For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results.
+
+You can complete a POC setup using Ortelius integrated into your Pipeline. [Download the complete Ortelius POC Document](/Ortelius-General-Poc.pdf) to get started. 
 
 ### Install the Ortelius CLI
 Install the Ortelius CLI to complete your POC. Install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions.  
