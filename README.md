@@ -6,7 +6,7 @@ Ortelius is an Open Source Project that maps your microservice configurations wi
 
 Ortelius is a package that helps with continuous microservices management. Ortelius, named after Abraham Ortelius, the inventor of the first atlas, helps trace the connections between services to improve an ecosystem’s visibility. To get an idea of how it behaves, consider an e-commerce store. To reach an evolvable microservices pipeline, each microservice should be independently deployable with its own workflow. For example, an e-commerce store may require a product microservice, payment microservice and an authentication microservice. These reusable components are independently deployable but rely upon one another to function as a whole. At a macro scale, an enterprise with thousands of inter-application dependencies would visually resemble a constellation of nodes. An extreme example of this may resemble the Netflix Death Star, a mass conglomeration of intersecting points. Ortelius grants transparency into an otherwise tangled mess as an “internal marketplace for microservices,” said Ragan
 
-# Benefits
+## Benefits
 
 By streamlining the microservices journey in this way, repos will be broken out and teams no longer go through one big long workflow. According to Ragan, the visibility garnered from this method could help organizations in multiple other ways:
 
