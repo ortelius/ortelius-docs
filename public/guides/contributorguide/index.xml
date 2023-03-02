@@ -1,0 +1,528 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ortelius User Guide and API Reference – Ortelius Contributor Guide</title>
+    <link>/guides/contributorguide/</link>
+    <description>Recent content in Ortelius Contributor Guide on Ortelius User Guide and API Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/guides/contributorguide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Welcome</title>
+      <link>/guides/contributorguide/getting-started/welcome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/getting-started/welcome/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;/otelius-transparent.jpg&#34; alt=&#34;Ortelius Logo&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;welcome-to-the-ortelius-project&#34;&gt;Welcome to the Ortelius Project&lt;/h2&gt;
+&lt;p&gt;Have you ever wanted to contribute to the coolest cloud technology? Well here is your chance. The Ortelius Open Source Project&amp;rsquo;s mission is to simplify the adoption of modern architecture through a world-class microservice management platform driven by a supportive and diverse global open source community. Watch this video on how to get started.&lt;/p&gt;
+&lt;div style=&#34;width:30%&#34;&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Y4kR6ipipxA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;/div&gt; 
+&lt;h3 id=&#34;what-is-ortelius&#34;&gt;What is Ortelius?&lt;/h3&gt;
+&lt;p&gt;Ortelius is a microservice catalog that centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers.&lt;/p&gt;
+&lt;p&gt;Ortelius is managed by the &lt;a href=&#34;https://cd.foundation&#34;&gt;Continuous Delivery Foundation&lt;/a&gt; a specialty foundation under the Linux Foundation.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-in-this-guide&#34;&gt;What is in this Guide?&lt;/h2&gt;
+&lt;p&gt;This guide will help you understand the overall organization of the  Ortelius project, and help you get started as a contributor. And anyone can contribute. You don&amp;rsquo;t have to be a &amp;lsquo;coder.&amp;rsquo;  Your expertise in technical writing, outreach, project management and marketing are also needed.  And if you do want to code, this guide will help you find issues, write code to fix them, and get your work reviewed and merged.&lt;/p&gt;
+&lt;h2 id=&#34;where-did-the-name-ortelius-come-from&#34;&gt;Where did the Name Ortelius Come from?&lt;/h2&gt;
+&lt;p&gt;Abraham Ortelius made his name by collecting data from scientists, geographers, and cartographers of his time and transforming it into what the world now knows as a world Atlas. His Atlas, titled &lt;em&gt;Theatrum Orbis Terrarum&lt;/em&gt; (Theatre of the World), was published on May 20, 1570. His Atlas disrupted the way the world was seen, with the first concepts imagining continental drift. Also of interest are the sea monsters shown in the water – mythical creatures that were a subject of fascination in Ortelius’ generation.&lt;/p&gt;
+&lt;p&gt;Ortelius also in some ways created on open source community of his day. To accomplish his goal, he was the first cartographers to give credit to his fellow scientists by adding their names to the Atlas. Ortelius was known to have corresponded with other professionals throughout Europe and pulled together their knowledge to create his publication and a truly global view of the world.&lt;/p&gt;
+&lt;p&gt;Thank you Abraham Ortelius for showing us the way.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Required Tools for Contributing to Ortelius</title>
+      <link>/guides/contributorguide/application-build-and-containerisation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/application-build-and-containerisation/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Things You Should Know</title>
+      <link>/guides/contributorguide/things-to-know/things-to-know/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/things-to-know/things-to-know/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Before submitting code to Ortelius, there are a few things you should know. From completing a contributor license agreement to understanding the different levels of participation, the below information will help you get started.&lt;/p&gt;
+&lt;h3 id=&#34;sign-the-cla&#34;&gt;Sign the CLA&lt;/h3&gt;
+&lt;p&gt;If you would like to contribute code, documentation content, blogs or graphics you will need to complete the &lt;a href=&#34;https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor&#34;&gt;Linux Foundation Ortelius Individual Easy Contributor License Agreement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If your organization would like to become a contributing organization, please have the appropriate individual complete the &lt;a href=&#34;https://docs.linuxfoundation.org/lfx/easycla/contributors/corporate-contributor&#34;&gt;Linux Foundation Ortelius Corporate Easy Contributor License Agreement&lt;/a&gt;. We welcome organizations of any size to be part of solving the microservice puzzle and encourage you to get your organization involved.&lt;/p&gt;
+&lt;h3 id=&#34;read-the-code-of-conduct&#34;&gt;Read the Code of Conduct&lt;/h3&gt;
+&lt;p&gt;Just as all open source communities, Ortelius has a &amp;lsquo;Code of Conduct.&amp;rsquo; Please make sure to read and observe the &lt;a href=&#34;https://ortelius.io/guidelines/#community-code-of-conduct&#34;&gt;Code of Conduct and Community Values&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;register-to-the-google-groups-and-join-discord&#34;&gt;Register to the Google Groups and Join Discord&lt;/h3&gt;
+&lt;p&gt;Read the community meeting notes, watch meeting recordings and join the Ortelius Discord channel. This is the best way to get caught up and start a conversation with the team.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://groups.google.com/g/ortelius-dev&#34;&gt;Google Groups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discord.gg/ZtXU74x&#34;&gt;Join Discord&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLjQ1l9KZoIQ1hQrOBPug-7blZQKBdTyzA&#34;&gt;Recorded General Community Meetings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLjQ1l9KZoIQ06w9xPc6XxuyV7yTLdgp9I&#34;&gt;Recorded Architecture and Marketplace SIG&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLjQ1l9KZoIQ0T8BUt2G1kPNVsxSfVPWtk&#34;&gt;Recorded Outreach SIG&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;learn-the-community-expectations-and-roles&#34;&gt;Learn the Community Expectations and Roles&lt;/h3&gt;
+&lt;p&gt;Ortelius is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.  Our contributors fit into 3 basic categories: Casual, Regular and Core.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;User Contributors:&lt;/strong&gt; Adopting Ortelius, finding bugs, opening tickets, helping others, creating blogs, and providing feedback are the main tasks of User Contributors. Users Contributors are the heartbeat of the Ortelius Community.  Your involvement at this level drives the Ortelius road map.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Member Contributors:&lt;/strong&gt;
+Working on support tickets is one of the main jobs of the Member Contributor. Member Contributors want to contribute further to the project and will assign themselves support tickets and begin to review pull request. In addition, sharing use cases, providing feedback for potential feature enhancements, and social networking about Ortelius are a few ways the Member Contributor can participate.  Member Contributors are an important group of individuals as they are the most influential group of contributors. Member Contributors should plan on attending the General Community Meetings monthly to keep up to date with the progress of Ortelius.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reviewer Contributors:&lt;/strong&gt;
+Reviewing the Member Contributor pull request, attending meetings on a monthly to bi-monthly basis, stepping up to help with working group tasks, and fixing issues best describe the activities that can qualify you as Reviewer Contributor. Reviewer Contributors complete a large part of the work that needs to be done to keep the Ortelius project relevant to the broader IT community. Your participation at this level is key to the success of the project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Approvers Contributors:&lt;/strong&gt;
+Approvers Contributors are individuals that have developed a level of expertise and provide a final approval of pull request.  In addition they develop product enhancements, create documentation, develope on-line videos and tutorial content.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chairs:&lt;/strong&gt;
+Providing additional project management support, distribute issues to beginners, manage meetings and recordings are the jobs performed by the Chairs. Chairs need to attend most meetings and help new Contributors be successful.&lt;/p&gt;
+&lt;p&gt;You are encouraged to participate at all levels. You can move up the ladder as your personal time allows.&lt;/p&gt;
+&lt;h2 id=&#34;understand-submittal-reviews&#34;&gt;Understand Submittal Reviews&lt;/h2&gt;
+&lt;p&gt;All submissions, from code to content will require a review. Where possible GitHub pull requests will be used for this purpose. Consult &lt;a href=&#34;https://help.github.com/articles/about-pull-requests/&#34;&gt;GitHub Help&lt;/a&gt; for more information on using pull requests.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Community Membership</title>
+      <link>/guides/contributorguide/community-membership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/community-membership/</guid>
+      <description>
+        
+        
+        &lt;p&gt;There are many ways to contribute to the Ortelius project. Here are the various levels of involvement and how to get there!&lt;/p&gt;
+&lt;h2 id=&#34;user&#34;&gt;User&lt;/h2&gt;
+&lt;p&gt;Try out Ortelius with the &lt;a href=&#34;https://www.deployhub.com/deployhub-team/&#34;&gt;SaaS version hosted by DeployHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open an issue for any gaps in the documentation that you encounter.&lt;/li&gt;
+&lt;li&gt;File a bug when unexpected things happen.&lt;/li&gt;
+&lt;li&gt;Take a look at some of our open proposals and provide feedback.&lt;/li&gt;
+&lt;li&gt;Answer questions of other users in the community.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;member&#34;&gt;Member&lt;/h2&gt;
+&lt;p&gt;Project members are people who use are interested in contributing further.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Assign issues to yourself.&lt;/li&gt;
+&lt;li&gt;Review a pull request and apply the &lt;code&gt;/lgtm&lt;/code&gt; command that signals that it&amp;rsquo;s ready for final approval.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once you feel ready, ask another member if they would be willing to be a sponsor for your membership request.&lt;/p&gt;
+&lt;p&gt;The best people to ask are those who have reviewed your pull requests in the past. When you request membership, make sure to ask for the &lt;code&gt;ortelius&lt;/code&gt; organization.&lt;/p&gt;
+&lt;p&gt;If you aren&amp;rsquo;t sure if you are ready, or need help finding sponsors, reach out to the current &lt;a href=&#34;https://ortelius.io/contributor&#34;&gt;chairs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;reviewer&#34;&gt;Reviewer&lt;/h2&gt;
+&lt;p&gt;After you have contributed to an area of Ortelius for a while, you may ready help review pull requests either in just that area, or for the entire repository.&lt;/p&gt;
+&lt;p&gt;Reviewers have an entry in the &lt;em&gt;OWNERS&lt;/em&gt; file in the different Ortelius repositories indicating that they are a good candidate to be
+automatically assigned or suggested as a reviewer for that area of code.&lt;/p&gt;
+&lt;p&gt;If you are willing to review PRs in a particular area, submit a PR adding your GitHub name to the OWNERS file in the sub-directory of that area in a &lt;code&gt;reviewers&lt;/code&gt; section.&lt;/p&gt;
+&lt;h2 id=&#34;approver&#34;&gt;Approver&lt;/h2&gt;
+&lt;p&gt;Approvers are experienced reviewers and contributors.  They are represented by an approver entry in the &lt;em&gt;OWNERS&lt;/em&gt; file in the repository for a particular area. They are responsible for the final review of a pull request and signing off that the pull request is ready to merge.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review a pull request and apply the final &lt;code&gt;/approve&lt;/code&gt; command that signals that the pull request is ready to merge.&lt;/li&gt;
+&lt;li&gt;An approver may decide to apply both the &lt;code&gt;/lgtm&lt;/code&gt; and &lt;code&gt;/approve&lt;/code&gt; commands. This  sometimes is a good choice for small non-controversial pull requests where there aren&amp;rsquo;t other people who should be consulted first.&lt;/li&gt;
+&lt;li&gt;Our repository is configured to require both the &lt;code&gt;lgtm&lt;/code&gt; and &lt;code&gt;approved&lt;/code&gt; labels before merging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you feel that you are ready to become a maintainer, reach out to a &lt;a href=&#34;https://ortelius.io/become-a-contributor&#34;&gt;chair&lt;/a&gt; and they will help sponsor you. Maintainers are added approval by the chairs.&lt;/p&gt;
+&lt;h2 id=&#34;chair&#34;&gt;Chair&lt;/h2&gt;
+&lt;p&gt;Chairs are maintainers who also perform extra project management and administrative work for the project such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Facilitating the SIG meetings and recording them.&lt;/li&gt;
+&lt;li&gt;Grooming the backlog.&lt;/li&gt;
+&lt;li&gt;Finding issues that are good for beginners and ensuring that issues are  appropriately explained and labeled.&lt;/li&gt;
+&lt;li&gt;Representing the SIG at Ortelius community standup meetings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are interested in becoming a chair, reach out to a &lt;a href=&#34;https://ortelius.io/become-a-contributor&#34;&gt;chair&lt;/a&gt; and they will help sponsor you. Chairs are added by approval from the other chairs.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Development Environment Setup</title>
+      <link>/guides/contributorguide/dev-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/dev-environment/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Developer Resources</title>
+      <link>/guides/contributorguide/developer-resouces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/developer-resouces/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;developer-tools&#34;&gt;Developer Tools&lt;/h2&gt;
+&lt;p&gt;The following developer tools will be needed for you to contribute to Ortelius code or documentation:&lt;/p&gt;
+&lt;h3 id=&#34;editors&#34;&gt;Editors&lt;/h3&gt;
+&lt;p&gt;Any of the following Markdown editors can be used:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; with following extensions:
+&lt;ul&gt;
+&lt;li&gt;Markdown Preview Enhanced - Yiyi Wang&lt;/li&gt;
+&lt;li&gt;markdownlint - David Anderson&lt;/li&gt;
+&lt;li&gt;Docker - Microsoft&lt;/li&gt;
+&lt;li&gt;Docsy - Etienne Dldc&lt;/li&gt;
+&lt;li&gt;Go - Go Team at Google&lt;/li&gt;
+&lt;li&gt;Python - Microsoft&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/download/&#34;&gt;PostgreSQL&lt;/a&gt; - list of different distrubitions of PostgreSQL tool
+&lt;ul&gt;
+&lt;li&gt;This is complete package which include PostgreSQL Server, pgAdmin 4, Stack Builder and Command Line Tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/ftp/pgadmin/pgadmin4/&#34;&gt;pgAdmin&lt;/a&gt; - here you can find list of different versions of pgAdmin tool&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;testing-environment&#34;&gt;Testing Environment&lt;/h3&gt;
+&lt;p&gt;To setup your environment to create a runtime test environment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;Docker&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://helm.sh/docs/intro/install/&#34;&gt;Helm&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GCloud&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Azure&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set local test database &lt;a href=&#34;https://github.com/ortelius/test-database&#34;&gt;(Link to source)&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Default userid and password are &lt;code&gt;admin&lt;/code&gt; / &lt;code&gt;admin&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the image:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Pull the image&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker pull quay.io/ortelius/test-database:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find the image id&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker image ls quay.io/ortelius/test-database:latest --format &amp;#34;{{.ID}}&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create the volume to persist the database&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker volume create pdata
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the image a expose the Postgres port to the outside world&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -it -p 9876:5432 -v pgdata:/var/lib/postgresql/data &amp;lt;id_from_step_2&amp;gt;`
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The database in the above example will be accessible on port 9876.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Userid: postgres&lt;/li&gt;
+&lt;li&gt;Password: postgres&lt;/li&gt;
+&lt;li&gt;Database: postgres&lt;/li&gt;
+&lt;li&gt;Schema: dm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Container Structure Test&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The image also has a minimal &lt;a href=&#34;https://github.com/GoogleContainerTools/container-structure-test&#34;&gt;container-structure-test&lt;/a&gt; setup.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This is run as part of the cloud build, and can also be run locally on MacOS/Linux/WSL:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;container-structure-test test --image=quay.io/ortelius/test-database:latest --config=cst/config.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+&lt;p&gt;To submit issues and manage pull request:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads/guis/&#34;&gt;Git GUIs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Getting started with a Pull Request can be tricky. There are a lot of small steps that need to be done in the right order otherwise you may get hung up on a strange error. The nice thing with Git is that its really hard to permanently loose your work.  Check out the &lt;a href=&#34;https://docs.ortelius.io/guides/contributorguide/pull-request-cheat-sheet/&#34;&gt;PR Cheat Sheet&lt;/a&gt; for the steps on doing a Pull Request. Go through this before starting any changes since a proper setup will make the merge easier down the road.&lt;/p&gt;
+&lt;h3 id=&#34;communication&#34;&gt;Communication&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://discord.gg/ZtXU74x&#34;&gt;Discord Channel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: How To Tips</title>
+      <link>/guides/contributorguide/how-to/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/how-to/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;opening-an-issue&#34;&gt;Opening an Issue&lt;/h2&gt;
+&lt;p&gt;GitHub Issues are used to track all bugs, enhancement requests, and &amp;ldquo;todos.&amp;rdquo;  Ortelius is spread across many repositories so the &lt;a href=&#34;https://github.com/ortelius/ortelius&#34;&gt;ortelius/ortelius&lt;/a&gt; repo is used for all issues.  Issues should have a link, using markdown &lt;code&gt;[]()&lt;/code&gt; link format, to the true repository in which the bug, enhancement, or &amp;ldquo;todos&amp;rdquo; needs to be made.&lt;/p&gt;
+&lt;p&gt;Please be detailed in your description of the issue.  Not everything needs to go in the summary line.  Feel free to use the description area to provide additional details.&lt;/p&gt;
+&lt;h2 id=&#34;making-documentation-changes&#34;&gt;Making documentation changes&lt;/h2&gt;
+&lt;p&gt;Documentation is stored in &lt;a href=&#34;https://github.com/ortelius/ortelius-docs&#34;&gt;ortelius/ortelius-docs&lt;/a&gt;.  The documentation is served up by a &lt;a href=&#34;https://www.docsy.dev/docs/getting-started/&#34;&gt;hugo/docsy&lt;/a&gt; server.  You can run this server locally to view your changes before committing to Github.&lt;/p&gt;
+&lt;p&gt;The documentation is managed in two Guides - a &lt;a href=&#34;http://docs.ortelius.io/guides/&#34;&gt;User Guide and a Contributor Guide.&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;setup-for-documenation-updates&#34;&gt;Setup for Documenation updates&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.docsy.dev/docs/getting-started/&#34;&gt;Install hugo&lt;/a&gt; locally.  If you are on Windows make sure to install the extended packages as well.&lt;/li&gt;
+&lt;li&gt;Fork the &lt;a href=&#34;https://github.com/ortelius/ortelius-docs&#34;&gt;ortelius/ortelius-docs&lt;/a&gt; to your GitHub account.&lt;/li&gt;
+&lt;li&gt;Clone the new repo to your computer.&lt;/li&gt;
+&lt;li&gt;Launch an editor such as &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt;.  Make sure the &lt;em&gt;Markdown Preview Enhanced by Yiyi Wang&lt;/em&gt; is installed.  This will give you a split screen of the markdown and the rendered version.&lt;/li&gt;
+&lt;li&gt;The markdown files can be found under the &lt;code&gt;content/en/guides/contributorguide&lt;/code&gt; (this guide) and the &lt;code&gt;content/en/guides/userguide&lt;/code&gt; (the end user guide).&lt;/li&gt;
+&lt;li&gt;Start your hugo server.  Open a command prompt and cd to your local git repo directory.  From the root of the repo run &lt;code&gt;hugo server&lt;/code&gt;.  This will start the local hugo server running.  The pages can be viewed in your browser using the &lt;code&gt;http://localhost:1313/guides&lt;/code&gt; url.&lt;/li&gt;
+&lt;li&gt;Next make a documentation change.  This change will automatically be seen in the Visual Studio Code - Markdown Preview Enhanced window.  Also, the hugo server will automatically render the changed markdown page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: Visual Studio is only a preview and will not render all markdown updates such as embedded html.  You will need to view the pages being hosted by the hugo server in your browser for an accurate rendering.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.markdownguide.org/cheat-sheet/&#34;&gt;Markdown Cheat Sheet&lt;/a&gt; can be used for the basic page layout.  CSS has been applied to the Docsy theme template in order to tweak the final page rendering.&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Create a Pull Request to merge in your changes. See &lt;a href=&#34;/guides/contributorguide/pr-cheat-sheet/&#34;&gt;PR Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;making-coding-changes&#34;&gt;Making coding changes&lt;/h2&gt;
+&lt;p&gt;The Ortelius code base is stored across multiple repositories.  Ortelius was originally written as a Java Servlet application running under Tomcat.  The front end code is in Java Script using JQuery and JQuery Plugins.  The backend code is Java that accesses the Postgres database via JDBC driver.  The Ortelius Deployment Engine is written in C++.  Plugins to CI tools are written in Python and Groovy.&lt;/p&gt;
+&lt;p&gt;New enhancements are being architected to follow the microservice implementation practices.  These new microservices are written in Python or Golang and have their own separate repositories.&lt;/p&gt;
+&lt;p&gt;The goal is to move from the monolithic implementation, to hybrid and then to a pure microservice based implementation.&lt;/p&gt;
+&lt;p&gt;The Java backend code is easiest worked on using the Eclipse IDE, where as the other code can be handled with any editor such as Visual Studio Code.&lt;/p&gt;
+&lt;p&gt;A Postgres database needs to be installed for Ortelius to persist its data.  Ortelius will create the necessary database tables on startup.&lt;/p&gt;
+&lt;h3 id=&#34;steps&#34;&gt;Steps&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Fork the &lt;a href=&#34;https://github.com/ortelius/ortelius&#34;&gt;ortelius/ortelius&lt;/a&gt; to your GitHub account if you are working on the monolithic backend or frontend JS code, otherwise, for the Ortelius microservice repo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clone the new repo to your computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make the coding changes with your favorite editor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The monolithic code can be run and debug natively in Eclipse since a Tomcat Server using a connection to your local Postgres database.&lt;/p&gt;
+&lt;p&gt;The microservice code can be run and debugged natively in your editor. It will need to connect to the database over OBDC.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a Pull Request to merge in your changes. See &lt;a href=&#34;/guides/contributorguide/pr-cheat-sheet/&#34;&gt;PR Cheat Sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;creating-videos&#34;&gt;Creating Videos&lt;/h2&gt;
+&lt;p&gt;Videos are hosted on the &lt;a href=&#34;https://www.youtube.com/channel/UCw2LfF0mqkaXdvqfVnIPWmw&#34;&gt;Ortelius Youtube Channel&lt;/a&gt;.  Please contact one of the &lt;a href=&#34;https://docs.ortelius.io/guides/contributorguide/community-membership/#chair&#34;&gt;chairs&lt;/a&gt; to get access to upload to the channel.&lt;/p&gt;
+&lt;p&gt;Camtasia for Windows or HitFilm Express for OS/X can be used to edit the videos.  Training videos should be edited to remove any stumbles or pauses.&lt;/p&gt;
+&lt;p&gt;Videos Requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Must include the Ortelius &lt;a href=&#34;https://github.com/ortelius/outreach/blob/master/OrteliusOpening.mp4&#34;&gt;Opening&lt;/a&gt; and &lt;a href=&#34;https://github.com/ortelius/outreach/blob/maintenance/OrteliusClosing.mp4&#34;&gt;Closing&lt;/a&gt; Clips.&lt;/li&gt;
+&lt;li&gt;Resolution of 1040p (1920 x 1080) when possible.&lt;/li&gt;
+&lt;li&gt;Added to appropriate YouTube playlist.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-management&#34;&gt;Project Management&lt;/h2&gt;
+&lt;h3 id=&#34;trello&#34;&gt;Trello&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://trello.com/b/EzTxe83X/kanban-board-for-ortelius&#34;&gt;Kanban Board for Ortelius&lt;/a&gt; is used to track tasks spanning multiple SIGs and development efforts.  Trello cards will contain links to the GitHub issues where appropriate.&lt;/p&gt;
+&lt;h3 id=&#34;github-triage-dashboard&#34;&gt;GitHub Triage Dashboard&lt;/h3&gt;
+&lt;p&gt;Triage Dashboard &lt;a href=&#34;https://github.com/ortelius/ortelius/issues/181&#34;&gt;#181&lt;/a&gt; will be added in Q1 2021 to help with issue management.&lt;/p&gt;
+&lt;h3 id=&#34;github-labels-and-tags&#34;&gt;GitHub Labels and Tags&lt;/h3&gt;
+&lt;p&gt;GitHub issues will be label to help filter and navigate issues.&lt;/p&gt;
+&lt;h2 id=&#34;release-numbering&#34;&gt;Release Numbering&lt;/h2&gt;
+&lt;p&gt;Releases ending in ”.0” are major releases and this is where all new features land. Releases ending in another integer, like “0.X.1” and “0.X.2” are dot releases, and these are only going to contain bugfixes. Typically we don’t do dot releases for minor bugfixes (reserving these for larger items), but may occasionally decide to cut dot releases containing a large number of smaller fixes if it’s still a fairly long time before the next release comes out.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Pull Request (PR) Cheat Sheet</title>
+      <link>/guides/contributorguide/pull-request-cheat-sheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/pull-request-cheat-sheet/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;pull-request-pr-cheat-sheet&#34;&gt;Pull Request (PR) Cheat Sheet&lt;/h1&gt;
+&lt;h2 id=&#34;savoir-vivre-of-pull-requests&#34;&gt;Savoir-vivre of pull requests&lt;/h2&gt;
+&lt;p&gt;Patches for fixes, features, and improvements are accepted through pull requests. Here are some tips for contributing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Git Commit Signing to your local git install and to GitHub.  Here are the &lt;a href=&#34;https://blog.petehouston.com/sign-git-commits/&#34;&gt;config instructions&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Write good commit messages in the present tense (&amp;ldquo;Add X&amp;rdquo;, not &amp;ldquo;Added X&amp;rdquo;) with a short title, blank line, and bullet points if needed. Capitalize the first letter of the title and any bullet items. No punctuation in the title.&lt;/li&gt;
+&lt;li&gt;Include tests to improve coverage and prevent regressions.&lt;/li&gt;
+&lt;li&gt;Squash changes into a single commit per feature/fix.
+Typical steps to do that are:
+&lt;ul&gt;
+&lt;li&gt;git rebase -i HEAD~3 (the number depends on the number of commits you are squashing)&lt;/li&gt;
+&lt;li&gt;git push -u origin master &amp;ndash;force (master might not be the branch you are pushing to so make sure to change to the branch)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Whenever possible, tag your pull request with appropriate Github labels and issue numbers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; For any &lt;strong&gt;breaking changes&lt;/strong&gt; that require a major version bump, add &lt;code&gt;BREAKING CHANGE&lt;/code&gt; somewhere in the commit title or message.&lt;/p&gt;
+&lt;h2 id=&#34;terms&#34;&gt;Terms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Branch - series of commits&lt;/li&gt;
+&lt;li&gt;Clone - create a local copy of a repo&lt;/li&gt;
+&lt;li&gt;Commit - change to the repo&lt;/li&gt;
+&lt;li&gt;Downstream - this would be your repository that is forked from an Ortelius repo &lt;a href=&#34;https://github.com/sbtaylor15/ortelius-docs&#34;&gt;sbtaylor15/ortelius-docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fetch - sync a repo with another&lt;/li&gt;
+&lt;li&gt;Fork - your copy of the upstream repo&lt;/li&gt;
+&lt;li&gt;Local Repo - a repo on your computer&lt;/li&gt;
+&lt;li&gt;Pull - get changes from GitHub into your local repo&lt;/li&gt;
+&lt;li&gt;Pull Request (PR) - changes to be merged from one repo to another repo&lt;/li&gt;
+&lt;li&gt;Push - send your changes to GitHub&lt;/li&gt;
+&lt;li&gt;Rebase - rewrite commit history&lt;/li&gt;
+&lt;li&gt;Remote Repo - a repo on GitHub&lt;/li&gt;
+&lt;li&gt;Squash - combining multiple commits into one&lt;/li&gt;
+&lt;li&gt;Upstream - this would be an Ortelius repository &lt;a href=&#34;https://github.com/ortelius/ortelius-docs&#34;&gt;ortelius/ortelius-docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;working-scenarios&#34;&gt;Working scenarios&lt;/h2&gt;
+&lt;p&gt;We want to update the User Guide that is in the &lt;a href=&#34;https://github.com/ortelius/ortelius-docs&#34;&gt;ortelius/ortelius-docs&lt;/a&gt; repo.&lt;/p&gt;
+&lt;h3 id=&#34;first-pull-request&#34;&gt;First pull request&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Fork the Ortelius repo
+In GitHub click on the Fork button for the repo you want to make a copy of, i.e. &lt;a href=&#34;https://github.com/ortelius/ortelius-docs&#34;&gt;ortelius/ortelius-docs&lt;/a&gt;.  The fork will be created under
+your userid as &lt;a href=&#34;https://github.com/sbtaylor15/ortelius-docs&#34;&gt;sbtaylor15/ortelius-docs&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make a local copy of your repo &lt;a href=&#34;https://github.com/sbtaylor15/ortelius-docs&#34;&gt;sbtaylor15/ortelius-docs&lt;/a&gt;. The url for the repo is under the &lt;em&gt;Code&lt;/em&gt; button in GitHub for your repo.&lt;/p&gt;
+&lt;p&gt;From a command prompt, &lt;code&gt;cd /home/steve/repos&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Run &lt;code&gt;git clone https://github.com/sbtaylor15/ortelius-docs.git&lt;/code&gt; this will create &lt;code&gt;/home/steve/repos/ortelius-docs&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tell your local repo about the upstream and downstream repos (this only needs to be done once)&lt;/p&gt;
+&lt;p&gt;By this tep you will create &lt;code&gt;upstream&lt;/code&gt; and &lt;code&gt;downstream&lt;/code&gt; local variables which contain address of source and your forked repos. You can use them as parameters of &lt;code&gt;git&lt;/code&gt; key word.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git remote add upstream https://github.com/ortelius/ortelius-docs.git
+git remote add downstream  https://github.com/Javailabe/ortelius-docs.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;upstream&lt;/code&gt; holds &lt;code&gt;https://github.com/ortelius/ortelius-docs.git&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;downstream&lt;/code&gt; holds &lt;code&gt;https://github.com/Javailabe/ortelius-docs.git&lt;/code&gt; (that is forked repo of Javailabe user)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make a branch for your work&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /home/steve/repos/ortelius-docs
+git checkout -b maintenance
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;maintenance&lt;/code&gt; will be your branch name&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make some changes&lt;/p&gt;
+&lt;p&gt;Update the files and commit the changes back to your local branch&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git add .
+git commit -m &amp;#34;changed some files&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Do this as many time that you want.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Squash before merge&lt;/p&gt;
+&lt;p&gt;We need to collapse all of our little changes into one.  This will make merging much easier.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout master
+git log --oneline -1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grab the commit sha (hex number), i.e. d34bf46&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout -b maintenance
+git rebase -i d34bf46
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will be placed into an editor with a line for each commit.  The first column will say
+pick.  Change pick to squash from line &lt;strong&gt;2&lt;/strong&gt; to the end of the list.  Save and quit the file.&lt;/p&gt;
+&lt;p&gt;You will jump back to the command prompt for a bit while git does it work.  The editor will
+pop up again.  This is the comment for the squashed commit.  All of the comments from the
+little commit are listed.  Delete all of the lines and add a single line describing your
+changes.&lt;/p&gt;
+&lt;p&gt;If you run &lt;code&gt;git log --oneline&lt;/code&gt; you should see that there is only one new commit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update GitHub forked repo with your local changes&lt;/p&gt;
+&lt;p&gt;We can backup changes to GitHub at anytime without effecting anyone else.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push downstream
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This syncs forked GitHub repo with your local branch.  Basically, you are overriding GitHub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create your Pull Request&lt;/p&gt;
+&lt;p&gt;In GitHub, go to the upstream repo and do a new pull request.  Choose compare across
+forks.  Select your fork and master branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After the PR has been merged you need to bring your repo in sync with upstream since it has new commits&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout master
+git fetch upstream
+git rebase upstream/master
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;daily-regime&#34;&gt;Daily regime&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Sync your local repo&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git pull upstream
+git push downstream
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will download the latest version of the upstream to your local repo and after push it will update (override) your forked GitHub repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make changes&lt;/p&gt;
+&lt;p&gt;a) in case of multiple small commits it might be necessary to squash them all&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update GitHub forked repo with your local changes&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push downstream
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create your Pull Request&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After PR merging, sync your repos (step 1)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Eclipse IDE Setup</title>
+      <link>/guides/contributorguide/front-end-development/eclipse-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/front-end-development/eclipse-setup/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Ortelius&amp;rsquo; front-end runs as a Tomcat application with servlets and jsp pages serving up the UI.  The client side is written in JS with JQuery.  In order to make changes to the front-end you need to run Ortelius under Tomcat in Eclipse.  Java 8 is used as the Java runtime environment.&lt;/p&gt;
+&lt;p&gt;Postgres 9.x is used to persist the data.  Postgres will need to be pre-installed prior to setting up Eclipse Workspace.  The Postgres connection string will be set on Environment Tab for your Run and Debug Configuration for Tomcat.  Ortelius will create the necessary schema and tables if they do not exist in the database.  The default Ortelius userid and password are admin and admin.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/eclipse-version.png&#34; alt=&#34;Eclipse Version&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tomcat-server&#34;&gt;Tomcat Server&lt;/h3&gt;
+&lt;p&gt;Tomcat 7 is used to run Ortelius.  You will need to download and configure a Tomcat 7 server for your Eclipse install.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/tomcat7.png&#34; alt=&#34;Eclipse Tomcat Server&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;running-and-debugging-ortelius&#34;&gt;Running and Debugging Ortelius&lt;/h3&gt;
+&lt;p&gt;Setup a run and debug configuration for Tomcat.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/server-tab.png&#34; alt=&#34;Server Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/args-tab.png&#34; alt=&#34;Arguments Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/classpath-tab.png&#34; alt=&#34;Classpath Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/src-tab.png&#34; alt=&#34;Source Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/env-tab.png&#34; alt=&#34;Environment Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/common-tab.png&#34; alt=&#34;Common Tab&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;accessing-the-ortelius-ui-in-the-browser&#34;&gt;Accessing the Ortelius UI in the browser&lt;/h3&gt;
+&lt;p&gt;The server.xml contains the port for Tomcat.  The default is 8181.  To access Ortelius hit http://localhost:8181/dmadminweb/Home&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

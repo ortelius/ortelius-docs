@@ -1,0 +1,812 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ortelius User Guide and API Reference – Integrations</title>
+    <link>/guides/userguide/integrations/</link>
+    <description>Recent content in Integrations on Ortelius User Guide and API Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/guides/userguide/integrations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: CI/CD Support</title>
+      <link>/guides/userguide/integrations/ci-cd_integrations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/ci-cd_integrations/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;ortelius-pipeline-automation-poc&#34;&gt;Ortelius&amp;rsquo; Pipeline Automation POC&lt;/h2&gt;
+&lt;p&gt;In order to continuously gather pipeline intelligence, Ortelius must become part of your pipeline. Ortelius integrates into your CI/CD process using the Ortelius Command Line (CLI). The Ortelius CLI gathers supply chain data based on a single pipeline workflow at the build and deploy steps. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to.&lt;/p&gt;
+&lt;p&gt;For the most up to date information on the Ortelius CLI visit the &lt;a href=&#34;https://github.com/Ortelius/cli/blob/main/doc/dh.md&#34;&gt;Ortelius GitHub Repository&lt;/a&gt;. You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results.&lt;/p&gt;
+&lt;p&gt;You can complete a POC setup using Ortelius integrated into your Pipeline. &lt;a href=&#34;/Ortelius-General-Poc.pdf&#34;&gt;Download the complete Ortelius POC Document&lt;/a&gt; to get started.&lt;/p&gt;
+&lt;h3 id=&#34;install-the-ortelius-cli&#34;&gt;Install the Ortelius CLI&lt;/h3&gt;
+&lt;p&gt;Install the Ortelius CLI to complete your POC. Install the Ortelius CLI where your CI/CD server is running. Refer to the &lt;a href=&#34;https://github.com/Ortelius/cli/blob/main/doc/dh.md&#34;&gt;Ortelius GitHub CLI Documentation&lt;/a&gt; for installation instructions.&lt;/p&gt;
+&lt;h3 id=&#34;ortelius-data-gathering-using-toml&#34;&gt;Ortelius Data Gathering using .toml&lt;/h3&gt;
+&lt;p&gt;The Ortelius CLI reads from a .toml file. The .toml file contains non-derived information for each artifact that you create at your build step. In Ortelius, an artifact is referred to as a &lt;em&gt;Component&lt;/em&gt;.  A &lt;em&gt;Component&lt;/em&gt; is a Container, DB Object, or file object (.jar, Lamda Function, Apex file, etc.). The .toml file will provide the &amp;rsquo;non-derived&amp;rsquo; data for the &lt;em&gt;Component&lt;/em&gt; your are tracking in Ortelius which includes the &lt;em&gt;Component&lt;/em&gt; name, owner, &lt;em&gt;Component type&lt;/em&gt;, and owner contact details.  The Ortelius CLI will read the .toml file from the Git Repository associated to your pipeline. If you are using a Mono Repository for your entire codebase, you will need a separate Component.toml file for each &lt;em&gt;Component&lt;/em&gt;, managed in sub-directories.&lt;/p&gt;
+&lt;p&gt;In a cloud-native, microservice architecture there are many, if not hundreds, of &lt;em&gt;Components&lt;/em&gt;. Organizing your &lt;em&gt;Components&lt;/em&gt; within Ortelius is done in two ways. They are grouped based on a subject &lt;em&gt;Domain&lt;/em&gt; and assigned to a logical &lt;em&gt;Application&lt;/em&gt;. Not all &lt;em&gt;Components&lt;/em&gt; need to be assigned to an &lt;em&gt;Application&lt;/em&gt;, but they should be stored in a subject matter &lt;em&gt;Domain&lt;/em&gt; so they can be easily found and reused.&lt;/p&gt;
+&lt;p&gt;A logical &lt;em&gt;Application&lt;/em&gt; is a collection of &lt;em&gt;Components&lt;/em&gt; that make up a complete software systems consumed by an end user. Applications are composed of shared &lt;em&gt;Components&lt;/em&gt; and &lt;em&gt;Application&lt;/em&gt; specific &lt;em&gt;Components&lt;/em&gt;, and are a logical representation of what &lt;em&gt;Components&lt;/em&gt; need to be deployed in order for the software system to run.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: Once created, your .toml file does not need to be updated unless the non-derived information changes, or you want to reorganize to which Applications or &lt;em&gt;Domains&lt;/em&gt; the Component has been assigned. For example, a Component has been reassigned to a new owner and new team represented by a &lt;em&gt;Domain&lt;/em&gt; or &lt;em&gt;Application&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Perform the following steps to add your &lt;em&gt;Components&lt;/em&gt; using the .toml file:&lt;/p&gt;
+&lt;h4 id=&#34;step-1---define-your-deployhub-pipeline-variables&#34;&gt;Step 1 - Define Your DeployHub Pipeline Variables&lt;/h4&gt;
+&lt;p&gt;The following variables should be set at the beginning of your Pipeline.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Variable&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;DHURL&lt;/td&gt;
+&lt;td&gt;URL to DeployHub Login&lt;/td&gt;
+&lt;td&gt;The URL used to access DeployHub.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DHUSER&lt;/td&gt;
+&lt;td&gt;UserID&lt;/td&gt;
+&lt;td&gt;The ID used to log into DeployHub&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DHPASS&lt;/td&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;The password used to log into DeployHub. This can encrypted based on the CI/CD solution.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DOCKERREPO&lt;/td&gt;
+&lt;td&gt;Name of your Docker Repository&lt;/td&gt;
+&lt;td&gt;For Components that are Docker Images. Not needed for non-docker objects.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IMAGE_TAG&lt;/td&gt;
+&lt;td&gt;Tag for the Docker Image if used&lt;/td&gt;
+&lt;td&gt;For Components that are Docker Images. Not needed for non-docker objects.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Example&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DHURL&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;https://console.ortelius.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DHUSER&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;Stella99
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DHPASS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;chasinghorses
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DOCKERREPO&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;quay.io/ortelius/hello-world
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;IMAGE_TAG&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;step-2---create-your-componenttoml-file&#34;&gt;Step 2 - Create your Component.toml file&lt;/h4&gt;
+&lt;p&gt;Cut and paste the following into a component.toml file, update &amp;lsquo;your&amp;rsquo; information, and commit/push it to your Git Repository.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Application Name and Version - not required. If not used the Component will not be associated to an Application&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Application&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GLOBAL.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;your&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Application&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Name&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;Application_Version = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;your&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Application&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Version&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;# Define Component Name, Variant and Version - required
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;Name = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GLOBAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;your&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Component&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Name&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;Variant = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GIT_BRANCH&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;Version = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;vyour&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Component&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Version&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BUILD_NUM&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;-g&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SHORT_SHA&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;# Key/Values to associate to the Component Version
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;[Attributes]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    DockerBuildDate = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BLDDATE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    DockerRepo = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;DOCKERREPO&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    DockerSha = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;DIGEST&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    DockerTag = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;IMAGE_TAG&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    DiscordChannel = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;your&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Discord&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;channel&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; or SlackChannel = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;your&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Slack&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Channel&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    ServiceOwner = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;DHUSER&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    ServiceOwnerEmail = &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;your&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Component&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Owner&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Email&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Application Name and Version&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Application&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GLOBAL.Santa Fe Software.Online Store Company.Hipster Store.Prod.helloworld app&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Application_Version&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Define Component Name, Variant and Version&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Name&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GLOBAL.Santa Fe Software.Online Store Company&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Variant&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${GIT_BRANCH}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Version&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.0.0.${BUILD_NUM}-g${SHORT_SHA}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Key/Values to associate to the Component Version&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Attributes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;DockerBuildDate&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${BLDDATE}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;DockerRepo&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${DOCKERREPO}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;DockerSha&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${DIGEST}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;DockerTag&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${IMAGE_TAG}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;DiscordChannel&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://discord.gg/wM4b5yEFzS&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;ServiceOwner&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;${DHUSER}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000&#34;&gt;ServiceOwnerEmail&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;stella@DeployHub.io&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;step-3---add-a-step-in-your-pipeline-to-run-syft-if-you-are-not-generating-sboms-optional&#34;&gt;Step 3 - Add a step in your pipeline to run Syft if you are not generating SBOMS (Optional)&lt;/h4&gt;
+&lt;p&gt;DeployHub can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to DeployHub is step 4 below. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/anchore/syft&#34;&gt;Syft SBOM tool&lt;/a&gt; will generate Software Bill of Material Reports for popular coding languages and package managers, including Docker images.&lt;/p&gt;
+&lt;p&gt;The following code example scans a Docker Image to generate the SBOM.  See &lt;a href=&#34;https://github.com/anchore/syft#supported-sources&#34;&gt;Syft Options&lt;/a&gt; to scan other objects and coding languages.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# install Syft&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -s -- -b &lt;span style=&#34;color:#000&#34;&gt;$PWD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# create the SBOM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./syft packages &lt;span style=&#34;color:#000&#34;&gt;$DOCKERREPO&lt;/span&gt;:&lt;span style=&#34;color:#000&#34;&gt;$IMAGE_TAG&lt;/span&gt; --scope all-layers -o cyclonedx-json &amp;gt; cyclonedx.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# display the SBOM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat cyclonedx.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;step-4---run-the-ortelius-cli-to-add-your-component-and-create-an-application&#34;&gt;Step 4 - Run the Ortelius CLI to add Your Component and Create an Application&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the &lt;a href=&#34;https://github.com/Ortelius/cli/blob/main/doc/dh.md&#34;&gt;Ortelius GitHub CLI Documentation&lt;/a&gt; for installation instructions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:&lt;/p&gt;
+&lt;p&gt;With CycloneDX SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cyclonedx@name of your SBOM file&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cyclonedx@cyclonedx.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With SPDX SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;spdx@name of your SBOM file. &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;spdx@spdx.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Without SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;expected-results&#34;&gt;Expected Results&lt;/h2&gt;
+&lt;p&gt;Bring up your Ortelius URL and login using the DHUSER and DHPASS from Step 1 above.&lt;/p&gt;
+&lt;h3 id=&#34;application-to-component-dependencies&#34;&gt;Application to Component Dependencies&lt;/h3&gt;
+&lt;p&gt;Select Your Application from the ‘Application View.’ It should show you one Component as a dependency.&lt;/p&gt;
+&lt;img src=&#39;/ApplicationComponentDepVersions.png&#39;  /&gt;
+&lt;div style=&#34;margin-left:20%&#34;&gt;&lt;/div&gt;
+&lt;h3 id=&#34;application-level-sbom-and-cve&#34;&gt;Application Level SBOM and CVE&lt;/h3&gt;
+&lt;p&gt;Review the Application SBOM and vulnerabilities. Note: CVE Results may vary depending on the time of the scan.&lt;/p&gt;
+&lt;img src=&#39;/ApplicationSBOMandCVE.png&#39;  /&gt;
+&lt;div style=&#34;margin-left:20%&#34;&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h3 id=&#34;component-ownership&#34;&gt;Component Ownership&lt;/h3&gt;
+&lt;p&gt;Go to the ‘Component View’. You should see your Component Ownership and Detail, including its SBOM and vulnerabilities.&lt;/p&gt;
+&lt;img src=&#39;/Componetownership.png&#39;  /&gt;
+&lt;div style=&#34;margin-left:20%&#34;&gt;&lt;/div&gt;
+&lt;h3 id=&#34;supply-chain-package-search&#34;&gt;Supply Chain “Package” Search&lt;/h3&gt;
+&lt;p&gt;Go to the ‘Application View.’ Select ‘Package Search’ from the high-level menu. Enter a package name such as ‘spring’ to identify all locations where the package is used.&lt;/p&gt;
+&lt;img src=&#39;/packagesearch.png&#39;  /&gt;
+&lt;div style=&#34;margin-left:20%&#34;&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;img src=&#39;/PackageSerachResults.png&#39;  /&gt;
+&lt;div style=&#34;margin-left:20%&#34;&gt;&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: CircleCI Deployment Orb</title>
+      <link>/guides/userguide/integrations/circleci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/circleci/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Ortelius integrates with CircleCI to support continuous configuration management and continuous deployments built into your CircleCI pipeline. In particular, Ortelius integrates with CircleCI to enrich the CI/CD pipeline around microservices.&lt;/p&gt;
+&lt;p&gt;Critical to the process is the ability to perform configuration management, versioning and tracking of microservices across clusters and teams.  Ortelius&amp;rsquo; CircleCI Orb includes the ability to perform automated version and dependency management of microservices tracking application and microservice relationships, their versions and their deployment meta data.&lt;/p&gt;
+&lt;h2 id=&#34;ortelius-tasks-and-the-circleci-deployment-orb&#34;&gt;Ortelius Tasks and the CircleCI Deployment Orb&lt;/h2&gt;
+&lt;p&gt;The Ortelius CircleCI Orb calls Ortelius to perform:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Task&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;move_job&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Executes the Ortelius &amp;lsquo;Move&amp;rsquo; task which promotes or demotes an application version to a different pipeline state.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;microservice_version_update_job&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Automatically increments the version number of a microservice and the application prior to deployment.  Tracks dependency relationships between microservices and applications to create dependency maps.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;deploy_job&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Deploys an application version to a specified environment. CircleCI will pass the application version name and environment to Ortelius.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;envscript_job&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Generates a script that captures additional information from CircleCI, Git and Environment TOML file.  This script is used in subsequent steps for adding additional information to Ortelius.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You do not need to use the &amp;lsquo;approve_job &amp;lsquo;or &amp;lsquo;move_job&amp;rsquo; functions. The use of these jobs is determined by how you define your CircleCI pipeline.  If you are using Approvals in CircleC, the approve_job records the approval information as part of the microservice deployment meta.  A &amp;lsquo;Move&amp;rsquo; process tracks where the microservice and application versions are in the pipeline.  You would generally perform a &amp;lsquo;Move&amp;rsquo; and then a &amp;lsquo;Deploy.&amp;rsquo;  Using the microservice_version_update_job is recommended before the deploy_job.  This allows Ortelius to perform your versioning, configuration management, dependency mapping and comparisons.  The deploy_job calls on Ortelius&amp;rsquo; back in release engine to move the objects to endpoints (clusters for example.)&lt;/p&gt;
+&lt;h2 id=&#34;installing-the-circleci-deployment-orb&#34;&gt;Installing the CircleCI Deployment Orb&lt;/h2&gt;
+&lt;p&gt;To start using the Ortelius CircleCI Deployment Orb, you will need to create a .circleci/config.yml to define your workflow to CircleCI for that project. That workflow will define calls to the Ortelius jobs and define the variables such as Application Version, Environment, UserID and Password that will be passed to the Ortelius  CircleCI Orb.&lt;/p&gt;
+&lt;p&gt;For a full description, go to the &lt;a href=&#34;https://circleci.com/orbs/registry/orb/Ortelius/Ortelius-orb&#34;&gt;CircleCI Orb Registry&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;two-way-communication-and-shared-logging&#34;&gt;Two-way communication and shared logging&lt;/h3&gt;
+&lt;p&gt;Ortelius and CircleCI have a two-way logging communication.  The Ortelius CircleCI Deployment orb includes the ability for all logs about software deployments to be reported in both solutions.  CircleCI can report to Ortelius when deployments are ready to be executed, with Ortelius reporting back the status of the deployment. For most users, CircleCI remains their primary location to find results and logs.&lt;/p&gt;
+&lt;p&gt;For more information see:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/guides/userguide/first-steps/2-defining-domains/&#34;&gt;Building Your Domain Catalog - Tasks in this Domain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/guides/userguide/first-steps/2-define-your-actions/&#34;&gt;Customizing Actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/guides/userguide/customizations/2-define-your-functions-and-procedures/&#34;&gt;Procedures and Functions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Deployment Integrations</title>
+      <link>/guides/userguide/integrations/intro-to-deployment-integrations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/intro-to-deployment-integrations/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;tracking-your-deployments-in-ortelius&#34;&gt;Tracking Your Deployments in Ortelius&lt;/h2&gt;
+&lt;p&gt;Ortelius uses the Command Line Interface for recording what occurs at both the build and deploy steps of your DevOps Pipeline. By recording the deployment activity Ortelius can track the location of each &lt;em&gt;Component Version&lt;/em&gt; and &lt;em&gt;Application Version&lt;/em&gt; running across all of your Environments.&lt;/p&gt;
+&lt;p&gt;The benefit of allowing Ortelius to track your deployments is to create a unified high-level dashboard of where you are experiencing drift. Because each &lt;em&gt;Component&lt;/em&gt; may be deployed with a different deployment process, the data that displays this information is often stored in different tools. Ortelius serves as a centralized location of deployment intelligence and tracks your complete inventory in a single dashboard.&lt;/p&gt;
+&lt;h3 id=&#34;the-ortelius-command-line-interface&#34;&gt;The Ortelius Command Line Interface&lt;/h3&gt;
+&lt;p&gt;The Ortelius Command Line Interface performs the action of monitoring the deployments executed by your pipeline.&lt;/p&gt;
+&lt;p&gt;Install the Ortelius CLI to begin recording your deployments. Install the Ortelius CLI where your CI/CD server is running. Refer to the &lt;a href=&#34;https://github.com/Ortelius/cli/blob/main/doc/dh.md&#34;&gt;Ortelius GitHub CLI Documentation&lt;/a&gt; for installation instructions and usage.&lt;/p&gt;
+&lt;h3 id=&#34;understanding-environments-and-endpoints&#34;&gt;Understanding Environments and Endpoints&lt;/h3&gt;
+&lt;p&gt;Ortelius uses the concepts of &lt;em&gt;Environments&lt;/em&gt; and &lt;em&gt;Endpoints&lt;/em&gt; to track where a &lt;em&gt;Component&lt;/em&gt; has been deployed. The Command Line Interface will create these objects, but it is useful to understand how they are used.&lt;/p&gt;
+&lt;h4 id=&#34;intro-to-_environments_&#34;&gt;Intro to &lt;em&gt;Environments&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Environments&lt;/em&gt; represent where you execute your &lt;em&gt;Application&lt;/em&gt; and &lt;em&gt;Components&lt;/em&gt; such as a Kubernetes Cluster for Dev, Test or Production. An &lt;em&gt;Environment&lt;/em&gt; could be a virtual cloud or physical datacenter.  &lt;em&gt;Applications&lt;/em&gt; run in many &lt;em&gt;Environments&lt;/em&gt; to support your Pipeline states.&lt;/p&gt;
+&lt;h4 id=&#34;_environments_-and-_domains_&#34;&gt;&lt;em&gt;Environments&lt;/em&gt; and &lt;em&gt;Domains&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Environments&lt;/em&gt; are associated to a &lt;a href=&#34;/guides/userguide/first-steps/2-defining-domains/&#34;&gt;&lt;em&gt;Domain&lt;/em&gt;&lt;/a&gt;. You can assign &lt;em&gt;Environments&lt;/em&gt; to any level of &lt;em&gt;Domain&lt;/em&gt; including the &lt;em&gt;Global Domain&lt;/em&gt;. However, &lt;em&gt;Environments&lt;/em&gt; are most commonly associated to a &lt;em&gt;Project Domain&lt;/em&gt; used for &lt;em&gt;Applications&lt;/em&gt;. A &lt;em&gt;Project Domain&lt;/em&gt; is used to manage an &lt;em&gt;Application&lt;/em&gt; and may be defined to include &lt;em&gt;Life Cycle Subdomains&lt;/em&gt; for managing your &lt;em&gt;Application&amp;rsquo;s&lt;/em&gt; progression from development through release.&lt;/p&gt;
+&lt;h3 id=&#34;use-the-_environment_-list-view-to-add-and-delete&#34;&gt;Use the &lt;em&gt;Environment&lt;/em&gt; List View to Add and Delete&lt;/h3&gt;
+&lt;p&gt;The &lt;em&gt;Environment&lt;/em&gt; menu is on the left of the main panel. Select the &lt;em&gt;Environment&lt;/em&gt; menu, to view a list of all &lt;em&gt;Environments&lt;/em&gt; to which you have access. The Search bar, represented by a funnel icon, allows you to reorder &lt;em&gt;Environments&lt;/em&gt; based on Name or &lt;em&gt;Domain&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Environments&lt;/em&gt; List View has the following Tabs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tab&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Refresh&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Refreshes the browser.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to Add a new &lt;em&gt;Environment&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Delete&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Deletes the selected item.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Reports&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Success or Failed Report:  This report shows an ongoing list of all deployments to all &lt;em&gt;Environments&lt;/em&gt;, regardless of &lt;em&gt;Domain&lt;/em&gt; or &lt;em&gt;Application&lt;/em&gt; with success or fail status. This report can be sorted based on the column for easy viewing. It can also be exported.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Double click on an item in the list to see the &lt;em&gt;Dashboard&lt;/em&gt; view.&lt;/p&gt;
+&lt;h3 id=&#34;use-the-_environment_-dashboard-to-view-and-edit&#34;&gt;Use the &lt;em&gt;Environment&lt;/em&gt; Dashboard to View and Edit&lt;/h3&gt;
+&lt;p&gt;The Dashboard view displays all information related to a specific &lt;em&gt;Environment&lt;/em&gt;. The Dashboard view has one additional tab option - Calendars. Below are the Details for an &lt;em&gt;Environment&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;_environment_-details&#34;&gt;&lt;em&gt;Environment&lt;/em&gt; Details&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Full &lt;em&gt;Domain&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The fully qualified name of the &lt;em&gt;Domain&lt;/em&gt;, including all parent &lt;em&gt;Domains&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The name of the &lt;em&gt;Environment&lt;/em&gt;. Note: Duplicate Names are restricted. It is recommended that &lt;em&gt;Environments&lt;/em&gt; be named in a specific manner, such as &amp;lsquo;DevEnv-HipsterStore.&amp;rsquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Owner Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;User or Group&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Owner&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The owner defaults to the &lt;em&gt;User&lt;/em&gt; or &lt;em&gt;Group&lt;/em&gt; who created it.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;A short text description of the &lt;em&gt;Environment&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Created&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Auto generated date and time the &lt;em&gt;Environment&lt;/em&gt; was created.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Auto generated date and time the &lt;em&gt;Environment&lt;/em&gt; was last modified.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;_endpoint_-access-control&#34;&gt;&lt;em&gt;Endpoint&lt;/em&gt; Access Control&lt;/h4&gt;
+&lt;p&gt;The Access Section allows &lt;em&gt;Users&lt;/em&gt; within designated &lt;em&gt;Groups&lt;/em&gt; to update the &lt;em&gt;Environment&lt;/em&gt;. To add a &lt;em&gt;Group&lt;/em&gt; to one of the access lists, drag and drop the &lt;em&gt;Group&lt;/em&gt; from the Available Groups list onto desired access list. All &lt;em&gt;Users&lt;/em&gt; who belong to a &lt;em&gt;Group&lt;/em&gt; that appear in one of the Access lists will be granted access to the &lt;em&gt;Environment&lt;/em&gt; in the following ways:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Access&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;View&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows the &lt;em&gt;User&lt;/em&gt; to see the &lt;em&gt;Environment&lt;/em&gt;. If the &lt;em&gt;User&lt;/em&gt; does not belong to a &lt;em&gt;Group&lt;/em&gt; in the View Access list, the &lt;em&gt;Environment&lt;/em&gt; will not appear in the List View.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows the &lt;em&gt;User&lt;/em&gt; to change the &lt;em&gt;Environment&amp;rsquo;s&lt;/em&gt; characteristics i.e. Name, Summary, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Deploy&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows &lt;em&gt;Users&lt;/em&gt; to deploy  &lt;em&gt;Applications&lt;/em&gt; into the selected &lt;em&gt;Environment&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;audit-trail&#34;&gt;Audit Trail&lt;/h3&gt;
+&lt;p&gt;The Audit Trail displays audit entries for any changes or deployments that impact this object. It includes all changes in the object including &lt;em&gt;User&lt;/em&gt; date and time, and deployments with unique numbers.&lt;/p&gt;
+&lt;p&gt;For deployment audits, select a deployment number to see the details including:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Access&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Log&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The output of the deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Files&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Any files or objects deployed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Step Duration&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Deployment Steps with time required to execute.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Feedback Loop&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Shows what was updated starting from &lt;em&gt;Component&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can also Subscribe or Comment to an Audit Entry.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Subscribe: Allows you to receive information about the selected deployment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Comment: Click on &amp;lsquo;Comment&amp;rsquo; to add information. There is a field above the list labeled &amp;ldquo;Say something about this Application&amp;rdquo; that can have comments placed into it, and files can be attached to the comment as well. Entering text into this field activates the Add Message button. Click to save the comment as a line in the list.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add Files to Comments: Click on the paperclip icon to add a file to the message.  Once done, click on the &amp;ldquo;Add Message&amp;rdquo; button. These attachments can later be retrieved by clicking on the paperclip icon which then displays the name of the file within a list. Choose the file to download it into the your default Download directory on your local computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;key-value-configurations&#34;&gt;Key Value Configurations&lt;/h3&gt;
+&lt;p&gt;Key Value Configurations are Value Pairs for managing associative arrays assigned to the &lt;em&gt;Object&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Key Value Pairs can be assigned at multiple levels, from the Global &lt;em&gt;Domain&lt;/em&gt; down to an individual &lt;em&gt;Component&lt;/em&gt; and have a &amp;ldquo;scope.&amp;rdquo; Lower level Objects can override a higher level Object.  Below is the order in which Key Value Pairs can be overridden:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Object&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Global&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Contains all Environment variables and any &amp;ldquo;additional Key Value Pairs&amp;rdquo; set by the user when running that task.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Environment&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides any Global Key Value Pairs during a deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Application&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides the &lt;em&gt;Environment&lt;/em&gt; Key Value Pairsduring a deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Endpoint&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides the &lt;em&gt;Application&lt;/em&gt; Key Value Pairs during a deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Component&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides the  &lt;em&gt;Application&lt;/em&gt; Key Value Pairs during a deployed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Key Value Pairs can be given any Name and a Value. Use +Add to add Key Value Pairs to the table. Use Save to confirm.  Use the checkbox to Delete or Edit a Key Value Pair.&lt;/p&gt;
+&lt;h4 id=&#34;assigned-_endpoints_&#34;&gt;Assigned &lt;em&gt;Endpoints&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Note: You will need to have pre-defined your &lt;em&gt;Endpoints&lt;/em&gt;.  See the &lt;a href=&#34;/guides/userguide/first-steps/2-define-endpoints/&#34;&gt;Define Your Endpoints&lt;/a&gt; chapter for more information.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Environments&lt;/em&gt; are a collection of &lt;em&gt;Endpoints&lt;/em&gt;. Use this section to assign the &lt;em&gt;Endpoints&lt;/em&gt; that will make up this &lt;em&gt;Environment&lt;/em&gt;. Use +Add to create a new row in the &lt;em&gt;Endpoints&lt;/em&gt; table. Use Save to commit the row.  Select the row and use Edit or Delete to update or remove an &lt;em&gt;Endpoint&lt;/em&gt;. When you add a new &lt;em&gt;Endpoint&lt;/em&gt; the  Hostname will be displayed. The Hostname is the actual network name or IP address.  It is assigned when the &lt;em&gt;Endpoint&lt;/em&gt; is defined, but is not a required field. If it is defined, it will be displayed in the row.&lt;/p&gt;
+&lt;h3 id=&#34;trends&#34;&gt;Trends&lt;/h3&gt;
+&lt;p&gt;This section shows the success/failure rate and time required for the last 10 deployments to this &lt;em&gt;Environment&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;assigned-_applications_&#34;&gt;Assigned &lt;em&gt;Applications&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;View all the &lt;em&gt;Application Base Versions&lt;/em&gt; assigned to this &lt;em&gt;Environment&lt;/em&gt;. This is read only.  &lt;em&gt;Applications Base Versions&lt;/em&gt; are associated to &lt;em&gt;Environments&lt;/em&gt; when created using the &lt;a href=&#34;/guides/userguide/packaging-applications/2-defining-applications/#viewing-and-editing-with-the-_application_-dashboard&#34;&gt;&lt;em&gt;Application&lt;/em&gt; Dashboard&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;deployed-_components_-to-_environment_-map&#34;&gt;Deployed &lt;em&gt;Components&lt;/em&gt; to &lt;em&gt;Environment&lt;/em&gt; Map&lt;/h4&gt;
+&lt;p&gt;This map shows you all of the current &lt;em&gt;Component Versions&lt;/em&gt;, with &lt;em&gt;Application Versions&lt;/em&gt;, that have been deployed to this &lt;em&gt;Environment&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;environment-calendars-tab&#34;&gt;Environment Calendars Tab&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Ortelius&lt;/strong&gt; &lt;em&gt;Calendar&lt;/em&gt; only shows you a history of what has already been deployed.&lt;/p&gt;
+&lt;h3 id=&#34;introduction-to-endpoints&#34;&gt;Introduction to Endpoints&lt;/h3&gt;
+&lt;p&gt;An &lt;em&gt;Endpoint&lt;/em&gt; is an object representing a container deployment host, virtual image, or physical server in an enterprise&amp;rsquo;s data center. An Ortelius &lt;em&gt;Environment&lt;/em&gt; is a collection of &lt;em&gt;Endpoints&lt;/em&gt; to which your &lt;em&gt;Application&lt;/em&gt; will be deployed.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Endpoints&lt;/em&gt; can be the location where you will run your Helm Chart for a Kubernetes deployment, a database server, cloud images, etc. There is a many-to-many relationship between &lt;em&gt;Environments&lt;/em&gt; and &lt;em&gt;Endpoints&lt;/em&gt;, so that an &lt;em&gt;Endpoint&lt;/em&gt; can be assigned to more than one &lt;em&gt;Environment&lt;/em&gt;, and an &lt;em&gt;Environment&lt;/em&gt; can contain many &lt;em&gt;Endpoints&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;use-the-_endpoint_-list-view-to-add-or-delete&#34;&gt;Use the &lt;em&gt;Endpoint&lt;/em&gt; List View to Add or Delete&lt;/h4&gt;
+&lt;p&gt;The &lt;em&gt;Endpoint&lt;/em&gt; menu is on the left of the main panel. Select the &lt;em&gt;Endpoint&lt;/em&gt; menu to view a list of all &lt;em&gt;Endpoints&lt;/em&gt; to which you have access. Or use the Search bar, represented by a funnel icon, to reorder &lt;em&gt;Endpoints&lt;/em&gt; based on Name or &lt;em&gt;Domain&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Endpoints&lt;/em&gt; List View has the following Tabs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tab&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Refresh&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Refreshes the browser.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to Add a new &lt;em&gt;Endpoint&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Delete&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Deletes the selected item.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Double click on an item in the list to see the &lt;em&gt;Dashboard&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;use-the-_endpoint_-dashboard-to-view-and-edit&#34;&gt;Use the &lt;em&gt;Endpoint&lt;/em&gt; Dashboard to View and Edit&lt;/h4&gt;
+&lt;p&gt;The Dashboard view displays all information related to a specific &lt;em&gt;Endpoint&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;endpoint-details&#34;&gt;Endpoint Details&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Full Domain&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The fully qualified name of the &lt;em&gt;Domain&lt;/em&gt; to which the &lt;em&gt;Endpoint&lt;/em&gt; is defined.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The name of the &lt;em&gt;Endpoint&lt;/em&gt; object. For managing Kubernetes clusters, you should name your &lt;em&gt;Endpoint&lt;/em&gt; to match the cluster name that the &lt;em&gt;Endpoint&lt;/em&gt; is deploying to.  This will allow Ortelius to track what has been deployed to each cluster.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Owner Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Group or User&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Owner&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The owner defaults to the &lt;em&gt;User&lt;/em&gt; or &lt;em&gt;Group&lt;/em&gt; who created it.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;A short text description of the &lt;em&gt;Endpoint&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Created&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The date and time the &lt;em&gt;Endpoint&lt;/em&gt; was created.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The date and time the &lt;em&gt;Endpoint&lt;/em&gt; was last modified.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Endpoint Operating System Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The platform type of the physical or virtual server that the &lt;em&gt;Endpoints&lt;/em&gt; resides on, the list currently includes Unix, Windows, Tandem, Stratus, and OpenVMS. For containers you should select Unix.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Endpoint Types&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Used to indicate what types of &lt;em&gt;Components&lt;/em&gt; will be deployed to this &lt;em&gt;Endpoint&lt;/em&gt;.  Used to route specific types of &lt;em&gt;Components&lt;/em&gt; to the matching &lt;em&gt;EndPoint&lt;/em&gt; across &lt;em&gt;Environments&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Hostname&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The unique name of a server that is used to identify it on the network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Protocol&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The protocol used to communicate with the &lt;em&gt;Endpoint&lt;/em&gt;. Options are ssh and winrm.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ssh Port Number&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The ssh Port used to connect to the &lt;em&gt;Endpoint&lt;/em&gt; if the selected Protocol is ssh.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Base Directory&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;If you would like to force all deployments to occur in a specific high level directory, enter it into this field. The &lt;em&gt;Endpoint&lt;/em&gt; Base Directory will override the &lt;em&gt;Component&lt;/em&gt; Base Directory. For more information see &lt;a href=&#34;/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments&#34;&gt;Formatting Directories&lt;/a&gt; on the order of how the deployment directory is formatted.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Test Connection Result&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The following fields display the result of the last &amp;ldquo;Test Connection&amp;rdquo; executed, performed by using the &amp;ldquo;Test Connection&amp;rdquo; option from the &lt;em&gt;Endpoint&lt;/em&gt; Dashboard.&lt;ul&gt;&lt;li&gt;Name Resolution - Checks to see if the DNS name can be resolved. Returns &amp;ldquo;OK&amp;rdquo; on success or &amp;ldquo;Failed&amp;rdquo; if not. &lt;/li&gt;&lt;li&gt; Ping - Checks to see if the &lt;em&gt;Endpoint&lt;/em&gt; responds to ping. Returns &amp;ldquo;OK&amp;rdquo; on success or &amp;ldquo;Failed&amp;rdquo; if not.&lt;/li&gt;&lt;li&gt;Base Directory Check -Checks to ensure the Base Directory is available on the &lt;em&gt;EndPoint&lt;/em&gt; &lt;/li&gt;&lt;li&gt;Ping Time - Time in milliseconds (ms) for the Ping to respond.&lt;/li&gt;&lt;li&gt;IPV4 Address - The IP address of the Hostname.&lt;/li&gt;&lt;li&gt;Last Checked - Timestamp of when the last &amp;ldquo;Test Connection&amp;rdquo; was performed.&lt;/li&gt;&lt;li&gt;Test Results - Success or Failed message for the last &amp;ldquo;Test Connection&amp;rdquo; executed.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;key-value-configurations-1&#34;&gt;Key Value Configurations&lt;/h3&gt;
+&lt;p&gt;Key Value Configurations are Value Pairs for managing associative arrays assigned to the &lt;em&gt;Object&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Key Value Pairs can be assigned at multiple levels, from the Global &lt;em&gt;Domain&lt;/em&gt; down to an individual &lt;em&gt;Component&lt;/em&gt; and have a &amp;ldquo;scope.&amp;rdquo; Lower level Objects can override a higher level Object.  Below is the order in which Key Value Pairs can be overridden:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Object&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Global&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Contains all Environment variables and any &amp;ldquo;additional Key Value Pairs&amp;rdquo; set by the user when running that task.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Environment&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides any Global Key Value Pairs during a deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Application&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides the &lt;em&gt;Environment&lt;/em&gt; Key Value Pairsduring a deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Endpoint&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides the &lt;em&gt;Application&lt;/em&gt; Key Value Pairs during a deployment.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Component&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Overrides the  &lt;em&gt;Application&lt;/em&gt; Key Value Pairs during a deployed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Key Value Pairs can be given any Name and a Value. Use +Add to add Key Value Pairs to the table. Use Save to confirm.  Use the checkbox to Delete or Edit a Key Value Pair.&lt;/p&gt;
+&lt;h4 id=&#34;_endpoint_-access-control-1&#34;&gt;&lt;em&gt;Endpoint&lt;/em&gt; Access Control&lt;/h4&gt;
+&lt;p&gt;The Access Section allows &lt;em&gt;Users&lt;/em&gt; within designated &lt;em&gt;Groups&lt;/em&gt; to update the &lt;em&gt;Endpoint&lt;/em&gt;. To add a &lt;em&gt;Group&lt;/em&gt; to one of the access lists, drag and drop the &lt;em&gt;Group&lt;/em&gt; from the Available Groups list onto desired access list. All &lt;em&gt;Users&lt;/em&gt; who belong to a &lt;em&gt;Group&lt;/em&gt; within one of the Access lists will be granted access to the &lt;em&gt;Endpoint&lt;/em&gt; in the following ways:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Access&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;View&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Any &lt;em&gt;User&lt;/em&gt; in any &lt;em&gt;Group&lt;/em&gt; in this list can see the selected &lt;em&gt;EndPoint&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Change&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Any &lt;em&gt;User&lt;/em&gt; in any &lt;em&gt;Group&lt;/em&gt; in this list can make changes to the &lt;em&gt;Endpoint&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Available Groups&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;This list contains all the Groups within the Ortelius installation. Dragging and dropping back and forth between this list and the other two lists allows or prevents access to viewing and changing the selected &lt;em&gt;EndPoint&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;audit-trail-1&#34;&gt;Audit Trail&lt;/h3&gt;
+&lt;p&gt;The Audit Trail displays audit entries for any changes or deployments that impact this object. It includes any changes in the object including &lt;em&gt;User&lt;/em&gt; date and time, and deployments with unique numbers.&lt;/p&gt;
+&lt;p&gt;You can Subscribe to or Comment on an Audit Entry.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Subscribe: Allows you to receive information about the selected deployment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Comment: Add information by clicking on the &amp;lsquo;Comment&amp;rsquo; link within a text entry field. There is a field above the list labeled &amp;ldquo;Say something about this Application&amp;rdquo; that can have comments placed into it, and files can be attached to the comment as well. Enter text into this field to activate the Add Message button. Click to save the comment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add Files to Comments: Click on the paperclip icon to add a file to the message. Once added and you made a comment, click &amp;ldquo;Add Message&amp;rdquo;. Click on the paperclip icon to retrieve these attachments. The icon opens the line in the list to display the name of the file. Choose the file to download it into the your default Download directory on your local computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;trends-1&#34;&gt;Trends&lt;/h4&gt;
+&lt;p&gt;The Trends graph shows you your success or failure rates overtime as well at the time required for the last 10 deployments. If an &lt;em&gt;Application&lt;/em&gt; deployment is taking longer than previous deployments, this might indicate an issue with your deployment logic.&lt;/p&gt;
+&lt;h4 id=&#34;deployed-_components_&#34;&gt;Deployed &lt;em&gt;Components&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;This section provides a list of all current versions of &lt;em&gt;Components&lt;/em&gt; that have been installed on the &lt;em&gt;Endpoint&lt;/em&gt; with the Deployment Number. The Deployment Number is generated by Ortelius for each unique deployment.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: SBOMs and Ortelius</title>
+      <link>/guides/userguide/integrations/sbom-support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/sbom-support/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;ortelius-pipeline-automation-and-sboms&#34;&gt;Ortelius&amp;rsquo; Pipeline Automation and SBOMs&lt;/h2&gt;
+&lt;p&gt;Ortelius can store your Software Bill of Material scan results for each image &amp;lsquo;build.&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;You will need to set up Ortelius to be called by your DevOps Pipeline using the Ortelius CI/CD Command Line Interface. For more information refer to the &lt;a href=&#34;/guides/userguide/first-steps/2-intro-to-set-up/&#34;&gt;First Steps section.&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the &lt;a href=&#34;https://github.com/ortelius/cli/blob/main/doc/dh.md&#34;&gt;Ortelius GitHub CLI Documentation&lt;/a&gt; for installation instructions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;spdx-or-cyclonedx&#34;&gt;SPDX or CycloneDX&lt;/h3&gt;
+&lt;p&gt;Ortelius can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to Ortelius. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/anchore/syft&#34;&gt;Syft SBOM tool&lt;/a&gt; will generate Software Bill of Material Reports for popular coding languages and package managers, including Docker images.&lt;/p&gt;
+&lt;p&gt;The following code example scans a Docker Image to generate the SBOM.  See &lt;a href=&#34;https://github.com/anchore/syft#supported-sources&#34;&gt;Syft Options&lt;/a&gt; to scan other objects and coding languages.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# install Syft&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -s -- -b &lt;span style=&#34;color:#000&#34;&gt;$PWD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# create the SBOM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./syft packages &lt;span style=&#34;color:#000&#34;&gt;$DOCKERREPO&lt;/span&gt;:&lt;span style=&#34;color:#000&#34;&gt;$IMAGE_TAG&lt;/span&gt; --scope all-layers -o cyclonedx-json &amp;gt; cyclonedx.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# display the SBOM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat cyclonedx.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;run-the-ortelius-cli&#34;&gt;Run the Ortelius CLI&lt;/h2&gt;
+&lt;p&gt;Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:&lt;/p&gt;
+&lt;p&gt;With CycloneDX SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cyclonedx@name of your SBOM file&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cyclonedx@cyclonedx.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With SPDX SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;spdx@name of your SBOM file. &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;spdx@spdx.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Without SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: SPDX, CycloneDX and Syft</title>
+      <link>/guides/userguide/integrations/spdx-cyclonedx-syft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/spdx-cyclonedx-syft/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Ortelius can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to Ortelius as shown below. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data.&lt;/p&gt;
+&lt;h2 id=&#34;adding-syft-to-your-pipeline-automation&#34;&gt;Adding Syft to your Pipeline Automation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/anchore/syft&#34;&gt;Syft SBOM tool&lt;/a&gt; will generate Software Bill of Material Reports for popular coding languages and package managers, including Docker images.&lt;/p&gt;
+&lt;p&gt;The following code example scans a Docker Image to generate the SBOM.  See &lt;a href=&#34;https://github.com/anchore/syft#supported-sources&#34;&gt;Syft Options&lt;/a&gt; to scan other objects and coding languages.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# install Syft&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -s -- -b &lt;span style=&#34;color:#000&#34;&gt;$PWD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# create the SBOM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./syft packages &lt;span style=&#34;color:#000&#34;&gt;$DOCKERREPO&lt;/span&gt;:&lt;span style=&#34;color:#000&#34;&gt;$IMAGE_TAG&lt;/span&gt; --scope all-layers -o cyclonedx-json &amp;gt; cyclonedx.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# display the SBOM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat cyclonedx.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;passing-the-name-of-the-sbom-results&#34;&gt;Passing the Name of the SBOM Results&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the &lt;a href=&#34;https://github.com/Ortelius/cli/blob/main/doc/dh.md&#34;&gt;Ortelius GitHub CLI Documentation&lt;/a&gt; for installation instructions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:&lt;/p&gt;
+&lt;p&gt;With CycloneDX SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cyclonedx@name of your SBOM file&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cyclonedx@cyclonedx.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With SPDX SBOM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;spdx@name of your SBOM file. &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Example:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dh updatecomp --rsp component.toml --deppkg &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;spdx@spdx.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: OSV.Dev CVE Integration</title>
+      <link>/guides/userguide/integrations/osvdev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/osvdev/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;osv&#34;&gt;OSV&lt;/h2&gt;
+&lt;p&gt;Ortelius uses &lt;a href=&#34;https://osv.dev/&#34;&gt;OSV.dev&lt;/a&gt; to cross reference packages for gathering CVE data. Every 30 minutes Ortelius performs an OSV.dev look up for every package listed in every SBOM to determine if any vulnerabilities exist. The look-up is performed using the OSV public facing APIs. SBOM generation is required to perform this scan.&lt;/p&gt;
+&lt;p&gt;The CVE results are displayed at two levels, the &lt;em&gt;Component Version&lt;/em&gt; and the &lt;em&gt;Application Version&lt;/em&gt;. If you have included SBOM scanning as part of your DevOps pipeline, you will pass the name of the SBOM to Ortelius using the &lt;a href=&#34;/guides/userguide/integrations/ci-cd_integrations/&#34;&gt;Ortelius CLI&lt;/a&gt;. Ortelius supports SPDX and CycloneDX SBOM formats. If you have not added SBOM&amp;rsquo;s as part of your DevOps Pipeline, you can include it through the Ortelius CLI process. The Ortelius CLI uses &lt;a href=&#34;/guides/userguide/integrations/spdx-cyclonedx-syft/&#34;&gt;Syft&lt;/a&gt; to generate the SBOM.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: Ortelius must have access to OSV.Dev in order to continuously gather the CVE data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;viewing-component-cve-data&#34;&gt;Viewing Component CVE Data&lt;/h3&gt;
+&lt;p&gt;CVE data is associated to a particular &lt;em&gt;Component Version&lt;/em&gt; and can be seen by going to the Component Detail View. Ortelius gathers the CVE information every 30 minutes for all Components. For this reason it is possible for new CVEs to appear. If a new CVE is found by OSV.dev, Ortelius automatically updates your Component&amp;rsquo;s CVEs.&lt;/p&gt;
+&lt;h3 id=&#34;viewing-application-level-cve-data&#34;&gt;Viewing Application Level CVE Data&lt;/h3&gt;
+&lt;p&gt;Ortelius aggregates lower-level &lt;em&gt;Component&lt;/em&gt; data up to all consuming applications. When you view the CVEs at the &lt;em&gt;Application Version&lt;/em&gt; level, you are seeing a combination of all CVEs aggregated from the &lt;em&gt;Components&lt;/em&gt; which your &lt;em&gt;Application&lt;/em&gt; depends. Your &lt;em&gt;Applications&lt;/em&gt; CVE data can change over time based on the changes at the &lt;em&gt;Component Version&lt;/em&gt; level.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Swagger Integration</title>
+      <link>/guides/userguide/integrations/swagger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/swagger/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;swagger&#34;&gt;Swagger&lt;/h2&gt;
+&lt;p&gt;Ortelius uses &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; to display your microservice / API documentation, based on your &lt;em&gt;Component Version&lt;/em&gt;. Developers create, or automate the creation of Swagger documentation. Once created the Swagger documentation can be associated to the &lt;em&gt;Component Version&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;uploading-swagger-documentation&#34;&gt;Uploading Swagger Documentation&lt;/h3&gt;
+&lt;p&gt;You can use the Ortelius &lt;em&gt;Component&lt;/em&gt; Detail view to manually upload your Swagger documentation for your &lt;em&gt;Component&lt;/em&gt;. Alternatively, the recommended approach is to use the CI/CD Command Line Interface to automatically add your Swagger documentation file. Refer to the &lt;a href=&#34;https://github.com/Ortelius/cli/blob/main/doc/dh.md&#34;&gt;CI/CD CLI details&lt;/a&gt; for incorporating Swagger into your pipeline process.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: Swagger or OpenAPI formats can be used.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;viewing-component-cve-data&#34;&gt;Viewing Component CVE Data&lt;/h3&gt;
+&lt;p&gt;Swagger data is associated to a particular &lt;em&gt;Component Version&lt;/em&gt; and can be seen by going to the Component Detail View.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: OpenMake Meister Binary Repository</title>
+      <link>/guides/userguide/integrations/openmake-meister/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/integrations/openmake-meister/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;openmake-meister-_repository_-details&#34;&gt;OpenMake Meister &lt;em&gt;Repository&lt;/em&gt; Details&lt;/h2&gt;
+&lt;p&gt;If you automate your builds (compile/link) using OpenMake Meister, Ortelius pulls binaries from the Meister binary repository that your &lt;em&gt;Component&lt;/em&gt; uses. Following is a list of the details for connecting a Meister repository to Ortelius:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Buildnumber&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The identifier of the Build that resides in the Meister &lt;em&gt;Repository&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Buildnumber Encrypted&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box to indicate if the Build Number should be hidden in the database.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Buildnumber Override&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box if the Build Number can be replaced at the &lt;em&gt;Component&lt;/em&gt; definition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Filepath&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The fully qualified directory name to the files in the OpenMake Meister repository that will need to be deployed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Filepath Encrypted&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box to indicate if the Filepath name should be hidden in the database.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Filepath Override&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box if the Filepath can be replaced at the &lt;em&gt;Component&lt;/em&gt; definition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Pattern&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;This defines the file types you want to pull from the &lt;em&gt;Repository&lt;/em&gt;, such as *.exe, *.dll, *.war.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Pattern Encrypted&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box to indicate if the Pattern should be hidden in the database.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Pattern Override&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box if the Pattern can be replaced at the &lt;em&gt;Component&lt;/em&gt; definition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Recursive&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box in order to cause the &lt;em&gt;Repository&lt;/em&gt; to return all of the files from directories below those designated by Filepath.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Recursive Override&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select the box if the Recursive option can be replaced at the &lt;em&gt;Component&lt;/em&gt; definition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

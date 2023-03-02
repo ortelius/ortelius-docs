@@ -1,0 +1,1110 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ortelius User Guide and API Reference – Development Environment Setup</title>
+    <link>/guides/contributorguide/dev-environment/</link>
+    <description>Recent content in Development Environment Setup on Ortelius User Guide and API Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/guides/contributorguide/dev-environment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Adventure with Abraham Ortelius</title>
+      <link>/guides/contributorguide/dev-environment/00-home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/dev-environment/00-home/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;----adventure-with-abraham-ortelius----&#34;&gt;&amp;mdash; Adventure with Abraham Ortelius &amp;mdash;&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This is a navigational map in the spirit of &lt;a href=&#34;https://en.wikipedia.org/wiki/Abraham_Ortelius&#34;&gt;Abraham Ortelius&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Please read and explore the documentation for each subject&lt;/li&gt;
+&lt;li&gt;Google is your friend for when you get lost&lt;/li&gt;
+&lt;li&gt;To answer your question &amp;ldquo;Yes it is hard&amp;rdquo; but you can do it&lt;/li&gt;
+&lt;li&gt;If Abraham Ortelius could draw maps in the 1500s without our modern day technology you can do this&lt;/li&gt;
+&lt;li&gt;Abraham Ortelius was a DevOps Engineer and Microservices pioneer by containerising the world through cartography&lt;/li&gt;
+&lt;li&gt;Please help us improve the cartography&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;organizations&#34;&gt;Organizations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cncf.io/&#34;&gt;CNCF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://landscape.cncf.io/&#34;&gt;CNCF Cloud Native Landscape&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ortelius.io/&#34;&gt;Ortelius&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xrpl.org/&#34;&gt;XRPL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;what-are-we-learning&#34;&gt;What are we learning?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To build applications with &lt;a href=&#34;https://www.plutora.com/ci-cd-tools/software-build-tools&#34;&gt;build tools&lt;/a&gt; such as &lt;code&gt;Maven&lt;/code&gt; or &lt;code&gt;Gradle&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Containerization with &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; or &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://opensource.com/article/19/4/devops-pipeline&#34;&gt;Build pipelines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://keptn.sh/&#34;&gt;Keptn.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ortelius.io/&#34;&gt;Ortelius&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zdnet.com/article/what-is-cloud-computing-everything-you-need-to-know-about-the-cloud/&#34;&gt;Cloud Computing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://argo-cd.readthedocs.io/en/stable/user-guide/parameters/&#34;&gt;Argo CD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;To abstract &lt;code&gt;application parameterisation&lt;/code&gt; from application code&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hackernoon.com/get-started-with-blockchain-in-2018-cb21896470de&#34;&gt;Blockchain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arangodb.com/&#34;&gt;ArangoDB&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;what-are-we-building&#34;&gt;What are we building?&lt;/h3&gt;
+&lt;h4 id=&#34;event-driven-architecture-with-ortelius&#34;&gt;Event driven architecture with Ortelius&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;We are building &lt;a href=&#34;https://filedn.eu/lJEPcSQWQQPRsWJKijxnXCQ/ortelius/gitops/01-ci-dev-ortelius-cloudnative-architecture-poc.html&#34;&gt;this&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ortelius/ortelius-docs/blob/main/content/en/guides/userguide/integrations/OrteliusKeptn.md&#34;&gt;Ortelius Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;xrpl-sbom-ledger-with-ortelius&#34;&gt;XRPL SBOM Ledger with Ortelius&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xrpl.org/ledgers.html#ledgers&#34;&gt;XRPL Ledgers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ortelius/la-sbom-ledger&#34;&gt;XRPL SBOM Ledger repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arangodb.com/&#34;&gt;ArangoDB&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;demo-apps-to-deploy-and-containerise&#34;&gt;Demo apps to deploy and containerise&lt;/h2&gt;
+&lt;h3 id=&#34;springboot-java-spring-petclinichttpsgithubcomspring-projectsspring-petclinic-application&#34;&gt;Springboot Java &lt;a href=&#34;https://github.com/spring-projects/spring-petclinic&#34;&gt;Spring Petclinic&lt;/a&gt; Application&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PLEASE READ the README&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fork the repo &amp;amp; clone&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application&#34;&gt;Spring Petclinic Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.spring.io/&#34;&gt;DocsSpring.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#goals-build-image&#34;&gt;Spring Boot Maven Plugin Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://spring.io/guides/topicals/spring-boot-docker/&#34;&gt;Spring Boot Docker Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.external-config&#34;&gt;Spring Boot External Config&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mkyong.com/&#34;&gt;mkyong.com&lt;/a&gt; is a useful Java resource&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/&#34;&gt;mvn repository for dependencies&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;react-shopping-carthttpsgithubcomikismailreact-shoppingcart&#34;&gt;&lt;a href=&#34;https://github.com/ikismail/React-ShoppingCart&#34;&gt;React Shopping Cart&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PLEASE READ the README&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fork the repo &amp;amp; clone&lt;/li&gt;
+&lt;li&gt;Test using the &lt;a href=&#34;https://yarnpkg.com/&#34;&gt;YARN&lt;/a&gt; package manager&lt;/li&gt;
+&lt;li&gt;Test using the &lt;a href=&#34;https://pnpm.io/&#34;&gt;PnPM.io&lt;/a&gt; package manager&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ikismail-react-shopping.surge.sh/#/&#34;&gt;ikismail-react-shopping.surge.sh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;angular-realworld-example-apphttpsgithubcomkhaledosmanangular-realworld-example-app&#34;&gt;&lt;a href=&#34;https://github.com/khaledosman/angular-realworld-example-app&#34;&gt;Angular RealWorld example app&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PLEASE READ the README&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fork the repo &amp;amp; clone&lt;/li&gt;
+&lt;li&gt;Test using the &lt;a href=&#34;https://www.npmjs.com/&#34;&gt;NPM&lt;/a&gt; package manager&lt;/li&gt;
+&lt;li&gt;Test using the &lt;a href=&#34;https://pnpm.io/&#34;&gt;PnPM.io&lt;/a&gt; package manager&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;python-web-ui-to-manage-postgresql-pgadminhttpswwwpgadminorg&#34;&gt;Python Web UI to manage PostgreSQL &lt;a href=&#34;https://www.pgadmin.org/&#34;&gt;PgAdmin&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql--ortelius&#34;&gt;PostgreSQL | Ortelius&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Container can be pulled from &lt;a href=&#34;https://hub.docker.com/_/postgres/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;arangodb--xrpl-sbom-ledger&#34;&gt;ArangoDB | XRPL SBOM Ledger&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Container can be pulled from &lt;a href=&#34;https://https://hub.docker.com/_/arangodb&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ortelius-jargon-glossary&#34;&gt;Ortelius Jargon Glossary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;API&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://argo-cd.readthedocs.io/en/stable/user-guide/parameters/&#34;&gt;Argo CD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arangodb.com/&#34;&gt;ArangoDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Backend&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.deployhub.com/know-your-microservice-blast-radius/&#34;&gt;Blast radius&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Block Chain&lt;/li&gt;
+&lt;li&gt;Containers&lt;/li&gt;
+&lt;li&gt;Continous Integration&lt;/li&gt;
+&lt;li&gt;Continous Delivery&lt;/li&gt;
+&lt;li&gt;Data Science&lt;/li&gt;
+&lt;li&gt;Declarative&lt;/li&gt;
+&lt;li&gt;Event driven&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://filecoin.io/&#34;&gt;Filecoin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Frontend&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://about.gitlab.com/topics/gitops/&#34;&gt;GitOps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh/&#34;&gt;Helm.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac&#34;&gt;IaC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Imperative&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ipfs.tech/concepts/what-is-ipfs/#decentralization&#34;&gt;IPFS (Interplanetary File System)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.java/&#34;&gt;Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jenkins.io/&#34;&gt;Jenkins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/home/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://keptn.sh/&#34;&gt;Keptn.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.expert.ai/blog/machine-learning-definition/&#34;&gt;Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Microservices&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq&#34;&gt;NFTs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://opensource.com/resources/what-open-source&#34;&gt;Opensource&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Package Manager&lt;/li&gt;
+&lt;li&gt;Parameterisation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://reactjs.org/&#34;&gt;React&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;Web3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xrpl.org/&#34;&gt;XRPL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learn.xrpl.org&#34;&gt;XRPL Learning Portal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;learning-platforms&#34;&gt;Learning platforms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://udemy.com&#34;&gt;Udemy.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kodekloud.com&#34;&gt;Kodekloud.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codebase.show/projects/realworld?language=javascript&#34;&gt;RealWorld example apps&lt;/a&gt; The mother of all demo apps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.101daysofdevops.com/courses/&#34;&gt;101 Days of DevOps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux--open-source&#34;&gt;Linux &amp;amp; Open Source&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://itsfoss.com/&#34;&gt;Itsfoss.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linuxhandbook.com/&#34;&gt;Linuxhandbook.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.udemy.com/share/1076RM3@wyBekn7-PidnmF_CeNvkQeJjSzd9_9rNkxjrWFaI2hA7e6fQJEnkmWbazI66eyHT/&#34;&gt;CompTIA Linux on Udemy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ss64.com/links/bash.html&#34;&gt;Bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dylanaraps/pure-bash-bible&#34;&gt;Bash Bible&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Fine dining with Abraham Ortelius</title>
+      <link>/guides/contributorguide/dev-environment/01-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/dev-environment/01-setup/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;fine-dining-with-abraham-ortelius&#34;&gt;Fine dining with Abraham Ortelius&lt;/h1&gt;
+&lt;h2 id=&#34;canapes&#34;&gt;Canapes&lt;/h2&gt;
+&lt;h3 id=&#34;windows-10&#34;&gt;Windows 10&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Latest version &amp;amp; fully updated&lt;/li&gt;
+&lt;li&gt;Enable &lt;code&gt;WSL2&lt;/code&gt; | Go to &lt;code&gt;Programs and features&lt;/code&gt; &amp;ndash;&amp;gt; &lt;code&gt;Turn Windows features on or off&lt;/code&gt; &amp;ndash;&amp;gt; &lt;code&gt;Windows Subsystem for Linux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;We recommend using a second disk if you have one in your machine to create the custom folder to house the VMDK&lt;/li&gt;
+&lt;li&gt;This splits up the I/O between the Windows OS and WSL2 which is just a stripped down virtual machine&lt;/li&gt;
+&lt;li&gt;Install Windows Terminal &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/terminal/install&#34;&gt;here&lt;/a&gt; for easier management and get familiar with the documentation&lt;/li&gt;
+&lt;li&gt;Use this &lt;a href=&#34;https://www.windowscentral.com/how-install-ubuntu-2110-wsl-windows-10-and-11&#34;&gt;documentation&lt;/a&gt; to install the latest &lt;code&gt;Ubuntu&lt;/code&gt; flavour, don&amp;rsquo;t bother with the Microsoft store ( We recommend &lt;code&gt;Ubuntu Jammy JellyFish&lt;/code&gt; at this time of writing)&lt;/li&gt;
+&lt;li&gt;Line feed ending hell can be solved with this VSCode extension &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.keyoti-changeallendoflinesequence&#34;&gt;here&lt;/a&gt; or &lt;a href=&#34;https://www.computerhope.com/unix/dos2unix.htm&#34;&gt;Dos2Unix&lt;/a&gt; as another option&lt;/li&gt;
+&lt;li&gt;Windows uses CRLF&lt;/li&gt;
+&lt;li&gt;Linux uses LF&lt;/li&gt;
+&lt;li&gt;This &lt;a href=&#34;https://stackoverflow.com/questions/2920416/configure-bin-shm-bad-interpreter&#34;&gt;Stackoverflow article&lt;/a&gt; can help you understand whats going on&lt;/li&gt;
+&lt;li&gt;Example error &lt;code&gt;/bin/sh^M:bad interpreter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Suggestion Alert: Set your &lt;code&gt;VSCode&lt;/code&gt; to &lt;code&gt;LF&lt;/code&gt; and only use &lt;code&gt;WSL2&lt;/code&gt; to do all your work&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.microsoft.com/en-us/Useterms/Retail/Windows/10/UseTerms_Retail_Windows_10_English.htm&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;windows-11&#34;&gt;Windows 11&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Latest version &amp;amp; fully updated&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.microsoft.com/en-us/UseTerms/Retail/Windows/11/UseTerms_Retail_Windows_11_English.htm&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;configs-for-wsl&#34;&gt;Configs for WSL&lt;/h2&gt;
+&lt;h4 id=&#34;windows-operating-system&#34;&gt;Windows Operating System&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;c:\Users\Abraham\.wslconfig&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Settings apply across all Linux distros running on WSL 2
+[wsl2]
+
+# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+memory=4GB
+
+# Sets the VM to use two virtual processors
+processors=2
+
+# Specify a custom Linux kernel to use with your installed distros.
+# The default kernel used can be found at https://github.com/microsoft/WSL2-Linux-Kernel
+#kernel=C:\\temp\\myCustomKernel
+
+# Sets additional kernel parameters, in this case enabling older Linux base images such as Centos 6
+#kernelCommandLine = vsyscall=emulate
+
+# Sets amount of swap storage space to 8GB, default is 25% of available RAM
+swap=4GB
+
+# Sets swapfile path location, default is %USERPROFILE%\AppData\Local\Temp\swap.vhdx
+swapfile=D:\\wsl\\ubuntu-22-04-lts\\wsl-swap.vhdx
+
+# Disable page reporting so WSL retains all allocated memory claimed from Windows and releases none back when free
+pageReporting=false
+
+# Turn off default connection to bind WSL 2 localhost to Windows localhost
+localhostforwarding=true
+
+# Disables nested virtualization
+nestedVirtualization=false
+
+# Turns on output console showing contents of dmesg when opening a WSL 2 distro for debugging
+debugConsole=true
+[user]
+default = sacha
+
+[automount]
+options = &amp;#34;metadata&amp;#34;
+
+# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+memory=4GB
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;wsl-ubuntu-linux-virtual-machine&#34;&gt;WSL Ubuntu Linux Virtual Machine&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;\etc\wsl.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Automatically mount Windows drive when the distribution is launched
+[automount]
+
+# Set to true will automount fixed drives (C:/ or D:/) with DrvFs under the root directory set above. Set to false means drives won&amp;#39;t be mounted automatically, but need to be mounted manually or with fstab.
+enabled = true
+
+# Sets the directory where fixed drives will be automatically mounted. This example changes the mount location, so your C-drive would be /c, rather than the default /mnt/c.
+root = /
+
+# DrvFs-specific options can be specified.
+options = &amp;#34;metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off&amp;#34;
+
+# Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
+mountFsTab = true
+
+# Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+[network]
+hostname = DemoHost497686
+
+generateHosts = false
+generateResolvConf = false
+
+# Set whether WSL supports interop process like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+[interop]
+enabled = false
+appendWindowsPath = false
+
+# Set the user when launching a distribution with WSL.
+[user]
+default = DemoUser
+
+# Set a command to run when a new WSL instance launches. This example starts the Docker container service.
+[boot]
+command = service docker start
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;linux&#34;&gt;Linux&lt;/h2&gt;
+&lt;h4 id=&#34;ubuntuhttpsubuntucom&#34;&gt;&lt;a href=&#34;https://ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ubuntu.com/legal/intellectual-property-policy&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;centoshttpswwwcentosorg&#34;&gt;&lt;a href=&#34;https://www.centos.org/&#34;&gt;CentOS&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.centos.org/legal/licensing-policy/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;package-managers&#34;&gt;Package Managers&lt;/h3&gt;
+&lt;h4 id=&#34;apthttpsmanpagesubuntucommanpagesxenialman8apt8html-for-ubuntu&#34;&gt;&lt;a href=&#34;https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html&#34;&gt;APT&lt;/a&gt; for Ubuntu&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ubuntu.com/legal/intellectual-property-policy&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;yumhttpsman7orglinuxman-pagesman8yum8html-for-centos&#34;&gt;&lt;a href=&#34;https://man7.org/linux/man-pages/man8/yum.8.html&#34;&gt;YUM&lt;/a&gt; for Centos&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.centos.org/legal/licensing-policy/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;macos&#34;&gt;MacOs&lt;/h2&gt;
+&lt;h3 id=&#34;package-managers-1&#34;&gt;Package Managers&lt;/h3&gt;
+&lt;h4 id=&#34;macportsorghttpswwwmacportsorg&#34;&gt;&lt;a href=&#34;https://www.macports.org/&#34;&gt;Macports.org&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://opensource.org/licenses/BSD-3-Clause&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;brewshhttpsbrewsh&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34;&gt;Brew.sh&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Homebrew/brew/blob/master/LICENSE.txt&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;docker-mac-net-connecthttpsgithubcomchipmkdocker-mac-net-connect-mandatory&#34;&gt;&lt;a href=&#34;https://github.com/chipmk/docker-mac-net-connect&#34;&gt;Docker Mac Net Connect&lt;/a&gt; &lt;code&gt;MANDATORY&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Accessing containers directly by IP (instead of port binding) can be useful and convenient.&lt;/li&gt;
+&lt;li&gt;Unlike Docker on Linux, Docker-for-Mac does not expose container networks directly on the macOS host.&lt;/li&gt;
+&lt;li&gt;Docker-for-Mac works by running a Linux VM under the hood (using hyperkit) and creates containers within that VM.&lt;/li&gt;
+&lt;li&gt;Docker-for-Mac supports connecting to containers over Layer 4 (port binding), but not Layer 3 (by IP address).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a minimal network tunnel between macOS and the Docker Desktop Linux VM.&lt;/li&gt;
+&lt;li&gt;The tunnel is implemented using WireGuard.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;install-via-homebrew&#34;&gt;Install via Homebrew&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install chipmk/tap/docker-mac-net-connect
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;run-the-service-and-register-it-to-launch-at-boot&#34;&gt;Run the service and register it to launch at boot&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew services start chipmk/tap/docker-mac-net-connect
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo brew services start chipmk/tap/docker-mac-net-connect
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;starters&#34;&gt;Starters&lt;/h1&gt;
+&lt;h3 id=&#34;topgrade--update-everything-with-one-commandhttpsgithubcomr-darwishtopgrade-optional&#34;&gt;&lt;a href=&#34;https://github.com/r-darwish/topgrade&#34;&gt;Topgrade | Update everything with one command&lt;/a&gt; &lt;code&gt;OPTIONAL&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/r-darwish/topgrade/wiki/Step-list&#34;&gt;Topgrade Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Supports all operating systems&lt;/li&gt;
+&lt;li&gt;Topgrade config file is here &lt;code&gt;.config/topgrade.toml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;All I need to type now on my &lt;a href=&#34;https://ohmyz.sh/&#34;&gt;&lt;code&gt;zsh terminal&lt;/code&gt;&lt;/a&gt; is &lt;code&gt;topgrade&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;It upgrades all my package managers including the packages, Mac store apps and Mac OS updates&lt;/li&gt;
+&lt;li&gt;It can do so much more | We will leave you to explore&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/r-darwish/topgrade/blob/master/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;devdocsio--the-application-command-encyclopedia--yes-you-can-access-it-offlinehttpsdevdocsio&#34;&gt;&lt;a href=&#34;https://devdocs.io/&#34;&gt;Devdocs.io | The application command encyclopedia &amp;amp; yes you can access it offline&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Bash, CSS, Docker, Flask, Git, Go, Brew, HTML, HTTP, Java, JavaScript, Markdown, Nginx, Nodejs, npm, Python, Kubectl, Kubernetes&lt;/code&gt; and so much more&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/freeCodeCamp/devdocs/blob/main/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;warphttpswwwwarpdev-the-terminal-for-the-21st-century-optional&#34;&gt;&lt;a href=&#34;https://www.warp.dev/&#34;&gt;WARP&lt;/a&gt; The Terminal for the 21st Century &lt;code&gt;OPTIONAL&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation is &lt;a href=&#34;https://docs.warp.dev/getting-started/readme&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/warpdotdev/Warp/blob/main/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sdkmanio--for-managing-all-things-java--sdks--jdkshttpssdkmanio-optional&#34;&gt;&lt;a href=&#34;https://sdkman.io/&#34;&gt;SDKMan.io | For managing all things Java | SDKs | JDKs&lt;/a&gt; &lt;code&gt;OPTIONAL&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Usage &lt;a href=&#34;https://sdkman.io/usage&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sdkman/sdk/blob/master/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;discordcomhttpsdiscordcom&#34;&gt;&lt;a href=&#34;https://discord.com/&#34;&gt;Discord.com&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Discord is global human interaction&lt;/li&gt;
+&lt;li&gt;Set yourself up with your very own &lt;code&gt;Discord server&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a dedicated channel for &lt;code&gt;Git Guardian alerts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Do this before Git Guardian&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;GitHub webhooks are &lt;a href=&#34;https://support.discord.com/hc/en-us/articles/228383668&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discord.com/terms&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-guardiancomhttpswwwgitguardiancom&#34;&gt;&lt;a href=&#34;https://www.gitguardian.com/&#34;&gt;Git Guardian.com&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set yourself up for free&lt;/li&gt;
+&lt;li&gt;This tool will warn you when you accidently put sensitive information on the public internet in your repos&lt;/li&gt;
+&lt;li&gt;Go to &lt;code&gt;VCS Integrations&lt;/code&gt; and add your &lt;code&gt;GitHub&lt;/code&gt; (You will need to set yourself up on &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; first)&lt;/li&gt;
+&lt;li&gt;Go to &lt;code&gt;Alerting&lt;/code&gt; and setup &lt;code&gt;Discord&lt;/code&gt; notifications&lt;/li&gt;
+&lt;li&gt;Support for &lt;code&gt;CI|CD&lt;/code&gt; pipelines such as &lt;code&gt;Azure, Bitbucket, Circle CI, Drone CI, GitHub Actions, GitLab, Jenkins &amp;amp; Travis&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Support for &lt;code&gt;Git Hooks&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Support for &lt;code&gt;Docker&lt;/code&gt; | &lt;a href=&#34;https://docs.gitguardian.com/internal-repositories-monitoring/integrations/docker/docker_image&#34;&gt;Docker image integration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Alerting for &lt;code&gt;Discord, Custom Webhook, Jira, Pager Duty, Slack, Splunk&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Discord integrations are &lt;a href=&#34;https://docs.gitguardian.com/internal-repositories-monitoring/notifications/discord&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gitguardian.com/legal-terms&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;yadmiohttpsyadmio-yet-another-dot-file-manager-optional&#34;&gt;&lt;a href=&#34;https://yadm.io/&#34;&gt;YADM.io&lt;/a&gt; Yet Another Dot File Manager &lt;code&gt;OPTIONAL&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In Linux you end up with a lot of config files which usually start with &lt;code&gt;.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The dot files have configurations for various application packages installed on your machine&lt;/li&gt;
+&lt;li&gt;YADM allows you to keep the dot files of your choice backed up to a repository&lt;/li&gt;
+&lt;li&gt;Documentation &lt;a href=&#34;https://github.com/TheLocehiliosan/yadm/blob/master/yadm.md&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/TheLocehiliosan/yadm/blob/master/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;main-course&#34;&gt;Main Course&lt;/h1&gt;
+&lt;h3 id=&#34;choose-between-docker-or-podman&#34;&gt;Choose between Docker or Podman&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lambdatest.com/blog/podman-vs-docker/&#34;&gt;Read this article to gain a holistic understanding of PodMan vs Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-scmcomhttpsgit-scmcom&#34;&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;Git-scm.com&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install Git for all things source control&lt;/li&gt;
+&lt;li&gt;Set up Git &lt;a href=&#34;https://docs.github.com/en/get-started/quickstart/set-up-git&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get familiar with the basic commands such as pushing and pulling of changes and creating branches&lt;/li&gt;
+&lt;li&gt;Please refer to the &lt;a href=&#34;https://docs.ortelius.io/guides/contributorguide/pull-request-cheat-sheet/&#34;&gt;Ortelius PR Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;a href=&#34;https://devdocs.io/&#34;&gt;Devdocs&lt;/a&gt; and the Git documentation &lt;a href=&#34;https://git-scm.com/doc&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/sfc&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sfconservancy.org/&#34;&gt;Software Freedom Conservancy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;.gitconfig&lt;/code&gt; inspiration&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[core]
+	excludesfile = /Users/abraham/.gitignore_global
+[alias]
+# Make sure you&amp;#39;re adding under the [alias] block.
+# Git Commit, Add all and Push in one step.
+# Using functions in Git
+cap = &amp;#34;!f() { git add .; git commit -m \&amp;#34;$@\&amp;#34;; git push; }; f&amp;#34;
+# NEW.
+new = &amp;#34;!f() { git cap \&amp;#34;📦 NEW: $@\&amp;#34;; }; f&amp;#34;
+# IMPROVE.
+imp = &amp;#34;!f() { git cap \&amp;#34;👌 IMPROVE: $@\&amp;#34;; }; f&amp;#34;
+# FIX.
+fix = &amp;#34;!f() { git cap \&amp;#34;🐛 FIX: $@\&amp;#34;; }; f&amp;#34;
+# RELEASE.
+rlz = &amp;#34;!f() { git cap \&amp;#34;🚀 RELEASE: $@\&amp;#34;; }; f&amp;#34;
+# DOC.
+doc = &amp;#34;!f() { git cap \&amp;#34;📖 DOC: $@\&amp;#34;; }; f&amp;#34;
+# TEST.
+tst = &amp;#34;!f() { git cap \&amp;#34;🤖 TEST: $@\&amp;#34;; }; f&amp;#34;
+# BREAKING CHANGE.
+brk = &amp;#34;!f() { git cap \&amp;#34;‼️ BREAKING: $@\&amp;#34;; }; f&amp;#34;
+[user &amp;#34;https://github.com&amp;#34;]
+	name = Abraham Ortelius
+	email = abraham.ortelius@ortelius.io
+[core]
+	repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = false
+[init]
+  defaultBranch = main
+	templatedir = /Users/abraham/.git_template
+[pull]
+	rebase = false
+[credential &amp;#34;https://github.com&amp;#34;]
+	helper = store
+[credential &amp;#34;https://gist.github.com&amp;#34;]
+	helper = store
+[help]
+	autocorrect = 1
+[advice]
+	addIgnoredFile = false
+[user]
+	name = Abraham Ortelius
+	email = abraham.ortelius@ortelious.io
+
+[filter &amp;#34;lfs&amp;#34;]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[web]
+	browser = firefox
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;source-control-githubcomhttpsgithubcom&#34;&gt;Source Control &lt;a href=&#34;https://github.com/&#34;&gt;GitHub.com&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set yourself up on GitHub&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/site-policy/github-terms/github-terms-of-service&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vscodehttpscodevisualstudiocom-ide&#34;&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt; IDE&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;code&gt;VSCode IDE&lt;/code&gt; &lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Security starts in the IDE&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/License/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Helpful Extensions&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;Snyk Security | Code &amp;amp; Open Source Dependencies&lt;/code&gt; scanner &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;Language Support for Java by Red Hat&lt;/code&gt; &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=redhat.java&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;Yaml&lt;/code&gt; support &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=redhat.java&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;Indent Rainbow&lt;/code&gt; &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=redhat.java&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;Change All End of Line Sequence&lt;/code&gt; &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.keyoti-changeallendoflinesequence&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;ToDo Tree&lt;/code&gt; &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;dockercomhttpswwwdockercom&#34;&gt;&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker.com&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/signup&#34;&gt;Account setup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-docker/&#34;&gt;Install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get familiar with the basic commands&lt;/li&gt;
+&lt;li&gt;Use &lt;a href=&#34;https://devdocs.io/&#34;&gt;Devdocs&lt;/a&gt; and the Docker documentation &lt;a href=&#34;https://docs.docker.com/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.docker.com/legal/docker-terms-service/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Docker Security&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bake security right in from the word go&lt;/li&gt;
+&lt;li&gt;We are going to use Snyk to scan our containers&lt;/li&gt;
+&lt;li&gt;Snyk is free and you can set yourself up &lt;a href=&#34;https://snyk.io/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://snyk.io/policies/terms-of-service/&#34;&gt;Terms &amp;amp; Conditions for Snyk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;Docker Desktop&lt;/code&gt; go to the &lt;code&gt; Extensions Marketplace&lt;/code&gt; and install the &lt;code&gt;Snyk Container Extension&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On your command line you can now scan your Docker images with &lt;code&gt;docker scan your-docker-image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Disclaimer: Please follow any prompts &lt;code&gt;Snyk&lt;/code&gt; requires you to fulfill to get up and running&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;podmaniohttpspodmanio&#34;&gt;&lt;a href=&#34;https://podman.io/&#34;&gt;Podman.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://podman-desktop.io/&#34;&gt;Podman-Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get familiar with the basic commands&lt;/li&gt;
+&lt;li&gt;Checkout the Podman documentation &lt;a href=&#34;https://docs.podman.io/en/latest/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/containers/podman/blob/main/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;container-registries&#34;&gt;Container Registries&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Think of container registries as huge parking lots for containers&lt;/li&gt;
+&lt;li&gt;Container images can be pushed and pulled from these locations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;aws-registryhttpsgalleryecraws&#34;&gt;&lt;a href=&#34;https://gallery.ecr.aws/&#34;&gt;AWS registry&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/service-terms/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;docker-registryhttpshubdockercom_registry&#34;&gt;&lt;a href=&#34;https://hub.docker.com/_/registry&#34;&gt;Docker registry&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.docker.com/legal/docker-terms-service/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;gcp-registryhttpscloudgooglecomcontainer-registry&#34;&gt;&lt;a href=&#34;https://cloud.google.com/container-registry&#34;&gt;GCP registry&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/terms/aup&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;azure-registryhttpsazuremicrosoftcomen-usproductscontainer-registry&#34;&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/products/container-registry/&#34;&gt;Azure registry&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/support/legal/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;redhat-quay-registryhttpsquayio-ortelius-image-lives-here&#34;&gt;&lt;a href=&#34;https://quay.io/&#34;&gt;RedHat Quay registry&lt;/a&gt; (Ortelius image lives here)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.redhat.com/legal/terms&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kindsigsk8siohttpskindsigsk8sio&#34;&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/&#34;&gt;Kind.sigs.k8s.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kind allows you to use Docker to run K8s nodes as containers&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/#installation&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get familiar with the basic commands&lt;/li&gt;
+&lt;li&gt;Checkout the Kind documentation &lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.apache.org/licenses/LICENSE-2.0&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kubernetesiohttpskubernetesio&#34;&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;K8s is a production grade container orchestrater&lt;/li&gt;
+&lt;li&gt;K8s is the conductor of the orchestra where the conductor is K8s and the orchestra is the containers within PODs&lt;/li&gt;
+&lt;li&gt;PODS are cuddly safe worlds to hold containers (so cute)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linuxfoundation.org/legal/terms#:~:text=Users%20are%20solely%20responsible%20for,arising%20out%20of%20User%20Content.&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://creativecommons.org/licenses/by/3.0/&#34;&gt;Creative Commons&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kubectl&#34;&gt;Kubectl&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;kubectl&lt;/code&gt; the command line tool &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;kubectl&lt;/code&gt; cheat sheet &lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/cheatsheet/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;a href=&#34;https://devdocs.io/&#34;&gt;Devdocs&lt;/a&gt; and the official documentation &lt;a href=&#34;https://kubernetes.io/docs/home/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add the &lt;code&gt;aliases&lt;/code&gt; &amp;amp; &lt;code&gt;auto complete&lt;/code&gt; which are in the &lt;code&gt;cheat sheet&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;postgresqlorghttpswwwpostgresqlorg--ortelius-event-driven-architecture&#34;&gt;&lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL.org&lt;/a&gt; &amp;amp; Ortelius event driven architecture&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Open Source relational database&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/about/licence/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;arangodbhttpswwwarangodbcom--ortelius-xrpl-sbom-ledger&#34;&gt;&lt;a href=&#34;https://www.arangodb.com/&#34;&gt;ArangoDB&lt;/a&gt; &amp;amp; Ortelius XRPL SBOM Ledger&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn graph databases &amp;amp; native multi-models&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arangodb.com/customer-agreement/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;dessert&#34;&gt;Dessert&lt;/h1&gt;
+&lt;h3 id=&#34;orteliusiohttpsorteliusio&#34;&gt;&lt;a href=&#34;https://ortelius.io/&#34;&gt;Ortelius.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation &lt;a href=&#34;https://docs.ortelius.io/guides/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;User guide &lt;a href=&#34;https://docs.ortelius.io/guides/userguide/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Contributors guide &lt;a href=&#34;https://docs.ortelius.io/guides/contributorguide/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Installation &amp;amp; Support &lt;a href=&#34;https://docs.ortelius.io/guides/userguide/installation-and-support/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;On-prem installation &lt;a href=&#34;https://docs.ortelius.io/guides/userguide/installation-and-support/0-on-premise-installation-for-pro/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Istio installation &lt;a href=&#34;https://docs.ortelius.io/guides/userguide/installation-and-support/1-istio-installation-and-usage/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ortelius.io/guides/userguide/installation-and-support/0-terms-of-use-agreement/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;helmshhttpshelmsh&#34;&gt;&lt;a href=&#34;https://helm.sh/&#34;&gt;Helm.sh&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install Helm for your operating system (Scroll down until you see &lt;code&gt;Get Helm!&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;K8s templating engine&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linuxfoundation.org/legal/terms&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;argo-cdreadthedocsiohttpsargo-cdreadthedocsioenstabletextargo20cd20is20implemented20astarget20state20is20considered20outofsync20&#34;&gt;&lt;a href=&#34;https://argo-cd.readthedocs.io/en/stable/#:~:text=Argo%20CD%20is%20implemented%20as,target%20state%20is%20considered%20OutOfSync%20.&#34;&gt;Argo-CD.readthedocs.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Argo CD is a declarative, GitOps continous delivery tool for Kubernetes&lt;/li&gt;
+&lt;li&gt;For example it allows you to abstract the application configuration out of the developer code&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://argo-cd.readthedocs.io/en/stable/getting_started/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/argoproj/argo-cd/blob/master/LICENSE&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;keptnshhttpskeptnsh&#34;&gt;&lt;a href=&#34;https://keptn.sh/&#34;&gt;Keptn.sh&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Cloud native application life-cycle orchestration&lt;/li&gt;
+&lt;li&gt;API &amp;amp; event driven&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://keptn.sh/docs/quickstart/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linuxfoundation.org/legal/terms&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;aws-localstackhttpslocalstackcloud-the-aws-cloud-on-your-local-machine-optional&#34;&gt;&lt;a href=&#34;https://localstack.cloud/&#34;&gt;AWS Localstack&lt;/a&gt; The AWS Cloud on your local machine &lt;code&gt;OPTIONAL&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A fully functional local cloud stack to Develop and test your cloud and serverless apps offline!&lt;/li&gt;
+&lt;li&gt;AWS only at the time of writing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/get-started/&#34;&gt;Getting started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/overview/&#34;&gt;Localstack Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/&#34;&gt;Integrations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://localstack.cloud/products/cockpit/&#34;&gt;Localstack Cockpit Web UI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://localstack.cloud/terms/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;terraformhttpswwwterraformiointro-iac&#34;&gt;&lt;a href=&#34;https://www.terraform.io/intro&#34;&gt;Terraform&lt;/a&gt; IaC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation is &lt;a href=&#34;https://www.terraform.io/docs&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://registry.terraform.io/terms&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pulumihttpswwwpulumicomdocsget-started-iac&#34;&gt;&lt;a href=&#34;https://www.pulumi.com/docs/get-started/&#34;&gt;Pulumi&lt;/a&gt; IaC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation is &lt;a href=&#34;https://www.pulumi.com/docs/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Convert your Terraform to Pulumi &lt;a href=&#34;https://www.pulumi.com/tf2pulumi/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pulumi.com/terms-and-conditions/&#34;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Kind</title>
+      <link>/guides/contributorguide/dev-environment/02-kind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/dev-environment/02-kind/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;kindsigsk8siohttpskindsigsk8sio&#34;&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/&#34;&gt;Kind.sigs.k8s.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kind allows you to use Docker to run K8s nodes as containers&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/#installation&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get familiar with the basic commands&lt;/li&gt;
+&lt;li&gt;Checkout the Kind documentation &lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;images/kind/kind-docker.jpg&#34; alt=&#34;kind docker!&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;why-kind&#34;&gt;Why kind?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;kind supports multi-node (including HA) clusters&lt;/li&gt;
+&lt;li&gt;kind supports building Kubernetes release builds from source&lt;/li&gt;
+&lt;li&gt;support for make / bash or docker, in addition to pre-published builds&lt;/li&gt;
+&lt;li&gt;kind supports Linux, macOS and Windows&lt;/li&gt;
+&lt;li&gt;kind is a &lt;code&gt;CNCF certified conformant Kubernetes installer&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kubernetesiohttpskubernetesio&#34;&gt;&lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes.io&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;K8s is a production grade container orchestrater&lt;/li&gt;
+&lt;li&gt;K8s is the conductor of the orchestra where the conductor is K8s and the orchestra is the containers within PODs&lt;/li&gt;
+&lt;li&gt;PODS are cuddly safe worlds to hold containers (so cute)&lt;/li&gt;
+&lt;li&gt;Get familiar with the basic commands&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker installed &amp;amp; running&lt;/li&gt;
+&lt;li&gt;Kubectl command line tool&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;up--running&#34;&gt;Up &amp;amp; Running&lt;/h2&gt;
+&lt;h3 id=&#34;clusters&#34;&gt;Clusters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a cluster &lt;code&gt;kind create cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Delete a cluster &lt;code&gt;kind delete cluster&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;kubectl&#34;&gt;Kubectl&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;kubectl&lt;/code&gt; the command line tool &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;kubectl&lt;/code&gt; cheat sheet &lt;a href=&#34;https://kubernetes.io/docs/reference/kubectl/cheatsheet/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;a href=&#34;https://devdocs.io/&#34;&gt;Devdocs&lt;/a&gt; and the official documentation &lt;a href=&#34;https://kubernetes.io/docs/home/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add the &lt;code&gt;aliases&lt;/code&gt; &amp;amp; &lt;code&gt;auto complete&lt;/code&gt; which are in the &lt;code&gt;cheat sheet&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/docs/user/quick-start/#interacting-with-your-cluster&#34;&gt;Interacting with your cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Switch context and namespaces easily with these &lt;a href=&#34;https://github.com/ahmetb/kubectx&#34;&gt;tools&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;kind-ortelius-config.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kind: Cluster
+apiVersion: kind.sigs.k8s.io/v1alpha3
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 32000
+    hostPort: 8080
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Localstack</title>
+      <link>/guides/contributorguide/dev-environment/03-localstack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/dev-environment/03-localstack/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;aws-localstackhttpslocalstackcloud-the-aws-cloud-on-your-local-machine-optional&#34;&gt;&lt;a href=&#34;https://localstack.cloud/&#34;&gt;AWS Localstack&lt;/a&gt; The AWS Cloud on your local machine &lt;code&gt;OPTIONAL&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A fully functional local cloud stack to Develop and test your cloud and serverless apps offline!&lt;/li&gt;
+&lt;li&gt;AWS only at the time of writing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/get-started/&#34;&gt;Getting started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/overview/&#34;&gt;Localstack Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/&#34;&gt;Integrations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://localstack.cloud/products/cockpit/&#34;&gt;Localstack Cockpit Web UI&lt;/a&gt; use this to make sure your services are running&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/aws/feature-coverage/&#34;&gt;AWS Feature Coverage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;images/localstack/localstack-docker.jpg&#34; alt=&#34;localstack docker!&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;integrations&#34;&gt;Integrations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/serverless-framework/&#34;&gt;Serverless Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/spring-cloud-function/&#34;&gt;Spring Cloud Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/architect/&#34;&gt;Architect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/copilot/&#34;&gt;AWS Copilot CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/terraform/&#34;&gt;Terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/thundra/&#34;&gt;Thundra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/aws-sam/&#34;&gt;AWS SAM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/aws-cdk/&#34;&gt;AWS CDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/pulumi/&#34;&gt;Pulumi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/kafka/&#34;&gt;Kafka cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/chalice/&#34;&gt;AWS Chalice&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;images/localstack/integrations-overview.png&#34; alt=&#34;integrations overview!&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;language-sdks&#34;&gt;Language SDKS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/sdks/dotnet/&#34;&gt;.NET&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/sdks/go/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/sdks/php/&#34;&gt;PHP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/sdks/python/&#34;&gt;Python: BOTO3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker installed &amp;amp; running&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/get-started/#localstack-cli&#34;&gt;LocalStack CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.localstack.cloud/integrations/aws-cli/&#34;&gt;Install AWS CLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;up--running&#34;&gt;Up &amp;amp; Running&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure AWS Profile &amp;amp; Credentials&lt;/li&gt;
+&lt;li&gt;Create a blank &lt;code&gt;config&lt;/code&gt; &amp;amp; &lt;code&gt;credential&lt;/code&gt; file with &lt;code&gt;vi&lt;/code&gt; or &lt;code&gt;touch&lt;/code&gt; &amp;amp; copy the below into each file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;.aws/config&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[default]
+region = eu-central-1
+output = yaml
+
+[profile localstack]
+region = eu-central-1
+output = yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;.aws/credentials&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[localstack]
+aws_access_key_id = test
+aws_secret_access_key = test
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Start LocalStack from the command line &lt;code&gt;localstack start&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Test you can hit a endpoint &lt;code&gt;aws --profile localstack --endpoint-url=http://localhost:4566 kinesis list-streams&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;terraform&#34;&gt;Terraform&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Install Terraform&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;code&gt;terraform/&lt;/code&gt; folder&lt;/li&gt;
+&lt;li&gt;run &lt;code&gt;terraform init&lt;/code&gt; then &lt;code&gt;terraform plan&lt;/code&gt; then &lt;code&gt;terraform apply&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Terraform configuration for a S3 bucket deployment including all the endpoints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;main.tf&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;provider &amp;#34;aws&amp;#34; {
+  access_key                  = &amp;#34;test&amp;#34;
+  secret_key                  = &amp;#34;test&amp;#34;
+  region                      = &amp;#34;eu-central-1&amp;#34;
+  s3_force_path_style         = false
+  skip_credentials_validation = true
+  skip_metadata_api_check     = true
+  skip_requesting_account_id  = true
+
+  endpoints {
+    apigateway     = &amp;#34;http://localhost:4566&amp;#34;
+    apigatewayv2   = &amp;#34;http://localhost:4566&amp;#34;
+    cloudformation = &amp;#34;http://localhost:4566&amp;#34;
+    cloudwatch     = &amp;#34;http://localhost:4566&amp;#34;
+    dynamodb       = &amp;#34;http://localhost:4566&amp;#34;
+    ec2            = &amp;#34;http://localhost:4566&amp;#34;
+    es             = &amp;#34;http://localhost:4566&amp;#34;
+    elasticache    = &amp;#34;http://localhost:4566&amp;#34;
+    firehose       = &amp;#34;http://localhost:4566&amp;#34;
+    iam            = &amp;#34;http://localhost:4566&amp;#34;
+    kinesis        = &amp;#34;http://localhost:4566&amp;#34;
+    lambda         = &amp;#34;http://localhost:4566&amp;#34;
+    rds            = &amp;#34;http://localhost:4566&amp;#34;
+    redshift       = &amp;#34;http://localhost:4566&amp;#34;
+    route53        = &amp;#34;http://localhost:4566&amp;#34;
+    s3             = &amp;#34;http://s3.localhost.localstack.cloud:4566&amp;#34;
+    secretsmanager = &amp;#34;http://localhost:4566&amp;#34;
+    ses            = &amp;#34;http://localhost:4566&amp;#34;
+    sns            = &amp;#34;http://localhost:4566&amp;#34;
+    sqs            = &amp;#34;http://localhost:4566&amp;#34;
+    ssm            = &amp;#34;http://localhost:4566&amp;#34;
+    stepfunctions  = &amp;#34;http://localhost:4566&amp;#34;
+    sts            = &amp;#34;http://localhost:4566&amp;#34;
+  }
+}
+
+resource &amp;#34;aws_s3_bucket&amp;#34; &amp;#34;test-bucket&amp;#34; {
+  bucket = &amp;#34;abs-bucket&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;pulumi&#34;&gt;Pulumi&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pulumi.com/docs/get-started/aws/&#34;&gt;Getting started with AWS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pulumi.com/registry/packages/aws/installation-configuration/&#34;&gt;AWS installation configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pulumi endpoint configuration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Pulumi.dev.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;config:
+  aws:accessKey: &amp;#34;test&amp;#34;
+  aws:secretKey: &amp;#34;test&amp;#34;
+  aws:profile: &amp;#34;localstack&amp;#34;
+  aws:region: &amp;#34;eu-central-1&amp;#34;
+  aws:s3UsePathStyle: &amp;#34;true&amp;#34;
+  aws:skipCredentialsValidation: &amp;#34;true&amp;#34;
+  aws:skipRequestingAccountId: &amp;#34;true&amp;#34;
+  aws:endpoints:
+    - accessanalyzer: http://localhost:4566
+      account: http://localhost:4566
+      acm: http://localhost:4566
+      acmpca: http://localhost:4566
+      alexaforbusiness: http://localhost:4566
+      amp: http://localhost:4566
+      amplify: http://localhost:4566
+      amplifybackend: http://localhost:4566
+      apigateway: http://localhost:4566
+      apigatewayv2: http://localhost:4566
+      appautoscaling: http://localhost:4566
+      appconfig: http://localhost:4566
+      appflow: http://localhost:4566
+      appintegrations: http://localhost:4566
+      appintegrationsservice: http://localhost:4566
+      applicationautoscaling: http://localhost:4566
+      applicationcostprofiler: http://localhost:4566
+      applicationdiscovery: http://localhost:4566
+      applicationdiscoveryservice: http://localhost:4566
+      applicationinsights: http://localhost:4566
+      appmesh: http://localhost:4566
+      appregistry: http://localhost:4566
+      apprunner: http://localhost:4566
+      appstream: http://localhost:4566
+      appsync: http://localhost:4566
+      athena: http://localhost:4566
+      auditmanager: http://localhost:4566
+      augmentedairuntime: http://localhost:4566
+      autoscaling: http://localhost:4566
+      autoscalingplans: http://localhost:4566
+      backup: http://localhost:4566
+      batch: http://localhost:4566
+      braket: http://localhost:4566
+      budgets: http://localhost:4566
+      chime: http://localhost:4566
+      cloud9: http://localhost:4566
+      cloudcontrol: http://localhost:4566
+      cloudcontrolapi: http://localhost:4566
+      clouddirectory: http://localhost:4566
+      cloudformation: http://localhost:4566
+      cloudfront: http://localhost:4566
+      cloudhsm: http://localhost:4566
+      cloudhsmv2: http://localhost:4566
+      cloudsearch: http://localhost:4566
+      cloudsearchdomain: http://localhost:4566
+      cloudtrail: http://localhost:4566
+      cloudwatch: http://localhost:4566
+      cloudwatchevents: http://localhost:4566
+      cloudwatchlogs: http://localhost:4566
+      codeartifact: http://localhost:4566
+      codebuild: http://localhost:4566
+      codecommit: http://localhost:4566
+      codedeploy: http://localhost:4566
+      codeguruprofiler: http://localhost:4566
+      codegurureviewer: http://localhost:4566
+      codepipeline: http://localhost:4566
+      codestar: http://localhost:4566
+      codestarconnections: http://localhost:4566
+      codestarnotifications: http://localhost:4566
+      cognitoidentity: http://localhost:4566
+      cognitoidentityprovider: http://localhost:4566
+      cognitoidp: http://localhost:4566
+      cognitosync: http://localhost:4566
+      comprehend: http://localhost:4566
+      comprehendmedical: http://localhost:4566
+      config: http://localhost:4566
+      configservice: http://localhost:4566
+      connect: http://localhost:4566
+      connectcontactlens: http://localhost:4566
+      connectparticipant: http://localhost:4566
+      costandusagereportservice: http://localhost:4566
+      costexplorer: http://localhost:4566
+      cur: http://localhost:4566
+      databasemigration: http://localhost:4566
+      databasemigrationservice: http://localhost:4566
+      dataexchange: http://localhost:4566
+      datapipeline: http://localhost:4566
+      datasync: http://localhost:4566
+      dax: http://localhost:4566
+      detective: http://localhost:4566
+      devicefarm: http://localhost:4566
+      devopsguru: http://localhost:4566
+      directconnect: http://localhost:4566
+      dlm: http://localhost:4566
+      dms: http://localhost:4566
+      docdb: http://localhost:4566
+      ds: http://localhost:4566
+      dynamodb: http://localhost:4566
+      dynamodbstreams: http://localhost:4566
+      ec2: http://localhost:4566
+      ec2instanceconnect: http://localhost:4566
+      ecr: http://localhost:4566
+      ecrpublic: http://localhost:4566
+      ecs: http://localhost:4566
+      efs: http://localhost:4566
+      eks: http://localhost:4566
+      elasticache: http://localhost:4566
+      elasticbeanstalk: http://localhost:4566
+      elasticinference: http://localhost:4566
+      elasticsearch: http://localhost:4566
+      elasticsearchservice: http://localhost:4566
+      elastictranscoder: http://localhost:4566
+      elb: http://localhost:4566
+      elbv2: http://localhost:4566
+      emr: http://localhost:4566
+      emrcontainers: http://localhost:4566
+      es: http://localhost:4566
+      eventbridge: http://localhost:4566
+      events: http://localhost:4566
+      finspace: http://localhost:4566
+      finspacedata: http://localhost:4566
+      firehose: http://localhost:4566
+      fis: http://localhost:4566
+      fms: http://localhost:4566
+      forecast: http://localhost:4566
+      forecastquery: http://localhost:4566
+      forecastqueryservice: http://localhost:4566
+      forecastservice: http://localhost:4566
+      frauddetector: http://localhost:4566
+      fsx: http://localhost:4566
+      gamelift: http://localhost:4566
+      glacier: http://localhost:4566
+      globalaccelerator: http://localhost:4566
+      glue: http://localhost:4566
+      gluedatabrew: http://localhost:4566
+      greengrass: http://localhost:4566
+      greengrassv2: http://localhost:4566
+      groundstation: http://localhost:4566
+      guardduty: http://localhost:4566
+      health: http://localhost:4566
+      healthlake: http://localhost:4566
+      honeycode: http://localhost:4566
+      iam: http://localhost:4566
+      identitystore: http://localhost:4566
+      imagebuilder: http://localhost:4566
+      inspector: http://localhost:4566
+      iot: http://localhost:4566
+      iot1clickdevices: http://localhost:4566
+      iot1clickdevicesservice: http://localhost:4566
+      iot1clickprojects: http://localhost:4566
+      iotanalytics: http://localhost:4566
+      iotdataplane: http://localhost:4566
+      iotdeviceadvisor: http://localhost:4566
+      iotevents: http://localhost:4566
+      ioteventsdata: http://localhost:4566
+      iotfleethub: http://localhost:4566
+      iotjobsdataplane: http://localhost:4566
+      iotsecuretunneling: http://localhost:4566
+      iotsitewise: http://localhost:4566
+      iotthingsgraph: http://localhost:4566
+      iotwireless: http://localhost:4566
+      kafka: http://localhost:4566
+      kafkaconnect: http://localhost:4566
+      kendra: http://localhost:4566
+      kinesis: http://localhost:4566
+      kinesisanalytics: http://localhost:4566
+      kinesisanalyticsv2: http://localhost:4566
+      kinesisvideo: http://localhost:4566
+      kinesisvideoarchivedmedia: http://localhost:4566
+      kinesisvideomedia: http://localhost:4566
+      kinesisvideosignalingchannels: http://localhost:4566
+      kms: http://localhost:4566
+      lakeformation: http://localhost:4566
+      lambda: http://localhost:4566
+      lexmodelbuilding: http://localhost:4566
+      lexmodelbuildingservice: http://localhost:4566
+      lexmodels: http://localhost:4566
+      lexmodelsv2: http://localhost:4566
+      lexruntime: http://localhost:4566
+      lexruntimeservice: http://localhost:4566
+      lexruntimev2: http://localhost:4566
+      licensemanager: http://localhost:4566
+      lightsail: http://localhost:4566
+      location: http://localhost:4566
+      lookoutequipment: http://localhost:4566
+      lookoutforvision: http://localhost:4566
+      lookoutmetrics: http://localhost:4566
+      machinelearning: http://localhost:4566
+      macie: http://localhost:4566
+      macie2: http://localhost:4566
+      managedblockchain: http://localhost:4566
+      marketplacecatalog: http://localhost:4566
+      marketplacecommerceanalytics: http://localhost:4566
+      marketplaceentitlement: http://localhost:4566
+      marketplaceentitlementservice: http://localhost:4566
+      marketplacemetering: http://localhost:4566
+      mediaconnect: http://localhost:4566
+      mediaconvert: http://localhost:4566
+      medialive: http://localhost:4566
+      mediapackage: http://localhost:4566
+      mediapackagevod: http://localhost:4566
+      mediastore: http://localhost:4566
+      mediastoredata: http://localhost:4566
+      mediatailor: http://localhost:4566
+      memorydb: http://localhost:4566
+      mgn: http://localhost:4566
+      migrationhub: http://localhost:4566
+      migrationhubconfig: http://localhost:4566
+      mobile: http://localhost:4566
+      mobileanalytics: http://localhost:4566
+      mq: http://localhost:4566
+      mturk: http://localhost:4566
+      mwaa: http://localhost:4566
+      neptune: http://localhost:4566
+      networkfirewall: http://localhost:4566
+      networkmanager: http://localhost:4566
+      nimblestudio: http://localhost:4566
+      opsworks: http://localhost:4566
+      opsworkscm: http://localhost:4566
+      organizations: http://localhost:4566
+      outposts: http://localhost:4566
+      personalize: http://localhost:4566
+      personalizeevents: http://localhost:4566
+      personalizeruntime: http://localhost:4566
+      pi: http://localhost:4566
+      pinpoint: http://localhost:4566
+      pinpointemail: http://localhost:4566
+      pinpointsmsvoice: http://localhost:4566
+      polly: http://localhost:4566
+      pricing: http://localhost:4566
+      prometheus: http://localhost:4566
+      prometheusservice: http://localhost:4566
+      proton: http://localhost:4566
+      qldb: http://localhost:4566
+      qldbsession: http://localhost:4566
+      quicksight: http://localhost:4566
+      ram: http://localhost:4566
+      rds: http://localhost:4566
+      rdsdata: http://localhost:4566
+      rdsdataservice: http://localhost:4566
+      redshift: http://localhost:4566
+      redshiftdata: http://localhost:4566
+      rekognition: http://localhost:4566
+      resourcegroups: http://localhost:4566
+      resourcegroupstagging: http://localhost:4566
+      resourcegroupstaggingapi: http://localhost:4566
+      robomaker: http://localhost:4566
+      route53: http://localhost:4566
+      route53domains: http://localhost:4566
+      route53recoverycontrolconfig: http://localhost:4566
+      route53recoveryreadiness: http://localhost:4566
+      route53resolver: http://localhost:4566
+      s3: http://localhost:4566
+      s3control: http://localhost:4566
+      s3outposts: http://localhost:4566
+      sagemaker: http://localhost:4566
+      sagemakeredgemanager: http://localhost:4566
+      sagemakerfeaturestoreruntime: http://localhost:4566
+      sagemakerruntime: http://localhost:4566
+      savingsplans: http://localhost:4566
+      schemas: http://localhost:4566
+      sdb: http://localhost:4566
+      secretsmanager: http://localhost:4566
+      securityhub: http://localhost:4566
+      serverlessapplicationrepository: http://localhost:4566
+      serverlessapprepo: http://localhost:4566
+      serverlessrepo: http://localhost:4566
+      servicecatalog: http://localhost:4566
+      servicediscovery: http://localhost:4566
+      servicequotas: http://localhost:4566
+      ses: http://localhost:4566
+      sesv2: http://localhost:4566
+      sfn: http://localhost:4566
+      shield: http://localhost:4566
+      signer: http://localhost:4566
+      simpledb: http://localhost:4566
+      sms: http://localhost:4566
+      snowball: http://localhost:4566
+      sns: http://localhost:4566
+      sqs: http://localhost:4566
+      ssm: http://localhost:4566
+      ssmcontacts: http://localhost:4566
+      ssmincidents: http://localhost:4566
+      sso: http://localhost:4566
+      ssoadmin: http://localhost:4566
+      ssooidc: http://localhost:4566
+      stepfunctions: http://localhost:4566
+      storagegateway: http://localhost:4566
+      sts: http://localhost:4566
+      support: http://localhost:4566
+      swf: http://localhost:4566
+      synthetics: http://localhost:4566
+      textract: http://localhost:4566
+      timestreamquery: http://localhost:4566
+      timestreamwrite: http://localhost:4566
+      transcribe: http://localhost:4566
+      transcribeservice: http://localhost:4566
+      transcribestreaming: http://localhost:4566
+      transcribestreamingservice: http://localhost:4566
+      transfer: http://localhost:4566
+      translate: http://localhost:4566
+      waf: http://localhost:4566
+      wafregional: http://localhost:4566
+      wafv2: http://localhost:4566
+      wellarchitected: http://localhost:4566
+      workdocs: http://localhost:4566
+      worklink: http://localhost:4566
+      workmail: http://localhost:4566
+      workmailmessageflow: http://localhost:4566
+      workspaces: http://localhost:4566
+      xray: http://localhost:4566
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,576 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.111.1">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Fine dining with Abraham Ortelius | Ortelius User Guide and API Reference</title>
+<meta name="description" content="We begin our local environment construction here.
+">
+<meta property="og:title" content="Fine dining with Abraham Ortelius" />
+<meta property="og:description" content="We begin our local environment construction here.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/guides/contributorguide/dev-environment/01-setup/" /><meta property="article:section" content="guides" />
+
+<meta property="article:modified_time" content="2022-11-29T11:51:12-07:00" />
+<meta itemprop="name" content="Fine dining with Abraham Ortelius">
+<meta itemprop="description" content="We begin our local environment construction here.
+">
+<meta itemprop="dateModified" content="2022-11-29T11:51:12-07:00" />
+<meta itemprop="wordCount" content="1925">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fine dining with Abraham Ortelius"/>
+<meta name="twitter:description" content="We begin our local environment construction here.
+"/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.73bc65c1e18bb0cbd02b071f40b73b018bed23b1835e915c0f4f73a772a6713b.css" as="style">
+<link href="/scss/main.min.73bc65c1e18bb0cbd02b071f40b73b018bed23b1835e915c0f4f73a772a6713b.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Ortelius User Guide and API Reference</span></a>
+  <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block">
+    
+  </div>
+</nav>
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+
+<h1 id="fine-dining-with-abraham-ortelius">Fine dining with Abraham Ortelius</h1>
+<h2 id="canapes">Canapes</h2>
+<h3 id="windows-10">Windows 10</h3>
+<ul>
+<li>Latest version &amp; fully updated</li>
+<li>Enable <code>WSL2</code> | Go to <code>Programs and features</code> &ndash;&gt; <code>Turn Windows features on or off</code> &ndash;&gt; <code>Windows Subsystem for Linux</code></li>
+<li>We recommend using a second disk if you have one in your machine to create the custom folder to house the VMDK</li>
+<li>This splits up the I/O between the Windows OS and WSL2 which is just a stripped down virtual machine</li>
+<li>Install Windows Terminal <a href="https://docs.microsoft.com/en-us/windows/terminal/install">here</a> for easier management and get familiar with the documentation</li>
+<li>Use this <a href="https://www.windowscentral.com/how-install-ubuntu-2110-wsl-windows-10-and-11">documentation</a> to install the latest <code>Ubuntu</code> flavour, don&rsquo;t bother with the Microsoft store ( We recommend <code>Ubuntu Jammy JellyFish</code> at this time of writing)</li>
+<li>Line feed ending hell can be solved with this VSCode extension <a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.keyoti-changeallendoflinesequence">here</a> or <a href="https://www.computerhope.com/unix/dos2unix.htm">Dos2Unix</a> as another option</li>
+<li>Windows uses CRLF</li>
+<li>Linux uses LF</li>
+<li>This <a href="https://stackoverflow.com/questions/2920416/configure-bin-shm-bad-interpreter">Stackoverflow article</a> can help you understand whats going on</li>
+<li>Example error <code>/bin/sh^M:bad interpreter</code></li>
+<li>Suggestion Alert: Set your <code>VSCode</code> to <code>LF</code> and only use <code>WSL2</code> to do all your work</li>
+<li><a href="https://www.microsoft.com/en-us/Useterms/Retail/Windows/10/UseTerms_Retail_Windows_10_English.htm">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="windows-11">Windows 11</h3>
+<ul>
+<li>Latest version &amp; fully updated</li>
+<li><a href="https://www.microsoft.com/en-us/UseTerms/Retail/Windows/11/UseTerms_Retail_Windows_11_English.htm">Terms &amp; Conditions</a></li>
+</ul>
+<h2 id="configs-for-wsl">Configs for WSL</h2>
+<h4 id="windows-operating-system">Windows Operating System</h4>
+<p><code>c:\Users\Abraham\.wslconfig</code></p>
+<pre tabindex="0"><code># Settings apply across all Linux distros running on WSL 2
+[wsl2]
+
+# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+memory=4GB
+
+# Sets the VM to use two virtual processors
+processors=2
+
+# Specify a custom Linux kernel to use with your installed distros.
+# The default kernel used can be found at https://github.com/microsoft/WSL2-Linux-Kernel
+#kernel=C:\\temp\\myCustomKernel
+
+# Sets additional kernel parameters, in this case enabling older Linux base images such as Centos 6
+#kernelCommandLine = vsyscall=emulate
+
+# Sets amount of swap storage space to 8GB, default is 25% of available RAM
+swap=4GB
+
+# Sets swapfile path location, default is %USERPROFILE%\AppData\Local\Temp\swap.vhdx
+swapfile=D:\\wsl\\ubuntu-22-04-lts\\wsl-swap.vhdx
+
+# Disable page reporting so WSL retains all allocated memory claimed from Windows and releases none back when free
+pageReporting=false
+
+# Turn off default connection to bind WSL 2 localhost to Windows localhost
+localhostforwarding=true
+
+# Disables nested virtualization
+nestedVirtualization=false
+
+# Turns on output console showing contents of dmesg when opening a WSL 2 distro for debugging
+debugConsole=true
+[user]
+default = sacha
+
+[automount]
+options = &#34;metadata&#34;
+
+# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+memory=4GB
+</code></pre><h4 id="wsl-ubuntu-linux-virtual-machine">WSL Ubuntu Linux Virtual Machine</h4>
+<p><code>\etc\wsl.conf</code></p>
+<pre tabindex="0"><code># Automatically mount Windows drive when the distribution is launched
+[automount]
+
+# Set to true will automount fixed drives (C:/ or D:/) with DrvFs under the root directory set above. Set to false means drives won&#39;t be mounted automatically, but need to be mounted manually or with fstab.
+enabled = true
+
+# Sets the directory where fixed drives will be automatically mounted. This example changes the mount location, so your C-drive would be /c, rather than the default /mnt/c.
+root = /
+
+# DrvFs-specific options can be specified.
+options = &#34;metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off&#34;
+
+# Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
+mountFsTab = true
+
+# Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+[network]
+hostname = DemoHost497686
+
+generateHosts = false
+generateResolvConf = false
+
+# Set whether WSL supports interop process like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+[interop]
+enabled = false
+appendWindowsPath = false
+
+# Set the user when launching a distribution with WSL.
+[user]
+default = DemoUser
+
+# Set a command to run when a new WSL instance launches. This example starts the Docker container service.
+[boot]
+command = service docker start
+</code></pre><h2 id="linux">Linux</h2>
+<h4 id="ubuntuhttpsubuntucom"><a href="https://ubuntu.com/">Ubuntu</a></h4>
+<ul>
+<li><a href="https://ubuntu.com/legal/intellectual-property-policy">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="centoshttpswwwcentosorg"><a href="https://www.centos.org/">CentOS</a></h4>
+<ul>
+<li><a href="https://www.centos.org/legal/licensing-policy/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="package-managers">Package Managers</h3>
+<h4 id="apthttpsmanpagesubuntucommanpagesxenialman8apt8html-for-ubuntu"><a href="https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html">APT</a> for Ubuntu</h4>
+<ul>
+<li><a href="https://ubuntu.com/legal/intellectual-property-policy">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="yumhttpsman7orglinuxman-pagesman8yum8html-for-centos"><a href="https://man7.org/linux/man-pages/man8/yum.8.html">YUM</a> for Centos</h4>
+<ul>
+<li><a href="https://www.centos.org/legal/licensing-policy/">Terms &amp; Conditions</a></li>
+</ul>
+<h2 id="macos">MacOs</h2>
+<h3 id="package-managers-1">Package Managers</h3>
+<h4 id="macportsorghttpswwwmacportsorg"><a href="https://www.macports.org/">Macports.org</a></h4>
+<ul>
+<li><a href="https://opensource.org/licenses/BSD-3-Clause">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="brewshhttpsbrewsh"><a href="https://brew.sh/">Brew.sh</a></h4>
+<ul>
+<li><a href="https://github.com/Homebrew/brew/blob/master/LICENSE.txt">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="docker-mac-net-connecthttpsgithubcomchipmkdocker-mac-net-connect-mandatory"><a href="https://github.com/chipmk/docker-mac-net-connect">Docker Mac Net Connect</a> <code>MANDATORY</code></h4>
+<ul>
+<li>Accessing containers directly by IP (instead of port binding) can be useful and convenient.</li>
+<li>Unlike Docker on Linux, Docker-for-Mac does not expose container networks directly on the macOS host.</li>
+<li>Docker-for-Mac works by running a Linux VM under the hood (using hyperkit) and creates containers within that VM.</li>
+<li>Docker-for-Mac supports connecting to containers over Layer 4 (port binding), but not Layer 3 (by IP address).</li>
+</ul>
+<p><em><strong>Solution</strong></em></p>
+<ul>
+<li>Create a minimal network tunnel between macOS and the Docker Desktop Linux VM.</li>
+<li>The tunnel is implemented using WireGuard.</li>
+</ul>
+<h4 id="install-via-homebrew">Install via Homebrew</h4>
+<pre tabindex="0"><code>brew install chipmk/tap/docker-mac-net-connect
+</code></pre><h4 id="run-the-service-and-register-it-to-launch-at-boot">Run the service and register it to launch at boot</h4>
+<pre tabindex="0"><code>brew services start chipmk/tap/docker-mac-net-connect
+</code></pre><pre tabindex="0"><code>sudo brew services start chipmk/tap/docker-mac-net-connect
+</code></pre><h1 id="starters">Starters</h1>
+<h3 id="topgrade--update-everything-with-one-commandhttpsgithubcomr-darwishtopgrade-optional"><a href="https://github.com/r-darwish/topgrade">Topgrade | Update everything with one command</a> <code>OPTIONAL</code></h3>
+<ul>
+<li><a href="https://github.com/r-darwish/topgrade/wiki/Step-list">Topgrade Wiki</a></li>
+<li>Supports all operating systems</li>
+<li>Topgrade config file is here <code>.config/topgrade.toml</code></li>
+<li>All I need to type now on my <a href="https://ohmyz.sh/"><code>zsh terminal</code></a> is <code>topgrade</code></li>
+<li>It upgrades all my package managers including the packages, Mac store apps and Mac OS updates</li>
+<li>It can do so much more | We will leave you to explore</li>
+<li><a href="https://github.com/r-darwish/topgrade/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="devdocsio--the-application-command-encyclopedia--yes-you-can-access-it-offlinehttpsdevdocsio"><a href="https://devdocs.io/">Devdocs.io | The application command encyclopedia &amp; yes you can access it offline</a></h3>
+<ul>
+<li><code>Bash, CSS, Docker, Flask, Git, Go, Brew, HTML, HTTP, Java, JavaScript, Markdown, Nginx, Nodejs, npm, Python, Kubectl, Kubernetes</code> and so much more</li>
+<li><a href="https://github.com/freeCodeCamp/devdocs/blob/main/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="warphttpswwwwarpdev-the-terminal-for-the-21st-century-optional"><a href="https://www.warp.dev/">WARP</a> The Terminal for the 21st Century <code>OPTIONAL</code></h3>
+<ul>
+<li>Documentation is <a href="https://docs.warp.dev/getting-started/readme">here</a></li>
+<li><a href="https://github.com/warpdotdev/Warp/blob/main/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="sdkmanio--for-managing-all-things-java--sdks--jdkshttpssdkmanio-optional"><a href="https://sdkman.io/">SDKMan.io | For managing all things Java | SDKs | JDKs</a> <code>OPTIONAL</code></h3>
+<ul>
+<li>Usage <a href="https://sdkman.io/usage">here</a></li>
+<li><a href="https://github.com/sdkman/sdk/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="discordcomhttpsdiscordcom"><a href="https://discord.com/">Discord.com</a></h3>
+<ul>
+<li>Discord is global human interaction</li>
+<li>Set yourself up with your very own <code>Discord server</code></li>
+<li>Create a dedicated channel for <code>Git Guardian alerts</code></li>
+<li><code>Do this before Git Guardian</code></li>
+<li>GitHub webhooks are <a href="https://support.discord.com/hc/en-us/articles/228383668">here</a></li>
+<li><a href="https://discord.com/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="git-guardiancomhttpswwwgitguardiancom"><a href="https://www.gitguardian.com/">Git Guardian.com</a></h3>
+<ul>
+<li>Set yourself up for free</li>
+<li>This tool will warn you when you accidently put sensitive information on the public internet in your repos</li>
+<li>Go to <code>VCS Integrations</code> and add your <code>GitHub</code> (You will need to set yourself up on <a href="https://github.com">GitHub</a> first)</li>
+<li>Go to <code>Alerting</code> and setup <code>Discord</code> notifications</li>
+<li>Support for <code>CI|CD</code> pipelines such as <code>Azure, Bitbucket, Circle CI, Drone CI, GitHub Actions, GitLab, Jenkins &amp; Travis</code></li>
+<li>Support for <code>Git Hooks</code></li>
+<li>Support for <code>Docker</code> | <a href="https://docs.gitguardian.com/internal-repositories-monitoring/integrations/docker/docker_image">Docker image integration</a></li>
+<li>Alerting for <code>Discord, Custom Webhook, Jira, Pager Duty, Slack, Splunk</code></li>
+<li>Discord integrations are <a href="https://docs.gitguardian.com/internal-repositories-monitoring/notifications/discord">here</a></li>
+<li><a href="https://www.gitguardian.com/legal-terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="yadmiohttpsyadmio-yet-another-dot-file-manager-optional"><a href="https://yadm.io/">YADM.io</a> Yet Another Dot File Manager <code>OPTIONAL</code></h3>
+<ul>
+<li>In Linux you end up with a lot of config files which usually start with <code>.</code></li>
+<li>The dot files have configurations for various application packages installed on your machine</li>
+<li>YADM allows you to keep the dot files of your choice backed up to a repository</li>
+<li>Documentation <a href="https://github.com/TheLocehiliosan/yadm/blob/master/yadm.md">here</a></li>
+<li><a href="https://github.com/TheLocehiliosan/yadm/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h1 id="main-course">Main Course</h1>
+<h3 id="choose-between-docker-or-podman">Choose between Docker or Podman</h3>
+<ul>
+<li><a href="https://www.lambdatest.com/blog/podman-vs-docker/">Read this article to gain a holistic understanding of PodMan vs Docker</a></li>
+</ul>
+<h3 id="git-scmcomhttpsgit-scmcom"><a href="https://git-scm.com/">Git-scm.com</a></h3>
+<ul>
+<li>Install Git for all things source control</li>
+<li>Set up Git <a href="https://docs.github.com/en/get-started/quickstart/set-up-git">here</a></li>
+<li>Get familiar with the basic commands such as pushing and pulling of changes and creating branches</li>
+<li>Please refer to the <a href="https://docs.ortelius.io/guides/contributorguide/pull-request-cheat-sheet/">Ortelius PR Cheat Sheet</a></li>
+<li>Use <a href="https://devdocs.io/">Devdocs</a> and the Git documentation <a href="https://git-scm.com/doc">here</a></li>
+<li><a href="https://git-scm.com/sfc">Terms &amp; Conditions</a></li>
+<li><a href="https://sfconservancy.org/">Software Freedom Conservancy</a></li>
+</ul>
+<p><code>.gitconfig</code> inspiration</p>
+<pre tabindex="0"><code>[core]
+	excludesfile = /Users/abraham/.gitignore_global
+[alias]
+# Make sure you&#39;re adding under the [alias] block.
+# Git Commit, Add all and Push in one step.
+# Using functions in Git
+cap = &#34;!f() { git add .; git commit -m \&#34;$@\&#34;; git push; }; f&#34;
+# NEW.
+new = &#34;!f() { git cap \&#34;📦 NEW: $@\&#34;; }; f&#34;
+# IMPROVE.
+imp = &#34;!f() { git cap \&#34;👌 IMPROVE: $@\&#34;; }; f&#34;
+# FIX.
+fix = &#34;!f() { git cap \&#34;🐛 FIX: $@\&#34;; }; f&#34;
+# RELEASE.
+rlz = &#34;!f() { git cap \&#34;🚀 RELEASE: $@\&#34;; }; f&#34;
+# DOC.
+doc = &#34;!f() { git cap \&#34;📖 DOC: $@\&#34;; }; f&#34;
+# TEST.
+tst = &#34;!f() { git cap \&#34;🤖 TEST: $@\&#34;; }; f&#34;
+# BREAKING CHANGE.
+brk = &#34;!f() { git cap \&#34;‼️ BREAKING: $@\&#34;; }; f&#34;
+[user &#34;https://github.com&#34;]
+	name = Abraham Ortelius
+	email = abraham.ortelius@ortelius.io
+[core]
+	repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = false
+[init]
+  defaultBranch = main
+	templatedir = /Users/abraham/.git_template
+[pull]
+	rebase = false
+[credential &#34;https://github.com&#34;]
+	helper = store
+[credential &#34;https://gist.github.com&#34;]
+	helper = store
+[help]
+	autocorrect = 1
+[advice]
+	addIgnoredFile = false
+[user]
+	name = Abraham Ortelius
+	email = abraham.ortelius@ortelious.io
+
+[filter &#34;lfs&#34;]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[web]
+	browser = firefox
+</code></pre><h3 id="source-control-githubcomhttpsgithubcom">Source Control <a href="https://github.com/">GitHub.com</a></h3>
+<ul>
+<li>Set yourself up on GitHub</li>
+<li><a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="vscodehttpscodevisualstudiocom-ide"><a href="https://code.visualstudio.com/">VSCode</a> IDE</h3>
+<ul>
+<li>Download the <code>VSCode IDE</code> <a href="https://code.visualstudio.com/download">here</a></li>
+<li>Security starts in the IDE</li>
+<li><a href="https://code.visualstudio.com/License/">Terms &amp; Conditions</a></li>
+</ul>
+<p><strong>Helpful Extensions</strong></p>
+<ul>
+<li>Install <code>Snyk Security | Code &amp; Open Source Dependencies</code> scanner <a href="https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner">here</a></li>
+<li>Install <code>Language Support for Java by Red Hat</code> <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">here</a></li>
+<li>Install <code>Yaml</code> support <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">here</a></li>
+<li>Install <code>Indent Rainbow</code> <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">here</a></li>
+<li>Install <code>Change All End of Line Sequence</code> <a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.keyoti-changeallendoflinesequence">here</a></li>
+<li>Install <code>ToDo Tree</code> <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">here</a></li>
+</ul>
+<h3 id="dockercomhttpswwwdockercom"><a href="https://www.docker.com/">Docker.com</a></h3>
+<ul>
+<li><a href="https://hub.docker.com/signup">Account setup</a></li>
+<li><a href="https://docs.docker.com/get-docker/">Install</a></li>
+<li>Get familiar with the basic commands</li>
+<li>Use <a href="https://devdocs.io/">Devdocs</a> and the Docker documentation <a href="https://docs.docker.com/">here</a></li>
+<li><a href="https://www.docker.com/legal/docker-terms-service/">Terms &amp; Conditions</a></li>
+</ul>
+<p><strong>Docker Security</strong></p>
+<ul>
+<li>Bake security right in from the word go</li>
+<li>We are going to use Snyk to scan our containers</li>
+<li>Snyk is free and you can set yourself up <a href="https://snyk.io/">here</a></li>
+<li><a href="https://snyk.io/policies/terms-of-service/">Terms &amp; Conditions for Snyk</a></li>
+<li>In <code>Docker Desktop</code> go to the <code> Extensions Marketplace</code> and install the <code>Snyk Container Extension</code></li>
+<li>On your command line you can now scan your Docker images with <code>docker scan your-docker-image</code></li>
+<li>Disclaimer: Please follow any prompts <code>Snyk</code> requires you to fulfill to get up and running</li>
+</ul>
+<h3 id="podmaniohttpspodmanio"><a href="https://podman.io/">Podman.io</a></h3>
+<ul>
+<li><a href="https://podman-desktop.io/">Podman-Desktop</a></li>
+<li>Get familiar with the basic commands</li>
+<li>Checkout the Podman documentation <a href="https://docs.podman.io/en/latest/">here</a></li>
+<li><a href="https://github.com/containers/podman/blob/main/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="container-registries">Container Registries</h3>
+<ul>
+<li>Think of container registries as huge parking lots for containers</li>
+<li>Container images can be pushed and pulled from these locations</li>
+</ul>
+<h4 id="aws-registryhttpsgalleryecraws"><a href="https://gallery.ecr.aws/">AWS registry</a></h4>
+<ul>
+<li><a href="https://aws.amazon.com/service-terms/">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="docker-registryhttpshubdockercom_registry"><a href="https://hub.docker.com/_/registry">Docker registry</a></h4>
+<ul>
+<li><a href="https://www.docker.com/legal/docker-terms-service/">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="gcp-registryhttpscloudgooglecomcontainer-registry"><a href="https://cloud.google.com/container-registry">GCP registry</a></h4>
+<ul>
+<li><a href="https://cloud.google.com/terms/aup">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="azure-registryhttpsazuremicrosoftcomen-usproductscontainer-registry"><a href="https://azure.microsoft.com/en-us/products/container-registry/">Azure registry</a></h4>
+<ul>
+<li><a href="https://azure.microsoft.com/en-us/support/legal/">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="redhat-quay-registryhttpsquayio-ortelius-image-lives-here"><a href="https://quay.io/">RedHat Quay registry</a> (Ortelius image lives here)</h4>
+<ul>
+<li><a href="https://cloud.redhat.com/legal/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="kindsigsk8siohttpskindsigsk8sio"><a href="https://kind.sigs.k8s.io/">Kind.sigs.k8s.io</a></h3>
+<ul>
+<li>Kind allows you to use Docker to run K8s nodes as containers</li>
+<li>Install <a href="https://kind.sigs.k8s.io/docs/user/quick-start/#installation">here</a></li>
+<li>Get familiar with the basic commands</li>
+<li>Checkout the Kind documentation <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">here</a></li>
+<li><a href="https://www.apache.org/licenses/LICENSE-2.0">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="kubernetesiohttpskubernetesio"><a href="https://kubernetes.io/">Kubernetes.io</a></h3>
+<ul>
+<li>K8s is a production grade container orchestrater</li>
+<li>K8s is the conductor of the orchestra where the conductor is K8s and the orchestra is the containers within PODs</li>
+<li>PODS are cuddly safe worlds to hold containers (so cute)</li>
+<li><a href="https://www.linuxfoundation.org/legal/terms#:~:text=Users%20are%20solely%20responsible%20for,arising%20out%20of%20User%20Content.">Terms &amp; Conditions</a></li>
+<li><a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons</a></li>
+</ul>
+<h3 id="kubectl">Kubectl</h3>
+<ul>
+<li>Install <code>kubectl</code> the command line tool <a href="https://kubernetes.io/docs/tasks/tools/">here</a></li>
+<li>Use the <code>kubectl</code> cheat sheet <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">here</a></li>
+<li>Use <a href="https://devdocs.io/">Devdocs</a> and the official documentation <a href="https://kubernetes.io/docs/home/">here</a></li>
+<li>Add the <code>aliases</code> &amp; <code>auto complete</code> which are in the <code>cheat sheet</code></li>
+</ul>
+<h3 id="postgresqlorghttpswwwpostgresqlorg--ortelius-event-driven-architecture"><a href="https://www.postgresql.org/">PostgreSQL.org</a> &amp; Ortelius event driven architecture</h3>
+<ul>
+<li>Open Source relational database</li>
+<li><a href="https://www.postgresql.org/about/licence/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="arangodbhttpswwwarangodbcom--ortelius-xrpl-sbom-ledger"><a href="https://www.arangodb.com/">ArangoDB</a> &amp; Ortelius XRPL SBOM Ledger</h3>
+<ul>
+<li>Learn graph databases &amp; native multi-models</li>
+<li><a href="https://www.arangodb.com/customer-agreement/">Terms &amp; Conditions</a></li>
+</ul>
+<h1 id="dessert">Dessert</h1>
+<h3 id="orteliusiohttpsorteliusio"><a href="https://ortelius.io/">Ortelius.io</a></h3>
+<ul>
+<li>Documentation <a href="https://docs.ortelius.io/guides/">here</a></li>
+<li>User guide <a href="https://docs.ortelius.io/guides/userguide/">here</a></li>
+<li>Contributors guide <a href="https://docs.ortelius.io/guides/contributorguide/">here</a></li>
+<li>Installation &amp; Support <a href="https://docs.ortelius.io/guides/userguide/installation-and-support/">here</a></li>
+<li>On-prem installation <a href="https://docs.ortelius.io/guides/userguide/installation-and-support/0-on-premise-installation-for-pro/">here</a></li>
+<li>Istio installation <a href="https://docs.ortelius.io/guides/userguide/installation-and-support/1-istio-installation-and-usage/">here</a></li>
+<li><a href="https://docs.ortelius.io/guides/userguide/installation-and-support/0-terms-of-use-agreement/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="helmshhttpshelmsh"><a href="https://helm.sh/">Helm.sh</a></h3>
+<ul>
+<li>Install Helm for your operating system (Scroll down until you see <code>Get Helm!</code>)</li>
+<li>K8s templating engine</li>
+<li><a href="https://www.linuxfoundation.org/legal/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="argo-cdreadthedocsiohttpsargo-cdreadthedocsioenstabletextargo20cd20is20implemented20astarget20state20is20considered20outofsync20"><a href="https://argo-cd.readthedocs.io/en/stable/#:~:text=Argo%20CD%20is%20implemented%20as,target%20state%20is%20considered%20OutOfSync%20.">Argo-CD.readthedocs.io</a></h3>
+<ul>
+<li>Argo CD is a declarative, GitOps continous delivery tool for Kubernetes</li>
+<li>For example it allows you to abstract the application configuration out of the developer code</li>
+<li>Install <a href="https://argo-cd.readthedocs.io/en/stable/getting_started/">here</a></li>
+<li><a href="https://github.com/argoproj/argo-cd/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="keptnshhttpskeptnsh"><a href="https://keptn.sh/">Keptn.sh</a></h3>
+<ul>
+<li>Cloud native application life-cycle orchestration</li>
+<li>API &amp; event driven</li>
+<li>Install <a href="https://keptn.sh/docs/quickstart/">here</a></li>
+<li><a href="https://www.linuxfoundation.org/legal/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="aws-localstackhttpslocalstackcloud-the-aws-cloud-on-your-local-machine-optional"><a href="https://localstack.cloud/">AWS Localstack</a> The AWS Cloud on your local machine <code>OPTIONAL</code></h3>
+<ul>
+<li>A fully functional local cloud stack to Develop and test your cloud and serverless apps offline!</li>
+<li>AWS only at the time of writing</li>
+<li><a href="https://docs.localstack.cloud/get-started/">Getting started</a></li>
+<li><a href="https://docs.localstack.cloud/overview/">Localstack Docs</a></li>
+<li><a href="https://docs.localstack.cloud/integrations/">Integrations</a></li>
+<li><a href="https://localstack.cloud/products/cockpit/">Localstack Cockpit Web UI</a></li>
+<li><a href="https://localstack.cloud/terms/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="terraformhttpswwwterraformiointro-iac"><a href="https://www.terraform.io/intro">Terraform</a> IaC</h3>
+<ul>
+<li>Documentation is <a href="https://www.terraform.io/docs">here</a></li>
+<li><a href="https://registry.terraform.io/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="pulumihttpswwwpulumicomdocsget-started-iac"><a href="https://www.pulumi.com/docs/get-started/">Pulumi</a> IaC</h3>
+<ul>
+<li>Documentation is <a href="https://www.pulumi.com/docs/">here</a></li>
+<li>Convert your Terraform to Pulumi <a href="https://www.pulumi.com/tf2pulumi/">here</a></li>
+<li><a href="https://www.pulumi.com/terms-and-conditions/">Terms &amp; Conditions</a></li>
+</ul>
+
+
+
+      </main>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener" href="https://twitter.com/@Orteliusproj" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Facebook" aria-label="Facebook">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.facebook.com/groups/OrteliusProject/?ref=bookmarks" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="LinkedIn" aria-label="LinkedIn">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.linkedin.com/company/Orteliusproj/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="YouTube" aria-label="YouTube">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7jomcQ2D4VgjGV2ePtKWfA" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/ortelius/ortelius" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 Ortelius, Inc All Rights Reserved</small>
+        <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+  <script src="/js/main.min.be25a680a0d95dc8b5d6664622e2134aa894220e2f224ef609e00f633a3a1b32.js" integrity="sha256-viWmgKDZXci11mZGIuITSqiUIg4vIk72CeAPYzo6GzI=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
