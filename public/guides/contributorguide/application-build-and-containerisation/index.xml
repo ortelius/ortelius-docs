@@ -1,0 +1,250 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ortelius User Guide and API Reference – Required Tools for Contributing to Ortelius</title>
+    <link>/guides/contributorguide/application-build-and-containerisation/</link>
+    <description>Recent content in Required Tools for Contributing to Ortelius on Ortelius User Guide and API Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/guides/contributorguide/application-build-and-containerisation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Running java application locally</title>
+      <link>/guides/contributorguide/application-build-and-containerisation/01_run_java_application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/application-build-and-containerisation/01_run_java_application/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;steps-for-running-java-application-in-your-local-machine&#34;&gt;Steps for running java application in your local machine&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Before Starting&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use&lt;/li&gt;
+&lt;li&gt;Linux environment as we will be going to use lot of command line stuff later.&lt;/li&gt;
+&lt;li&gt;You can also run it in eclipse or other code editor for demo purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Software needed :&lt;/strong&gt;&lt;br&gt;
+Java&lt;br&gt;
+Maven&lt;br&gt;
+VS Code&lt;br&gt;
+Linux in WSL2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sample Application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let’s clone the sample application that we’ll be using in this module to our local development machine. Run the following commands in a terminal to clone the repo.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; $ cd /path/to/working/directory
+ $ git clone https://github.com/spring-projects/spring-petclinic.git
+ $ cd spring-petclinic
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Java and Maven version&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Its the version of maven and java I am using.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/java_maven_version.png&#34; alt=&#34;java Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps to run application locally&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Go to your directory where your application lies in command line. Like its my working directory.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;  arvind@DESKTOP-1DEUAEO:/mnt/c/Users/arvin/Desktop/spring-petclinic$&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the application using &lt;code&gt;mvnw spring-boot:run&lt;/code&gt; command or &lt;code&gt;mvn spring-boot:run&lt;/code&gt; command.
+It will takes some time to run application for first time. When I run this first time in my machine, it took almost 16 mins, so wait for a while.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/application_started.png&#34; alt=&#34;java Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt; If while running this command &lt;code&gt;mvnw spring-boot:run&lt;/code&gt; if it is showing error, you have to install mvnw using this command &lt;code&gt;mvn -N wrapper:wrapper&lt;/code&gt; and then try to run the prvious command again.
+In wsl2, mvnw is still not working sometimes due to windows issue, then run this -&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install dos2unix
+dos2unix mvnw
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now your mvnw will works properly.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;When you get this in your terminal, it means your application is started now. Now visit your &lt;code&gt;http://localhost:8080&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;It will look something like this in your browser.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/spring_ui.png&#34; alt=&#34;java Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Errors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Error you can get while running the application.&lt;/p&gt;
+&lt;p&gt;You will get something like this which says execution failed and list some java files.
+&lt;img src=&#34;/maven_error.png&#34; alt=&#34;java Tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this case, just open your application in vs code and convert it from CRLF to LF which you can find in the right bottom of the vscode.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Running java application using docker</title>
+      <link>/guides/contributorguide/application-build-and-containerisation/02_maven_and_docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/application-build-and-containerisation/02_maven_and_docker/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;maven-build-and-containerize-java-application&#34;&gt;Maven build and containerize java application&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Before Starting&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use Linux environment as we will be going to use lot of command line stuff later.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Software needed :&lt;/strong&gt;
+Java
+Maven
+VS Code
+Linux in WSL2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Maven build&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the previous step, we run our application normally. Now its time to do the maven build (using mvnw) and then make its docker container and try to run the application from inside of our container.&lt;/p&gt;
+&lt;p&gt;In the root directory of your project, run this command - &lt;code&gt;./mvnw -Dmaven.test.skip=true spring-boot:build-image&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt; If while running this command &lt;code&gt;./mvnw -Dmaven.test.skip=true spring-boot:build-image &lt;/code&gt; if it is showing error no such file or directory, its a wsl 2 problem.
+In wsl2, mvnw is still not working sometimes due to windows issue, so run this -&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install dos2unix
+dos2unix mvnw
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now your mvnw will works properly.&lt;/p&gt;
+&lt;p&gt;This command will create a target folder with a jar file. In this example, the name of jar file will be -
+&lt;code&gt;spring-petclinic-2.7.0-SNAPSHOT.jar&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the root of the folder create a file named as Dockerfile and copy the below content in it.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Choose your Java image
+FROM  openjdk:8-jdk-alpine
+
+# Create volume for the Java jar build process
+VOLUME  /tmp
+
+# Copy the jar to the container
+COPY  target/*.jar  app.jar
+
+# Set your command to start the Java application
+ENTRYPOINT  [&amp;#34;java&amp;#34;,&amp;#34;-jar&amp;#34;,&amp;#34;/app.jar&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Build an image&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now run this command in the terminal :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker build -t myorg/myapp .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create a docker image of the application.&lt;/p&gt;
+&lt;p&gt;Now run the following command to run the container :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -p 8080:8080 myorg/myapp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It will take some time and this will be showing in your terminal, and your application is started now.
+Now go to &lt;code&gt;localhost:8080&lt;/code&gt; and check your application running from inside a container.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Running react application in docker</title>
+      <link>/guides/contributorguide/application-build-and-containerisation/02_docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/application-build-and-containerisation/02_docker/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;containerize-react-application&#34;&gt;containerize react application&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Before Starting&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use Linux environment as we will be going to use lot of command line stuff later.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Software needed :&lt;/strong&gt;
+Node js
+npm
+VS Code
+Linux in WSL2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fixing one error&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the previous step, we run our application normally. Now its time to build its docker image. But after making image and running application, it is showing ENOENT error. So write this line in this file - &lt;code&gt;node_modules\react-dev-utils\openBrowser.js&lt;/code&gt; at line 90.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if (browser === undefined) {
+return  false;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the root of the folder create a file named as Dockerfile and copy the below content in it.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Choose the Docker image
+FROM  node:14-alpine  AS  development
+
+# Set your environment where your application will run
+ENV  NODE_ENV  development
+
+# Set you working directory for your application
+WORKDIR  /app
+
+# Copy the configuration files
+COPY  package.json  .
+COPY  yarn.lock  .
+
+# Install all the dependencies
+RUN  yarn  install
+
+# Copy all the files and folders in the current directory to the Docker container
+COPY  .  .
+
+# Expose the port
+EXPOSE  3000
+
+# Set your commands to start the application
+CMD  [  &amp;#34;yarn&amp;#34;,  &amp;#34;start&amp;#34;  ]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Build an image&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now run this command in the terminal :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker build -t client .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create a docker image of the application.&lt;/p&gt;
+&lt;p&gt;Now run the following command to run the container :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -it -p 3000:3000 client
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It will take some time and this will be showing in your terminal, and your application is started now.
+Now go to &lt;code&gt;localhost:3000&lt;/code&gt; and check your application running from inside a container.
+&lt;img src=&#34;/react_app.png&#34; alt=&#34;react Tab&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Running react application locally</title>
+      <link>/guides/contributorguide/application-build-and-containerisation/01_run_react_application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/contributorguide/application-build-and-containerisation/01_run_react_application/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;steps-for-running-react-application-in-your-local-machine&#34;&gt;Steps for running react application in your local machine&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Before Starting&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use&lt;/li&gt;
+&lt;li&gt;Linux environment as we will be going to use lot of command line stuff later.&lt;/li&gt;
+&lt;li&gt;You can also run it in eclipse or other code editor for demo purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Software needed :&lt;/strong&gt;&lt;br&gt;
+Node js&lt;br&gt;
+npm &lt;br&gt;
+VS Code&lt;br&gt;
+Linux in WSL2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sample Application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let’s clone the sample application that we’ll be using in this module to our local development machine. Run the following commands in a terminal to clone the repo.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; $ cd /path/to/working/directory
+ $ git clone https://github.com/ikismail/React-ShoppingCart.git
+ $ cd React-ShoppingCart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Running application through windows&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In your project directory, run &lt;code&gt;npm install&lt;/code&gt;. It will install all the
+dependencies from &lt;code&gt;package.json&lt;/code&gt; file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now run &lt;code&gt;npm start&lt;/code&gt;, it will start your application on
+&lt;code&gt;localhost:3000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/react_app.png&#34; alt=&#34;react Tab&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Running application through linux&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to your terminal and install node and npm using this command -
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install npm
+&lt;/code&gt;&lt;/pre&gt;This command will also install the nodejs.&lt;/li&gt;
+&lt;li&gt;In your project directory, run &lt;code&gt;npm install&lt;/code&gt;. It will install all the
+dependencies from &lt;code&gt;package.json&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;Now go to your project directory and run &lt;code&gt;npm start&lt;/code&gt;. It will start
+your application in &lt;code&gt;localhost:3000&lt;/code&gt;
+&lt;img src=&#34;/react_app.png&#34; alt=&#34;react Tab&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

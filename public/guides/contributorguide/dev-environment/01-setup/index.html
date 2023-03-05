@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.111.1">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Fine dining with Abraham Ortelius | Ortelius User Guide and API Reference</title>
+<meta name="description" content="We begin our local environment construction here.
+">
+<meta property="og:title" content="Fine dining with Abraham Ortelius" />
+<meta property="og:description" content="We begin our local environment construction here.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/guides/contributorguide/dev-environment/01-setup/" /><meta property="article:section" content="guides" />
+
+<meta property="article:modified_time" content="2022-11-29T11:51:12-07:00" />
+<meta itemprop="name" content="Fine dining with Abraham Ortelius">
+<meta itemprop="description" content="We begin our local environment construction here.
+">
+<meta itemprop="dateModified" content="2022-11-29T11:51:12-07:00" />
+<meta itemprop="wordCount" content="1925">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fine dining with Abraham Ortelius"/>
+<meta name="twitter:description" content="We begin our local environment construction here.
+"/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.c91dfa97e97151c7a116bd723818a391bdff3d4d3d0ae998fb5732c0688e0de2.css" as="style">
+<link href="/scss/main.min.c91dfa97e97151c7a116bd723818a391bdff3d4d3d0ae998fb5732c0688e0de2.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.36 109.69"><defs><style>.cls-1{fill:#3dff47}.cls-2{fill:#636363}.cls-3{isolation:isolate}.cls-4{fill:none;stroke:#000;stroke-miterlimit:10}</style></defs><title>OrteliusLogo</title><path class="cls-1" d="M96.32 39.41c0 19.17-15.83 44.43-34.52 53.82a6.83 6.83.0 01-7.12-.06c-16.27-8.62-34.6-34.85-34.6-53.76.0-20.76 17.06-37.58 38.12-37.58S96.32 18.7 96.32 39.41z" transform="translate(-0.7 0.02)"/><path d="M58.26 96a9.31 9.31.0 01-4.4-1.24 55.64 55.64.0 01-12.69-9.68A89.39 89.39.0 0129.8 71.18a82.08 82.08.0 01-8.27-16A45.67 45.67.0 0118.3 39.41 39.08 39.08.0 0130 11.52a40.2 40.2.0 0156.38.0A39.44 39.44.0 0195 24a38.68 38.68.0 013.15 15.37 49.39 49.39.0 01-2.87 15.78A73.67 73.67.0 0187.56 71 76.4 76.4.0 0176.3 84.88a56.19 56.19.0 01-13.71 10A9.52 9.52.0 0158.26 96zM58.2 3.65c-20.05.0-36.35 16-36.35 35.75.0 8.43 4 19.26 10.89 29.72 6.62 10 15.13 18.38 22.75 22.43a5.16 5.16.0 005.53.0c17.86-9 33.52-33.35 33.52-52.18C94.54 19.7 78.24 3.7 58.2 3.7z" transform="translate(-0.7 0.02)"/><path d="M91.64 40.39S87.72 64.17 73.53 66.68 60.3 53.57 67.73 48.39s23.91-8 23.91-8z" transform="translate(-0.7 0.02)"/><path class="cls-2" d="M70.05 65.64A5.68 5.68.0 0071 65.5c.3-.06.6-.12.9-.21a12.09 12.09.0 001.75-.61 14.89 14.89.0 001.66-.8 15.89 15.89.0 001.56-1 19.47 19.47.0 002.81-2.4l.32-.34.16-.17.08-.08.07-.09.31-.35.15-.18.15-.18.3-.36c.1-.12.19-.25.28-.37l.29-.37.27-.38.54-.77.14-.19a1.27 1.27.0 00.13-.19l.26-.4.52-.78.5-.8.25-.41a1.28 1.28.0 00.11-.2l.12-.2.48-.82c.08-.13.15-.27.23-.41l.22-.41.23-.42c.07-.14.14-.28.22-.42l.43-.84.41-.85c.07-.14.13-.28.2-.43l.19-.43c.14-.29.26-.58.38-.87A34.64 34.64.0 0088.9 44.2a23.91 23.91.0 01-1 3.71c-.1.3-.2.61-.32.91l-.16.45-.18.45-.36.88-.39.88c-.07.14-.13.29-.2.44l-.22.43-.21.43c-.07.14-.14.29-.22.43l-.46.84-.11.21a.72.72.0 01-.12.21l-.24.41-.49.82-.52.81-.26.4-.13.2-.14.19-.55.79-.28.39-.29.38c-.1.13-.19.26-.29.38l-.31.37-.15.19-.16.18-.32.36-.09.09-.08.08-.17.17c-.11.12-.21.23-.33.34l-.35.34-.17.16-.18.16-.36.32-.38.3-.18.15-.19.15-.39.28-.39.28-.4.26-.2.13-.21.12-.21.12-.1.06-.1.06-.43.22-.42.21a12.7 12.7.0 01-1.76.71 14.41 14.41.0 01-1.83.46A10.4 10.4.0 0170.05 65.64z" transform="translate(-0.7 0.02)"/><path d="M62.25 50.5v-.3a1.31 1.31.0 010-.28 3.33 3.33.0 01.1-.55 4.48 4.48.0 01.38-1A6.23 6.23.0 0164 46.63a10.16 10.16.0 011.67-1.33l.22-.14.23-.13.23-.14.23-.12c.31-.17.61-.34.93-.5 1.24-.63 2.52-1.22 3.82-1.73.64-.27 1.3-.51 2-.74s1.32-.45 2-.64c-.66.21-1.32.44-2 .69s-1.31.5-1.94.78c-1.29.54-2.54 1.15-3.77 1.81L66.7 45l-.22.12-.23.14-.22.14-.21.14a9.27 9.27.0 00-1.6 1.33A6.08 6.08.0 0063 48.52a5.86 5.86.0 00-.33 1 4.46 4.46.0 00-.07.51v.48z" transform="translate(-0.7 0.02)"/><path d="M24.76 40.39s3.92 23.78 18.1 26.29 13.23-13.11 5.8-18.29S24.76 40.39 24.76 40.39z" transform="translate(-0.7 0.02)"/><path class="cls-2" d="M46.34 65.64a8.29 8.29.0 01-1.86-.14 11.64 11.64.0 01-1.83-.45 14.07 14.07.0 01-1.76-.71l-.43-.21L40 63.9h-.1l-.1-.06-.21-.12-.21-.12-.2-.13-.4-.26-.39-.28L38 62.6l-.19-.15-.19-.15-.37-.3-.36-.32-.18-.16-.17-.16L36.23 61l-.34-.34-.16-.17-.09-.08-.08-.09L35.24 60l-.16-.19-.15-.18-.31-.37-.3-.38L34 58.47l-.27-.38-.55-.79-.14-.19-.13-.2-.26-.41-.52-.8-.49-.82-.25-.41a2.12 2.12.0 01-.11-.21l-.12-.21-.45-.85c-.08-.14-.15-.28-.22-.42l-.22-.43-.21-.44c-.07-.14-.13-.29-.2-.43-.13-.3-.27-.59-.39-.88l-.37-.89c-.06-.14-.12-.3-.17-.45l-.16-.45c-.12-.29-.22-.6-.32-.9a22.85 22.85.0 01-1-3.71 29.88 29.88.0 001.31 3.57c.12.29.24.58.37.87l.2.43c.06.14.13.28.2.43l.41.85.43.84c.07.14.14.28.22.42l.23.41.22.42c.08.14.15.28.23.41l.47.82.12.2.12.2.25.4.5.81.52.78.26.4a1.27 1.27.0 00.13.19l.13.19.55.77.27.38.29.37c.09.12.18.25.28.37l.3.36.14.18.16.18.31.35.07.09.08.08.16.17.32.34a18.87 18.87.0 002.8 2.4 16 16 0 001.57 1 16.89 16.89.0 001.66.8 15.08 15.08.0 001.75.61 7.32 7.32.0 00.9.21A4.18 4.18.0 0046.34 65.64z" transform="translate(-0.7 0.02)"/><path d="M53.8 50.44V50.2a1 1 0 000-.25 2.74 2.74.0 00-.07-.5 4.35 4.35.0 00-.33-1 6.39 6.39.0 00-1.19-1.69 9.14 9.14.0 00-1.59-1.32l-.22-.15-.22-.14L50 45l-.22-.13-.91-.51c-1.23-.66-2.49-1.27-3.77-1.82-.67-.27-1.33-.53-2-.78s-1.3-.48-2-.68c.67.19 1.33.41 2 .63s1.31.48 2 .74q1.94.78 3.81 1.74l.93.49.23.13.23.13.23.14.22.14a10.1 10.1.0 011.67 1.32 6.68 6.68.0 011.28 1.75 4.06 4.06.0 01.47 1.55v.58z" transform="translate(-0.7 0.02)"/><g class="cls-3"><g class="cls-3"><path class="cls-1" d="M16.08 105.87a3.07 3.07.0 01-3.35 3.3H4.57a3.15 3.15.0 01-3.37-3.3v-4.46a3.31 3.31.0 013.38-3.14h8.15a3.14 3.14.0 013.35 3.46zM13.33 102c0-.45.0-.91-.6-.91H4.57c-.64.0-.64.35-.64.71v3.62c0 .53.07.91.63.91H12.7c.63.0.63-.36.63-.76z" transform="translate(-0.7 0.02)"/></g><g class="cls-3"><path class="cls-4" d="M16.08 105.87a3.07 3.07.0 01-3.35 3.3H4.57a3.15 3.15.0 01-3.37-3.3v-4.46a3.31 3.31.0 013.38-3.14h8.15a3.14 3.14.0 013.35 3.46zM13.33 102c0-.45.0-.91-.6-.91H4.57c-.64.0-.64.35-.64.71v3.62c0 .53.07.91.63.91H12.7c.63.0.63-.36.63-.76z" transform="translate(-0.7 0.02)"/></g><g class="cls-3"><path class="cls-1" d="M17.43 98.29H29.5c2.66.0 2.66.85 2.66 3.44a2.34 2.34.0 01-.6 1.9c.3.46.7.72.7 1.48l.5 4.06H30l-.47-4.06H20.19v4.06H17.42zm2.76 4.08h8.68c.5.0.63-.64.63-1.3H20.19z" transform="translate(-0.7 0.02)"/></g><g class="cls-3"><path class="cls-4" d="M17.43 98.29H29.5c2.66.0 2.66.85 2.66 3.44a2.34 2.34.0 01-.6 1.9c.3.46.7.72.7 1.48l.5 4.06H30l-.47-4.06H20.19v4.06H17.42zm2.76 4.08h8.68c.5.0.63-.64.63-1.3H20.19z" transform="translate(-0.7 0.02)"/></g><g class="cls-3"><path class="cls-1" d="M33.62 98.29h15v2.78H42.46v8.1H39.8V101.1H33.62z" transform="translate(-0.7 0.02)"/><path class="cls-1" d="M64.68 98.27v2.8H53.27c-.58.0-.65.44-.65.91v.36H64.68v2.81h-12v.25c0 .53.07.93.63.93H64.68v2.84H53.27a3.24 3.24.0 01-3.39-3.46v-3.95a3.38 3.38.0 013.39-3.47z" transform="translate(-0.7 0.02)"/><path class="cls-1" d="M77.34 106.31v2.86H69.2a3.15 3.15.0 01-3.37-3.3v-7.6h2.73v7.13c0 .53.07.91.63.91z" transform="translate(-0.7 0.02)"/><path class="cls-1" d="M81.67 98.27v10.9h-3V98.27z" transform="translate(-0.7 0.02)"/><path class="cls-1" d="M95.33 98.27h2.74v7.6a3.07 3.07.0 01-3.35 3.3H86.56a3.15 3.15.0 01-3.37-3.3v-7.6h2.73v7.13c0 .53.07.91.63.91h8.14c.63.0.63-.36.63-.76z" transform="translate(-0.7 0.02)"/><path class="cls-1" d="M112 102.38c3.11.0 3.58 1.49 3.58 3.45s-.5 3.34-3.55 3.34h-12v-2.72H112c.86.0.87-.58.89-1.3H103c-3 0-3.6-1.41-3.6-3.39s.32-3.47 3.6-3.47h11.87v2.77h-12.6c0 .57.0 1.32.71 1.32z" transform="translate(-0.7 0.02)"/></g><g class="cls-3"><path class="cls-4" d="M33.62 98.29h15v2.78H42.46v8.1H39.8V101.1H33.62z" transform="translate(-0.7 0.02)"/><path class="cls-4" d="M64.68 98.27v2.8H53.27c-.58.0-.65.44-.65.91v.36H64.68v2.81h-12v.25c0 .53.07.93.63.93H64.68v2.84H53.27a3.24 3.24.0 01-3.39-3.46v-3.95a3.38 3.38.0 013.39-3.47z" transform="translate(-0.7 0.02)"/><path class="cls-4" d="M77.34 106.31v2.86H69.2a3.15 3.15.0 01-3.37-3.3v-7.6h2.73v7.13c0 .53.07.91.63.91z" transform="translate(-0.7 0.02)"/><path class="cls-4" d="M81.67 98.27v10.9h-3V98.27z" transform="translate(-0.7 0.02)"/><path class="cls-4" d="M95.33 98.27h2.74v7.6a3.07 3.07.0 01-3.35 3.3H86.56a3.15 3.15.0 01-3.37-3.3v-7.6h2.73v7.13c0 .53.07.91.63.91h8.14c.63.0.63-.36.63-.76z" transform="translate(-0.7 0.02)"/><path class="cls-4" d="M112 102.38c3.11.0 3.58 1.49 3.58 3.45s-.5 3.34-3.55 3.34h-12v-2.72H112c.86.0.87-.58.89-1.3H103c-3 0-3.6-1.41-3.6-3.39s.32-3.47 3.6-3.47h11.87v2.77h-12.6c0 .57.0 1.32.71 1.32z" transform="translate(-0.7 0.02)"/></g></g></svg></span><span class="navbar-brand__name">Ortelius User Guide and API Reference</span></a>
+  <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block">
+    
+  </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-guides-li">
+  <a href="/guides/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-guides"><span class="">Guides</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-guidesuserguide-li">
+  <a href="/guides/userguide/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguide"><span class="">Ortelius User Guide</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintroduction-li">
+  <a href="/guides/userguide/introduction/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguideintroduction"><span class="">Welcome</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguideinstallation-and-support-li">
+  <a href="/guides/userguide/installation-and-support/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguideinstallation-and-support"><span class="">Installation and Support</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideinstallation-and-support0-on-premise-installation-for-pro-li">
+  <a href="/guides/userguide/installation-and-support/0-on-premise-installation-for-pro/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideinstallation-and-support0-on-premise-installation-for-pro"><span class="">Installing Ortelius</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideinstallation-and-support0-commandlineinterface-li">
+  <a href="/guides/userguide/installation-and-support/0-commandlineinterface/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideinstallation-and-support0-commandlineinterface"><span class="">Command Line Interface Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideinstallation-and-support0-contactsupport-li">
+  <a href="/guides/userguide/installation-and-support/0-contactsupport/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideinstallation-and-support0-contactsupport"><span class="">Discord Support</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideinstallation-and-support0-terms-of-use-agreement-li">
+  <a href="/guides/userguide/installation-and-support/0-terms-of-use-agreement/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideinstallation-and-support0-terms-of-use-agreement"><span class="">Terms of Use Agreement</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguidefirst-steps-li">
+  <a href="/guides/userguide/first-steps/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguidefirst-steps"><span class="">First Steps</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidefirst-steps2-intro-to-set-up-li">
+  <a href="/guides/userguide/first-steps/2-intro-to-set-up/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidefirst-steps2-intro-to-set-up"><span class="">Get Started by Adding Ortelius to Your Pipeline</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidefirst-stepsbasic-concepts-li">
+  <a href="/guides/userguide/first-steps/basic-concepts/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidefirst-stepsbasic-concepts"><span class="">Overview of Ortelius Objects and Concepts</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidefirst-steps2-defining-domains-li">
+  <a href="/guides/userguide/first-steps/2-defining-domains/" title="Building Your Domain Catalog" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidefirst-steps2-defining-domains"><span class="">Building your Domain Catalog</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguidepublishing-components-li">
+  <a href="/guides/userguide/publishing-components/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguidepublishing-components"><span class="">Publishing Components</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidepublishing-componentsintro-to-components-li">
+  <a href="/guides/userguide/publishing-components/intro-to-components/" title="Intro to  Components" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidepublishing-componentsintro-to-components"><span class="">Intro to Components</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidepublishing-components2-define-components-li">
+  <a href="/guides/userguide/publishing-components/2-define-components/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidepublishing-components2-define-components"><span class="">Defining Components</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguidepackaging-applications-li">
+  <a href="/guides/userguide/packaging-applications/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguidepackaging-applications"><span class="">Packaging Applications</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidepackaging-applicationsbuildingapplications-li">
+  <a href="/guides/userguide/packaging-applications/buildingapplications/" title="Intro to Applications" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidepackaging-applicationsbuildingapplications"><span class="">Intro Applications</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidepackaging-applications2-defining-applications-li">
+  <a href="/guides/userguide/packaging-applications/2-defining-applications/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidepackaging-applications2-defining-applications"><span class="">Defining Your Application Baseline</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguideintegrations-li">
+  <a href="/guides/userguide/integrations/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguideintegrations"><span class="">Integrations</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationsci-cd_integrations-li">
+  <a href="/guides/userguide/integrations/ci-cd_integrations/" title="CI/CD Support" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationsci-cd_integrations"><span class="">CI/CD Support </span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationscircleci-li">
+  <a href="/guides/userguide/integrations/circleci/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationscircleci"><span class="">CircleCI Deployment Orb</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationsintro-to-deployment-integrations-li">
+  <a href="/guides/userguide/integrations/intro-to-deployment-integrations/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationsintro-to-deployment-integrations"><span class="">Deployment Integrations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationssbom-support-li">
+  <a href="/guides/userguide/integrations/sbom-support/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationssbom-support"><span class="">SBOMs and Ortelius</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationsspdx-cyclonedx-syft-li">
+  <a href="/guides/userguide/integrations/spdx-cyclonedx-syft/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationsspdx-cyclonedx-syft"><span class="">SPDX, CycloneDX and Syft</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationsosvdev-li">
+  <a href="/guides/userguide/integrations/osvdev/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationsosvdev"><span class="">OSV.Dev CVE Integration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationsswagger-li">
+  <a href="/guides/userguide/integrations/swagger/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationsswagger"><span class="">Swagger Integration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguideintegrationsopenmake-meister-li">
+  <a href="/guides/userguide/integrations/openmake-meister/" title="OpenMake Meister Binary Repository" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguideintegrationsopenmake-meister"><span class="">OpenMake Meister</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguidecustomizations-li">
+  <a href="/guides/userguide/customizations/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguidecustomizations"><span class="">Customizations</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidecustomizations2-users-li">
+  <a href="/guides/userguide/customizations/2-users/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidecustomizations2-users"><span class="">Managing Users</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidecustomizationscustomtypes-li">
+  <a href="/guides/userguide/customizations/customtypes/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidecustomizationscustomtypes"><span class="">Custom Types</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidecustomizationsteamgroups-li">
+  <a href="/guides/userguide/customizations/teamgroups/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidecustomizationsteamgroups"><span class="">Modifying the Default User Groups</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-guidesuserguiderestapi-li">
+  <a href="/guides/userguide/restapi/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguiderestapi"><span class="">RESTful API</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapiintro-and-logging-in-li">
+  <a href="/guides/userguide/restapi/intro-and-logging-in/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapiintro-and-logging-in"><span class="">Intro to APIs and Logging In</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapiapplications-li">
+  <a href="/guides/userguide/restapi/applications/" title="Application APIs" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapiapplications"><span class="">Applications APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapicomponents-li">
+  <a href="/guides/userguide/restapi/components/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapicomponents"><span class="">Component APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapideployment-log-li">
+  <a href="/guides/userguide/restapi/deployment-log/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapideployment-log"><span class="">Deployment Log APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapiendpoints-li">
+  <a href="/guides/userguide/restapi/endpoints/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapiendpoints"><span class="">Endpoint APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapienvironments-li">
+  <a href="/guides/userguide/restapi/environments/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapienvironments"><span class="">Environment APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapicalendar-li">
+  <a href="/guides/userguide/restapi/calendar/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapicalendar"><span class="">Environment Calendar API</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguiderestapiusers-li">
+  <a href="/guides/userguide/restapi/users/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguiderestapiusers"><span class="">User APIs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidelicenses-li">
+  <a href="/guides/userguide/licenses/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidesuserguidelicenses"><span class="">Dependency Licenses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusableapplication-and-release-tasks-li">
+  <a href="/guides/userguide/reusable/application-and-release-tasks/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusableapplication-and-release-tasks"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusableattributes-li">
+  <a href="/guides/userguide/reusable/attributes/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusableattributes"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusableaudittrail-withdeployments-li">
+  <a href="/guides/userguide/reusable/audittrail-withdeployments/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusableaudittrail-withdeployments"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusableaudittrail-li">
+  <a href="/guides/userguide/reusable/audittrail/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusableaudittrail"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-application-predecessor-li">
+  <a href="/guides/userguide/reusable/model-application-predecessor/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-application-predecessor"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-application-result-li">
+  <a href="/guides/userguide/reusable/model-application-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-application-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-application-version-full-li">
+  <a href="/guides/userguide/reusable/model-application-version-full/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-application-version-full"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-application-version-result-li">
+  <a href="/guides/userguide/reusable/model-application-version-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-application-version-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-application-version-li">
+  <a href="/guides/userguide/reusable/model-application-version/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-application-version"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-application-li">
+  <a href="/guides/userguide/reusable/model-application/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-application"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-approve-or-reject-li">
+  <a href="/guides/userguide/reusable/model-approve-or-reject/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-approve-or-reject"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-attribute-result-li">
+  <a href="/guides/userguide/reusable/model-attribute-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-attribute-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-attribute-li">
+  <a href="/guides/userguide/reusable/model-attribute/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-attribute"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-calendar-event-result-li">
+  <a href="/guides/userguide/reusable/model-calendar-event-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-calendar-event-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-calendar-event-li">
+  <a href="/guides/userguide/reusable/model-calendar-event/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-calendar-event"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-component-predecessor-li">
+  <a href="/guides/userguide/reusable/model-component-predecessor/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-component-predecessor"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-component-result-li">
+  <a href="/guides/userguide/reusable/model-component-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-component-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-component-version-full-li">
+  <a href="/guides/userguide/reusable/model-component-version-full/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-component-version-full"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-component-version-result-li">
+  <a href="/guides/userguide/reusable/model-component-version-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-component-version-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-component-version-li">
+  <a href="/guides/userguide/reusable/model-component-version/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-component-version"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-component-li">
+  <a href="/guides/userguide/reusable/model-component/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-component"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-comptype-li">
+  <a href="/guides/userguide/reusable/model-comptype/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-comptype"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-deployment-log-result-li">
+  <a href="/guides/userguide/reusable/model-deployment-log-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-deployment-log-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-deployment-log-li">
+  <a href="/guides/userguide/reusable/model-deployment-log/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-deployment-log"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-deployment-result-li">
+  <a href="/guides/userguide/reusable/model-deployment-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-deployment-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-endpoint-result-li">
+  <a href="/guides/userguide/reusable/model-endpoint-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-endpoint-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-endpoints-result-li">
+  <a href="/guides/userguide/reusable/model-endpoints-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-endpoints-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-endpoints-li">
+  <a href="/guides/userguide/reusable/model-endpoints/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-endpoints"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-environment-result-li">
+  <a href="/guides/userguide/reusable/model-environment-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-environment-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-environment-li">
+  <a href="/guides/userguide/reusable/model-environment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-environment"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-environments-result-li">
+  <a href="/guides/userguide/reusable/model-environments-result/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-environments-result"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-event-creator-li">
+  <a href="/guides/userguide/reusable/model-event-creator/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-event-creator"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-event-environment-li">
+  <a href="/guides/userguide/reusable/model-event-environment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-event-environment"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-event-timestamp-li">
+  <a href="/guides/userguide/reusable/model-event-timestamp/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-event-timestamp"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-request-li">
+  <a href="/guides/userguide/reusable/model-request/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-request"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusablemodel-success-li">
+  <a href="/guides/userguide/reusable/model-success/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusablemodel-success"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusableopenmake-meister-li">
+  <a href="/guides/userguide/reusable/openmake-meister/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusableopenmake-meister"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidesuserguidereusableortelius-pipeline-automation-li">
+  <a href="/guides/userguide/reusable/ortelius-pipeline-automation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidesuserguidereusableortelius-pipeline-automation"><span class=""></span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-guidescontributorguide-li">
+  <a href="/guides/contributorguide/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidescontributorguide"><span class="">Ortelius Contributor Guide</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidegetting-startedwelcome-li">
+  <a href="/guides/contributorguide/getting-started/welcome/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidegetting-startedwelcome"><span class="">Welcome</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-guidescontributorguideapplication-build-and-containerisation-li">
+  <a href="/guides/contributorguide/application-build-and-containerisation/" title="Required Tools for Contributing to Ortelius" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidescontributorguideapplication-build-and-containerisation"><span class="">Ortelius Contributor Guide</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidescontributorguideapplication-build-and-containerisation01_run_java_application-li">
+  <a href="/guides/contributorguide/application-build-and-containerisation/01_run_java_application/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguideapplication-build-and-containerisation01_run_java_application"><span class="">Running java application locally</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidescontributorguideapplication-build-and-containerisation02_maven_and_docker-li">
+  <a href="/guides/contributorguide/application-build-and-containerisation/02_maven_and_docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguideapplication-build-and-containerisation02_maven_and_docker"><span class="">Running java application using docker</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidescontributorguideapplication-build-and-containerisation02_docker-li">
+  <a href="/guides/contributorguide/application-build-and-containerisation/02_docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguideapplication-build-and-containerisation02_docker"><span class="">Running react application in docker</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-guidescontributorguideapplication-build-and-containerisation01_run_react_application-li">
+  <a href="/guides/contributorguide/application-build-and-containerisation/01_run_react_application/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguideapplication-build-and-containerisation01_run_react_application"><span class="">Running react application locally</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidethings-to-knowthings-to-know-li">
+  <a href="/guides/contributorguide/things-to-know/things-to-know/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidethings-to-knowthings-to-know"><span class="">Things You Should Know</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidecommunity-membership-li">
+  <a href="/guides/contributorguide/community-membership/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidecommunity-membership"><span class="">Community Membership</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-guidescontributorguidedev-environment-li">
+  <a href="/guides/contributorguide/dev-environment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-guidescontributorguidedev-environment"><span class="">Development Environment Setup</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidedev-environment00-home-li">
+  <a href="/guides/contributorguide/dev-environment/00-home/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidedev-environment00-home"><span class="">Adventure with Abraham Ortelius</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-guidescontributorguidedev-environment01-setup-li">
+  <a href="/guides/contributorguide/dev-environment/01-setup/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidedev-environment01-setup"><span class="td-sidebar-nav-active-item">Fine dining with Abraham Ortelius</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidedev-environment02-kind-li">
+  <a href="/guides/contributorguide/dev-environment/02-kind/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidedev-environment02-kind"><span class="">Kind</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidedev-environment03-localstack-li">
+  <a href="/guides/contributorguide/dev-environment/03-localstack/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidedev-environment03-localstack"><span class="">Localstack</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidedeveloper-resouces-li">
+  <a href="/guides/contributorguide/developer-resouces/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidedeveloper-resouces"><span class="">Developer Resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidehow-to-li">
+  <a href="/guides/contributorguide/how-to/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidehow-to"><span class="">How To Tips</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidepull-request-cheat-sheet-li">
+  <a href="/guides/contributorguide/pull-request-cheat-sheet/" title="Pull Request (PR) Cheat Sheet" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidepull-request-cheat-sheet"><span class="">Pull Request Cheat Sheet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-guidescontributorguidefront-end-developmenteclipse-setup-li">
+  <a href="/guides/contributorguide/front-end-development/eclipse-setup/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-guidescontributorguidefront-end-developmenteclipse-setup"><span class="">Eclipse IDE Setup</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#canapes">Canapes</a>
+      <ul>
+        <li><a href="#windows-10">Windows 10</a></li>
+        <li><a href="#windows-11">Windows 11</a></li>
+      </ul>
+    </li>
+    <li><a href="#configs-for-wsl">Configs for WSL</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#linux">Linux</a>
+      <ul>
+        <li></li>
+        <li><a href="#package-managers">Package Managers</a></li>
+      </ul>
+    </li>
+    <li><a href="#macos">MacOs</a>
+      <ul>
+        <li><a href="#package-managers-1">Package Managers</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#topgrade--update-everything-with-one-commandhttpsgithubcomr-darwishtopgrade-optional"><a href="https://github.com/r-darwish/topgrade">Topgrade | Update everything with one command</a> <code>OPTIONAL</code></a></li>
+        <li><a href="#devdocsio--the-application-command-encyclopedia--yes-you-can-access-it-offlinehttpsdevdocsio"><a href="https://devdocs.io/">Devdocs.io | The application command encyclopedia &amp; yes you can access it offline</a></a></li>
+        <li><a href="#warphttpswwwwarpdev-the-terminal-for-the-21st-century-optional"><a href="https://www.warp.dev/">WARP</a> The Terminal for the 21st Century <code>OPTIONAL</code></a></li>
+        <li><a href="#sdkmanio--for-managing-all-things-java--sdks--jdkshttpssdkmanio-optional"><a href="https://sdkman.io/">SDKMan.io | For managing all things Java | SDKs | JDKs</a> <code>OPTIONAL</code></a></li>
+        <li><a href="#discordcomhttpsdiscordcom"><a href="https://discord.com/">Discord.com</a></a></li>
+        <li><a href="#git-guardiancomhttpswwwgitguardiancom"><a href="https://www.gitguardian.com/">Git Guardian.com</a></a></li>
+        <li><a href="#yadmiohttpsyadmio-yet-another-dot-file-manager-optional"><a href="https://yadm.io/">YADM.io</a> Yet Another Dot File Manager <code>OPTIONAL</code></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#choose-between-docker-or-podman">Choose between Docker or Podman</a></li>
+        <li><a href="#git-scmcomhttpsgit-scmcom"><a href="https://git-scm.com/">Git-scm.com</a></a></li>
+        <li><a href="#source-control-githubcomhttpsgithubcom">Source Control <a href="https://github.com/">GitHub.com</a></a></li>
+        <li><a href="#vscodehttpscodevisualstudiocom-ide"><a href="https://code.visualstudio.com/">VSCode</a> IDE</a></li>
+        <li><a href="#dockercomhttpswwwdockercom"><a href="https://www.docker.com/">Docker.com</a></a></li>
+        <li><a href="#podmaniohttpspodmanio"><a href="https://podman.io/">Podman.io</a></a></li>
+        <li><a href="#container-registries">Container Registries</a></li>
+        <li><a href="#kindsigsk8siohttpskindsigsk8sio"><a href="https://kind.sigs.k8s.io/">Kind.sigs.k8s.io</a></a></li>
+        <li><a href="#kubernetesiohttpskubernetesio"><a href="https://kubernetes.io/">Kubernetes.io</a></a></li>
+        <li><a href="#kubectl">Kubectl</a></li>
+        <li><a href="#postgresqlorghttpswwwpostgresqlorg--ortelius-event-driven-architecture"><a href="https://www.postgresql.org/">PostgreSQL.org</a> &amp; Ortelius event driven architecture</a></li>
+        <li><a href="#arangodbhttpswwwarangodbcom--ortelius-xrpl-sbom-ledger"><a href="https://www.arangodb.com/">ArangoDB</a> &amp; Ortelius XRPL SBOM Ledger</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#orteliusiohttpsorteliusio"><a href="https://ortelius.io/">Ortelius.io</a></a></li>
+        <li><a href="#helmshhttpshelmsh"><a href="https://helm.sh/">Helm.sh</a></a></li>
+        <li><a href="#argo-cdreadthedocsiohttpsargo-cdreadthedocsioenstabletextargo20cd20is20implemented20astarget20state20is20considered20outofsync20"><a href="https://argo-cd.readthedocs.io/en/stable/#:~:text=Argo%20CD%20is%20implemented%20as,target%20state%20is%20considered%20OutOfSync%20.">Argo-CD.readthedocs.io</a></a></li>
+        <li><a href="#keptnshhttpskeptnsh"><a href="https://keptn.sh/">Keptn.sh</a></a></li>
+        <li><a href="#aws-localstackhttpslocalstackcloud-the-aws-cloud-on-your-local-machine-optional"><a href="https://localstack.cloud/">AWS Localstack</a> The AWS Cloud on your local machine <code>OPTIONAL</code></a></li>
+        <li><a href="#terraformhttpswwwterraformiointro-iac"><a href="https://www.terraform.io/intro">Terraform</a> IaC</a></li>
+        <li><a href="#pulumihttpswwwpulumicomdocsget-started-iac"><a href="https://www.pulumi.com/docs/get-started/">Pulumi</a> IaC</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/guides/">Guides</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="/guides/contributorguide/">Ortelius Contributor Guide</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="/guides/contributorguide/dev-environment/">Development Environment Setup</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">
+    <a href="/guides/contributorguide/dev-environment/01-setup/" aria-disabled="true" class="btn-link disabled">Fine dining with Abraham Ortelius</a>
+  </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Fine dining with Abraham Ortelius</h1>
+	<div class="lead">We begin our local environment construction here.</div>
+	<header class="article-meta">
+		
+
+  
+    
+
+
+  
+    
+
+
+  
+
+		
+	</header>    
+	<h1 id="fine-dining-with-abraham-ortelius">Fine dining with Abraham Ortelius</h1>
+<h2 id="canapes">Canapes</h2>
+<h3 id="windows-10">Windows 10</h3>
+<ul>
+<li>Latest version &amp; fully updated</li>
+<li>Enable <code>WSL2</code> | Go to <code>Programs and features</code> &ndash;&gt; <code>Turn Windows features on or off</code> &ndash;&gt; <code>Windows Subsystem for Linux</code></li>
+<li>We recommend using a second disk if you have one in your machine to create the custom folder to house the VMDK</li>
+<li>This splits up the I/O between the Windows OS and WSL2 which is just a stripped down virtual machine</li>
+<li>Install Windows Terminal <a href="https://docs.microsoft.com/en-us/windows/terminal/install">here</a> for easier management and get familiar with the documentation</li>
+<li>Use this <a href="https://www.windowscentral.com/how-install-ubuntu-2110-wsl-windows-10-and-11">documentation</a> to install the latest <code>Ubuntu</code> flavour, don&rsquo;t bother with the Microsoft store ( We recommend <code>Ubuntu Jammy JellyFish</code> at this time of writing)</li>
+<li>Line feed ending hell can be solved with this VSCode extension <a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.keyoti-changeallendoflinesequence">here</a> or <a href="https://www.computerhope.com/unix/dos2unix.htm">Dos2Unix</a> as another option</li>
+<li>Windows uses CRLF</li>
+<li>Linux uses LF</li>
+<li>This <a href="https://stackoverflow.com/questions/2920416/configure-bin-shm-bad-interpreter">Stackoverflow article</a> can help you understand whats going on</li>
+<li>Example error <code>/bin/sh^M:bad interpreter</code></li>
+<li>Suggestion Alert: Set your <code>VSCode</code> to <code>LF</code> and only use <code>WSL2</code> to do all your work</li>
+<li><a href="https://www.microsoft.com/en-us/Useterms/Retail/Windows/10/UseTerms_Retail_Windows_10_English.htm">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="windows-11">Windows 11</h3>
+<ul>
+<li>Latest version &amp; fully updated</li>
+<li><a href="https://www.microsoft.com/en-us/UseTerms/Retail/Windows/11/UseTerms_Retail_Windows_11_English.htm">Terms &amp; Conditions</a></li>
+</ul>
+<h2 id="configs-for-wsl">Configs for WSL</h2>
+<h4 id="windows-operating-system">Windows Operating System</h4>
+<p><code>c:\Users\Abraham\.wslconfig</code></p>
+<pre tabindex="0"><code># Settings apply across all Linux distros running on WSL 2
+[wsl2]
+
+# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+memory=4GB
+
+# Sets the VM to use two virtual processors
+processors=2
+
+# Specify a custom Linux kernel to use with your installed distros.
+# The default kernel used can be found at https://github.com/microsoft/WSL2-Linux-Kernel
+#kernel=C:\\temp\\myCustomKernel
+
+# Sets additional kernel parameters, in this case enabling older Linux base images such as Centos 6
+#kernelCommandLine = vsyscall=emulate
+
+# Sets amount of swap storage space to 8GB, default is 25% of available RAM
+swap=4GB
+
+# Sets swapfile path location, default is %USERPROFILE%\AppData\Local\Temp\swap.vhdx
+swapfile=D:\\wsl\\ubuntu-22-04-lts\\wsl-swap.vhdx
+
+# Disable page reporting so WSL retains all allocated memory claimed from Windows and releases none back when free
+pageReporting=false
+
+# Turn off default connection to bind WSL 2 localhost to Windows localhost
+localhostforwarding=true
+
+# Disables nested virtualization
+nestedVirtualization=false
+
+# Turns on output console showing contents of dmesg when opening a WSL 2 distro for debugging
+debugConsole=true
+[user]
+default = sacha
+
+[automount]
+options = &#34;metadata&#34;
+
+# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+memory=4GB
+</code></pre><h4 id="wsl-ubuntu-linux-virtual-machine">WSL Ubuntu Linux Virtual Machine</h4>
+<p><code>\etc\wsl.conf</code></p>
+<pre tabindex="0"><code># Automatically mount Windows drive when the distribution is launched
+[automount]
+
+# Set to true will automount fixed drives (C:/ or D:/) with DrvFs under the root directory set above. Set to false means drives won&#39;t be mounted automatically, but need to be mounted manually or with fstab.
+enabled = true
+
+# Sets the directory where fixed drives will be automatically mounted. This example changes the mount location, so your C-drive would be /c, rather than the default /mnt/c.
+root = /
+
+# DrvFs-specific options can be specified.
+options = &#34;metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off&#34;
+
+# Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
+mountFsTab = true
+
+# Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+[network]
+hostname = DemoHost497686
+
+generateHosts = false
+generateResolvConf = false
+
+# Set whether WSL supports interop process like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+[interop]
+enabled = false
+appendWindowsPath = false
+
+# Set the user when launching a distribution with WSL.
+[user]
+default = DemoUser
+
+# Set a command to run when a new WSL instance launches. This example starts the Docker container service.
+[boot]
+command = service docker start
+</code></pre><h2 id="linux">Linux</h2>
+<h4 id="ubuntuhttpsubuntucom"><a href="https://ubuntu.com/">Ubuntu</a></h4>
+<ul>
+<li><a href="https://ubuntu.com/legal/intellectual-property-policy">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="centoshttpswwwcentosorg"><a href="https://www.centos.org/">CentOS</a></h4>
+<ul>
+<li><a href="https://www.centos.org/legal/licensing-policy/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="package-managers">Package Managers</h3>
+<h4 id="apthttpsmanpagesubuntucommanpagesxenialman8apt8html-for-ubuntu"><a href="https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html">APT</a> for Ubuntu</h4>
+<ul>
+<li><a href="https://ubuntu.com/legal/intellectual-property-policy">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="yumhttpsman7orglinuxman-pagesman8yum8html-for-centos"><a href="https://man7.org/linux/man-pages/man8/yum.8.html">YUM</a> for Centos</h4>
+<ul>
+<li><a href="https://www.centos.org/legal/licensing-policy/">Terms &amp; Conditions</a></li>
+</ul>
+<h2 id="macos">MacOs</h2>
+<h3 id="package-managers-1">Package Managers</h3>
+<h4 id="macportsorghttpswwwmacportsorg"><a href="https://www.macports.org/">Macports.org</a></h4>
+<ul>
+<li><a href="https://opensource.org/licenses/BSD-3-Clause">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="brewshhttpsbrewsh"><a href="https://brew.sh/">Brew.sh</a></h4>
+<ul>
+<li><a href="https://github.com/Homebrew/brew/blob/master/LICENSE.txt">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="docker-mac-net-connecthttpsgithubcomchipmkdocker-mac-net-connect-mandatory"><a href="https://github.com/chipmk/docker-mac-net-connect">Docker Mac Net Connect</a> <code>MANDATORY</code></h4>
+<ul>
+<li>Accessing containers directly by IP (instead of port binding) can be useful and convenient.</li>
+<li>Unlike Docker on Linux, Docker-for-Mac does not expose container networks directly on the macOS host.</li>
+<li>Docker-for-Mac works by running a Linux VM under the hood (using hyperkit) and creates containers within that VM.</li>
+<li>Docker-for-Mac supports connecting to containers over Layer 4 (port binding), but not Layer 3 (by IP address).</li>
+</ul>
+<p><em><strong>Solution</strong></em></p>
+<ul>
+<li>Create a minimal network tunnel between macOS and the Docker Desktop Linux VM.</li>
+<li>The tunnel is implemented using WireGuard.</li>
+</ul>
+<h4 id="install-via-homebrew">Install via Homebrew</h4>
+<pre tabindex="0"><code>brew install chipmk/tap/docker-mac-net-connect
+</code></pre><h4 id="run-the-service-and-register-it-to-launch-at-boot">Run the service and register it to launch at boot</h4>
+<pre tabindex="0"><code>brew services start chipmk/tap/docker-mac-net-connect
+</code></pre><pre tabindex="0"><code>sudo brew services start chipmk/tap/docker-mac-net-connect
+</code></pre><h1 id="starters">Starters</h1>
+<h3 id="topgrade--update-everything-with-one-commandhttpsgithubcomr-darwishtopgrade-optional"><a href="https://github.com/r-darwish/topgrade">Topgrade | Update everything with one command</a> <code>OPTIONAL</code></h3>
+<ul>
+<li><a href="https://github.com/r-darwish/topgrade/wiki/Step-list">Topgrade Wiki</a></li>
+<li>Supports all operating systems</li>
+<li>Topgrade config file is here <code>.config/topgrade.toml</code></li>
+<li>All I need to type now on my <a href="https://ohmyz.sh/"><code>zsh terminal</code></a> is <code>topgrade</code></li>
+<li>It upgrades all my package managers including the packages, Mac store apps and Mac OS updates</li>
+<li>It can do so much more | We will leave you to explore</li>
+<li><a href="https://github.com/r-darwish/topgrade/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="devdocsio--the-application-command-encyclopedia--yes-you-can-access-it-offlinehttpsdevdocsio"><a href="https://devdocs.io/">Devdocs.io | The application command encyclopedia &amp; yes you can access it offline</a></h3>
+<ul>
+<li><code>Bash, CSS, Docker, Flask, Git, Go, Brew, HTML, HTTP, Java, JavaScript, Markdown, Nginx, Nodejs, npm, Python, Kubectl, Kubernetes</code> and so much more</li>
+<li><a href="https://github.com/freeCodeCamp/devdocs/blob/main/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="warphttpswwwwarpdev-the-terminal-for-the-21st-century-optional"><a href="https://www.warp.dev/">WARP</a> The Terminal for the 21st Century <code>OPTIONAL</code></h3>
+<ul>
+<li>Documentation is <a href="https://docs.warp.dev/getting-started/readme">here</a></li>
+<li><a href="https://github.com/warpdotdev/Warp/blob/main/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="sdkmanio--for-managing-all-things-java--sdks--jdkshttpssdkmanio-optional"><a href="https://sdkman.io/">SDKMan.io | For managing all things Java | SDKs | JDKs</a> <code>OPTIONAL</code></h3>
+<ul>
+<li>Usage <a href="https://sdkman.io/usage">here</a></li>
+<li><a href="https://github.com/sdkman/sdk/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="discordcomhttpsdiscordcom"><a href="https://discord.com/">Discord.com</a></h3>
+<ul>
+<li>Discord is global human interaction</li>
+<li>Set yourself up with your very own <code>Discord server</code></li>
+<li>Create a dedicated channel for <code>Git Guardian alerts</code></li>
+<li><code>Do this before Git Guardian</code></li>
+<li>GitHub webhooks are <a href="https://support.discord.com/hc/en-us/articles/228383668">here</a></li>
+<li><a href="https://discord.com/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="git-guardiancomhttpswwwgitguardiancom"><a href="https://www.gitguardian.com/">Git Guardian.com</a></h3>
+<ul>
+<li>Set yourself up for free</li>
+<li>This tool will warn you when you accidently put sensitive information on the public internet in your repos</li>
+<li>Go to <code>VCS Integrations</code> and add your <code>GitHub</code> (You will need to set yourself up on <a href="https://github.com">GitHub</a> first)</li>
+<li>Go to <code>Alerting</code> and setup <code>Discord</code> notifications</li>
+<li>Support for <code>CI|CD</code> pipelines such as <code>Azure, Bitbucket, Circle CI, Drone CI, GitHub Actions, GitLab, Jenkins &amp; Travis</code></li>
+<li>Support for <code>Git Hooks</code></li>
+<li>Support for <code>Docker</code> | <a href="https://docs.gitguardian.com/internal-repositories-monitoring/integrations/docker/docker_image">Docker image integration</a></li>
+<li>Alerting for <code>Discord, Custom Webhook, Jira, Pager Duty, Slack, Splunk</code></li>
+<li>Discord integrations are <a href="https://docs.gitguardian.com/internal-repositories-monitoring/notifications/discord">here</a></li>
+<li><a href="https://www.gitguardian.com/legal-terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="yadmiohttpsyadmio-yet-another-dot-file-manager-optional"><a href="https://yadm.io/">YADM.io</a> Yet Another Dot File Manager <code>OPTIONAL</code></h3>
+<ul>
+<li>In Linux you end up with a lot of config files which usually start with <code>.</code></li>
+<li>The dot files have configurations for various application packages installed on your machine</li>
+<li>YADM allows you to keep the dot files of your choice backed up to a repository</li>
+<li>Documentation <a href="https://github.com/TheLocehiliosan/yadm/blob/master/yadm.md">here</a></li>
+<li><a href="https://github.com/TheLocehiliosan/yadm/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h1 id="main-course">Main Course</h1>
+<h3 id="choose-between-docker-or-podman">Choose between Docker or Podman</h3>
+<ul>
+<li><a href="https://www.lambdatest.com/blog/podman-vs-docker/">Read this article to gain a holistic understanding of PodMan vs Docker</a></li>
+</ul>
+<h3 id="git-scmcomhttpsgit-scmcom"><a href="https://git-scm.com/">Git-scm.com</a></h3>
+<ul>
+<li>Install Git for all things source control</li>
+<li>Set up Git <a href="https://docs.github.com/en/get-started/quickstart/set-up-git">here</a></li>
+<li>Get familiar with the basic commands such as pushing and pulling of changes and creating branches</li>
+<li>Please refer to the <a href="https://docs.ortelius.io/guides/contributorguide/pull-request-cheat-sheet/">Ortelius PR Cheat Sheet</a></li>
+<li>Use <a href="https://devdocs.io/">Devdocs</a> and the Git documentation <a href="https://git-scm.com/doc">here</a></li>
+<li><a href="https://git-scm.com/sfc">Terms &amp; Conditions</a></li>
+<li><a href="https://sfconservancy.org/">Software Freedom Conservancy</a></li>
+</ul>
+<p><code>.gitconfig</code> inspiration</p>
+<pre tabindex="0"><code>[core]
+	excludesfile = /Users/abraham/.gitignore_global
+[alias]
+# Make sure you&#39;re adding under the [alias] block.
+# Git Commit, Add all and Push in one step.
+# Using functions in Git
+cap = &#34;!f() { git add .; git commit -m \&#34;$@\&#34;; git push; }; f&#34;
+# NEW.
+new = &#34;!f() { git cap \&#34;📦 NEW: $@\&#34;; }; f&#34;
+# IMPROVE.
+imp = &#34;!f() { git cap \&#34;👌 IMPROVE: $@\&#34;; }; f&#34;
+# FIX.
+fix = &#34;!f() { git cap \&#34;🐛 FIX: $@\&#34;; }; f&#34;
+# RELEASE.
+rlz = &#34;!f() { git cap \&#34;🚀 RELEASE: $@\&#34;; }; f&#34;
+# DOC.
+doc = &#34;!f() { git cap \&#34;📖 DOC: $@\&#34;; }; f&#34;
+# TEST.
+tst = &#34;!f() { git cap \&#34;🤖 TEST: $@\&#34;; }; f&#34;
+# BREAKING CHANGE.
+brk = &#34;!f() { git cap \&#34;‼️ BREAKING: $@\&#34;; }; f&#34;
+[user &#34;https://github.com&#34;]
+	name = Abraham Ortelius
+	email = abraham.ortelius@ortelius.io
+[core]
+	repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = false
+[init]
+  defaultBranch = main
+	templatedir = /Users/abraham/.git_template
+[pull]
+	rebase = false
+[credential &#34;https://github.com&#34;]
+	helper = store
+[credential &#34;https://gist.github.com&#34;]
+	helper = store
+[help]
+	autocorrect = 1
+[advice]
+	addIgnoredFile = false
+[user]
+	name = Abraham Ortelius
+	email = abraham.ortelius@ortelious.io
+
+[filter &#34;lfs&#34;]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[web]
+	browser = firefox
+</code></pre><h3 id="source-control-githubcomhttpsgithubcom">Source Control <a href="https://github.com/">GitHub.com</a></h3>
+<ul>
+<li>Set yourself up on GitHub</li>
+<li><a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="vscodehttpscodevisualstudiocom-ide"><a href="https://code.visualstudio.com/">VSCode</a> IDE</h3>
+<ul>
+<li>Download the <code>VSCode IDE</code> <a href="https://code.visualstudio.com/download">here</a></li>
+<li>Security starts in the IDE</li>
+<li><a href="https://code.visualstudio.com/License/">Terms &amp; Conditions</a></li>
+</ul>
+<p><strong>Helpful Extensions</strong></p>
+<ul>
+<li>Install <code>Snyk Security | Code &amp; Open Source Dependencies</code> scanner <a href="https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner">here</a></li>
+<li>Install <code>Language Support for Java by Red Hat</code> <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">here</a></li>
+<li>Install <code>Yaml</code> support <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">here</a></li>
+<li>Install <code>Indent Rainbow</code> <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">here</a></li>
+<li>Install <code>Change All End of Line Sequence</code> <a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.keyoti-changeallendoflinesequence">here</a></li>
+<li>Install <code>ToDo Tree</code> <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">here</a></li>
+</ul>
+<h3 id="dockercomhttpswwwdockercom"><a href="https://www.docker.com/">Docker.com</a></h3>
+<ul>
+<li><a href="https://hub.docker.com/signup">Account setup</a></li>
+<li><a href="https://docs.docker.com/get-docker/">Install</a></li>
+<li>Get familiar with the basic commands</li>
+<li>Use <a href="https://devdocs.io/">Devdocs</a> and the Docker documentation <a href="https://docs.docker.com/">here</a></li>
+<li><a href="https://www.docker.com/legal/docker-terms-service/">Terms &amp; Conditions</a></li>
+</ul>
+<p><strong>Docker Security</strong></p>
+<ul>
+<li>Bake security right in from the word go</li>
+<li>We are going to use Snyk to scan our containers</li>
+<li>Snyk is free and you can set yourself up <a href="https://snyk.io/">here</a></li>
+<li><a href="https://snyk.io/policies/terms-of-service/">Terms &amp; Conditions for Snyk</a></li>
+<li>In <code>Docker Desktop</code> go to the <code> Extensions Marketplace</code> and install the <code>Snyk Container Extension</code></li>
+<li>On your command line you can now scan your Docker images with <code>docker scan your-docker-image</code></li>
+<li>Disclaimer: Please follow any prompts <code>Snyk</code> requires you to fulfill to get up and running</li>
+</ul>
+<h3 id="podmaniohttpspodmanio"><a href="https://podman.io/">Podman.io</a></h3>
+<ul>
+<li><a href="https://podman-desktop.io/">Podman-Desktop</a></li>
+<li>Get familiar with the basic commands</li>
+<li>Checkout the Podman documentation <a href="https://docs.podman.io/en/latest/">here</a></li>
+<li><a href="https://github.com/containers/podman/blob/main/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="container-registries">Container Registries</h3>
+<ul>
+<li>Think of container registries as huge parking lots for containers</li>
+<li>Container images can be pushed and pulled from these locations</li>
+</ul>
+<h4 id="aws-registryhttpsgalleryecraws"><a href="https://gallery.ecr.aws/">AWS registry</a></h4>
+<ul>
+<li><a href="https://aws.amazon.com/service-terms/">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="docker-registryhttpshubdockercom_registry"><a href="https://hub.docker.com/_/registry">Docker registry</a></h4>
+<ul>
+<li><a href="https://www.docker.com/legal/docker-terms-service/">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="gcp-registryhttpscloudgooglecomcontainer-registry"><a href="https://cloud.google.com/container-registry">GCP registry</a></h4>
+<ul>
+<li><a href="https://cloud.google.com/terms/aup">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="azure-registryhttpsazuremicrosoftcomen-usproductscontainer-registry"><a href="https://azure.microsoft.com/en-us/products/container-registry/">Azure registry</a></h4>
+<ul>
+<li><a href="https://azure.microsoft.com/en-us/support/legal/">Terms &amp; Conditions</a></li>
+</ul>
+<h4 id="redhat-quay-registryhttpsquayio-ortelius-image-lives-here"><a href="https://quay.io/">RedHat Quay registry</a> (Ortelius image lives here)</h4>
+<ul>
+<li><a href="https://cloud.redhat.com/legal/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="kindsigsk8siohttpskindsigsk8sio"><a href="https://kind.sigs.k8s.io/">Kind.sigs.k8s.io</a></h3>
+<ul>
+<li>Kind allows you to use Docker to run K8s nodes as containers</li>
+<li>Install <a href="https://kind.sigs.k8s.io/docs/user/quick-start/#installation">here</a></li>
+<li>Get familiar with the basic commands</li>
+<li>Checkout the Kind documentation <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">here</a></li>
+<li><a href="https://www.apache.org/licenses/LICENSE-2.0">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="kubernetesiohttpskubernetesio"><a href="https://kubernetes.io/">Kubernetes.io</a></h3>
+<ul>
+<li>K8s is a production grade container orchestrater</li>
+<li>K8s is the conductor of the orchestra where the conductor is K8s and the orchestra is the containers within PODs</li>
+<li>PODS are cuddly safe worlds to hold containers (so cute)</li>
+<li><a href="https://www.linuxfoundation.org/legal/terms#:~:text=Users%20are%20solely%20responsible%20for,arising%20out%20of%20User%20Content.">Terms &amp; Conditions</a></li>
+<li><a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons</a></li>
+</ul>
+<h3 id="kubectl">Kubectl</h3>
+<ul>
+<li>Install <code>kubectl</code> the command line tool <a href="https://kubernetes.io/docs/tasks/tools/">here</a></li>
+<li>Use the <code>kubectl</code> cheat sheet <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">here</a></li>
+<li>Use <a href="https://devdocs.io/">Devdocs</a> and the official documentation <a href="https://kubernetes.io/docs/home/">here</a></li>
+<li>Add the <code>aliases</code> &amp; <code>auto complete</code> which are in the <code>cheat sheet</code></li>
+</ul>
+<h3 id="postgresqlorghttpswwwpostgresqlorg--ortelius-event-driven-architecture"><a href="https://www.postgresql.org/">PostgreSQL.org</a> &amp; Ortelius event driven architecture</h3>
+<ul>
+<li>Open Source relational database</li>
+<li><a href="https://www.postgresql.org/about/licence/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="arangodbhttpswwwarangodbcom--ortelius-xrpl-sbom-ledger"><a href="https://www.arangodb.com/">ArangoDB</a> &amp; Ortelius XRPL SBOM Ledger</h3>
+<ul>
+<li>Learn graph databases &amp; native multi-models</li>
+<li><a href="https://www.arangodb.com/customer-agreement/">Terms &amp; Conditions</a></li>
+</ul>
+<h1 id="dessert">Dessert</h1>
+<h3 id="orteliusiohttpsorteliusio"><a href="https://ortelius.io/">Ortelius.io</a></h3>
+<ul>
+<li>Documentation <a href="https://docs.ortelius.io/guides/">here</a></li>
+<li>User guide <a href="https://docs.ortelius.io/guides/userguide/">here</a></li>
+<li>Contributors guide <a href="https://docs.ortelius.io/guides/contributorguide/">here</a></li>
+<li>Installation &amp; Support <a href="https://docs.ortelius.io/guides/userguide/installation-and-support/">here</a></li>
+<li>On-prem installation <a href="https://docs.ortelius.io/guides/userguide/installation-and-support/0-on-premise-installation-for-pro/">here</a></li>
+<li>Istio installation <a href="https://docs.ortelius.io/guides/userguide/installation-and-support/1-istio-installation-and-usage/">here</a></li>
+<li><a href="https://docs.ortelius.io/guides/userguide/installation-and-support/0-terms-of-use-agreement/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="helmshhttpshelmsh"><a href="https://helm.sh/">Helm.sh</a></h3>
+<ul>
+<li>Install Helm for your operating system (Scroll down until you see <code>Get Helm!</code>)</li>
+<li>K8s templating engine</li>
+<li><a href="https://www.linuxfoundation.org/legal/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="argo-cdreadthedocsiohttpsargo-cdreadthedocsioenstabletextargo20cd20is20implemented20astarget20state20is20considered20outofsync20"><a href="https://argo-cd.readthedocs.io/en/stable/#:~:text=Argo%20CD%20is%20implemented%20as,target%20state%20is%20considered%20OutOfSync%20.">Argo-CD.readthedocs.io</a></h3>
+<ul>
+<li>Argo CD is a declarative, GitOps continous delivery tool for Kubernetes</li>
+<li>For example it allows you to abstract the application configuration out of the developer code</li>
+<li>Install <a href="https://argo-cd.readthedocs.io/en/stable/getting_started/">here</a></li>
+<li><a href="https://github.com/argoproj/argo-cd/blob/master/LICENSE">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="keptnshhttpskeptnsh"><a href="https://keptn.sh/">Keptn.sh</a></h3>
+<ul>
+<li>Cloud native application life-cycle orchestration</li>
+<li>API &amp; event driven</li>
+<li>Install <a href="https://keptn.sh/docs/quickstart/">here</a></li>
+<li><a href="https://www.linuxfoundation.org/legal/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="aws-localstackhttpslocalstackcloud-the-aws-cloud-on-your-local-machine-optional"><a href="https://localstack.cloud/">AWS Localstack</a> The AWS Cloud on your local machine <code>OPTIONAL</code></h3>
+<ul>
+<li>A fully functional local cloud stack to Develop and test your cloud and serverless apps offline!</li>
+<li>AWS only at the time of writing</li>
+<li><a href="https://docs.localstack.cloud/get-started/">Getting started</a></li>
+<li><a href="https://docs.localstack.cloud/overview/">Localstack Docs</a></li>
+<li><a href="https://docs.localstack.cloud/integrations/">Integrations</a></li>
+<li><a href="https://localstack.cloud/products/cockpit/">Localstack Cockpit Web UI</a></li>
+<li><a href="https://localstack.cloud/terms/">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="terraformhttpswwwterraformiointro-iac"><a href="https://www.terraform.io/intro">Terraform</a> IaC</h3>
+<ul>
+<li>Documentation is <a href="https://www.terraform.io/docs">here</a></li>
+<li><a href="https://registry.terraform.io/terms">Terms &amp; Conditions</a></li>
+</ul>
+<h3 id="pulumihttpswwwpulumicomdocsget-started-iac"><a href="https://www.pulumi.com/docs/get-started/">Pulumi</a> IaC</h3>
+<ul>
+<li>Documentation is <a href="https://www.pulumi.com/docs/">here</a></li>
+<li>Convert your Terraform to Pulumi <a href="https://www.pulumi.com/tf2pulumi/">here</a></li>
+<li><a href="https://www.pulumi.com/terms-and-conditions/">Terms &amp; Conditions</a></li>
+</ul>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+  Last modified November 29, 2022: <a href="https://github.com/ortelius/ortelius-docs/commit/32f4903ae2f49d8fc4fa40861e716f1801466330">Updated title and corrected typos (32f4903)</a>
+</div>
+
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener" href="https://twitter.com/@Orteliusproj" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Facebook" aria-label="Facebook">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.facebook.com/groups/OrteliusProject/?ref=bookmarks" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="LinkedIn" aria-label="LinkedIn">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.linkedin.com/company/Orteliusproj/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="YouTube" aria-label="YouTube">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC7jomcQ2D4VgjGV2ePtKWfA" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/ortelius/ortelius" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 Ortelius, Inc All Rights Reserved</small>
+        <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+  <script src="/js/main.min.be25a680a0d95dc8b5d6664622e2134aa894220e2f224ef609e00f633a3a1b32.js" integrity="sha256-viWmgKDZXci11mZGIuITSqiUIg4vIk72CeAPYzo6GzI=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

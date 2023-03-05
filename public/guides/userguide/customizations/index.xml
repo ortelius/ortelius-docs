@@ -1,0 +1,325 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ortelius User Guide and API Reference – Customizations</title>
+    <link>/guides/userguide/customizations/</link>
+    <description>Recent content in Customizations on Ortelius User Guide and API Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/guides/userguide/customizations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Managing Users</title>
+      <link>/guides/userguide/customizations/2-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/customizations/2-users/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;intro-to-_users_&#34;&gt;Intro to &lt;em&gt;Users&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Users&lt;/em&gt; are given access to Ortelius Objects based on their &lt;em&gt;Group&lt;/em&gt; access. By default there are three &lt;em&gt;Groups&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;-Administrator &lt;em&gt;Group&lt;/em&gt; - The &lt;em&gt;User&lt;/em&gt; who initially signs into Ortelius is automatically added to this &lt;em&gt;Group&lt;/em&gt;. By default, this &lt;em&gt;Group&lt;/em&gt; has access to all objects.
+-User &lt;em&gt;Group&lt;/em&gt; - All &lt;em&gt;Users&lt;/em&gt; who sign in after the initial Administrator &lt;em&gt;User&lt;/em&gt; is created.
+-Everyone &lt;em&gt;Group&lt;/em&gt; - All Users regardless of their assigned &lt;em&gt;Group&lt;/em&gt; are automatically added to this &lt;em&gt;Group&lt;/em&gt;. It is the default &lt;em&gt;Group&lt;/em&gt; that provides access to &amp;ldquo;everyone&amp;rdquo; for all Objects.  To restrict &lt;em&gt;Everyone&lt;/em&gt; access, update the &lt;em&gt;Access&lt;/em&gt; options at the Object level.  This &lt;em&gt;Group&lt;/em&gt; cannot be modified.  If you delete a &lt;em&gt;User&lt;/em&gt; from the system, they will be deleted from the Everyone &lt;em&gt;Group&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A many-to-many relationship exists between &lt;em&gt;Users&lt;/em&gt; and &lt;em&gt;Groups&lt;/em&gt;, so that a &lt;em&gt;User&lt;/em&gt; can belong to many different &lt;em&gt;Groups&lt;/em&gt;, and a &lt;em&gt;Group&lt;/em&gt; can contain many different &lt;em&gt;Users&lt;/em&gt;. If a &lt;em&gt;User&lt;/em&gt; belongs to more than one &lt;em&gt;Group&lt;/em&gt;, the &lt;em&gt;User&lt;/em&gt; will be given the highest level of access.&lt;/p&gt;
+&lt;h3 id=&#34;_users_-and-_domain_-inheritance&#34;&gt;&lt;em&gt;Users&lt;/em&gt; and &lt;em&gt;Domain&lt;/em&gt; Inheritance&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Users&lt;/em&gt; are created under a &lt;em&gt;Domain&lt;/em&gt;. A &lt;em&gt;User&lt;/em&gt; that is created at a higher level &lt;em&gt;Domain&lt;/em&gt; will inherit access to all &lt;em&gt;Subdomains&lt;/em&gt;, based on their access settings. &lt;em&gt;Group&lt;/em&gt; access and inherited access properties can be overridden within a &lt;em&gt;Subdomain&lt;/em&gt;. As an example, Administrators, Director, and Operational level &lt;em&gt;Users&lt;/em&gt; or &lt;em&gt;Groups&lt;/em&gt; can be assigned to the highest level &lt;em&gt;Domain&lt;/em&gt; for the Enterprise while Application Teams and Testing Teams can be defined to only the &lt;em&gt;Subdomains&lt;/em&gt; that pertain to their area of expertise. &lt;em&gt;Users&lt;/em&gt; or &lt;em&gt;Groups&lt;/em&gt; can belong to multiple &lt;em&gt;Domains&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;using-the-_user_-list-view-for-adding-or-deleting&#34;&gt;Using the &lt;em&gt;User&lt;/em&gt; List View for Adding or Deleting&lt;/h2&gt;
+&lt;p&gt;You will find &lt;em&gt;Users&lt;/em&gt; under the Setup menu.  Selecting &lt;em&gt;Users&lt;/em&gt; will take you to a list of all &lt;em&gt;Users&lt;/em&gt; which you have access to. You can also use the Filter bar, represented by a funnel icon, to reorder your &lt;em&gt;Users&lt;/em&gt; List View based on &lt;em&gt;Users&lt;/em&gt; and &lt;em&gt;Domains&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Users&lt;/em&gt; List View has the following Tabs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tab&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Refresh&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Refreshes the browser.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to Add a new &lt;em&gt;User&lt;/em&gt; of a particular type.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Delete&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Deletes the selected item.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;From the &lt;em&gt;User&lt;/em&gt; List View, double click on the &lt;em&gt;User&lt;/em&gt; which you would like to view to see all Details.&lt;/p&gt;
+&lt;h2 id=&#34;using-the-_user_-dashboard-for-viewing-and-editing&#34;&gt;Using the &lt;em&gt;User&lt;/em&gt; Dashboard for Viewing and Editing&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;User&lt;/em&gt; Dashboard view displays all information related to a specific &lt;em&gt;User&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;_user_-details&#34;&gt;&lt;em&gt;User&lt;/em&gt; Details&lt;/h3&gt;
+&lt;p&gt;The following details are common to all &lt;em&gt;Users&lt;/em&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Full Domain&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The fully qualified name of the &lt;em&gt;Domain&lt;/em&gt; to which the &lt;em&gt;User&lt;/em&gt; was defined.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;User Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The Login name of the &lt;em&gt;User&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Real Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;User&amp;rsquo;s&lt;/em&gt; Proper Name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Email&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;User&amp;rsquo;s&lt;/em&gt; email. Used to send event notifications.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Phone&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;Users&lt;/em&gt; phone number.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Date Format&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Defines how the date will be displayed to address geographical differences.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Time Format&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;24 hour clock (military time) vs. 12 hour clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Password&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Password selected by the &lt;em&gt;User&lt;/em&gt; (encrypted in the database).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Account Locked&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Locks the User out of the system.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Force Change Password&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Forces the User to change their password on initial sign-in.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Created&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Auto generated date when the &lt;em&gt;User&lt;/em&gt; was added.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Auto generated date when the &lt;em&gt;User&lt;/em&gt; was updated.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Last Login&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Displays the last time the User logged in.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;group-membership&#34;&gt;Group Membership&lt;/h2&gt;
+&lt;p&gt;This Section contains a list of all the &lt;em&gt;Groups&lt;/em&gt; the selected &lt;em&gt;User&lt;/em&gt; belongs to. Add a &lt;em&gt;Group&lt;/em&gt; to the selected &lt;em&gt;User&lt;/em&gt; by clicking on the plus &amp;lsquo;+Add&amp;rsquo; sign in the upper right, which adds an empty row to the table with a drop down list of all available &lt;em&gt;Groups&lt;/em&gt;. Use the Save option to commit it to the table. Use the Trash Can icon to delete a &lt;em&gt;Group&lt;/em&gt; from the table.&lt;/p&gt;
+&lt;p&gt;Ortelius has two &lt;em&gt;Groups&lt;/em&gt;, Administrators and Users, to which &lt;em&gt;Users&lt;/em&gt; can be assigned.  Access control to Objects are based on these two high level &lt;em&gt;Groups&lt;/em&gt;. Ortelius allows you to create as many &lt;em&gt;Users&lt;/em&gt; as required but only the &amp;ldquo;User&amp;rdquo; and &amp;ldquo;Administrator&amp;rdquo; &lt;em&gt;Groups&lt;/em&gt; are supported.&lt;/p&gt;
+&lt;h3 id=&#34;audit-trail&#34;&gt;Audit Trail&lt;/h3&gt;
+&lt;p&gt;The Audit Trail displays audit entries for any changes or deployments that impact this object. It includes any changes in the object including &lt;em&gt;User&lt;/em&gt; date and time, and deployments with unique numbers.&lt;/p&gt;
+&lt;p&gt;You can Subscribe to or Comment on an Audit Entry.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Subscribe: Allows you to receive information about the selected deployment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Comment: Add information by clicking on the &amp;lsquo;Comment&amp;rsquo; link within a text entry field. There is a field above the list labeled &amp;ldquo;Say something about this Application&amp;rdquo; that can have comments placed into it, and files can be attached to the comment as well. Enter text into this field to activate the Add Message button. Click to save the comment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add Files to Comments: Click on the paperclip icon to add a file to the message. Once added and you made a comment, click &amp;ldquo;Add Message&amp;rdquo;. Click on the paperclip icon to retrieve these attachments. The icon opens the line in the list to display the name of the file. Choose the file to download it into the your default Download directory on your local computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Custom Types</title>
+      <link>/guides/userguide/customizations/customtypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/customizations/customtypes/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;intro-to-_custom-types_&#34;&gt;Intro to &lt;em&gt;Custom Types&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Custom Types&lt;/em&gt; are found on the &lt;em&gt;Endpoint&lt;/em&gt; Dashboard and the &lt;em&gt;Component&lt;/em&gt; Dashboard and are used to map a &lt;em&gt;Component&lt;/em&gt; to its appropriate &lt;em&gt;Endpoint&lt;/em&gt;.  For example, a default &lt;em&gt;Endpoint Type&lt;/em&gt; is &amp;ldquo;Application Server.&amp;rdquo;  This maps to a &lt;em&gt;Component&lt;/em&gt; defined as an &amp;ldquo;Application Server.&amp;rdquo;   This mapping allows &lt;em&gt;Endpoints&lt;/em&gt; in an &lt;em&gt;Environment&lt;/em&gt; to be dynamically assigned &lt;em&gt;Components&lt;/em&gt; based the &lt;em&gt;Endpoint Type&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Components&lt;/em&gt; map to a single &lt;em&gt;Endpoint&lt;/em&gt;, but an &lt;em&gt;Endpoint&lt;/em&gt; can map to multiple types of &lt;em&gt;Components&lt;/em&gt;. For example, your &lt;em&gt;Endpoint&lt;/em&gt; could serve as both your Application Server and Database Server.&lt;/p&gt;
+&lt;p&gt;You can create your own &lt;em&gt;Endpoint Types&lt;/em&gt; for defining this mapping.&lt;/p&gt;
+&lt;h2 id=&#34;using-the-_customize-type_-list-view-for-adding-or-deleting&#34;&gt;Using the &lt;em&gt;Customize Type&lt;/em&gt; List View for Adding or Deleting&lt;/h2&gt;
+&lt;p&gt;You will find &lt;em&gt;Customize Types&lt;/em&gt; from the left hand side of the Ortelius main panel.  Selecting &lt;em&gt;Customize Types&lt;/em&gt; will take you to a list of all &lt;em&gt;Custom Types&lt;/em&gt; which you have access to. You can also use the Filter bar, represented by a funnel icon, to reorder your &lt;em&gt;Custom Types&lt;/em&gt;_ List View based on Type and &lt;em&gt;Domain&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Custom Type&lt;/em&gt; List View has the following Tabs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tab&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Refresh&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Refreshes the browser.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to Add a new &lt;em&gt;Custom Type&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Delete&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Deletes the selected item.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;From the &lt;em&gt;Custom Type&lt;/em&gt; List View, double click on the &lt;em&gt;Custom Type&lt;/em&gt; which you would like to view to see all Details.&lt;/p&gt;
+&lt;h2 id=&#34;using-the-_custom-type_-dashboard-for-viewing-and-editing&#34;&gt;Using the &lt;em&gt;Custom Type&lt;/em&gt; Dashboard for Viewing and Editing&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;Custom Type&lt;/em&gt; Dashboard view displays all information related to a specific &lt;em&gt;Custom Type&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;_custom-type_-details&#34;&gt;&lt;em&gt;Custom Type&lt;/em&gt; Details&lt;/h3&gt;
+&lt;p&gt;The following details are common to all &lt;em&gt;Custom Type&lt;/em&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Full Domain&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The fully qualified name of the &lt;em&gt;Domain&lt;/em&gt; to which the &lt;em&gt;Custom Type&lt;/em&gt; was defined.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The name of your &lt;em&gt;Custom Type&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Database Roll-forward/Rollback&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Select this checkbox if your &lt;em&gt;Custom Type&lt;/em&gt; uses a database.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Modifying the Default User Groups</title>
+      <link>/guides/userguide/customizations/teamgroups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/userguide/customizations/teamgroups/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;intro-to-_groups_&#34;&gt;Intro to &lt;em&gt;Groups&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Ortelius has three default Groups - Administrators, Everyone and Users.  Access control to Objects are based on these three high level &lt;em&gt;Groups&lt;/em&gt;. Ortelius allows you to create as many &lt;em&gt;Users&lt;/em&gt; as required but only the &amp;ldquo;Users&amp;rdquo; &amp;ldquo;Everyone&amp;rdquo; and &amp;ldquo;Administrator&amp;rdquo; &lt;em&gt;Groups&lt;/em&gt; are available. You can modify these &lt;em&gt;Groups&lt;/em&gt; as needed to create access controls around Objects.&lt;/p&gt;
+&lt;h2 id=&#34;using-the-_group_-list-viewing&#34;&gt;Using the &lt;em&gt;Group&lt;/em&gt; List Viewing&lt;/h2&gt;
+&lt;p&gt;You will find &lt;em&gt;Groups&lt;/em&gt; under the Setup menu.  Selecting &lt;em&gt;Groups&lt;/em&gt; will take you to a list of displaying the Administration &lt;em&gt;Group&lt;/em&gt; and &lt;em&gt;User&lt;/em&gt; Group.&lt;/p&gt;
+&lt;p&gt;From the &lt;em&gt;Groups&lt;/em&gt; List View, double click on the &lt;em&gt;Group&lt;/em&gt; which you would like to view to see all Details.&lt;/p&gt;
+&lt;h2 id=&#34;using-the-_group_-dashboard-for-viewing-and-editing&#34;&gt;Using the &lt;em&gt;Group&lt;/em&gt; Dashboard for Viewing and Editing&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;Group&lt;/em&gt; Dashboard view displays all information related to a specific &lt;em&gt;Group&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;_group_-details-section&#34;&gt;&lt;em&gt;Group&lt;/em&gt; Details Section&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Groups&lt;/em&gt; have the following attributes:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Full Domain&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The fully qualified name of the &lt;em&gt;Domain&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Group Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The name of the Ortelius &lt;em&gt;Group.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;A description of the &lt;em&gt;Group&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Email&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;em&gt;Group&lt;/em&gt; email address that members of a &lt;em&gt;Group&lt;/em&gt; would all have access to, in the event of a notify process.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Created&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Auto generated date when the &lt;em&gt;Group&lt;/em&gt; was added.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Auto generated date when the &lt;em&gt;Group&lt;/em&gt; was updated.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Override Access Control&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;If checked, allows any &lt;em&gt;User&lt;/em&gt; belonging to this &lt;em&gt;Group&lt;/em&gt; to have control over the entire system, and no access restrictions apply to them. This option creates a Super Group level of Administrator and should only be used for individuals with full administrative privileges.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Users&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add Users to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;User Groups&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Groups&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Domains&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Subdomains&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Environments&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Environments&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Endpoints&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Endpoints&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Components&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Components&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Applications&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Applications&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Application Versions&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;When checked, allows the &lt;em&gt;User&lt;/em&gt; to create and add &lt;em&gt;Application Versions&lt;/em&gt; to any of the &lt;em&gt;Domains&lt;/em&gt; to which they belong.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;group-membership&#34;&gt;Group Membership&lt;/h3&gt;
+&lt;p&gt;NOTE: Ortelius creates a Group named &amp;ldquo;Everyone&amp;rdquo; whenever it is installed, and every User that is created is added to this group and cannot be removed from it.&lt;/p&gt;
+&lt;p&gt;This section shows a list of all &lt;em&gt;Users&lt;/em&gt; who belong to the selected &lt;em&gt;Group&lt;/em&gt;. Click on the plus &amp;lsquo;+Add&amp;rsquo; option to add a &lt;em&gt;User&lt;/em&gt; to this &lt;em&gt;Group&lt;/em&gt;. A new row will be added to the table with a drop down list allowing you to select the &lt;em&gt;User&lt;/em&gt; to add to the &lt;em&gt;Group&lt;/em&gt;. Select &amp;ldquo;Save&amp;rdquo; to commit the row to the table. You can delete a &lt;em&gt;User&lt;/em&gt; from the &lt;em&gt;Group&lt;/em&gt; using the Delete option.&lt;/p&gt;
+&lt;h3 id=&#34;audit-trail&#34;&gt;Audit Trail&lt;/h3&gt;
+&lt;p&gt;The Audit Trail displays audit entries for any changes or deployments that impact this object. It includes any changes in the object including &lt;em&gt;User&lt;/em&gt; date and time, and deployments with unique numbers.&lt;/p&gt;
+&lt;p&gt;You can Subscribe to or Comment on an Audit Entry.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Subscribe: Allows you to receive information about the selected deployment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Comment: Add information by clicking on the &amp;lsquo;Comment&amp;rsquo; link within a text entry field. There is a field above the list labeled &amp;ldquo;Say something about this Application&amp;rdquo; that can have comments placed into it, and files can be attached to the comment as well. Enter text into this field to activate the Add Message button. Click to save the comment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add Files to Comments: Click on the paperclip icon to add a file to the message. Once added and you made a comment, click &amp;ldquo;Add Message&amp;rdquo;. Click on the paperclip icon to retrieve these attachments. The icon opens the line in the list to display the name of the file. Choose the file to download it into the your default Download directory on your local computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
