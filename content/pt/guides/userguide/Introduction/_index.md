@@ -23,48 +23,47 @@ A migração para uma arquitetura desacoplada e nativa da nuvem descontrói a fo
 
 Ortelius não é um 'registro de microsserviços' ou uma 'Gateway de API'. Em vez disso, Ortelius interage com o fluxo de produção DevOps a fim de coletar automaticamente metadados da cadeia de suprimentos. O rastreamento dos microsserviços e dos _Components_ facilita o compartilhamento e a reutilização destes entre as equipes. Desta forma, Ortelius atua como um mercado interno para viabilizar a busca, o rastreio e o versionamento de microsserviços, relacionando-os com as _Applications_ que os utilizam. O catálogo de publicação é baseado em uma estrutura de _Domain_ para suportar um design orientado a domínio.
 
-## Versioning - Ortelius Secret Sauce
+## Versionamento - Ortelius Secret Sauce
 
-Ortelius versions both _Components_ and 'logical' _Applications_.  When versioning _Components_, Ortelius provides insights needed to determine if the service is safe for consumption including:
+O Ortelius permite o versionamento tanto de _Components_ quanto de _Applications_ lógicas. Ao versionar os componentes, o Ortelius fornece informações necessárias para determinar se o serviço é seguro para consumo, as quais incluem:
 
 - Software Bill of Material
-- Common Vulnerabilities and Exposures (CVE)
-- Swagger Details
-- Readme and Licensing
-- Consuming Applications
-- Ownership
-- Git repo
-- Git Commit (Tag and branch)
-- CI/CD Build Number
+- Vulnerabilidades e Exposições Comuns (CVE)
+- Detalhes do Swagger
+- Leia-me e Licenciamento
+- Aplicações Consumidoras
+- Propriedade
+- Repositório Git
+- Commit Git (tag e branch)
+- Número de build CI/CD
 - Container SHA
-- Docker Registry
-- Key Values
-- Deployment Script (Helm Chart, Ansible Playbook, etc.)
-- Any Attributes (DB Name for example)
+- Registro do Docker
+- Valores de chave
+- Script de Implantação (Helm Chart, Ansible Playbook, etc.)
+- Atributos (por exemplo, nome do banco de dados)
 
- _Application Versions_ are based on a collection of _Component Versions_. If a new version of a _Component_ is built or registered, Ortelius auto increments the _Component_ version and the consuming _Application_ version.  Dashboards are provided for each new _Application_ version showing:
+As _Application Versions_ são baseadas em uma coleção de versões dos componentes. Quando uma nova versão de um componente é criada ou registrada, o Ortelius incrementa automaticamente a versão do componente e faz o mesmo com a versão da aplicação que o consume. Painéis são fornecidos para cada nova versão de aplicação, mostrando:
 
-- A full map of all the microservices, or _Components_, the _Application_ version is consuming.
-- An Application Level SBOM, based on all _Component_ SBOMs
-- An Application Level CVE
-- The specific changes that created the new _Application_ version (your new diff report)
-- The audit history
-- Log history
-- Where it is running
-- Trends (Deployment time, success failure rates)
+- Um mapa completo de todos os microsserviços ou componentes que a versão da aplicação está consumindo.
+- Um SBOM em nível de aplicação, baseado em todos os SBOMs de componentes
+- Um CVE em nível de aplicação
+- As alterações específicas que culminaram em uma nova versão da _Application_ (seu novo relatório de diferenças)
+- O histórico de auditoria
+- Histórico de logs
+- Onde está executando
+- Tendências (tempo de implantação, taxas de sucesso e falha)
 
-This level of information can also be viewed from the _Component_ level showing similar information to the _Application_, but instead showing the _Applications_ that are dependent on the microservice (_Component_).
+Esse nível de informação também pode ser visto em nível de _Component_, mostrando informações semelhantes à aplicação, mas em vez disso, mostrando quais as _Applications_ que são dependentes do microsserviço (_Component_).
 
-## Other Core Features
-**Domain-Driven-Design:** First and most important is the Ortelius Domain structure for cataloging and sharing microservices. This feature organizes your microservice in a method that encourages reuse and sharing across development teams.
+## Outras Características Essenciais
+**Domain-Driven-Design:** A primeira e mais importante é a estrutura de domínio do Ortelius com o objetivo de catalogar e compartilhar microsserviços. Essa funcionalidade organiza seus microsserviços de tal forma que o reuso e o compartilhamento deles seja incentivado entre as equipes de desenvolvimento.
 
-**Dependency maps:** Shows you the 'logical' view of your application and which microservices, or _Components_, it consumes. Once you begin sharing microservices, you need to track who is using the microservice. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
+**Mapas de Dependência:** Mostra a visão "lógica" da sua aplicação e quais microsserviços, ou _Components_, ela consome. Uma vez que você inicie o compartilhamento dos microsserviços, far-se-á necessário rastrear quem está usando o microsserviço. Uma _Application_ é uma coleção lógica de _Components_ que constituem uma solução de software completa.
 
-**Application Level SBOMs and CVE:** Ortelius aggregates all _Component_ level data up to the logical _Application Version_ making it easy to provide security reporting on a complete software system, even when it is decoupled. 
+**SBOMs e CVEs em Nível de Aplicação:** O Ortelius agrega todos os dados a nível de _Component_ até a versão lógica da aplicação (_Application Version_), facilitando a produção dos relatórios de segurança a respeito de todo o sistema de software, até mesmo quando ele é desacoplado.
 
-**Blast Radius:** Know your service impact before you ever deploy. Ortelius can provide predictive insights showing what _Applications_ will be impacted by an updated service. Ortelius provides this data in clear maps of dependent _Applications_ and services.
+**Raio de Destruição:** Conheça o impacto provocado pelos seus serviços antes mesmo de implantá-los. O Ortelius é capaz de fornecer insights preditivos mostrando quais _Applications_ serão impactadas por um serviço que sofreu alterações. O Ortelius fornece estes dados de forma clara usando os mapas de dependência de _Applications_ e dos serviços.
 
- **Improved incident response:** Ortelius makes it easy to find the owner of microservice or common _Component_, and contact them through PagerDuty, HipChat, Discord, Slack, email or phone.
+**Resposta aprimorada a incidentes:** O Ortelius facilita a descoberta do proprietário de um microsserviço, ou seja, o _Component_ comum e contatá-los através do PagerDuty, HipChat, Discord, Slack, e-mail ou ainda via telefone.
 
-**Integrates into your CD pipeline:** Ortelius is automated via your CD Pipeline to continuously version your decoupled architecture with changes, including where they are deployed. 
-
+**Integração com o Fluxo de Entrega Contínua (CD):** O Ortelius pode ser automatizado por meio do seu pipeline, o fluxo CD, para versionar continuamente sua arquitetura desacoplada com mudanças, incluindo onde elas são implantadas.
