@@ -1,9 +1,9 @@
 ---
-title: "First Steps"
-linkTitle: "First Steps"
+title: "Primeiros Passos"
+linkTitle: "Primeiros Passos"
 weight: 3
 description: >
-  Steps for Executing your Ortelius Proof of Concept
+  Passos para execução da sua prova de conceito do Ortelius.
 ---
 
 
