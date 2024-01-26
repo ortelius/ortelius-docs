@@ -14,7 +14,7 @@ In order for Ortelius to track the Deployment Frequency you must record when a d
 which _Environment_ it happened for.  The Ortelius CLI can be used to record the deployment.  Using the CLI enables the Workflow tool,
 Jenkins, GitHub, or GitLab, to tell Ortelius when it performs a deployment.
 
-### Recording a deployment with the Ortelius CLI
+### Recording a Deployment with the Ortelius CLI
 
 See [Installing the CLI](https://docs.ortelius.io/guides/userguide/installation-and-support/0-commandlineinterface/) for CI/CD Setup instructions.  
 
