@@ -21,15 +21,15 @@ In a cloud-native, microservice architecture there are many, if not hundreds, of
 
 Perform the following steps to add your _Components_ using the .toml file:
 
-#### Step 1 - Define Your DeployHub Pipeline Variables
+#### Step 1 - Define Your Pipeline Variables
 
 The following variables should be set at the beginning of your Pipeline.
 
 | Variable | Value | Description |
 | ------- | ----- | ----------- |
-| DHURL | URL to DeployHub Login | The URL used to access DeployHub. |
-| DHUSER  | UserID | The ID used to log into DeployHub |  
-| DHPASS | password | The password used to log into DeployHub. This can encrypted based on the CI/CD solution. |
+| DHURL | URL to Ortelius Login | The URL used to access Ortelius. |
+| DHUSER  | UserID | The ID used to log into Ortelius |  
+| DHPASS | password | The password used to log into Ortelius. This can encrypted based on the CI/CD solution. |
 | DOCKERREPO | Name of your Docker Repository | For Components that are Docker Images. Not needed for non-docker objects. |
 | IMAGE_TAG | Tag for the Docker Image if used | For Components that are Docker Images. Not needed for non-docker objects. |
 
@@ -89,12 +89,12 @@ Version = "v1.0.0.${BUILD_NUM}-g${SHORT_SHA}"
     DockerTag = "${IMAGE_TAG}"
     DiscordChannel = "https://discord.gg/wM4b5yEFzS"
     ServiceOwner= "${DHUSER}"
-    ServiceOwnerEmail = "stella@DeployHub.io"
+    ServiceOwnerEmail = "stella@chasinghorses.io"
 
 ```
 
 #### Step 3 - Add a step in your pipeline to run Syft if you are not generating SBOMS (Optional)
-DeployHub can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to DeployHub is step 4 below. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data. 
+Ortelius can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to Ortelius is step 4 below. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data. 
 
 [Syft SBOM tool](https://github.com/anchore/syft) will generate Software Bill of Material Reports for popular coding languages and package managers, including Docker images. 
 
