@@ -1,7 +1,7 @@
 ---
-title: "Get Started by Adding Ortelius to Your Pipeline"
-linkTitle: "Get Started by Adding Ortelius to Your Pipeline"
-weight: 1
+title: "Adding Ortelius to Your Pipeline"
+linkTitle: "Adding Ortelius to Your Pipeline"
+weight: 10
 description: >
   Get Started by Adding Ortelius to Your Pipeline
 ---

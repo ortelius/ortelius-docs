@@ -9,7 +9,7 @@ description: >
 
 ## Welcome to the Ortelius Project
 
-Have you ever wanted to contribute to the coolest cloud technology? Well here is your chance. The Ortelius Open Source Project's mission is to simplify the adoption of modern architecture through a world-class microservice management platform driven by a supportive and diverse global open source community. Watch this video on how to get started.
+Have you ever wanted to contribute to the coolest cloud technology? Well here is your chance. The Ortelius Open Source Project's mission is fortify the software supply chain through a world class Continuous Security Intelligence solution, driven by a supportive and diverse global open source community. Watch this video on how to get started.
 
 <div style="width:30%">
 {{< youtube Y4kR6ipipxA >}}
@@ -17,7 +17,9 @@ Have you ever wanted to contribute to the coolest cloud technology? Well here is
 
 ### What is Ortelius?
 
-Ortelius is a microservice catalog that centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers. 
+The Ortelius Continuous Security Intelligence solution is an open-source project focused on surveilling the DevOps pipeline collecting clues and forensics about the software you deliver to end users from Software Bills of Materials (SBOM) to deployment metadata. 
+
+The mission of the Ortelius community is to expose weak links in the software supply chain by continuously gathering and analyzing software supply chain intelligence introduced across the DevOps pipeline. Generating security insights like SBOMs is not enough to harden your software supply chain. Consumption and analysis of the data is needed to rapidly respond to supply chain threats.
 
 Ortelius is managed by the [Continuous Delivery Foundation](https://cd.foundation) a specialty foundation under the Linux Foundation.
 

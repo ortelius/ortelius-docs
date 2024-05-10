@@ -8,9 +8,9 @@ description: >
 
 ## Intro to _Components_
 
-Ortelius manages microservices and other reusable objects as _Components_.  _Components_ are assigned to an _Application_ even though they are managed independently.  Assign _Components_ to _Applications_ to track a 'logical' view of your software solution. In a monolithic approach, we performed this step during the software compile and link, or 'build' process. In microservices, they are loosely coupled and linked at run-time. Defining _Components_ to [_Applications_](/guides/userguide/packaging-applications/buildingapplications/) puts the _Application_ in a 'logical' view.
+_Components_ are files, artifacts, or containers.  _Components_ are assigned to an _Application_ but managed independently.  Assign _Components_ to _Applications_ to track a 'logical' view of your software solution. In a monolithic approach, we performed this step during the software compile and link, or 'build' process. In loosely coupled architectures, linking is done at runtime via APIs. Ortelius uses a 'logical' [_Applications_](/guides/userguide/packaging-applications/buildingapplications/) to aggregate _Components_ data to the higher _Application_ level to provide _Application_ security postures, aggregated SBOM, and blast radius impact of a vulnerability. 
 
-If you are an API or microservice developer, this will be where you do most of your work. However, application developers may also define _Components_ that are used only by their specific _Application_. _Components_ are microservices (containers), Database updates or files. By tracking the low level metadata for a _Component_, it can be easily shared in a consistent way across organizational teams and _Environments_.
+If you are an API developer, this will be where you do most of your work. However, application developers may also define _Components_ that are used only by their specific _Application_. _Components_ are microservices, containers, database updates or files. 
 
 _Components_ change over time, and so Ortelius contains _Component Base Versions_ and _Component Versions_.
 
@@ -30,7 +30,7 @@ There is a many-to-many relationship between _Applications_ and _Components._ An
 
 ## Sharing _Components_
 
-If you want your microservice _Component_ to be shared across your teams, publish your _Component_ to a _Domain_ that allows sharing. If it is defined to only your _Application,_ then only your team will be able to see it.
+If you want your _Component_ to be shared across your teams, publish your _Component_ to a _Domain_ that allows sharing. If it is defined to only your _Application,_ then only your team will be able to see it.
 
 ## _Component_ Versioning
 
@@ -48,7 +48,7 @@ Ortelius uses a backend versioning engine to track your _Components_. Versioning
 - Deployment Metadata (Helm Chart, Ansible Playbook, etc.)
 - Any Attributes such as Key Value Pairs, environment variables, and database schemas.
 
-This information is collected when you define your _Component_ to the Ortelius catalog. The Ortelius Command Line Interface will automatically update this information via your CD Pipeline. When your Pipeline initiates a workflow for the _Component_, it indicates that a new version of the _Component_ is being pushed across the Pipeline causing all consuming _Applications_ to be automatically incremented to a new version number.  If a _Component_ changes, the consuming _Application_ also changes.  Both get a new version number. For more information see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).
+This information is collected when you define your _Component_ to the Ortelius evidenced store. The Ortelius Command Line Interface will automatically update this information via your CD Pipeline. When your Pipeline initiates a workflow for the _Component_, it indicates that a new version of the _Component_ is being pushed across the Pipeline causing all consuming _Applications_ to be automatically incremented to a new version number.  If a _Component_ changes, the consuming _Application_ also changes.  Both get a new version number. For more information see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).
 
 When you first define your _Component_ Ortelius tracks it as the _Component Base Version_. Subsequent updates to that _Component_ creates a new _Component Version_ which represent the updates over time. A _Component Base Version_ is always the first one created, and it acts as a model for subsequent _Component Versions_. Otherwise they are identical types of objects.
 

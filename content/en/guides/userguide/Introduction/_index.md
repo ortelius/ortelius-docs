@@ -3,30 +3,30 @@ title: "Welcome"
 linkTitle: "Welcome"
 weight: 1
 description: >
-  Introduction to the Ortelius Supply Chain Catalog 
+  Introduction to the Ortelius Continuous Security Intelligence
 ---
 ## Why Use Ortelius
 
-Ortelius is an open source, supply chain evidence catalog for publishing, versioning and sharing microservices and other _Components_ such as DB objects and file objects. Ortelius centralizes everything you need to know about a component-driven architecture including _Component level_ ownership, SBOMs, vulnerabilities, dependency relationships, key values, deployment metadata, consuming applications and versions. Ortelius harvests information from the DevOps pipeline centralizing supply chain data across tools and teams. 
+Ortelius is an open source, Continuous Security Intelligence solution for surveilling, gathering and analyzing the security posture of  _Components_ and their consuming "logical" _Applications_". Ortelius is particularly suited for complex, decoupled architectures where hundreds of artifacts and repos are used, and a central view of the entire supply chain from a usage, security, and inventory perspective is required. When you outgrow your excel spreadsheet, its time to consider Ortelius. The Ortelius watch center tracks _Component_ ownership, SBOMs, vulnerabilities, dependency relationships, key values, deployment metadata, consuming _Applications_ and versions. Ortelius collects clues and forensics from the DevOps pipeline centralizing supply chain data across tools and teams.
 
 ![Supply Chain Catalog](/supplychaincatalog.png)
 
+## The "Logical" Application
 
-Ortelius visualizes ‘logical’ application versions in a cloud-native architecture providing a clear view of the software supply chain and their consumers. With this _Component_ level information, Ortelius can easily aggregate metadata up to the 'logical' application producing application level SBOMs, CVEs, audit reports, deployment inventory and status. 
-
-Ortelius is particularly suited for a microservice architecture where hundreds of artifacts and repos are used, and a central view of the entire supply chain from a usage, security, and inventory perspective is required. When you outgrow your excel spreadsheet, its time to consider Ortelius.  
+In order to understand the security posture of an _Application_, teams need to know the _Component_ dependencies, and the _Component_ packages. Ortelius aggregates DevSecOps data to the ‘logical’ application versions simplifying the complexities of a cloud-native architecture. Ortelius provides a clear view of the software supply chain for every "logical" _Application_ and its _Components_. By tracking _Component_ level information, Ortelius can easily aggregate metadata up to the 'logical' application producing application level SBOMs, CVEs, audit reports, deployment inventory and status. 
 
 **Decoupled Environments are Complex**
 
-Migrating to decoupled, cloud-native architecture breaks the way we assemble and configure software. With a decoupled implementation, we no longer build a complete software solution, or Application Version. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the 'Application Version' disrupts the core of software delivery.  It impacts most of our standard software practices including the generation of application security level reports.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users. Without a method of tracking the logical _Application_, IT teams struggle to confirm that the software they deliver to end users is safe. 
+Migrating to decoupled, cloud-native architecture breaks the way we assemble and configure software. With a decoupled implementation, we no longer build a complete software solution, or _Application Version_. Instead we manage many moving parts that communicate at run-time based on APIs.  The loss of the _Application Version_ disrupts the core of software delivery.  It impacts most of our standard software practices including the generation of application security level reports.  After all, everything is based on an Application Version from tracking changes request, determining differences, tracking relationships and supporting users. Without a method of tracking the logical _Application_, IT teams struggle to confirm that the software they deliver to end users is safe. 
 
-Ortelius is not a 'microservice registry' or 'API Gateway."  Instead, Ortelius interacts with the DevOps pipeline to automatically gather supply chain metadata. Tracking microservices and _Components_ in this way facilitates their sharing and reuse across teams. Ortelius serves as an internal market place for finding, tracking and versioning microservices and relating them to the _Applications_ that consume them. The publishing catalog is based on a _Domain_ structure to support a Domain Driven Design.
+Ortelius is not a 'artifact registry' or 'API Gateway."  Instead, Ortelius interacts with the DevOps pipeline to automatically gather supply chain metadata. Tracking _Components_ in this way facilitates their sharing and reuse across teams. Ortelius serves as an internal market place for finding, tracking and versioning _Components_ and relating them to the _Applications_ that consume them. The evidence organization is based on a _Domain_ structure to support a Domain Driven Design.
 
 ## Versioning - Ortelius Secret Sauce
 
 Ortelius versions both _Components_ and 'logical' _Applications_.  When versioning _Components_, Ortelius provides insights needed to determine if the service is safe for consumption including:
 
 - Software Bill of Material
+- OpenSSF Scorecard
 - Common Vulnerabilities and Exposures (CVE)
 - Swagger Details
 - Readme and Licensing
@@ -43,7 +43,7 @@ Ortelius versions both _Components_ and 'logical' _Applications_.  When versioni
 
  _Application Versions_ are based on a collection of _Component Versions_. If a new version of a _Component_ is built or registered, Ortelius auto increments the _Component_ version and the consuming _Application_ version.  Dashboards are provided for each new _Application_ version showing:
 
-- A full map of all the microservices, or _Components_, the _Application_ version is consuming.
+- A full map of all the _Components_, the _Application_ version is consuming.
 - An Application Level SBOM, based on all _Component_ SBOMs
 - An Application Level CVE
 - The specific changes that created the new _Application_ version (your new diff report)
@@ -52,12 +52,13 @@ Ortelius versions both _Components_ and 'logical' _Applications_.  When versioni
 - Where it is running
 - Trends (Deployment time, success failure rates)
 
-This level of information can also be viewed from the _Component_ level showing similar information to the _Application_, but instead showing the _Applications_ that are dependent on the microservice (_Component_).
+This level of information can also be viewed from the _Component_ level showing similar information to the _Application_, but instead showing the _Applications_ that are dependent on the _Component_.
 
 ## Other Core Features
-**Domain-Driven-Design:** First and most important is the Ortelius Domain structure for cataloging and sharing microservices. This feature organizes your microservice in a method that encourages reuse and sharing across development teams.
 
-**Dependency maps:** Shows you the 'logical' view of your application and which microservices, or _Components_, it consumes. Once you begin sharing microservices, you need to track who is using the microservice. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
+**Domain-Driven-Design:** First and most important is the Ortelius Domain structure for organizing security forensics. This feature organizes your _Component_ metadata in a method that encourages reuse and sharing across development teams.
+
+**Dependency maps:** Shows you the 'logical' view of your application and which _Components_ it consumes. Once you begin sharing _Components_ you need to track their usage. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
 
 **Application Level SBOMs and CVE:** Ortelius aggregates all _Component_ level data up to the logical _Application Version_ making it easy to provide security reporting on a complete software system, even when it is decoupled. 
 

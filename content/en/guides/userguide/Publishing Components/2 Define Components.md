@@ -50,11 +50,10 @@ When adding new _Components_ select the  _Component_ Type from the drop down lis
 | --- | --- |
 | **Container** | For Containers such as Docker.  |
 | **Application File** | For binary files such as .jar, .war, .ear, .exe, .dll, Linux executable files, Oracle Forms, or similar artifacts.   |
-| **Database** | For SQL files such as .ddl or other database update scripts. |
 
 ## How to View and Edit _Components_
 
-_Components_ are defined as Container, Application File, or Database.  These are the different types of _Components_ you may need from microservices to binaries and DB updates. The Dashboard view displays all information related to a specific _Component Base Version_ or _Component Version_. Depending on what type of _Component_ you are defining, you will be presented with different data definition fields.
+_Components_ are defined as Container, Application File, or Database.  These are the different types of _Components_ you may need from microservices to binaries. The Dashboard view displays all information related to a specific _Component Base Version_ or _Component Version_. Depending on what type of _Component_ you are defining, you will be presented with different data definition fields.
 
 The following fields are common to all _Components_:
 
@@ -107,32 +106,6 @@ A Container _Component_ has the following optional attributes:
 | **Build URL**| The URL to the _Build Engine_. |
 |**Build Date**| The timestamp from when the last build job was run.|
 
-### Database Type Specific Data Definition
-
-Database _Components_ are used for making database updates such as table changes using SQL Scripts. Note: An database form (such as an Oracle Form) can be compiled and should be defined as an Application File not Database _Component_.
-
-| Field | Description |
-| --- | --- |
-| **Base Directory**|Base, or high level, directory where the file will be deployed. This value will be ignored if the _Endpoint_ has a Base Directory defined.  See [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted. |
-|**Roll Forward Target Directory**|  The directory under the Base Directory where the Roll Forward file will be deployed, or final "Target" Directory. See [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted. |
-|**Roll Forward Repository**|  Choose the Repository that contains your Roll Forward SQL. This list box is populated based on the _Repositories_ pre-defined in your initial setup. Based on the _Repository_ you select, you may be provided override or append fields if they were made available. For more information on _Repositories_ see [Connecting Your Repositories](/guides/userguide/first-steps/2-define-repositories/#using-the-repository-dashboard-for-viewing-and-editing).<ul><li>Filepath Override: Enter a filepath that will override the default filepath defined at the _Repository_ level.</li><li>Pattern Override: Enter a pattern that will override the default pattern defined at the _Repository_ level.  Patterns are file types you want to pull from the _Repository_, such as \*.exe, \*.dll, \*.war. </li><li>Recursive Override: Select the box in order to override the default recursive behavior defined at the _Repository_ level. This will turn recursion on or off depending on the setting at the _Repository_ level. </li><li>Version Override: Overrides the default template of your versioning pattern defined at the _Repository_ level. </li></ul>  |
-| **Rollback Target Directory** | The directory under the Base Directory where the Rollback file will be deployed, or final "Target" Directory. See [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted. |
-| **Rollback Repository** | Choose the Repository that contains your Roll Forward SQL. This list box is populated based on the _Repositories_ pre-defined in your initial setup. Based on the _Repository_ you select, you may be provided override or append fields if they were made available. For more information on _Repositories_ see [Connecting Your Repositories](/guides/userguide/first-steps/2-define-repositories/#using-the-repository-dashboard-for-viewing-and-editing).<ul><li>Filepath Override: Enter a filepath that will override the default filepath defined at the _Repository_ level.</li><li>Pattern Override: Enter a pattern that will override the default pattern defined at the _Repository_ level.  Patterns are file types you want to pull from the _Repository_, such as \*.exe, \*.dll, \*.war. </li><li>Recursive Override: Select the box in order to override the default recursive behavior defined at the _Repository_ level. This will turn recursion on or off depending on the setting at the _Repository_ level. </li><li>Version Override: Overrides the default template of your versioning pattern defined at the _Repository_ level. </li></ul> |
-
-
-## _Endpoints_
-
-This section lists all _Endpoints_ that the _Component_ has been installed to with its Deployment Number. The Deployment Number is generated by Ortelius for each unique deployment.  You can also use this section to stop incremental deployments and force a specific version to be deployed to the _Endpoint_. By manually adding a specific _Component Version_ to the _Endpoint_, you bypass the incremental deployment logic of the deployment engine.  For example, if you would like to deploy a particular container without accepting any intermediate updates, you would go to the intermediate _Component Versions_ and manually add them to the _Endpoints_, causing the deployment engine to believe that it was previously deployed. When you manually add an _Endpoint_, the Deployment Number will show "manually deployed." To manually add a _Component_ to an _Endpoint_, use the +Add option. You will be provided a list of available _Endpoints_. Use Save to commit the change to the table. You can select multiple _Endpoints_.  To Edit or Delete an _Endpoint_, select the _Endpoint_ and use the Edit or Delete option.
-
-{{% include "guides/userguide/reusable/Attributes.md" %}}
-
-## Deployed Environments for _Component_
-
-A map showing all _Environments_ where the _Component_ is deployed.
-
-## Consuming _Applications_
-
-This section shows a list of all _Applications_ that are consuming this _Component_.
 
 ## Component Readme 
 

@@ -8,7 +8,7 @@ description: >
 
 ## Using the _Application_ List View for Adding or Deleting
 
-Use the _Application_ List View accessible from the left hand _Application_ menu option. This will take you to a list of all _Application Base Versions_ and _Application Versions_ to which you have access. There is a row for every _Environment_ to which the _Application Base Version_ or _Application Version_ has been deployed.  For this reason, there will be multiple entries for the same _Application_ if it has been deployed to multiple _Environments_.
+Use the _Application_ List View accessible from the left hand _Application_ menu option. This will take you to a list of all _Application Base Versions_ and _Application Versions_ to which you have access. There is a row for every _Environment_ to which the _Application Base Version_ or _Application Version_ has been assigned.  For this reason, there will be multiple entries for the same _Application_ for every update.  
 
 The list view is organized on the following columns:
 
@@ -17,16 +17,14 @@ The list view is organized on the following columns:
 |**Version**|  The _Application Base Version_ or _Application Version_ number. |
 |**Domain**| The _Domain_ to which the _Application_ belongs.|
 |**Parent**| The _Application Base Version_ from which the _Application Version_ was created. This will be empty for the _Application Base Version_.|
-|**Environment**| The _Environment_ to which the _Application_ has been deployed. Each _Environment_ will represent a different row in the List View table.|
-|**Last Deployment to Environment**| The Deployment Log number.|
-|**Completed**|The date and time of the last deployment to the listed _Environment_.|
+|**Environment**| The _Environment_ to which the _Application_ has been assigned. Each _Environment_ will represent a different row in the List View table.|
+|**Completed**|The date and time of the last publish to the listed _Environment_.|
 |**Results**| Success or Fail.|
 
 You can also use the Filter bar, represented by a funnel icon, to reorder your _Application_ List View by:
 
 - Domain
 - Environment
-- Last Deployment
 - Parent
 - Result
 - Version
@@ -77,27 +75,6 @@ Your _Application's_ SBOM is derived by aggregating all of your _Package Compone
 
 >Note - This list may be incomplete if one or more of your _Package Components_ do not have an associated SBOM.
 
-
-### Log History
-
-_Applications_ can be deployed many times, to the same or different locations (_Environments_). For every Deployment, the Log History will show all deployments based on "Result" and "Date".
-
-{{% include "guides/userguide/reusable/Attributes.md" %}}
-
-### Trends
-
-The Trends graph shows the success or failure rates overtime as well at the time required for the last 10 deployments. If an _Application_ deployment takes longer than previous deployments, there is an issue with the deployment logic.
-
-### Deployed Environments
-
-When you record deployments via the Ortelius CLI, you can capture deployment data showing which _Application Versions_ have been deployed an _Environment_.
-
-### Last Deployment Difference Based on Environment
-
-When tracking versions, the Difference Graph shows what changed in the last deployment between the previous deployment. 
-
-{{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
-
 ### Access
 
  _Users_ within designated _Groups_ can update or view the _Application_. To add a _Group_ to one of the access lists, drag and drop the _Group_ from the Available Groups list onto desired access list. All _Users_ who belong to a _Group_ within an Access lists will be granted access to the _Application_:
@@ -106,17 +83,14 @@ When tracking versions, the Difference Graph shows what changed in the last depl
 | --- | --- |
 | **View** | Any _User_ in any _Group_ within this list can see the selected _Component_ in the List View. |
 | **Change** | Any _User_ in any _Group_ within this list can make changes to the _Component_. |
-| **Deploy** | Any _User_ in any _Group_ within this list can deploy the _Application_.  Restrictions are based on the Access defined at the _Environment_ level. |
-
 
 ## Package Components Tab
 
-This tab contains all the _Components_ that make up an _Application_, linked together in order of deployment if needed using a blueprint designer. Click on the _Component_ Selector on the right side to see the available _Components_ based on _Domains_ and Categories. A Category acts as a tag or label assigned at the _Component_ level and are not specific to _Domains_.  _Domains_ are identified with a sitemap icon. A Category is identified with a Tag icon. Selecting either expands the options to show all available _Components_.
+This tab contains all the _Components_ that make up an _Application_, linked together using a blueprint designer. Click on the _Component_ Selector on the right side to see the available _Components_ based on _Domains_ and Categories. A Category acts as a tag or label assigned at the _Component_ level and are not specific to _Domains_.  _Domains_ are identified with a sitemap icon. A Category is identified with a Tag icon. Selecting either expands the options to show all available _Components_.
 
-Click and drag a _Component_ from the list on the far right side and drop it into the Assigned _Components_ area. It will appear in the area as a box containing the name of the _Component_. It automatically links to the last _Component_. Right click on the connecting line, select "Delete this Connection".Create by Click on the anchor (the green dot at the bottom of the _Component_)  to create a new connector. Then drag and drop it onto another _Component_. This determines the order in which the _Components_ will be deployed. Each _Component_ contains _Component Items_ also linked together in the order to be executed.  For a microservice implementation, they can all be linked to the "start point". This means they will be deployed in parallel.
+Click and drag a _Component_ from the list on the far right side and drop it into the Assigned _Components_ area. It will appear in the area as a box containing the name of the _Component_. It automatically links to the last _Component_. Right click on the connecting line, select "Delete this Connection".Create by Click on the anchor (the green dot at the bottom of the _Component_)  to create a new connector. Then drag and drop it onto another _Component_. Each _Component_ contains _Component Items_ also linked together in the order to be executed.
 
-NOTE: At least one _Component_ must be connected to the "start point" or the deployment will fail.
 
 ## How to Publish New _Application Versions_ Automatically via Continuous Delivery
 
-Configure a continuous delivery system to automatically update new _Application_ versions each time a new GitCommit triggers a new _Component_ to be consumed by your _Application_. Ortelius in the workflow performs this continuous versioning of new _Components_ and their consuming _Applications_.  For more information, see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).
+Configure a CI/CD system to automatically update new _Application_ versions each time a new GitCommit triggers a new _Component_ to be consumed by your _Application_. Ortelius in the workflow performs this continuous versioning of new _Components_ and their consuming _Applications_.  For more information, see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).

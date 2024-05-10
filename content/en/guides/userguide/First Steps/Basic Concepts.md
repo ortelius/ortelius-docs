@@ -1,7 +1,7 @@
 ---
 title: "Overview of Ortelius Objects and Concepts"
 linkTitle: "Overview of Ortelius Objects and Concepts"
-weight: 2
+weight: 1
 description: >
   Understanding Core Objects and Concepts.
 ---
