@@ -5,19 +5,28 @@ weight: 2
 description: >
   Signup and Learn How to Gather Continuous Security Intelligence
 ---
-This tutorial uses the Ortelius project to walk you through the basic concepts of Continuous Security Intelligence. DeployHub Team is based on the [Ortelius](https://ortelius.io) Open-Source project, incubating at the [Continuous Delivery Foundation](https://cd.foundation). This free SaaS version of Ortelius is hosted by DeployHub, and is also referred to as DeployHub Team. 
+This tutorial uses the Ortelius _Application_ to walk you through the basic concepts of Continuous Security Intelligence. [Ortelius](https://ortelius.io) is an Open-Source project, incubating at the [Continuous Delivery Foundation](https://cd.foundation). This free SaaS version of Ortelius is hosted and sponsored by DeployHub, Inc.
+
+The Ortelius project uses a decoupled microservices architecture serving as a great example of how Continuous Security Intelligence unites fragmented clues and forensics across _Components_ to expose the _Application_ level security posture. In this tutorial you will see how Ortelius aggregates _Component_ level security to the _Application_ level providing  _Application_ level:
+- SBOMs
+- real-time vulnerability reports
+- compliance reports.
+
+You will also see how Ortelius uses a Domain-Driven Design (DDD) to organize data across teams. 
+
+![Ortelius Hosted by DeployHub Team](/guides/userguide/images/HostedLogo-SignIn.png)
 
 ## Signing Up and Getting Started
 
-When you [signup for DeployHub Team](https://www.deployhub.com/deployhub-team/), you are asked for basic information, your UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
+When you [signup for Ortelius](https://www.deployhub.com/deployhub-team/), you are asked for basic information, your UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
 
-DeployHub Team is accessible through the following url:
+Ortelius is accessible through the following url:
 
 [https://console.deployhub.com/dmadminweb/Home](https://console.deployhub.com/dmadminweb/Home)
 
-Login using the UserID and Password you used when you signed up for DeployHub. Check your email for your login information. 
+Login using the UserID and Password you used when you signed up for Ortelius. Check your email for your login information. 
 
-Upon logging into DeployHub, you will be given an option to select your Company Name Domain, or the Open Source Domain. The Open Source Domain is prepopulated with data so you can take a tour.  Select the Open Source Domain to start exploring. 
+Upon logging into the Ortelius SaaS, you will be given an option to select your Company Name Domain, or the Open Source Domain. The Open Source Domain is prepopulated with data so you can take a tour.  Select the Open Source Domain to start exploring. 
 
 ![Sign into a Domain](/guides/userguide/images/domainsignin.jpg)
 
@@ -25,9 +34,9 @@ Upon logging into DeployHub, you will be given an option to select your Company 
 
 _Domains_ serve as the basic structure of organizing Continuous Security Intelligence. Developers use _Domains_ to catalog their _Components_ based on 'solution spaces.' Organizing your software supply chain in this way allows for _Components_ to be easily shared.
 
-_Domains_ are not folders. They serve as a method for creating fully qualified names of Objects within DeployHub to keep things organized.  _Domains_ also manage security and Tasks.  When you assign security options and Tasks at the _Domain_ level, any child _Subdomain_ inherits the value. A child _Subdomain_ can override a parent _Domain_ value. 
+_Domains_ are not folders. They serve as a method for creating fully qualified names of Objects within Ortelius to keep things organized.  _Domains_ also manage security and Tasks.  When you assign security options and Tasks at the _Domain_ level, any child _Subdomain_ inherits the value. A child _Subdomain_ can override a parent _Domain_ value. 
 
-You can explore the _GLOBAL.open source_ Domain to learn how Continuous Security Intelligence is organized.  In DeployHub terminology, the _GLOBAL.open source_ Domain has multiple _Subdomains_.
+You can explore the _GLOBAL.open source_ Domain to learn how Continuous Security Intelligence is organized.  In Ortelius terminology, the _GLOBAL.open source_ Domain has multiple _Subdomains_.
 
 ### Take a Tour of _Domains_:
 
@@ -69,7 +78,7 @@ Generate a Comparison Report between two _Component_ versions. Checkmark any two
 
 <strong> 4) Software Bill of Materials</strong>
 
-View a _Component_ Software Bill of Materials (SBOM) Report. When your _Component_ build executes, Ortelius will generate an Software Bill of Material using the tool of your choice. DeployHub then cross references the known vulnerabilities to the packages. The report shows a timestamp to record the point in time the vulnerabilities were found. This is a static view of the known vulnerabilities at build time. 
+View a _Component_ Software Bill of Materials (SBOM) Report. When your _Component_ build executes, Ortelius will generate an Software Bill of Material using the tool of your choice. Ortelius then cross references the known vulnerabilities to the packages. The report shows a timestamp to record the point in time the vulnerabilities were found. This is a static view of the known vulnerabilities at build time. 
 
 ![Component SBOM](/guides/userguide/images/SBOM-component.jpg)
 
@@ -77,7 +86,7 @@ View a _Component_ Software Bill of Materials (SBOM) Report. When your _Componen
 
 <strong> 5) Sorting Components</strong>
 
-Sort Components by "Completed." "Completed" indicates the _Component_ has been deployed to end users. From the _Component_ list view, click on "Completed" to sort. Select a _Component_ in the completed list to view its Security Posture and current vulnerabilities. DeployHub provides updates to vulnerabilities every 30 minutes. 
+Sort Components by "Completed." "Completed" indicates the _Component_ has been deployed to end users. From the _Component_ list view, click on "Completed" to sort. Select a _Component_ in the completed list to view its Security Posture and current vulnerabilities. Ortelius provides updates to vulnerabilities every 30 minutes. 
 
 ![CompletedComponents](/guides/userguide/images/completed.jpg)
 
@@ -112,7 +121,7 @@ For More information on Components see - [Publishing _Components_](/guides/userg
 
 ## Explore Applications
 
-An _Application_ is a collection of _Components_ that make up a complete software solution.  DeployHub manages the Logical _Application_ aggregating _Component_ data up to the application-level. 
+An _Application_ is a collection of _Components_ that make up a complete software solution.  Ortelius manages the Logical _Application_ aggregating _Component_ data up to the application-level. 
 
 ### Take a Tour of _Applications_
 
@@ -140,7 +149,7 @@ Results:
 
 <strong>4) Aggregated Software Bill of Materials</strong>
 
-View an aggregated _Application_ Software Bill of Material report. An _Application_ SBOM is a report that shows all of the _Application's_ _Component_ SBOM data, with duplicates removed. When a _Component_ is updated, DeployHub automatically creates a new version of all _Applications_ consuming the _Component_, with a new aggregated SBOM. DeployHub then cross references all of the _Application's_ _Components_ packages with the known vulnerabilities. The report shows a timestamp to record the point in time the vulnerabilities were found. This is a static view of the known vulnerabilities at build time for the _Application_ with SBOM details. If you are required to produce an SBOM for governance purposes, you can provide your consumers with access to the DeployHub platform allowing them to 'self serve' and track your _Application's_ security posture.  
+View an aggregated _Application_ Software Bill of Material report. An _Application_ SBOM is a report that shows all of the _Application's_ _Component_ SBOM data, with duplicates removed. When a _Component_ is updated, Ortelius automatically creates a new version of all _Applications_ consuming the _Component_, with a new aggregated SBOM. Ortelius then cross references all of the _Application's_ _Components_ packages with the known vulnerabilities. The report shows a timestamp to record the point in time the vulnerabilities were found. This is a static view of the known vulnerabilities at build time for the _Application_ with SBOM details. If you are required to produce an SBOM for governance purposes, you can provide your consumers with access to the Ortelius platform allowing them to 'self serve' and track your _Application's_ security posture.  
 
 <p><br></p>
 
@@ -178,7 +187,7 @@ Learn More at  [Packaging _Applications_](/guides/userguide/packaging-applicatio
 
 ## Explore Open-Source Inventory
 
-DeployHub allows you to search your entire inventory of _Components_ for open-source packages. Rapidly responding to vulnerabilities requires you know precisely where your exposure to the vulnerability is running, and what _Components_ need to remediated. 
+Ortelius allows you to search your entire inventory of _Components_ for open-source packages. Rapidly responding to vulnerabilities requires you know precisely where your exposure to the vulnerability is running, and what _Components_ need to remediated. 
 
 ### Take a Tour of Open-Source Inventory
 
@@ -206,13 +215,4 @@ Results:
 
 ## Conclusion
 
-There are many other features of DeployHub that we did not get to cover on this short test drive. However, you should have the basic understanding of the major Objects and concepts needed to get you started.  What we did not cover that you may want to view are:
-
-[Environments and Endpoints](/userguide/first-steps/2-define-your-credentials/) - Environments and Endpoints can be used to:
--  execute deployments using DeployHub's internal agentless deployment engine
--  associate an artifact repo to your _Application_ 
--  connect your external deployment tools, called from your CI/CD deployment step, to DeployHub. 
-
-Another important topic is integrating with your CD pipeline.  See [Using DeployHub with CI/CD](/userguide/integrations/ci-cd_integrations/) on how you can include gathering all DevSecOps data.
-
-We will leave you with how to setup DeployHub for your installation.  See [First Steps](/userguide/first-steps/), for getting your setup completed. Once you have your setup complete you can start continuously gathering your software supply chains security intelligence. 
+There are many other features of Ortelius that we did not get to cover on this short test drive. However, you should have the basic understanding of the major Objects and concepts needed to get you started. You may want to explore how to connect your CI/CD pipeline to automatically connect SBOMs to your pipeline process with Ortelius. See [SBOMs and Ortelius](https://docs.ortelius.io/guides/userguide/integrations/sbom-support/) on how you can include SBOMs in your CI/CD process. 
