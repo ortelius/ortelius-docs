@@ -43,16 +43,14 @@ Ortelius versions both _Components_ and 'logical' _Applications_.  When versioni
 
  _Application Versions_ are based on a collection of _Component Versions_. If a new version of a _Component_ is built or registered, Ortelius auto increments the _Component_ version and the consuming _Application_ version.  Dashboards are provided for each new _Application_ version showing:
 
-- A full map of all the _Component Versions_ the _Application_ version is consuming.
+- A full map of all the _Component Versions_ the _Application Version_ is consuming.
 - An _Application_ Level SBOM, based on all _Component_ SBOMs
 - An _Application_ Level CVE
-- The specific changes that created the new _Application_ version (your new diff report)
+- The specific changes that created the new _Application Version_ (your new diff report)
 - The audit history of all _Component_ and _Application_ changes
 - Log history
 - Where _Components_ are running across clusters and _Environments_
 - Trends (Deployment time, success failure rates)
-
-
 
 ## Other Core Features
 
