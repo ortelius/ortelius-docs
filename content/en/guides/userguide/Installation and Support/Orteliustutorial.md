@@ -212,7 +212,6 @@ Results:
 ![Package Search Menu](/guides/userguide/images/spring-results.jpg)
 
 
-
 ## Conclusion
 
 There are many other features of Ortelius that we did not get to cover on this short test drive. However, you should have the basic understanding of the major Objects and concepts needed to get you started. You may want to explore how to connect your CI/CD pipeline to automatically connect SBOMs to your pipeline process with Ortelius. See [SBOMs and Ortelius](https://docs.ortelius.io/guides/userguide/integrations/sbom-support/) on how you can include SBOMs in your CI/CD process. 

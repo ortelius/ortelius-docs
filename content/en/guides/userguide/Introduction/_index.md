@@ -13,7 +13,7 @@ Ortelius is an open source, Continuous Security Intelligence solution for survei
 
 ## The "Logical" Application
 
-In order to understand the security posture of an _Application_, teams need to know the _Component_ dependencies, and the _Component_ packages. Ortelius aggregates DevSecOps data to the ‘logical’ application versions simplifying the complexities of a cloud-native architecture. Ortelius provides a clear view of the software supply chain for every "logical" _Application_ and its _Components_. By tracking _Component_ level information, Ortelius can easily aggregate metadata up to the 'logical' application producing application level SBOMs, CVEs, audit reports, deployment inventory and status. 
+In order to understand the security posture of an _Application_, teams need to know the _Component_ dependencies, and the _Component_ packages that the _Application_ consumes. Ortelius aggregates DevSecOps data to the ‘logical’ application versions simplifying the complexities of a cloud-native architecture. Ortelius provides a clear view of the software supply chain for every "logical" _Application_ based on its _Components_. By tracking _Component_ level information, Ortelius can easily aggregate metadata up to the 'logical' application producing application level security postures with consolidated SBOMs, vulnerabilities, audit reports, deployment inventory and security compliance status. 
 
 **Decoupled Environments are Complex**
 
@@ -25,12 +25,12 @@ Ortelius is not a 'artifact registry' or 'API Gateway."  Instead, Ortelius inter
 
 Ortelius versions both _Components_ and 'logical' _Applications_.  When versioning _Components_, Ortelius provides insights needed to determine if the service is safe for consumption including:
 
-- Software Bill of Material
-- OpenSSF Scorecard
-- Common Vulnerabilities and Exposures (CVE)
+- Consolidated and Shared Software Bill of Materials
+- OpenSSF Scorecard for _Components_ and _Applications_
+- Aggregated Common Vulnerabilities and Exposures (CVE)
 - Swagger Details
 - Readme and Licensing
-- Consuming Applications
+- Consuming _Applications_ for Each _Component_
 - Ownership
 - Git repo
 - Git Commit (Tag and branch)
