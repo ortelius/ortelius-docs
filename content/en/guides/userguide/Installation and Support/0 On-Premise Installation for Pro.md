@@ -5,9 +5,9 @@ weight: 3
 description: >
   Installing Ortelius On-premise
 ---
-## On Premise Installation Using the DeployHub Helm Chart
+## On Premise Installation Using the Ortelius Helm Chart
 
-DeployHub can be installed into your own cloud environment, or onto a hosted cloud environment.  DeployHub uses Helm to manage and perform the installation. The process includes the installation of multiple containers. The Helm chart and instructions can be found at [ArtifactHub](https://artifacthub.io/packages/helm/ortelius/ortelius). This is the location for the most up to date instructions for downloading and running the DeployHub Helm chart.
+Ortelius can be installed into your own cloud environment, or onto a hosted cloud environment.  Ortelius uses Helm to manage and perform the installation. The process includes the installation of multiple containers. The Helm chart and instructions can be found at [ArtifactHub](https://artifacthub.io/packages/helm/ortelius/ortelius). This is the location for the most up to date instructions for downloading and running the Ortelius Helm chart.
 
 ## Next Steps
 Access the URL and complete a Proof of Concept
