@@ -1,6 +1,6 @@
 ---
-title: "Installing Ortelius"
-linkTitle: "Installing Ortelius"
+title: "Installing Ortelius Locally"
+linkTitle: "Installing Ortelius Locally"
 weight: 3
 description: >
   Installing Ortelius On-premise

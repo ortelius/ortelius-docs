@@ -98,8 +98,8 @@ A Container _Component_ has the following optional attributes:
 
 |**Field** | **Description**|
 | --- | --- |
-| **Base Directory**| Base, or high level, directory where the file will be deployed. This value will be ignored if the _Endpoint_ has a Base Directory defined.  See [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted. |
-| **Target Directory** | The directory under the Base Directory where the file will be deployed, or final "Target" Directory. See [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted.|
+| **Base Directory**| Base, or high level, directory where the file will be deployed. This value will be ignored if the _Endpoint_ has a Base Directory defined.  
+| **Target Directory** | The directory under the Base Directory where the file will be deployed, or final "Target" Directory. 
 |**Build Job** | The Continuous Delivery Build Job that is used to build/compile the _Component_.  |
 | **Last Build Number** | The number of the last Continuous Delivery (CD) Workflow that created the files referenced within the _Component._ This number will default to the Build ID if one is not set by the CD Workflow.|
 | **Build ID** | The internal identifier for the _Build Engine_. |
@@ -129,9 +129,7 @@ Report the license associated with your code base for your _Component_. Use the 
  
 ## Automate the Readme, SBOM, License, and Swagger Upload via Your Pipeline. 
 
-You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. . 
-
-{{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
+You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. 
 
 ### Access
 

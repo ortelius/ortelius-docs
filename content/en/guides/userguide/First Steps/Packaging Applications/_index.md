@@ -1,7 +1,7 @@
 ---
 title: "Packaging Applications"
 linkTitle: "Packaging Applications"
-weight: 15
+weight: 4
 description: >
   How to Package Your Base Line Application.
 ---

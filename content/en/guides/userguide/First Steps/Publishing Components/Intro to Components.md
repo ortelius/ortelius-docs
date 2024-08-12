@@ -8,7 +8,7 @@ description: >
 
 ## Intro to _Components_
 
-_Components_ are files, artifacts, or containers.  _Components_ are assigned to an _Application_ but managed independently.  Assign _Components_ to _Applications_ to track a 'logical' view of your software solution. In a monolithic approach, we performed this step during the software compile and link, or 'build' process. In loosely coupled architectures, linking is done at runtime via APIs. Ortelius uses a 'logical' [_Applications_](/guides/userguide/packaging-applications/buildingapplications/) to aggregate _Components_ data to the higher _Application_ level to provide _Application_ security postures, aggregated SBOM, and blast radius impact of a vulnerability. 
+_Components_ are artifacts that are pushed through the CI/CD pipeline.  _Components_ are assigned to an _Application_ but managed independently.  Assign _Components_ to _Applications_ to track a 'logical' view of your software solution. Ortelius uses a 'logical' [_Applications_](/guides/userguide/first-steps/packaging-applications/) to aggregate _Components_ data to the higher _Application_ level to provide _Application_ security postures, aggregated SBOM, and blast radius impact of a vulnerability. 
 
 If you are an API developer, this will be where you do most of your work. However, application developers may also define _Components_ that are used only by their specific _Application_. _Components_ are microservices, containers, database updates or files. 
 
@@ -36,16 +36,16 @@ If you want your _Component_ to be shared across your teams, publish your _Compo
 
 Ortelius uses a backend versioning engine to track your _Components_. Versioning tracks _Component_ attributes including low level information that is needed for other teams to reuse your _Component_ including:
 
+- SBOMs 
+- CVEs
+- Swagger and Readme
 - Gitrepo
 - Git commit (Branch and Tag)
 - CD Build / Workflow Number
 - Container SHA
 - Docker Registry
-- Enviornment Vairaibles
-- SBOMs 
-- CVEs
-- Swagger and Readme
-- Deployment Metadata (Helm Chart, Ansible Playbook, etc.)
+- Environment Variables
+- Deployment Metadata (i.e. Helm Chart, etc.)
 - Any Attributes such as Key Value Pairs, environment variables, and database schemas.
 
 This information is collected when you define your _Component_ to the Ortelius evidenced store. The Ortelius Command Line Interface will automatically update this information via your CD Pipeline. When your Pipeline initiates a workflow for the _Component_, it indicates that a new version of the _Component_ is being pushed across the Pipeline causing all consuming _Applications_ to be automatically incremented to a new version number.  If a _Component_ changes, the consuming _Application_ also changes.  Both get a new version number. For more information see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).
@@ -54,4 +54,4 @@ When you first define your _Component_ Ortelius tracks it as the _Component Base
 
 Ortelius uses a simple versioning number schema starting at 1 and incrementing over time, for example: ` Myapp;1, Myapp;2. ` .
 
-You can use your DevOps Pipeline to include variance in your versioning number (base name, variant, version).  See [Component Versioning Schema](/guides/userguide/integrations/ci-cd_integrations/#_component_-versioning-schema).
+You can use your DevOps Pipeline to include variance in your versioning number (base name, variant, version).  See [Step 2 - Create Your Component.toml File in the CI/CD Integrations](/guides/userguide/integrations/ci-cd_integrations/#_component_-versioning-schema).
