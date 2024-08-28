@@ -8,7 +8,7 @@ description: >
 
 ## Introduction
 
-Ortelius's core Objects are _Domains_, _Applications_, _Components_, _Environments_ and _Endpoints_. These Objects organize, aggregate, and version independently released artifacts and files with their DevSecOps metadata. These Objects are the basis for analyzing your software systems security posture and tracking vulnerabilities to where they are running in your environment.  
+Ortelius's core Objects are _Domains_, _Applications_, _Components_, _Environments_ and _Endpoints_. These Objects organize, aggregate, and version independently released artifacts with their DevSecOps metadata such as deployment location, Software Bill of Materials, OpenSSF Scorecard, and CVEs. This data is the basis for analyzing your software systems security posture and tracking vulnerabilities to where they are running in your environment.   
 
 _Domains_ are core to Ortelius's gathering of decoupled _Component_ metadata.  _Domains_ are hierarchical and pass inheritance from parent to siblings. For this reason, _Components_ can be shared across the _Subdomains_. The hierarchical structure of _Domains_ provides a high-level of control and management over how _Components_ are shared. reported on, and reused.
 
