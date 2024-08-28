@@ -7,7 +7,7 @@ description: >
 ---
 To help you understand the need for continuously monitoring your security intelligence, Ortelius has provided a free version with a tutorial for you to explore. This free version is based on the Ortelius.io open-source project incubating at the [Continuous Delivery Foundation](https://cd.foundation), hosted by DeployHub Team. Explore how the Ortelius _Application_ is configured and walk through basic concepts of Continuous Security Intelligence. 
 
-![Ortelius Hosted by DeployHub Team](/userguide/images/HostedLogo-SignIn.png)
+![Ortelius Hosted by DeployHub Team](/guides/userguide/images/HostedLogo-SignIn.png)
 
 The Ortelius project uses a decoupled microservices architecture serving as a great example of how Continuous Security Intelligence unifies fragmented clues and forensics across _Components_ to expose the _Application_ level security posture. In this tutorial you will see how Ortelius aggregates _Component_ level security to the _Application_ level providing  _Application_ level:
 - SBOMs
@@ -28,7 +28,7 @@ Login using the UserID and Password you used when you signed up for Ortelius. Ch
 
 Upon logging into Ortelius, you will be given an option to select your Company Name Domain, or the Open Source Domain. The Open Source Domain is prepopulated with data so you can take a tour.  Select the Open Source Domain to start exploring. 
 
-![Sign into a Domain](/userguide/images/domainsignin.jpg)
+![Sign into a Domain](/guides/userguide/images/domainsignin.jpg)
 
 <p><br></p>
 
@@ -44,7 +44,7 @@ You can explore the _GLOBAL.open source_ Domain to learn how Continuous Security
 
 2) Select GLOBAL.Open Source.Linux Foundation. In the Details, you will see this _Domain_ has two _Sub-Domains_, the CDF and the OpenSSF. Driving into the GLOBAL.Open Source.Linux Foundation.CDF _Domain_ will show you the Ortelius project is a _Sub-Domain_ of the CDF.   
 
-For More information on Domains see - [Building _Domains_](/userguide/first-steps/2-defining-domains/)
+For More information on Domains see - [Building _Domains_](/guides/userguide/first-steps/2-defining-domains/)
 
 <p><br></p>
 
@@ -56,7 +56,7 @@ _Components_ are artifacts, binaries, files or any deployable artifact. _Compone
 
 From the left hand side menu, select "_Components_". This will take you to a list of view of all _Components_ assigned to the selected _Domain_. Using the filter option, choose _GLOBAL.Open Source.Linux Foundation.CDF.Ortelius_ to view all of the _Components_ consumed by the Ortelius open source project. 
 
-![Ortelius Domain](/userguide/images/OrteliusDomainSelection.jpg)
+![Ortelius Domain](/guides/userguide/images/OrteliusDomainSelection.jpg)
 
 <p><br></p>
 
@@ -70,7 +70,7 @@ Sort Components by "Completed." "Completed" indicates the _Component_ has been d
 
 The first item in our sorted _Component_ list is the latest version of _ms-compitem-crud_ represented by the version label "main;10_0_834_g1bdd9d_."  
 
-![Component List](/userguide/images/component-version.jpg)
+![Component List](/guides/userguide/images/component-version.jpg)
 
 <p><br></p>
 
@@ -85,7 +85,7 @@ The _Component_ Detail page shows you the _Components_ Security Profile, Impact 
 
  From the top menu, look for the previous _Version button_. 
 
- ![Compare Components](/userguide/images/component-compare-menu.jpg)
+ ![Compare Components](/guides/userguide/images/component-compare-menu.jpg)
 
 
  This button shows you the total number of previous versions of this _Component_. Select the button to be provided a list of all previous versions. From this list you can view the details of any previous versions. 
@@ -94,7 +94,7 @@ The _Component_ Detail page shows you the _Components_ Security Profile, Impact 
 
 You will be provided a report that shows the differences between these two _Component versions_. 
 
-![Compare Components](/userguide/images/componentcompare.jpg)
+![Compare Components](/guides/userguide/images/componentcompare.jpg)
 
 <p><br></p>
 
@@ -112,7 +112,7 @@ In this view, you will see the _Component's_ SBOM displayed with the Package, Ve
 
 
 
-![Component SBOM](/userguide/images/SBOM-component.jpg)
+![Component SBOM](/guides/userguide/images/SBOM-component.jpg)
 
 <p><br></p>
 
@@ -120,7 +120,7 @@ In this view, you will see the _Component's_ SBOM displayed with the Package, Ve
 
 Ortelius uses the GitRepo and GitCommit from the the CI/CD command line integration (CLI) to gather OpenSSF scorecard data. When available, you will see the _Components_ compliance with OpenSSF scorecard. 
 
-![Components Scorecard](/userguide/images/componentOpenSSFSC.jpg)
+![Components Scorecard](/guides/userguide/images/componentOpenSSFSC.jpg)
 
 <p><br></p>
 
@@ -150,9 +150,9 @@ Ortelius provides you a view of the _Components_ Swagger information when availa
 
 <strong><u>Component with DevOps Details Section</u></strong>
 
-This section gives you additional information about the _Component_ such as _Owner_ name and contact information, build details, Git Repo information and Helm Chart information if used. In addition, if you are using the DeployHub internal Deployment Engine, the configuration for deploying your _Component_ is provided.  
+This section gives you additional information about the _Component_ such as _Owner_ name and contact information, build details, Git Repo information and Helm Chart information if used. 
 
-For More information on Components see - [Publishing _Components_](/userguide/first-steps/publishing-components/).
+For More information on Components see - [Publishing _Components_](/guides/userguide/first-steps/publishing-components/).
 
 <p><br></p>
 
@@ -165,7 +165,7 @@ An _Application_ is a collection of _Components_ that together form a complete s
 
 From the left hand side menu, select "_Applications"_. If you have completed the above steps, you will still be in the _GLOBAL.Open Source.Linux Foundation.CDF.Ortelius_ _Domain_. Notice that the first item in the list is _ortelius_ with the most recent Version number. 
 
-![Application List](/userguide/images/app-list.jpg)
+![Application List](/guides/userguide/images/app-list.jpg)
 
 <p><br></p>
 
@@ -175,7 +175,7 @@ Select the Ortelius Application and run the following reports:
 
 - Compliance Summary - this report is a summation of data gathered across your CI/CD pipeline and includes a compliance checklist for a variety of security checks and environment inventory for the _Application_ _Component_ versions.
 
-![Compliance Run](/userguide/images/compliance-results.jpg)
+![Compliance Run](/guides/userguide/images/compliance-results.jpg)
 
 - Deployment Frequency - this report shows how often each _Environment_ has been deployed to, based on the CI/CD pipeline data.
 
@@ -191,13 +191,13 @@ Ortelius allows you to search through all _Applications_ for open-source package
 
 Search for a Package by selecting the "Package Search" menu option from the _Application_ list view. Enter the package you wish to search for such as "Spring." 
 
-![Package Search Menu](/userguide/images/spring-search.jpg)
+![Package Search Menu](/guides/userguide/images/spring-search.jpg)
 
 <p><br></p>
 
 You will be provided a list of all _Applications_ with their _Components_ that are dependent upon the package. 
 
-![Package Search Menu](/userguide/images/spring-results.jpg)
+![Package Search Menu](/guides/userguide/images/spring-results.jpg)
 
 <p><br></p>
 
@@ -213,7 +213,7 @@ The _Application_ Detail page shows you the _Application_ Security Profile, Impa
 
  Generate a Comparison Report between two _Application_ versions. Select the _Compare Button_. You will be provided a list to select the previous version to compare the current version you are viewing. You will be provided a report that shows the differences between these two _Application versions_. 
 
-![Compare applications](/userguide/images/app-compare.jpg)
+![Compare applications](/guides/userguide/images/app-compare.jpg)
 
 <p><br></p>
 
@@ -233,16 +233,15 @@ In the Impact Assessment Section, you will see the _Environments_ the _Applicati
 
 This section shows your _Applications_ Log History, and Key Value Configurations that were used.
 
-Learn More at  [Packaging _Applications_](/userguide/first-steps/packaging-applications/)
+Learn More at  [Packaging _Applications_](/guides/userguide/first-steps/packaging-applications/)
 
 <p><br></p>
 
 ## Conclusion
 
-There are many other features of Ortelius that we did not cover on this short test drive. You may want to explore how to connect your CI/CD pipeline to automatically connect SBOMs and other DevSecOps tools to your pipeline process. See [SPDX, CycloneDX and Syft](/userguide/integrations/spdx-syft-cyclonedx/) on how you can include SBOMs in your CI/CD process. 
+There are many other features of Ortelius that we did not cover on this short test drive. You may want to explore how to connect your CI/CD pipeline to automatically connect SBOMs and other DevSecOps tools to your pipeline process. See [SPDX, CycloneDX and Syft](//guides/userguide/integrations/spdx-syft-cyclonedx/) on how you can include SBOMs in your CI/CD process. 
 
 Other topics to explore include: 
 
--  Get started by connecting  your [CI/CD pipeline](/userguide/integrations/ci-cd_integrations/) to add _Components_ and _Applications_.
+-  Get started by connecting  your [CI/CD pipeline](/guides/userguide/integrations/ci-cd_integrations/) to add _Components_ and _Applications_.
 
-- [The Internal Deployment Engine](/userguide/profeatures/deployments/) - execute deployments using Ortelius's internal agentless deployment engine
