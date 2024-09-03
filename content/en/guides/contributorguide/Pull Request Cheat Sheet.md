@@ -127,7 +127,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
     In GitHub, go to the upstream repo and do a new pull request.  Choose compare across
     forks.  Select your fork and master branch.
- 
+
 9) After the PR has been merged you need to bring your repo in sync with upstream since it has new commits
 
       ```

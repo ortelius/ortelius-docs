@@ -26,11 +26,11 @@ You will find _Users_ under the Setup menu.  Selecting _Users_ will take you to 
 
 The _Users_ List View has the following Tabs.
 
-| Tab | Description |
-| --- | --- |
-|**Refresh** | Refreshes the browser. |
-|**Add** | Allows you to Add a new _User_ of a particular type. |
-|**Delete** | Deletes the selected item. |
+| Tab         | Description                                          |
+|-------------|------------------------------------------------------|
+| **Refresh** | Refreshes the browser.                               |
+| **Add**     | Allows you to Add a new _User_ of a particular type. |
+| **Delete**  | Deletes the selected item.                           |
 
 From the _User_ List View, double click on the _User_ which you would like to view to see all Details.
 
@@ -42,21 +42,21 @@ The _User_ Dashboard view displays all information related to a specific _User_.
 
 The following details are common to all _Users_:
 
-| Field | Description |
-| --- | --- |
-| **Full Domain** | The fully qualified name of the _Domain_ to which the _User_ was defined. |
-| **User Name** | The Login name of the _User_. |
-| **Real Name** | The _User's_ Proper Name. |
-| **Email** | The _User's_ email. Used to send event notifications. |
-| **Phone** | _Users_ phone number.  |
-| **Date Format** | Defines how the date will be displayed to address geographical differences.|
-| **Time Format** | 24 hour clock (military time) vs. 12 hour clock |
-| **Password**| Password selected by the _User_ (encrypted in the database).|
-| **Account Locked**| Locks the User out of the system. |
-| **Force Change Password**| Forces the User to change their password on initial sign-in.|
-| **Created** | Auto generated date when the _User_ was added.|
-| **Modified**| Auto generated date when the _User_ was updated.|
-| **Last Login** | Displays the last time the User logged in. |
+| Field                     | Description                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| **Full Domain**           | The fully qualified name of the _Domain_ to which the _User_ was defined.   |
+| **User Name**             | The Login name of the _User_.                                               |
+| **Real Name**             | The _User's_ Proper Name.                                                   |
+| **Email**                 | The _User's_ email. Used to send event notifications.                       |
+| **Phone**                 | _Users_ phone number.                                                       |
+| **Date Format**           | Defines how the date will be displayed to address geographical differences. |
+| **Time Format**           | 24 hour clock (military time) vs. 12 hour clock                             |
+| **Password**              | Password selected by the _User_ (encrypted in the database).                |
+| **Account Locked**        | Locks the User out of the system.                                           |
+| **Force Change Password** | Forces the User to change their password on initial sign-in.                |
+| **Created**               | Auto generated date when the _User_ was added.                              |
+| **Modified**              | Auto generated date when the _User_ was updated.                            |
+| **Last Login**            | Displays the last time the User logged in.                                  |
 
 ## Group Membership
 

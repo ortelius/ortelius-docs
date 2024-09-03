@@ -14,12 +14,12 @@ Critical to the process is the ability to perform configuration management, vers
 
 The Ortelius CircleCI Orb calls Ortelius to perform:
 
-| Task | Description |
-| --- | --- |
-| **move_job** | Executes the Ortelius 'Move' task which promotes or demotes an application version to a different pipeline state. |
-| **microservice_version_update_job** |  Automatically increments the version number of a microservice and the application prior to deployment.  Tracks dependency relationships between microservices and applications to create dependency maps.|
-| **deploy_job**| Deploys an application version to a specified environment. CircleCI will pass the application version name and environment to Ortelius.|
-| **envscript_job**| Generates a script that captures additional information from CircleCI, Git and Environment TOML file.  This script is used in subsequent steps for adding additional information to Ortelius. |
+| Task                                | Description                                                                                                                                                                                               |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **move_job**                        | Executes the Ortelius 'Move' task which promotes or demotes an application version to a different pipeline state.                                                                                         |
+| **microservice_version_update_job** | Automatically increments the version number of a microservice and the application prior to deployment.  Tracks dependency relationships between microservices and applications to create dependency maps. |
+| **deploy_job**                      | Deploys an application version to a specified environment. CircleCI will pass the application version name and environment to Ortelius.                                                                   |
+| **envscript_job**                   | Generates a script that captures additional information from CircleCI, Git and Environment TOML file.  This script is used in subsequent steps for adding additional information to Ortelius.             |
 
 
 You do not need to use the 'approve_job 'or 'move_job' functions. The use of these jobs is determined by how you define your CircleCI pipeline.  If you are using Approvals in CircleC, the approve_job records the approval information as part of the microservice deployment meta.  A 'Move' process tracks where the microservice and application versions are in the pipeline.  You would generally perform a 'Move' and then a 'Deploy.'  Using the microservice_version_update_job is recommended before the deploy_job.  This allows Ortelius to perform your versioning, configuration management, dependency mapping and comparisons.  The deploy_job calls on Ortelius' back in release engine to move the objects to endpoints (clusters for example.)

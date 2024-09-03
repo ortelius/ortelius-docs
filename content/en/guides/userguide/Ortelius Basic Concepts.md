@@ -178,7 +178,7 @@ The _Endpoint_ object has the following properties:
 | domain                   | _Domain_ in which it is contained.                     |
 | owner                    | _User_ or _Group_ that owns it.                        |
 | hostname                 | Hostname (if set) or name otherwise.                   |
-| basedir                  | Base Directory for where the _Application_ is running.                        |
+| basedir                  | Base Directory for where the _Application_ is running. |
 | _Components_             | The _Components_ currently installed on it.            |
 | creator                  | The _User_ or _Group_ who created it.                  |
 | modifier                 | The _User_ or _Group_ who last modified it.            |

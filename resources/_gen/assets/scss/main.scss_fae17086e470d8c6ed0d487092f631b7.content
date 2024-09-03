@@ -18920,7 +18920,9 @@ nav.foldable-nav .with-child ul {
   @media (min-width: 768px) {
     .td-sidebar {
       padding-top: 4rem;
-      padding-right: 1rem; } }
+      /*        background-color: $td-sidebar-bg-color; */
+      padding-right: 1rem;
+      /*        border-right: 1px solid $td-sidebar-border-color; */ } }
   .td-sidebar__toggle {
     line-height: 1;
     color: #212529;
@@ -19680,9 +19682,7 @@ assets/scss/_styles_project.scss
   font-size: 110%;
   color: #555;
   max-width: 20em;
-  border-bottom-color: #999;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
+  border-bottom: 1px solid #999;
   padding-bottom: 1em;
   margin-bottom: 1em; }
 
@@ -19695,8 +19695,8 @@ assets/scss/_styles_project.scss
 
 .td-navbar {
   background: #676767;
-  padding-bottom: 0px;
-  padding-top: 0px; }
+  padding-bottom: 0;
+  padding-top: 0; }
 
 .td-navbar .navbar-brand svg {
   height: 60px;
@@ -19715,7 +19715,7 @@ table {
   padding: 0; }
 
 table tr {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   background-color: white;
   margin: 0;
   padding: 0; }
@@ -19725,13 +19725,13 @@ table tr:nth-child(2n) {
 
 table tr th {
   font-weight: bold;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   text-align: left;
   margin: 0;
   padding: 6px 13px; }
 
 table tr td {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   text-align: left;
   margin: 0;
   padding: 6px 13px; }
@@ -19765,7 +19765,7 @@ pre code {
 
 .highlight pre {
   background-color: #f8f8f8;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 13px;
   line-height: 19px;
   overflow: auto;
@@ -19774,7 +19774,7 @@ pre code {
 
 pre {
   background-color: #f8f8f8;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 13px;
   line-height: 19px;
   overflow: auto;

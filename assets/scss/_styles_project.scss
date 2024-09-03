@@ -18,9 +18,7 @@ assets/scss/_styles_project.scss
     font-size: 110%;
     color: #555;
     max-width: 20em;
-    border-bottom-color: #999;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+    border-bottom: 1px solid #999;
     padding-bottom: 1em;
     margin-bottom: 1em;
 }
@@ -36,8 +34,8 @@ assets/scss/_styles_project.scss
 
 .td-navbar {
   background: #676767;
-  padding-bottom: 0px;
-  padding-top: 0px;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .td-navbar .navbar-brand svg {
@@ -60,8 +58,9 @@ body > header > nav > a > div.navbar-logo > svg {
 table {
   padding: 0;
 }
+
 table tr {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   background-color: white;
   margin: 0;
   padding: 0;
@@ -73,14 +72,14 @@ table tr:nth-child(2n) {
 
 table tr th {
   font-weight: bold;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   text-align: left;
   margin: 0;
   padding: 6px 13px;
 }
 
 table tr td {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   text-align: left;
   margin: 0;
   padding: 6px 13px;
@@ -121,7 +120,7 @@ pre code {
 
 .highlight pre {
   background-color: #f8f8f8;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 13px;
   line-height: 19px;
   overflow: auto;
@@ -131,7 +130,7 @@ pre code {
 
 pre {
   background-color: #f8f8f8;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 13px;
   line-height: 19px;
   overflow: auto;

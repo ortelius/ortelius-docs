@@ -24,23 +24,23 @@ The _Group_ Dashboard view displays all information related to a specific _Group
 
 _Groups_ have the following attributes:
 
-| Field | Description |
-| --- | --- |
-|**Full Domain**| The fully qualified name of the _Domain_. |
-| **Group Name** | The name of the Ortelius _Group._ |
-|**Summary**| A description of the _Group_.|
-| **Email** | The _Group_ email address that members of a _Group_ would all have access to, in the event of a notify process. |
-|**Created**| Auto generated date when the _Group_ was added.|
-|**Modified**| Auto generated date when the _Group_ was updated.|
-|**Override Access Control**| If checked, allows any _User_ belonging to this _Group_ to have control over the entire system, and no access restrictions apply to them. This option creates a Super Group level of Administrator and should only be used for individuals with full administrative privileges. |
-| **Users** | When checked, allows the _User_ to create and add Users to any of the _Domains_ to which they belong. |
-| **User Groups**| When checked, allows the _User_ to create and add _Groups_ to any of the _Domains_ to which they belong. |
-| **Domains** | When checked, allows the _User_ to create and add _Subdomains_ to any of the _Domains_ to which they belong. |
-| **Environments** | When checked, allows the _User_ to create and add _Environments_ to any of the _Domains_ to which they belong. |
-| **Endpoints** | When checked, allows the _User_ to create and add _Endpoints_ to any of the _Domains_ to which they belong. |
-| **Components** | When checked, allows the _User_ to create and add _Components_ to any of the _Domains_ to which they belong. |
-| **Applications** | When checked, allows the _User_ to create and add _Applications_ to any of the _Domains_ to which they belong. |
-| **Application Versions** | When checked, allows the _User_ to create and add _Application Versions_ to any of the _Domains_ to which they belong. |
+| Field                       | Description                                                                                                                                                                                                                                                                     |
+|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Full Domain**             | The fully qualified name of the _Domain_.                                                                                                                                                                                                                                       |
+| **Group Name**              | The name of the Ortelius _Group._                                                                                                                                                                                                                                               |
+| **Summary**                 | A description of the _Group_.                                                                                                                                                                                                                                                   |
+| **Email**                   | The _Group_ email address that members of a _Group_ would all have access to, in the event of a notify process.                                                                                                                                                                 |
+| **Created**                 | Auto generated date when the _Group_ was added.                                                                                                                                                                                                                                 |
+| **Modified**                | Auto generated date when the _Group_ was updated.                                                                                                                                                                                                                               |
+| **Override Access Control** | If checked, allows any _User_ belonging to this _Group_ to have control over the entire system, and no access restrictions apply to them. This option creates a Super Group level of Administrator and should only be used for individuals with full administrative privileges. |
+| **Users**                   | When checked, allows the _User_ to create and add Users to any of the _Domains_ to which they belong.                                                                                                                                                                           |
+| **User Groups**             | When checked, allows the _User_ to create and add _Groups_ to any of the _Domains_ to which they belong.                                                                                                                                                                        |
+| **Domains**                 | When checked, allows the _User_ to create and add _Subdomains_ to any of the _Domains_ to which they belong.                                                                                                                                                                    |
+| **Environments**            | When checked, allows the _User_ to create and add _Environments_ to any of the _Domains_ to which they belong.                                                                                                                                                                  |
+| **Endpoints**               | When checked, allows the _User_ to create and add _Endpoints_ to any of the _Domains_ to which they belong.                                                                                                                                                                     |
+| **Components**              | When checked, allows the _User_ to create and add _Components_ to any of the _Domains_ to which they belong.                                                                                                                                                                    |
+| **Applications**            | When checked, allows the _User_ to create and add _Applications_ to any of the _Domains_ to which they belong.                                                                                                                                                                  |
+| **Application Versions**    | When checked, allows the _User_ to create and add _Application Versions_ to any of the _Domains_ to which they belong.                                                                                                                                                          |
 
 ### Group Membership
 

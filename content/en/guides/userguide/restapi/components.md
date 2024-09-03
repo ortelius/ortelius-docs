@@ -13,17 +13,17 @@ Retrieve specific _Component_ or _Component_ version. This call returns a JSON O
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET |  dmadminweb/API/component/{identifier} |
+| HTTP Verb | URL                                   |
+|-----------|---------------------------------------|
+| GET       | dmadminweb/API/component/{identifier} |
 
 ### Parameters
 
-| Name | Located in | Value | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| latest | query | If latest is set to Y, for "Yes",  then the latest version of the _Component_ is returned.  To use this flag, the specified identifier must refer to a  _Component Base Version_, otherwise the flag has no effect. | No | string |
-| branch | query | If branch is set along with latest then the latest version on the specified branch name is returned. | Yes | string |
-| identifier | path | Is the identifier of the _Component_. Either its name, its qualified name with its parent _Domains_ included in dot notation (i.e. GLOBAL.Products) or its internal ID. | Yes | string |
+| Name       | Located in | Value                                                                                                                                                                                                               | Required | Schema |
+|------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------|
+| latest     | query      | If latest is set to Y, for "Yes",  then the latest version of the _Component_ is returned.  To use this flag, the specified identifier must refer to a  _Component Base Version_, otherwise the flag has no effect. | No       | string |
+| branch     | query      | If branch is set along with latest then the latest version on the specified branch name is returned.                                                                                                                | Yes      | string |
+| identifier | path       | Is the identifier of the _Component_. Either its name, its qualified name with its parent _Domains_ included in dot notation (i.e. GLOBAL.Products) or its internal ID.                                             | Yes      | string |
 
 {{% include "guides/userguide/reusable/Model Component Result.md" %}}
 {{% include "guides/userguide/reusable/Model Component.md" %}}
@@ -41,15 +41,15 @@ This call creates a new _Component Version_. The new _Component_ inherits all th
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET |  /dmadminweb/API/new/compver/{comp_id} |
+| HTTP Verb | URL                                   |
+|-----------|---------------------------------------|
+| GET       | /dmadminweb/API/new/compver/{comp_id} |
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| comp_id | path | Is the ID of the_Component_which will be the parent of the new_Component Version_. Either its name, its qualified name with its parent_Domains_included in dot notation (i.e. GLOBAL.Product) or its internal ID. The newly created_Component Version_will inherit all the attributes from this_Component_. | Yes | integer |
+| Name    | Located in | Description                                                                                                                                                                                                                                                                                                 | Required | Schema  |
+|---------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| comp_id | path       | Is the ID of the_Component_which will be the parent of the new_Component Version_. Either its name, its qualified name with its parent_Domains_included in dot notation (i.e. GLOBAL.Product) or its internal ID. The newly created_Component Version_will inherit all the attributes from this_Component_. | Yes      | integer |
 
 {{% include "guides/userguide/reusable/Model Component Result.md" %}}
 {{% include "guides/userguide/reusable/Model Success.md" %}}
@@ -62,20 +62,20 @@ In order for this to work through the permission model, the associated "Create _
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET |  /dmadminweb/API/buildid/{comp_id}/{build_id} |
+| HTTP Verb | URL                                          |
+|-----------|----------------------------------------------|
+| GET       | /dmadminweb/API/buildid/{comp_id}/{build_id} |
 
 ### Parameters
 
-| Name | Located in | Value | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| comp_id | path | Is the ID of a_Component Base Version_. The latest version of this_Component_will be found and associated to the build with that_Component Version_. If "branch" is specified then the latest version on the branch is located. The_Component_can be specified using either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Products) or its internal ID. | Yes | integer |
-| build_id | path | Is the numeric build ID to associate with the latest version of_Component_ID (comp_id). | Yes | integer |
-| taskname | query | Is the identifier of a "Create New _Application_ Task" to execute in order to create the new _Application Version_. Either its name, its qualified name with its _Domain_ and any parent _Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | string |
-| commit | query | Is the commit ID which triggered the build. | No | string |
-| file | query | Is a filename to record against the build. This is typically a file that was changed that resulted in a build being performed. You can specify one or more file parameters if you need to associate multiple files with this build or use the files parameter to specify multiple files. | No | string |
-| files | query | Is a comma-separated list of files. This is equivalent to specifying multiple file parameters. | No | string |
+| Name     | Located in | Value                                                                                                                                                                                                                                                                                                                                                                                                 | Required | Schema  |
+|----------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| comp_id  | path       | Is the ID of a_Component Base Version_. The latest version of this_Component_will be found and associated to the build with that_Component Version_. If "branch" is specified then the latest version on the branch is located. The_Component_can be specified using either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Products) or its internal ID. | Yes      | integer |
+| build_id | path       | Is the numeric build ID to associate with the latest version of_Component_ID (comp_id).                                                                                                                                                                                                                                                                                                               | Yes      | integer |
+| taskname | query      | Is the identifier of a "Create New _Application_ Task" to execute in order to create the new _Application Version_. Either its name, its qualified name with its _Domain_ and any parent _Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID.                                                                                                                                 | Yes      | string  |
+| commit   | query      | Is the commit ID which triggered the build.                                                                                                                                                                                                                                                                                                                                                           | No       | string  |
+| file     | query      | Is a filename to record against the build. This is typically a file that was changed that resulted in a build being performed. You can specify one or more file parameters if you need to associate multiple files with this build or use the files parameter to specify multiple files.                                                                                                              | No       | string  |
+| files    | query      | Is a comma-separated list of files. This is equivalent to specifying multiple file parameters.                                                                                                                                                                                                                                                                                                        | No       | string  |
 
 {{% include "guides/userguide/reusable/Model Component Result.md" %}}
 {{% include "guides/userguide/reusable/Model Success.md" %}}

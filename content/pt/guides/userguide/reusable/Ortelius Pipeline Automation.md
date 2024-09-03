@@ -25,13 +25,13 @@ Perform the following steps to add your _Components_ using the .toml file:
 
 The following variables should be set at the beginning of your Pipeline.
 
-| Variable | Value | Description |
-| ------- | ----- | ----------- |
-| DHURL | URL to DeployHub Login | The URL used to access DeployHub. |
-| DHUSER  | UserID | The ID used to log into DeployHub |  
-| DHPASS | password | The password used to log into DeployHub. This can encrypted based on the CI/CD solution. |
-| DOCKERREPO | Name of your Docker Repository | For Components that are Docker Images. Not needed for non-docker objects. |
-| IMAGE_TAG | Tag for the Docker Image if used | For Components that are Docker Images. Not needed for non-docker objects. |
+| Variable   | Value                            | Description                                                                              |
+|------------|----------------------------------|------------------------------------------------------------------------------------------|
+| DHURL      | URL to DeployHub Login           | The URL used to access DeployHub.                                                        |
+| DHUSER     | UserID                           | The ID used to log into DeployHub                                                        |
+| DHPASS     | password                         | The password used to log into DeployHub. This can encrypted based on the CI/CD solution. |
+| DOCKERREPO | Name of your Docker Repository   | For Components that are Docker Images. Not needed for non-docker objects.                |
+| IMAGE_TAG  | Tag for the Docker Image if used | For Components that are Docker Images. Not needed for non-docker objects.                |
 
 Example
 

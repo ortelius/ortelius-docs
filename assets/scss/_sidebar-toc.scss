@@ -2,13 +2,13 @@
 // Right side toc
 //
 .td-toc {
-//    border-left: 1px solid $border-color;
+//    border-left: 1px solid $border-color;border-left
 
     @supports (position: sticky) {
         position: sticky;
         top: 4rem;
         height: calc(100vh - 10rem);
-  //      overflow-y: auto;
+  //      overflow-y: auto;overflow-y
     }
 
     order: 2;

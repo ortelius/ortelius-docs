@@ -13,16 +13,16 @@ This call assigns an existing _User_ to one of the 3 default [_Groups_](/guides/
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET | /dmadminweb/API/assign/user/{user_id}/{group_id} |
+| HTTP Verb | URL                                              |
+|-----------|--------------------------------------------------|
+| GET       | /dmadminweb/API/assign/user/{user_id}/{group_id} |
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| user_id | path | Is the identifier of the_User_to be assigned. Either its Name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | integer |
-| group_id | path | Is the identifier of the_Group_to which the_User_should be assigned. Either its name, with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | string |
+| Name     | Located in | Description                                                                                                                                                                       | Required | Schema  |
+|----------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| user_id  | path       | Is the identifier of the_User_to be assigned. Either its Name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID.     | Yes      | integer |
+| group_id | path       | Is the identifier of the_Group_to which the_User_should be assigned. Either its name, with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes      | string  |
 
 {{% include "guides/userguide/reusable/Model Success.md" %}}
 
@@ -32,15 +32,15 @@ This call disassociates a _User_ from a _Group_. Once a _User_ has been removed 
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET | /dmadminweb/API/unassign/user/{user_id}/{group_id} |
+| HTTP Verb | URL                                                |
+|-----------|----------------------------------------------------|
+| GET       | /dmadminweb/API/unassign/user/{user_id}/{group_id} |
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| user_id | path | Is the identifier of the _User_ to be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | integer |
-| group_id | path | Is the identifier of the_Group_to which the _User_ should be assigned. Either its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | string |
+| Name     | Located in | Description                                                                                                                                                                                  | Required | Schema  |
+|----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| user_id  | path       | Is the identifier of the _User_ to be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID.              | Yes      | integer |
+| group_id | path       | Is the identifier of the_Group_to which the _User_ should be assigned. Either its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes      | string  |
 
 {{% include "guides/userguide/reusable/Model Success.md" %}}

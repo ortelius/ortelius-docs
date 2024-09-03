@@ -25,12 +25,12 @@ Restful API calls are needed in your pipeline to grab the metrics from Sonar.  S
 
 #### SonarQube Project Status
 
-| Variable       | Value                                                                                                                   |
-|----------------|-------------------------------------------------------------------------------------------------------------------------|
-| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com`                                                    |
-| SONAR_ID       | Userid used to login to SonarQube                                                                                       |
-| SONAR_PASS     | Password for the userid                                                                                                 |
-| PROJECTKEY     | Name of the project in SonarQube                                                                                        |
+| Variable       | Value                                                                                                                 |
+|----------------|-----------------------------------------------------------------------------------------------------------------------|
+| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com`                                                   |
+| SONAR_ID       | Userid used to login to SonarQube                                                                                     |
+| SONAR_PASS     | Password for the userid                                                                                               |
+| PROJECTKEY     | Name of the project in SonarQube                                                                                      |
 | COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml` |
 
 ```bash
@@ -55,11 +55,11 @@ echo '    SonarProjectStatus = "$Check"' >> ${COMPONENT_TOML}
 
 | Variable       | Value                                                                                                                                                                                                     |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com`                                                                                                                               |
+| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com`                                                                                                                                       |
 | SONAR_ID       | Userid used to login to SonarQube                                                                                                                                                                         |
 | SONAR_PASS     | Password for the userid                                                                                                                                                                                   |
 | COMPONENT_NAME | Name of the component in SonarQube.  This name will typically be the same as the name of the component being built, but the Sonar Scan maybe uploaded to an alternate name.  Use the name from SonarQube. |
-| COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml`                                                                                   |
+| COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml`                                                                                     |
 
 ```bash
 SONAR_BUGS=$(curl -k -s -u ${SONAR_ID}:${SONAR_PASS} "${SONAR_URL}/api/measures/component?component=${COMPONENT_NAME}&metricKeys=complexity,bugs,new_technical_debt,code_smells,branch_coverage,violations" | jq -r '.component.measures | .[] |select(.metric == "bugs") | (.value)')
@@ -71,11 +71,11 @@ echo '    SonarBugs = "%{SONAR_BUGS}"'  >> ${COMPONENT_TOML}
 
 | Variable       | Value                                                                                                                                                                                                     |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com` com>                                                                                                                                       |
+| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com` com>                                                                                                                                  |
 | SONAR_ID       | Userid used to login to SonarQube                                                                                                                                                                         |
 | SONAR_PASS     | Password for the userid                                                                                                                                                                                   |
 | COMPONENT_NAME | Name of the component in SonarQube.  This name will typically be the same as the name of the component being built, but the Sonar Scan maybe uploaded to an alternate name.  Use the name from SonarQube. |
-| COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml`                                                                                   |
+| COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml`                                                                                     |
 
 ```bash
 SONAR_CODESMELLS=$(curl -k -s -u ${SONAR_ID}:${SONAR_PASS} "${SONAR_URL}/api/measures/component?component=${COMPONENT_NAME}&metricKeys=complexity,bugs,new_technical_debt,code_smells,branch_coverage,violations" | jq -r '.component.measures | .[] |select(.metric == "code_smells") | (.value)')
@@ -87,11 +87,11 @@ echo '    SonarCodeSmells = "%{SONAR_CODESMELLS}"'  >> ${COMPONENT_TOML}
 
 | Variable       | Value                                                                                                                                                                                                     |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com` com"                                                                                                                                        |
+| SORAR_URL      | URL for SonarQube Server.  For example: `https://sonar.example.com` com"                                                                                                                                  |
 | SONAR_ID       | Userid used to login to SonarQube                                                                                                                                                                         |
 | SONAR_PASS     | Password for the userid                                                                                                                                                                                   |
 | COMPONENT_NAME | Name of the component in SonarQube.  This name will typically be the same as the name of the component being built, but the Sonar Scan maybe uploaded to an alternate name.  Use the name from SonarQube. |
-| COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml`                                                                                   |
+| COMPONENT_TOML | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml`                                                                                     |
 
 ```bash
 SONAR_VIOLATIONS=$(curl -k -s -u ${SONAR_ID}:${SONAR_PASS} "${SONAR_URL}/api/measures/component?component=${COMPONENT_NAME}&metricKeys=complexity,bugs,new_technical_debt,code_smells,branch_coverage,violations" | jq -r '.component.measures | .[] |select(.metric == "violations") | (.value)')

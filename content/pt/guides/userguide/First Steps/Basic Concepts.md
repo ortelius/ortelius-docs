@@ -34,24 +34,24 @@ Following is a description of each Object and their attributes.
 
 An _Application_ has the following properties:
 
-| **Property** | **Description** |
-| --- | --- |
-| id | A unique identifier for the _Application_  in the database. |
-| name | _Application_ name. |
-| fqdomain |Fully qualified _Domain_ name. |
-| summary | Summary of the _Domain_. |
-| owner | _User_ or _Group_ that owns it. |
-| parent | The Base _Application_.|
-| predecessor |Predecessor _Application Version_. |
-| _Applications_ | Multiple _Applications_ used to create a _Release_.|
-| _Components_ | The objects that the _Application_ consumes. |
-| approvals | Allows a control point for progressing a change within the pipeline process. |
-| requests | The _Change Request_ objects associated with this _Application_.|
-| creator | The _User_ or _Group_ who created it. |
-| modifier | The _User_ or _Group_ who last modified it. |
-| ctime | The date/time it was created. |
-| mtime |  The date/time it was last modified. |
-| KV Configurations |  Key Value Pairs for managing associative arrays. |
+| **Property**      | **Description**                                                              |
+|-------------------|------------------------------------------------------------------------------|
+| id                | A unique identifier for the _Application_  in the database.                  |
+| name              | _Application_ name.                                                          |
+| fqdomain          | Fully qualified _Domain_ name.                                               |
+| summary           | Summary of the _Domain_.                                                     |
+| owner             | _User_ or _Group_ that owns it.                                              |
+| parent            | The Base _Application_.                                                      |
+| predecessor       | Predecessor _Application Version_.                                           |
+| _Applications_    | Multiple _Applications_ used to create a _Release_.                          |
+| _Components_      | The objects that the _Application_ consumes.                                 |
+| approvals         | Allows a control point for progressing a change within the pipeline process. |
+| requests          | The _Change Request_ objects associated with this _Application_.             |
+| creator           | The _User_ or _Group_ who created it.                                        |
+| modifier          | The _User_ or _Group_ who last modified it.                                  |
+| ctime             | The date/time it was created.                                                |
+| mtime             | The date/time it was last modified.                                          |
+| KV Configurations | Key Value Pairs for managing associative arrays.                             |
 
 ## _Component_ Object
 
@@ -110,10 +110,10 @@ Dates track the date/time of the creation, deletion, or update of an Object.
 
 The _Date_ has the following properties:
 
-| Property | Description |
-| --- | --- |
+| Property      | Description                                                                                                                                                                                                                                          |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | to\_int(secs) | Returns an integer representing the date as the number of seconds since midnight on January 1st 1970 (epoch). The secs parameter is optional. If needed, the specified number of seconds is added to the date/time before the new value is returned. |
-| to\_char(fmt) |  Formats the date into a string given by the passed fmt string. The fmt string should contain characters as specified below. |
+| to\_char(fmt) | Formats the date into a string given by the passed fmt string. The fmt string should contain characters as specified below.                                                                                                                          |
 
 ## _Domain_ Object
 
@@ -152,22 +152,22 @@ The [_Environment_ Object](/guides/userguide/first-steps/2-define-environments/)
 
 The following properties can be accessed for an _Environment_ object:
 
-| **Property** | **Description** |
-| --- | --- |
-| id |  Unique identifier as used in the database. |
-| name | _Environment_ name. |
-| fqdomain | Fully qualified _Domain_ name. |
-| summary |  Description of the _Environment_. |
-| domain |  _Domain_ in which it is contained. |
-| owner  | _User_ or _Group_ Objects that owns it.|
-| basedir |  Base directory for deployments. |
-| _Endpoints_ |  The _Endpoints_ assigned to it. |
-| _Applications_ | The _Applications_ associated to it. |
-| creator |  The _User_ or _Group_ who created it. |
-| modifier | The _User_ or _Group_ who last modified it. |
-| ctime | The date/time it was created. |
-| mtime |  The date/time it was last modified. |
-| parent | Parent _Domain_. |
+| **Property**   | **Description**                             |
+|----------------|---------------------------------------------|
+| id             | Unique identifier as used in the database.  |
+| name           | _Environment_ name.                         |
+| fqdomain       | Fully qualified _Domain_ name.              |
+| summary        | Description of the _Environment_.           |
+| domain         | _Domain_ in which it is contained.          |
+| owner          | _User_ or _Group_ Objects that owns it.     |
+| basedir        | Base directory for deployments.             |
+| _Endpoints_    | The _Endpoints_ assigned to it.             |
+| _Applications_ | The _Applications_ associated to it.        |
+| creator        | The _User_ or _Group_ who created it.       |
+| modifier       | The _User_ or _Group_ who last modified it. |
+| ctime          | The date/time it was created.               |
+| mtime          | The date/time it was last modified.         |
+| parent         | Parent _Domain_.                            |
 
 ## _Endpoint_ Object
 
@@ -181,44 +181,44 @@ To map a _Component_ to _Endpoints_, assign one or more _Component_ Types to eac
 
 The _Endpoint_ object has the following properties:
 
-| **Property** | **Description** |
-| --- | --- |
-| id | A unique identifier as used in the database. |
-| name | The _Endpoint_ name. |
-| fqdomain | Fully qualified _Domain_ name. |
-| summary | Description of the _Endpoint_. |
-| domain | _Domain_ in which it is contained. |
-| owner | _User_ or _Group_ that owns it. |
-| hostname | Hostname (if set) or name otherwise. |
-| basedir | Base Directory for Deployments. |
-| type | _Endpoint_ Type, ie: cluster, windows, cloud, etc. |
-| _Components_ | The _Components_ currently installed on it. |
-| creator |  The _User_ or _Group_ who created it. |
-| modifier | The _User_ or _Group_ who last modified it. |
-| ctime | The date/time it was created. |
-| mtime | The date/time it was last modified. |
-| Key Value Configurations | Key Value Pairs for managing associative arrays. |
+| **Property**             | **Description**                                    |
+|--------------------------|----------------------------------------------------|
+| id                       | A unique identifier as used in the database.       |
+| name                     | The _Endpoint_ name.                               |
+| fqdomain                 | Fully qualified _Domain_ name.                     |
+| summary                  | Description of the _Endpoint_.                     |
+| domain                   | _Domain_ in which it is contained.                 |
+| owner                    | _User_ or _Group_ that owns it.                    |
+| hostname                 | Hostname (if set) or name otherwise.               |
+| basedir                  | Base Directory for Deployments.                    |
+| type                     | _Endpoint_ Type, ie: cluster, windows, cloud, etc. |
+| _Components_             | The _Components_ currently installed on it.        |
+| creator                  | The _User_ or _Group_ who created it.              |
+| modifier                 | The _User_ or _Group_ who last modified it.        |
+| ctime                    | The date/time it was created.                      |
+| mtime                    | The date/time it was last modified.                |
+| Key Value Configurations | Key Value Pairs for managing associative arrays.   |
 
 ## _User_ Object
 
 The _User_ Object represents a User in Ortelius. It has the following properties:
 
-| **Property** | **Return Type** | **Description** |
-| --- | --- | --- |
-| id | Integer | User id, as used in the database. |
-| name | String | User Name. |
-| kind | String | Returns "user". Used to differentiate between users and groups when retrieving an owner object. |
-| fqdomain | String | Fully qualified _Domain_ name. |
-| realname | String | The _User's_ full name. |
-| email | String | The _User's_ email address. |
-| phone | String | The _User's_ telephone number. |
-| groups | Array | Array of _Group_ Objects to which this User belongs. |
-| lastlogin | Date | The date/time last logged into Ortelius. |
-| creator | User | _User_ or _Group_ Object representing who created this _User_. |
-| modifier | User | _User_ or _Group_ Object representing who last modified this _User_. |
-| ctime | Date | _Date_ Object representing the date/time the User was created. |
-| mtime | Date | _Date_ Object representing the date/time the User was last modified. |
-| owner | Object | _User_ or _Group_ that owns the _User_ |
+| **Property** | **Return Type** | **Description**                                                                                 |
+|--------------|-----------------|-------------------------------------------------------------------------------------------------|
+| id           | Integer         | User id, as used in the database.                                                               |
+| name         | String          | User Name.                                                                                      |
+| kind         | String          | Returns "user". Used to differentiate between users and groups when retrieving an owner object. |
+| fqdomain     | String          | Fully qualified _Domain_ name.                                                                  |
+| realname     | String          | The _User's_ full name.                                                                         |
+| email        | String          | The _User's_ email address.                                                                     |
+| phone        | String          | The _User's_ telephone number.                                                                  |
+| groups       | Array           | Array of _Group_ Objects to which this User belongs.                                            |
+| lastlogin    | Date            | The date/time last logged into Ortelius.                                                        |
+| creator      | User            | _User_ or _Group_ Object representing who created this _User_.                                  |
+| modifier     | User            | _User_ or _Group_ Object representing who last modified this _User_.                            |
+| ctime        | Date            | _Date_ Object representing the date/time the User was created.                                  |
+| mtime        | Date            | _Date_ Object representing the date/time the User was last modified.                            |
+| owner        | Object          | _User_ or _Group_ that owns the _User_                                                          |
 
 ## _Group_ Object
 
@@ -226,15 +226,15 @@ You can have two _Groups_ which users can be assigned: Users and Administrators.
 
 The _Group_ Object has the following properties:
 
-| Property | Description |
-| --- | --- |
-| id |  A unique identifier as used in the database. |
-| name  | _Group_ Name. |
-| kind  | Identifies whether this is a _User_ or a _Group_. |
-| fqdomain | Fully qualified _Domain_ name. |
-| email  | The _Group's_ email address. |
-| creator | _User_ or _Group_ Object representing who created this Group. |
+| Property | Description                                                           |
+|----------|-----------------------------------------------------------------------|
+| id       | A unique identifier as used in the database.                          |
+| name     | _Group_ Name.                                                         |
+| kind     | Identifies whether this is a _User_ or a _Group_.                     |
+| fqdomain | Fully qualified _Domain_ name.                                        |
+| email    | The _Group's_ email address.                                          |
+| creator  | _User_ or _Group_ Object representing who created this Group.         |
 | modifier | _User_ or _Group_ Object representing who last modified this _Group_. |
-| ctime |  _Date_ Object representing the date/time it was created. |
-| mtime |  _Date_ Object representing the date/time it was last modified. |
-| owner | _User_ or _Group_ that owns the object. |
+| ctime    | _Date_ Object representing the date/time it was created.              |
+| mtime    | _Date_ Object representing the date/time it was last modified.        |
+| owner    | _User_ or _Group_ that owns the object.                               |

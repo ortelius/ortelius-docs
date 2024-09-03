@@ -15,15 +15,15 @@ If the all parameter is not specified then only the _Endpoint_ associated with t
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET | /dmadminweb/API/servers |
+| HTTP Verb | URL                     |
+|-----------|-------------------------|
+| GET       | /dmadminweb/API/servers |
 
 ### Parameters
 
 | Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| all | query | y or n | No | string |
+|------|------------|-------------|----------|--------|
+| all  | query      | y or n      | No       | string |
 
 {{% include "guides/userguide/reusable/Model Endpoints Result.md" %}}
 {{% include "guides/userguide/reusable/Model Endpoints.md" %}}
@@ -34,15 +34,15 @@ This call returns a JSON object representing the specified _Endpoint_.
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET | /dmadminweb/API/server/{identifier} |
+| HTTP Verb | URL                                 |
+|-----------|-------------------------------------|
+| GET       | /dmadminweb/API/server/{identifier} |
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| identifier | path | Is the identifier of the _Endpoint_. Either its name, its qualified name with its parent _Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | string |
+| Name       | Located in | Description                                                                                                                                                           | Required | Schema |
+|------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------|
+| identifier | path       | Is the identifier of the _Endpoint_. Either its name, its qualified name with its parent _Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes      | string |
 
 {{% include "guides/userguide/reusable/Model Endpoint Result.md" %}}
 {{% include "guides/userguide/reusable/Model Endpoints.md" %}}
@@ -55,16 +55,16 @@ _Endpoint_ can be associated with more than one _Environment_. Assigning an _End
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET | /dmadminweb/API/assign/server/{server_id}/{env_id} |
+| HTTP Verb | URL                                                |
+|-----------|----------------------------------------------------|
+| GET       | /dmadminweb/API/assign/server/{server_id}/{env_id} |
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| server_id | path | Is the identifier of the_Endpoint_to be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product)) or its internal ID. | Yes | integer |
-| env_id | path | Is the identifier of the_Environment_to which the_Endpoint_should be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product)) or its internal ID. | Yes | string |
+| Name      | Located in | Description                                                                                                                                                                                                     | Required | Schema  |
+|-----------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| server_id | path       | Is the identifier of the_Endpoint_to be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product)) or its internal ID.                              | Yes      | integer |
+| env_id    | path       | Is the identifier of the_Environment_to which the_Endpoint_should be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e. GLOBAL.Product)) or its internal ID. | Yes      | string  |
 
 {{% include "guides/userguide/reusable/Model Success.md" %}}
 
@@ -84,9 +84,9 @@ This call does not delete the server - it simply disassociates it from the envir
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| server_id | path | Is the identifier of the_Endpoint_to be assigned. Either its name, its qualified name its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID. | Yes | integer |
-| env_id | path | Is the identifier of the_Environment_to which the_Endpoint_should be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (GLOBAL.Product) or its internal ID. | Yes | string |
+| Name      | Located in | Description                                                                                                                                                                                               | Required | Schema  |
+|-----------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| server_id | path       | Is the identifier of the_Endpoint_to be assigned. Either its name, its qualified name its parent_Domains_ included in dot notation (i.e. GLOBAL.Product) or its internal ID.                              | Yes      | integer |
+| env_id    | path       | Is the identifier of the_Environment_to which the_Endpoint_should be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (GLOBAL.Product) or its internal ID. | Yes      | string  |
 
 {{% include "guides/userguide/reusable/Model Success.md" %}}

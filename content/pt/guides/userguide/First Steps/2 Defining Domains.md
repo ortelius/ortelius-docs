@@ -26,9 +26,9 @@ A _Subdomain_ inherits all the access properties from its parent _Domain_. This 
 
 There are four common ways to implement _Domains_:
 
-| **Purpose** | Description |
-|---| --- |
-| **Site _Domain_** | This is the highest-level and default _Domain_. Your default Site _Domain_ name is 'Global.' You can rename your Site _Domain_ if needed. Anything defined to this level can be shared across all lower level _Subdomains_. For example, _Environments_ and _Tasks_ defined to the Site _Domain_ are shared by all child _Subdomains_.|
+| **Purpose**       | Description                                                                                                                                                                                                                                                                                                                            |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Site _Domain_** | This is the highest-level and default _Domain_. Your default Site _Domain_ name is 'Global.' You can rename your Site _Domain_ if needed. Anything defined to this level can be shared across all lower level _Subdomains_. For example, _Environments_ and _Tasks_ defined to the Site _Domain_ are shared by all child _Subdomains_. |
 |**Catalog _Subdomains_**| These _Domains_ are used to organize reusable _Components_, such as microservices. At this level, you create as many _Subdomains_ as needed to represent your _Component_ organization based on the "solution space" they serve. For example, you could build your Catalog as follows: <li> Security Services</li><li>Purchase Processing</li><li>Data Access<li>Ad Services</li>  A Catalog _Domain_ does not contain Life Cycle _Domains_.
 |**Project _Subdomains_**| Use a _Subdomain_ to represent your software _Application_ and its Life Cycle. A _Subdomain_ defined for an _Application_ may need a continuous delivery life cycle. This is defined by selecting "All _Subdomains_ are Life Cycles." This means that any _Subdomains_ cannot include any additional _Subdomains_ and will be used to represent stages of the _Pipeline_ with specific _Environments_ assigned. |
 |**Life Cycle _Subdomains_**| This is the lowest level of _Subdomain_.  It is available when the parent _Domain_ has "All _Subdomains_ are Life Cycles" selected.  These _Subdomains_ map to each stage in your continuous delivery pipeline. They often have specific _Environments_ and _Tasks_ assigned for interaction with your continuous delivery orchestration engine. Ortelius can be called by your continuous delivery Engine (Jenkins, Jenkins X, CircleCI, Google CloudBuild, GitLab or GitHub Actions, etc.) to perform the continuous configuration management of your microservices and _Applications_ across all lifecyle states. In addition, you can assign Move, Approve and Request Tasks to your Life Cycle _Subdomain_ to define a continuous delivery pipeline process within Ortelius that can interact with your pipeline process. |
@@ -62,11 +62,11 @@ When scrolling up or down the _Domain_ hierarchy using the Sunburst map, the det
 
  _Users_ within the designated _Groups_ of "User" or "Admin" can update the _Domain_ in various ways. To add a _Group_ to one of the access lists, drag and drop the _Group_ from the Available _Groups_ list onto the desired access list. All _Users_ who belong to a _Group_ in one of the Access lists will be granted access to the _Domain_.  Access control for _Domains_ include:
 
-| Access | Description |
-| --- | --- |
-| **View** | Allows the _Group_ to see the _Domain_. |
+| Access     | Description                                                                          |
+|------------|--------------------------------------------------------------------------------------|
+| **View**   | Allows the _Group_ to see the _Domain_.                                              |
 | **Change** | Allows the _Group_ to change the _Domain's_ characteristics i.e. Name, Summary, etc. |
-| **Read** | Allows the _Group_ to see the _Domain_.|
-| **Write** | Allows the _Group_ to create _Subdomains_. |
+| **Read**   | Allows the _Group_ to see the _Domain_.                                              |
+| **Write**  | Allows the _Group_ to create _Subdomains_.                                           |
 
 

@@ -8,7 +8,7 @@ Key Value pairs can be assigned at multiple levels, from the Global _Domain_ dow
 |-----------------|-----------------------------------------------------------------------------------------------------------------|
 | **Global**      | Contains all Environment variables and any "additional Key Value Pairs" set by the user when running that task. |
 | **Environment** | Overrides any Global Key Value Pairs during a deployment.                                                       |
-| **Application** | Overrides the _Environment_ Key Value Pairs during a deployment.                                                 |
+| **Application** | Overrides the _Environment_ Key Value Pairs during a deployment.                                                |
 | **Endpoint**    | Overrides the _Application_ Key Value Pairs during a deployment.                                                |
 | **Component** | Overrides the  _Application_ Key Value Pairs during a deployed.
 

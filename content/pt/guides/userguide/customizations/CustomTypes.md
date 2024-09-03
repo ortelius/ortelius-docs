@@ -20,11 +20,11 @@ You will find _Customize Types_ from the left hand side of the Ortelius main pan
 
 The _Custom Type_ List View has the following Tabs.
 
-| Tab | Description |
-| --- | --- |
-|**Refresh** | Refreshes the browser. |
-|**Add** | Allows you to Add a new _Custom Type_. |
-|**Delete** | Deletes the selected item. |
+| Tab         | Description                            |
+|-------------|----------------------------------------|
+| **Refresh** | Refreshes the browser.                 |
+| **Add**     | Allows you to Add a new _Custom Type_. |
+| **Delete**  | Deletes the selected item.             |
 
 From the _Custom Type_ List View, double click on the _Custom Type_ which you would like to view to see all Details.
 
@@ -36,8 +36,8 @@ The _Custom Type_ Dashboard view displays all information related to a specific 
 
 The following details are common to all _Custom Type_:
 
-| Field | Description |
-| --- | --- |
-| **Full Domain** | The fully qualified name of the _Domain_ to which the _Custom Type_ was defined. |
-|**Name**| The name of your _Custom Type_.|
-| **Database Roll-forward/Rollback** | Select this checkbox if your _Custom Type_ uses a database. |
+| Field                              | Description                                                                      |
+|------------------------------------|----------------------------------------------------------------------------------|
+| **Full Domain**                    | The fully qualified name of the _Domain_ to which the _Custom Type_ was defined. |
+| **Name**                           | The name of your _Custom Type_.                                                  |
+| **Database Roll-forward/Rollback** | Select this checkbox if your _Custom Type_ uses a database.                      |

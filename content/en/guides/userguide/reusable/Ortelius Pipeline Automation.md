@@ -23,27 +23,27 @@ The ${VARIABLE} syntax represents an environment variable or derived variable th
 
 ##### Derived Variables
 
-| Attribute Name | Environment Variable | Description |
-|----------|-------------|--------|
-| GitBranch | GIT_BRANCH | Name of the Git Branch |
-| GitBranchCreateCommit | GIT_BRANCH_CREATE_COMMIT | Commit that the branch was created from |
-| GitBranchCreateTimestamp | GIT_BRANCH_CREATE_TIMESTAMP | Timestamp of the commit that the brach was created from |
-| GitBranchParent | GIT_BRANCH_PARENT | Parent branch that the active branch was created from |
-| GitCommit | GIT_COMMIT or SHORT_SHA | Commit SHA |
-| GitCommitAuthors | GIT_COMMIT_AUTHORS | userids that created the commits in the repo |
-| GitCommittersCnt | GIT_COMMITTERS_CNT | number of users creating commits in the repo |
-| GitCommitTimestamp | GIT_COMMIT_TIMESTAMP | Timestamp of when the commit was created |
-| GitContribPercentage | GIT_CONTRIB_PERCENTAGE | GitCommittersCnt / GitTotalCommittersCnt * 100 |
-| GitLinesAdded | GIT_LINES_ADDED | Number of lines added since previous _Component Version_ |
-| GitLinesDeleted | GIT_LINES_DELETED | Number of lines deleted since previous _Component Version_ |
-| GitLinesTotal | GIT_LINES_TOTAL | Total number of changed lines for the commit |
-| GitOrg | GIT_ORG | GitHub Organization |
-| GitRepo | GIT_REPO | GitHub Repo Name without Org Name |
-| GitRepoProject | GIT_REPO_PROJECT | Org/Repo |
-| GitSignedOffBy | GIT_SIGNED_OFF_BY | Email in the `Signed-off by:` commit message |
-| GitTag | GIT_TAG | Current tag if active otherwise equal to Git Branch |
-| GitUrl | GIT_URL | Full url to the git repo |
-| GitVerifyCommit | GIT_VERIFY_COMMIT | Y/N is the commit signed by a verified userid |
+| Attribute Name           | Environment Variable        | Description                                                |
+|--------------------------|-----------------------------|------------------------------------------------------------|
+| GitBranch                | GIT_BRANCH                  | Name of the Git Branch                                     |
+| GitBranchCreateCommit    | GIT_BRANCH_CREATE_COMMIT    | Commit that the branch was created from                    |
+| GitBranchCreateTimestamp | GIT_BRANCH_CREATE_TIMESTAMP | Timestamp of the commit that the brach was created from    |
+| GitBranchParent          | GIT_BRANCH_PARENT           | Parent branch that the active branch was created from      |
+| GitCommit                | GIT_COMMIT or SHORT_SHA     | Commit SHA                                                 |
+| GitCommitAuthors         | GIT_COMMIT_AUTHORS          | userids that created the commits in the repo               |
+| GitCommittersCnt         | GIT_COMMITTERS_CNT          | number of users creating commits in the repo               |
+| GitCommitTimestamp       | GIT_COMMIT_TIMESTAMP        | Timestamp of when the commit was created                   |
+| GitContribPercentage     | GIT_CONTRIB_PERCENTAGE      | GitCommittersCnt / GitTotalCommittersCnt * 100             |
+| GitLinesAdded            | GIT_LINES_ADDED             | Number of lines added since previous _Component Version_   |
+| GitLinesDeleted          | GIT_LINES_DELETED           | Number of lines deleted since previous _Component Version_ |
+| GitLinesTotal            | GIT_LINES_TOTAL             | Total number of changed lines for the commit               |
+| GitOrg                   | GIT_ORG                     | GitHub Organization                                        |
+| GitRepo                  | GIT_REPO                    | GitHub Repo Name without Org Name                          |
+| GitRepoProject           | GIT_REPO_PROJECT            | Org/Repo                                                   |
+| GitSignedOffBy           | GIT_SIGNED_OFF_BY           | Email in the `Signed-off by:` commit message               |
+| GitTag                   | GIT_TAG                     | Current tag if active otherwise equal to Git Branch        |
+| GitUrl                   | GIT_URL                     | Full url to the git repo                                   |
+| GitVerifyCommit          | GIT_VERIFY_COMMIT           | Y/N is the commit signed by a verified userid              |
 
 ##### Derived Files
 
@@ -80,13 +80,13 @@ The CLI will look for Readme, License, Swagger and OpenAPI files and upload thos
 
 The following variables should be set at the beginning of your Pipeline.
 
-| Variable | Value | Description |
-| ------- | ----- | ----------- |
-| DHURL | URL to Ortelius Login | The URL used to access Ortelius. |
-| DHUSER  | UserID | The ID used to log into Ortelius |  
-| DHPASS | password | The password used to log into Ortelius. This can encrypted based on the CI/CD solution. |
-| DOCKERREPO | Name of your Docker Repository | For Components that are Docker Images. Not needed for non-docker objects. |
-| IMAGE_TAG | Tag for the Docker Image if used | For Components that are Docker Images. Not needed for non-docker objects. |
+| Variable   | Value                            | Description                                                                             |
+|------------|----------------------------------|-----------------------------------------------------------------------------------------|
+| DHURL      | URL to Ortelius Login            | The URL used to access Ortelius.                                                        |
+| DHUSER     | UserID                           | The ID used to log into Ortelius                                                        |
+| DHPASS     | password                         | The password used to log into Ortelius. This can encrypted based on the CI/CD solution. |
+| DOCKERREPO | Name of your Docker Repository   | For Components that are Docker Images. Not needed for non-docker objects.               |
+| IMAGE_TAG  | Tag for the Docker Image if used | For Components that are Docker Images. Not needed for non-docker objects.               |
 
 Example
 
@@ -152,9 +152,9 @@ Version = "v1.0.0.${BUILD_NUM}-g${SHORT_SHA}"
 
 >Note: Component Versioning Schema - A more advanced Component Version Schema is represented by the 'Version" variable. This Variable will allow you to define a custom component versioning schema to suit your organizations requirements.
 
-| Variable | Value | Description |
-| ------- | ----- | ----------- |
-| Version | Version String | Your Required Version Schema |
+| Variable | Value          | Description                  |
+|----------|----------------|------------------------------|
+| Version  | Version String | Your Required Version Schema |
 
 Example:
 ```

@@ -17,15 +17,15 @@ If the all parameter is not specified then only the _Environments_ associated wi
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET | /dmadminweb/API/environments |
+| HTTP Verb | URL                          |
+|-----------|------------------------------|
+| GET       | /dmadminweb/API/environments |
 
 ### Parameters
 
 | Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| all | query | y or n | No | string |
+|------|------------|-------------|----------|--------|
+| all  | query      | y or n      | No       | string |
 
 {{% include "guides/userguide/reusable/Model Environments Result.md" %}}
 {{% include "guides/userguide/reusable/Model Environment.md" %}}
@@ -42,9 +42,9 @@ This call returns a JSON object representing the specified _Environment_.
 
 ### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| identifier | path | Is the identifier of the _Environment_. Either its name, its qualified name with its parent _Domains_ included in dot notations (i.e. GLOBAL.Product) or its internal ID. | Yes | string |
+| Name       | Located in | Description                                                                                                                                                               | Required | Schema |
+|------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------|
+| identifier | path       | Is the identifier of the _Environment_. Either its name, its qualified name with its parent _Domains_ included in dot notations (i.e. GLOBAL.Product) or its internal ID. | Yes      | string |
 
 {{% include "guides/userguide/reusable/Model Success.md" %}}
 {{% include "guides/userguide/reusable/Model Environments Result.md" %}}

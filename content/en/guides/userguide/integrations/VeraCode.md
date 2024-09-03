@@ -24,11 +24,11 @@ Restful API calls are needed in your pipeline to grab the metrics from Veracode.
 
 #### VerCode Score
 
-| Variable          | Value                                                                                                                   |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Variable          | Value                                                                                                                 |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------|
 | VERACODE_USERNAME | Username to login into `https://analysiscenter.veracode.com`                                                          |
-| VERACODE_PASSWORD | Password for Veracode login                                                                                             |
-| build_id          | build_id that the Veracode scan is published under                                                                      |
+| VERACODE_PASSWORD | Password for Veracode login                                                                                           |
+| build_id          | build_id that the Veracode scan is published under                                                                    |
 | COMPONENT_TOML    | The Ortelius Component TOML file that defined the _Component Version_ to Ortelius.  Typically called `component.toml` |
 
 ```bash

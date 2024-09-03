@@ -63,19 +63,19 @@ When issuing calls to the API, the client application must either first issue a 
 
 ### REST Api Endpoint
 
-| HTTP Verb | URL |
-| ---- | ----------- |
-| GET |  /dmadminweb/API/login |
+| HTTP Verb | URL                   |
+|-----------|-----------------------|
+| GET       | /dmadminweb/API/login |
 
 ### Parameters
 
-| Name | Located in | Value | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| user | query | User Id | Yes | string |
-| pass | query | Password for User | Yes | string |
+| Name | Located in | Value             | Required | Schema |
+|------|------------|-------------------|----------|--------|
+| user | query      | User Id           | Yes      | string |
+| pass | query      | Password for User | Yes      | string |
 
 ### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | The result will include a cookie. Include this cookie for subsequent calls to APIs. | [success](/guides/userguide/restapi/models/#success) |
+| Code | Description                                                                         | Schema                                               |
+|------|-------------------------------------------------------------------------------------|------------------------------------------------------|
+| 200  | The result will include a cookie. Include this cookie for subsequent calls to APIs. | [success](/guides/userguide/restapi/models/#success) |

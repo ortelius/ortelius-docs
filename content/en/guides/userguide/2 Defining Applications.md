@@ -30,14 +30,14 @@ Use the _Application_ List View accessible from the left hand _Application_ menu
 
 The list view is organized on the following columns:
 
-| List Column                        | Description                                                                                                                               |
-|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| **Version**                        | The _Application Base Version_ or _Application Version_ number.                                                                           |
-| **Domain**                         | The _Domain_ to which the _Application_ belongs.                                                                                          |
-| **Environment**                    | The _Environment_ to which the _Application_ has been deployed. Each _Environment_ will represent a different row in the List View table. |
+| List Column        | Description                                                                                                                               |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| **Version**        | The _Application Base Version_ or _Application Version_ number.                                                                           |
+| **Domain**         | The _Domain_ to which the _Application_ belongs.                                                                                          |
+| **Environment**    | The _Environment_ to which the _Application_ has been deployed. Each _Environment_ will represent a different row in the List View table. |
 | **Deployment Log** | The Deployment Log number.                                                                                                                |
-| **Completed**                      | The date and time of the last deployment to the listed _Environment_.                                                                     |
-| **Results**                        | Success or Fail.                                                                                                                          |
+| **Completed**      | The date and time of the last deployment to the listed _Environment_.                                                                     |
+| **Results**        | Success or Fail.                                                                                                                          |
 
 You can also use the Filter bar, represented by a funnel icon, to reorder your _Application_ List View by:
 
@@ -54,12 +54,12 @@ You can also use the Filter bar, represented by a funnel icon, to reorder your _
 
 The _Application_ List View has the following Tabs.
 
-| Tab             | Description                                                                                                                                                                                                     |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Refresh**     | Refreshes the browser.                                                                                                                                                                                          |
-| **Delete**      | Deletes the selected item. However, you must delete the _Applications_ starting from the newest to the oldest.  The _Application Base Version_ would be deleted last. Sorting by "Version" gives you the order. |
-| **Package Search**        | Allows for the search of a particular package across all _Applications_ and _Components_. Use this feature to quickly find where a vulnerable package version is running.                                                                                                                                                                                          |
-| **Reports**         | Generate a Compliance Summary report, [Dora deployment frequency](/guides/userguide/integrations/dora/deploymentfrequency/), [Dora lead time to change](/guides/userguide/integrations/dora/leadtime/) or export a federated SBOM to meet government requirements such as [EO 14028](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028#:~:text=Summary%20of%20EO%2014028%20requirements&text=Establishes%20baseline%20security%20standards%20for,making%20security%20data%20publicly%20available.).                                                                                                                                    |
+| Tab                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Refresh**        | Refreshes the browser.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Delete**         | Deletes the selected item. However, you must delete the _Applications_ starting from the newest to the oldest.  The _Application Base Version_ would be deleted last. Sorting by "Version" gives you the order.                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Package Search** | Allows for the search of a particular package across all _Applications_ and _Components_. Use this feature to quickly find where a vulnerable package version is running.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Reports**        | Generate a Compliance Summary report, [Dora deployment frequency](/guides/userguide/integrations/dora/deploymentfrequency/), [Dora lead time to change](/guides/userguide/integrations/dora/leadtime/) or export a federated SBOM to meet government requirements such as [EO 14028](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028#:~:text=Summary%20of%20EO%2014028%20requirements&text=Establishes%20baseline%20security%20standards%20for,making%20security%20data%20publicly%20available.). |
 
 ## Viewing and Editing with the _Application_ Dashboard
 
@@ -98,13 +98,13 @@ Track the _Component Versions_ that the _Application Version_ is dependent upon.
 ### Application DevOps Details
 Below are the Details for an _Application_.
 
-| Details                            | Description                                                                                                                                                     |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Full Domain**                    | The fully qualified path of the _Domain_ that the _Application_ is to be associated with, showing all parent _Domains_.                                         |
-| **Name**                           | The Name of your _Application_.                                                                                                                                 |
-| **Description**                    | A short description of your software system.                                                                                                                    |
-| **Log History**     | _Applications_ can be deployed many times, to the same or different locations (_Environments_). For every Deployment, the Log History will show all deployments based on "Result" and "Date                                                                                                                             |
-| **Key Value Configuration**     | This list shows the key values used as part of the _Application Version_ deployment. This data can be added manually or updated via the CI/CD process. |
+| Details                     | Description                                                                                                                                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Full Domain**             | The fully qualified path of the _Domain_ that the _Application_ is to be associated with, showing all parent _Domains_.                                                                     |
+| **Name**                    | The Name of your _Application_.                                                                                                                                                             |
+| **Description**             | A short description of your software system.                                                                                                                                                |
+| **Log History**             | _Applications_ can be deployed many times, to the same or different locations (_Environments_). For every Deployment, the Log History will show all deployments based on "Result" and "Date |
+| **Key Value Configuration** | This list shows the key values used as part of the _Application Version_ deployment. This data can be added manually or updated via the CI/CD process.                                      |
 
 
 {{% include "/guides/userguide/reusable/Attributes.md" %}}
@@ -115,8 +115,8 @@ Below are the Details for an _Application_.
 
  _Users_ within the defualt _Groups_ can update or view the _Application_. To add a _Group_ to one of the access lists, drag and drop the _Group_ from the Available Groups list onto desired access list. All _Users_ who belong to a _Group_ within an Access lists will be granted access to the _Application_:
 
-| Access     | Description|
-|------------|-------------------------------------------------|
+| Access     | Description                                                                                                       |
+|------------|-------------------------------------------------------------------------------------------------------------------|
 | **View**   | This allows any _User_ that belongs to any _Group_ in this list to see the selected _Component_ in the List View. |
 | **Change** | This allows any _User_ that belongs to any _Group_ in this list to make changes to the _Component_.               |
 

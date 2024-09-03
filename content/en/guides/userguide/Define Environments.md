@@ -64,7 +64,7 @@ The Access Section allows _Users_ within the 3 default _Groups_ to update the _E
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **View**                    | Allows the _User_ to see the _Environment_. If the _User_ does not belong to a _Group_ in the View Access list, the _Environment_ will not appear in the List View. |
 | **Change**                  | Allows the _User_ to change the _Environment's_ characteristics i.e. Name, Summary, etc.                                                                            |
-| **Create Calendar Entries** | Allows _Users_ to control the Calendar for the selected _Environment_. NOTE: Securing Environment Calendars is only available in Ortelius Pro.                     |
+| **Create Calendar Entries** | Allows _Users_ to control the Calendar for the selected _Environment_. NOTE: Securing Environment Calendars is only available in Ortelius Pro.                      |
 | **Deploy**                  | Allows _Users_ to deploy  _Applications_ into the selected _Environment_.                                                                                           |
 
 {{% include "guides/userguide/reusable/Attributes.md" %}}
