@@ -3,7 +3,7 @@ title: "Dependency Licenses"
 linkTitle: "Dependency Licenses"
 weight: 140
 description: >
-  Dependencies used and their corresponding licenses
+  Dependencies used and their corresponding licenses:
 ---
 
 | Dependency | Version | Git Repo | License |

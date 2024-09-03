@@ -30,7 +30,7 @@ _Environments_ represent where you execute your _Application_ and _Components_ s
 
 #### _Environments_ and _Domains_
 
-_Environments_ are associated to a [_Domain_](/guides/userguide/first-steps/2-defining-domains/). You can assign _Environments_ to any level of _Domain_ including the _Global Domain_. However, _Environments_ are most commonly associated to a _Project Domain_ used for _Applications_. A _Project Domain_ is used to manage an _Application_ and may be defined to include _Life Cycle Subdomains_ for managing your _Application's_ progression from development through release.
+_Environments_ are associated to a [_Domain_](/guides/guides/userguide/definedomains/). You can assign _Environments_ to any level of _Domain_ including the _Global Domain_. However, _Environments_ are most commonly associated to a _Project Domain_ used for _Applications_. A _Project Domain_ is used to manage an _Application_ and may be defined to include _Life Cycle Subdomains_ for managing your _Application's_ progression from development through release.
 
 ### Use the _Environment_ List View to Add and Delete
 

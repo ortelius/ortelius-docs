@@ -1,7 +1,7 @@
 ---
 title: "Managing Users"
 linkTitle: "Managing Users"
-weight: 86
+weight: 11
 description: >
   Adding and Managing Users.
 ---

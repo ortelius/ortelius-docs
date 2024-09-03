@@ -1,7 +1,7 @@
 ---
 title: "Integrations"
 linkTitle: "Integrations"
-weight: 80
+weight: 13
 description: >
   DevSecOps Tool Integrations.
 ---

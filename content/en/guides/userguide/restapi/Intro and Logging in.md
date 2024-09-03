@@ -3,7 +3,7 @@ title: "Intro to APIs and Logging In"
 linkTitle: "Intro to APIs and Logging In"
 weight: 5
 description: >
-  Introduction and the Login API
+  Introduction to APIs and the Login API
 ---
 APIs can be used to extract and update Ortelius [Objects](/guides/userguide/concepts/basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.
 
