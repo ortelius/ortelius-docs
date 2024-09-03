@@ -12,7 +12,7 @@ Before submitting code to Ortelius, there are a few things you should know. From
 
 ### Sign the CLA
 
-If you would like to contribute code, documentation content, blogs or graphics you will need to complete the [Linux Foundation Ortelius Individual Easy Contributor License Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor) 
+If you would like to contribute code, documentation content, blogs or graphics you will need to complete the [Linux Foundation Ortelius Individual Easy Contributor License Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor)
 
 If your organization would like to become a contributing organization, please have the appropriate individual complete the [Linux Foundation Ortelius Corporate Easy Contributor License Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/corporate-contributor). We welcome organizations of any size to be part of solving the microservice puzzle and encourage you to get your organization involved.
 
@@ -39,15 +39,15 @@ Ortelius is a community project. Consequently, it is wholly dependent on its com
 Working on support tickets is one of the main jobs of the Member Contributor. Member Contributors want to contribute further to the project and will assign themselves support tickets and begin to review pull request. In addition, sharing use cases, providing feedback for potential feature enhancements, and social networking about Ortelius are a few ways the Member Contributor can participate.  Member Contributors are an important group of individuals as they are the most influential group of contributors. Member Contributors should plan on attending the General Community Meetings monthly to keep up to date with the progress of Ortelius.
 
 **Reviewer Contributors:**
-Reviewing the Member Contributor pull request, attending meetings on a monthly to bi-monthly basis, stepping up to help with working group tasks, and fixing issues best describe the activities that can qualify you as Reviewer Contributor. Reviewer Contributors complete a large part of the work that needs to be done to keep the Ortelius project relevant to the broader IT community. Your participation at this level is key to the success of the project. 
+Reviewing the Member Contributor pull request, attending meetings on a monthly to bi-monthly basis, stepping up to help with working group tasks, and fixing issues best describe the activities that can qualify you as Reviewer Contributor. Reviewer Contributors complete a large part of the work that needs to be done to keep the Ortelius project relevant to the broader IT community. Your participation at this level is key to the success of the project.
 
 **Approvers Contributors:**
-Approvers Contributors are individuals that have developed a level of expertise and provide a final approval of pull request.  In addition they develop product enhancements, create documentation, develope on-line videos and tutorial content. 
+Approvers Contributors are individuals that have developed a level of expertise and provide a final approval of pull request.  In addition they develop product enhancements, create documentation, develope on-line videos and tutorial content.
 
 **Chairs:**
 Providing additional project management support, distribute issues to beginners, manage meetings and recordings are the jobs performed by the Chairs. Chairs need to attend most meetings and help new Contributors be successful.
 
-You are encouraged to participate at all levels. You can move up the ladder as your personal time allows. 
+You are encouraged to participate at all levels. You can move up the ladder as your personal time allows.
 
 
 

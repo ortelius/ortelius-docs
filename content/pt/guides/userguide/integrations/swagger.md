@@ -12,10 +12,10 @@ Ortelius uses [Swagger](https://swagger.io/) to display your microservice / API 
 
 ### Uploading Swagger Documentation
 
-You can use the Ortelius _Component_ Detail view to manually upload your Swagger documentation for your _Component_. Alternatively, the recommended approach is to use the CI/CD Command Line Interface to automatically add your Swagger documentation file. Refer to the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for incorporating Swagger into your pipeline process. 
+You can use the Ortelius _Component_ Detail view to manually upload your Swagger documentation for your _Component_. Alternatively, the recommended approach is to use the CI/CD Command Line Interface to automatically add your Swagger documentation file. Refer to the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for incorporating Swagger into your pipeline process.
 
-> Note: Swagger or OpenAPI formats can be used. 
+> Note: Swagger or OpenAPI formats can be used.
 
 ### Viewing Component CVE Data
 
-Swagger data is associated to a particular _Component Version_ and can be seen by going to the Component Detail View. 
+Swagger data is associated to a particular _Component Version_ and can be seen by going to the Component Detail View.

@@ -26,7 +26,7 @@ _Applications_ and new _Application Versions_ can only be added via the CI/CD pr
 
 ## Viewing _Applications_
 
-Use the _Application_ List View accessible from the left hand _Application_ menu option. This will take you to a list of the latest _Application Versions_ to which you have access. 
+Use the _Application_ List View accessible from the left hand _Application_ menu option. This will take you to a list of the latest _Application Versions_ to which you have access.
 
 The list view is organized on the following columns:
 
@@ -63,13 +63,13 @@ The _Application_ List View has the following Tabs.
 
 ## Viewing and Editing with the _Application_ Dashboard
 
-Double click on an _Application Version_ to see the Dashboard view. The Dashboard view displays all information related to the latest _Application Version_ selected from the List View. This view of the _Application Version_ shows you the security posture including OpenSSF scorecard, Software Bill of Materials report, and real-time vulnerabilities. In addition, you can view how the _Application Version_ is impacted by _Components_, or view the DevOps details. 
+Double click on an _Application Version_ to see the Dashboard view. The Dashboard view displays all information related to the latest _Application Version_ selected from the List View. This view of the _Application Version_ shows you the security posture including OpenSSF scorecard, Software Bill of Materials report, and real-time vulnerabilities. In addition, you can view how the _Application Version_ is impacted by _Components_, or view the DevOps details.
 
  The Dashboard view has two additional Buttons - Versions and Compare
 
 ### Viewing all _Component Versions_
 
-You can view a list of all _Application Versions_ by selecting the "Versions" button displayed after the _Application's_ name at the top of the Dashboard. 
+You can view a list of all _Application Versions_ by selecting the "Versions" button displayed after the _Application's_ name at the top of the Dashboard.
 
 ### Comparing Two _Component Versions_
 
@@ -77,11 +77,11 @@ You can compare your current _Application Version_ with any other _Application V
 
 ### Security Posture Section
 
-View the _Application Version_ Software Bill of Material Report, and Real-time vulnerabilities. 
+View the _Application Version_ Software Bill of Material Report, and Real-time vulnerabilities.
 
 <u>Federated Software Bill of Materials Report</u>
 
-This section is a summary the _Applications_ federated Software Bill of Materials (SBOM) report showing all of the packages consumed by the 'logical' _Application Version_. An _Application_ SBOM provides a detailed report of all _Component_ SBOM data within the _Application_, with duplicates removed. When a _Component_ is updated, Ortelius automatically generates a new version of all _Applications_ that use that _Component_, along with a new aggregated SBOM. 
+This section is a summary the _Applications_ federated Software Bill of Materials (SBOM) report showing all of the packages consumed by the 'logical' _Application Version_. An _Application_ SBOM provides a detailed report of all _Component_ SBOM data within the _Application_, with duplicates removed. When a _Component_ is updated, Ortelius automatically generates a new version of all _Applications_ that use that _Component_, along with a new aggregated SBOM.
 
 >Note:  If you need to produce an _Application Version_ SBOM for governance reporting or sharing, you can export the SBOM from the _Application_ List View _Reports_ menu option.
 
@@ -105,7 +105,7 @@ Below are the Details for an _Application_.
 | **Description**                    | A short description of your software system.                                                                                                                    |
 | **Log History**     | _Applications_ can be deployed many times, to the same or different locations (_Environments_). For every Deployment, the Log History will show all deployments based on "Result" and "Date                                                                                                                             |
 | **Key Value Configuration**     | This list shows the key values used as part of the _Application Version_ deployment. This data can be added manually or updated via the CI/CD process. |
- 
+
 
 {{% include "/guides/userguide/reusable/Attributes.md" %}}
 

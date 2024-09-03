@@ -8,7 +8,7 @@ description: >
 
 # --- Adventure with Abraham Ortelius ---
 
-## Motivation:
+## Motivation
 - This is a navigational map in the spirit of [Abraham Ortelius](https://en.wikipedia.org/wiki/Abraham_Ortelius)
 - Please read and explore the documentation for each subject
 - Google is your friend for when you get lost

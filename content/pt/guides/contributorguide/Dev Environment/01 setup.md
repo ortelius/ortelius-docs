@@ -219,7 +219,7 @@ sudo brew services start chipmk/tap/docker-mac-net-connect
 `.gitconfig` inspiration
 ```
 [core]
-	excludesfile = /Users/abraham/.gitignore_global
+ excludesfile = /Users/abraham/.gitignore_global
 [alias]
 # Make sure you're adding under the [alias] block.
 # Git Commit, Add all and Push in one step.
@@ -240,37 +240,37 @@ tst = "!f() { git cap \"🤖 TEST: $@\"; }; f"
 # BREAKING CHANGE.
 brk = "!f() { git cap \"‼️ BREAKING: $@\"; }; f"
 [user "https://github.com"]
-	name = Abraham Ortelius
-	email = abraham.ortelius@ortelius.io
+ name = Abraham Ortelius
+ email = abraham.ortelius@ortelius.io
 [core]
-	repositoryformatversion = 0
+ repositoryformatversion = 0
         filemode = false
         bare = false
         logallrefupdates = false
 [init]
   defaultBranch = main
-	templatedir = /Users/abraham/.git_template
+ templatedir = /Users/abraham/.git_template
 [pull]
-	rebase = false
+ rebase = false
 [credential "https://github.com"]
-	helper = store
+ helper = store
 [credential "https://gist.github.com"]
-	helper = store
+ helper = store
 [help]
-	autocorrect = 1
+ autocorrect = 1
 [advice]
-	addIgnoredFile = false
+ addIgnoredFile = false
 [user]
-	name = Abraham Ortelius
-	email = abraham.ortelius@ortelious.io
+ name = Abraham Ortelius
+ email = abraham.ortelius@ortelious.io
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+ clean = git-lfs clean -- %f
+ smudge = git-lfs smudge -- %f
+ process = git-lfs filter-process
+ required = true
 [web]
-	browser = firefox
+ browser = firefox
 
 ```
 
@@ -303,7 +303,7 @@ brk = "!f() { git cap \"‼️ BREAKING: $@\"; }; f"
 - We are going to use Snyk to scan our containers
 - Snyk is free and you can set yourself up [here](https://snyk.io/)
 - [Terms & Conditions for Snyk](https://snyk.io/policies/terms-of-service/)
-- In `Docker Desktop` go to the ` Extensions Marketplace` and install the `Snyk Container Extension`
+- In `Docker Desktop` go to the `Extensions Marketplace` and install the `Snyk Container Extension`
 - On your command line you can now scan your Docker images with `docker scan your-docker-image`
 - Disclaimer: Please follow any prompts `Snyk` requires you to fulfill to get up and running
 

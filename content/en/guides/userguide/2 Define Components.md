@@ -8,9 +8,9 @@ description: >
 
 ## Intro to _Components_
 
-_Components_ are independent artifacts—such as containers, jar files, and executables—pushed through the CI/CD pipeline and deployed separately, each with its own security details, including SBOMs and vulnerabilities. Ortelius continuously tracks the CI/CD pipeline, collecting both security and DevOps insights for every _Component_. By mapping this data, Ortelius provides a unified view of each _Component's_ security profiles. 
+_Components_ are independent artifacts—such as containers, jar files, and executables—pushed through the CI/CD pipeline and deployed separately, each with its own security details, including SBOMs and vulnerabilities. Ortelius continuously tracks the CI/CD pipeline, collecting both security and DevOps insights for every _Component_. By mapping this data, Ortelius provides a unified view of each _Component's_ security profiles.
 
-A collection of _Components_ forms a 'logical' view of an _Application_. Since each _Component_ comes with its own security and DevOps data, Ortelius aggregates the _Component_ insights for all 'logical' _Applications_. This aggregation provides a comprehensive view of the 'logical' _Application's_ SBOMs and vulnerabilities, supporting a unified security perspective within complex, decoupled, cloud-native architectures. 
+A collection of _Components_ forms a 'logical' view of an _Application_. Since each _Component_ comes with its own security and DevOps data, Ortelius aggregates the _Component_ insights for all 'logical' _Applications_. This aggregation provides a comprehensive view of the 'logical' _Application's_ SBOMs and vulnerabilities, supporting a unified security perspective within complex, decoupled, cloud-native architectures.
 
 _Components_ change over time, and so they have both a _Component Base Versions_, the first iteration of a _Component_, and _Component Versions_, all subsequent iterations.
 
@@ -39,8 +39,8 @@ There is a many-to-many relationship between _Applications_ and _Components._ An
 
 Ortelius uses a backend versioning engine to track your _Components_. When you first add your _Component_, Ortelius tracks it as the _Component Base Version_. Subsequent updates to that _Component_ creates a new _Component Version_ which represent the updates over time. A _Component Base Version_ is always the first one created, and it acts as a model for subsequent _Component Versions_. Versioning tracks _Component_ attributes including low level information that is needed for other teams to reuse your _Component_ including:
 
-- SBOMs 
-- OpenSSF Scorecard 
+- SBOMs
+- OpenSSF Scorecard
 - Vulnerabilities
 - Swagger and Readme
 - License
@@ -49,7 +49,7 @@ Ortelius uses a backend versioning engine to track your _Components_. When you f
 - Git repo
 - Git commit (Branch and Tag)
 - CD Build / Workflow Number
-- Deployment Metadata 
+- Deployment Metadata
 
 DevOps and security information is collected for all _Components_ via the CI/CD pipeline. When your CD engine initiates a workflow for the _Component_, Ortelius is called to determine that a new version of the _Component_ is being pushed across the Pipeline. When a _Component_ is updated, Ortelius automatically updates all consuming _Applications_ and creates a new logical _Application_Version_. If a _Component_ changes, the consuming _Application_ also changes.  Both get a new version number. For more information see [Using Ortelius with CI/CD](/guides/userguide/integrations/ci-cd_integrations/).
 
@@ -93,7 +93,7 @@ Double click on a _Component_ from the _Component List_ to view and edit an indi
 
 ### Viewing all _Component Versions_
 
-You can view a list of all _Component Versions_ by selecting the "Versions" button displayed after the _Component's_ name at the top of the Ortelius Dashboard. 
+You can view a list of all _Component Versions_ by selecting the "Versions" button displayed after the _Component's_ name at the top of the Ortelius Dashboard.
 
 ### Comparing Two _Component Versions_
 
@@ -113,7 +113,7 @@ Ortelius consumes a _Component's_ Software Bill of Materials data as part of the
 | SBOM Element  | Description |
 |------------------|--------------------------------------------------|
 | **Package**       | The name of the package.           |
-| **Version**         | The Package release number.      | 
+| **Version**         | The Package release number.      |
 | **License**         | The license used by the Package. |
 | **OSSF Scorecard**  | When available, the OpenSSF Scorecard status for each package.|
 
@@ -126,23 +126,23 @@ With the SBOM data, Ortelius continuously monitors the vulnerabilities for the _
 | Vulnerability Element  | Description |
 |------------------|--------------------------------------------------|
 | **Package**       | The name of the package with the vulnerability. |
-| **Version**         | The vulnerable Package release number. | 
+| **Version**         | The vulnerable Package release number. |
 | **ID**         | The vulnerability ID with a link to the vulnerability description on OSV.dev. |
 | **Summary**  | A brief summary of the vulnerability |
 
->Note: Without the SBOM data, vulnerabilities cannot be traced. 
+>Note: Without the SBOM data, vulnerabilities cannot be traced.
 
 ### OpenSSF Scorecard
 
-OpenSSF Scorecard is a collection of security health metrics for open source packages. These metrics are critical as they allow consumers of the package to evaluate the security posture before use. Ortelius displays the OpenSSF score card information for the _Component_ as well as all of the packages the _Component_ consumes (displayed at the SBOM level). 
+OpenSSF Scorecard is a collection of security health metrics for open source packages. These metrics are critical as they allow consumers of the package to evaluate the security posture before use. Ortelius displays the OpenSSF score card information for the _Component_ as well as all of the packages the _Component_ consumes (displayed at the SBOM level).
 
 
 |OpenSSF Scorecard Element  | Description |
 |------------------|--------------------------------------------------|
 | **Score**       | The OpenSSF Scorecard assessment of the _Component_ based on the metric.|
-| **Check**         | OpenSSF Scorecard executes a variety of metrics referred to as 'checks.' This column displays each of the metrics. | 
+| **Check**         | OpenSSF Scorecard executes a variety of metrics referred to as 'checks.' This column displays each of the metrics. |
 
->Note: OpenSSF score card information is only available when the package or _Component_ Git repo has been added to gather the OpenSSF scorecard metrics. Learn how to add OpenSSF Scorecard from their [Git Repo](https://github.com/ossf/scorecard). 
+>Note: OpenSSF score card information is only available when the package or _Component_ Git repo has been added to gather the OpenSSF scorecard metrics. Learn how to add OpenSSF Scorecard from their [Git Repo](https://github.com/ossf/scorecard).
 
 ### Readme
 
@@ -150,11 +150,11 @@ Ortelius consumes the README text file found in the associated GitHub repo. The 
 
 ### License
 
-Ortelius consumes the license information from the GitHub repository associated to the _Component_. The full license is displayed. 
+Ortelius consumes the license information from the GitHub repository associated to the _Component_. The full license is displayed.
 
 ## Impact Assessment Section
 
-When responding to vulnerabilities you must know how widespread the vulnerability is across your runtime environments. Ortelius maps security data to DevOps data to provide an inventory of each _Application_ who uses the _Component_. 
+When responding to vulnerabilities you must know how widespread the vulnerability is across your runtime environments. Ortelius maps security data to DevOps data to provide an inventory of each _Application_ who uses the _Component_.
 
 ### Consuming Applications
 
@@ -171,11 +171,11 @@ The table shows you all of the _Applications_ who are consuming this _Component_
 
 ### Blast Radius
 
-The Blast Radius shows a graphic representation of how many _Applications_ are consuming the _Component_. You can scroll through the graphic image to see a full view of your _Component's_ use across the organization. 
+The Blast Radius shows a graphic representation of how many _Applications_ are consuming the _Component_. You can scroll through the graphic image to see a full view of your _Component's_ use across the organization.
 
 ### Swagger
 
-As many _Components_ are APIs, Ortelius gathers the Swagger information. Swagger is important because it plays a crucial role in API development and documentation. Swagger helps design, build, document, and consume RESTful web services. If available, the Swagger information is displayed in this section. 
+As many _Components_ are APIs, Ortelius gathers the Swagger information. Swagger is important because it plays a crucial role in API development and documentation. Swagger helps design, build, document, and consume RESTful web services. If available, the Swagger information is displayed in this section.
 
 >Note: Automate the Readme, SBOM, License, and Swagger Upload via Your Pipeline. You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI details](/guides/userguide/integrations/ci-cd_integrations/).
 
@@ -186,7 +186,7 @@ Ortelius gathers both security insights and DevOps insights to provide a compreh
 
 ### _Component_ Details
 
-This information provides basic information about the owner of the _Component_ and how to contact them. 
+This information provides basic information about the owner of the _Component_ and how to contact them.
 
 |Field | Description   |
 |----------------------|---------------------------------------------|
@@ -200,11 +200,11 @@ This information provides basic information about the owner of the _Component_ a
 | **PagerDuty Service URL**          | Enter the address to the PagerDuty page that is associated to the _Component_ itself|itself.|
 | **Slack Channel**                  | Enter what Slack Channel that can be used to report issues about this _Component_.|
 | **Discord Channel**                | Enter the Discord Invite Link you would like your consumers to use for this Component_.|
-| **HipChat Channel**                | Enter the HipChat Channel that can be used to report issues about this _Component_.   | 
+| **HipChat Channel**                | Enter the HipChat Channel that can be used to report issues about this _Component_.   |
 
 ### Build Details
 
-When integrated with your CI/CD engine, Ortelius tracks the DevOps data from the build including: 
+When integrated with your CI/CD engine, Ortelius tracks the DevOps data from the build including:
 
 | **Field**                | **Description**  |  
 |--------------------------| -------------------------------------------------------|
@@ -233,7 +233,7 @@ A Container _Component_ has the following optional attributes:
 
 ## Git Details
 
-The following Git information is gathered for each _Component_. 
+The following Git information is gathered for each _Component_.
 
 | **Field**                | **Description** |
 |--------------------------|-----------------------------------------|

@@ -10,7 +10,7 @@ description: >
 
 An Ortelius _Domain_ is how Ortelius organizes and shares data across teams.  You publish your _Components_ to a _Domain_, you package your _Application_ in a Project _Domain_ and you track your continuous delivery pipeline with a Life Cycle _Domain_. All Ortelius objects are assigned to a _Domain_.
 
-For this reason, it may be helpful to review how you might want to organize your data in _Domains_. _Domain_ organization is not required, but makes finding and sharing information much more efficient. 
+For this reason, it may be helpful to review how you might want to organize your data in _Domains_. _Domain_ organization is not required, but makes finding and sharing information much more efficient.
 
 ### Domains and your Domain Driven Design
 
@@ -20,7 +20,7 @@ _Domains_ publish microservices and other reusable objects (web components, DB u
 
 ### Top Down Structure
 
-Everyone has a single high-level "Global" _Domain_.  All other _Domains_ are _Subdomains_. 
+Everyone has a single high-level "Global" _Domain_.  All other _Domains_ are _Subdomains_.
 
 A _Subdomain_ inherits all the access properties from its parent _Domain_. This inheritance continues down through all _Subdomains_.
 
@@ -33,7 +33,7 @@ There are four common ways to implement _Domains_:
 |**Project _Subdomains_**| Use a _Subdomain_ to represent your software _Application_ and its Life Cycle. A _Subdomain_ defined for an _Application_ may need a continuous delivery life cycle. This is defined by selecting "All _Subdomains_ are Life Cycles." This means that any _Subdomains_ cannot include any additional _Subdomains_ and will be used to represent stages of the _Pipeline_ with specific _Environments_ assigned. |
 |**Life Cycle _Subdomains_**| This is the lowest level of _Subdomain_.  It is available when the parent _Domain_ has "All _Subdomains_ are Life Cycles" selected.  These _Subdomains_ map to each stage in your continuous delivery pipeline. They often have specific _Environments_ and _Tasks_ assigned for interaction with your continuous delivery orchestration engine. Ortelius can be called by your continuous delivery Engine (Jenkins, Jenkins X, CircleCI, Google CloudBuild, GitLab or GitHub Actions, etc.) to perform the continuous configuration management of your microservices and _Applications_ across all lifecyle states. In addition, you can assign Move, Approve and Request Tasks to your Life Cycle _Subdomain_ to define a continuous delivery pipeline process within Ortelius that can interact with your pipeline process. |
 
-Below is an example of how an Online Store Company organized their _Domains_. 
+Below is an example of how an Online Store Company organized their _Domains_.
 
 ![Example of Domains, Applications, Components and Environments](/guides/userguide/images/OnlineStore-Domains.jpg)
 

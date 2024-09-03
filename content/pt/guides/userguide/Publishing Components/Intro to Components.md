@@ -42,7 +42,7 @@ Ortelius uses a backend versioning engine to track your _Components_. Versioning
 - Container SHA
 - Docker Registry
 - Enviornment Vairaibles
-- SBOMs 
+- SBOMs
 - CVEs
 - Swagger and Readme
 - Deployment Metadata (Helm Chart, Ansible Playbook, etc.)

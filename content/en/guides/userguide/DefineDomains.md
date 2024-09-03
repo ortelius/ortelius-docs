@@ -12,7 +12,7 @@ A _Domain_ is how Ortelius organizes and shares data across teams. All Ortelius 
 
 ### Domains and a Domain Driven Design
 
-A Domain Driven Design is critical for organizing and sharing Software Bill of Materials and vulnerability insights across _Components_, _Applications_ and _Endpoints_. _Domains_ represent "solution" spaces to facilitate reuse across siloed teams. 
+A Domain Driven Design is critical for organizing and sharing Software Bill of Materials and vulnerability insights across _Components_, _Applications_ and _Endpoints_. _Domains_ represent "solution" spaces to facilitate reuse across siloed teams.
 
 _Domains_ manage objects making them easy to find and share. Domains can be structured to closely resemble the patterns of your organization. They can represent functional areas such as 'security services' or departments, teams, geographical locations and software projects.
 
@@ -32,7 +32,7 @@ There are four common ways to implement _Domains_:
 
 ## Using the Domain Dashboard
 
-A full view of all _Domains_ is based upon your _User_ privileges. The view is displayed in a list view, starting at the highest level _Domain_ with the ability to drive down into the _Sub-Domains_, and _Sub-Domains_ after that. 
+A full view of all _Domains_ is based upon your _User_ privileges. The view is displayed in a list view, starting at the highest level _Domain_ with the ability to drive down into the _Sub-Domains_, and _Sub-Domains_ after that.
 
 When scrolling up or down the _Domain_ hierarchy the detail information is re-displayed according to where you are in the list. Below are the details for a _Domain_.
 

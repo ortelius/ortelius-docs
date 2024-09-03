@@ -8,7 +8,7 @@ description: >
 
 ## Tracking Your Deployments in Ortelius
 
-Ortelius uses the Command Line Interface for recording what occurs at both the build and deploy steps of your DevOps Pipeline. By recording the deployment activity Ortelius can track the location of each _Component Version_ and _Application Version_ running across all of your Environments. 
+Ortelius uses the Command Line Interface for recording what occurs at both the build and deploy steps of your DevOps Pipeline. By recording the deployment activity Ortelius can track the location of each _Component Version_ and _Application Version_ running across all of your Environments.
 
 The benefit of allowing Ortelius to track your deployments is to create a unified high-level dashboard of where you are experiencing drift. Because each _Component_ may be deployed with a different deployment process, the data that displays this information is often stored in different tools. Ortelius serves as a centralized location of deployment intelligence and tracks your complete inventory in a single dashboard.
 
@@ -17,11 +17,11 @@ The benefit of allowing Ortelius to track your deployments is to create a unifie
 
 The Ortelius Command Line Interface performs the action of monitoring the deployments executed by your pipeline.  
 
-Install the Ortelius CLI to begin recording your deployments. Install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions and usage. 
+Install the Ortelius CLI to begin recording your deployments. Install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions and usage.
 
 ### Understanding Environments and Endpoints
 
-Ortelius uses the concepts of _Environments_ and _Endpoints_ to track where a _Component_ has been deployed. The Command Line Interface will create these objects, but it is useful to understand how they are used. 
+Ortelius uses the concepts of _Environments_ and _Endpoints_ to track where a _Component_ has been deployed. The Command Line Interface will create these objects, but it is useful to understand how they are used.
 
 
 #### Intro to _Environments_

@@ -13,11 +13,11 @@ Have you ever wanted to contribute to the coolest cloud technology? Well here is
 
 <div style="width:30%">
 {{< youtube Y4kR6ipipxA >}}
-</div> 
+</div>
 
 ### What is Ortelius?
 
-The Ortelius Continuous Security Intelligence solution is an open-source project focused on surveilling the DevOps pipeline collecting clues and forensics about the software you deliver to end users from Software Bills of Materials (SBOM) to deployment metadata. 
+The Ortelius Continuous Security Intelligence solution is an open-source project focused on surveilling the DevOps pipeline collecting clues and forensics about the software you deliver to end users from Software Bills of Materials (SBOM) to deployment metadata.
 
 The mission of the Ortelius community is to expose weak links in the software supply chain by continuously gathering and analyzing software supply chain intelligence introduced across the DevOps pipeline. Generating security insights like SBOMs is not enough to harden your software supply chain. Consumption and analysis of the data is needed to rapidly respond to supply chain threats.
 

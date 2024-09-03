@@ -134,7 +134,7 @@ A map showing all _Environments_ where the _Component_ is deployed.
 
 This section shows a list of all _Applications_ that are consuming this _Component_.
 
-## Component Readme 
+## Component Readme
 
 Give your users more information about your Container, Application File or Database Component. You can upload an external readme file to provide any information that you need to convey to your potential consumers. Use the 'Upload' option to select a file. It must be in text format. You can also automate the upload - see below.
 
@@ -144,19 +144,19 @@ Publish your Swagger API definitions to provide further information about your r
 
 ## Component SBOM
 
-Publish your Component's SBOM to show packages and licenses your Component is consuming. SBOMs are required for populating the CVEs. 
+Publish your Component's SBOM to show packages and licenses your Component is consuming. SBOMs are required for populating the CVEs.
 
 ## Component Vulnerabilities  
 
-Component vulnerabilities are based on your SBOM. Every thirty minutes, Ortelius updates the Component vulnerabilities based on OSV.Dev. For more information refer to [OSV.Dev section](/guides/userguide/integrations/osvdev/) of this documentation. 
+Component vulnerabilities are based on your SBOM. Every thirty minutes, Ortelius updates the Component vulnerabilities based on OSV.Dev. For more information refer to [OSV.Dev section](/guides/userguide/integrations/osvdev/) of this documentation.
 
 ## Component License
 
 Report the license associated with your code base for your _Component_. Use the 'Upload' option to import your License file into Ortelius. The file must be in a text format.
- 
-## Automate the Readme, SBOM, License, and Swagger Upload via Your Pipeline. 
 
-You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. . 
+## Automate the Readme, SBOM, License, and Swagger Upload via Your Pipeline
+
+You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. .
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 

@@ -67,9 +67,9 @@ The Dependency list shows all of your _Package Components_. This will remain emp
 
 ### Vulnerabilities
 
-Your _Application's_ vulnerabilities are derived by aggregating all of your _Package Component's_ vulnerabilities to the 'logical' _Application_ level. Vulnerabilities are displayed based on each _Component's_ SBOM. This data is automatically populated when one or more of your _Package Components_ have an SBOM that produced vulnerability data. 
+Your _Application's_ vulnerabilities are derived by aggregating all of your _Package Component's_ vulnerabilities to the 'logical' _Application_ level. Vulnerabilities are displayed based on each _Component's_ SBOM. This data is automatically populated when one or more of your _Package Components_ have an SBOM that produced vulnerability data.
 
->Note - This list may be incomplete if one or more of your _Package Components_ do not have an associated SBOM that can be used to gather vulnerability data. 
+>Note - This list may be incomplete if one or more of your _Package Components_ do not have an associated SBOM that can be used to gather vulnerability data.
 
 ### SBOM
 
@@ -94,7 +94,7 @@ When you record deployments via the Ortelius CLI, you can capture deployment dat
 
 ### Last Deployment Difference Based on Environment
 
-When tracking versions, the Difference Graph shows what changed in the last deployment between the previous deployment. 
+When tracking versions, the Difference Graph shows what changed in the last deployment between the previous deployment.
 
 {{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 

@@ -24,7 +24,7 @@ Project members are people who use are interested in contributing further.
 * Assign issues to yourself.
 * Review a pull request and apply the `/lgtm` command that signals that it's ready for final approval.
 
-Once you feel ready, ask another member if they would be willing to be a sponsor for your membership request. 
+Once you feel ready, ask another member if they would be willing to be a sponsor for your membership request.
 
 The best people to ask are those who have reviewed your pull requests in the past. When you request membership, make sure to ask for the `ortelius` organization.
 
@@ -34,7 +34,7 @@ If you aren't sure if you are ready, or need help finding sponsors, reach out to
 
 After you have contributed to an area of Ortelius for a while, you may ready help review pull requests either in just that area, or for the entire repository.
 
-Reviewers have an entry in the *OWNERS* file in the different Ortelius repositories indicating that they are a good candidate to be 
+Reviewers have an entry in the *OWNERS* file in the different Ortelius repositories indicating that they are a good candidate to be
 automatically assigned or suggested as a reviewer for that area of code.
 
 If you are willing to review PRs in a particular area, submit a PR adding your GitHub name to the OWNERS file in the sub-directory of that area in a `reviewers` section.
@@ -45,7 +45,7 @@ Approvers are experienced reviewers and contributors.  They are represented by a
 
 * Review a pull request and apply the final `/approve` command that signals that the pull request is ready to merge.
 * An approver may decide to apply both the `/lgtm` and `/approve` commands. This  sometimes is a good choice for small non-controversial pull requests where there aren't other people who should be consulted first.
-* Our repository is configured to require both the `lgtm` and `approved` labels before merging. 
+* Our repository is configured to require both the `lgtm` and `approved` labels before merging.
 
 If you feel that you are ready to become a maintainer, reach out to a [chair](https://ortelius.io/become-a-contributor) and they will help sponsor you. Maintainers are added approval by the chairs.
 

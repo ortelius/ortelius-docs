@@ -13,7 +13,7 @@ Ortelius is an Open-Source Continuous Security Intelligence solution designed fo
 
 ### Security Postures in Decoupled Environments
 
-A crucial concept in decoupled architecture is the "<strong>logical</strong> _Application_." A logical _Application_ is a collection of independently deployed _Components_. Each _Component_ has its own Software Bill of Materials report, vulnerability status and security posture. In order to report the security posture of the entire solution delivered to end users, the _Component_ data must be aggregated to the _Application_ level. Ortelius manages logical _Application Versions_ within a decoupled architecture, offering a comprehensive view of the software's security posture. Ortelius provides logical _Application_ SBOMs, real-time _Application_ vulnerabilities, and compliance summaries, based on both the _Component_ and the aggregated logical _Application_. 
+A crucial concept in decoupled architecture is the "<strong>logical</strong> _Application_." A logical _Application_ is a collection of independently deployed _Components_. Each _Component_ has its own Software Bill of Materials report, vulnerability status and security posture. In order to report the security posture of the entire solution delivered to end users, the _Component_ data must be aggregated to the _Application_ level. Ortelius manages logical _Application Versions_ within a decoupled architecture, offering a comprehensive view of the software's security posture. Ortelius provides logical _Application_ SBOMs, real-time _Application_ vulnerabilities, and compliance summaries, based on both the _Component_ and the aggregated logical _Application_.
 
 Ortelius surveils the DevSecOps pipeline to automatically gather security and DevOps data for all _Components_. Ortelius captures DevSecOps data when a _Component_ has been published, creating a new version for each release. It then creates new _Application Versions_ for all impacted 'logical' _Applications_.
 
@@ -22,7 +22,7 @@ Ortelius surveils the DevSecOps pipeline to automatically gather security and De
 Ortelius versions both _Components_ and 'logical' _Applications_.  When versioning _Components_, Ortelius provides insights into that versions security posture including:
 
 - Software Bill of Material
-- OpenSSF Scorecard 
+- OpenSSF Scorecard
 - Common Vulnerabilities and Exposures (CVE)
 - Swagger Details
 - Readme and Licensing
@@ -51,13 +51,13 @@ Ortelius versions both _Components_ and 'logical' _Applications_.  When versioni
 
 ## Core Features
 
-**Package Vulnerability Search** Discover where a vulnerability is running across all endpoints. Ortelius can show you which logical _Applications_ are consuming a vulnerable package, and where it is deployed. 
+**Package Vulnerability Search** Discover where a vulnerability is running across all endpoints. Ortelius can show you which logical _Applications_ are consuming a vulnerable package, and where it is deployed.
 
 **Dependency maps:** Shows you the 'logical' view of your _Application_ and which _Components_ are consumed. Once you begin decoupling monolithic software, you need to track who is using each independently deployed _Component_. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
 
 **Application Level SBOMs and CVE:** Ortelius aggregates all _Component_ level data up to the logical _Application Version_ making it easy to provide security reporting on a complete software system, even when it is decoupled.
 
-**Blast Radius:** Know your _Component_ impact before you ever deploy. Ortelius can provide predictive insights showing what _Applications_ will be impacted by an updated service. Ortelius provides this data in clear maps of dependent _Applications_ and services. The blast radius also shows what _Components_ and _Applications_ are impacted by a vulnerability for rapid response. 
+**Blast Radius:** Know your _Component_ impact before you ever deploy. Ortelius can provide predictive insights showing what _Applications_ will be impacted by an updated service. Ortelius provides this data in clear maps of dependent _Applications_ and services. The blast radius also shows what _Components_ and _Applications_ are impacted by a vulnerability for rapid response.
 
 **Improved incident response:** Ortelius makes it easy to find the owner of _Component_, and contact them through PagerDuty, HipChat, Discord, Slack, email or phone.
 

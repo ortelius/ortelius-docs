@@ -1,6 +1,6 @@
 ## Key Value Configurations
 
-Key Value pairs are stored for any configuration setting that needs to be persisted with the version of the _Object_. For example, pairs can be used to store issue numbers from Jira or GitHub issues with the _Component Version_ and/or _Applications Version_. 
+Key Value pairs are stored for any configuration setting that needs to be persisted with the version of the _Object_. For example, pairs can be used to store issue numbers from Jira or GitHub issues with the _Component Version_ and/or _Applications Version_.
 
 Key Value pairs can be assigned at multiple levels, from the Global _Domain_ down to an individual _Component_ and have a "scope." Lower level Objects can override a higher level Object.  Below is the order in which Key Value Pairs can be overridden:
 

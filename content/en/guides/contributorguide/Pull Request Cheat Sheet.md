@@ -15,10 +15,10 @@ Patches for fixes, features, and improvements are accepted through pull requests
 * Add Git Commit Signing to your local git install and to GitHub.  Here are the [config instructions](https://blog.petehouston.com/sign-git-commits/).
 * Write good commit messages in the present tense ("Add X", not "Added X") with a short title, blank line, and bullet points if needed. Capitalize the first letter of the title and any bullet items. No punctuation in the title.
 * Include tests to improve coverage and prevent regressions.
-* Squash changes into a single commit per feature/fix. 
+* Squash changes into a single commit per feature/fix.
  Typical steps to do that are:
-    - git rebase -i HEAD~3 (the number depends on the number of commits you are squashing)
-    - git push -u origin master --force (master might not be the branch you are pushing to so make sure to change to the branch)
+  - git rebase -i HEAD~3 (the number depends on the number of commits you are squashing)
+  - git push -u origin master --force (master might not be the branch you are pushing to so make sure to change to the branch)
 * Whenever possible, tag your pull request with appropriate Github labels and issue numbers.
 
 **Important:** For any **breaking changes** that require a major version bump, add `BREAKING CHANGE` somewhere in the commit title or message.
@@ -57,7 +57,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    Run `git clone https://github.com/sbtaylor15/ortelius-docs.git` this will create `/home/steve/repos/ortelius-docs`
 
 3) Tell your local repo about the upstream and downstream repos (this only needs to be done once)
-   
+
    By this tep you will create `upstream` and `downstream` local variables which contain address of source and your forked repos. You can use them as parameters of `git` key word.
 
    ```
@@ -73,7 +73,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    ```
    cd /home/steve/repos/ortelius-docs
    git checkout -b maintenance
-   ``` 
+   ```
    `maintenance` will be your branch name
 
 5) Make some changes
@@ -94,7 +94,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    ```
    git checkout master
    git log --oneline -1
-   ``` 
+   ```
 
    Grab the commit sha (hex number), i.e. d34bf46
 
@@ -103,7 +103,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    git rebase -i d34bf46
    ```
 
-   You will be placed into an editor with a line for each commit.  The first column will say 
+   You will be placed into an editor with a line for each commit.  The first column will say
    pick.  Change pick to squash from line **2** to the end of the list.  Save and quit the file.
 
    You will jump back to the command prompt for a bit while git does it work.  The editor will
@@ -127,7 +127,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
     In GitHub, go to the upstream repo and do a new pull request.  Choose compare across
     forks.  Select your fork and master branch.
-	
+ 
 9) After the PR has been merged you need to bring your repo in sync with upstream since it has new commits
 
       ```
@@ -147,7 +147,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
       This will download the latest version of the upstream to your local repo and after push it will update (override) your forked GitHub repo
 
 2) Make changes
-   
+
    a) in case of multiple small commits it might be necessary to squash them all
 
 3) Update GitHub forked repo with your local changes

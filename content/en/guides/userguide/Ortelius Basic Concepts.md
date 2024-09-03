@@ -15,7 +15,7 @@ Ortelius's core Objects are _Domains_, _Applications_, _Components_, _Environmen
 - _Components_ - An independently deployed artifact such as files, APIs, Microservices, Containers
 - _Applications_ - A collection of independently deployed artifacts that serves as a complete software solution.
 - _Environments_ - The location where the _Application_ is running.
-- _Endpoints_ - The clusters, servers, or Virtual Machines within the Environment where a _Component_ is running. 
+- _Endpoints_ - The clusters, servers, or Virtual Machines within the Environment where a _Component_ is running.
 
 Following is a description of each Object and their attributes.
 
@@ -53,7 +53,7 @@ The following properties can be accessed on the _Domain_ object:
 
 ### _Component_ Object
 
-Ortelius manages artifacts and other reusable objects as [_Components_](/guides/userguide/2-define-components/). _Components_ are consumed by _Applications_. By assigning _Components_ to _Applications_ you track a 'logical' view of your software solution as a whole. In cloud-native architecture, _Components_ are loosely coupled and communicate at run-time. Defining _Components_ to _Applications_ allows Ortelius to aggregate security data to the _Application_ level and produce _Application_ security reports such as SBOMs in a decoupled architecture where hundreds of SBOMs are needed for one _Application_ SBOM. 
+Ortelius manages artifacts and other reusable objects as [_Components_](/guides/userguide/2-define-components/). _Components_ are consumed by _Applications_. By assigning _Components_ to _Applications_ you track a 'logical' view of your software solution as a whole. In cloud-native architecture, _Components_ are loosely coupled and communicate at run-time. Defining _Components_ to _Applications_ allows Ortelius to aggregate security data to the _Application_ level and produce _Application_ security reports such as SBOMs in a decoupled architecture where hundreds of SBOMs are needed for one _Application_ SBOM.
 
 _Components_ change over time. To expose changes, Ortelius takes a snapshot of the initial _Component Base Version_ and tracks subsequent changes recorded as  _Component Versions_. _Components_ are associated to a Domain for organization and quick searches.
 
@@ -121,7 +121,7 @@ There is a many-to-many relationship between _Applications_ and _Components._ An
 
 ### _Component_ and _Application_ Versioning
 
-A backend versioning datastore tracks all software configuration updates. This is done within an _Application_. An _Application_ consists of one or more _Components_. Versioning tracks all changes in both your _Application_ and _Component_ attributes. 
+A backend versioning datastore tracks all software configuration updates. This is done within an _Application_. An _Application_ consists of one or more _Components_. Versioning tracks all changes in both your _Application_ and _Component_ attributes.
 
 When you first define your _Application_, you create an _Application Base Version_. Over time, as you update your code and deliver new features, each change to the _Application_ creates a new _Application Version_.  _Application Versions_ package all your _Components_ in your entire software product. Like _Application Versions_, there is an initial _Component Base Version_ and subsequent _Component Versions,_ which represent any updates . An _Application Base Version_ or _Component Base Version_ is always the first one created, and it acts as a model for subsequent _Application_ or _Component Versions_. Otherwise they are identical types of objects.
 
@@ -133,7 +133,7 @@ You can use your CI/CD process to include variance in your versioning number (ba
 
 ### _Environment_ Object
 
-The [_Environment_ Object](/guides/userguide/define-environments/) represents where an _Application_ is published or deployed. 
+The [_Environment_ Object](/guides/userguide/define-environments/) represents where an _Application_ is published or deployed.
 
 The following properties can be accessed for an _Environment_ object:
 

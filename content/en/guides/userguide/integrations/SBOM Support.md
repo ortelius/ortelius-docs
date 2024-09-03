@@ -12,13 +12,13 @@ Ortelius can store your Software Bill of Material scan results for each image 'b
 
 You will need to set up Ortelius to be called by your DevOps Pipeline using the Ortelius CI/CD Command Line Interface. For more information refer to the [First Steps section.](/guides/userguide/first-steps/2-intro-to-set-up/)
 
->Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/cli/blob/main/doc/dh.md) for installation instructions. 
+>Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/cli/blob/main/doc/dh.md) for installation instructions.
 
 ### SPDX or CycloneDX
 
-Ortelius can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to Ortelius. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data. 
+Ortelius can consume any SPDX and CycloneDX formatted SBOM. If you are already generating SBOMs, you will pass the name of the SBOM results to Ortelius. If you are not generating SBOMs as part of your pipeline process, you will need to add SBOM generation to collect the lower dependency data. Following is how to add Syft to your workflow to include the collection of SBOM data.
 
-[Syft SBOM tool](https://github.com/anchore/syft) will generate Software Bill of Material Reports for popular coding languages and package managers, including Docker images. 
+[Syft SBOM tool](https://github.com/anchore/syft) will generate Software Bill of Material Reports for popular coding languages and package managers, including Docker images.
 
 The following code example scans a Docker Image to generate the SBOM.  See [Syft Options](https://github.com/anchore/syft#supported-sources) to scan other objects and coding languages.
 
@@ -34,7 +34,7 @@ cat cyclonedx.json
 ```
 
 
-## Run the Ortelius CLI 
+## Run the Ortelius CLI
 
 Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:
 
@@ -57,4 +57,4 @@ dh updatecomp --rsp component.toml --deppkg "spdx@spdx.json"
 Without SBOM
 
 ```bash
-dh updatecomp --rsp component.toml 
+dh updatecomp --rsp component.toml

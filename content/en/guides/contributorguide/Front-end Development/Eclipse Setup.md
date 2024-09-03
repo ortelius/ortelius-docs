@@ -38,4 +38,4 @@ Setup a run and debug configuration for Tomcat.
 
 ### Accessing the Ortelius UI in the browser
 
-The server.xml contains the port for Tomcat.  The default is 8181.  To access Ortelius hit http://localhost:8181/dmadminweb/Home
+The server.xml contains the port for Tomcat.  The default is 8181.  To access Ortelius hit <http://localhost:8181/dmadminweb/Home>

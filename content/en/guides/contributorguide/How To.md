@@ -14,19 +14,19 @@ Please be detailed in your description of the issue.  Not everything needs to go
 
 ## Making documentation changes
 
-Documentation is stored in [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The documentation is served up by a [hugo/docsy](https://www.docsy.dev/docs/getting-started/) server.  You can run this server locally to view your changes before committing to Github. 
+Documentation is stored in [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The documentation is served up by a [hugo/docsy](https://www.docsy.dev/docs/getting-started/) server.  You can run this server locally to view your changes before committing to Github.
 
 The documentation is managed in two Guides - a [User Guide and a Contributor Guide.](http://docs.ortelius.io/guides/)
 
 ### Setup for Documenation updates
 
-1. [Install hugo](https://www.docsy.dev/docs/getting-started/) locally.  If you are on Windows make sure to install the extended packages as well. 
+1. [Install hugo](https://www.docsy.dev/docs/getting-started/) locally.  If you are on Windows make sure to install the extended packages as well.
 2. Fork the [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs) to your GitHub account.
 3. Clone the new repo to your computer.
 4. Launch an editor such as [Visual Studio Code](https://code.visualstudio.com/).  Make sure the *Markdown Preview Enhanced by Yiyi Wang* is installed.  This will give you a split screen of the markdown and the rendered version.
 5. The markdown files can be found under the `content/en/guides/contributorguide` (this guide) and the `content/en/guides/userguide` (the end user guide).
 6. Start your hugo server.  Open a command prompt and cd to your local git repo directory.  From the root of the repo run `hugo server`.  This will start the local hugo server running.  The pages can be viewed in your browser using the `http://localhost:1313/guides` url.
-7.  Next make a documentation change.  This change will automatically be seen in the Visual Studio Code - Markdown Preview Enhanced window.  Also, the hugo server will automatically render the changed markdown page.  
+7. Next make a documentation change.  This change will automatically be seen in the Visual Studio Code - Markdown Preview Enhanced window.  Also, the hugo server will automatically render the changed markdown page.  
 
 Note: Visual Studio is only a preview and will not render all markdown updates such as embedded html.  You will need to view the pages being hosted by the hugo server in your browser for an accurate rendering.
 
@@ -36,7 +36,7 @@ Note: Visual Studio is only a preview and will not render all markdown updates s
 
 ## Making coding changes
 
-The Ortelius code base is stored across multiple repositories.  Ortelius was originally written as a Java Servlet application running under Tomcat.  The front end code is in Java Script using JQuery and JQuery Plugins.  The backend code is Java that accesses the Postgres database via JDBC driver.  The Ortelius Deployment Engine is written in C++.  Plugins to CI tools are written in Python and Groovy. 
+The Ortelius code base is stored across multiple repositories.  Ortelius was originally written as a Java Servlet application running under Tomcat.  The front end code is in Java Script using JQuery and JQuery Plugins.  The backend code is Java that accesses the Postgres database via JDBC driver.  The Ortelius Deployment Engine is written in C++.  Plugins to CI tools are written in Python and Groovy.
 
 New enhancements are being architected to follow the microservice implementation practices.  These new microservices are written in Python or Golang and have their own separate repositories.
 
@@ -44,7 +44,7 @@ The goal is to move from the monolithic implementation, to hybrid and then to a 
 
 The Java backend code is easiest worked on using the Eclipse IDE, where as the other code can be handled with any editor such as Visual Studio Code.
 
-A Postgres database needs to be installed for Ortelius to persist its data.  Ortelius will create the necessary database tables on startup. 
+A Postgres database needs to be installed for Ortelius to persist its data.  Ortelius will create the necessary database tables on startup.
 
 ### Steps
 

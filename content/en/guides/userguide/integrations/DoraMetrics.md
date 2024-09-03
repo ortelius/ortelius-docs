@@ -10,7 +10,7 @@ description: >
 
 When Ortelius is integrated into your CI/CD pipeline, it can capture metrics for DORA reporting. The two DORA metrics that Ortelius captures are Deployment Frequency and Lead Time for Changes.
 
-Ortelius collects Dora Metrics on _Application Versions_ reporting the _Application_ Dora metrics in decoupled architectures. 
+Ortelius collects Dora Metrics on _Application Versions_ reporting the _Application_ Dora metrics in decoupled architectures.
 
 ### Deployment Frequency
 
@@ -18,12 +18,12 @@ The DORA Deployment Frequency is how **often** an organization **successfully** 
 
 The Deployment Frequency is a count of the number of times a _Application_ is deployed to an _Environment_ per month.  _Application Versions_ are grouped together using the _Application Base Version_.  This grouping is equivalent to an _Application_.
 
-In order for Ortelius to track the Deployment Frequency you must record when a deployment happens for an _Application Version_ and to which _Environment_ it happened for. 
+In order for Ortelius to track the Deployment Frequency you must record when a deployment happens for an _Application Version_ and to which _Environment_ it happened for.
 
 
 #### Recording with Deployment Tools
 
-The Ortelius CLI can be used to record the deployment. Using the CLI enables the Workflow tool, i.e. 
+The Ortelius CLI can be used to record the deployment. Using the CLI enables the Workflow tool, i.e.
 Jenkins, GitHub, or GitLab, to tell Ortelius when it performs a deployment. See the [CI/CD Chapter](/guides/userguide/integrations/ci-cd_integrations/) for more information and setup instruction
 
 
@@ -34,5 +34,5 @@ from the most recent Git commit to the most recent deployment to an _Environment
 
 #### Recording with Deployment Tools
 
-The Ortelius CLI can be used to record the deployment lead time for change. Using the CLI enables the Workflow tool, i.e. Jenkins, GitHub, or GitLab, to tell Ortelius when it performs a deployment. See the [CI/CD Chapter](/guides/userguide/integrations/ci-cd_integrations/) for more information and setup instructions. 
+The Ortelius CLI can be used to record the deployment lead time for change. Using the CLI enables the Workflow tool, i.e. Jenkins, GitHub, or GitLab, to tell Ortelius when it performs a deployment. See the [CI/CD Chapter](/guides/userguide/integrations/ci-cd_integrations/) for more information and setup instructions.
 

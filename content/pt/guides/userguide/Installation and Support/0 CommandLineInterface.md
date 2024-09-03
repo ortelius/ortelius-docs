@@ -8,7 +8,7 @@ description: >
 
 ## The Ortelius Command Line Interface (CLI)
 
-The Ortelius Command Line Interface supports integration with DevOps tools and CI/CD pipelines. 
+The Ortelius Command Line Interface supports integration with DevOps tools and CI/CD pipelines.
 
 The CLI Python script interacts with the Ortelius REST APIs to perform:
 

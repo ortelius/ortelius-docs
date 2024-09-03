@@ -8,7 +8,7 @@ description: >
 
 ## Intro to _Groups_
 
-Ortelius has three default Groups - Administrators, Everyone and Users.  Access control to Objects are based on these three high level _Groups_. Ortelius allows you to create as many _Users_ as required but only the "Users" "Everyone" and "Administrator" _Groups_ are available. You can modify these _Groups_ as needed to create access controls around Objects. 
+Ortelius has three default Groups - Administrators, Everyone and Users.  Access control to Objects are based on these three high level _Groups_. Ortelius allows you to create as many _Users_ as required but only the "Users" "Everyone" and "Administrator" _Groups_ are available. You can modify these _Groups_ as needed to create access controls around Objects.
 
 ## Using the _Group_ List Viewing
 

@@ -13,11 +13,11 @@ Have you ever wanted to contribute to the coolest cloud technology? Well here is
 
 <div style="width:30%">
 {{< youtube Y4kR6ipipxA >}}
-</div> 
+</div>
 
 ### What is Ortelius?
 
-Ortelius is a microservice catalog that centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers. 
+Ortelius is a microservice catalog that centralizes everything you need to know about a microservice including: ownership, vulnerabilities, versions, dependency relationships, consuming applications and versions. Ortelius visualizes ‘logical’ application versions in a microservice architecture providing a clear view of the microservice supply chain and their consumers.
 
 Ortelius is managed by the [Continuous Delivery Foundation](https://cd.foundation) a specialty foundation under the Linux Foundation.
 

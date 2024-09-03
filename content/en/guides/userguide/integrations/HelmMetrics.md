@@ -6,9 +6,9 @@ description: >
   Gathering Helm Details.
 ---
 
-Ortelius stores the Helm chart repository and version for informational purposes. 
+Ortelius stores the Helm chart repository and version for informational purposes.
 
-Ortelius integrates with Helm using the [CI/CD Command Line Interface](guides/userguide/integrations/ci-cd_integrations/) (CLI). For every _Component Version_, the CLI gathers and stores the 
+Ortelius integrates with Helm using the [CI/CD Command Line Interface](guides/userguide/integrations/ci-cd_integrations/) (CLI). For every _Component Version_, the CLI gathers and stores the
 
 | Access                      | Description                                                                                                                                                         |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -18,4 +18,4 @@ Ortelius integrates with Helm using the [CI/CD Command Line Interface](guides/us
 |ChartRepoUrl            | Helm Chart Repo Url |
 |ChartVersion            | Helm Chart version |
 
-These values are displayed for every _Component Version_ and viewable from the _Component Detail_ dashboard. 
+These values are displayed for every _Component Version_ and viewable from the _Component Detail_ dashboard.

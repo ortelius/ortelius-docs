@@ -12,36 +12,36 @@ The following developer tools will be needed for you to contribute to Ortelius c
 
 ### Editors
 
-Any of the following Markdown editors can be used: 
+Any of the following Markdown editors can be used:
 - [Visual Studio Code](https://code.visualstudio.com/) with following extensions:
-    - Markdown Preview Enhanced - Yiyi Wang
-    - markdownlint - David Anderson
-    - Docker - Microsoft
-    - Docsy - Etienne Dldc
-    - Go - Go Team at Google
-    - Python - Microsoft
+  - Markdown Preview Enhanced - Yiyi Wang
+  - markdownlint - David Anderson
+  - Docker - Microsoft
+  - Docsy - Etienne Dldc
+  - Go - Go Team at Google
+  - Python - Microsoft
 - [PostgreSQL](https://www.postgresql.org/download/) - list of different distrubitions of PostgreSQL tool
-    - This is complete package which include PostgreSQL Server, pgAdmin 4, Stack Builder and Command Line Tools
+  - This is complete package which include PostgreSQL Server, pgAdmin 4, Stack Builder and Command Line Tools
 - [pgAdmin](https://www.postgresql.org/ftp/pgadmin/pgadmin4/) - here you can find list of different versions of pgAdmin tool
 
 ### Testing Environment
 
-To setup your environment to create a runtime test environment: 
+To setup your environment to create a runtime test environment:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Helm](https://helm.sh/docs/intro/install/)
-- GCloud 
+- GCloud
 - Azure
 - Set local test database [(Link to source)](https://github.com/ortelius/test-database)
-    - Default userid and password are `admin` / `admin`
-    - Run the image:
+  - Default userid and password are `admin` / `admin`
+  - Run the image:
         1) Pull the image
-          
-            ```    
+
+            ```
             docker pull quay.io/ortelius/test-database:latest
             ```
 
         2) Find the image id
-            
+
             ```
             docker image ls quay.io/ortelius/test-database:latest --format "{{.ID}}"
             ```
@@ -58,15 +58,15 @@ To setup your environment to create a runtime test environment:
             docker run -it -p 9876:5432 -v pgdata:/var/lib/postgresql/data <id_from_step_2>`
             ```
 
-    - The database in the above example will be accessible on port 9876.
-        - Userid: postgres
-        - Password: postgres
-        - Database: postgres
-        - Schema: dm
+  - The database in the above example will be accessible on port 9876.
+    - Userid: postgres
+    - Password: postgres
+    - Database: postgres
+    - Schema: dm
 
 - Container Structure Test
-    - The image also has a minimal [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test) setup.
-    - This is run as part of the cloud build, and can also be run locally on MacOS/Linux/WSL:
+  - The image also has a minimal [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test) setup.
+  - This is run as part of the cloud build, and can also be run locally on MacOS/Linux/WSL:
 
         ```
         container-structure-test test --image=quay.io/ortelius/test-database:latest --config=cst/config.yaml

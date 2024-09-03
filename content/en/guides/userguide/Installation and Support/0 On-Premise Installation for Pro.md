@@ -17,7 +17,7 @@ Access the URL from the following address:
 ```
 http://<External IP Address from above step>/dmadminweb/Home
 ```
-To log in please use userId: admin and password: admin. 
+To log in please use userId: admin and password: admin.
 
 **Note:**
 You can create your own Administrator UserID and remove the default userid and password.

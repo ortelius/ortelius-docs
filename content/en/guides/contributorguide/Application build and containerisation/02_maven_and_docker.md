@@ -11,7 +11,7 @@ description: >
 
 **Before Starting**
 
- - I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use Linux environment as we will be going to use lot of command line stuff later.
+- I have wsl2 installed in my system and I am using my Linux environment to run this application. I also advised developers to use Linux environment as we will be going to use lot of command line stuff later.
 
 **Software needed :**
 Java
@@ -27,7 +27,7 @@ In the previous step, we run our application normally. Now its time to do the ma
 
 In the root directory of your project, run this command - `./mvnw -Dmaven.test.skip=true spring-boot:build-image`
 
-**Note :** If while running this command ``./mvnw -Dmaven.test.skip=true spring-boot:build-image `` if it is showing error no such file or directory, its a wsl 2 problem.
+**Note :** If while running this command ``./mvnw -Dmaven.test.skip=true spring-boot:build-image`` if it is showing error no such file or directory, its a wsl 2 problem.
 In wsl2, mvnw is still not working sometimes due to windows issue, so run this -
 
     sudo apt install dos2unix

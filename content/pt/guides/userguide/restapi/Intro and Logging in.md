@@ -37,7 +37,7 @@ The query tools in the API return the object's internal ID as well as its name. 
 
 To use the ID, just place it where you would normally place the object's name. The APIs will assume you're specifying an ID if the name given is fully-numeric.
 
-*Do not create objects with fully numeric names - Ortelius will not be able to determine if this is an object id or the object name.*
+_Do not create objects with fully numeric names - Ortelius will not be able to determine if this is an object id or the object name._
 
 ## Using cURL to access the API
 

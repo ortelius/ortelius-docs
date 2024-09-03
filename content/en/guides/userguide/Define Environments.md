@@ -7,11 +7,11 @@ description: >
 ---
 ## Intro to _Environments_
 
-An Ortelius _Environment_ is a collection of [_Endpoints_](/guides/userguide/define-endpoints/). _Environments_ represent where you run your _Application_ or where your _Application_ is published. _Environments_ often represent where development, test, or production code is running. An _Environment_ could be a virtual cloud or artifact repository. Therefore, there is a many-to-many relationship between _Environments_ and _Endpoints_, so that an _Endpoint_ can be assigned to more than one _Environment_, and an _Environment_ can contain many _Endpoints_. 
+An Ortelius _Environment_ is a collection of [_Endpoints_](/guides/userguide/define-endpoints/). _Environments_ represent where you run your _Application_ or where your _Application_ is published. _Environments_ often represent where development, test, or production code is running. An _Environment_ could be a virtual cloud or artifact repository. Therefore, there is a many-to-many relationship between _Environments_ and _Endpoints_, so that an _Endpoint_ can be assigned to more than one _Environment_, and an _Environment_ can contain many _Endpoints_.
 
 This data establishes relationships that allow for mapping a vulnerability found at the _Component_ level to the specific _Environment_ and _Endpoint_ where it is running.
- 
->Note: Because _Endpoints_ are assigned to _Environments_, _Endpoints_ must be created first. 
+
+>Note: Because _Endpoints_ are assigned to _Environments_, _Endpoints_ must be created first.
 
 ## Adding _Environments_ Via Your CI/CD Workflow
 
@@ -22,9 +22,9 @@ You can also add _Environments_ manually via the Dashboard.
 
 ### _Environments_ and _Domains_
 
-_Environments_ are associated to a [_Domain_](/guides/userguide/definedomains/). You can assign _Environments_ to any level of _Domain_. However, _Environments_ are most commonly associated to a _Project Domain_ used for _Applications_. 
+_Environments_ are associated to a [_Domain_](/guides/userguide/definedomains/). You can assign _Environments_ to any level of _Domain_. However, _Environments_ are most commonly associated to a _Project Domain_ used for _Applications_.
 
-## Use the List View to Add and Delete _Environment_ 
+## Use the List View to Add and Delete _Environment_
 
 The _Environment_ menu is on the left of the main panel. Select the _Environment_ menu, to view a list of all _Environments_ to which you have access. The Search bar, represented by a funnel icon, allows you to reorder _Environments_ based on Name or _Domain_.
 
@@ -47,7 +47,7 @@ The Dashboard view displays all information related to a specific _Environment_.
 
 | Field | Description |
 | --- | --- |
-|**Full _Domain_**| The fully qualified name of the _Domain_, including all parent _Domains_. This is a required field. 
+|**Full _Domain_**| The fully qualified name of the _Domain_, including all parent _Domains_. This is a required field.
 | **Name**| The name of the _Environment_. Note: Duplicate Names are restricted. It is recommended that _Environments_ be named in a specific manner, such as 'DevEnv-Ortelius.' This is a required field |
 |**Owner Type**| User or Group |
 | **Owner**| The owner defaults to the _User_ or _Group_ who created it.  |
