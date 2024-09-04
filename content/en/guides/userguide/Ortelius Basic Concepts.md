@@ -129,7 +129,7 @@ When a new _Application Version_ is created from either an _Application Base Ver
 
 Ortelius uses a simple versioning number schema starting at 1 and incrementing over time, for example Myapp;1, Myapp;2.
 
-You can use your CI/CD process to include variance in your versioning number (base name, variant, version).  See [Component Versioning Schema](/guides/guides/userguide/integrations/ci-cd_integrations/).
+You can use your CI/CD process to include variance in your versioning number (base name, variant, version).  See [Component Versioning Schema](/guides/userguide/integrations/ci-cd_integrations/).
 
 ### _Environment_ Object
 

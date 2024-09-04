@@ -1,4 +1,4 @@
-**Responses for Component Type**
+**_Component Type_ Object**
 
 _Component_ Type used  to map _Components_ to _Endpoints_.
 

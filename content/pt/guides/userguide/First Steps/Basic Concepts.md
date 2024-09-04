@@ -148,7 +148,7 @@ The following properties can be accessed on the _Domain_ object:
 
 ## _Environment_ Object
 
-The [_Environment_ Object](/guides/userguide/first-steps/2-define-environments/) represents a collection of _Endpoints_ where an _Application_ is deployed. Multiple _Environments_ can represent your pipeline stages such as Development, Testing, and Production for a single _Application_.  Your _Application_ can have as many _Envrionments_ as needed.
+The [_Environment_ Object](/guides/userguide/define-environments/) represents a collection of _Endpoints_ where an _Application_ is deployed. Multiple _Environments_ can represent your pipeline stages such as Development, Testing, and Production for a single _Application_.  Your _Application_ can have as many _Envrionments_ as needed.
 
 The following properties can be accessed for an _Environment_ object:
 
@@ -171,7 +171,7 @@ The following properties can be accessed for an _Environment_ object:
 
 ## _Endpoint_ Object
 
-The [_Endpoint_ Object](/guides/userguide/first-steps/2-define-endpoints/) (Local Helm Host, container, VM/Cloud Image) represents where a deployment will be sent. _Endpoints_ are assigned to an _Environment_.
+The [_Endpoint_ Object](/guides/userguide/define-endpoints/) (Local Helm Host, container, VM/Cloud Image) represents where a deployment will be sent. _Endpoints_ are assigned to an _Environment_.
 
 ### _Endpoint_ Mapping
 

@@ -18,7 +18,7 @@ Documentation is stored in [ortelius/ortelius-docs](https://github.com/ortelius/
 
 The documentation is managed in two Guides - a [User Guide and a Contributor Guide.](http://docs.ortelius.io/guides/)
 
-### Setup for Documenation updates
+### Setup for Documentation updates
 
 1. [Install hugo](https://www.docsy.dev/docs/getting-started/) locally.  If you are on Windows make sure to install the extended packages as well.
 2. Fork the [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs) to your GitHub account.
@@ -32,7 +32,7 @@ Note: Visual Studio is only a preview and will not render all markdown updates s
 
 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) can be used for the basic page layout.  CSS has been applied to the Docsy theme template in order to tweak the final page rendering.  
 
-8. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pr-cheat-sheet/)
+8. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pull-request-cheat-sheet/)
 
 ## Making coding changes
 
@@ -54,7 +54,7 @@ A Postgres database needs to be installed for Ortelius to persist its data.  Ort
 5. The monolithic code can be run and debug natively in Eclipse since a Tomcat Server using a connection to your local Postgres database.
 
    The microservice code can be run and debugged natively in your editor. It will need to connect to the database over OBDC.
-6. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pr-cheat-sheet/)
+6. Create a Pull Request to merge in your changes. See [PR Cheat Sheet](/guides/contributorguide/pull-request-cheat-sheet/)
 
 ## Creating Videos
 

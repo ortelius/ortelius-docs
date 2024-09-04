@@ -1,4 +1,4 @@
-**Responses for _Component Version_**
+**_Component Version_ Object**
 
 | Name    | Type    | Description                                                    | Required |
 |---------|---------|----------------------------------------------------------------|----------|

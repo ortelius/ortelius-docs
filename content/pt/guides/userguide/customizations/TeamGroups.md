@@ -48,4 +48,4 @@ NOTE: Ortelius creates a Group named "Everyone" whenever it is installed, and ev
 
 This section shows a list of all _Users_ who belong to the selected _Group_. Click on the plus '+Add' option to add a _User_ to this _Group_. A new row will be added to the table with a drop down list allowing you to select the _User_ to add to the _Group_. Select "Save" to commit the row to the table. You can delete a _User_ from the _Group_ using the Delete option.
 
-{{% include "guides/userguide/reusable/AuditTrail.md" %}}
+{{% include "/guides/userguide/reusable/AuditTrail.md" %}}

@@ -218,7 +218,7 @@ When integrated with your CI/CD engine, Ortelius tracks the DevOps data from the
 
 ### Helm Details
 
-Helm can be used for deploying Container _Components_. Ortelius interfaces with Helm to support a Kubernetes Cluster deployment. Follow the steps at [Helm for Container Deployments](/guides/userguide/integrations/helm).
+Helm details are stored for each _Component Version_.  The Helm data is gathered from the CI/CD pipeline. Read the [CI/CD and Ortelius](/guides/userguide/integrations/ci-cd_integrations/).
 
 A Container _Component_ has the following optional attributes:
 

@@ -44,7 +44,7 @@ You can explore the _GLOBAL.open source_ Domain to learn how Continuous Security
 
 2) Select GLOBAL.Open Source.Linux Foundation. In the Details, you will see this _Domain_ has two _Sub-Domains_, the CDF and the OpenSSF. Driving into the GLOBAL.Open Source.Linux Foundation.CDF _Domain_ will show you the Ortelius project is a _Sub-Domain_ of the CDF.
 
-For More information on Domains see - [Building _Domains_](/guides/guides/userguide/definedomains/)
+For More information on Domains see - [Building _Domains_](/guides/userguide/definedomains/)
 
 <p><br></p>
 
@@ -152,7 +152,7 @@ Ortelius provides you a view of the _Components_ Swagger information when availa
 
 This section gives you additional information about the _Component_ such as _Owner_ name and contact information, build details, Git Repo information and Helm Chart information if used.
 
-For More information on Components see - [Publishing _Components_](/guides/guides/userguide/2-define-components/).
+For More information on Components see - [Publishing _Components_](/guides/userguide/2-define-components/).
 
 <p><br></p>
 
@@ -233,7 +233,7 @@ In the Impact Assessment Section, you will see the _Environments_ the _Applicati
 
 This section shows your _Applications_ Log History, and Key Value Configurations that were used.
 
-Learn More at  [Packaging _Applications_](/guides/guides/userguide/2-defining-applications/)
+Learn More at  [Packaging _Applications_](/guides/userguide/2-defining-applications/)
 
 <p><br></p>
 
@@ -243,5 +243,5 @@ There are many other features of Ortelius that we did not cover on this short te
 
 Other topics to explore include:
 
-- Get started by connecting  your [CI/CD pipeline](/guides/guides/userguide/integrations/ci-cd_integrations/) to add _Components_ and _Applications_.
+- Get started by connecting  your [CI/CD pipeline](/guides/userguide/integrations/ci-cd_integrations/) to add _Components_ and _Applications_.
 

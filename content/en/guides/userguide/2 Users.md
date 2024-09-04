@@ -64,4 +64,4 @@ This Section contains a list of all the _Groups_ the selected _User_ belongs to.
 
 Ortelius has two _Groups_, Administrators and Users, to which _Users_ can be assigned.  Access control to Objects are based on these two high level _Groups_. Ortelius allows you to create as many _Users_ as required but only the "User" and "Administrator" _Groups_ are supported.
 
-{{% include "guides/userguide/reusable/AuditTrail.md" %}}
+{{% include "/guides/userguide/reusable/AuditTrail.md" %}}

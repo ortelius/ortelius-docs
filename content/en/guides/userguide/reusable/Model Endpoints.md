@@ -5,9 +5,9 @@
 | automd5      | string                                          | Is a Boolean representing if "Auto MD5 Scanning" is set for the _Endpoint_.                               | No       |
 | autoping     | string                                          | Is a Boolean representing if "Auto Ping" is set for the _Endpoint_.                                       | No       |
 | basedir      | string                                          | Is the base directory for the _Endpoint_.                                                                 | No       |
-| comptypes    | [ [comptype](/restapi/models/#comptype) ]       |                                                                                                           | No       |
+| comptypes    | comptype                                        | Is the component types that the _Endpoint_ supports.                                                      | No       |
 | domain       | string                                          | Is the _Endpoint's_ fully qualified _Domain_.                                                             | No       |
-| environments | [ [environment](/restapi/models/#environment) ] |                                                                                                           | No       |
+| environments | environment                                     | Is the list of _Environments_ associated to the _Endpoint_.                                               | No       |
 | hostname     | string                                          | Is the hostname of the _Endpoint_.                                                                        | No       |
 | id           | string                                          | Is the _Endpoint's_ internal object ID.                                                                   | No       |
 | md5template  | string                                          | Is the name of the template to be used for notification should the _Endpoint_ fail an automated mD5 scan. | No       |

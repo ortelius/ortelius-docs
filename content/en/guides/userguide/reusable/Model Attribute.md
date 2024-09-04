@@ -1,4 +1,4 @@
-**Responses for Attribute**
+**_Attribute_ Object**
 
 | Name      | Type   | Description                | Required |
 |-----------|--------|----------------------------|----------|

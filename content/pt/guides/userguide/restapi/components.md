@@ -25,15 +25,15 @@ Retrieve specific _Component_ or _Component_ version. This call returns a JSON O
 | branch     | query      | If branch is set along with latest then the latest version on the specified branch name is returned.                                                                                                                | Yes      | string |
 | identifier | path       | Is the identifier of the _Component_. Either its name, its qualified name with its parent _Domains_ included in dot notation (i.e. GLOBAL.Products) or its internal ID.                                             | Yes      | string |
 
-{{% include "guides/userguide/reusable/Model Component Result.md" %}}
-{{% include "guides/userguide/reusable/Model Component.md" %}}
-{{% include "guides/userguide/reusable/Model Component Predecessor.md" %}}
-{{% include "guides/userguide/reusable/Model Component Version Result.md" %}}
-{{% include "guides/userguide/reusable/Model Component Version Full.md" %}}
-{{% include "guides/userguide/reusable/Model Application Version Full.md" %}}
-{{% include "guides/userguide/reusable/Model Application Version.md" %}}
-{{% include "guides/userguide/reusable/Model Request.md" %}}
-{{% include "guides/userguide/reusable/Model Approve or Reject.md" %}}
+{{% include "/guides/userguide/reusable/Model Component Result.md" %}}
+{{% include "/guides/userguide/reusable/Model Component.md" %}}
+{{% include "/guides/userguide/reusable/Model Component Predecessor.md" %}}
+{{% include "/guides/userguide/reusable/Model Component Version Result.md" %}}
+{{% include "/guides/userguide/reusable/Model Component Version Full.md" %}}
+{{% include "/guides/userguide/reusable/Model Application Version Full.md" %}}
+{{% include "/guides/userguide/reusable/Model Application Version.md" %}}
+{{% include "/guides/userguide/reusable/Model Request.md" %}}
+{{% include "/guides/userguide/reusable/Model Approve or Reject.md" %}}
 
 ## Create New _Component Version_
 
@@ -51,8 +51,8 @@ This call creates a new _Component Version_. The new _Component_ inherits all th
 |---------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
 | comp_id | path       | Is the ID of the_Component_which will be the parent of the new_Component Version_. Either its name, its qualified name with its parent_Domains_included in dot notation (i.e. GLOBAL.Product) or its internal ID. The newly created_Component Version_will inherit all the attributes from this_Component_. | Yes      | integer |
 
-{{% include "guides/userguide/reusable/Model Component Result.md" %}}
-{{% include "guides/userguide/reusable/Model Success.md" %}}
+{{% include "/guides/userguide/reusable/Model Component Result.md" %}}
+{{% include "/guides/userguide/reusable/Model Success.md" %}}
 
 ## Associate a Build with a _Component_
 
@@ -77,5 +77,5 @@ In order for this to work through the permission model, the associated "Create _
 | file     | query      | Is a filename to record against the build. This is typically a file that was changed that resulted in a build being performed. You can specify one or more file parameters if you need to associate multiple files with this build or use the files parameter to specify multiple files.                                                                                                              | No       | string  |
 | files    | query      | Is a comma-separated list of files. This is equivalent to specifying multiple file parameters.                                                                                                                                                                                                                                                                                                        | No       | string  |
 
-{{% include "guides/userguide/reusable/Model Component Result.md" %}}
-{{% include "guides/userguide/reusable/Model Success.md" %}}
+{{% include "/guides/userguide/reusable/Model Component Result.md" %}}
+{{% include "/guides/userguide/reusable/Model Success.md" %}}

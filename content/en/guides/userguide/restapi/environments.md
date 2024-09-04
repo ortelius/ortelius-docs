@@ -27,8 +27,8 @@ If the all parameter is not specified then only the _Environments_ associated wi
 |------|------------|-------------|----------|--------|
 | all  | query      | y or n      | No       | string |
 
-{{% include "guides/userguide/reusable/Model Environments Result.md" %}}
-{{% include "guides/userguide/reusable/Model Environment.md" %}}
+{{% include "/guides/userguide/reusable/Model Environments Result.md" %}}
+{{% include "/guides/userguide/reusable/Model Environment.md" %}}
 
 ## Retrieve specific _Environment_
 
@@ -46,5 +46,5 @@ This call returns a JSON object representing the specified _Environment_.
 |------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------|
 | identifier | path       | Is the identifier of the _Environment_. Either its name, its qualified name with its parent _Domains_ included in dot notations (i.e. GLOBAL.Product) or its internal ID. | Yes      | string |
 
-{{% include "guides/userguide/reusable/Model Success.md" %}}
-{{% include "guides/userguide/reusable/Model Environments Result.md" %}}
+{{% include "/guides/userguide/reusable/Model Success.md" %}}
+{{% include "/guides/userguide/reusable/Model Environments Result.md" %}}

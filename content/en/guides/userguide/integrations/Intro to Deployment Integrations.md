@@ -30,7 +30,7 @@ _Environments_ represent where you execute your _Application_ and _Components_ s
 
 #### _Environments_ and _Domains_
 
-_Environments_ are associated to a [_Domain_](/guides/guides/userguide/definedomains/). You can assign _Environments_ to any level of _Domain_ including the _Global Domain_. However, _Environments_ are most commonly associated to a _Project Domain_ used for _Applications_. A _Project Domain_ is used to manage an _Application_ and may be defined to include _Life Cycle Subdomains_ for managing your _Application's_ progression from development through release.
+_Environments_ are associated to a [_Domain_](/guides/userguide/definedomains/). You can assign _Environments_ to any level of _Domain_ including the _Global Domain_. However, _Environments_ are most commonly associated to a _Project Domain_ used for _Applications_. A _Project Domain_ is used to manage an _Application_ and may be defined to include _Life Cycle Subdomains_ for managing your _Application's_ progression from development through release.
 
 ### Use the _Environment_ List View to Add and Delete
 
@@ -73,13 +73,13 @@ The Access Section allows _Users_ within designated _Groups_ to update the _Envi
 | **Change** | Allows the _User_ to change the _Environment's_ characteristics i.e. Name, Summary, etc.                                                                            |
 | **Deploy** | Allows _Users_ to deploy  _Applications_ into the selected _Environment_.                                                                                           |
 
-{{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
+{{% include "/guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
-{{% include "guides/userguide/reusable/Attributes.md" %}}
+{{% include "/guides/userguide/reusable/Attributes.md" %}}
 
 #### Assigned _Endpoints_
 
-Note: You will need to have pre-defined your _Endpoints_.  See the [Define Your Endpoints](/guides/userguide/first-steps/2-define-endpoints/) chapter for more information.
+Note: You will need to have pre-defined your _Endpoints_.  See the [Define Your Endpoints](/guides/userguide/define-endpoints/) chapter for more information.
 
 _Environments_ are a collection of _Endpoints_. Use this section to assign the _Endpoints_ that will make up this _Environment_. Use +Add to create a new row in the _Endpoints_ table. Use Save to commit the row.  Select the row and use Edit or Delete to update or remove an _Endpoint_. When you add a new _Endpoint_ the  Hostname will be displayed. The Hostname is the actual network name or IP address.  It is assigned when the _Endpoint_ is defined, but is not a required field. If it is defined, it will be displayed in the row.
 
@@ -89,7 +89,7 @@ This section shows the success/failure rate and time required for the last 10 de
 
 #### Assigned _Applications_
 
-View all the _Application Base Versions_ assigned to this _Environment_. This is read only.  _Applications Base Versions_ are associated to _Environments_ when created using the [_Application_ Dashboard](/guides/userguide/packaging-applications/2-defining-applications/#viewing-and-editing-with-the-_application_-dashboard).
+View all the _Application Base Versions_ assigned to this _Environment_. This is read only.  _Applications Base Versions_ are associated to _Environments_ when created using the [_Application_ Dashboard](/guides/userguide/2-defining-applications/).
 
 #### Deployed _Components_ to _Environment_ Map
 
@@ -140,10 +140,10 @@ The Dashboard view displays all information related to a specific _Endpoint_.
 | **Hostname**                       | The unique name of a server that is used to identify it on the network.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Protocol**                       | The protocol used to communicate with the _Endpoint_. Options are ssh and winrm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **ssh Port Number**                | The ssh Port used to connect to the _Endpoint_ if the selected Protocol is ssh.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Base Directory**                 | If you would like to force all deployments to occur in a specific high level directory, enter it into this field. The _Endpoint_ Base Directory will override the _Component_ Base Directory. For more information see [Formatting Directories](/guides/userguide/publishing-components/2-define-components/#formatting-of-the-deployment-directory-with-base-and-target-directories-for-database-and-application-file-deployments) on the order of how the deployment directory is formatted.                                                                                                                                                                                                                                                                                                                           |
+| **Base Directory**                 | If you would like to force all deployments to occur in a specific high level directory, enter it into this field. The _Endpoint_ Base Directory will override the _Component_ Base Directory. For more information see [Formatting Directories](/guides/userguide/2-define-components/) on the order of how the deployment directory is formatted.                                                                                                                                                                                                                                                                                                                           |
 | **Test Connection Result**         | The following fields display the result of the last "Test Connection" executed, performed by using the "Test Connection" option from the _Endpoint_ Dashboard.<ul><li>Name Resolution - Checks to see if the DNS name can be resolved. Returns "OK" on success or "Failed" if not. </li><li> Ping - Checks to see if the _Endpoint_ responds to ping. Returns "OK" on success or "Failed" if not.</li><li>Base Directory Check -Checks to ensure the Base Directory is available on the _EndPoint_ </li><li>Ping Time - Time in milliseconds (ms) for the Ping to respond.</li><li>IPV4 Address - The IP address of the Hostname.</li><li>Last Checked - Timestamp of when the last "Test Connection" was performed.</li><li>Test Results - Success or Failed message for the last "Test Connection" executed.</li></ul> |
 
-{{% include "guides/userguide/reusable/Attributes.md" %}}
+{{% include "/guides/userguide/reusable/Attributes.md" %}}
 
 #### _Endpoint_ Access Control
 
@@ -155,7 +155,7 @@ The Access Section allows _Users_ within designated _Groups_ to update the _Endp
 | **Change** | Any _User_ in any _Group_ in this list can make changes to the _Endpoint_. |
 |**Available Groups**|This list contains all the Groups within the Ortelius installation. Dragging and dropping back and forth between this list and the other two lists allows or prevents access to viewing and changing the selected _EndPoint_.
 
-{{% include "guides/userguide/reusable/AuditTrail.md" %}}
+{{% include "/guides/userguide/reusable/AuditTrail.md" %}}
 
 #### Trends
 

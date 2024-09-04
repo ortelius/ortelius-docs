@@ -5,7 +5,7 @@ weight: 5
 description: >
   Introduction and the Login API
 ---
-APIs can be used to extract and update Ortelius [Objects](/guides/userguide/concepts/basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.
+APIs can be used to extract and update Ortelius [Objects](/guides/userguide/ortelius-basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.
 
 ## Object Accessibility
 
@@ -78,4 +78,6 @@ When issuing calls to the API, the client application must either first issue a 
 
 | Code | Description                                                                         | Schema                                               |
 |------|-------------------------------------------------------------------------------------|------------------------------------------------------|
-| 200  | The result will include a cookie. Include this cookie for subsequent calls to APIs. | [success](/guides/userguide/restapi/models/#success) |
+| 200  | The result will include a cookie. Include this cookie for subsequent calls to APIs. | success |
+
+{{% include "/guides/userguide/reusable/Model Success.md" %}}

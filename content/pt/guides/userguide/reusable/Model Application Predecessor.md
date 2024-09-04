@@ -9,4 +9,4 @@ Only returned for _Application Versions_. A JSON Object represents the predecess
 | summary  | string                               | Is the summary text associated with the predecessor _Application_. | No       |
 | versions | An array of _Application Versions_ ] |                                                                    | No       |
 
-[application_version](/restapi/models/#application_version)
+{{% include "/guides/userguide/reusable/Model Application Version.md" %}}

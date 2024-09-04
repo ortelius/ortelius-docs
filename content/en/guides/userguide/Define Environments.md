@@ -67,7 +67,7 @@ The Access Section allows _Users_ within the 3 default _Groups_ to update the _E
 | **Create Calendar Entries** | Allows _Users_ to control the Calendar for the selected _Environment_. NOTE: Securing Environment Calendars is only available in Ortelius Pro.                      |
 | **Deploy**                  | Allows _Users_ to deploy  _Applications_ into the selected _Environment_.                                                                                           |
 
-{{% include "guides/userguide/reusable/Attributes.md" %}}
+{{% include "/guides/userguide/reusable/Attributes.md" %}}
 
 ### Assigned _Endpoints_
 
@@ -84,4 +84,4 @@ View all the _Application Base Versions_ assigned to this _Environment_. This is
 
 This map shows you all of the current _Component Versions_, with _Application Versions_, that have been deployed to this _Environment_.
 
-{{% include "guides/userguide/reusable/OrteliusAuditTrail.md" %}}
+{{% include "/guides/userguide/reusable/OrteliusAuditTrail.md" %}}

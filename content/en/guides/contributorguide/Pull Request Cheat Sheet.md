@@ -6,8 +6,6 @@ description: >
   Pull Request (PR) Cheat Sheet.
 ---
 
-# Pull Request (PR) Cheat Sheet
-
 ## Savoir-vivre of pull requests
 
 Patches for fixes, features, and improvements are accepted through pull requests. Here are some tips for contributing:

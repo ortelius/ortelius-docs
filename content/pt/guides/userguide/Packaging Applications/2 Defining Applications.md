@@ -82,7 +82,7 @@ Your _Application's_ SBOM is derived by aggregating all of your _Package Compone
 
 _Applications_ can be deployed many times, to the same or different locations (_Environments_). For every Deployment, the Log History will show all deployments based on "Result" and "Date".
 
-{{% include "guides/userguide/reusable/Attributes.md" %}}
+{{% include "/guides/userguide/reusable/Attributes.md" %}}
 
 ### Trends
 
@@ -96,7 +96,7 @@ When you record deployments via the Ortelius CLI, you can capture deployment dat
 
 When tracking versions, the Difference Graph shows what changed in the last deployment between the previous deployment.
 
-{{% include "guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
+{{% include "/guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
 ### Access
 

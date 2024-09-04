@@ -8,7 +8,7 @@ description: >
 
 ## Application Base Versions and Versions
 
- _Applications_ are main [Objects](/guides/userguide/concepts/basic-concepts/#application-object) in Ortelius. They are a collection of _Components_ that can be deployed as a single software solution. You define an _Application_ by associating the _Components_ it will consume. The first time you define an _Application_, it is referred to as the _Application Base Version._ When you change the _Application Base Version_, you create a new _Application Version_. _Applications_ are assigned and deployed to _Environments_. _Applications_ are associated to a _Domain_.
+ _Applications_ are main [Objects](/guides/userguide/ortelius-basic-concepts/) in Ortelius. They are a collection of _Components_ that can be deployed as a single software solution. You define an _Application_ by associating the _Components_ it will consume. The first time you define an _Application_, it is referred to as the _Application Base Version._ When you change the _Application Base Version_, you create a new _Application Version_. _Applications_ are assigned and deployed to _Environments_. _Applications_ are associated to a _Domain_.
 
 - **Application Base Version** : Defines the software product in terms of _Components_, _Attributes,_ and assigned _Environments_.
 
