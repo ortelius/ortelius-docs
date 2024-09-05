@@ -1,4 +1,4 @@
-## Adding Continuous Security Intelligence to your DevOps Pipeline with Ortelius
+## Adding Continuous Security Intelligence to your DevOps Pipeline 
 
 In order to continuously gather pipeline intelligence, Ortelius must become part of your pipeline. Ortelius integrates into your CI/CD process using the Ortelius Command Line (CLI). The Ortelius CLI gathers supply chain data based on a single pipeline workflow at the build and deploy steps. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to.
 
@@ -11,11 +11,7 @@ For the most up to date information on the Ortelius CLI visit the [Ortelius GitH
 
 The Ortelius CLI reads from a .toml file. The .toml file contains non-derived information for each artifact that you create at your build step. In Ortelius, an artifact is referred to as a _Component_.  A _Component_ is a Container, DB Object, or file object (.jar, Lamda Function, Apex file, etc.). The .toml file will provide the 'non-derived' data for the _Component_ your are tracking in Ortelius which includes the _Component_ name, owner, _Component type_, and owner contact details.  The Ortelius CLI will read the .toml file from the Git Repository associated to your pipeline. If you are using a Mono Repository for your entire codebase, you will need a separate Component.toml file for each _Component_, managed in sub-directories.
 
-In a cloud-native decoupled architecture, there are hundreds, if not thousands, of _Components_. Organizing your _Components_ within Ortelius is done in two ways. First, they are grouped based on a subject _Domain_ and secondly, assigned to a logical _Application_. Not all _Components_ need to be assigned to an _Application_, but they should be stored in a subject matter _Domain_ so they can be easily found and reused.
-
- A logical _Application_ is a collection of _Components_ that make up a complete software systems consumed by an end user. Applications are composed of shared _Components_ and _Application_ specific _Components_, and are a logical representation of what _Components_ need to be deployed in order for the software system to run.
-
->Note: Once created, your .toml file does not need to be updated unless the non-derived information changes, or you want to reorganize to which Applications or _Domains_ the Component has been assigned. For example, a Component has been reassigned to a new owner and new team represented by a _Domain_ or _Application_.
+Once created, your .toml file does not need to be updated unless the non-derived information changes, or you want to reorganize to which Applications or _Domains_ the Component has been assigned. For example, a Component has been reassigned to a new owner and new team represented by a _Domain_ or _Application_.
 
 #### Variable Resolution
 
@@ -23,27 +19,29 @@ The ${VARIABLE} syntax represents an environment variable or derived variable th
 
 ##### Derived Variables
 
-| Attribute Name           | Environment Variable        | Description                                                |
-|--------------------------|-----------------------------|------------------------------------------------------------|
-| GitBranch                | GIT_BRANCH                  | Name of the Git Branch                                     |
-| GitBranchCreateCommit    | GIT_BRANCH_CREATE_COMMIT    | Commit that the branch was created from                    |
-| GitBranchCreateTimestamp | GIT_BRANCH_CREATE_TIMESTAMP | Timestamp of the commit that the brach was created from    |
-| GitBranchParent          | GIT_BRANCH_PARENT           | Parent branch that the active branch was created from      |
-| GitCommit                | GIT_COMMIT or SHORT_SHA     | Commit SHA                                                 |
-| GitCommitAuthors         | GIT_COMMIT_AUTHORS          | userids that created the commits in the repo               |
-| GitCommittersCnt         | GIT_COMMITTERS_CNT          | number of users creating commits in the repo               |
-| GitCommitTimestamp       | GIT_COMMIT_TIMESTAMP        | Timestamp of when the commit was created                   |
-| GitContribPercentage     | GIT_CONTRIB_PERCENTAGE      | GitCommittersCnt / GitTotalCommittersCnt * 100             |
-| GitLinesAdded            | GIT_LINES_ADDED             | Number of lines added since previous _Component Version_   |
-| GitLinesDeleted          | GIT_LINES_DELETED           | Number of lines deleted since previous _Component Version_ |
-| GitLinesTotal            | GIT_LINES_TOTAL             | Total number of changed lines for the commit               |
-| GitOrg                   | GIT_ORG                     | GitHub Organization                                        |
-| GitRepo                  | GIT_REPO                    | GitHub Repo Name without Org Name                          |
-| GitRepoProject           | GIT_REPO_PROJECT            | Org/Repo                                                   |
-| GitSignedOffBy           | GIT_SIGNED_OFF_BY           | Email in the `Signed-off by:` commit message               |
-| GitTag                   | GIT_TAG                     | Current tag if active otherwise equal to Git Branch        |
-| GitUrl                   | GIT_URL                     | Full url to the git repo                                   |
-| GitVerifyCommit          | GIT_VERIFY_COMMIT           | Y/N is the commit signed by a verified userid              |
+##### Derived Variables
+
+| Attribute Name | Environment Variable | Description |
+|----------|-------------|--------|
+| GitBranch | GIT_BRANCH | Name of the Git Branch |
+| GitBranchCreateCommit | GIT_BRANCH_CREATE_COMMIT | Commit that the branch was created from |
+| GitBranchCreateTimestamp | GIT_BRANCH_CREATE_TIMESTAMP | Timestamp of the commit that the brach was created from |
+| GitBranchParent | GIT_BRANCH_PARENT | Parent branch that the active branch was created from |
+| GitCommit | GIT_COMMIT or SHORT_SHA | Commit SHA |
+| GitCommitAuthors | GIT_COMMIT_AUTHORS | userids that created the commits in the repo |
+| GitCommittersCnt | GIT_COMMITTERS_CNT | number of users creating commits in the repo |
+| GitCommitTimestamp | GIT_COMMIT_TIMESTAMP | Timestamp of when the commit was created |
+| GitContribPercentage | GIT_CONTRIB_PERCENTAGE | GitCommittersCnt / GitTotalCommittersCnt * 100 |
+| GitLinesAdded | GIT_LINES_ADDED | Number of lines added since previous _Component Version_ |
+| GitLinesDeleted | GIT_LINES_DELETED | Number of lines deleted since previous _Component Version_ |
+| GitLinesTotal | GIT_LINES_TOTAL | Total number of changed lines for the commit |
+| GitOrg | GIT_ORG | GitHub Organization |
+| GitRepo | GIT_REPO | GitHub Repo Name without Org Name |
+| GitRepoProject | GIT_REPO_PROJECT | Org/Repo |
+| GitSignedOffBy | GIT_SIGNED_OFF_BY | Email in the `Signed-off by:` commit message |
+| GitTag | GIT_TAG | Current tag if active otherwise equal to Git Branch |
+| GitUrl | GIT_URL | Full url to the git repo |
+| GitVerifyCommit | GIT_VERIFY_COMMIT | Y/N is the commit signed by a verified userid |
 
 ##### Derived Files
 
@@ -236,3 +234,54 @@ Go to the ‘Application View.’ Select ‘Package Search’ from the high-leve
 <br>
 <img src='/PackageSerachResults.png'  />
 <div style="margin-left:20%"></div>
+
+## Recording DORA Metrics for Deployment
+
+Recording deployment frequency and lead time to change provides needed Dora Metrics. This can be done via the CI/CD integration. The output from the deployment can be passed to the CLI to be persisted with the _Application Version_ and _Component Versions_. 
+
+The CLI accepts a json file that defines the _Application Version_, _Environment_ and deployment return code. The _Application Version_ is an existing application version that was created manually or earlier in your pipeline. The _Environment_ the environment, Dev, QA or Prod, that the _Application Version_ was deployed to.  The deployment return code is 0 for successful deployment or 1 for failed deployment.
+
+#### Deploy.json File
+
+```json
+{
+ "application": "GLOBAL.Online Store Company.Hipster Store.Test.Hipster Store;Labor Day Sale;1_2_10_2",
+ "environment": "GLOBAL.Online Store Company.Hipster Store.qa3-windows",
+ "rc": 0
+}
+```
+
+#### Running the CLI
+
+The following variables should be set at the beginning of your Pipeline.
+
+| Variable | Value                  | Description                                                                              |
+|----------|------------------------|------------------------------------------------------------------------------------------|
+| DHURL    | URL to Ortelius Login | The URL used to access Ortelius.                                                        |
+| DHUSER   | UserID                 | The ID used to log into Ortelius                                                       |
+| DHPASS   | password               | The password used to log into Ortelius. This can encrypted based on the CI/CD solution. |
+
+Example
+
+```bash
+export DHURL=https://deployhub.example.com
+export DHUSER=Stella99
+export DHPASS=password
+```
+
+```bash
+dh deploy --deploydata deploy.json --logdeployment
+```
+
+#### Results
+
+In the Ortelius dashboard, navigate to the _Application_ list view.  You will see that the _Application Version_ has been deployed to
+_Environment_ with a _Deployment_ number.  The _Deployment_ number is generated by the CLI.  
+
+The Deployment Frequency report is accessible by selecting an _Application Version_ in the list view, then menu item `Reports -> Deployment Frequency`.
+
+![Deployment Frequency](/guides/userguide/images/deploymentfrequency.png)
+
+The data time the top and bottom graphs are the same but use different visualizations in order to under the the Deployment Frequency.
+
+The graphs are interactive, so float-overs and clicking on the labels will highlight and filter the data.
