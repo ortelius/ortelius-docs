@@ -2,7 +2,7 @@
 
 | Name           | Type                | Description                                                                                              | Required |
 |----------------|---------------------|----------------------------------------------------------------------------------------------------------|----------|
-| id             | integer             | Is the _Component's_ internal ID.                                                                        | No       |
+| ID             | integer             | Is the _Component's_ internal ID.                                                                        | No       |
 | lastbuild      | integer             | Is the last build number associated with this _Component_ (0 if never built or no associated build job). | No       |
 | name           | string              | Is the name of the _Component_.                                                                          | No       |
 | summary        | string              | Is the summary text associated with the _Component_.                                                     | No       |

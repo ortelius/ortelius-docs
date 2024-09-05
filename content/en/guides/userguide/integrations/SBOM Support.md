@@ -10,9 +10,9 @@ description: >
 
 Ortelius can store your Software Bill of Material scan results for each image 'build.'
 
-You will need to set up Ortelius to be called by your DevOps Pipeline using the Ortelius CI/CD Command Line Interface. For more information refer to the [First Steps section.](/guides/userguide/integrations/ci-cd_integrations/)
+You will need to set up Ortelius to be called by your DevOps Pipeline using the Ortelius CI/CD Command Line Interface. For more information refer to the [CI/CD Integration.](/guides/userguide/integrations/ci-cd_integrations/)
 
->Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/cli/blob/main/doc/dh.md) for installation instructions.
+>Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Command Line Interface Installation](/guides/userguide/installation-and-support/0-commandlineinterface/) for installation instructions.
 
 ### SPDX or CycloneDX
 

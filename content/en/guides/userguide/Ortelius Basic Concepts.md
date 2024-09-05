@@ -8,7 +8,7 @@ description: >
 
 ## Introduction
 
-Ortelius's core Objects are _Domains_, _Applications_, _Components_, _Environments_ and _Endpoints_. These Objects organize, aggregate, and version independently released artifacts with their DevSecOps metadata such as deployment location, Software Bill of Materials, OpenSSF Scorecard, and CVEs. This data is the basis for analyzing your software systems security posture and tracking vulnerabilities to where they are running in your environment.  
+Ortelius's core Objects are _Domains_, _Applications_, _Components_, _Environments_ and _Endpoints_. These Objects organize, aggregate, and version independently released artifacts with their DevSecOps metadata such as deployment location, Software Bill of Materials, OpenSSF Scorecard, and CVEs. This data is the basis for analyzing your software system's security posture and tracking vulnerabilities to where they are running in your environment.  
 
  _Objects_ related to gathering Security Intelligence include:
 
@@ -37,19 +37,19 @@ The following properties can be accessed on the _Domain_ object:
 
 | **Property** |  **Description** |
 | --- | --- | --- |
-| id |  _Domain_ id, as used in the database. |
-| name | _Domain_ name. |
+| ID |  _Domain_ id, as used in the database. |
+| Name | _Domain_ name. |
 | fqdomain | Fully qualified _Domain_ name. |
-| summary | Summary text. |
-| domain | Higher level _Domain_ to which it belongs. |
-| subdomains | List of _Domain_ objects which are contained within it. |
+| Summary | Summary text. |
+| _Domain_ | Higher level organization to which it belongs. |
+| _Subdomains_ | Lower level organization to which it belongs |
 | _Applications_ | The _Application_ objects which are contained within it. |
 | _Environments_ | The _Environment_ objects which are contained within it. |
-| creator | The _User_ or _Group_ Object representing the user who created it. |
-| modifier | The _User_ or _Group_  Object representing the user who last modified it. |
+| Creator | The _User_ or _Group_ Object representing the user who created it. |
+| Modifier | The _User_ or _Group_  Object representing the user who last modified it. |
 | ctime | _Date_ Object representing the date/time it was created. |
 | mtime | _Date_ Object representing the date/time it was last modified. |
-| owner | _User_ or _Group_ Objects that owns it. |
+| Owner | _User_ or _Group_ Objects that owns it. |
 
 ### _Component_ Object
 
@@ -65,20 +65,20 @@ A _Component_ Object has the following properties:
 
 | **Property** |  **Description** |
 | --- | --- | --- |
-| id | A unique identifier for the _Component_ as used in the database. |
-| name | The name of the _Component_. |
+| ID | A unique identifier for the _Component_ as used in the database. |
+| Name | The name of the _Component_. |
 | fqdomain | Fully qualified _Domain_ name. |
-| summary |  Description of the _Component_. |
-| domain | _Domain_ in which the _Component_ is contained. |
-| owner | User or UserGroup that owns the _Component_. |
-| parent | The Base _Component_. |
-| predecessor | The version on which this is based. |
-| items | The items that make up this _Component_. |
-| servers | The _Endpoints_ to which this _Component_ has been deployed. |
-| requests | The change requests associated with this _Component_ .|
-| lastbuild | The last build number for this _Component_, 0 if never built. |
-| creator | The User who created this _Component_. |
-| modifier | The User who last modified this _Component_. |
+| Summary |  Description of the _Component_. |
+| _Domain_ | Organization in which the _Component_ is contained. |
+| Owner | User or UserGroup that owns the _Component_. |
+| Parent | The Base _Component_. |
+| Predecessor | The version on which this is based. |
+| Items | The items that make up this _Component_. |
+| _Endpoint_ | The compute node to which this _Component_ has been deployed. |
+| Requests | The change requests associated with this _Component_ .|
+| Lastbuild | The last build number for this _Component_, 0 if never built. |
+| Creator | The User who created this _Component_. |
+| Modifier | The User who last modified this _Component_. |
 | ctime | The date/time the _Component_ was created. |
 | mtime | The date/time the _Component_ was last modified. |
 | Key Value Configurations | Key Value Pairs for managing associative arrays. |
@@ -96,23 +96,23 @@ An _Application_ has the following properties:
 
 | **Property**      | **Description**                                                              |
 |-------------------|------------------------------------------------------------------------------|
-| id                | A unique identifier for the _Application_  in the database.                  |
+| ID                | A unique identifier for the _Application_  in the database.                  |
 | name              | _Application_ name.                                                          |
 | fqdomain          | Fully qualified _Domain_ name.                                               |
-| summary           | Summary of the _Domain_.                                                     |
-| owner             | _User_ or _Group_ that owns it.                                              |
-| parent            | The Base _Application_.                                                      |
-| predecessor       | Predecessor _Application Version_.                                           |
+| Summary           | Summary of the _Domain_.                                                     |
+| Owner             | _User_ or _Group_ that owns it.                                              |
+| Parent            | The Base _Application_.                                                      |
+| Predecessor       | Predecessor _Application Version_.                                           |
 | _Release_         | Defines the _Application_ Object with more than one _Application_.           |
 | _Applications_    | Multiple _Applications_ used to create a _Release_.                          |
 | _Components_      | The objects that the _Application_ consumes.                                 |
-| approvals         | Allows a control point for progressing a change within the pipeline process. |
-| requests          | The _Change Request_ objects associated with this _Application_.             |
-| creator           | The _User_ or _Group_ who created it.                                        |
-| modifier          | The _User_ or _Group_ who last modified it.                                  |
+| Approvals         | Allows a control point for progressing a change within the pipeline process. |
+| Requests          | The _Change Request_ objects associated with this _Application_.             |
+| Creator           | The _User_ or _Group_ who created it.                                        |
+| Modifier          | The _User_ or _Group_ who last modified it.                                  |
 | ctime             | The date/time it was created.                                                |
 | mtime             | The date/time it was last modified.                                          |
-| KV Configurations | Key Value Pairs for managing associative arrays.                             |
+| Kev Value Configurations | Key Value Pairs for managing associative arrays.                             |
 
 
 ### _Component_ and _Application_ Relationships
@@ -139,25 +139,25 @@ The following properties can be accessed for an _Environment_ object:
 
 | **Property**   | **Description**                             |
 |----------------|---------------------------------------------|
-| id             | Unique identifier as used in the database.  |
-| name           | _Environment_ name.                         |
+| ID             | Unique identifier as used in the database.  |
+| Name           | _Environment_ name.                         |
 | fqdomain       | Fully qualified _Domain_ name.              |
-| summary        | Description of the _Environment_.           |
-| domain         | _Domain_ in which it is contained.          |
-| owner          | _User_ or _Group_ Objects that owns it.     |
+| Summary        | Description of the _Environment_.           |
+| _Domain_         | _Domain_ in which it is contained.          |
+| Owner          | _User_ or _Group_ Objects that owns it.     |
 | basedir        | Base directory for deployments.             |
-| _Endpoints_    | The _Endpoints_ assigned to it.             |
+| _Endpoints_    | The compute node assigned to it.             |
 | _Applications_ | The _Applications_ associated to it.        |
-| creator        | The _User_ or _Group_ who created it.       |
-| modifier       | The _User_ or _Group_ who last modified it. |
+| Creator        | The _User_ or _Group_ who created it.       |
+| Modifier       | The _User_ or _Group_ who last modified it. |
 | ctime          | The date/time it was created.               |
 | mtime          | The date/time it was last modified.         |
-| parent         | Parent _Domain_.                            |
+| Parent         | Parent _Domain_.                            |
 
 
 ### _Endpoint_ Object
 
-The [_Endpoint_ Object](/guides/userguide/define-endpoints/) (Local Helm Host, container, VM/Cloud Image)  represents where an _Application_ is running. _Endpoints_ are assigned to an _Environment_.
+The [_Endpoint_ Object](/guides/userguide/define-endpoints/) is a compute node that (Local Helm Host, container, VM/Cloud Image) represents where an _Application_ is running. _Endpoints_ are assigned to an _Environment_.
 
 
 ### _Endpoint_ Mapping
@@ -171,17 +171,17 @@ The _Endpoint_ object has the following properties:
 
 | **Property**             | **Description**                                        |
 |--------------------------|--------------------------------------------------------|
-| id                       | A unique identifier as used in the database.           |
-| name                     | The _Endpoint_ name.                                   |
+| ID                       | A unique identifier as used in the database.           |
+| Name                     | The _Endpoint_ name.                                   |
 | fqdomain                 | Fully qualified _Domain_ name.                         |
-| summary                  | Description of the _Endpoint_.                         |
-| domain                   | _Domain_ in which it is contained.                     |
-| owner                    | _User_ or _Group_ that owns it.                        |
-| hostname                 | Hostname (if set) or name otherwise.                   |
+| Summary                  | Description of the _Endpoint_.                         |
+| _Domain_                   | _Domain_ in which it is contained.                     |
+| Owner                    | _User_ or _Group_ that owns it.                        |
+| Hostname                 | Hostname (if set) or name otherwise.                   |
 | basedir                  | Base Directory for where the _Application_ is running. |
 | _Components_             | The _Components_ currently installed on it.            |
-| creator                  | The _User_ or _Group_ who created it.                  |
-| modifier                 | The _User_ or _Group_ who last modified it.            |
+| Creator                  | The _User_ or _Group_ who created it.                  |
+| Modifier                 | The _User_ or _Group_ who last modified it.            |
 | ctime                    | The date/time it was created.                          |
 | mtime                    | The date/time it was last modified.                    |
 | Key Value Configurations | Key Value Pairs for managing associative arrays.       |

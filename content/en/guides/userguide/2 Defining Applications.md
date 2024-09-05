@@ -111,6 +111,10 @@ Below are the Details for an _Application_.
 
 {{% include "/guides/userguide/reusable/OrteliusAuditTrail.md" %}}
 
+### Auditing Deployments
+
+When a deployment is logged via the CI/CD workflow, the output from the deployment can be passed to the CLI to be persisted with the _Application Version_ and _Component Versions_. Learn more about the [CI/CD CLI Integration](/guides/userguide/integrations/ci-cd_integrations/)
+
 ## Audit and Access Section
 
  _Users_ within the defualt _Groups_ can update or view the _Application_. To add a _Group_ to one of the access lists, drag and drop the _Group_ from the Available Groups list onto desired access list. All _Users_ who belong to a _Group_ within an Access lists will be granted access to the _Application_:

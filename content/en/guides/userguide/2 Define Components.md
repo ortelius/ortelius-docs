@@ -247,6 +247,10 @@ The following Git information is gathered for each _Component_.
 
 {{% include "/guides/userguide/reusable/OrteliusAuditTrail.md" %}}
 
+### Auditing Deployments
+
+When a deployment is logged via the CI/CD workflow, the output from the deployment can be passed to the CLI to be persisted with the _Application Version_ and _Component Versions_. Learn more about the [CI/CD CLI Integration](/guides/userguide/integrations/ci-cd_integrations/)
+
 ## Audit and Access Section
 
 The Audit and Access Section allows _Users_ within one of the 3 default User _Groups_ to update or view the _Component_. To one of the default User _Groups_ to one of the access lists, drag and drop the _Group_ from the Available Groups list onto desired access list. All _Users_ who belong to a _Group_ that appear in one of the Access lists will be granted access to the _Component_:

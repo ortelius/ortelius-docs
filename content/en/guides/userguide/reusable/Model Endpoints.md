@@ -9,7 +9,7 @@
 | domain       | string                                          | Is the _Endpoint's_ fully qualified _Domain_.                                                             | No       |
 | environments | environment                                     | Is the list of _Environments_ associated to the _Endpoint_.                                               | No       |
 | hostname     | string                                          | Is the hostname of the _Endpoint_.                                                                        | No       |
-| id           | string                                          | Is the _Endpoint's_ internal object ID.                                                                   | No       |
+| ID           | string                                          | Is the _Endpoint's_ internal object ID.                                                                   | No       |
 | md5template  | string                                          | Is the name of the template to be used for notification should the _Endpoint_ fail an automated mD5 scan. | No       |
 | name         | string                                          | Is the server's name.                                                                                     | No       |
 | owneruser    | string                                          | If the "owner" of the _Endpoint_ is a _User_, then this is the name of the _User_.                        | No       |

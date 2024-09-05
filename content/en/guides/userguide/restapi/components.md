@@ -32,8 +32,6 @@ Retrieve specific _Component_ or _Component_ version. This call returns a JSON O
 {{% include "/guides/userguide/reusable/Model Component Version Full.md" %}}
 {{% include "/guides/userguide/reusable/Model Application Version Full.md" %}}
 {{% include "/guides/userguide/reusable/Model Application Version.md" %}}
-{{% include "/guides/userguide/reusable/Model Request.md" %}}
-{{% include "/guides/userguide/reusable/Model Approve or Reject.md" %}}
 
 ## Create New _Component Version_
 

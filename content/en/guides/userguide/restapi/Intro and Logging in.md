@@ -5,7 +5,7 @@ weight: 5
 description: >
   Introduction to APIs and the Login API
 ---
-APIs can be used to extract and update Ortelius [Objects](/guides/userguide/ortelius-basic-concepts/).  The most common use for APIs is to integrate Ortelius into your continuous delivery engine for a continuous configuration management and deploy process.  APIs are generally used for executing deployments, but can also be used to automatically update _Component_ and _Application_ versions.
+APIs can be used to extract and update Ortelius [Objects](/guides/userguide/ortelius-basic-concepts/) for custom security reporting or integration into external systems.  
 
 ## Object Accessibility
 
@@ -37,7 +37,7 @@ The query tools in the API return the object's internal ID as well as its name. 
 
 To use the ID, just place it where you would normally place the object's name. The APIs will assume you're specifying an ID if the name given is fully-numeric.
 
-_Do not create objects with fully numeric names - Ortelius will not be able to determine if this is an object id or the object name._
+_Do not create objects with fully numeric names - Ortelius will not be able to determine if this is an object ID or the object name._
 
 ## Using cURL to access the API
 
@@ -71,7 +71,7 @@ When issuing calls to the API, the client application must either first issue a 
 
 | Name | Located in | Value             | Required | Schema |
 |------|------------|-------------------|----------|--------|
-| user | query      | User Id           | Yes      | string |
+| user | query      | User ID           | Yes      | string |
 | pass | query      | Password for User | Yes      | string |
 
 ### Responses

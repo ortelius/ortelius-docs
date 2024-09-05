@@ -51,18 +51,32 @@ Ortelius versions both _Components_ and 'logical' _Applications_.  When versioni
 
 ## Core Features
 
-**Package Vulnerability Search** Discover where a vulnerability is running across all endpoints. Ortelius can show you which logical _Applications_ are consuming a vulnerable package, and where it is deployed.
+**Package Vulnerability Search:**
 
-**Dependency maps:** Shows you the 'logical' view of your _Application_ and which _Components_ are consumed. Once you begin decoupling monolithic software, you need to track who is using each independently deployed _Component_. An _Application_ is a logical collection of _Components_ that make up an entire software solution.
+ Discover where a vulnerability is running across all endpoints. Ortelius can show you which logical _Applications_ are consuming a vulnerable package, and where it is deployed.
 
-**Application Level SBOMs and CVE:** Ortelius aggregates all _Component_ level data up to the logical _Application Version_ making it easy to provide security reporting on a complete software system, even when it is decoupled.
+**Dependency maps:** 
 
-**Blast Radius:** Know your _Component_ impact before you ever deploy. Ortelius can provide predictive insights showing what _Applications_ will be impacted by an updated service. Ortelius provides this data in clear maps of dependent _Applications_ and services. The blast radius also shows what _Components_ and _Applications_ are impacted by a vulnerability for rapid response.
+Understand _Component_ to _Application_ dependencies. Ortelius presents the 'logical' view of an _Application_ with all _Component_ dependencies. 
 
-**Improved incident response:** Ortelius makes it easy to find the owner of _Component_, and contact them through PagerDuty, HipChat, Discord, Slack, email or phone.
+**Application Level SBOMs and CVE:** 
 
-**Integrates into your CD pipeline:** Ortelius is automated via your CD Pipeline to continuously version your decoupled architecture with changes, including where they are deployed.
+Ortelius aggregates all _Component_ level data up to the logical _Application Version_ making it easy to provide security reporting on a complete software system, even when it is decoupled. Ortelius makes it easy to respond to government Software Bill of Material reporting as defined in Executive Order 14028. 
 
-**Domain-Driven-Design:** The Ortelius Domain structure organizes your software supply chain to encourage reuse and sharing across development teams.
+**Blast Radius:** 
+
+See how a single _Component_ impacts consuming _Applications_. Ortelius can provide predictive insights showing what _Applications_ will be impacted by an updated service. Ortelius provides this data in clear maps of dependent _Applications_ and services. The blast radius also shows which _Components_ and _Applications_ are impacted by a vulnerability for rapid response. 
+
+**Improved incident response:**
+
+ Ortelius makes it easy to find the owner of _Component_, and contact them through PagerDuty, HipChat, Discord, Slack, email or phone.
+
+**Integrates into your CD pipeline:**
+
+ Ortelius is automated via your CD Pipeline to continuously version your decoupled architecture with changes, including where they are deployed.
+
+**Domain-Driven-Design:** 
+
+The Ortelius Domain structure organizes your software supply chain to encourage reuse and sharing across development teams.
 
 
