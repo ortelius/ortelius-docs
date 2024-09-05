@@ -1,7 +1,7 @@
 ---
 title: "CI/CD Support"
 linkTitle: "CI/CD Support "
-weight: 300
+weight: 303
 description: >
   Integrating Ortelius into your CI/CD process.
 ---

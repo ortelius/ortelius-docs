@@ -1,7 +1,7 @@
 ---
 title: "Swagger/OpenAPI Integration"
 linkTitle: "Swagger/OpenAPI Integration"
-weight: 315
+weight: 330
 description: >
   Tracking Swagger/OpenAPI for Your Component
 ---

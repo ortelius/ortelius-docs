@@ -1,7 +1,7 @@
 ---
 title: "Veracode Software Security Integration"
 linkTitle: "Veracode Integration"
-weight: 321
+weight: 331
 description: >
   Associating Veracode Security Scan to your _Component Version_.
 ---
