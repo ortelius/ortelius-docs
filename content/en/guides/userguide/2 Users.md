@@ -10,11 +10,11 @@ description: >
 
 _Users_ are given access to Ortelius Objects based on their _Group_ access. By default there are three _Groups_.
 
--Administrator _Group_ - The _User_ who initially signs into Ortelius is automatically added to this _Group_. By default, this _Group_ has access to all objects.
--User _Group_ - All _Users_ who sign in after the initial Administrator _User_ is created.
--Everyone _Group_ - All Users regardless of their assigned _Group_ are automatically added to this _Group_. It is the default _Group_ that provides access to "everyone" for all Objects.  To restrict _Everyone_ access, update the _Access_ options at the Object level.  This _Group_ cannot be modified.  If you delete a _User_ from the system, they will be deleted from the Everyone _Group_.
+- Administrator _Group_ - The _User_ who initially signs into Ortelius is automatically added to this _Group_. By default, this _Group_ has access to all objects.
+- User _Group_ - All _Users_ who sign in after the initial Administrator _User_ is created.
+- Everyone _Group_ - All Users regardless of their assigned _Group_ are automatically added to this _Group_. It is the default _Group_ that provides access to "everyone" for all Objects.  To restrict _Everyone_ access, update the _Access_ options at the Object level.  This _Group_ cannot be modified.  If you delete a _User_ from the system, they will be deleted from the Everyone _Group_.
 
-A many-to-many relationship exists between _Users_ and _Groups_, so that a _User_ can belong to many different _Groups_, and a _Group_ can contain many different _Users_. If a _User_ belongs to more than one _Group_, the _User_ will be given the highest level of access.
+A many-to-many relationship exists between _Users_ and _Groups_, so that a _User_ can belong to any of the three _Groups_, and a _Group_ can contain many different _Users_. If a _User_ belongs to more than one _Group_, the _User_ will be given the highest level of access.
 
 ### _Users_ and _Domain_ Inheritance
 
@@ -62,6 +62,6 @@ The following details are common to all _Users_:
 
 This Section contains a list of all the _Groups_ the selected _User_ belongs to. Add a _Group_ to the selected _User_ by clicking on the plus '+Add' sign in the upper right, which adds an empty row to the table with a drop down list of all available _Groups_. Use the Save option to commit it to the table. Use the Trash Can icon to delete a _Group_ from the table.
 
-Ortelius has two _Groups_, Administrators and Users, to which _Users_ can be assigned.  Access control to Objects are based on these two high level _Groups_. Ortelius allows you to create as many _Users_ as required but only the "User" and "Administrator" _Groups_ are supported.
+Ortelius has three _Groups_, Administrators, Users, and Everyone to which _Users_ can be assigned.  Access control to Objects are based on these three high level _Groups_. Ortelius allows you to create as many _Users_ as required but only the default _Groups_ are available. Ortelius does not support adding new _Groups_.
 
-{{% include "/guides/userguide/reusable/AuditTrail.md" %}}
+{{% include "/guides/userguide/reusable/OrteliusAuditTrail.md" %}}

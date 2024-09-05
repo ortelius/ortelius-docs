@@ -217,13 +217,13 @@ dh updatecomp --rsp component.toml
 ### Application to Component Dependencies
 Select Your Application from the ‘Application View.’ It should show you one Component as a dependency.
 
-<img src='/userguide/images/ApplicationComponentDepVersions.png' alt="Application Component Dependencies" />
+<img src='/guides/userguide/images/ApplicationComponentDepVersions.png' alt="Application Component Dependencies" />
 <div style="margin-left:20%"><b>1 - The Hello World Application shows one Dependency.</b></div>
 
 ### Application Level SBOM and CVE
 Review the Application SBOM and vulnerabilities. Note: CVE Results may vary depending on the time of the scan.
 
-<img src='/userguide/images/ApplicationSBOMandCVE.png' alt="Application Level SBOM and CVEs" />
+<img src='/guides/userguide/images/ApplicationSBOMandCVE.png' alt="Application Level SBOM and CVEs" />
 <div style="margin-left:20%"><b>
 
 Note: CVE Results may vary depending on the time of the scan.</i></b></div>
@@ -231,14 +231,14 @@ Note: CVE Results may vary depending on the time of the scan.</i></b></div>
 ### Component Ownership
 Go to the ‘Component View’. You should see your Component Ownership and Detail, including its SBOM and vulnerabilities.
 
-<img src='/userguide/images/Componetownership.png'  alt="Component Ownership" />
+<img src='/guides/userguide/images/Componetownership.png'  alt="Component Ownership" />
 <div style="margin-left:20%"><b>3 - Component Ownership and Detail</b></div>
 
 ### Supply Chain “Package” Search
 Go to the ‘Application View.’ Select ‘Package Search’ from the high-level menu. Enter a package name such as ‘spring’ to identify all locations where the package is used.
 
-<img src='/userguide/images/packagesearch.png' alt="Package Search" />
+<img src='/guides/userguide/images/packagesearch.png' alt="Package Search" />
 <div style="margin-left:20%"><b>4 - Package Search</b></div>
 <br>
-<img src='/userguide/images/PackageSerachResults.png' alt="Package Search Results"  />
+<img src='/guides/userguide/images/PackageSerachResults.png' alt="Package Search Results"  />
 <div style="margin-left:20%"><b>4 - Package Search Results</b></div>

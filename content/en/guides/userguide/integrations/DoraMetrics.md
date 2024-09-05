@@ -1,7 +1,7 @@
 ---
 title: "DORA Metrics Reports"
 linkTitle: "DORA Metrics Reports"
-weight: 30
+weight: 322
 description: >
   Aggregated DORA Metrics for Decoupled Deployments
 ---

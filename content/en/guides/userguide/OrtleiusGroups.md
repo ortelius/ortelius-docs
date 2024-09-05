@@ -8,7 +8,7 @@ description: >
 
 ## Intro to _Groups_
 
-Ortelius has three default Groups - Administrators, Everyone and Users.  Access control to Objects are based on these three high level _Groups_. You can modify these _Groups_ as needed to create access controls around Objects.
+Ortelius has three default Groups - Administrators, Everyone and Users.  Access control to Objects are based on these three high level _Groups_. You can modify these _Groups_ as needed to create access controls around Objects. New _Groups_ cannot be created. 
 
 ## Using the _Group_ List Viewing
 
@@ -38,15 +38,9 @@ _Groups_ have the following attributes:
 | **Domains**                 | When checked, allows the _User_ to create and add _Subdomains_ to any of the _Domains_ to which they belong.                                                                                                                                                                    |
 | **Environments**            | When checked, allows the _User_ to create and add _Environments_ to any of the _Domains_ to which they belong.                                                                                                                                                                  |
 | **Endpoints**               | When checked, allows the _User_ to create and add _Endpoints_ to any of the _Domains_ to which they belong.                                                                                                                                                                     |
-| **Repositories**            | When checked, allows the _User_ to create and add _Repositories_ to any of the _Domains_ to which they belong.                                                                                                                                                                  |
 | **Components**              | When checked, allows the _User_ to create and add _Components_ to any of the _Domains_ to which they belong.                                                                                                                                                                    |
-| **Credentials**             | When checked, allows the _User_ to create and add _Credentials_ to any of the _Domains_ to which they belong.                                                                                                                                                                   |
 | **Applications**            | When checked, allows the _User_ to create and add _Applications_ to any of the _Domains_ to which they belong.                                                                                                                                                                  |
 | **Application Versions**    | When checked, allows the _User_ to create and add _Application Versions_ to any of the _Domains_ to which they belong.                                                                                                                                                          |
-| **Actions**                 | When checked, allows the _User_ to create and add _Actions_ to any of the _Domains_ to which they belong.                                                                                                                                                                       |
-| **Procedures**              | When checked, allows the _User_ to create and add _Procedures_ to any of the _Domains_ to which they belong.                                                                                                                                                                    |
-| **Data Sources**            | When checked, allows the _User_ to create and add _DataSources_ to any of the _Domains_ to which they belong.                                                                                                                                                                   |
-| **Notifiers**               | When checked, allows the _User_ to create and add _Notifiers_ to any of the _Domains_ to which they belong.                                                                                                                                                                     |
 | **Build Engines**           | When checked, allows the _User_ to create and add _Build Engines_ to any of the _Domains_ to which they belong.                                                                                                                                                                 |
 
 ### Group Membership

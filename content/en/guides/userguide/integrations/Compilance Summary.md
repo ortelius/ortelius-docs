@@ -1,7 +1,7 @@
 ---
 title: "Application Compliance Summary Report"
 linkTitle: "Application Compliance Summary Report"
-weight: 25
+weight: 320
 description: >
   Application Compliance Summary Report
 ---
@@ -26,6 +26,8 @@ Metrics are aggregated together from the _Component Versions_ and _Environments_
 | License | The _Component Version_ has a License file associated (green check). The License is derived by the Ortelius CLI in the CI/CD pipeline and associated to the _Component Version_. |
 | Env: columns | These 0 to N columns, each one representing an _Environment_ that the _Application Version_ has been deployed to successfully (green check). A red dash for a failed deployment. Empty for no deployment.  Deployments can be recorded using the Ortelius CLI in the CI/CD pipeline. |
 
+See [SonarQube Code Quality and Security Solution Integration](/guides/userguide/integrations/sonarqube/) and [Veracode Software Security Integration](/guides/userguide/integrations/veracode/) for the respective setup instructions.
+
 ### Generating the Compliance Summary Report
 
-Go to the _Application_ list view and select (check mark) an _Application_.  Next select the Reports -> Compliance Scorecard menu.  The report will be generated in a new browser window.  The report includes all _Application Versions_ in order to show historical trends of the metrics.
+Go to the _Application_ list view and select (check mark) an _Application_.  Next select the Reports -> Compliance Summary menu.  The report will be generated in a new browser window.  The report includes all _Application Versions_ in the version tree in order to show historical trends of the metrics.

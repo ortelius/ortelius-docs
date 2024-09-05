@@ -85,3 +85,7 @@ View all the _Application Base Versions_ assigned to this _Environment_. This is
 This map shows you all of the current _Component Versions_, with _Application Versions_, that have been deployed to this _Environment_.
 
 {{% include "/guides/userguide/reusable/OrteliusAuditTrail.md" %}}
+
+### Auditing Deployments
+
+When a deployment is logged via the CI/CD workflow, the output from the deployment can be passed to the CLI to be persisted with the _Application Version_ and _Component Versions_. Learn more about the [CI/CD CLI Integration](/guides/userguide/integrations/ci-cd_integrations/)

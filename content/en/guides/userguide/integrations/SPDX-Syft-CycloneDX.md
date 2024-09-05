@@ -1,7 +1,7 @@
 ---
 title: "SPDX, CycloneDX and Syft"
 linkTitle: "SPDX, CycloneDX and Syft"
-weight: 326
+weight: 308
 description: >
   Collecting SBOM data with SPDX, CycloneDX and Syft.
 ---

@@ -70,3 +70,7 @@ The Access Section allows _Users_ within the 3 default _Groups_ to update the _E
 
 {{% include "/guides/userguide/reusable/OrteliusAuditTrail.md" %}}
 
+### Auditing Deployments
+
+When a deployment is logged via the CI/CD workflow, the output from the deployment can be passed to the CLI to be persisted with the _Application Version_ and _Component Versions_. Learn more about the [CI/CD CLI Integration](/guides/userguide/integrations/ci-cd_integrations/)
+
