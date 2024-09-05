@@ -8,11 +8,11 @@ description: >
 
 ## Veracode
 
-Ortelius can associate Veracode Security Scan to your _Component Version_  Associating these metrics enable compliance scoring for _Application Versions_ since the metrics are rolled-up from the _Component Versions_ to the _Application Version_.  See an Application Compliance Scorecard Report below for details.
+Ortelius can associate Veracode Security Scan to your _Component Version_  Associating these metrics enable compliance scoring for _Application Versions_ since the metrics are rolled-up from the _Component Versions_ to the _Application Version_.  See an Application Compliance Summary Report below for details.
 
-### Example Scorecard Report
+### Example Compliance Summary Report
 
-![Scorecard with Veracode Metrics](/scorecard-complete-vc.png)
+![Summary with Veracode Metrics](/scorecard-complete-vc.png)
 
 ### Getting metrics from Veracode to Ortelius
 

@@ -1,0 +1,29 @@
+---
+title: "OpenSSF Scorecard Integration"
+linkTitle: "OpenSSF Scorecard Integration"
+weight: 314 
+description: >
+  OpenSSF Scorecard Integration
+---
+
+## OpenSSF Scorecard - Security health metrics for Open Source
+
+Scorecard is an automated tool that assesses a number of important heuristics ("checks") associated with software security and assigns each check a score of 0-10. You can use these scores to understand specific areas to improve in order to strengthen the security posture of your project. You can also assess the risks that dependencies introduce, and make informed decisions about accepting these risks, evaluating alternative solutions, or working with the maintainers to make improvements.
+
+### Gathering Scorecard Metrics
+
+When a _Component Version_ is created the OpenSSF Scorecard metrics are retrieved and stored with the _Component Version_.  The Scorecard Rest API call is made using the Git Repo and Git Commit as parameters.  If the Scorecard metrics are not found a second call is made to the Rest API without the Git Commit.  
+
+> Note:  The _Component Version_ must have the Git Repo and Git Commit fields set in order to retrieve the metrics from the Scorecard Rest API.  The Git Repo and Git Commit can be added using the Ortelius CLI in the CI/CD pipeline.
+
+### Viewing Scorecard Metrics
+
+On the _Component Version_ details screen, the _OpenSSF Scorecard_ section will be populated with the metrics found.  _OpenSSF Scorecard Pinned to Commit_ will be true if metrics were found for the corresponding git commit otherwise false.  The other checks in the Scorecard will be ranked 0 to 10, with 10 being the best.  All the checks will be 0 if no metrics are found at all.
+
+### View Scorecard Metrics for Package Dependencies
+
+On the _Component Version_ details screen, the _Software Bill of Materials (SBOM)_ section includes the OSSF Scorecard column.  This column is the overall average score for the package.  The column will be 0 if no Scorecard exists for the package dependency.
+
+### Generating Scorecard Metrics
+
+The CI/CD pipeline needs to generate the Scorecard metrics.  See [Scorecard Installation and Configuration](https://github.com/ossf/scorecard?tab=readme-ov-file#using-scorecard) for details.
