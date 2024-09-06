@@ -1,7 +1,7 @@
 ---
 title: "Helm for Container Deployments"
 linkTitle: "Helm for Container Deployments"
-weight: 325
+weight: 311
 description: >
   Gathering Helm Details.
 ---

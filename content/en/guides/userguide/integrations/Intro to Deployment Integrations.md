@@ -1,7 +1,7 @@
 ---
 title: "Deployment Integrations"
 linkTitle: "Deployment Integrations"
-weight: 301
+weight: 304
 description: >
   Integrating Ortelius with your Deployment Solution.
 ---

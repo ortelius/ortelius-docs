@@ -1,7 +1,7 @@
 ---
 title: "Git Metadata and Metrics"
 linkTitle: "Git Metadata and Metrics"
-weight: 324
+weight: 310
 description: >
   Gathering Git Metadata and Metrics.
 ---

@@ -1,7 +1,7 @@
 ---
 title: "OpenMake Meister Binary Repository"
 linkTitle: "OpenMake Meister"
-weight: 400
+weight: 315
 description: >
   Referencing binaries from the OpenMake Meister Build System.
 ---

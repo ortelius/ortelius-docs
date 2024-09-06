@@ -1,7 +1,7 @@
 ---
 title: "Application Compliance Summary Report"
 linkTitle: "Application Compliance Summary Report"
-weight: 305
+weight: 302
 description: >
   Application Compliance Summary Report
 ---
