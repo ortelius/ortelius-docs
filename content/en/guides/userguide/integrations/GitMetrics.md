@@ -6,7 +6,9 @@ description: >
   Gathering Git Metadata and Metrics.
 ---
 
-Ortelius stores the Git Metadata and Metrics for informational and computational purposes.  This is done for any Git Repository, such as GitHub, GitLab etc.
+![Git](/guides/userguide/images/git.png)
+
+Ortelius stores the Git Metadata and Metrics for informational and computational purposes.  This is done for any Git Repository, such as [GitHub](https://github.com/) or [GitLab](https://about.gitlab.com/).
 
 Ortelius integrates with Git using the [CI/CD Command Line Interface](/guides/userguide/integrations/ci-cd_integrations/) (CLI). For every _Component Version_, the CLI gathers and stores the following:
 
