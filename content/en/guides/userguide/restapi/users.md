@@ -9,7 +9,7 @@ description: >
 
 ## Associate a User with a UserGroup
 
-This call assigns an existing _User_ to one of the 3 default [_Groups_](/guides/userguide/OrteliusGroups/). Once a user has been assigned to the group then the _User_ will have access to any object to which the _Group_ has been granted appropriate access.
+This call assigns an existing _User_ to one of the 3 default [_Groups_](/guides/userguide/ortleiusgroups/). Once a user has been assigned to the group then the _User_ will have access to any object to which the _Group_ has been granted appropriate access.
 
 ### REST Api Endpoint
 
