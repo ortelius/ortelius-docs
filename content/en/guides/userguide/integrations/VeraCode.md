@@ -6,6 +6,8 @@ description: >
   Associating Veracode Security Scan to your _Component Version_.
 ---
 
+![veracode](/guides/userguide/images/veracode.png)
+
 ## Veracode
 
 Ortelius can associate Veracode Security Scan to your _Component Version_  Associating these metrics enable compliance scoring for _Application Versions_ since the metrics are rolled-up from the _Component Versions_ to the _Application Version_.  See an Application Compliance Summary Report below for details.

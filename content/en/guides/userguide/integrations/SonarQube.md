@@ -6,6 +6,8 @@ description: >
   Associating Sonar Project Status, Bugs, Code Smells, and Violations to your _Component Version_.
 ---
 
+![sonarqube](/guides/userguide/images/sonarqube.png)
+
 ## SonarQube
 
 Ortelius can associate SonarQube Project Status, Bugs, Code Smells, and Violations metrics to your _Component Version_.  Associating these metrics enable compliance scoring for _Application Versions_ since the metrics are rolled-up from the _Component Versions_ to the _Application Version_.  See the Application Compliance Summary below for details.

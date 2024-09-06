@@ -6,6 +6,8 @@ description: >
   Aggregated DORA Metrics for Decoupled Deployments
 ---
 
+![Dora](/guides/userguide/images/dora.png)
+
 ## DevOps Research and Assessment (DORA)
 
 When Ortelius is integrated into your CI/CD pipeline, it can capture metrics for DORA reporting. The two DORA metrics that Ortelius captures are Deployment Frequency and Lead Time for Changes.

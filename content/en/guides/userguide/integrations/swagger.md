@@ -6,6 +6,10 @@ description: >
   Tracking Swagger/OpenAPI for Your Component
 ---
 
+
+![swagger](/guides/userguide/images/Swagger-logo.png)
+
+
 ## Swagger
 
 Ortelius uses [Swagger](https://swagger.io/) to display your microservice / API documentation, based on your _Component Version_. Developers create, or automate the creation of Swagger/OpenAPI documentation. Once created the Swagger/OpenAPI documentation can be associated to the _Component Version_.

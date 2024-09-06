@@ -6,6 +6,8 @@ description: >
   Application Compliance Summary Report
 ---
 
+![Compliance Summary](/guides/userguide/images/compliance-small.png)
+
 ## Compliance Summary Report
 
 Ortelius gathers _Application Version_ security compliance insights from a variety of sources and displays the information using the Compliance Summary report. 

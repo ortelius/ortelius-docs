@@ -6,6 +6,9 @@ description: >
   Cross Referencing Packages with CVE Database
 ---
 
+
+![OSV](/guides/userguide/images/osvdev.jpg)
+
 ## OSV
 
 Ortelius uses [OSV.dev](https://osv.dev/) to cross reference packages for gathering CVE data. Every 30 minutes Ortelius performs an OSV.dev look up for every package listed in every SBOM to determine if any vulnerabilities exist. The look-up is performed using the OSV public facing APIs. SBOM generation is required to perform this scan.
