@@ -153,3 +153,12 @@ Disassociating an _Application_ from an _Environment_ does not physically remove
 | env_id | path       | Is the identifier of the_Environment_to which the server should be assigned. Either its name, its qualified name with its parent_Domains_ included in dot notation (i.e GLOBAL.Product)  or its internal ID. | Yes      | string  |
 
 {{% include "/guides/userguide/reusable/Model Success.md" %}}
+
+
+## Retrieve SBOM PDF for a Application
+
+See [ms-sbom-export microservice Swagger](https://github.com/ortelius/ms-sbom-export?tab=readme-ov-file#readme)
+
+## Retrieve Application Compliance Summary
+
+See [ms-scorecard microservice Swagger](https://github.com/ortelius/ms-scorecard?tab=readme-ov-file#readme)
