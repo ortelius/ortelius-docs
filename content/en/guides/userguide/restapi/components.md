@@ -77,3 +77,26 @@ In order for this to work through the permission model, the associated "Create _
 
 {{% include "/guides/userguide/reusable/Model Component Result.md" %}}
 {{% include "/guides/userguide/reusable/Model Success.md" %}}
+
+
+## Create Component Package Dependencies (upload SBOM)
+
+See [ms-dep-pkg-cud microservice Swagger](https://github.com/ortelius/ms-dep-pkg-cud?tab=readme-ov-file#readme)
+
+
+## Retrieve Component Package Dependencies (SBOM)
+
+See [ms-dep-pkg-r microservice Swagger](https://github.com/ortelius/ms-dep-pkg-r?tab=readme-ov-file#readme)
+
+## Create and Retrieve Component Item Details
+
+See [ms-compitem-crud microservice Swagger](https://github.com/ortelius/ms-compitem-crud?tab=readme-ov-file#readme)
+
+## Create and Retrieve Component Readme and License
+
+See [ms-textfile-crud microservice Swagger](https://github.com/ortelius/ms-textfile-crud?tab=readme-ov-file#readme)
+
+## Retrieve SBOM PDF for a Component
+
+See [ms-sbom-export microservice Swagger](https://github.com/ortelius/ms-sbom-export?tab=readme-ov-file#readme)
+
