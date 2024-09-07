@@ -6,6 +6,16 @@ description: >
   APIs for Applications.
 ---
 
+
+## Retrieve SBOM PDF for a Application
+
+See [ms-sbom-export microservice Swagger](https://github.com/ortelius/ms-sbom-export?tab=readme-ov-file#readme)
+
+## Retrieve Application Compliance Summary
+
+See [ms-scorecard microservice Swagger](https://github.com/ortelius/ms-scorecard?tab=readme-ov-file#readme)
+
+
 ## Get a List _Applications_
 
 This call returns an array of JSON objects representing each _Application_ to which the logged-in _User_ has access.
@@ -154,11 +164,3 @@ Disassociating an _Application_ from an _Environment_ does not physically remove
 
 {{% include "/guides/userguide/reusable/Model Success.md" %}}
 
-
-## Retrieve SBOM PDF for a Application
-
-See [ms-sbom-export microservice Swagger](https://github.com/ortelius/ms-sbom-export?tab=readme-ov-file#readme)
-
-## Retrieve Application Compliance Summary
-
-See [ms-scorecard microservice Swagger](https://github.com/ortelius/ms-scorecard?tab=readme-ov-file#readme)

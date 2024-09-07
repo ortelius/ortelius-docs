@@ -6,9 +6,12 @@ description: >
   Get a list of Environments.
 ---
 
-## List Environments
+## Retrieve SBOM PDF for a Environment
 
-### Description
+See [ms-sbom-export microservice Swagger](https://github.com/ortelius/ms-sbom-export?tab=readme-ov-file#readme)
+
+
+## List Environments
 
 This call returns an array of JSON objects representing each _Environment_ to
 which the logged-in _User_ has access.
@@ -50,6 +53,3 @@ This call returns a JSON object representing the specified _Environment_.
 {{% include "/guides/userguide/reusable/Model Environments Result.md" %}}
 
 
-## Retrieve SBOM PDF for a Environment
-
-See [ms-sbom-export microservice Swagger](https://github.com/ortelius/ms-sbom-export?tab=readme-ov-file#readme)
