@@ -10,7 +10,7 @@ description: >
 
 ## Compliance Summary Report
 
-Ortelius gathers _Application Version_ security compliance insights from a variety of sources and displays the information using the Compliance Summary report. 
+Ortelius gathers _Application Version_ security compliance insights from a variety of sources and displays the information using the Compliance Summary report. Data collection is done via the [CI/CD Integration](/guides/userguide/integrations/ci-cd_integrations/).
 
 ### Generating the Compliance Summary Report
 
@@ -18,7 +18,9 @@ Go to the _Application_ list view and select (check mark) an _Application_.  Nex
 
 ## Compliance Report Metrics Details
 
-Metrics are aggregated together from the _Component Versions_ and _Environments_ up to the _Application Version_ in order to generate the _Compliance Summary_.  The _Compliance Summary_ provides metrics for:
+Metrics are aggregated together from the _Component Versions_ and _Environments_ up to the _Application Version_ in order to generate the _Compliance Summary_. . 
+
+The _Compliance Summary_ provides metrics for:
 
 | Compliance Check | Description |
 |------------------|-------------|
