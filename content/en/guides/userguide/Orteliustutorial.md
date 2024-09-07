@@ -7,7 +7,7 @@ description: >
 ---
 To help you understand the need for continuously monitoring your security intelligence, Ortelius has provided a free version with a tutorial for you to explore. This free version is based on the Ortelius.io open-source project incubating at the [Continuous Delivery Foundation](https://cd.foundation), hosted by DeployHub, Inc. Explore how the Ortelius _Application_ is configured and walk through basic concepts of Continuous Security Intelligence.
 
-![Ortelius Hosted by DeployHub Team](/guides/userguide/images/HostedLogo-SignIn.png)
+![Ortelius Hosted by DeployHub](/guides/userguide/images/HostedLogo-SignIn.png)
 
 The Ortelius project uses a decoupled microservices architecture serving as a great example of how Continuous Security Intelligence unifies fragmented clues and forensics across _Components_ to expose the _Application_ level security posture. In this tutorial you will see how Ortelius aggregates _Component_ level security to the _Application_ level providing  _Application_ level:
 - SBOMs
