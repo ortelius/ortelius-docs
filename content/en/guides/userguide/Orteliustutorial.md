@@ -9,7 +9,7 @@ To help you understand the need for continuously monitoring your security intell
 
 ![Ortelius Hosted by DeployHub](/guides/userguide/images/HostedLogo-SignIn.png)
 
-The Ortelius project uses a decoupled microservices architecture serving as a great example of how Continuous Security Intelligence unifies fragmented clues and forensics across _Components_ to expose the _Application_ level security posture. In this tutorial you will see how Ortelius aggregates _Component_ level security to the _Application_ level providing  _Application_ level:
+The Ortelius project uses a decoupled microservices architecture serving as a great example of how Continuous Security Intelligence unifies fragmented clues and forensics across _Components_ to expose the _Application_ level security posture. In this tutorial you will see how Ortelius aggregates _Component_ level security to the _Application_ level providing comprehensive security insights at the  _Application_ level:
 - SBOMs
 - real-time vulnerability reports
 - compliance reports
@@ -18,13 +18,13 @@ You will also see how Ortelius uses a Domain-Driven Design (DDD) to organize dat
 
 ## Signing Up and Getting Started
 
-When you [signup for Ortelius](https://www.deployhub.com/deployhub-team/), you are asked for basic information, your UserID/Password, Company and Project names. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
+When you [signup for Ortelius](https://www.deployhub.com/deployhub-team/), you are asked for required information, your Company, Project names, first name, lastname, email and UserID/Password. Your UserID/Password and Company name are unique.  Your Project will be a _Subdomain_ under your Company _Domain_.
 
 Ortelius is accessible through the following url:
 
 [https://console.deployhub.com/dmadminweb/Home](https://console.deployhub.com/dmadminweb/Home)
 
-Login using the UserID and Password you used when you signed up for Ortelius. Check your email for your login information.
+Login using the UserID and Password you used when you signed up for Ortelius. 
 
 Upon logging into Ortelius, you will be given an option to select your Company Name Domain, or the Open Source Domain. The Open Source Domain is prepopulated with data so you can take a tour.  Select the Open Source Domain to start exploring.
 
@@ -42,7 +42,7 @@ You can explore the _GLOBAL.open source_ Domain to learn how Continuous Security
 
 1) From the left hand side menu, select _Domains_. This will take you to the _Domain_ Details. All _Domains_ you have access to will be shown in the _Domain_ List Box.
 
-2) Select GLOBAL.Open Source.Linux Foundation. In the Details, you will see this _Domain_ has two _Subdomains_, the CDF and the OpenSSF. Driving into the GLOBAL.Open Source.Linux Foundation.CDF _Domain_ will show you the Ortelius project is a _Sub-Domain_ of the CDF.
+2) Select GLOBAL.Open Source.Linux Foundation. In the Details, you will see this _Domain_ has two _Subdomains_, the CDF and the OpenSSF. Navigating through the GLOBAL.Open Source.Linux Foundation.CDF _Domain_ will reveal that the Ortelius project is a _Sub-Domain_ of the CDF.
 
 For More information on Domains see - [Building _Domains_](/guides/userguide/definedomains/)
 
@@ -62,7 +62,7 @@ From the left hand side menu, select "_Components_". This will take you to a lis
 
 <strong><u>Sorting Components</u></strong>
 
-Sort Components by "Completed." "Completed" indicates the _Component_ has been deployed to end users. From the _Component_ list view, click on "Completed" to sort.
+Sort Components by "Completed." "Completed" status indicates the _Component_ has been deployed to end users. From the _Component_ list view, click on "Completed" to sort.
 
 <p><br></p>
 
@@ -88,7 +88,7 @@ The _Component_ Detail page shows you the _Components_ Security Profile, Impact 
  ![Compare Components](/guides/userguide/images/component-compare-menu.jpg)
 
 
- This button shows you the total number of previous versions of this _Component_. Select the button to be provided a list of all previous versions. From this list you can view the details of any previous versions.
+ This button shows you the total number of previous versions of this _Component_. Select the button to retrieve a list of all previous versions. From this list you can view the details of any previous versions.
 
  Generate a Comparison Report between two _Component_ versions. Select the _Compare Button_. You will be provided a list to select the previous version to compare the current version you are viewing.
 
@@ -108,7 +108,7 @@ In this view, you will see the _Component's_ SBOM displayed with the Package, Ve
 
 <p><br></p>
 
->Note: You can export a _Component's_ Software Bill of Materials (SBOM) Report by returning to the _Component_ list view, check mark the _Component_ and select _Export SBOM_ from the top navigation menu. You will be a provided a full view of your _Components_ SBOM for sharing across teams.
+>Note: You can export a _Component's_ Software Bill of Materials (SBOM) Report by returning to the _Component_ list view, check mark the _Component_ and select _Export SBOM_ from the top navigation menu. You will be a provided a full view of your _Components_ SBOM to be shared across teams.
 
 
 
@@ -173,7 +173,7 @@ From the left hand side menu, select "_Applications"_. If you have completed the
 
 Select the Ortelius Application and run the following reports:
 
-- Compliance Summary - this report is a summation of data gathered across your CI/CD pipeline and includes a compliance checklist for a variety of security checks and environment inventory for the _Application_ _Component_ versions.
+- Compliance Summary - this report is a summation of data gathered across your CI/CD pipeline including a compliance checklist for a variety of security checks and environment inventory for the _Application_ _Component_ versions.
 
 ![Compliance Run](/guides/userguide/images/compliance-results.jpg)
 
@@ -211,7 +211,7 @@ The _Application_ Detail page shows you the _Application_ Security Profile, Impa
 
  From the top menu, find for the _Version button_. This button shows you the total number of previous versions of this _Application_. Select the button to be see a list of all previous versions. From this list you can select any version to see its details.
 
- Generate a Comparison Report between two _Application_ versions. Select the _Compare Button_. You will be provided a list to select the previous version to compare the current version you are viewing. You will be provided a report that shows the differences between these two _Application versions_.
+ To generate a Comparison Report between two _Application_ versions, select the _Compare Button_. You will be provided a list to select the previous version to compare the current version you are viewing. You will be provided a report that shows the differences between these two _Application versions_.
 
 ![Compare applications](/guides/userguide/images/app-compare.jpg)
 
@@ -219,7 +219,7 @@ The _Application_ Detail page shows you the _Application_ Security Profile, Impa
 
 <u><strong> View the Application's Aggregated Software Bill of Materials and Real-time Vulnerabilities</strong></u>
 
-When exploring the _Application_ details, the first attribute you will see is the _Applications_ summarized Software Bill of Material (SBOM) report and known vulnerabilities whin the Security Posture Section. An _Application_ SBOM provides a detailed report of all _Component_ SBOM data within the _Application_, with duplicates removed. When a _Component_ is updated, Ortelius automatically generates a new version of all _Applications_ that use that _Component_, along with a new aggregated SBOM. Ortelius then cross-references all _Component_ packages within the _Application_ against known vulnerabilities. If you need to produce an SBOM for governance purposes, you can export the SBOM from the _Application_ List View _Reports_ menu option.
+When exploring the _Application_ details, the first attribute you will see is the _Applications_ summarized Software Bill of Material (SBOM) report and known vulnerabilities within the Security Posture Section. An _Application_ SBOM provides a detailed report of all _Component_ SBOM data within the _Application_, with duplicates removed. When a _Component_ is updated, Ortelius automatically generates a new version of all _Applications_ that use that _Component_, along with a new aggregated SBOM. Ortelius then cross-references all _Component_ packages within the _Application_ against known vulnerabilities. If you need to produce an SBOM for governance purposes, you can export the SBOM from the _Application_ List View _Reports_ menu option.
 
 <p><br></p>
 
