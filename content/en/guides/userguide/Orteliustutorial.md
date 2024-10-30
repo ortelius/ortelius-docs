@@ -3,9 +3,9 @@ title: "Free SaaS Signup and Quick Tutorial"
 linkTitle: "Free SaaS Signup and Quick Tutorial"
 weight: 2
 description: >
-  Take a Tour of Continuous Security Intelligence
+  Take a Tour of Continuous Vulnerability Management
 ---
-To help you understand the need for continuously monitoring your security intelligence, Ortelius has provided a free version with a tutorial for you to explore. This free version is based on the Ortelius.io open-source project incubating at the [Continuous Delivery Foundation](https://cd.foundation), hosted by DeployHub, Inc. Explore how the Ortelius _Application_ is configured and walk through basic concepts of Continuous Security Intelligence.
+To help you understand the need for continuously monitoring your vulnerabilities, Ortelius has provided a free version with a tutorial for you to explore. This free version is based on the Ortelius.io open-source project incubating at the [Continuous Delivery Foundation](https://cd.foundation), hosted by DeployHub, Inc. Explore how the Ortelius _Application_ is configured and walk through basic concepts of Continuous Vulnerability Management.
 
 ![Ortelius Hosted by DeployHub](/guides/userguide/images/HostedLogo-SignIn.png)
 
