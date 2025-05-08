@@ -7,8 +7,7 @@ description: >
 
 ---
 
-
-  ![Jenkins](/guides/userguide/images/jenkins-stacked-small.png)
+<img src="/guides/userguide/images/JenkinsandOrtelius.png" alt="Jenkins and Ortelius" height="300px" width="300px" />
 
 {{% include "/guides/userguide/reusable/Ortelius Pipeline Automation.md/" %}}
 
