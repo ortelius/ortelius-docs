@@ -6,7 +6,7 @@ Ortelius integrates into your CI/CD process using the Ortelius Open-Source Comma
 
 The [Ortelius](https://Ortelius.io) CLI is maintained by the Ortelius Open Source Community under the governance of the [Linux Foundation's Continuous Delivery Foundation.](https://cd.foundation)
 
-For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results.
+For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results.
 
 ### Ortelius CLI Data Gathering using .toml
 
@@ -184,7 +184,7 @@ cat cyclonedx.json
 
 ##### Step 4 - Run the Ortelius CLI to add Your Component and Create an Application
 
->Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions.
+>Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md) for installation instructions.
 
 Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:
 

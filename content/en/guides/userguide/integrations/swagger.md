@@ -16,7 +16,7 @@ Ortelius uses [Swagger](https://swagger.io/) to display your microservice / API 
 
 ### Uploading Swagger/OpenAPI Documentation
 
-You can use the Ortelius _Component_ Detail view to manually upload your Swagger/OpenAPI documentation for your _Component_. Alternatively, the recommended approach is to use the CI/CD Command Line Interface to automatically add your Swagger/OpenAPI documentation file. Refer to the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for incorporating Swagger/OpenAPI into your pipeline process.
+You can use the Ortelius _Component_ Detail view to manually upload your Swagger/OpenAPI documentation for your _Component_. Alternatively, the recommended approach is to use the CI/CD Command Line Interface to automatically add your Swagger/OpenAPI documentation file. Refer to the [CI/CD CLI details](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md) for incorporating Swagger/OpenAPI into your pipeline process.
 
 > Note: Swagger or OpenAPI formats can be used.
 

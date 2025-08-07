@@ -156,7 +156,7 @@ Report the license associated with your code base for your _Component_. Use the 
 
 ## Automate the Readme, SBOM, License, and Swagger Upload via Your Pipeline
 
-You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI details](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. .
+You can automatically upload you readme, SBOM, License, and Swagger data using the Command Line Interface (CLI) added to your pipeline. For more information review the [CI/CD CLI details](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. .
 
 {{% include "/guides/userguide/reusable/AuditTrail-withDeployments.md" %}}
 
