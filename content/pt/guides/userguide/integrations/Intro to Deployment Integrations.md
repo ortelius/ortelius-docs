@@ -17,7 +17,7 @@ The benefit of allowing Ortelius to track your deployments is to create a unifie
 
 The Ortelius Command Line Interface performs the action of monitoring the deployments executed by your pipeline.  
 
-Install the Ortelius CLI to begin recording your deployments. Install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions and usage.
+Install the Ortelius CLI to begin recording your deployments. Install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md) for installation instructions and usage.
 
 ### Understanding Environments and Endpoints
 

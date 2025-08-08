@@ -27,7 +27,7 @@ cat cyclonedx.json
 
 ## Passing the Name of the SBOM Results
 
->Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions.
+>Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md) for installation instructions.
 
 Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:
 

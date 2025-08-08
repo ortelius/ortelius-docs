@@ -2,9 +2,9 @@
 
 In order to continuously gather pipeline intelligence, Ortelius must become part of the pipeline. Ortelius integrates with Jenkins, or other CI/CD process engines using the Ortelius Command Line (CLI). The Ortelius CLI gathers supply chain data based on a single pipeline workflow at the build and deploy steps. The build step gathers Swagger, SBOM, Readme, licenses, Git data, Docker image, and other build output. The deploy step records when a release occurs, what was sent and where the objects were sent to.
 
-For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results.
+For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results.
 
-For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/Ortelius/cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. [Install](/guides/userguide/installation-and-support/0-commandlineinterface/) the Ortelius CLI where your CI/CD server is running.
+For the most up to date information on the Ortelius CLI visit the [Ortelius GitHub Repository](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md). You will find a complete list of parameters for collecting Swagger, SBOM and other tool reports and results. [Install](/guides/userguide/installation-and-support/0-commandlineinterface/) the Ortelius CLI where your CI/CD server is running.
 
 
 ### Ortelius Data Gathering using .toml
@@ -180,7 +180,7 @@ cat cyclonedx.json
 
 #### Step 4 - Run the Ortelius CLI to add Your Component and Create an Application
 
->Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/Ortelius/cli/blob/main/doc/dh.md) for installation instructions.
+>Note: To complete the process you will need to install the Ortelius CLI where your CI/CD server is running. Refer to the [Ortelius GitHub CLI Documentation](https://github.com/ortelius/ortelius-cli/blob/main/doc/dh.md) for installation instructions.
 
 Execute the following calls to the Ortelius CLI as part of your workflow. It should be called after the build and SBOM generation:
 
