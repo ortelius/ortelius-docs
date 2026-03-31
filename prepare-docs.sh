@@ -10,6 +10,8 @@ CONTENT_DIR="content/en/guides/userguide"
 # 👇 List of repos to aggregate
 REPOS=(
   "https://github.com/ortelius/pdvd-backend.git"
+  "https://github.com/ortelius/pdvd-platform.git"
+  "https://github.com/ortelius/pdvd-deployment-gke.git"
 )
 
 # -----------------------------
