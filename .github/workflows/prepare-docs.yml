@@ -1,0 +1,39 @@
+name: Prepare Docs
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'content/en/guides/userguide/**'
+  workflow_dispatch:
+
+jobs:
+  prepare-docs:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run prepare-docs script
+        run: |
+          chmod +x prepare-docs.sh
+          ./prepare-docs.sh
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/en/guides/userguide/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update generated userguide docs"
+            git push origin main
+          fi
