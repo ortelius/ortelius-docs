@@ -1,7 +1,7 @@
 ---
 title: "Architecture Guide"
 linkTitle: "Architecture Guide"
-weight: 10
+weight: 2
 description: >
   Architecture Guide
 ---

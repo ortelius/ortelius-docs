@@ -1,7 +1,7 @@
 ---
 title: "Implementation Guide"
 linkTitle: "Implementation Guide"
-weight: 10
+weight: 3
 description: >
   Implementation Guide
 ---

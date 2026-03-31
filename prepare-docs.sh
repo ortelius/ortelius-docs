@@ -7,12 +7,29 @@ set -euo pipefail
 # -----------------------------
 CONTENT_DIR="content/en/guides/userguide"
 
-# 👇 List of repos to aggregate
+# 👇 List of repos to aggregate — first entry becomes the top-level section;
+#    all others are nested as subsections beneath it.
 REPOS=(
   "https://github.com/ortelius/pdvd-backend.git"
   "https://github.com/ortelius/pdvd-platform.git"
   "https://github.com/ortelius/pdvd-deployment-gke.git"
 )
+
+# -----------------------------
+# Global weight counter
+# Stored in a temp file so increments survive subshell boundaries (find|while pipes).
+# -----------------------------
+WEIGHT_FILE=$(mktemp)
+echo 0 > "$WEIGHT_FILE"
+trap 'rm -f "$WEIGHT_FILE"' EXIT
+
+next_weight() {
+  local w
+  w=$(cat "$WEIGHT_FILE")
+  w=$((w + 1))
+  echo "$w" > "$WEIGHT_FILE"
+  echo "$w"
+}
 
 # -----------------------------
 # Function: inject front matter
@@ -27,8 +44,8 @@ inject_frontmatter() {
 
   echo "👉 Injecting/normalizing front matter in $dir..."
 
-  find "$dir" $find_depth -type f -name "*.md" | while read -r file; do
-    # Skip _index.md
+  find "$dir" $find_depth -type f -name "*.md" | sort | while read -r file; do
+    # Skip _index.md — its weight is assigned when it is created in process_repo
     if [[ "$(basename "$file")" == "_index.md" ]]; then
       continue
     fi
@@ -59,17 +76,23 @@ inject_frontmatter() {
         awk 'NR==1{print; next} /^---$/ && !done {print "linkTitle: \"" title "\""; done=1} {print}' \
           title="$title" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
       fi
+      if ! grep -q "^weight:" "$file"; then
+        w=$(next_weight)
+        awk 'NR==1{print; next} /^---$/ && !done {print "weight: " w; done=1} {print}' \
+          w="$w" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+      fi
       if ! grep -q "^description:" "$file"; then
         awk 'NR==1{print; next} /^---$/ && !done {print "description: >"; print "  " title; done=1} {print}' \
           title="$title" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
       fi
 
     else
-      # No front matter — prepend it
+      # No front matter — prepend it with the next global weight
+      w=$(next_weight)
       tmpfile=$(mktemp)
       {
-        printf -- '---\ntitle: "%s"\nlinkTitle: "%s"\nweight: 10\ndescription: >\n  %s\n---\n\n' \
-          "$title" "$title" "$title"
+        printf -- '---\ntitle: "%s"\nlinkTitle: "%s"\nweight: %s\ndescription: >\n  %s\n---\n\n' \
+          "$title" "$title" "$w" "$title"
         cat "$file"
       } > "$tmpfile"
       mv "$tmpfile" "$file"
@@ -96,8 +119,7 @@ SUB_REPOS=("${REPOS[@]:1}")
 process_repo() {
   local repo="$1"
   local target_dir="$2"
-  local weight="$3"
-  local is_top="$4"   # "true" if this is the top-level repo
+  local is_top="$3"   # "true" if this is the top-level repo
 
   local name
   name=$(basename "$repo" .git)
@@ -129,10 +151,12 @@ process_repo() {
   mkdir -p "$target_dir"
 
   # -----------------------------
-  # Make README.md the main page (_index.md)
+  # Make README.md the main page (_index.md) — consumes one weight slot
   # -----------------------------
   local title
   title=$(echo "$raw_section" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
+  local w
+  w=$(next_weight)
 
   if [ -f "/tmp/$name/README.md" ]; then
     cp "/tmp/$name/README.md" "$target_dir/_index.md"
@@ -145,7 +169,7 @@ process_repo() {
 ---
 title: "$title"
 linkTitle: "$title"
-weight: $weight
+weight: $w
 ---
 EOF
       cat "$target_dir/_index.md" >> "$tmpfile"
@@ -156,7 +180,7 @@ EOF
     cat <<EOF > "$target_dir/_index.md"
 ---
 title: "$title"
-weight: $weight
+weight: $w
 ---
 EOF
   fi
@@ -193,26 +217,24 @@ EOF
     ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
   done
 
-  # Inject front matter for all non-_index.md pages
-  # For the top-level repo, only inject within CONTENT_DIR itself (not subdirs)
+  # Inject front matter for all non-_index.md pages.
+  # For the top-level repo, restrict to top-level files only (not subsection subdirs).
   if [ "$is_top" = "true" ]; then
-    inject_frontmatter "$target_dir" --max-depth 1
+    inject_frontmatter "$target_dir" "--max-depth 1"
   else
     inject_frontmatter "$target_dir"
   fi
 }
 
-# Process the top-level repo directly into CONTENT_DIR (weight 1)
-process_repo "$TOP_REPO" "$CONTENT_DIR" 1 "true"
+# Process the top-level repo directly into CONTENT_DIR
+process_repo "$TOP_REPO" "$CONTENT_DIR" "true"
 
 # Process the remaining repos as subsections nested under CONTENT_DIR
-sub_index=0
 for repo in "${SUB_REPOS[@]}"; do
-  sub_index=$((sub_index + 1))
   name=$(basename "$repo" .git)
   raw_section=""
 
-  # Peek at README for section name without full clone yet
+  # Peek at README for section name (repo may already be cloned)
   if [ -d "/tmp/$name" ] && [ -f "/tmp/$name/README.md" ]; then
     raw_section=$(grep -m 1 "^# " "/tmp/$name/README.md" | sed 's/^# //')
   fi
@@ -221,7 +243,7 @@ for repo in "${SUB_REPOS[@]}"; do
   fi
   section=$(echo "$raw_section" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -dc 'a-z0-9-')
 
-  process_repo "$repo" "$CONTENT_DIR/$section" "$sub_index" "false"
+  process_repo "$repo" "$CONTENT_DIR/$section" "false"
 done
 
 echo "✅ Docs prepared in ./$CONTENT_DIR"
