@@ -25,12 +25,12 @@ Ortelius is managed by the [Continuous Delivery Foundation](https://cd.foundatio
 
 ## What is in this Guide?
 
-This guide will help you understand the overall organization of the  Ortelius project, and help you get started as a contributor. And anyone can contribute. You don't have to be a 'coder.'  Your expertise in technical writing, outreach, project management and marketing are also needed.  And if you do want to code, this guide will help you find issues, write code to fix them, and get your work reviewed and merged.
+This guide will help you understand the overall organization of the Ortelius project, and help you get started as a contributor. And anyone can contribute. You don't have to be a 'coder.' Your expertise in technical writing, outreach, project management and marketing are also needed. And if you do want to code, this guide will help you find issues, write code to fix them, and get your work reviewed and merged.
 
 ## Where did the Name Ortelius Come from?
 
-Abraham Ortelius made his name by collecting data from scientists, geographers, and cartographers of his time and transforming it into what the world now knows as a world Atlas. His Atlas, titled _Theatrum Orbis Terrarum_ (Theatre of the World), was published on May 20, 1570. His Atlas disrupted the way the world was seen, with the first concepts imagining continental drift. Also of interest are the sea monsters shown in the water – mythical creatures that were a subject of fascination in Ortelius’ generation.
+Abraham Ortelius made his name by collecting data from scientists, geographers, and cartographers of his time and transforming it into what the world now knows as a world Atlas. His Atlas, titled _Theatrum Orbis Terrarum_ (Theatre of the World), was published on May 20, 1570. His Atlas disrupted the way the world was seen, with the first concepts imagining continental drift. Also of interest are the sea monsters shown in the water – mythical creatures that were a subject of fascination in Ortelius' generation.
 
-Ortelius also in some ways created on open source community of his day. To accomplish his goal, he was the first cartographers to give credit to his fellow scientists by adding their names to the Atlas. Ortelius was known to have corresponded with other professionals throughout Europe and pulled together their knowledge to create his publication and a truly global view of the world.
+Ortelius also in some ways created an open source community of his day. To accomplish his goal, he was the first cartographer to give credit to his fellow scientists by adding their names to the Atlas. Ortelius was known to have corresponded with other professionals throughout Europe and pulled together their knowledge to create his publication and a truly global view of the world.
 
 Thank you Abraham Ortelius for showing us the way.

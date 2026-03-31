@@ -21,114 +21,86 @@ description: >
 - [CNCF](https://www.cncf.io/)
 - [CNCF Cloud Native Landscape](https://landscape.cncf.io/)
 - [Ortelius](https://ortelius.io/)
-- [XRPL](https://xrpl.org/)
 
 ### What are we learning?
-- To build applications with [build tools](https://www.plutora.com/ci-cd-tools/software-build-tools) such as `Maven` or `Gradle`
+- Backend development in [Go](https://go.dev/)
+- Frontend development with [Node.js](https://nodejs.org/) and [Next.js](https://nextjs.org/)
 - Containerization with [Docker](https://www.docker.com/) or [Podman](https://podman.io/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [ArangoDB](https://www.arangodb.com/)
 - [Kubernetes](https://kubernetes.io/)
 - [Build pipelines](https://opensource.com/article/19/4/devops-pipeline)
-- [Keptn.sh](https://keptn.sh/)
 - [Ortelius](https://ortelius.io/)
 - [Cloud Computing](https://www.zdnet.com/article/what-is-cloud-computing-everything-you-need-to-know-about-the-cloud/)
 - [Argo CD](https://argo-cd.readthedocs.io/en/stable/user-guide/parameters/)
-- To abstract `application parameterisation` from application code
-- [Blockchain](https://hackernoon.com/get-started-with-blockchain-in-2018-cb21896470de)
-- [ArangoDB](https://www.arangodb.com/)
+- Software Supply Chain security and SBOMs
 
 ### What are we building?
-#### Event driven architecture with Ortelius
-- We are building [this](https://filedn.eu/lJEPcSQWQQPRsWJKijxnXCQ/ortelius/gitops/01-ci-dev-ortelius-cloudnative-architecture-poc.html)
+
+#### Ortelius PDVD — Package, Dependency, Vulnerability Dashboard
+Ortelius tracks SBOMs through the entire release lifecycle, mapping components to CVEs so teams can rapidly respond to supply chain threats.
+
+- **Backend:** [ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend) — Go REST API (client/server for tracking SBOM → release → CVE)
+- **Frontend:** [ortelius/pdvd-frontend](https://github.com/ortelius/pdvd-frontend) — Node.js + Next.js web UI
+
+#### Event Driven Architecture with Ortelius
 - [Ortelius Docs](https://github.com/ortelius/ortelius-docs/blob/main/content/en/guides/userguide/integrations/OrteliusKeptn.md)
 
-#### XRPL SBOM Ledger with Ortelius
-- [XRPL Ledgers](https://xrpl.org/ledgers.html#ledgers)
-- [XRPL SBOM Ledger repo](https://github.com/ortelius/la-sbom-ledger)
-- [Nodejs](https://nodejs.org/en/)
-- [ArangoDB](https://www.arangodb.com/)
+## Demo Apps to Deploy and Containerise
 
-## Demo apps to deploy and containerise
-### Springboot Java [Spring Petclinic](https://github.com/spring-projects/spring-petclinic) Application
+### Go Backend — [pdvd-backend](https://github.com/ortelius/pdvd-backend)
 - `PLEASE READ the README`
 - Fork the repo & clone
-- [Spring Petclinic Slides](https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application)
-- [DocsSpring.io](https://docs.spring.io/)
-- [Spring Boot Maven Plugin Documentation](https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#goals-build-image)
-- [Spring Boot Docker Documentation](https://spring.io/guides/topicals/spring-boot-docker/)
-- [Spring Boot External Config](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.external-config)
-- [mkyong.com](https://mkyong.com/) is a useful Java resource
-- [mvn repository for dependencies](https://mvnrepository.com/)
+- [Go Documentation](https://go.dev/doc/)
+- [Go Modules](https://go.dev/ref/mod)
+- Run: `go run .`
+- Test: `go test ./...`
+- Build container: `docker build -t pdvd-backend .`
 
-### [React Shopping Cart](https://github.com/ikismail/React-ShoppingCart)
+### Node.js + Next.js Frontend — [pdvd-frontend](https://github.com/ortelius/pdvd-frontend)
 - `PLEASE READ the README`
 - Fork the repo & clone
-- Test using the [YARN](https://yarnpkg.com/) package manager
-- Test using the [PnPM.io](https://pnpm.io/) package manager
-- [ikismail-react-shopping.surge.sh](http://ikismail-react-shopping.surge.sh/#/)
-
-### [Angular RealWorld example app](https://github.com/khaledosman/angular-realworld-example-app)
-- `PLEASE READ the README`
-- Fork the repo & clone
-- Test using the [NPM](https://www.npmjs.com/) package manager
-- Test using the [PnPM.io](https://pnpm.io/) package manager
-
-### Python Web UI to manage PostgreSQL [PgAdmin](https://www.pgadmin.org/)
-
-### PostgreSQL | Ortelius
-- Container can be pulled from [here](https://hub.docker.com/_/postgres/)
-
-### ArangoDB | XRPL SBOM Ledger
-- Container can be pulled from [here](https://https://hub.docker.com/_/arangodb)
+- [Next.js Documentation](https://nextjs.org/docs)
+- Install: `npm install`
+- Run dev: `npm run dev`
+- Build: `npm run build`
 
 ## Ortelius Jargon Glossary
 - API
 - [Argo CD](https://argo-cd.readthedocs.io/en/stable/user-guide/parameters/)
-- [ArangoDB](https://www.arangodb.com/)
 - Backend
 - [Blast radius](https://www.deployhub.com/know-your-microservice-blast-radius/)
-- Block Chain
 - Containers
-- Continous Integration
-- Continous Delivery
-- Data Science
+- Continuous Integration
+- Continuous Delivery
+- CVE (Common Vulnerabilities and Exposures)
 - Declarative
 - Event driven
-- [Filecoin](https://filecoin.io/)
 - Frontend
-- [GitLab](https://about.gitlab.com/)
 - [GitOps](https://about.gitlab.com/topics/gitops/)
+- [Go](https://go.dev/)
 - [Helm.sh](https://helm.sh/)
 - [IaC](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac)
 - Imperative
-- [IPFS (Interplanetary File System)](https://docs.ipfs.tech/concepts/what-is-ipfs/#decentralization)
-- [Java](https://dev.java/)
-- [Jenkins](https://www.jenkins.io/)
 - [Kubernetes](https://kubernetes.io/docs/home/)
-- [Keptn.sh](https://keptn.sh/)
 - [Markdown](https://www.markdownguide.org/)
-- [Machine Learning](https://www.expert.ai/blog/machine-learning-definition/)
 - Microservices
-- [NFTs](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)
+- [Next.js](https://nextjs.org/)
+- [Node.js](https://nodejs.org/)
 - [Opensource](https://opensource.com/resources/what-open-source)
 - Package Manager
-- Parameterisation
-- [PostgreSQL](https://www.postgresql.org/)
-- [React](https://reactjs.org/)
+- [ArangoDB](https://www.arangodb.com/)
+- SBOM (Software Bill of Materials)
 - [Terraform](https://www.terraform.io/)
-- [Web3]()
-- [XRPL](https://xrpl.org/)
-- [XRPL Learning Portal](https://learn.xrpl.org)
 
-## Learning platforms
+## Learning Platforms
 - [Udemy.com](https://udemy.com)
 - [Kodekloud.com](https://kodekloud.com)
-- [RealWorld example apps](https://codebase.show/projects/realworld?language=javascript) The mother of all demo apps
+- [Go Tour](https://go.dev/tour/)
+- [Next.js Learn](https://nextjs.org/learn)
 - [101 Days of DevOps](https://www.101daysofdevops.com/courses/)
 
 ## Linux & Open Source
 - [Itsfoss.com](https://itsfoss.com/)
 - [Linuxhandbook.com](https://linuxhandbook.com/)
-- [CompTIA Linux on Udemy](https://www.udemy.com/share/1076RM3@wyBekn7-PidnmF_CeNvkQeJjSzd9_9rNkxjrWFaI2hA7e6fQJEnkmWbazI66eyHT/)
 - [Bash](https://ss64.com/links/bash.html)
 - [Bash Bible](https://github.com/dylanaraps/pure-bash-bible)

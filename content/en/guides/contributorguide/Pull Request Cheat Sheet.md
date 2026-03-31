@@ -10,7 +10,7 @@ description: >
 
 Patches for fixes, features, and improvements are accepted through pull requests. Here are some tips for contributing:
 
-* Add Git Commit Signing to your local git install and to GitHub.  Here are the [config instructions](https://blog.petehouston.com/sign-git-commits/).
+* Add Git Commit Signing to your local git install and to GitHub. Here are the [config instructions](https://blog.petehouston.com/sign-git-commits/).
 * Write good commit messages in the present tense ("Add X", not "Added X") with a short title, blank line, and bullet points if needed. Capitalize the first letter of the title and any bullet items. No punctuation in the title.
 * Include tests to improve coverage and prevent regressions.
 * Squash changes into a single commit per feature/fix.
@@ -23,20 +23,20 @@ Patches for fixes, features, and improvements are accepted through pull requests
 
 ## Terms
 
-- Branch - series of commits
-- Clone - create a local copy of a repo
-- Commit - change to the repo
-- Downstream - this would be your repository that is forked from an Ortelius repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs)
-- Fetch - sync a repo with another
-- Fork - your copy of the upstream repo
-- Local Repo - a repo on your computer
-- Pull - get changes from GitHub into your local repo
-- Pull Request (PR) - changes to be merged from one repo to another repo
-- Push - send your changes to GitHub
-- Rebase - rewrite commit history
-- Remote Repo - a repo on GitHub
-- Squash - combining multiple commits into one
-- Upstream - this would be an Ortelius repository [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs)
+- Branch - series of commits
+- Clone - create a local copy of a repo
+- Commit - change to the repo
+- Downstream - this would be your repository that is forked from an Ortelius repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs)
+- Fetch - sync a repo with another
+- Fork - your copy of the upstream repo
+- Local Repo - a repo on your computer
+- Pull - get changes from GitHub into your local repo
+- Pull Request (PR) - changes to be merged from one repo to another repo
+- Push - send your changes to GitHub
+- Rebase - rewrite commit history
+- Remote Repo - a repo on GitHub
+- Squash - combining multiple commits into one
+- Upstream - this would be an Ortelius repository [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs)
 
 ## Working scenarios
 
@@ -45,7 +45,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 ### First pull request
 
 1) Fork the Ortelius repo
-   In GitHub click on the Fork button for the repo you want to make a copy of, i.e. [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs).  The fork will be created under
+   In GitHub click on the Fork button for the repo you want to make a copy of, i.e. [ortelius/ortelius-docs](https://github.com/ortelius/ortelius-docs). The fork will be created under
    your userid as [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs).
 
 2) Make a local copy of your repo [sbtaylor15/ortelius-docs](https://github.com/sbtaylor15/ortelius-docs). The url for the repo is under the *Code* button in GitHub for your repo.
@@ -56,7 +56,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
 3) Tell your local repo about the upstream and downstream repos (this only needs to be done once)
 
-   By this tep you will create `upstream` and `downstream` local variables which contain address of source and your forked repos. You can use them as parameters of `git` key word.
+   By this step you will create `upstream` and `downstream` local variables which contain the address of the source and your forked repos. You can use them as parameters of the `git` keyword.
 
    ```
    git remote add upstream https://github.com/ortelius/ortelius-docs.git
@@ -64,7 +64,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    ```
    `upstream` holds `https://github.com/ortelius/ortelius-docs.git`
 
-   `downstream` holds `https://github.com/Javailabe/ortelius-docs.git` (that is forked repo of Javailabe user)
+   `downstream` holds `https://github.com/Javailabe/ortelius-docs.git` (that is the forked repo of the Javailabe user)
 
 4) Make a branch for your work
 
@@ -83,11 +83,11 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    git commit -m "changed some files"
    ```
 
-   Do this as many time that you want.
+   Do this as many times as you want.
 
 6) Squash before merge
 
-   We need to collapse all of our little changes into one.  This will make merging much easier.
+   We need to collapse all of our little changes into one. This will make merging much easier.
 
    ```
    git checkout master
@@ -101,30 +101,30 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
    git rebase -i d34bf46
    ```
 
-   You will be placed into an editor with a line for each commit.  The first column will say
-   pick.  Change pick to squash from line **2** to the end of the list.  Save and quit the file.
+   You will be placed into an editor with a line for each commit. The first column will say
+   pick. Change pick to squash from line **2** to the end of the list. Save and quit the file.
 
-   You will jump back to the command prompt for a bit while git does it work.  The editor will
-   pop up again.  This is the comment for the squashed commit.  All of the comments from the
-   little commit are listed.  Delete all of the lines and add a single line describing your
+   You will jump back to the command prompt for a bit while git does its work. The editor will
+   pop up again. This is the comment for the squashed commit. All of the comments from the
+   little commits are listed. Delete all of the lines and add a single line describing your
    changes.
 
    If you run `git log --oneline` you should see that there is only one new commit.
 
 7) Update GitHub forked repo with your local changes
 
-   We can backup changes to GitHub at anytime without effecting anyone else.
+   We can back up changes to GitHub at anytime without affecting anyone else.
 
    ```
    git push downstream
    ```
 
-   This syncs forked GitHub repo with your local branch.  Basically, you are overriding GitHub.
+   This syncs the forked GitHub repo with your local branch.
 
 8) Create your Pull Request
 
-    In GitHub, go to the upstream repo and do a new pull request.  Choose compare across
-    forks.  Select your fork and master branch.
+    In GitHub, go to the upstream repo and do a new pull request. Choose compare across
+    forks. Select your fork and master branch.
 
 9) After the PR has been merged you need to bring your repo in sync with upstream since it has new commits
 
@@ -146,7 +146,7 @@ We want to update the User Guide that is in the [ortelius/ortelius-docs](https:/
 
 2) Make changes
 
-   a) in case of multiple small commits it might be necessary to squash them all
+   a) In case of multiple small commits it might be necessary to squash them all
 
 3) Update GitHub forked repo with your local changes
 

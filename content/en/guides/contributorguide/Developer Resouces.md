@@ -8,78 +8,73 @@ description: >
 
 ## Developer Tools
 
-The following developer tools will be needed for you to contribute to Ortelius code or documentation:
+The following tools are needed to contribute to Ortelius code or documentation.
 
 ### Editors
 
-Any of the following Markdown editors can be used:
-- [Visual Studio Code](https://code.visualstudio.com/) with following extensions:
-  - Markdown Preview Enhanced - Yiyi Wang
-  - markdownlint - David Anderson
-  - Docker - Microsoft
-  - Docsy - Etienne Dldc
-  - Go - Go Team at Google
-  - Python - Microsoft
-- [PostgreSQL](https://www.postgresql.org/download/) - list of different distrubitions of PostgreSQL tool
-  - This is complete package which include PostgreSQL Server, pgAdmin 4, Stack Builder and Command Line Tools
-- [pgAdmin](https://www.postgresql.org/ftp/pgadmin/pgadmin4/) - here you can find list of different versions of pgAdmin tool
+[Visual Studio Code](https://code.visualstudio.com/) is the recommended editor. Install the following extensions:
+
+- **Go** — Go Team at Google (`golang.go`)
+- **ESLint** — Microsoft (`dbaeumer.vscode-eslint`)
+- **Prettier** — Prettier (`esbenp.prettier-vscode`)
+- **Markdown Preview Enhanced** — Yiyi Wang
+- **markdownlint** — David Anderson
+- **Docker** — Microsoft
+- **YAML** — Red Hat
+
+### Backend Development (Go)
+
+The backend lives at [ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend) and is written in Go.
+
+- [Install Go](https://go.dev/dl/) (1.21 or later recommended)
+- Install the [Go extension for VS Code](https://marketplace.visualstudio.com/items?itemName=golang.Go)
+- Install dependencies: `go mod download`
+- Run locally: `go run .`
+- Run tests: `go test ./...`
+
+### Frontend Development (Node.js / Next.js)
+
+The frontend lives at [ortelius/pdvd-frontend](https://github.com/ortelius/pdvd-frontend) and is built with Node.js and Next.js.
+
+- [Install Node.js](https://nodejs.org/) (LTS version recommended)
+- Install dependencies: `npm install`
+- Run dev server: `npm run dev` — available at `http://localhost:3000`
+- Build for production: `npm run build`
 
 ### Testing Environment
 
-To setup your environment to create a runtime test environment:
+To set up a local runtime test environment you will need:
+
 - [Docker](https://docs.docker.com/get-docker/)
 - [Helm](https://helm.sh/docs/intro/install/)
-- GCloud
-- Azure
-- Set local test database [(Link to source)](https://github.com/ortelius/test-database)
-  - Default userid and password are `admin` / `admin`
-  - Run the image:
-        1) Pull the image
 
-            ```
-            docker pull quay.io/ortelius/test-database:latest
-            ```
+**Local ArangoDB database:**
 
-        2) Find the image id
+1. Pull and run ArangoDB:
 
-            ```
-            docker image ls quay.io/ortelius/test-database:latest --format "{{.ID}}"
-            ```
+   ```
+   
+   docker run -it --rm -e ARANGO_NO_AUTH=1 -p 8529:8529 -v $HOME/arangodb:/var/lib/arangodb3 arangodb
+   ```
 
-        3) Create the volume to persist the database
+The database will be accessible at `http://localhost:8529`:
 
-            ```
-            docker volume create pdata
-            ```
 
-        4) Run the image a expose the Postgres port to the outside world
+- Database: `ortelius`
 
-            ```
-            docker run -it -p 9876:5432 -v pgdata:/var/lib/postgresql/data <id_from_step_2>`
-            ```
+### Database Tools
 
-  - The database in the above example will be accessible on port 9876.
-    - Userid: postgres
-    - Password: postgres
-    - Database: postgres
-    - Schema: dm
-
-- Container Structure Test
-  - The image also has a minimal [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test) setup.
-  - This is run as part of the cloud build, and can also be run locally on MacOS/Linux/WSL:
-
-        ```
-        container-structure-test test --image=quay.io/ortelius/test-database:latest --config=cst/config.yaml
-        ```
+- [ArangoDB](https://www.arangodb.com/download/) — graph and multi-model database used by Ortelius
+- [ArangoDB Web UI](http://localhost:8529) — built-in browser UI, available once the container is running
+- [arangosh](https://www.arangodb.com/docs/stable/programs-arangosh.html) — ArangoDB command-line shell
 
 ### Git
 
-To submit issues and manage pull request:
-- [Git GUIs](https://git-scm.com/downloads/guis/)
+To submit issues and manage pull requests:
+- [Git GUI clients](https://git-scm.com/downloads/guis/)
 
-Getting started with a Pull Request can be tricky. There are a lot of small steps that need to be done in the right order otherwise you may get hung up on a strange error. The nice thing with Git is that its really hard to permanently loose your work.  Check out the [PR Cheat Sheet](https://docs.ortelius.io/guides/contributorguide/pull-request-cheat-sheet/) for the steps on doing a Pull Request. Go through this before starting any changes since a proper setup will make the merge easier down the road.
+Getting started with a Pull Request can be tricky. Check out the [PR Cheat Sheet](https://docs.ortelius.io/guides/contributorguide/pull-request-cheat-sheet/) before starting any changes, since a proper setup will make the merge much easier.
 
 ### Communication
 
 - [Discord Channel](https://discord.gg/ZtXU74x)
-
