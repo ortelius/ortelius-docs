@@ -1,7 +1,7 @@
 ---
 title: "Deployment Tracking For GKE"
 linkTitle: "Deployment Tracking For GKE"
-weight: 1
+weight: 3
 ---
 
 A Google Cloud Function that automatically detects new pod deployments in GKE clusters by tailing Cloud Audit Logs, then syncs release metadata — including SBOMs, Git provenance, and container image details — to a [DeployHub](https://www.deployhub.com) / Ortelius backend via the `/api/v1/sync` API.

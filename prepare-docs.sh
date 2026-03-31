@@ -81,7 +81,9 @@ mkdir -p "$CONTENT_DIR"
 
 echo "👉 Processing repositories..."
 
+repo_index=0
 for repo in "${REPOS[@]}"; do
+  repo_index=$((repo_index + 1))
   name=$(basename "$repo" .git)
   raw_section=""
 
@@ -127,7 +129,7 @@ for repo in "${REPOS[@]}"; do
 ---
 title: "$title"
 linkTitle: "$title"
-weight: 1
+weight: $repo_index
 ---
 EOF
       cat "$section_dir/_index.md" >> "$tmpfile"
@@ -139,7 +141,7 @@ EOF
     cat <<EOF > "$section_dir/_index.md"
 ---
 title: "$title"
-weight: 1
+weight: $repo_index
 ---
 EOF
   fi
