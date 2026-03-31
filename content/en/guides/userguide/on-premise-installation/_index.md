@@ -1,7 +1,7 @@
 ---
 title: "On Premise Installation"
 linkTitle: "On Premise Installation"
-weight: 2
+weight: 1
 ---
 
 This repository contains the GitOps platform for the Ortelius application stack. Terraform provisions infrastructure (EKS or GKE) and bootstraps FluxCD, which then manages all application deployments via Helm.

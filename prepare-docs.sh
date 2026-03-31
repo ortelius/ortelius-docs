@@ -19,10 +19,15 @@ REPOS=(
 # -----------------------------
 inject_frontmatter() {
   local dir="$1"
+  local find_depth=""
+  # Pass "--max-depth 1" as second arg to restrict to top-level files only
+  if [[ "${2:-}" == "--max-depth 1" ]]; then
+    find_depth="-maxdepth 1"
+  fi
 
   echo "👉 Injecting/normalizing front matter in $dir..."
 
-  find "$dir" -type f -name "*.md" | while read -r file; do
+  find "$dir" $find_depth -type f -name "*.md" | while read -r file; do
     # Skip _index.md
     if [[ "$(basename "$file")" == "_index.md" ]]; then
       continue
@@ -81,11 +86,22 @@ mkdir -p "$CONTENT_DIR"
 
 echo "👉 Processing repositories..."
 
-repo_index=0
-for repo in "${REPOS[@]}"; do
-  repo_index=$((repo_index + 1))
+# The first repo is the top-level section; all others nest under it as subsections.
+TOP_REPO="${REPOS[0]}"
+SUB_REPOS=("${REPOS[@]:1}")
+
+# -----------------------------
+# Helper: process a single repo's docs into a target directory
+# -----------------------------
+process_repo() {
+  local repo="$1"
+  local target_dir="$2"
+  local weight="$3"
+  local is_top="$4"   # "true" if this is the top-level repo
+
+  local name
   name=$(basename "$repo" .git)
-  raw_section=""
+  local raw_section=""
 
   # Clone or update repo into /tmp to avoid polluting the doc repo
   if [ ! -d "/tmp/$name" ]; then
@@ -101,47 +117,46 @@ for repo in "${REPOS[@]}"; do
   if [ -z "${raw_section}" ]; then
     raw_section="$name"
   fi
-  section=$(echo "$raw_section" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -dc 'a-z0-9-')
-  section_dir="$CONTENT_DIR/$section"
 
-  echo "  → $name (section: $raw_section)"
+  echo "  → $name (section: $raw_section, dir: $target_dir)"
 
   # Skip if no docs or README
   if [ ! -d "/tmp/$name/docs" ] && [ ! -f "/tmp/$name/README.md" ]; then
     echo "    ⚠️ No /docs or README.md, skipping"
-    continue
+    return
   fi
 
-  mkdir -p "$section_dir"
+  mkdir -p "$target_dir"
 
   # -----------------------------
   # Make README.md the main page (_index.md)
   # -----------------------------
+  local title
+  title=$(echo "$raw_section" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
+
   if [ -f "/tmp/$name/README.md" ]; then
-    title=$(echo "$raw_section" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
-    cp "/tmp/$name/README.md" "$section_dir/_index.md"
+    cp "/tmp/$name/README.md" "$target_dir/_index.md"
     # Strip the first H1 from body (front matter title handles it)
-    sed -i '0,/^# /{/^# /d}' "$section_dir/_index.md"
+    sed -i '0,/^# /{/^# /d}' "$target_dir/_index.md"
     # Only prepend front matter if the README has none
-    if ! head -n 1 "$section_dir/_index.md" | grep -q "^---"; then
+    if ! head -n 1 "$target_dir/_index.md" | grep -q "^---"; then
       tmpfile=$(mktemp)
       cat <<EOF > "$tmpfile"
 ---
 title: "$title"
 linkTitle: "$title"
-weight: $repo_index
+weight: $weight
 ---
 EOF
-      cat "$section_dir/_index.md" >> "$tmpfile"
-      mv "$tmpfile" "$section_dir/_index.md"
+      cat "$target_dir/_index.md" >> "$tmpfile"
+      mv "$tmpfile" "$target_dir/_index.md"
     fi
   else
     # If no README, create minimal _index.md
-    title=$(echo "$raw_section" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
-    cat <<EOF > "$section_dir/_index.md"
+    cat <<EOF > "$target_dir/_index.md"
 ---
 title: "$title"
-weight: $repo_index
+weight: $weight
 ---
 EOF
   fi
@@ -150,17 +165,17 @@ EOF
   # Copy docs/*.md files
   # -----------------------------
   if [ -d "/tmp/$name/docs" ]; then
-    cp -r "/tmp/$name/docs/"* "$section_dir/" 2>/dev/null || true
+    cp -r "/tmp/$name/docs/"* "$target_dir/" 2>/dev/null || true
   fi
 
   # Fix links: strip docs/ prefix since files are moved up to section root
-  find "$section_dir" -type f -name "*.md" | while read -r file; do
+  find "$target_dir" -type f -name "*.md" | while read -r file; do
     sed -i 's|(docs/|(|g' "$file"
     perl -i -pe 's|\(([^):]*)\.md\)|(${1}/)|g' "$file"
   done
 
   # Normalize filenames (optional)
-  find "$section_dir" -depth -name "*.md" | while read -r file; do
+  find "$target_dir" -depth -name "*.md" | while read -r file; do
     new=$(echo "$file" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
     if [ "$file" != "$new" ]; then
       mv "$file" "$new"
@@ -168,7 +183,7 @@ EOF
   done
 
   # Remove manual Table of Contents sections (Hugo generates its own)
-  find "$section_dir" -type f -name "*.md" | while read -r file; do
+  find "$target_dir" -type f -name "*.md" | while read -r file; do
     awk '
       /^## Table of Contents$/ { skip=1; next }
       skip && /^---$/ { skip=0; next }
@@ -179,8 +194,34 @@ EOF
   done
 
   # Inject front matter for all non-_index.md pages
-  inject_frontmatter "$section_dir"
+  # For the top-level repo, only inject within CONTENT_DIR itself (not subdirs)
+  if [ "$is_top" = "true" ]; then
+    inject_frontmatter "$target_dir" --max-depth 1
+  else
+    inject_frontmatter "$target_dir"
+  fi
+}
 
+# Process the top-level repo directly into CONTENT_DIR (weight 1)
+process_repo "$TOP_REPO" "$CONTENT_DIR" 1 "true"
+
+# Process the remaining repos as subsections nested under CONTENT_DIR
+sub_index=0
+for repo in "${SUB_REPOS[@]}"; do
+  sub_index=$((sub_index + 1))
+  name=$(basename "$repo" .git)
+  raw_section=""
+
+  # Peek at README for section name without full clone yet
+  if [ -d "/tmp/$name" ] && [ -f "/tmp/$name/README.md" ]; then
+    raw_section=$(grep -m 1 "^# " "/tmp/$name/README.md" | sed 's/^# //')
+  fi
+  if [ -z "${raw_section}" ]; then
+    raw_section="$name"
+  fi
+  section=$(echo "$raw_section" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -dc 'a-z0-9-')
+
+  process_repo "$repo" "$CONTENT_DIR/$section" "$sub_index" "false"
 done
 
 echo "✅ Docs prepared in ./$CONTENT_DIR"
