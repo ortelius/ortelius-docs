@@ -12,6 +12,7 @@ CONTENT_DIR="content/en/guides/userguide"
 REPOS=(
   "https://github.com/ortelius/pdvd-backend.git"
   "https://github.com/ortelius/pdvd-platform.git"
+  "https://github.com/ortelius/pdvd-relscanner-job.git"
   "https://github.com/ortelius/pdvd-deployment-gke.git"
 )
 
