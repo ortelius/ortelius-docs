@@ -8,7 +8,7 @@ description: >
 
 ## Opening an Issue
 
-GitHub Issues are used to track all bugs, enhancement requests, and "todos." Ortelius is spread across many repositories so the [ortelius/ortelius](https://github.com/ortelius/ortelius) repo is used for all issues. Issues should have a link, using markdown `[]()` link format, to the true repository in which the bug, enhancement, or "todo" needs to be made.
+GitHub Issues are used to track all bugs, enhancement requests, and "todos." Ortelius is spread across many repositories so the [ortelius/ortelius](https://github.com/ortelius/pdvd-backend) repo is used for all issues. Issues should have a link, using markdown `[]()` link format, to the true repository in which the bug, enhancement, or "todo" needs to be made.
 
 Please be detailed in your description of the issue. Not everything needs to go in the summary line. Feel free to use the description area to provide additional details.
 
