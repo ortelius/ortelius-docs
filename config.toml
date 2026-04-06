@@ -141,7 +141,7 @@ enable = false
         desc = "Follow us on Facebook to get the latest news!"		
 [[params.links.user]]
 	name ="LinkedIn"
-	url = "https://www.linkedin.com/company/Orteliusproj/"
+	url = "https://www.linkedin.com/company/71656164/"
 	icon = "fab fa-linkedin"
         desc = "Follow us on LinkedIn to get the latest news!"	
 [[params.links.user]]
