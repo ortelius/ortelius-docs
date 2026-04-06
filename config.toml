@@ -152,7 +152,7 @@ enable = false
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/ortelius/ortelius"
+	url = "https://github.com/ortelius/pdvd-backend"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
 
