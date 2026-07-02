@@ -1,6 +1,6 @@
 ---
-title: "Deployment Tracking using GitHub and GitLab"
-linkTitle: "Deployment Tracking using GitHub and GitLab"
+title: "Deployment Tracking Using GitHub & GitLab"
+linkTitle: "Deployment Tracking Using GitHub & GitLab"
 weight: 5
 ---
 

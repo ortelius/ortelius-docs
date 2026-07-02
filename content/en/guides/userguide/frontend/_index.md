@@ -1,6 +1,6 @@
 ---
-title: "Ortelius Post-Deployment Vulnerability Dashboard"
-linkTitle: "Ortelius Post-Deployment Vulnerability Dashboard"
+title: "Ortelius Post Deployment Vulnerability Dashboard"
+linkTitle: "Ortelius Post Deployment Vulnerability Dashboard"
 weight: 4
 ---
 
