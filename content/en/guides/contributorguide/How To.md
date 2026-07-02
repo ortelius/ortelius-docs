@@ -8,7 +8,7 @@ description: >
 
 ## Opening an Issue
 
-GitHub Issues are used to track all bugs, enhancement requests, and "todos." Ortelius is spread across many repositories so the [ortelius/ortelius](https://github.com/ortelius/pdvd-backend) repo is used for all issues. Issues should have a link, using markdown `[]()` link format, to the true repository in which the bug, enhancement, or "todo" needs to be made.
+GitHub Issues are used to track all bugs, enhancement requests, and "todos." Ortelius is spread across many repositories so the [ortelius/ortelius](https://github.com/ortelius/ortelius) repo is used for all issues. Issues should have a link, using markdown `[]()` link format, to the true repository in which the bug, enhancement, or "todo" needs to be made.
 
 Please be detailed in your description of the issue. Not everything needs to go in the summary line. Feel free to use the description area to provide additional details.
 
@@ -40,14 +40,14 @@ Ortelius uses a microservice architecture with two primary repositories for acti
 
 | Repository | Language / Stack | Purpose |
 |---|---|---|
-| [ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend) | Go | REST API / server — SBOM to release to CVE tracking |
-| [ortelius/pdvd-frontend](https://github.com/ortelius/pdvd-frontend) | Node.js + Next.js | Web UI |
+| [ortelius/ortelius](https://github.com/ortelius/ortelius) | Go | REST API / server — SBOM to release to CVE tracking |
+| [ortelius/frontend](https://github.com/ortelius/frontend) | Node.js + Next.js | Web UI |
 
 Additional supporting repositories exist for plugins, integrations, and tooling — written in Python, Go, or Groovy.
 
 ### Steps
 
-1. Fork the relevant repo (`pdvd-backend` or `pdvd-frontend`) to your GitHub account.
+1. Fork the relevant repo (`ortelius` or `frontend`) to your GitHub account.
 2. Clone the new repo to your computer.
 3. Open the repo in [Visual Studio Code](https://code.visualstudio.com/).
 4. **Backend (Go):** Install the [Go extension for VS Code](https://marketplace.visualstudio.com/items?itemName=golang.Go). Run and debug the server locally; it connects to a Postgres database over a standard connection string set in your environment.

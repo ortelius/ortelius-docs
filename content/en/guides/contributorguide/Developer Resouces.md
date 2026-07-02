@@ -24,7 +24,7 @@ The following tools are needed to contribute to Ortelius code or documentation.
 
 ### Backend Development (Go)
 
-The backend lives at [ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend) and is written in Go.
+The backend lives at [ortelius/ortelius](https://github.com/ortelius/ortelius) and is written in Go.
 
 - [Install Go](https://go.dev/dl/) (1.21 or later recommended)
 - Install the [Go extension for VS Code](https://marketplace.visualstudio.com/items?itemName=golang.Go)
@@ -34,7 +34,7 @@ The backend lives at [ortelius/pdvd-backend](https://github.com/ortelius/pdvd-ba
 
 ### Frontend Development (Node.js / Next.js)
 
-The frontend lives at [ortelius/pdvd-frontend](https://github.com/ortelius/pdvd-frontend) and is built with Node.js and Next.js.
+The frontend lives at [ortelius/frontend](https://github.com/ortelius/frontend) and is built with Node.js and Next.js.
 
 - [Install Node.js](https://nodejs.org/) (LTS version recommended)
 - Install dependencies: `npm install`

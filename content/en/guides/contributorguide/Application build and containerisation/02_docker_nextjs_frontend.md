@@ -3,16 +3,16 @@ title: "Containerising the Next.js Frontend"
 linkTitle: "Containerising the Next.js Frontend"
 weight: 4
 description: >
-  Steps required to build and run the pdvd-frontend in Docker
+  Steps required to build and run the frontend in Docker
 ---
 
-# Containerising the pdvd-frontend
+# Containerising the frontend
 
 ## Before Starting
 
 - Docker installed and running
 - WSL2 (Windows) or native Linux/macOS terminal
-- The `pdvd-frontend` repo cloned locally
+- The `frontend` repo cloned locally
 
 ## Dockerfile
 
@@ -48,7 +48,7 @@ CMD ["npm", "start"]
 ## Build the Image
 
 ```bash
-docker build -t ortelius/pdvd-frontend .
+docker build -t ortelius/frontend .
 ```
 
 ## Run the Container
@@ -56,7 +56,7 @@ docker build -t ortelius/pdvd-frontend .
 ```bash
 docker run -p 3000:3000 \
   -e NEXT_PUBLIC_API_URL=http://localhost:8080 \
-  ortelius/pdvd-frontend
+  ortelius/frontend
 ```
 
 Visit `http://localhost:3000` to confirm the frontend is running inside the container.
@@ -72,6 +72,6 @@ docker compose up --build
 ## Push to a Registry
 
 ```bash
-docker tag ortelius/pdvd-frontend quay.io/ortelius/pdvd-frontend:latest
-docker push quay.io/ortelius/pdvd-frontend:latest
+docker tag ortelius/frontend quay.io/ortelius/frontend:latest
+docker push quay.io/ortelius/frontend:latest
 ```

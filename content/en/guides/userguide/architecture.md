@@ -8,10 +8,46 @@ description: >
 
 # Architecture Guide
 
-**Audience:** Platform engineers, infrastructure teams, and security reviewers deploying or evaluating PDVD on-premises.
+**Audience:** Platform engineers, infrastructure teams, and security reviewers deploying or evaluating Ortelius on-premises.
 
 ---
 
+
+## Non-Functional Requirements
+
+### Performance and Scalability
+
+The system is designed to handle large-scale vulnerability management workloads with optimal end-user experience. All API endpoints maintain an end-user response time of less than 3 seconds under normal load conditions, including:
+
+- Release upload with SBOM processing
+- Vulnerability query for releases with up to 500 components
+- Severity-based filtering across large datasets (affected-releases, affected-endpoints)
+- Release-to-endpoint impact analysis with graph traversal
+- List operations for releases, endpoints, and syncs
+
+Individual CVE records are processed and stored during ingestion with CVSS score calculation adding negligible overhead (<1ms per CVE). The ingestion pipeline can process over 50,000 CVE records per hour. The API service handles concurrent requests from 100+ clients without degradation. Database indexes optimize query performance for common access patterns, including a persistent index on `database_specific.severity_rating` for fast severity-based filtering. Connection pooling ensures efficient resource utilization.
+
+The system scales to support over one million releases, 500,000 unique SBOMs, 100,000 CVE records, and unlimited endpoint/sync records while maintaining responsive query performance. Severity-based queries use optimized single-pass traversal with string-based filtering to avoid loading large result sets into memory.
+
+**Deployment Strategy:** Rolling updates are used for all system deployments to ensure zero-downtime operation and eliminate the need for maintenance windows. The rolling update strategy progressively replaces instances of the previous version with the new version, maintaining service availability throughout the deployment process.
+
+### Reliability and Availability
+
+The API service maintains 99.9% uptime during business hours through robust error handling and recovery mechanisms. Database connections implement exponential backoff retry logic to handle transient failures gracefully. The system recovers from network interruptions without data loss and uses panic recovery middleware to prevent service crashes from unexpected errors. All input data undergoes validation before processing to ensure data quality. The CVE ingestion job retries failed downloads up to three times before logging errors for manual intervention. CVSS parsing errors are logged but do not prevent CVE ingestion — CVEs with unparseable CVSS vectors are assigned default LOW severity to ensure comprehensive coverage.
+
+### Security
+
+Security is embedded throughout the system architecture. All external communications use TLS 1.2 or higher for encryption. The system verifies GPG signatures on git commits when available to ensure code authenticity. ZipSlip protection prevents directory traversal attacks during archive extraction. All user inputs are sanitized to prevent injection attacks. Database connections require authentication, and all credentials are managed through environment variables rather than hardcoded values. Role-based access control ensures users can only access data within their authorized organizations.
+
+### Maintainability and Observability
+
+The system follows clean architecture principles with clear separation between API handlers, business logic, and data access layers. All significant operations are logged with structured logging to enable debugging and audit trails. Error messages provide sufficient context for diagnosis without exposing sensitive information. The codebase maintains consistent patterns for error handling, validation, and response formatting. Database schema changes are managed through explicit collection and index initialization rather than auto-migration to ensure predictable upgrades.
+
+### Compliance and Data Integrity
+
+All vulnerability data is sourced from the authoritative OSV.dev database and refreshed every 15 minutes to ensure currency. CVSS scores are calculated using the official specification via a validated library (`github.com/pandatix/go-cvss`). CVEs without severity information are assigned a LOW severity rating (score: 0.1) rather than being discarded, ensuring comprehensive tracking. Data deduplication at both the release level (composite key: name + version + contentsha) and SBOM level (SHA256 content hash) prevents redundant storage while maintaining a complete audit trail of deployments.
+
+---
 
 ## System Overview
 
@@ -105,7 +141,7 @@ At scale this creates three compounding problems: **storage** (millions of edges
 
 ### The Solution: PURL Hub Nodes
 
-Instead of connecting CVEs directly to SBOMs, PDVD inserts a version-free **PURL hub node** for each unique package. CVEs connect to the hub; SBOMs connect to the hub. Version information lives on the edges, not the nodes.
+Instead of connecting CVEs directly to SBOMs, Ortelius inserts a version-free **PURL hub node** for each unique package. CVEs connect to the hub; SBOMs connect to the hub. Version information lives on the edges, not the nodes.
 
 ```mermaid
 graph TB
@@ -194,7 +230,7 @@ sequenceDiagram
 
 Version matching runs at ingest time to decide which candidates become `release2cve` edges, and again at sync time to populate `cve_lifecycle` records. Both paths use the same `util.IsVersionAffected` function.
 
-PDVD uses **ecosystem-specific parsers** rather than a single generic semver parser because version schemes differ significantly across package ecosystems:
+Ortelius uses **ecosystem-specific parsers** rather than a single generic semver parser because version schemes differ significantly across package ecosystems:
 
 | Ecosystem                | Parser                         | Example version  |
 |--------------------------|--------------------------------|------------------|
@@ -205,13 +241,13 @@ PDVD uses **ecosystem-specific parsers** rather than a single generic semver par
 
 **Key rules that prevent false positives:**
 
-- OSV uses `"0"` in the `introduced` field to mean "from the beginning of time." PDVD treats this as `0.0.0`, not the literal string `"0"`.
+- OSV uses `"0"` in the `introduced` field to mean "from the beginning of time." Ortelius treats this as `0.0.0`, not the literal string `"0"`.
 - A range must have **both** a lower bound (`introduced`) **and** an upper bound (`fixed` or `last_affected`) to produce a match. Incomplete ranges return `false`. This prevents a misconfigured or partial OSV record from marking everything as vulnerable.
 - Go stdlib versions carrying a `go` prefix (e.g., `go1.22.2`) have the prefix stripped before parsing.
 
 ### PURL Standardization
 
-Hub keys must be identical whether they come from a CVE record (OSV data) or an SBOM component (CycloneDX data). PDVD enforces this through a single function — `util.GetStandardBasePURL()` — that normalizes the ecosystem type and strips the version before generating the hub key.
+Hub keys must be identical whether they come from a CVE record (OSV data) or an SBOM component (CycloneDX data). Ortelius enforces this through a single function — `util.GetStandardBasePURL()` — that normalizes the ecosystem type and strips the version before generating the hub key.
 
 The most important mapping is the Wolfi/Chainguard family, which OSV lists under ecosystem names that do not match the `apk` PURL type used by SBOM generators:
 
@@ -295,7 +331,7 @@ The JWT payload contains **only the username**. Role and org memberships are **a
 {
   "username": "alice",
   "sub": "alice",
-  "iss": "pdvd-backend",
+  "iss": "ortelius",
   "iat": 1704067200,
   "exp": 1704153600
 }
@@ -343,6 +379,106 @@ stateDiagram-v2
 ### `disclosed_after_deployment` Flag
 
 Set to `true` when `cve.published > root_introduced_at`. These are CVEs that were not publicly known when the software was first deployed — the most operationally urgent category.
+
+---
+
+## CVSS Score Calculation & Severity Ratings
+
+### Ingestion Pipeline
+
+During CVE ingestion from OSV.dev, Ortelius parses CVSS vector strings and pre-calculates numeric base scores using the `github.com/pandatix/go-cvss` library. Scores are stored in the `database_specific` field on each CVE document at write time, eliminating runtime parsing overhead and enabling fast indexed queries.
+
+```mermaid
+flowchart TB
+    Start["OSV.dev CVE Data"] --> Extract
+    Extract["Extract CVSS Vector Strings<br/>from severity[] array"] --> Parse
+
+    subgraph Parse["Parse Each CVSS Vector"]
+        V30["CVSS:3.0/*<br/>→ Parse with pandatix/go-cvss v31"]
+        V31["CVSS:3.1/*<br/>→ Parse with pandatix/go-cvss v31"]
+        V40["CVSS:4.0/*<br/>→ Parse with pandatix/go-cvss v40"]
+    end
+
+    Parse --> Calc["Calculate Base Score (0.0 - 10.0)"]
+    Calc --> Det["Determine Severity Rating"]
+
+    subgraph Det
+        C["9.0-10.0 → CRITICAL"]
+        H["7.0-8.9 → HIGH"]
+        M["4.0-6.9 → MEDIUM"]
+        L["0.1-3.9 → LOW"]
+        N["0.0 → NONE"]
+    end
+
+    Det --> Store["Store in database_specific field"]
+    Store --> Upsert["UPSERT CVE document to ArangoDB"]
+
+    style Start fill:#e3f2fd
+    style Parse fill:#fff3bf
+    style Det fill:#ffd43b
+    style Upsert fill:#51cf66
+```
+
+### Severity Rating Mappings
+
+| Severity     | CVSS Score Range | Notes                                              |
+|--------------|------------------|----------------------------------------------------|
+| **CRITICAL** | 9.0 – 10.0       |                                                    |
+| **HIGH**     | 7.0 – 8.9        |                                                    |
+| **MEDIUM**   | 4.0 – 6.9        |                                                    |
+| **LOW**      | 0.1 – 3.9        | Also assigned to CVEs with missing/unparseable data |
+| **NONE**     | 0.0              |                                                    |
+
+CVEs without a parseable CVSS vector are assigned `severity_rating: "LOW"` and `cvss_base_score: 0.1` rather than being skipped, ensuring comprehensive tracking.
+
+### `database_specific` Field Structure
+
+```json
+{
+  "_key": "CVE-2024-1234",
+  "severity": [
+    {
+      "type": "CVSS_V3",
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+  ],
+  "database_specific": {
+    "cvss_base_score": 9.8,
+    "cvss_base_scores": [9.8],
+    "severity_rating": "CRITICAL"
+  }
+}
+```
+
+- `cvss_base_score` — highest numeric score across all vectors; used for sorting and display
+- `cvss_base_scores` — array of all calculated scores for CVEs with multiple CVSS vectors
+- `severity_rating` — indexed string value used for all severity-based filtering
+
+### Query Optimization
+
+Pre-calculating scores at ingest time means severity queries use a simple indexed string comparison instead of parsing vector strings at runtime:
+
+```mermaid
+flowchart LR
+    subgraph Before["BEFORE (Runtime Parsing)"]
+        B1["Query"] --> B2["For each CVE:<br/>Parse CVSS vector"]
+        B2 --> B3["Calculate score"]
+        B3 --> B4["Compare to threshold"]
+        B5["~5-10s for 100K CVEs"]
+    end
+
+    subgraph After["AFTER (Pre-Calculated)"]
+        A1["Query"] --> A2["Filter by severity_rating string"]
+        A3["< 1s for 100K CVEs"]
+    end
+
+    Before -.->|Performance impact| After
+
+    style Before fill:#ffe0e0
+    style After fill:#e0ffe0
+    style B5 fill:#ff6b6b
+    style A3 fill:#51cf66
+```
 
 ---
 
@@ -410,9 +546,9 @@ graph TB
     LB[Load Balancer<br/>HTTPS:443] --> API1 & API2 & API3
 
     subgraph APICluster["API Cluster (3 replicas)"]
-        API1[PDVD Pod 1]
-        API2[PDVD Pod 2]
-        API3[PDVD Pod 3]
+        API1[Ortelius Pod 1]
+        API2[Ortelius Pod 2]
+        API3[Ortelius Pod 3]
     end
 
     subgraph Workers["Background Goroutines (per pod)"]
@@ -443,27 +579,27 @@ graph TB
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pdvd-api
-  namespace: pdvd
+  name: ortelius-api
+  namespace: ortelius
 spec:
   replicas: 3
   template:
     spec:
       containers:
       - name: api
-        image: pdvd/backend:v2.0.0
+        image: ortelius/backend:v2.0.0
         ports:
         - containerPort: 3000
         env:
         - name: ARANGO_HOST
           valueFrom:
             secretKeyRef:
-              name: pdvd-secrets
+              name: ortelius-secrets
               key: arango-host
         - name: JWT_SECRET
           valueFrom:
             secretKeyRef:
-              name: pdvd-secrets
+              name: ortelius-secrets
               key: jwt-secret
         resources:
           requests:
@@ -550,11 +686,24 @@ The GitHub App integration allows users to connect their GitHub installation and
 
 ```bash
 GITHUB_APP_ID=123456
-GITHUB_APP_NAME=my-pdvd-app
+GITHUB_APP_NAME=my-ortelius-app
 GITHUB_CLIENT_ID=Iv1.abc123
 GITHUB_CLIENT_SECRET=abc123...
 GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\n..."
 ```
+
+### Org-Level Personal Access Tokens
+
+As an alternative (or supplement) to the GitHub App, an org owner can store a GitHub or GitLab personal access token directly on the org (`POST /api/v1/orgs/:org/credentials`). Tokens are encrypted at rest using `TOKEN_ENCRYPTION_KEY` and are never returned by the API once stored — only connection-status booleans are exposed via `GET /api/v1/orgs/:org/status`.
+
+### "Sign in with GitHub" and OIDC Providers
+
+Independent of the GitHub App installation flow, Ortelius supports pluggable login providers:
+
+- **GitHub Sign-In** — a lightweight OAuth2 flow (`GITHUB_OAUTH_CLIENT_ID` / `GITHUB_OAUTH_CLIENT_SECRET` / `GITHUB_OAUTH_REDIRECT_URL`) used purely for authentication, separate from the App installation credentials above.
+- **OIDC** — any spec-compliant issuer (Google, Authentik, Okta, ...) can be registered by name and configured entirely through `<PROVIDER>_OIDC_*` environment variables, with no new handler code required per provider.
+
+`GET /api/v1/auth/status` reports which of these are currently configured so the frontend can conditionally show the corresponding login buttons.
 
 ### Kafka
 
@@ -564,7 +713,7 @@ Kafka enables asynchronous release ingestion — CI pipelines publish events to 
 
 - Topic name: `release-events`
 - Recommended: 3 partitions, 7-day retention
-- Consumer group: `pdvd-backend-worker`
+- Consumer group: `ortelius-worker`
 
 **Confluent Cloud (SASL/PLAIN + TLS):**
 
@@ -595,19 +744,30 @@ Event schema: see [Implementation Guide](implementation.md#kafka-event-schema).
 | `ADMIN_EMAIL`          | `admin@example.com`     | No       | Bootstrap admin email                            |
 | `RBAC_REPO`            | —                       | No       | Git repo URL for RBAC config                     |
 | `RBAC_REPO_TOKEN`      | —                       | No       | Git token for RBAC repo access                   |
-| `RBAC_CONFIG_PATH`     | `/etc/pdvd/rbac.yaml`   | No       | Local file fallback if no RBAC_REPO              |
+| `RBAC_CONFIG_PATH`     | `/etc/ortelius/rbac.yaml`   | No       | Local file fallback if no RBAC_REPO              |
 | `SMTP_HOST`            | `smtp.gmail.com`        | No       | SMTP server hostname                             |
 | `SMTP_PORT`            | `587`                   | No       | SMTP port                                        |
 | `SMTP_USERNAME`        | —                       | No       | SMTP auth username                               |
 | `SMTP_PASSWORD`        | —                       | No       | SMTP auth password                               |
-| `SMTP_FROM_EMAIL`      | `noreply@pdvd.com`      | No       | From address                                     |
-| `SMTP_FROM_NAME`       | `PDVD System`           | No       | From display name                                |
+| `SMTP_FROM_EMAIL`      | `noreply@ortelius.com`      | No       | From address                                     |
+| `SMTP_FROM_NAME`       | `Ortelius System`           | No       | From display name                                |
 | `BASE_URL`             | `http://localhost:3000` | No       | Used in invitation email links                   |
 | `GITHUB_APP_ID`        | —                       | No       | GitHub App numeric ID                            |
 | `GITHUB_APP_NAME`      | —                       | No       | GitHub App slug name                             |
-| `GITHUB_CLIENT_ID`     | —                       | No       | GitHub OAuth client ID                           |
-| `GITHUB_CLIENT_SECRET` | —                       | No       | GitHub OAuth client secret                       |
+| `GITHUB_CLIENT_ID`     | —                       | No       | GitHub App OAuth client ID (installation flow)   |
+| `GITHUB_CLIENT_SECRET` | —                       | No       | GitHub App OAuth client secret (installation flow) |
 | `GITHUB_PRIVATE_KEY`   | —                       | No       | GitHub App RSA private key (PEM)                 |
+| `GITHUB_OAUTH_CLIENT_ID`     | —                 | No       | "Sign in with GitHub" OAuth client ID (`github-signin` flow) |
+| `GITHUB_OAUTH_CLIENT_SECRET` | —                 | No       | "Sign in with GitHub" OAuth client secret        |
+| `GITHUB_OAUTH_REDIRECT_URL`  | —                 | No       | "Sign in with GitHub" OAuth callback URL         |
+| `<PROVIDER>_OIDC_CLIENT_ID`     | —              | No       | OIDC client ID for a registered provider (e.g. `GOOGLE_OIDC_CLIENT_ID`, `AUTHENTIK_OIDC_CLIENT_ID`) |
+| `<PROVIDER>_OIDC_CLIENT_SECRET` | —              | No       | OIDC client secret for that provider             |
+| `<PROVIDER>_OIDC_ISSUER_URL`    | —              | No       | OIDC discovery issuer URL for that provider      |
+| `<PROVIDER>_OIDC_REDIRECT_URL`  | —              | No       | OIDC callback URL for that provider              |
+| `<PROVIDER>_OIDC_ALLOWED_DOMAIN`| —              | No       | Restricts logins to ID tokens matching this domain |
+| `GITHUB_TOKEN`         | —                       | No       | Fallback GitHub PAT for public repo search/fetch when no org credential is set |
+| `GITLAB_TOKEN`         | —                       | No       | Fallback GitLab PAT for public repo search/fetch |
+| `TOKEN_ENCRYPTION_KEY` | —                       | **Yes*** | Encrypts org-level GitHub/GitLab PATs at rest — required once any org stores credentials |
 | `KAFKA_BROKERS`        | `localhost:9092`        | No       | Comma-separated broker list                      |
 | `KAFKA_API_KEY`        | —                       | No       | Enables SASL/PLAIN + TLS when set                |
 | `KAFKA_API_SECRET`     | —                       | No       | SASL password                                    |

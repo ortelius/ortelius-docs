@@ -3,16 +3,16 @@ title: "VS Code Setup for Backend Development"
 linkTitle: "VS Code Setup for Backend Development"
 weight: 19
 description: >
-  Setting up VS Code for pdvd-backend (Go) development
+  Setting up VS Code for ortelius (Go) development
 ---
 
 ## Getting Started
 
-The Ortelius backend ([ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend)) is written in Go. [Visual Studio Code](https://code.visualstudio.com/) is the recommended editor for all backend work.
+The Ortelius backend ([ortelius/ortelius](https://github.com/ortelius/ortelius)) is written in Go. [Visual Studio Code](https://code.visualstudio.com/) is the recommended editor for all backend work.
 
 ## Prerequisites
 
-- [Go](https://go.dev/dl/) (1.21 or later)
+- [Go](https://go.dev/dl/) (1.26 or later)
 - [VS Code](https://code.visualstudio.com/download)
 - [Git](https://git-scm.com/)
 - [Docker](https://docs.docker.com/get-docker/) (to run ArangoDB locally)
@@ -36,8 +36,8 @@ Install these from the Extensions panel (`Ctrl+Shift+X`):
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/ortelius/pdvd-backend.git
-   cd pdvd-backend
+   git clone https://github.com/ortelius/ortelius.git
+   cd ortelius
    ```
 
 2. Open in VS Code:

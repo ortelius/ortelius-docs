@@ -3,16 +3,16 @@ title: "Containerising the Go Backend"
 linkTitle: "Containerising the Go Backend"
 weight: 4
 description: >
-  Steps required to build and run the pdvd-backend in Docker
+  Steps required to build and run the ortelius in Docker
 ---
 
-# Containerising the pdvd-backend
+# Containerising the ortelius
 
 ## Before Starting
 
 - Docker installed and running
 - WSL2 (Windows) or native Linux/macOS terminal
-- The `pdvd-backend` repo cloned locally
+- The `ortelius` repo cloned locally
 
 ## Dockerfile
 
@@ -40,7 +40,7 @@ ENTRYPOINT ["./server"]
 ## Build the Image
 
 ```bash
-docker build -t ortelius/pdvd-backend .
+docker build -t ortelius/ortelius .
 ```
 
 ## Run the Container
@@ -54,7 +54,7 @@ docker run -p 8080:8080 \
   -e ARANGO_USER=root \
   -e ARANGO_NO_AUTH=1 \
   -e ARANGO_DB=ortelius \
-  ortelius/pdvd-backend
+  ortelius/ortelius
 ```
 
 (On Linux, replace `host.docker.internal` with your actual host IP.)
@@ -74,8 +74,8 @@ This brings up the backend alongside any required services (e.g., ArangoDB) defi
 ## Push to a Registry
 
 ```bash
-docker tag ortelius/pdvd-backend quay.io/ortelius/pdvd-backend:latest
-docker push quay.io/ortelius/pdvd-backend:latest
+docker tag ortelius/ortelius quay.io/ortelius/ortelius:latest
+docker push quay.io/ortelius/ortelius:latest
 ```
 
 Ortelius container images live on [Red Hat Quay](https://quay.io/).

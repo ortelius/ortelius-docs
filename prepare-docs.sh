@@ -10,11 +10,11 @@ CONTENT_DIR="content/en/guides/userguide"
 # 👇 List of repos to aggregate — first entry becomes the top-level section;
 #    all others are nested as subsections beneath it.
 REPOS=(
-  "https://github.com/ortelius/pdvd-backend.git"
-  "https://github.com/ortelius/pdvd-platform.git"
-  "https://github.com/ortelius/pdvd-relscanner-job.git"
-  "https://github.com/ortelius/pdvd-deployment-gke.git"
-  "https://github.com/ortelius/pdvd-osvdev-job.git"
+  "https://github.com/ortelius/ortelius.git"
+  "https://github.com/ortelius/frontend.git"
+  "https://github.com/ortelius/relscanner-job.git"
+  "https://github.com/ortelius/deployment-gke.git"
+  "https://github.com/ortelius/osvdev-job.git"
 )
 
 # -----------------------------

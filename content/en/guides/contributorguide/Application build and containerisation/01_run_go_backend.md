@@ -3,16 +3,16 @@ title: "Running the Go Backend Locally"
 linkTitle: "Running the Go Backend Locally"
 weight: 3
 description: >
-  Steps required to run the pdvd-backend Go service on your local machine
+  Steps required to run the ortelius Go service on your local machine
 ---
 
-# Running the pdvd-backend Locally
+# Running the ortelius Locally
 
-The Ortelius backend ([ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend)) is a Go REST API that tracks SBOMs through the release lifecycle and maps them to CVEs.
+The Ortelius backend ([ortelius/ortelius](https://github.com/ortelius/ortelius)) is a Go REST API that tracks SBOMs through the release lifecycle and maps them to CVEs.
 
 ## Tools Needed
 
-- [Go](https://go.dev/dl/) (1.21 or later)
+- [Go](https://go.dev/dl/) (1.26 or later)
 - [VS Code](https://code.visualstudio.com/) with the [Go extension](https://marketplace.visualstudio.com/items?itemName=golang.Go)
 - [Docker](https://docs.docker.com/get-docker/) (for the ArangoDB test database)
 - [Git](https://git-scm.com/)
@@ -22,8 +22,8 @@ The Ortelius backend ([ortelius/pdvd-backend](https://github.com/ortelius/pdvd-b
 
 ```bash
 cd /path/to/working_directory
-git clone https://github.com/ortelius/pdvd-backend.git
-cd pdvd-backend
+git clone https://github.com/ortelius/ortelius.git
+cd ortelius
 ```
 
 ## Install Dependencies
@@ -75,13 +75,13 @@ go test ./...
 ## Build a Docker Image
 
 ```bash
-docker build -t pdvd-backend .
-docker run -p 8080:8080 pdvd-backend
+docker build -t ortelius .
+docker run -p 8080:8080 ortelius
 ```
 
 ## VS Code Setup
 
-1. Open the `pdvd-backend` folder in VS Code (`File → Open Folder`).
+1. Open the `ortelius` folder in VS Code (`File → Open Folder`).
 2. When prompted, install the recommended Go tools (gopls, dlv, staticcheck).
 3. Use the **Run and Debug** panel (`Ctrl+Shift+D`) to launch and debug the server.
 4. Set breakpoints directly in the editor.

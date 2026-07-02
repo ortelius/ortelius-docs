@@ -39,24 +39,24 @@ description: >
 #### Ortelius PDVD — Package, Dependency, Vulnerability Dashboard
 Ortelius tracks SBOMs through the entire release lifecycle, mapping components to CVEs so teams can rapidly respond to supply chain threats.
 
-- **Backend:** [ortelius/pdvd-backend](https://github.com/ortelius/pdvd-backend) — Go REST API (client/server for tracking SBOM → release → CVE)
-- **Frontend:** [ortelius/pdvd-frontend](https://github.com/ortelius/pdvd-frontend) — Node.js + Next.js web UI
+- **Backend:** [ortelius/ortelius](https://github.com/ortelius/ortelius) — Go REST API (client/server for tracking SBOM → release → CVE)
+- **Frontend:** [ortelius/frontend](https://github.com/ortelius/frontend) — Node.js + Next.js web UI
 
 #### Event Driven Architecture with Ortelius
 - [Ortelius Docs](https://github.com/ortelius/ortelius-docs/blob/main/content/en/guides/userguide/integrations/OrteliusKeptn.md)
 
 ## Demo Apps to Deploy and Containerise
 
-### Go Backend — [pdvd-backend](https://github.com/ortelius/pdvd-backend)
+### Go Backend — [ortelius](https://github.com/ortelius/ortelius)
 - `PLEASE READ the README`
 - Fork the repo & clone
 - [Go Documentation](https://go.dev/doc/)
 - [Go Modules](https://go.dev/ref/mod)
 - Run: `go run .`
 - Test: `go test ./...`
-- Build container: `docker build -t pdvd-backend .`
+- Build container: `docker build -t ortelius .`
 
-### Node.js + Next.js Frontend — [pdvd-frontend](https://github.com/ortelius/pdvd-frontend)
+### Node.js + Next.js Frontend — [frontend](https://github.com/ortelius/frontend)
 - `PLEASE READ the README`
 - Fork the repo & clone
 - [Next.js Documentation](https://nextjs.org/docs)

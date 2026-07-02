@@ -3,12 +3,12 @@ title: "Running the Next.js Frontend Locally"
 linkTitle: "Running the Next.js Frontend Locally"
 weight: 3
 description: >
-  Steps required to run the pdvd-frontend Next.js application on your local machine
+  Steps required to run the frontend Next.js application on your local machine
 ---
 
-# Running the pdvd-frontend Locally
+# Running the frontend Locally
 
-The Ortelius frontend ([ortelius/pdvd-frontend](https://github.com/ortelius/pdvd-frontend)) is a Next.js application that provides the web UI for the Package, Dependency, Vulnerability Dashboard.
+The Ortelius frontend ([ortelius/frontend](https://github.com/ortelius/frontend)) is a Next.js application that provides the web UI for the Package, Dependency, Vulnerability Dashboard.
 
 ## Tools Needed
 
@@ -21,8 +21,8 @@ The Ortelius frontend ([ortelius/pdvd-frontend](https://github.com/ortelius/pdvd
 
 ```bash
 cd /path/to/working_directory
-git clone https://github.com/ortelius/pdvd-frontend.git
-cd pdvd-frontend
+git clone https://github.com/ortelius/frontend.git
+cd frontend
 ```
 
 ## Install Dependencies
@@ -71,15 +71,15 @@ npm test
 ## Containerise the Frontend
 
 ```bash
-docker build -t pdvd-frontend .
-docker run -p 3000:3000 pdvd-frontend
+docker build -t frontend .
+docker run -p 3000:3000 frontend
 ```
 
 Visit `http://localhost:3000` to confirm the containerised app is running.
 
 ## VS Code Setup
 
-1. Open the `pdvd-frontend` folder in VS Code.
+1. Open the `frontend` folder in VS Code.
 2. Install the recommended extensions: ESLint, Prettier, and the VS Code Next.js snippets.
 3. The integrated terminal (`Ctrl+\``) is the easiest way to run `npm` commands.
 4. Use the **Run and Debug** panel to attach the Node.js debugger.
@@ -94,7 +94,7 @@ nvm use --lts
 ```
 
 ### API calls return CORS or connection errors
-Ensure the backend (`pdvd-backend`) is running and the `NEXT_PUBLIC_API_URL` in `.env.local` is correct.
+Ensure the backend (`ortelius`) is running and the `NEXT_PUBLIC_API_URL` in `.env.local` is correct.
 
 ### Line ending issues (WSL2 on Windows)
 If npm scripts fail, convert line endings:
