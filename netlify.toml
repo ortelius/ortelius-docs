@@ -3,8 +3,13 @@
 
 # Default build settings
 [build]
-  command = "npm install postcss-cli && hugo"
+  command = "npm install && hugo"
   publish = "public"
 
 [build.environment]
   HUGO_VERSION = "0.151.2"
+  # postcss-cli (used by Hugo's PostCSS pipeline) requires a modern Node.
+  # Without this pinned, Netlify's default Node can be too old, npm install
+  # silently fails to build postcss-cli's binary, and `npx postcss` then
+  # can't find it at build time.
+  NODE_VERSION = "20"
