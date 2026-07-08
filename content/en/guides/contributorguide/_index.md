@@ -1,7 +1,7 @@
 ---
 title: "Ortelius Contributor Guide"
 linkTitle: "Ortelius Contributor Guide"
-weight: 1
+weight: 80
 description: >
   Guide for how to contribute to the Ortelius open source project
 ---
