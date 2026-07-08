@@ -19,54 +19,95 @@ This is the right choice if:
 
 Platform engineers, infrastructure teams, and security reviewers evaluating a self-hosted deployment should also read the [Architecture Guide](../../../developer-resources/core-concepts/architecture-guide/) for the full non-functional requirements, technology stack, and deployment architecture.
 
-## Install
+## Install with Helm
 
-### 1. Start ArangoDB
+The supported way to deploy Ortelius on Kubernetes is the official Helm chart, published on ArtifactHub:
 
-```bash
-docker run -d \
-  --name arangodb \
-  -p 8529:8529 \
-  -e ARANGO_ROOT_PASSWORD=password \
-  arangodb:latest
-```
+**[artifacthub.io/packages/helm/ortelius/ortelius](https://artifacthub.io/packages/helm/ortelius/ortelius)**
 
-### 2. Configure environment
+Follow the install instructions on that page for chart values, resource sizing, and upgrade notes.
 
-```bash
-export ARANGO_HOST=localhost
-export ARANGO_PASS=password
-export JWT_SECRET=local-dev-secret
-export ADMIN_USERNAME=admin
-export ADMIN_PASSWORD=changeme
-export BASE_URL=http://localhost:3000
-```
+## Install with Terraform
 
-### 3. Run the backend
+[**github.com/ortelius/platform-iac**](https://github.com/ortelius/platform-iac) is the GitOps platform for the full Ortelius application stack. Terraform provisions the underlying infrastructure (EKS or GKE) and bootstraps FluxCD, which then manages all application deployments via Helm — including the same [chart on ArtifactHub](https://artifacthub.io/packages/helm/ortelius/ortelius) described above.
+
+This is the recommended path for a production-grade, on-premise/cloud install, since it handles cluster provisioning, secret management, DNS, and the Helm release together as one repeatable pipeline.
+
+### Prerequisites
+
+The `deploy.sh` script auto-installs its required tools (`age`, `sops`, `kubectl`, `flux`, `helm`) if they're missing. You still need:
+
+- The `aws` CLI, if deploying to EKS
+- Credentials for your target cloud, exported before running:
 
 ```bash
-go run main.go
+# Both clusters — a GitHub PAT with repo + admin:public_key scopes
+export TF_VAR_github_token="ghp_..."
+
+# GKE
+gcloud auth application-default login
+
+# EKS
+aws configure   # or set AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION
 ```
 
-### 4. Verify
+### Configure your cluster
+
+Edit the `terraform.tfvars` for your target platform before deploying:
+
+**EKS** — `terraform/eks/terraform.tfvars`:
+
+```hcl
+aws_region    = "us-east-1"         # AWS region
+cluster_name  = "ortelius-eks"      # EKS cluster name
+vpc_cidr      = "10.0.0.0/16"       # VPC CIDR
+domain        = "eks.deployhub.com" # Domain for ACM cert and ingress
+github_org    = "ortelius"
+github_repo   = "platform-iac"
+dns_provider  = "cloudflare"        # "cloudflare" or "route53"
+dns_zone_name = "deployhub.com"     # Parent DNS zone
+```
+
+**GKE** — `terraform/gke/terraform.tfvars`:
+
+```hcl
+project_id   = "your-gcp-project-id"
+region       = "us-central1"
+cluster_name = "ortelius-gke"
+github_org   = "ortelius"
+github_repo  = "platform-iac"
+```
+
+### Deploy
+
+`deploy.sh` is the single entrypoint for installing on either platform:
 
 ```bash
-curl http://localhost:3000/
-# {"status":"healthy"}
+./terraform/deploy.sh <gke|eks> [plan|apply|destroy]
 ```
 
-The admin user is bootstrapped automatically on first startup if no users exist. Log in at `POST /api/v1/auth/login` with the credentials from `ADMIN_USERNAME` / `ADMIN_PASSWORD`.
+```bash
+./terraform/deploy.sh eks apply      # Deploy to AWS EKS
+./terraform/deploy.sh gke apply      # Deploy to GCP GKE
+./terraform/deploy.sh eks plan       # Preview changes
+./terraform/deploy.sh eks destroy    # Tear down the cluster
+```
 
-> **Signup without a Git repo:** The signup endpoint requires `RBAC_REPO` to be configured. For local or initial development, create users directly via `POST /api/v1/users` (admin auth required) or set `RBAC_CONFIG_PATH` to a local `rbac.yaml` file instead.
+On the first run, it generates an age encryption keypair and prompts for the application secrets it needs (SMTP credentials, ArangoDB password, GitHub App ID/client ID/client secret/private key, RBAC repo token, base URL, and — for EKS with Cloudflare — an API token). These are encrypted with SOPS and committed to the repo as `clusters/<cluster>/ortelius/secrets.enc.yaml`.
 
-## Optional components
+> **Back up the generated age key** at `~/.ssh/<cluster-name>.sops.key` — losing it means losing access to all encrypted secrets. Subsequent runs skip the prompts once `secrets.enc.yaml` already exists.
 
-A self-hosted deployment is more useful once you also deploy the scanner and sync components that keep data current:
+Behind the scenes, `deploy.sh` runs `terraform init`/`apply` to provision the infrastructure (VPC, cluster, IAM, ACM certificate), then runs `flux bootstrap github` to install Flux and hand off the ortelius Helm release to it — so ongoing upgrades happen via GitOps rather than by re-running Terraform.
 
-- [`relscanner-job`](https://github.com/ortelius/relscanner-job) — discovers releases from GitHub/GitLab and attaches SBOMs automatically (see [Deployment Tracking Using GitHub and GitLab](../../../integrations/deployment-tracking-github-gitlab/))
-- [`osvdev-job`](https://github.com/ortelius/osvdev-job) — syncs vulnerability data from OSV.dev every 15 minutes (see [OSV.dev](../../../integrations/osv-dev/))
-- [`deployment-gke`](https://github.com/ortelius/deployment-gke) — tracks deployments on GKE (see [Deployment Tracking for GKE](../../../integrations/deployment-tracking-gke/))
+### Verify
 
-For GitHub App credentials, Kafka, and full production configuration, continue with the [Architecture Guide](../../../developer-resources/core-concepts/architecture-guide/).
+```bash
+kubectl get pods -n flux-system
+kubectl get pods -n ortelius
+kubectl get helmrelease -n ortelius
+kubectl get ingress -n ortelius
+```
+
+If you deployed to EKS, ExternalDNS creates the DNS records automatically; you'll still need to add the CNAME shown by `aws acm describe-certificate` to complete ACM certificate validation. See the [platform-iac README](https://github.com/ortelius/platform-iac) for the full directory layout and troubleshooting notes.
 
 Next: [Log In for the First Time](../../log-in-for-the-first-time/).
